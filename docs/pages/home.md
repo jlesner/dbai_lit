@@ -1,16 +1,16 @@
-# LLMs for SQL, SQL for LLMs
+# SQL for LLMs, LLMs for SQL
 
 **Research question:** how can we build systems whose answers we can trust from components, like LLMs, that guess and are confidently wrong?
 
 One approach is to pair LLMs with checks that don't trust them, and count only the answers that pass. SQL databases are an unusually good place to do that, and the benefit runs both ways.
 
-## LLMs for SQL
-
-LLMs help with SQL problems that formal tools only partly solve: deciding whether two queries mean the same thing, finding and checking rewrite rules, translating queries between database engines, and writing SQL from English. Here an unchecked LLM does real damage: the QO-Verify authors report that "a large fraction" of LLM rewrites return different results from the original query, over real-world and benchmark workloads ([QO-Verify](#/papers/narasayya2026qoverify "Leveraging Query Optimizers to Verify the Soundness of LLM-based Query Rewrites for Real-World Workloads, and More! (2026)") p. 1), and the SQLDriller authors find "a non-negligible" portion of wrong question-to-SQL pairs in the popular Spider and BIRD datasets ([SQLDriller](#/papers/yang2025sqldriller "Automated Validating and Fixing of Text-to-SQL Translation with Execution Consistency (2025)") abstract).
-
 ## SQL for LLMs
 
 Hard SQL problems with checkable answers serve as model problems for making LLMs more reliable in general: a testbed for inference-time scaling (sampling, search, thinking budgets), memory, harnesses (agent loops, tools, verifiers) and prompt and program optimization. Where a program checks the answers, a method's gain can be measured without trusting a judge.
+
+## LLMs for SQL
+
+LLMs help with SQL problems that formal tools only partly solve: deciding whether two queries mean the same thing, finding and checking rewrite rules, translating queries between database engines, and writing SQL from English. Here an unchecked LLM does real damage: the QO-Verify authors report that "a large fraction" of LLM rewrites return different results from the original query, over real-world and benchmark workloads ([QO-Verify](#/papers/narasayya2026qoverify "Leveraging Query Optimizers to Verify the Soundness of LLM-based Query Rewrites for Real-World Workloads, and More! (2026)") p. 1), and the SQLDriller authors find "a non-negligible" portion of wrong question-to-SQL pairs in the popular Spider and BIRD datasets ([SQLDriller](#/papers/yang2025sqldriller "Automated Validating and Fixing of Text-to-SQL Translation with Execution Consistency (2025)") abstract).
 
 ## One check, both directions
 
@@ -30,7 +30,7 @@ The same check serves both sides:
          for better LLM methods
 ```
 
-A **[certificate](#/glossary/certificate)** is evidence that a program can check without trusting whoever produced it; in SQL, a [counterexample database](#/glossary/counterexample-database) (run both queries and compare) or a proof. For LLMs applied to SQL, it is what lets a user trust an answer: return only certified answers, and *unknown* otherwise. For developing LLM methods, it is a verifiable reward: a program scores every answer, so more compute (more samples, longer search, prompt optimization, [reinforcement learning](#/glossary/reinforcement-learning)) can turn into progress. The bet is that each side then feeds the other: better methods certify more SQL answers, and certified answers become benchmarks and rewards for better methods.
+A **[certificate](#/glossary/certificate)** is evidence that a program can check without trusting whoever produced it; in SQL, a [counterexample database](#/glossary/counterexample-database) (run both queries and compare) or a proof. For developing LLM methods, it is a verifiable reward: a program scores every answer, so more compute (more samples, longer search, prompt optimization, [reinforcement learning](#/glossary/reinforcement-learning)) can turn into progress. For LLMs applied to SQL, it is what lets a user trust an answer: return only certified answers, and *unknown* otherwise. The bet is that each side then feeds the other: certified answers become benchmarks and rewards for better methods, and better methods certify more SQL answers.
 
 ## Why SQL
 
