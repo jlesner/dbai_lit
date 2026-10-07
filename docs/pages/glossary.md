@@ -1,5 +1,3 @@
-# Glossary
-
 Plain definitions of the field's terms, for readers who know LLMs and programming but not database theory, formal methods or RL.
 
 <!-- filter -->
