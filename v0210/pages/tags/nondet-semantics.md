@@ -1,0 +1,18 @@
+# Tag <span class="tag sub big">nondet-semantics</span>
+
+A subtag of <a class="tag" href="#/tags/nondet">nondet</a>
+
+**Defines** the semantics or equivalence of nondeterministic or order-sensitive queries: results as lists or as sets of possible outputs, the equivalences between them, refinement.
+
+<!-- filter -->
+
+## Papers
+
+- **[A logic for rule-based query optimization in graph-based data models](#/papers/coburn1993logic "A logic for rule-based query optimization in graph-based data models (1993)")** (DOOD 1993 (LNCS 760)). A wide-spectrum algebra and refinement calculus for graph-based data models (abstract). <span class="links">[🔎 Summary](#/papers/coburn1993logic) · [PDF](https://link.springer.com/content/pdf/10.1007/3-540-57530-8_8.pdf) · [DOI](https://doi.org/10.1007/3-540-57530-8_8)</span> <span class="tags"><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a><a class="tag sub" href="#/tags/qo-rules">qo-rules</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-lib">rules-lib</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **[Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)")**: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (preprint Aug 2026). Order-sensitive SQL semantics mechanized in Rocq (FormalSQL); an LLM proof agent proves equivalence or proposes a counter-database. <span class="links">[🔎 Summary](#/papers/ke2026logos) · [PDF](https://arxiv.org/pdf/2608.15709) · [arXiv](https://arxiv.org/abs/2608.15709) · [Code: FormalSQL](https://github.com/WindOctober/FormalSQL) · [Code: Logos](https://github.com/WindOctober/Logos)</span> <span class="tags"><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/itp-sql">itp-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a><a class="tag sub" href="#/tags/prove-itp">prove-itp</a></span>
+- **[A Foundation for Conventional and Temporal Query Optimization Addressing Duplicates and Ordering](#/papers/slivinskas2001foundation "A Foundation for Conventional and Temporal Query Optimization Addressing Duplicates and Ordering (2001)")** (IEEE TKDE 13(1) 2001). An algebra over lists, so it keeps duplicates and order, with temporal operations, and six kinds of equivalence: list, multiset and set, plus their snapshot forms (§3, §4). <span class="links">[🔎 Summary](#/papers/slivinskas2001foundation) · [DOI](https://doi.org/10.1109/69.908979)</span> <span class="tags"><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a><a class="tag sub" href="#/tags/qo-rules">qo-rules</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-lib">rules-lib</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+
+## Projects
+
+- **[FormalSQL](https://github.com/WindOctober/FormalSQL)**: implements [Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)")
+- **[Logos](https://github.com/WindOctober/Logos)**: implements [Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)")

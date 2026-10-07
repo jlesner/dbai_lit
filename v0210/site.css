@@ -1,0 +1,67 @@
+/* Additions to theme.css (the jlesner.github.io theme) for this site. */
+.page__content { font-size: 0.9em; }
+.page__content h1 { margin-top: 0; }
+.notice { background: #f3f6f6; border-left: 4px solid #52adc8; padding: 0.6em 0.9em; font-size: 0.85em; }
+.jump { font-size: 0.8em; line-height: 1.8; }
+input.filter { width: 100%; max-width: 28em; box-sizing: border-box; padding: 0.4em 0.6em; margin: 0.5em 0 1em; font-size: 0.9em;
+          border: 1px solid #bdc1c4; border-radius: 4px; }
+.page__content table { font-size: 0.8em; display: block; overflow-x: auto; }
+.page__content pre { font-size: 0.7em; }
+.page__content li { margin-bottom: 0.3em; }
+[hidden] { display: none !important; }
+a[id], h2 { scroll-margin-top: 90px; }
+@media (max-width: 64em) {
+  .greedy-nav .visible-links { display: flex; flex-wrap: wrap; }
+  .greedy-nav .visible-links li { flex: none; }
+  .masthead__menu-item a { padding: 0.25em 0.5em; margin: 0; }
+  .sidebar { display: none; }
+  .masthead { position: static; height: auto; }
+  body { padding-top: 0; }
+}
+.expand { font-size: 0.75em; margin: 0 0 0.3em; padding: 0.2em 0.6em; border: 1px solid #bdc1c4; border-radius: 4px; background: #f3f6f6; cursor: pointer; }
+.overlay { position: fixed; inset: 0; background: #fff; z-index: 100; overflow: auto; padding: 3em 2em 2em; }
+.overlay .close { position: fixed; top: 0.8em; right: 1em; font-size: 0.9em; padding: 0.3em 0.8em; cursor: pointer; }
+.overlay pre { font-size: 15px; white-space: pre; overflow: visible; }
+.links { font-size: 0.8em; }
+.links a { white-space: nowrap; }
+.tags { margin: 0.4em 0 1em; }
+li .tags { margin: 0 0 0 0.3em; display: inline; }
+a.tag { display: inline-block; background: #fff; color: #3a8fa8 !important; border: 1px solid #52adc8; border-radius: 3px; padding: 0 0.45em;
+        margin: 0.1em 0.3em 0.1em 0; font-size: 0.72em; line-height: 1.55; text-decoration: none; font-weight: 600; }
+a.tag:hover { background: #eef7fa; }
+.tag.big, h2 a.tag { font-size: 0.8em; vertical-align: middle; }
+span.tag.big { display: inline-block; background: #fff; color: #3a8fa8; border: 1px solid #52adc8; border-radius: 3px; padding: 0 0.45em; }
+.page__content li:has(.tags) { margin-bottom: 0.85em; }
+li .tags { white-space: normal; }
+/* Focus outline only for keyboard users, not on mouse clicks (the theme's orange box) */
+a:focus { outline: none; }
+a:focus-visible { outline: 2px solid #52adc8; outline-offset: 2px; }
+/* The active menu item: a teal pill, like a tag */
+.greedy-nav .visible-links a.active { background: #52adc8; color: #fff; border-radius: 4px; padding: 0.15em 0.7em; }
+.greedy-nav .visible-links a.active:before { display: none; }
+/* The top bar reads as a menu: tinted bar with a shadow, outlined items, hover pill, a divider after the name */
+.masthead { background: #f3f8fa; border-bottom: 1px solid #d9e6ea; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); }
+.greedy-nav { background: transparent; }
+.greedy-nav .visible-links a { border: 1px solid #9fd0df; border-radius: 4px; padding: 0.15em 0.7em; color: #3a8fa8; }
+.greedy-nav .visible-links a:before { display: none; }
+.greedy-nav .visible-links a:hover { background: #dff0f6; color: #2c7389; }
+.greedy-nav .visible-links a.active, .greedy-nav .visible-links a.active:hover { background: #52adc8; border-color: #52adc8; color: #fff; }
+.masthead__menu-item--lg { border-right: 1px solid #c9d6da; padding-right: 1em; margin-right: 0.4em; }
+.greedy-nav .visible-links a { margin: 0 0.3rem; }
+@media (max-width: 64em) {
+  .greedy-nav .visible-links { gap: 0.35em; padding: 0.4em 0; }
+  .greedy-nav .visible-links a { margin: 0; font-size: 0.85em; padding: 0.1em 0.55em; }
+  .masthead__menu-item--lg { border-right: none; padding-right: 0; margin-right: 0; }
+}
+/* Footer: the sections on the left, the author on the right (stacked on phones), the AI note below */
+.site-footer { font-size: 0.75em; }
+.site-footer__row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.4em 2em; }
+.site-footer__nav a + a:before { content: "·"; padding: 0 0.5em; color: #bdc1c4; display: inline-block; }
+.site-footer__nav a { color: #5a6066; }
+.site-footer__author { color: #5a6066; }
+.site-footer__author a { color: #3a8fa8; }
+.site-footer__note { margin: 0.5em 0 0; font-size: 0.92em; color: #7a8086; }
+@media (max-width: 40em) {
+  .site-footer__row { flex-direction: column; }
+  body { padding-bottom: 12em; }
+}

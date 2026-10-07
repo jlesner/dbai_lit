@@ -1,0 +1,33 @@
+# The self-improving SQL ↔ text ↔ verify loop
+
+> Improve a describer (SQL→English), a writer (English→SQL) and an equivalence checker together, using certified checker verdicts as the reward.
+
+<p class="tags"><a class="tag" href="#/tags/nl2sql">nl2sql</a><a class="tag" href="#/tags/promptopt">promptopt</a></p>
+
+## Challenge
+Take Q from a corpus. The describer writes English T, the writer turns T into Q′, and the checker asks whether Q ≡ Q′. A proof rewards the describer and the writer. A counterexample is a verified failure. *Unknown* marks a hard pair and becomes training data for the checker.
+
+```
+            ┌───────────── describe ─────────────┐
+            │                                    ▼
+   SQL query Q  (from a corpus)            English text T
+            ▲                                    │
+            │                                    │ write
+   checker: Q ≡ Q′ ?  ◄──────────────────  SQL query Q′
+     ├─ proof            → reward describer + writer
+     ├─ counterexample   → verified failure: blame the describer or the writer
+     └─ unknown          → hard pair: training data for the checker
+```
+
+## Why it matters
+- **SQL models trained without NL–SQL labels, on a reward one database can't fool.** The SQL-Zero authors call annotated pairs "a bottleneck for scaling to new databases" ([SQL-Zero](#/papers/pedrozo2026sqlzero "SQL-Zero: Self-Evolving Text-to-SQL (2026)") abstract), and the ReViSQL authors name annotation errors "the dominant bottleneck for RLVR" on [text-to-SQL](#/glossary/text-to-sql) ([ReViSQL](#/papers/zhu2026revisql "Human-Level Text-to-SQL via Reinforcement Learning on Verified Data, Without Pipeline Engineering (2026)") abstract). SQL-Zero trains with no annotated pairs, but its reward can be fooled (§ Closest prior work below) and its gains don't compound over iterations (§5, §6). The loop needs only a SQL corpus and counts only certified agreement. Whether that makes gains compound is open: that is our hypothesis, and testing it is the loop's first experiment. Filed results differ, under different meanings of "compound" ([The Verifier is the Curriculum](#/papers/zhou2026curriculum "The Verifier is the Curriculum: Precision Sets the Return on Search in Code Self-Distillation (2026)") §2): behind a precise gate, self-distillation rounds add up, and a lenient gate erases the gain at a fixed admitted count (abstract, §1); behind a free exact verifier, STaR rounds never accelerate and the base, the authors' own SFT adapter, overtakes the trained model at pass@64 ([Teacher-Free Self-Training Amplifies but…](#/papers/strozzi2026selftraining "Teacher-Free Self-Training Amplifies but Does Not Compound: A Pass@$K$ Crossover on a Free-Verifier Domain (2026)") abstract). Other causes are on record: SQL-Zero's generator loses diversity and its solver's [policy entropy](#/glossary/policy-entropy) falls turn by turn, and its authors leave open which of these or the training budget causes the plateau (§6); Yue et al. report that RLVR often narrows the [reasoning boundary](#/glossary/reasoning-boundary) ([Does Reinforcement Learning Really…](#/papers/yue2025rlreasoning "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model? (2025)") abstract); in self-improvement filtered by the model's own verification, Song et al. report the gain saturating within a handful of rounds and [pass@k](#/glossary/passk) falling at large k, a loss of diversity they tentatively blame on convergence on incorrect answers, which gold labels avoid and a stronger but imperfect verifier doesn't ([Mind the Gap](#/papers/song2024mindgap "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models (2025)") §5, App. B.3). So the experiment should hold diversity fixed and measure coverage against the base (pass@k at large k, distinct certified pairs), not only pass@1 (our reasoning).
+- **Pairs for other challenges.** In our reading, each round trip yields a realistic pair, often a nearly equivalent one: the *unknown* ones show where checkers fail ([SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)), and the certified ones are labels for [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) and [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing).
+- In code, the PSV authors report that removing solution verification from [self-play](#/glossary/self-play) cuts performance sharply ([PSV (Propose](#/papers/wilf2025psv "Propose, Solve, Verify: Self-Play Through Formal Verification (2025)") §6.3, Tab. 2). Their ablation drops the check rather than weakening it, and their proposer writes the spec it is checked against; here Q comes from a corpus.
+
+**Size of the gain:** enabler, measured as the number of query pairs certified by a proof or counterexample per corpus query, with no NL–SQL labels. The gain shows up in the three challenges above and as evidence for the method; on text-to-SQL accuracy alone we expect incremental gains, of the size SQL-Zero reports over its base (Tab. 1). This is our estimate, and it depends on the checker covering enough pairs ([SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)).
+
+## Verifiable signal
+The checker's *different* verdicts (counterexamples) and its proofs.
+
+**Closest prior work: SQL-Zero and SPFT-SQL** ("closest" among listed papers is our judgement). In SQL-Zero ([SQL-Zero](#/papers/pedrozo2026sqlzero "SQL-Zero: Self-Evolving Text-to-SQL (2026)")) a challenger writes SQL and then a question for it; a solver writes SQL from the question; [GRPO](#/glossary/grpo) trains both (§3). It has no equivalence checker: the solver is rewarded for matching the challenger's results on a single database (§3.2), so a query that agrees by accident counts as correct, and its admission gate doesn't check that the question asks for what the SQL computes. Its determinism filter: [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence). SPFT-SQL ([SPFT-SQL](#/papers/zhang2025spftsql "SPFT-SQL: Enhancing Large Language Model for Text-to-SQL Parsing by Self-Play Fine-Tuning (2025)"); SQL-Zero's "closest T2SQL self-play", §2) runs the round trip to synthesize data: SQL from templates of the training queries, a SQL-to-Text model writes the question, the text-to-SQL model writes SQL back, and pairs whose results match on the database train the SQL-to-Text model (§3.1). It too checks results on one database, and adds to annotated pairs (App. A.12); its ablation puts most of the gain in this stage, not the SPIN-style self-play that follows (§3.2, Tab. 2).
+
