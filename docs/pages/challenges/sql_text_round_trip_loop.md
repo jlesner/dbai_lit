@@ -13,7 +13,7 @@ Take Q from a corpus. The describer writes English T, the writer turns T into Q�
    SQL query Q  (from a corpus)            English text T
             ▲                                    │
             │                                    │ write
-   checker: Q ≡ Q′ ?  <──────────────────  SQL query Q′
+   checker: Q ≡ Q′ ?  ◄──────────────────  SQL query Q′
      ├─ proof            → reward describer + writer
      ├─ counterexample   → verified failure: blame the describer or the writer
      └─ unknown          → hard pair: training data for the checker

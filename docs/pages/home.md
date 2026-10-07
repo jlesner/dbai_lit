@@ -18,15 +18,15 @@ The same check serves both sides:
 
 ```
         proposes                  checks, without trusting the LLM
-  LLM ─────────────> SQL answer ──────────────────────────> checker
+  LLM ─────────────► SQL answer ──────────────────────────► checker
    ▲                                                           │
-   │                              certificate <────────────────┤
+   │                              certificate ◄────────────────┤
    │                       (proof or counterexample)           │ none
    │                                   │                       ▼
    │                                   ▼                   "unknown"
    │                           a trusted answer
    │                                   │
-   └──── benchmarks and rewards <──────┘
+   └──── benchmarks and rewards ◄──────┘
          for better LLM methods
 ```
 

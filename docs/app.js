@@ -32,6 +32,7 @@ async function render() {
     if (md.includes('<!-- filter -->')) addFilter(page === 'glossary');
   }
   fitDiagrams();
+  if (document.fonts) document.fonts.ready.then(fitDiagrams);  // again once the diagram font has loaded
   const target = anchor && document.getElementById(anchor);
   if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
   document.querySelectorAll('.masthead__menu-item a').forEach(a =>

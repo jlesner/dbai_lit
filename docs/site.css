@@ -7,6 +7,10 @@ input.filter { width: 100%; max-width: 28em; box-sizing: border-box; padding: 0.
           border: 1px solid #bdc1c4; border-radius: 4px; }
 .page__content table { font-size: 0.8em; display: block; overflow-x: auto; }
 .page__content pre { font-size: 0.7em; }
+/* Diagrams and code: our own monospace font (bundled, LICENSE-font.txt), so box-drawing lines keep one width per
+   character on every device; a Pixel's own monospace font drew ─ wider than the letters */
+@font-face { font-family: "Diagram Mono"; src: url("diagram-mono.woff2") format("woff2"); font-display: swap; }
+.page__content pre, .page__content pre code, .overlay pre, .overlay pre code { font-family: "Diagram Mono", Monaco, Consolas, monospace; }
 .page__content li { margin-bottom: 0.3em; }
 [hidden] { display: none !important; }
 a[id], h2 { scroll-margin-top: 90px; }
