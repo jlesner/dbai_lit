@@ -11,29 +11,65 @@ function parseHash() {
   return { page, anchor };
 }
 
-let current = null;
+// Big pages (the glossary, the papers list) render in pieces: the first piece, and every piece up to the
+// requested anchor, at once; the rest a piece per task, so a slow device shows the page without waiting for
+// the whole of it. Pieces split before a '<a id="' line, which every heading follows.
+const PIECE = 16000;  // characters of Markdown
+function pieces(md) {
+  const out = [];
+  for (const part of md.split(/\n(?=<a id=")/)) {
+    if (out.length && out[out.length - 1].length + part.length < PIECE) out[out.length - 1] += '\n' + part;
+    else out.push(part);
+  }
+  return out;
+}
+function add(md) {
+  const t = document.createElement('template');
+  t.innerHTML = marked.parse(md);
+  t.content.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
+  content.append(t.content);
+}
+
+let current = null, generation = 0, rendering = Promise.resolve();
 async function render() {
   const { page, anchor } = parseHash();
   if (page !== current) {
+    const mine = ++generation;
     const res = await fetch(`pages/${page}.md`);
+    if (mine !== generation) return;  // another page was asked for meanwhile
     if (!res.ok) {
       content.innerHTML = `<h1>Not found</h1><p>No page <code>${page}</code>. <a href="#/home">Home</a></p>`;
       current = null;
       return;
     }
     const md = await res.text();
-    content.innerHTML = marked.parse(md);
+    if (mine !== generation) return;
+    const parts = pieces(md);
+    const at = anchor ? md.indexOf(`<a id="${anchor}">`) : -1;
+    let i = 0, seen = 0;
+    content.innerHTML = '';
+    do { seen += parts[i].length + 1; add(parts[i++]); } while (i < parts.length && at >= seen);
     current = page;
     const h1 = content.querySelector('h1');
     const menu = document.querySelector(`.masthead__menu-item a[href="#/${page}"]`);
     const name = h1 ? h1.textContent : menu ? menu.textContent : '';
     document.title = (name && page !== 'home' ? name + ' · ' : '') + SITE;
-    content.querySelectorAll('a[href^="http"]').forEach(a => { a.target = '_blank'; a.rel = 'noopener'; });
-    if (md.includes('<!-- filter -->')) addFilter(page === 'glossary');
+    const box = md.includes('<!-- filter -->') ? addFilter(page === 'glossary') : null;
+    rendering = new Promise(done => {
+      const next = () => {
+        if (mine !== generation) return done();
+        if (i >= parts.length) { fitDiagrams(); return done(); }
+        add(parts[i++]);
+        if (box && box.value) box.dispatchEvent(new Event('input'));  // a filter typed early covers the new piece
+        setTimeout(next, 0);
+      };
+      next();
+    });
   }
   fitDiagrams();
   if (document.fonts) document.fonts.ready.then(fitDiagrams);  // again once the diagram font has loaded
-  const target = anchor && document.getElementById(anchor);
+  let target = anchor && document.getElementById(anchor);
+  if (anchor && !target) { await rendering; target = document.getElementById(anchor); }  // a later piece
   if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
   document.querySelectorAll('.masthead__menu-item a').forEach(a =>
     a.classList.toggle('active', a.getAttribute('href') === '#/' + page.split('/')[0]));
@@ -73,6 +109,7 @@ function addFilter(byHeading) {
       if (items.length) s.head.hidden = q && items.every(li => li.hidden);
     }
   });
+  return box;
 }
 
 // A wide diagram scales to fit the column (its font shrinks, down to 4 px); one that had to shrink gets an

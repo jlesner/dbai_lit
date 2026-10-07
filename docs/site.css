@@ -3,6 +3,9 @@
 .page__content h1 { margin-top: 0; }
 .notice { background: #f3f6f6; border-left: 4px solid #52adc8; padding: 0.6em 0.9em; font-size: 0.85em; }
 .jump { font-size: 0.8em; line-height: 1.8; }
+.topics { line-height: 1.5; margin-bottom: 1em; }
+.topics a { display: block; padding: 0.1em 0; }
+.topics a.sub { padding-left: 1.5em; }
 input.filter { width: 100%; max-width: 28em; box-sizing: border-box; padding: 0.4em 0.6em; margin: 0.5em 0 1em; font-size: 0.9em;
           border: 1px solid #bdc1c4; border-radius: 4px; }
 .page__content table { font-size: 0.8em; display: block; overflow-x: auto; }
