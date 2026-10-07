@@ -1,5 +1,3 @@
-Plain definitions of the field's terms, for readers who know LLMs and programming but not database theory, formal methods or RL.
-
 <!-- filter -->
 
 <p class="jump"><a href="#/glossary/letter-a">A</a> · <a href="#/glossary/letter-b">B</a> · <a href="#/glossary/letter-c">C</a> · <a href="#/glossary/letter-d">D</a> · <a href="#/glossary/letter-e">E</a> · <a href="#/glossary/letter-f">F</a> · <a href="#/glossary/letter-g">G</a> · <a href="#/glossary/letter-h">H</a> · <a href="#/glossary/letter-i">I</a> · <a href="#/glossary/letter-j">J</a> · <a href="#/glossary/letter-k">K</a> · <a href="#/glossary/letter-l">L</a> · <a href="#/glossary/letter-m">M</a> · <a href="#/glossary/letter-n">N</a> · <a href="#/glossary/letter-o">O</a> · <a href="#/glossary/letter-p">P</a> · <a href="#/glossary/letter-q">Q</a> · <a href="#/glossary/letter-r">R</a> · <a href="#/glossary/letter-s">S</a> · <a href="#/glossary/letter-t">T</a> · <a href="#/glossary/letter-u">U</a> · <a href="#/glossary/letter-v">V</a> · <a href="#/glossary/letter-w">W</a> · <a href="#/glossary/letter-z">Z</a></p>
