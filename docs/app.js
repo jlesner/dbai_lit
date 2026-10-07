@@ -1,6 +1,6 @@
 // Router for the site: #/<page>[:<anchor>] loads pages/<page>.md and renders it with marked.
 // #/glossary/<anchor> is the glossary page scrolled to one term. A page holding
-// "<!-- filter -->" gets a type-to-filter box. A wide diagram shrinks to fit the column; if it still doesn't fit, it gets an Expand button.
+// "<!-- filter -->" gets a type-to-filter box. A wide diagram scales to fit the column and gets an Expand button.
 const content = document.getElementById('content');
 const SITE = document.title;
 
@@ -74,20 +74,25 @@ function addFilter(byHeading) {
   });
 }
 
-// Wide diagrams shrink to fit the column, down to 9 px; one still too wide keeps scrolling and gets an
-// Expand button that shows it full screen (Esc or Close returns).
+// A wide diagram scales to fit the column (its font shrinks, down to 4 px); one that had to shrink gets an
+// Expand button that shows it full size (Esc or Close returns). Past 4 px it scrolls.
 function fitDiagrams() {
   content.querySelectorAll('pre').forEach(pre => {
     pre.style.fontSize = '';
-    let size = parseFloat(getComputedStyle(pre).fontSize);
-    while (pre.scrollWidth > pre.clientWidth && size > 9) { size -= 0.5; pre.style.fontSize = size + 'px'; }
+    const full = parseFloat(getComputedStyle(pre).fontSize);
+    let size = full;
+    if (pre.scrollWidth > pre.clientWidth) {  // monospace text scales with its font size, so one step, then trim
+      size = Math.max(4, full * pre.clientWidth / pre.scrollWidth);
+      pre.style.fontSize = size + 'px';
+      while (pre.scrollWidth > pre.clientWidth && size > 4) { size -= 0.25; pre.style.fontSize = size + 'px'; }
+    }
     const prev = pre.previousElementSibling, has = prev && prev.classList.contains('expand');
-    if (pre.scrollWidth > pre.clientWidth && !has) {
+    if (size < full && !has) {
       const b = document.createElement('button');
       b.className = 'expand'; b.textContent = '⤢ Expand diagram';
       b.onclick = () => openFull(pre);
       pre.before(b);
-    } else if (pre.scrollWidth <= pre.clientWidth && has) prev.remove();
+    } else if (size >= full && has) prev.remove();
   });
 }
 
