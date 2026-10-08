@@ -2,7 +2,7 @@
 
 **Research question:** how can we build systems whose answers we can trust from components, like LLMs, that guess and are confidently wrong?
 
-One approach is to pair LLMs with checks that don't trust them, and count only the answers that pass. SQL databases are an unusually good place to do that, and the benefit runs both ways.
+One approach is to pair LLMs with checks that don't trust them, and only use the LLM answers that pass. SQL databases are an unusually good place to do that, and the benefit runs both ways.
 
 ## SQL for LLMs
 

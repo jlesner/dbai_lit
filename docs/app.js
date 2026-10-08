@@ -75,17 +75,18 @@ async function render() {
     a.classList.toggle('active', a.getAttribute('href') === '#/' + page.split('/')[0]));
 }
 
-// Sections: each h2 or h3 with the elements after it, up to the next h2 or h3.
+// Sections: each h2, h3 or h4 with the elements after it, up to the next of those; level is the 2, 3 or 4.
 function sections() {
   const out = [];
   for (const el of content.children) {
-    if (el.tagName === 'H2' || el.tagName === 'H3') out.push({ head: el, body: [] });
+    if (/^H[234]$/.test(el.tagName)) out.push({ head: el, body: [], level: +el.tagName[1] });
     else if (out.length) out[out.length - 1].body.push(el);
   }
   return out;
 }
 
-// Lists: hide items that don't match, and headings whose items are all hidden.
+// Lists: hide items that don't match, headings whose items are all hidden, and headings without items of their
+// own (a group) whose deeper headings are all hidden.
 // Glossary: show only the entries whose term matches.
 function addFilter(byHeading) {
   const box = document.createElement('input');
@@ -104,9 +105,13 @@ function addFilter(byHeading) {
       return;
     }
     content.querySelectorAll('li').forEach(li => { li.hidden = q && !li.textContent.toLowerCase().includes(q); });
-    for (const s of sections()) {
-      const items = s.body.flatMap(el => [...el.querySelectorAll('li')]);
-      if (items.length) s.head.hidden = q && items.every(li => li.hidden);
+    const ss = sections();
+    for (let i = ss.length - 1; i >= 0; i--) {  // from the end, so a group's deeper headings are settled first
+      const s = ss[i], items = s.body.flatMap(el => [...el.querySelectorAll('li')]);
+      if (items.length) { s.head.hidden = q && items.every(li => li.hidden); continue; }
+      const kids = [];
+      for (let j = i + 1; j < ss.length && ss[j].level > s.level; j++) kids.push(ss[j]);
+      if (kids.length) s.head.hidden = q && kids.every(k => k.head.hidden);
     }
   });
   return box;
