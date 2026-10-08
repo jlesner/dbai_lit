@@ -1,0 +1,3 @@
+# Frozen design rounds and their index, written by dbai's build.py; only docs/ (the deployed site) is tracked.
+/v[0-9][0-9][0-9][0-9]/
+/index.html
