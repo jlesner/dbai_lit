@@ -1,6 +1,6 @@
 # Don't Judge Code by Its Cover: Exploring Biases in LLM Judges for Code Evaluation
 
-**Don't Judge Code by Its Cover** · EACL 2026 Findings (per the arXiv comment) · 2025
+**Don't Judge Code by Its Cover** · EACL 2026 Findings · 2025
 
 Read: [PDF](https://arxiv.org/pdf/2505.16222) · [arXiv](https://arxiv.org/abs/2505.16222)
 

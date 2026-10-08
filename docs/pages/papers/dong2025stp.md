@@ -1,6 +1,6 @@
 # STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving
 
-**STP** · preprint 2025
+**STP** · ICML 2025
 
 Read: [PDF](https://arxiv.org/pdf/2502.00212) · [arXiv](https://arxiv.org/abs/2502.00212)  
 Code: [STP](https://github.com/kfdong/STP)

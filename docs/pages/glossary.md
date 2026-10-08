@@ -1,6 +1,6 @@
 <!-- filter -->
 
-<p class="jump"><a href="#/glossary/letter-a">A</a> · <a href="#/glossary/letter-b">B</a> · <a href="#/glossary/letter-c">C</a> · <a href="#/glossary/letter-d">D</a> · <a href="#/glossary/letter-e">E</a> · <a href="#/glossary/letter-f">F</a> · <a href="#/glossary/letter-g">G</a> · <a href="#/glossary/letter-h">H</a> · <a href="#/glossary/letter-i">I</a> · <a href="#/glossary/letter-j">J</a> · <a href="#/glossary/letter-k">K</a> · <a href="#/glossary/letter-l">L</a> · <a href="#/glossary/letter-m">M</a> · <a href="#/glossary/letter-n">N</a> · <a href="#/glossary/letter-o">O</a> · <a href="#/glossary/letter-p">P</a> · <a href="#/glossary/letter-q">Q</a> · <a href="#/glossary/letter-r">R</a> · <a href="#/glossary/letter-s">S</a> · <a href="#/glossary/letter-t">T</a> · <a href="#/glossary/letter-u">U</a> · <a href="#/glossary/letter-v">V</a> · <a href="#/glossary/letter-w">W</a> · <a href="#/glossary/letter-z">Z</a></p>
+<p class="jump"><a href="#/glossary/letter-a">A</a> · <a href="#/glossary/letter-b">B</a> · <a href="#/glossary/letter-c">C</a> · <a href="#/glossary/letter-d">D</a> · <a href="#/glossary/letter-e">E</a> · <a href="#/glossary/letter-f">F</a> · <a href="#/glossary/letter-g">G</a> · <a href="#/glossary/letter-h">H</a> · <a href="#/glossary/letter-i">I</a> · <a href="#/glossary/letter-j">J</a> · <a href="#/glossary/letter-k">K</a> · <a href="#/glossary/letter-l">L</a> · <a href="#/glossary/letter-m">M</a> · <a href="#/glossary/letter-n">N</a> · <a href="#/glossary/letter-o">O</a> · <a href="#/glossary/letter-p">P</a> · <a href="#/glossary/letter-q">Q</a> · <a href="#/glossary/letter-r">R</a> · <a href="#/glossary/letter-s">S</a> · <a href="#/glossary/letter-t">T</a> · <a href="#/glossary/letter-u">U</a> · <a href="#/glossary/letter-v">V</a> · <a href="#/glossary/letter-w">W</a> · <a href="#/glossary/letter-y">Y</a> · <a href="#/glossary/letter-z">Z</a></p>
 
 <a id="3-sat"></a>
 
@@ -39,6 +39,17 @@ The tree a parser builds from program or query text: each node is a construct (a
 **Related:** [SQL dialect](#/glossary/sql-dialect), [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules)
 
 
+<a id="accessibility-tree"></a>
+
+## Accessibility tree
+
+A text version of a web page that browsers build for assistive tools such as screen readers: a tree of the page's elements, each with a role (button, link, text box) and a name, with the elements inside it as children (general definition). Web agents read it instead of the raw HTML or a screenshot. It can be long: [Are Online Skill and…](#/papers/hajimiri2026worthtokens "Are Online Skill and Memory Modules Always Worth Their Tokens? A Budget-Constrained Study of Web Agents (2026)") gives one baseline a rule that removes text repeated between a node and its direct children, "a common pattern in accessibility-trees that inflates context length without adding information" (§3.2).
+
+**Learn more:** [Are Online Skill and…](#/papers/hajimiri2026worthtokens "Are Online Skill and Memory Modules Always Worth Their Tokens? A Budget-Constrained Study of Web Agents (2026)") §2, §3.2 and §5.3, which use it without defining it (general definition).
+
+**Related:** [agent harness](#/glossary/agent-harness), [context compaction](#/glossary/context-compaction)
+
+
 <a id="active-learning"></a>
 
 ## Active learning
@@ -48,6 +59,19 @@ Choosing which unlabelled examples to have labelled, instead of labelling a rand
 **Learn more:** [Let's Verify Step by Step](#/papers/lightman2023verify "Let's Verify Step by Step (2023)") §1 and §4.2, which use the term without defining it (general definition).
 
 **Related:** [outcome and process rewards](#/glossary/outcome-and-process-rewards), [reward model](#/glossary/reward-model), [weak supervision](#/glossary/weak-supervision)
+
+
+<a id="adaptive-data-analysis"></a>
+
+## Adaptive data analysis
+
+Analysis in which each new question or hypothesis is chosen after seeing the results of earlier ones on the same data. The guarantees of a test planned in advance then no longer hold: "Reusing a holdout set adaptively multiple times can easily lead to overfitting to the holdout set itself" ([Generalization in Adaptive Data…](#/papers/dwork2015holdout "Generalization in Adaptive Data Analysis and Holdout Reuse (2015)") abstract). That paper formalizes the problem and gives ways to reuse a holdout set safely, one of them based on [differential privacy](#/glossary/differential-privacy) (§1.1).
+
+Example: [PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") calls a self-evolving agent's loop, which keeps changes that score higher on one small held-out set, "a textbook case of *adaptive data analysis*: reusing one validation set to steer a long, data-dependent sequence of choices" (§3).
+
+**Learn more:** [Generalization in Adaptive Data…](#/papers/dwork2015holdout "Generalization in Adaptive Data Analysis and Holdout Reuse (2015)") abstract and §1.1, the paper that names the problem; [PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §3.
+
+**Related:** [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse), [multiple testing](#/glossary/multiple-testing), [empirical risk minimization (ERM)](#/glossary/empirical-risk-minimization-erm), [pre-registration](#/glossary/pre-registration)
 
 
 <a id="agent-harness"></a>
@@ -80,7 +104,7 @@ A score for choosing among statistical models fitted to the same data: it reward
 
 **Learn more:** [How Fast Do Agents Rot?](#/papers/mittal2026rot "How Fast Do Agents Rot? An Empirical Study of Long-Horizon Degradation in LLM Agents for Production Decision-Making (2026)") ([PDF p. 5](https://arxiv.org/pdf/2609.01660#page=5)) §3.4 (PDF p. 5), which uses it to choose among geometric, threshold and linear decay of success with horizon, without defining it (general definition). The criterion's original paper is not listed here.
 
-**Related:** [Wilson score interval](#/glossary/wilson-score-interval)
+**Related:** [Wilson score interval](#/glossary/wilson-score-interval), [Bayesian information criterion (BIC)](#/glossary/bayesian-information-criterion-bic)
 
 
 <a id="algebraic-datatype"></a>
@@ -92,6 +116,17 @@ A type defined by listing the forms its values can take, each made by a construc
 **Learn more:** [Verifying SQL Queries using…](#/papers/mohamed2024cvc5sql "Verifying SQL Queries using Theories of Tables and Relations (2024)") ([PDF p. 14](https://arxiv.org/pdf/2405.03057#page=14)) §4 (PDF p. 14) and abstract, which builds its theory of nullable sorts as "an extension of the theory of algebraic datatypes"; it uses the term without defining it (general definition).
 
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [NULL and three-valued logic](#/glossary/null-and-three-valued-logic)
+
+
+<a id="algorithmic-monoculture"></a>
+
+## Algorithmic monoculture
+
+Many decision-makers relying on the same model, or on models that make the same mistakes, so that their errors are correlated instead of averaging out. [Correlated Errors in Large Language Models](#/papers/kim2025correlated "Correlated Errors in Large Language Models (2025)") uses the term for "when many decision-makers use the same model" and studies one consequence, systemic exclusion, "when one worker is rejected from all jobs because they all use the same algorithm" (§2); it measures how correlated the errors of over 350 LLMs are (abstract).
+
+**Learn more:** [Correlated Errors in Large Language Models](#/papers/kim2025correlated "Correlated Errors in Large Language Models (2025)") §2, citing Kleinberg and Raghavan (2021) and others, not listed here.
+
+**Related:** [common-mode failure](#/glossary/common-mode-failure), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
 
 
 <a id="approximate-nearest-neighbour-search-anns"></a>
@@ -151,6 +186,17 @@ Computing the gradient of a program's output with respect to all its parameters 
 **Related:** [textual gradient](#/glossary/textual-gradient), [black-box optimization](#/glossary/black-box-optimization)
 
 
+<a id="average-treatment-effect-ate"></a>
+
+## Average treatment effect (ATE)
+
+The average change in an outcome caused by a treatment, compared with no treatment, over a population (general definition). When the treatment is assigned at random, the difference between the average outcomes with and without it is an unbiased estimate. [Not All Skills Help](#/papers/wang2026assay "Not All Skills Help: Measuring and Repairing Agent Knowledge (2026)") treats including one skill in an agent's context as the treatment: with skills included independently at random, an entry of its matrix estimates "the average treatment effect (ATE) of including skill s_j on task d_i, marginalised over the distribution of co-occurring skills" (§2.1).
+
+**Learn more:** [Not All Skills Help](#/papers/wang2026assay "Not All Skills Help: Measuring and Repairing Agent Knowledge (2026)") §2.1, which uses the term without a general definition (general definition).
+
+**Related:** [agent skill](#/glossary/agent-skill), [permutation test](#/glossary/permutation-test)
+
+
 <a id="letter-b"></a>
 
 <a id="back-translation"></a>
@@ -162,6 +208,19 @@ Translating a text back into the language it came from. In machine translation i
 **Learn more:** [Round-Trip Correctness (RTC)](#/papers/allamanis2024roundtrip "Unsupervised Evaluation of Code LLMs with Round-Trip Correctness (2024)") §5, which names it without describing it (general definition); [GBV-SQL](#/papers/chen2025gbvsql "GBV-SQL: Guided Generation and SQL2Text Back-Translation Validation for Multi-Agent Text2SQL (2025)") §3.4.
 
 **Related:** [text-to-SQL](#/glossary/text-to-sql), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
+
+
+<a id="backward-and-forward-transfer-bwt-and-fwt"></a>
+
+## Backward and forward transfer (BWT and FWT)
+
+Two scores for a model trained on a sequence of stages (continual learning). Backward transfer averages how much accuracy on each earlier stage changed between just after training on it and the end; negative backward transfer is [catastrophic forgetting](#/glossary/catastrophic-forgetting). Forward transfer averages how much the stages trained so far help on the next stage, before it is trained on, compared with the base model.
+
+Example: with R_{i,k} the accuracy on stage k after training through stage i (R_{0,k} for the base model) and K stages, [When Does Continual Learning Require Learning](#/papers/harrington2026continual "When Does Continual Learning Require Learning (2026)") defines BWT = (1/(K−1)) Σ_{k=1}^{K−1} (R_{K,k} − R_{k,k}) and FWT = (1/(K−1)) Σ_{k=2}^{K} (R_{k−1,k} − R_{0,k}) (§3.1).
+
+**Learn more:** [When Does Continual Learning Require Learning](#/papers/harrington2026continual "When Does Continual Learning Require Learning (2026)") §3.1, which takes BWT from Lopez-Paz and Ranzato (2017), not listed here; [GRACE](#/papers/hsu2026grace "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift (2026)") §5.3, which measures backward transfer of an agent's instructions across shifts in its tasks.
+
+**Related:** [catastrophic forgetting](#/glossary/catastrophic-forgetting), [self-distillation](#/glossary/self-distillation)
 
 
 <a id="bag-semantics"></a>
@@ -188,6 +247,43 @@ Example ([Optimization of real conjunctive queries](#/papers/chaudhuri1993real "
 **Learn more:** [Optimization of real conjunctive queries](#/papers/chaudhuri1993real "Optimization of real conjunctive queries (1993)") §7 (PDF p. 9), which studies it as queries over "set-valued databases"; [Equivalence of Queries Combining…](#/papers/cohen2006setbag "Equivalence of Queries Combining Set and Bag-Set Semantics (2006)") §2.2 (PDF p. 4). The papers agree on the meaning but not the name: [Equivalence of Queries Combining…](#/papers/cohen2006setbag "Equivalence of Queries Combining Set and Bag-Set Semantics (2006)") marks it with the subscript M (multiset) and [Few Rows Tell Them Apart](#/papers/cohen2026fewrows "Few Rows Tell Them Apart: Equivalence of Queries Mixing Set and Bag Semantics (2026)") §2 calls such queries "multiset queries". [UDP](#/papers/chu2018udp "Axiomatic foundations and algorithms for deciding semantic equivalences of SQL queries (2018)") ([PDF p. 11](https://arxiv.org/pdf/1802.02229#page=11)) §6.2 (PDF p. 11) uses "mixed bag-set semantic queries" for queries that mix set and bag operations, which is closer to [combined semantics](#/glossary/combined-semantics).
 
 **Related:** [bag semantics](#/glossary/bag-semantics), [set semantics](#/glossary/set-semantics), [combined semantics](#/glossary/combined-semantics)
+
+
+<a id="bayes-rule-prior-and-posterior"></a>
+
+## Bayes' rule, prior and posterior
+
+The prior is a probability distribution over an unknown quantity before seeing the data. Bayes' rule combines it with a model of how likely the data are for each value of the quantity (the likelihood) to give the posterior, the distribution after seeing the data: the posterior is proportional to likelihood × prior. The posterior mean, the posterior's average, is a common single estimate (general definition).
+
+Example: [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") corrects the [winner's curse](#/glossary/winners-curse-optimizers-curse) this way: put a prior on each option's true value, model the estimates' accuracy, apply Bayes' rule, and rank the options by their posterior means (§3, PDF pp. 5–6).
+
+**Learn more:** [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") §3 (PDF pp. 5–6); [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3, which computes posteriors for a model's accuracy on a benchmark.
+
+**Related:** [Bayesian credible interval](#/glossary/bayesian-credible-interval), [Beta distribution](#/glossary/beta-distribution), [shrinkage](#/glossary/shrinkage), [hierarchical model](#/glossary/hierarchical-model), [latent variable](#/glossary/latent-variable)
+
+
+<a id="bayesian-credible-interval"></a>
+
+## Bayesian credible interval
+
+An interval that holds an unknown quantity with a stated probability under its posterior distribution, e.g. a 95% credible interval for a model's accuracy. It is a statement about the quantity given the data, while a [confidence interval](#/glossary/confidence-interval-and-coverage) is a statement about a procedure; [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") calls the two "fundamentally different in their interpretation" (§3). Credible intervals are not unique (§3): a common choice cuts off equal probability in each tail, and the highest posterior density interval (HDI) is the narrowest interval with the stated probability (general definition).
+
+Example: for an accuracy measured as S correct answers out of N, [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") uses the Beta-Bernoulli posterior Beta(1 + S, 1 + N − S) and reports that its credible interval and the [Wilson score interval](#/glossary/wilson-score-interval) reach their nominal coverage for small N, where intervals based on the [central limit theorem](#/glossary/central-limit-theorem-clt) do not (§3, §3.1).
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3 and §3.1.
+
+**Related:** [Bayes' rule, prior and posterior](#/glossary/bayes-rule-prior-and-posterior), [Beta distribution](#/glossary/beta-distribution), [confidence interval and coverage](#/glossary/confidence-interval-and-coverage), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval)
+
+
+<a id="bayesian-information-criterion-bic"></a>
+
+## Bayesian information criterion (BIC)
+
+A score for choosing among statistical models fitted to the same data, like the [AIC](#/glossary/akaike-information-criterion-aic): lower is better, and it "rewards a better fit and charges for every extra parameter" ([Which Decisions Low-Bit Quantization…](#/papers/wu2026lowbit "Which Decisions Low-Bit Quantization Breaks, and How to Predict Them (2026)") §3). Its charge per parameter grows with the logarithm of the number of data points, so on large data it favours simpler models more than the AIC does (general definition). [Which Decisions Low-Bit Quantization…](#/papers/wu2026lowbit "Which Decisions Low-Bit Quantization Breaks, and How to Predict Them (2026)") treats a BIC difference above 10 as "conventionally decisive" (App. A.5).
+
+**Learn more:** [Which Decisions Low-Bit Quantization…](#/papers/wu2026lowbit "Which Decisions Low-Bit Quantization Breaks, and How to Predict Them (2026)") §3 and App. A.5. Schwarz's original paper is not listed here.
+
+**Related:** [Akaike information criterion (AIC)](#/glossary/akaike-information-criterion-aic), [minimum description length (MDL)](#/glossary/minimum-description-length-mdl)
 
 
 <a id="bayesian-optimization"></a>
@@ -253,6 +349,30 @@ Gotcha: it rewards whatever the scorer rates highly, flaws included. Snell et al
 **Related:** [self-consistency](#/glossary/self-consistency-majority-voting), [pass@k](#/glossary/passk), [beam search](#/glossary/beam-search), [rejection sampling](#/glossary/rejection-sampling), [reward hacking](#/glossary/reward-hacking), [outcome and process rewards](#/glossary/outcome-and-process-rewards)
 
 
+<a id="beta-distribution"></a>
+
+## Beta distribution
+
+A probability distribution over a number between 0 and 1, such as an unknown success rate, with two shape parameters a and b; Beta(1, 1) is uniform (general definition). It pairs with yes/no outcomes: starting from the prior Beta(a, b) and observing S successes in N trials gives the posterior Beta(a + S, b + N − S), the Beta-Bernoulli model, which [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") uses with a = b = 1 (§3.1).
+
+Example: [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") models the expected accuracy of a model with mean accuracy p on each question as drawn from Beta(p, 1 − p), and reports that this fits the observed spread of question difficulty and predicts a paired prediction variance of p(1 − p) (§4.2.1, App. B).
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.1; [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §4.2.1 and App. B.
+
+**Related:** [Bayes' rule, prior and posterior](#/glossary/bayes-rule-prior-and-posterior), [Bayesian credible interval](#/glossary/bayesian-credible-interval), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval)
+
+
+<a id="bi-level-optimization"></a>
+
+## Bi-level optimization
+
+An optimization problem with another nested inside it: each choice in the outer problem is scored by solving the inner problem with that choice fixed (general definition). Tuning a learning procedure's settings (outer) by the results of running it (inner) is the classic case. [Recursive self-improvement of AI…](#/papers/srikanth2026aide2 "Recursive self-improvement of AI research agents (2026)") frames recursive self-improvement this way: an inner loop of agents optimizing code on tasks at a fixed budget, and an outer loop that improves the inner-loop agent's ability to optimize (§2).
+
+**Learn more:** [Recursive self-improvement of AI…](#/papers/srikanth2026aide2 "Recursive self-improvement of AI research agents (2026)") §2 (general definition).
+
+**Related:** [hyperparameter optimization](#/glossary/hyperparameter-optimization), [agent harness](#/glossary/agent-harness), [meta-prompt](#/glossary/meta-prompt)
+
+
 <a id="bijection"></a>
 
 ## Bijection
@@ -262,6 +382,17 @@ A one-to-one pairing between two collections that uses every element of each exa
 **Learn more:** [SPES](#/papers/zhou2020spes "SPES: A Symbolic Approach to Proving Query Equivalence Under Bag Semantics (2022)") ([PDF p. 3](https://arxiv.org/pdf/2004.00481#page=3)) §3.1 (PDF p. 3).
 
 **Related:** [bag semantics](#/glossary/bag-semantics), [query equivalence](#/glossary/query-equivalence)
+
+
+<a id="binomial-test"></a>
+
+## Binomial test
+
+An exact test of whether a success rate exceeds (or differs from) a fixed value q: if each of m independent trials succeeds with probability q, the number of successes follows a binomial distribution, and the p-value is the chance of a count at least as extreme as the one observed (general definition). The [sign test](#/glossary/sign-test) is the case q = ½ applied to wins and losses. [SAGE (Statistical Acceptance Gate)](#/papers/wang2026sage "SAGE: A Statistical Acceptance Gate for Self-Evolving Agents (2026)") gates a skill edit with "a one-sided exact conditional binomial test on the discordant pairs" (the questions where the old and the new skill disagree), which at its boundary setting "reduces to the one-sided exact McNemar test" (§3.3).
+
+**Learn more:** [SAGE (Statistical Acceptance Gate)](#/papers/wang2026sage "SAGE: A Statistical Acceptance Gate for Self-Evolving Agents (2026)") §3.3 (general definition).
+
+**Related:** [sign test](#/glossary/sign-test), [McNemar's exact test](#/glossary/mcnemars-exact-test), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval), [Fisher's exact test](#/glossary/fishers-exact-test)
 
 
 <a id="bisimulation"></a>
@@ -317,6 +448,32 @@ A standard notation for a language's grammar: rules that expand non-terminal sym
 **Related:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast), [concrete syntax tree (CST)](#/glossary/concrete-syntax-tree-cst), [SQL dialect](#/glossary/sql-dialect), [parser error recovery](#/glossary/parser-error-recovery)
 
 
+<a id="bonferroni-correction"></a>
+
+## Bonferroni correction
+
+The simplest correction for [multiple testing](#/glossary/multiple-testing): with m tests, test each at level α/m. The chance of at least one false alarm among them (the familywise error rate) then stays at most α, whatever the dependence between the tests, at the price of power when the tests are many or correlated (general definition). Holm–Bonferroni is a step-by-step version that is never less powerful.
+
+Example: [The Regression Tax](#/papers/tank2026regressiontax "The Regression Tax: Decomposing Why Skills Help -- and Hurt -- LLM Agents (2026)") runs eighteen simultaneous comparisons and applies a Bonferroni correction (α/18 = 0.0028) (§4.3); [How Sensitive Are LLM…](#/papers/yang2026leaderboard "How Sensitive Are LLM Leaderboard Claims to Hidden Model Selection? (2026)") calls it "valid under any dependence" but conservative (§1).
+
+**Learn more:** [The Regression Tax](#/papers/tank2026regressiontax "The Regression Tax: Decomposing Why Skills Help -- and Hurt -- LLM Agents (2026)") §4.3; [How Sensitive Are LLM…](#/papers/yang2026leaderboard "How Sensitive Are LLM Leaderboard Claims to Hidden Model Selection? (2026)") §1. Neither defines it (general definition).
+
+**Related:** [multiple testing](#/glossary/multiple-testing), [false discovery rate (FDR)](#/glossary/false-discovery-rate-fdr), [union bound](#/glossary/union-bound), [statistical power](#/glossary/statistical-power)
+
+
+<a id="boolean-minimization"></a>
+
+## Boolean minimization
+
+Finding a smallest Boolean formula with a given truth table. Rows marked "don't-care" may take either output, which gives the minimizer room to find a shorter formula. It is hard: [Qr-Hint](#/papers/hu2024qrhint "Qr-Hint: Actionable Hints Towards Correcting Wrong SQL Queries (2024)") cites it as lying on the second level of the polynomial hierarchy (Σ₂ᵖ) (§1).
+
+Example: Qr-Hint uses it to suggest a smallest fix to a wrong WHERE clause; because its atomic predicates are not independent, it marks the combinations of predicate values that cannot occur (tested with Z3) as don't-cares, and also uses don't-cares to encode a bound from the target query (§5.2).
+
+**Learn more:** [Qr-Hint](#/papers/hu2024qrhint "Qr-Hint: Actionable Hints Towards Correcting Wrong SQL Queries (2024)") §1 and §5.2. The complexity result it cites (Buchfuhrer and Umans) is not listed here.
+
+**Related:** [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy), [disjunctive normal form (DNF)](#/glossary/disjunctive-normal-form-dnf), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers)
+
+
 <a id="boolean-query"></a>
 
 ## Boolean query
@@ -342,7 +499,7 @@ Not to be confused with DSPy's BootstrapFewShot, a baseline in [ESPO](#/papers/l
 
 **Learn more:** [Sample More, Reflect Less](#/papers/mirzaei2026samplemore "Sample More, Reflect Less: Self-Refine and Reflexion Lose to Repeated Sampling at Equal Token Cost, from 1.5B to 7B (2026)") ([PDF p. 8](https://arxiv.org/pdf/2607.28576#page=8)) §4.5 (PDF p. 8); [ESPO](#/papers/liu2026espo "ESPO: Error-Structured Prompt Optimization via Diagnose, Diversify, and Stabilize (2026)") ([PDF p. 4](https://arxiv.org/pdf/2609.04197#page=4)) §3.4 (PDF p. 4). Efron's 1979 paper (cited by [Sample More, Reflect Less](#/papers/mirzaei2026samplemore "Sample More, Reflect Less: Self-Refine and Reflexion Lose to Repeated Sampling at Equal Token Cost, from 1.5B to 7B (2026)")) and Efron and Tibshirani's 1993 textbook (cited by [ESPO](#/papers/liu2026espo "ESPO: Error-Structured Prompt Optimization via Diagnose, Diversify, and Stabilize (2026)")) are not listed here.
 
-**Related:** [multiple testing](#/glossary/multiple-testing), [McNemar's exact test](#/glossary/mcnemars-exact-test)
+**Related:** [multiple testing](#/glossary/multiple-testing), [McNemar's exact test](#/glossary/mcnemars-exact-test), [clustered standard errors and cluster bootstrap](#/glossary/clustered-standard-errors-and-cluster-bootstrap), [permutation test](#/glossary/permutation-test)
 
 
 <a id="bounded-verification"></a>
@@ -358,6 +515,17 @@ A (PDF p. 13), for bounded model checking.
 **Related:** [counterexample database](#/glossary/counterexample-database), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [soundness and completeness](#/glossary/soundness-and-completeness), [small-scope hypothesis](#/glossary/small-scope-hypothesis), [k-induction](#/glossary/k-induction), [abstract interpretation](#/glossary/abstract-interpretation)
 
 
+<a id="bradley-terry-model"></a>
+
+## Bradley-Terry model
+
+A model that turns pairwise judgments ("A beats B") into one score per item: it assumes that A beats B with probability s_A / (s_A + s_B), equivalently a logistic function of the difference of their log-scores, and fits the scores to the observed wins (general definition). Reward models for RLHF are commonly trained under it, and [Elo ratings](#/glossary/elo-rating) rest on the same idea. [Feedback Loops With Language…](#/papers/pan2024feedbackloops "Feedback Loops With Language Models Drive In-Context Reward Hacking (2024)") converts an LLM judge's pairwise comparisons into a ranking with it (App. A, App. B).
+
+**Learn more:** [Feedback Loops With Language…](#/papers/pan2024feedbackloops "Feedback Loops With Language Models Drive In-Context Reward Hacking (2024)") App. A and App. B; [SPFT-SQL](#/papers/zhang2025spftsql "SPFT-SQL: Enhancing Large Language Model for Text-to-SQL Parsing by Self-Play Fine-Tuning (2025)") §3.2, which notes that DPO's implicit reward is "based on the Bradley-Terry model". Neither defines it (general definition).
+
+**Related:** [Elo rating](#/glossary/elo-rating), [reward model](#/glossary/reward-model), [direct preference optimization (DPO)](#/glossary/direct-preference-optimization-dpo), [reinforcement learning from human feedback (RLHF)](#/glossary/reinforcement-learning-from-human-feedback-rlhf)
+
+
 <a id="branch-and-path-coverage"></a>
 
 ## Branch and path coverage
@@ -370,7 +538,7 @@ For SQL, ParSEval defines a query's paths on its [logical plan](#/glossary/logic
 
 **Learn more:** [EvalPlus](#/papers/liu2023evalplus "Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation (2023)") ([PDF p. 5](https://arxiv.org/pdf/2305.01210#page=5)) §2.2 (PDF p. 5); [ParSEval](#/papers/chen2025parseval "ParSEval: Plan-aware Test Database Generation for SQL Equivalence Evaluation (2025)") §1 (PDF p. 2), §2.2 (PDF p. 3) and Tab. 2 (PDF p. 5).
 
-**Related:** [mutation testing](#/glossary/mutation-testing), [fuzzing](#/glossary/fuzzing), [symbolic execution](#/glossary/symbolic-execution), [logical plan](#/glossary/logical-plan)
+**Related:** [mutation testing](#/glossary/mutation-testing), [fuzzing](#/glossary/fuzzing), [symbolic execution](#/glossary/symbolic-execution), [logical plan](#/glossary/logical-plan), [line and statement coverage](#/glossary/line-and-statement-coverage)
 
 
 <a id="branch-distance"></a>
@@ -385,6 +553,17 @@ In search-based test generation, a number that says how far a condition in the c
 
 
 <a id="letter-c"></a>
+
+<a id="calibration"></a>
+
+## Calibration
+
+A score is calibrated when it means what it says as a probability: among the cases scored p, a fraction p turn out correct (general definition). Calibration alone is not enough: a score that gives every case the same middling value can be calibrated and useless. [When to Trust the Cheap Check](#/papers/kiyani2026weakstrong "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning (2026)") names calibration and sharpness as the two properties that govern how useful a cheap verifier is (§1), and assumes a weak verifier calibrated against a strong one: among responses it scores p, a fraction p pass the strong verifier (Assumption 4.1).
+
+**Learn more:** [When to Trust the Cheap Check](#/papers/kiyani2026weakstrong "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning (2026)") §1 and Assumption 4.1.
+
+**Related:** [selective prediction](#/glossary/selective-prediction), [AUROC](#/glossary/auroc), [reward model](#/glossary/reward-model), [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control)
+
 
 <a id="canonical-database"></a>
 
@@ -419,6 +598,17 @@ When a model, or an optimized prompt or harness, is updated on new tasks and los
 **Learn more:** [Do Agent Optimizers Compound?](#/papers/wang2026compound "Do Agent Optimizers Compound? A Continual-Learning Evaluation on Terminal-Bench 2.0 (2026)") §2.2, which defines it as "the tendency of a model updated on new data to lose performance on previously learned tasks" and studies the same question for harness optimizers; [GRACE](#/papers/hsu2026grace "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift (2026)") §5.1 measures it as backward transfer.
 
 **Related:** [agent harness](#/glossary/agent-harness)
+
+
+<a id="central-limit-theorem-clt"></a>
+
+## Central limit theorem (CLT)
+
+The result that the average of many independent random values with finite variance is approximately normally distributed, whatever the values' own distribution, with a spread that shrinks like 1/√N ([Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §2). It justifies the common "mean ± 1.96 [standard errors](#/glossary/standard-error)" 95% interval. [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") argues that intervals based on it are appropriate for benchmarks of thousands of examples but "fail to provide adequate uncertainty estimates" for small, specialized ones; its title is "Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints" (abstract).
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") abstract and §2; [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §3.1, which applies it to turn z-scores into p-values when N > 100.
+
+**Related:** [standard error](#/glossary/standard-error), [z-score](#/glossary/z-score), [Wald interval](#/glossary/wald-interval), [delta method](#/glossary/delta-method), [confidence interval and coverage](#/glossary/confidence-interval-and-coverage)
 
 
 <a id="certificate"></a>
@@ -463,6 +653,52 @@ Example: Blocksworld, where the actions pick up, put down and stack blocks to re
 **Learn more:** [On the Self-Verification Limitations…](#/papers/stechly2024selfverification "On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks (2024)") ([PDF p. 5](https://arxiv.org/pdf/2402.08115#page=5)) §3.3 (PDF p. 5), which describes STRIPS planning and the three parts of a PDDL specification; its App. A.5.1 checks plans with the validator VAL.
 
 **Related:** [soundness and completeness](#/glossary/soundness-and-completeness)
+
+
+<a id="clever-hans-effect"></a>
+
+## Clever Hans effect
+
+An apparent ability that comes from cues the questioner unknowingly supplies, named after a horse that seemed to do arithmetic but was reading its trainer's reactions (general definition). [LLM-Modulo ("LLMs Can't Plan](#/papers/kambhampati2024llmmodulo "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024)") warns that iterative prompting, where a human keeps correcting an LLM's plan until it is right, is "notorious for" it, since the corrections may carry the answer (§3).
+
+**Learn more:** [LLM-Modulo ("LLMs Can't Plan](#/papers/kambhampati2024llmmodulo "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024)") §3, which cites Wikipedia for it (general definition).
+
+**Related:** [self-correction](#/glossary/self-correction), [LLM-as-a-judge](#/glossary/llm-as-a-judge), [data contamination](#/glossary/data-contamination)
+
+
+<a id="clopper-pearson-interval"></a>
+
+## Clopper-Pearson interval
+
+An exact confidence interval for a success rate from k successes in n trials. It is built from binomial tail probabilities instead of a normal approximation, so it covers the true rate at least as often as its nominal level for every n, at the price of being wider than needed (general definition). A one-sided version gives an upper bound on a failure rate, as in [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") (§3) and [When Does Combining Language…](#/papers/chen2026cofailure "When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models (2026)") (abstract, §1).
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") App. A.3, which describes it, citing Clopper and Pearson (1934), not listed here; [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §3 and App. A.2.
+
+**Related:** [Wilson score interval](#/glossary/wilson-score-interval), [Wald interval](#/glossary/wald-interval), [binomial test](#/glossary/binomial-test), [confidence interval and coverage](#/glossary/confidence-interval-and-coverage), [Beta distribution](#/glossary/beta-distribution)
+
+
+<a id="closed-book-question-answering"></a>
+
+## Closed-book question answering
+
+Answering questions only from what the model learned in training, with no documents retrieved or supplied (general definition); the opposite of open-book or [retrieval-augmented](#/glossary/retrieval-augmented-generation-rag) answering. [Large Language Models Cannot…](#/papers/huang2023selfcorrect "Large Language Models Cannot Self-Correct Reasoning Yet (2024)") tests self-correction on HotpotQA "in a closed-book setting" (§3.1), and [Self-Consistency](#/papers/wang2022selfconsistency "Self-Consistency Improves Chain of Thought Reasoning in Language Models (2023)") groups BoolQ and HotpotQA under "Closed-Book Question Answering" (§3.3).
+
+**Learn more:** [Large Language Models Cannot…](#/papers/huang2023selfcorrect "Large Language Models Cannot Self-Correct Reasoning Yet (2024)") §3.1; [Self-Consistency](#/papers/wang2022selfconsistency "Self-Consistency Improves Chain of Thought Reasoning in Language Models (2023)") §3.3. Neither defines it (general definition).
+
+**Related:** [multi-hop question answering](#/glossary/multi-hop-question-answering), [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag), [self-correction](#/glossary/self-correction)
+
+
+<a id="clustered-standard-errors-and-cluster-bootstrap"></a>
+
+## Clustered standard errors and cluster bootstrap
+
+When test items come in groups whose results are correlated (several questions about one passage, several runs in one environment), treating them as independent understates the uncertainty. Clustered standard errors compute the variance from per-cluster sums instead of per-item values, and a cluster bootstrap resamples whole clusters, so that correlated items stay together (general definitions).
+
+Example: [APIFlow-Bench](#/papers/wan2026apiflowbench "APIFlow-Bench: Measuring Whether Agents Survive Long, Dependent API Workflows (2026)") reports "90% cluster bootstraps over worlds (2,000 resamples), keeping each world's epochs together" (§6). [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") discusses clustered standard errors (§3.2) and reports that with clustered questions and little data neither simple nor clustered CLT-based intervals reach the intended coverage (§3).
+
+**Learn more:** [APIFlow-Bench](#/papers/wan2026apiflowbench "APIFlow-Bench: Measuring Whether Agents Survive Long, Dependent API Workflows (2026)") §6; [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.2, which cites Miller (2024) and Abadie et al. (2023) for clustered standard errors, neither on this site.
+
+**Related:** [bootstrap resampling](#/glossary/bootstrap-resampling), [standard error](#/glossary/standard-error), [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt)
 
 
 <a id="co-np"></a>
@@ -543,6 +779,17 @@ So QUITE's "By default, PostgreSQL materializes CTEs" ([QUITE](#/papers/song2025
 **Related:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules), [correlated subquery](#/glossary/correlated-subquery), [query hint](#/glossary/query-hint)
 
 
+<a id="common-mode-failure"></a>
+
+## Common-mode failure
+
+A failure that hits several supposedly independent checks at once because they share a cause, so that adding more of them adds no independent evidence (general definition, from reliability engineering). [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") §I: two interfaces may be backed by the same replica, cache or extraction job, and "a stale upstream can then make different verifier models agree on the same wrong state. More votes do not repair a common-mode data failure."
+
+**Learn more:** [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") §I.
+
+**Related:** [algorithmic monoculture](#/glossary/algorithmic-monoculture), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [test oracle](#/glossary/test-oracle)
+
+
 <a id="compute-matched-comparison"></a>
 
 ## Compute-matched comparison
@@ -552,6 +799,19 @@ Comparing two methods at equal compute or cost rather than one call each. A meth
 **Learn more:** [compute-optimal test-time scaling](#/papers/snell2024scaling "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters (2024)") §1, a "FLOPs-matched comparison" of a smaller model with extra test-time compute against a larger model; [Sample More, Reflect Less](#/papers/mirzaei2026samplemore "Sample More, Reflect Less: Self-Refine and Reflexion Lose to Repeated Sampling at Equal Token Cost, from 1.5B to 7B (2026)") §4.5 and Tab. 2, whose cost-matched difference compares each method with the baseline at the method's mean cost.
 
 **Related:** [best-of-N sampling](#/glossary/best-of-n-sampling), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting)
+
+
+<a id="concentration-inequality"></a>
+
+## Concentration inequality
+
+A bound on the chance that the average of independent random values lands far from its expected value (general definition). Hoeffding's inequality uses only the values' range: for n values in [0, 1], the chance that their average exceeds its expected value by more than t is at most exp(−2nt²). Bernstein's and Bennett's inequalities also use the variance, so they are tighter when the variance is small; empirical-Bernstein versions estimate the variance from the data. Papers turn them into a radius: how far an observed rate can be from the true one, except with a chosen small probability.
+
+Examples: [Ratchet](#/papers/zhang2026ratchet "Ratchet: How Reliable Must an LLM Judge Be to Retire a Skill? (2026)") uses a Hoeffding radius for a skill's measured success rate (§4); [BudgetAPO](#/papers/liu2026budgetapo "How Should a Prompt Optimizer Spend a Tight Budget? BudgetAPO with Noise-Adaptive Evaluation (2026)") a Bernstein bound that ties the number of paired comparisons to the chance of a wrong decision (App. A.2); [Certified Long-Horizon Code Agent…](#/papers/wang2026valve "Certified Long-Horizon Code Agent Evolution via Validation-Gated Skill Optimization (2026)") a one-sided Bennett radius (§3.1, App. A.2).
+
+**Learn more:** [Ratchet](#/papers/zhang2026ratchet "Ratchet: How Reliable Must an LLM Judge Be to Retire a Skill? (2026)") §4; [BudgetAPO](#/papers/liu2026budgetapo "How Should a Prompt Optimizer Spend a Tight Budget? BudgetAPO with Noise-Adaptive Evaluation (2026)") App. A.2; [Certified Long-Horizon Code Agent…](#/papers/wang2026valve "Certified Long-Horizon Code Agent Evolution via Validation-Gated Skill Optimization (2026)") App. A.2. None states the general definition (general definition).
+
+**Related:** [union bound](#/glossary/union-bound), [confidence sequence (anytime-valid inference)](#/glossary/confidence-sequence-anytime-valid-inference), [learn-then-test (LTT)](#/glossary/learn-then-test-ltt), [standard error](#/glossary/standard-error)
 
 
 <a id="concolic-testing"></a>
@@ -574,6 +834,45 @@ The full parse tree of a program's text under its grammar, keeping every token, 
 **Learn more:** [Round-Trip Correctness (RTC)](#/papers/allamanis2024roundtrip "Unsupervised Evaluation of Code LLMs with Round-Trip Correctness (2024)") §4.2, which uses the term without defining it (general definition).
 
 **Related:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast), [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form)
+
+
+<a id="confidence-interval-and-coverage"></a>
+
+## Confidence interval and coverage
+
+A 95% confidence interval comes from a procedure that, over many repeats of the experiment, would give intervals containing the true value 95% of the time; 95% is its nominal coverage. In [Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)")'s words, "if we rerun the experiment and construct the CI using a different set of runs, the fraction of calculated CIs ... that contain the true score would tend towards α × 100%, where ... α is the nominal coverage rate" (§2). The actual coverage, the share of repeats in which the interval really contains the truth, can fall short of the nominal one when the procedure's assumptions fail, for instance with few data points ([Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §1). A single computed interval either contains the truth or not; the 95% describes the procedure.
+
+**Learn more:** [Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)") §2; [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §1 and §3, which measure the coverage of several interval methods.
+
+**Related:** [Bayesian credible interval](#/glossary/bayesian-credible-interval), [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt), [Wilson score interval](#/glossary/wilson-score-interval), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval), [Wald interval](#/glossary/wald-interval), [bootstrap resampling](#/glossary/bootstrap-resampling), [confidence sequence (anytime-valid inference)](#/glossary/confidence-sequence-anytime-valid-inference)
+
+
+<a id="confidence-sequence-anytime-valid-inference"></a>
+
+## Confidence sequence (anytime-valid inference)
+
+A sequence of confidence intervals, one after each new observation, that all contain the true value at the same time with probability at least 1 − δ. An ordinary interval is valid only at a sample size fixed in advance: checking it again and again and stopping when it looks good breaks its guarantee. A confidence sequence, like anytime-valid tests in general, stays valid wherever one stops, even when the stopping time depends on the data (general definition).
+
+Example: [DISCERN ("Pay Only for Disagreement")](#/papers/balachandran2026discern "Pay Only for Disagreement: Certified No-Regression Verdicts for Model Updates with Matching Label-Complexity Bounds (2026)") wraps its estimator in "an empirical-Bernstein confidence sequence" (§1), whose width adapts to the observed variance (see [concentration inequality](#/glossary/concentration-inequality)), so that its verdicts hold "simultaneously for all t ≥ 1" (§5.1).
+
+**Learn more:** [DISCERN ("Pay Only for Disagreement")](#/papers/balachandran2026discern "Pay Only for Disagreement: Certified No-Regression Verdicts for Model Updates with Matching Label-Complexity Bounds (2026)") §1, §4 and §5.1, citing Howard et al. (2021) and Waudby-Smith and Ramdas (2024), not listed here; [PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §2 and §4, for anytime-valid tests.
+
+**Related:** [E-process (testing by betting)](#/glossary/e-process-testing-by-betting), [sequential probability ratio test (SPRT)](#/glossary/sequential-probability-ratio-test-sprt), [confidence interval and coverage](#/glossary/confidence-interval-and-coverage), [concentration inequality](#/glossary/concentration-inequality)
+
+
+<a id="conformal-prediction-and-conformal-risk-control"></a>
+
+## Conformal prediction and conformal risk control
+
+Methods that turn any model's scores into guarantees using a held-out calibration set, assuming only that calibration cases and test cases are [exchangeable](#/glossary/exchangeability) (general definition). Split conformal prediction picks a score threshold on the calibration set so that prediction sets contain the true answer at a chosen rate. Conformal risk control "extends split conformal prediction to expected control of monotone losses" ([Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §2): it "selects a threshold on a calibration set so that the expected value of a bounded, monotone loss is at most a nominal level α on exchangeable test data" (§1). For abstention the loss is 1 when the system answers and is wrong, so the guarantee bounds the rate of wrong answers.
+
+Variants on this site: conformal selection, which picks the test cases to accept while bounding the [false discovery rate](#/glossary/false-discovery-rate-fdr) among them, e.g. by split-conformal Benjamini–Hochberg ([ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §2); and online conformal prediction, which adjusts a threshold after each outcome so that a long-run error rate tracks a target (general definition), named by [When to Trust the Cheap Check](#/papers/kiyani2026weakstrong "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning (2026)") §5 as sharing a limitation of its own threshold updates.
+
+Other senses: [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") calls the resulting promise a "conformal abstention certificate"; it is a statistical guarantee, not checkable evidence in the sense of this glossary's [certificate](#/glossary/certificate).
+
+**Learn more:** [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §1 and §2, citing Angelopoulos et al. (2024), not listed here; [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §2, citing Jin and Candès (2023), not listed here.
+
+**Related:** [selective prediction](#/glossary/selective-prediction), [learn-then-test (LTT)](#/glossary/learn-then-test-ltt), [exchangeability](#/glossary/exchangeability), [calibration](#/glossary/calibration), [certificate](#/glossary/certificate)
 
 
 <a id="conjunctive-query"></a>
@@ -609,6 +908,17 @@ A problem stated as variables, the values each may take, and constraints that th
 **Learn more:** [EvoSQL](#/papers/castelein2018evosql "Search-Based Test Data Generation for SQL Queries (2018)") §1 (PDF p. 1), which cites Tsang's textbook (not listed here) without defining the term (general definition).
 
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [branch distance](#/glossary/branch-distance), [symmetry breaking](#/glossary/symmetry-breaking)
+
+
+<a id="context-compaction"></a>
+
+## Context compaction
+
+A harness feature that shortens an agent's conversation history when it grows too long for the context window, typically by replacing older turns with a summary (general definition). [StaminaBench](#/papers/sobal2026staminabench "StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns (2026)") modifies one harness "to enable context compaction" for its long multi-turn coding sessions (§4), and lists "calling tools during compaction" among the agents' infrastructure failures (§5).
+
+**Learn more:** [StaminaBench](#/papers/sobal2026staminabench "StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns (2026)") §4 and §5, which use the term without defining it (general definition).
+
+**Related:** [agent harness](#/glossary/agent-harness), [lost in the middle](#/glossary/lost-in-the-middle), [progressive disclosure](#/glossary/progressive-disclosure)
 
 
 <a id="contrastive-learning"></a>
@@ -709,6 +1019,19 @@ Examples: DeepSeek-Prover-V2 turns the subgoals of hard theorems into easier lem
 
 <a id="letter-d"></a>
 
+<a id="dapo"></a>
+
+## DAPO
+
+Decoupled Clip and Dynamic Sampling Policy Optimization, a variant of [GRPO](#/glossary/grpo) by Yu et al. (2025), "specifically designed to maintain exploration and output diversity" ([ProRL](#/papers/liu2025prorl "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models (2025)") §2.3). Its two main changes: decoupled clipping ("clip-higher"), which sets the upper clipping bound of the [importance ratio](#/glossary/importance-ratio-and-clipping) separately from the lower one; and dynamic sampling, which drops prompts whose sampled answers all got the same reward (all right or all wrong), because GRPO's group-relative advantages are then zero and give no learning signal ([ProRL](#/papers/liu2025prorl "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models (2025)") §2.3; [Noisy Data is Destructive…](#/papers/zhu2026noisyrlvr "Noisy Data is Destructive to Reinforcement Learning with Verifiable Rewards (2026)") §5.1).
+
+Gotcha: [Noisy Data is Destructive…](#/papers/zhu2026noisyrlvr "Noisy Data is Destructive to Reinforcement Learning with Verifiable Rewards (2026)") notes that with noisy rewards, dynamic sampling "may implicitly filter out failures caused by noise" (§5.1).
+
+**Learn more:** [ProRL](#/papers/liu2025prorl "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models (2025)") §2.3, which adopts both components; [Noisy Data is Destructive…](#/papers/zhu2026noisyrlvr "Noisy Data is Destructive to Reinforcement Learning with Verifiable Rewards (2026)") §5.1. The DAPO paper is not listed here.
+
+**Related:** [GRPO](#/glossary/grpo), [importance ratio and clipping](#/glossary/importance-ratio-and-clipping), [policy entropy](#/glossary/policy-entropy), [PPO](#/glossary/ppo)
+
+
 <a id="data-contamination"></a>
 
 ## Data contamination
@@ -792,6 +1115,17 @@ An algorithm that automatically shrinks a failure-inducing input (a long SQL que
 **Related:** [fuzzing](#/glossary/fuzzing), [differential testing](#/glossary/differential-testing)
 
 
+<a id="delta-method"></a>
+
+## Delta method
+
+A way to get an approximate [standard error](#/glossary/standard-error), and so an interval based on the [central limit theorem](#/glossary/central-limit-theorem-clt), for a smooth function of estimates (a ratio, an F1 score), by a first-order Taylor expansion around the estimates ([Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.5, App. A.4). Like the CLT it relies on large samples.
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.5 and App. A.4, citing Oehlert (1992), not listed here.
+
+**Related:** [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt), [odds ratio](#/glossary/odds-ratio), [F1 score](#/glossary/f1-score)
+
+
 <a id="dense-domain"></a>
 
 ## Dense domain
@@ -823,6 +1157,17 @@ An [evolutionary search](#/glossary/evolutionary-search) method for vectors of n
 **Learn more:** [EvoPrompt](#/papers/guo2023evoprompt "EvoPrompt: Connecting LLMs with Evolutionary Algorithms Yields Powerful Prompt Optimizers (2024)") ([PDF p. 6](https://arxiv.org/pdf/2309.08532#page=6)) §3.3 (PDF p. 6), citing Storn and Price 1997 (not listed here).
 
 **Related:** [evolutionary search](#/glossary/evolutionary-search), [genetic algorithm](#/glossary/genetic-algorithm), [exploration and exploitation](#/glossary/exploration-and-exploitation)
+
+
+<a id="differential-privacy"></a>
+
+## Differential privacy
+
+A guarantee about a randomized algorithm run on a dataset: changing any single record changes the probability of any set of outputs by at most a factor e^ε (pure ε-differential privacy), or by that factor plus a small slack δ ((ε, δ)-differential privacy) ([Generalization in Adaptive Data…](#/papers/dwork2015holdout "Generalization in Adaptive Data Analysis and Holdout Reuse (2015)") §2.1). It is usually achieved by adding random noise; the Laplace mechanism adds noise from the Laplace distribution, "a symmetric exponential distribution", to a released number (§4.1). [Generalization in Adaptive Data…](#/papers/dwork2015holdout "Generalization in Adaptive Data Analysis and Holdout Reuse (2015)") uses it for [adaptive data analysis](#/glossary/adaptive-data-analysis), building on a known connection between differentially private algorithms and generalization (§1.1).
+
+**Learn more:** [Generalization in Adaptive Data…](#/papers/dwork2015holdout "Generalization in Adaptive Data Analysis and Holdout Reuse (2015)") §1.1, §2.1 and §4.1.
+
+**Related:** [adaptive data analysis](#/glossary/adaptive-data-analysis), [mutual information](#/glossary/mutual-information)
 
 
 <a id="differential-testing"></a>
@@ -874,10 +1219,23 @@ Other senses: the word also names compressing data rather than a model. Test-sui
 
 **Learn more:** [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)") ([PDF p. 60](https://arxiv.org/pdf/2501.12948#page=60)) App. F (PDF p. 60); [Semantic Evaluation for Text-to-SQL…](#/papers/zhong2020testsuite "Semantic Evaluation for Text-to-SQL with Distilled Test Suites (2020)") ([PDF p. 1](https://arxiv.org/pdf/2010.02840#page=1)) abstract (PDF p. 1); [Coding Agents are Strong Prompt Optimizers](#/papers/singh2026casd "Coding Agents are Strong Prompt Optimizers (2026)") ([PDF p. 3](https://arxiv.org/pdf/2609.26261#page=3)) §3.2 (PDF p. 3).
 
-**Related:** [reinforcement learning](#/glossary/reinforcement-learning), [rejection sampling](#/glossary/rejection-sampling), [expert iteration](#/glossary/expert-iteration), [cold start](#/glossary/cold-start)
+**Related:** [reinforcement learning](#/glossary/reinforcement-learning), [rejection sampling](#/glossary/rejection-sampling), [expert iteration](#/glossary/expert-iteration), [cold start](#/glossary/cold-start), [self-distillation](#/glossary/self-distillation)
 
 
 <a id="letter-e"></a>
+
+<a id="e-process-testing-by-betting"></a>
+
+## E-process (testing by betting)
+
+A running measure of evidence against a null hypothesis that may be checked after every observation. In testing by betting it is a gambler's wealth: start with 1 and, at each observation, bet a fraction of it at odds that are fair if the null hypothesis is true. Under the null the wealth stays near 1 on average; when the null is false it tends to grow. Ville's inequality says that a nonnegative wealth that does not grow on average under the null (a supermartingale) ever reaches 1/α with probability at most α, so rejecting the null as soon as the wealth reaches 1/α gives a test that stays valid however and whenever one stops ([PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §4; supermartingale: general definition).
+
+Example: PACE commits a candidate change to an agent as soon as such a wealth, betting on the candidate winning the pairs where it and the incumbent disagree, reaches 1/α ([PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §4).
+
+**Learn more:** [PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §2 and §4.
+
+**Related:** [confidence sequence (anytime-valid inference)](#/glossary/confidence-sequence-anytime-valid-inference), [sequential probability ratio test (SPRT)](#/glossary/sequential-probability-ratio-test-sprt), [McNemar's exact test](#/glossary/mcnemars-exact-test), [sign test](#/glossary/sign-test)
+
 
 <a id="elo-rating"></a>
 
@@ -898,7 +1256,7 @@ Choosing the candidate (a model, a prompt) that scores best on the available sam
 
 **Learn more:** [SAMMO](#/papers/schnabel2024sammo "Symbolic Prompt Program Search: A Structure-Aware Approach to Efficient Compile-Time Prompt Optimization (2024)") §3 (general definition; the paper uses the term without defining it).
 
-**Related:** [multiple testing](#/glossary/multiple-testing), [bootstrap resampling](#/glossary/bootstrap-resampling)
+**Related:** [multiple testing](#/glossary/multiple-testing), [bootstrap resampling](#/glossary/bootstrap-resampling), [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse)
 
 
 <a id="equisatisfiable"></a>
@@ -920,7 +1278,7 @@ A test that shows two results are the same within a chosen margin, instead of fa
 
 **Learn more:** [Flat Score, Amplified Failures](#/papers/jang2026flatscore "Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents (2026)") § "Experimental Setup" ("equivalence tests (two one-sided tests, TOST) at ±7.5 points") and § "Final Task Reward…".
 
-**Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [bootstrap resampling](#/glossary/bootstrap-resampling), [multiple testing](#/glossary/multiple-testing)
+**Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [bootstrap resampling](#/glossary/bootstrap-resampling), [multiple testing](#/glossary/multiple-testing), [noninferiority test](#/glossary/noninferiority-test)
 
 
 <a id="estimation-of-distribution-algorithm-eda"></a>
@@ -956,6 +1314,17 @@ A score that counts an answer as right only if it equals the gold answer, usuall
 **Related:** [execution accuracy](#/glossary/execution-accuracy), [gold query](#/glossary/gold-query), [query equivalence](#/glossary/query-equivalence)
 
 
+<a id="exchangeability"></a>
+
+## Exchangeability
+
+A sequence of random cases is exchangeable when every reordering of it has the same joint distribution: no case is special because of its position (general definition). Independent draws from one distribution are exchangeable. It is the assumption behind [conformal](#/glossary/conformal-prediction-and-conformal-risk-control) guarantees: the calibration cases and the cases met later must be exchangeable, which drift, a changed task or a patched checker can break ([Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") §5 "Drift and re-evaluation").
+
+**Learn more:** [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §1 ("exchangeable test data"); [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §3, whose "certificate exchangeability" assumes that accepted deployment certificates are exchangeable with the calibration ones; [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") §5. None defines it (general definition).
+
+**Related:** [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control), [out-of-distribution generalization](#/glossary/out-of-distribution-generalization), [learn-then-test (LTT)](#/glossary/learn-then-test-ltt)
+
+
 <a id="execution-accuracy"></a>
 
 ## Execution accuracy
@@ -967,6 +1336,17 @@ A match on one database doesn't make the queries equivalent: a wrong query can r
 **Learn more:** [BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)") ([PDF p. 6](https://arxiv.org/pdf/2305.03111#page=6)) §5 (PDF p. 6) for the definition; [Semantic Evaluation for Text-to-SQL…](#/papers/zhong2020testsuite "Semantic Evaluation for Text-to-SQL with Distilled Test Suites (2020)") §1; [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 2](https://arxiv.org/pdf/2510.26840#page=2)) §2 (PDF p. 2), Eq. 1.
 
 **Related:** [text-to-SQL](#/glossary/text-to-sql), [gold query](#/glossary/gold-query), [query equivalence](#/glossary/query-equivalence), [counterexample database](#/glossary/counterexample-database)
+
+
+<a id="experience-replay"></a>
+
+## Experience replay
+
+Storing an agent's past interactions and reusing them later for learning, instead of learning only from the newest one (general definition, from RL). [ExpeL](#/papers/zhao2023expel "ExpeL: LLM Agents Are Experiential Learners (2024)") likens its agent's reuse of past experience to it (App. A.4).
+
+**Learn more:** [ExpeL](#/papers/zhao2023expel "ExpeL: LLM Agents Are Experiential Learners (2024)") App. A.4, citing Lin (1992), not listed here (general definition).
+
+**Related:** [off-policy learning](#/glossary/off-policy-learning), [procedural memory](#/glossary/procedural-memory), [reinforcement learning](#/glossary/reinforcement-learning)
 
 
 <a id="expert-iteration"></a>
@@ -1039,6 +1419,30 @@ The harmonic mean of precision (the share of predicted positives that are right)
 **Related:** [AUROC](#/glossary/auroc), [exact match](#/glossary/exact-match)
 
 
+<a id="false-discovery-rate-fdr"></a>
+
+## False discovery rate (FDR)
+
+Among the results declared significant, the expected share that are false alarms. Controlling it, instead of the chance of any false alarm (the familywise error rate; see [Bonferroni correction](#/glossary/bonferroni-correction)), keeps more power when many tests are run and many effects are real. The Benjamini–Hochberg procedure is the usual way: sort the m p-values and declare significant the k smallest, for the largest k whose p-value is at most kα/m. Online FDR procedures do the same for a stream of tests decided one at a time (general definitions).
+
+Example: [Phantom Gains](#/papers/xu2026phantomgains "Phantom Gains: Auditing Self-Improvement Against a Measured Null (2026)") tests each problem's gain after self-training "with a one-sided Fisher exact test under FDR control", and notes that such a procedure is adaptive: "an arm containing many true effects raises its own admissible cutoff" (§4.2).
+
+**Learn more:** [Phantom Gains](#/papers/xu2026phantomgains "Phantom Gains: Auditing Self-Improvement Against a Measured Null (2026)") §4.2 and App. D.1; [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") abstract and §1, which bounds the FDR among accepted values; [PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §4, which finds an online FDR correction unnecessary for its per-decision guarantee. Benjamini and Hochberg's paper is not listed here.
+
+**Related:** [multiple testing](#/glossary/multiple-testing), [Bonferroni correction](#/glossary/bonferroni-correction), [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control), [Fisher's exact test](#/glossary/fishers-exact-test)
+
+
+<a id="fault-injection"></a>
+
+## Fault injection
+
+Making a component fail on purpose during a test (a tool call that errors or times out, a corrupted value) to see whether the system notices and recovers (general definition). [Quantization Effects on Tool-Failure…](#/papers/hu2026toolrecovery "Quantization Effects on Tool-Failure Recovery Vary Across Prompts and Evaluation Designs (2026)") injects transient failures "at every valid site on the required tool" of an agent's tool calls (§1); [The Hallucination Snowball](#/papers/singh2026snowball "The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines (2026)") injects hallucinations at the first stage of a multi-agent pipeline and tracks how they spread (abstract).
+
+**Learn more:** [Quantization Effects on Tool-Failure…](#/papers/hu2026toolrecovery "Quantization Effects on Tool-Failure Recovery Vary Across Prompts and Evaluation Designs (2026)") §1; [The Hallucination Snowball](#/papers/singh2026snowball "The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines (2026)") abstract. Neither defines it (general definition).
+
+**Related:** [mutation testing](#/glossary/mutation-testing), [fuzzing](#/glossary/fuzzing), [idempotent operation](#/glossary/idempotent-operation)
+
+
 <a id="federated-query-processing"></a>
 
 ## Federated query processing
@@ -1076,6 +1480,17 @@ Why it matters here: [HoTTSQL](#/papers/chu2016hottsql "HoTTSQL: proving query r
 **Learn more:** [HoTTSQL](#/papers/chu2016hottsql "HoTTSQL: proving query rewrites with univalent SQL semantics (2017)") ([PDF p. 11](https://arxiv.org/pdf/1607.04822#page=11)) §6.1 (PDF p. 11); [WeTune](#/papers/wang2022wetune "WeTune: Automatic Discovery and Verification of Query Rewrite Rules (2022)") §5.1 (PDF p. 6) and Fig. 6 (PDF p. 8); [SQLSolver](#/papers/ding2023sqlsolver "Proving Query Equivalence Using Linear Integer Arithmetic (2023)") §1 (PDF p. 2). No paper on this site defines the logic itself (general definition); Codd's paper, cited by [HoTTSQL](#/papers/chu2016hottsql "HoTTSQL: proving query rewrites with univalent SQL semantics (2017)"), is not listed here.
 
 **Related:** [satisfiable and valid](#/glossary/satisfiable-and-valid), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [decidable and undecidable](#/glossary/decidable-and-undecidable), [conjunctive query](#/glossary/conjunctive-query), [uninterpreted function](#/glossary/uninterpreted-function)
+
+
+<a id="fishers-exact-test"></a>
+
+## Fisher's exact test
+
+An exact test of whether two groups' success rates differ, from the 2×2 table of their successes and failures: it computes the probability of tables at least as extreme as the observed one among all tables with the same row and column totals (general definition). Unlike a two-proportion z-test, which compares the two rates with a normal approximation, it stays valid for small counts. [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") notes that inverting it gives a confidence interval for the [odds ratio](#/glossary/odds-ratio) that "guarantees coverage of at least 1 − α at any dataset size" (§3.3).
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.3; [Phantom Gains](#/papers/xu2026phantomgains "Phantom Gains: Auditing Self-Improvement Against a Measured Null (2026)") §4.2. Fisher's 1922 paper is not listed here.
+
+**Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [binomial test](#/glossary/binomial-test), [odds ratio](#/glossary/odds-ratio), [false discovery rate (FDR)](#/glossary/false-discovery-rate-fdr)
 
 
 <a id="formal-semantics"></a>
@@ -1152,6 +1567,28 @@ An [evolutionary search](#/glossary/evolutionary-search) method that keeps a pop
 **Related:** [evolutionary search](#/glossary/evolutionary-search), [estimation of distribution algorithm (EDA)](#/glossary/estimation-of-distribution-algorithm-eda), [island model](#/glossary/island-model)
 
 
+<a id="gödel-machine"></a>
+
+## Gödel machine
+
+A theoretical self-improving program, proposed by Schmidhuber (2007), that may rewrite any part of its own code, but only after formally proving that the rewrite is beneficial. [Darwin Gödel Machine (DGM)](#/papers/zhang2025dgm "Darwin G\'odel Machine: Open-Ended Evolution of Self-Improving Agents (2026)") keeps the self-rewriting but drops the proofs, arguing that "in practice and without restrictive assumptions about the system, it is impossible to formally prove whether a modification" helps; its Darwin Gödel Machine instead evaluates each self-modification on coding benchmarks (§1).
+
+**Learn more:** [Darwin Gödel Machine (DGM)](#/papers/zhang2025dgm "Darwin G\'odel Machine: Open-Ended Evolution of Self-Improving Agents (2026)") §1. Schmidhuber's paper is not listed here.
+
+**Related:** [open-endedness](#/glossary/open-endedness), [agent harness](#/glossary/agent-harness), [evolutionary search](#/glossary/evolutionary-search)
+
+
+<a id="gold-patch"></a>
+
+## Gold patch
+
+The reference fix that comes with a benchmark issue, such as one from SWE-bench: "the official or correct fix patch" ([SWE-ABS](#/papers/yu2026sweabs "SWE-ABS: Adversarial Benchmark Strengthening Exposes Inflated Success Rates on Test-based Benchmark (2026)") App. A.1.5). It is the code counterpart of a [gold query](#/glossary/gold-query). A generated patch is judged by whether it passes the instance's tests, which a [plausible patch](#/glossary/plausible-patch) can do while still being wrong.
+
+**Learn more:** [SWE-ABS](#/papers/yu2026sweabs "SWE-ABS: Adversarial Benchmark Strengthening Exposes Inflated Success Rates on Test-based Benchmark (2026)") §3 and App. A.1.5.
+
+**Related:** [gold query](#/glossary/gold-query), [plausible patch](#/glossary/plausible-patch), [resolve rate](#/glossary/resolve-rate), [test oracle](#/glossary/test-oracle)
+
+
 <a id="gold-query"></a>
 
 ## Gold query
@@ -1160,7 +1597,18 @@ The human-written reference SQL query for a benchmark question ("gold SQL"); a s
 
 **Learn more:** [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 1](https://arxiv.org/pdf/2510.26840#page=1)) §1–2 (PDF pp. 1–2). The challenge in this repo: [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification).
 
-**Related:** [execution accuracy](#/glossary/execution-accuracy), [text-to-SQL](#/glossary/text-to-sql)
+**Related:** [execution accuracy](#/glossary/execution-accuracy), [text-to-SQL](#/glossary/text-to-sql), [gold patch](#/glossary/gold-patch)
+
+
+<a id="goodharts-law"></a>
+
+## Goodhart's law
+
+"When a measure becomes a target, it ceases to be a good measure" ([Scaling Laws for Reward…](#/papers/gao2022overoptimization "Scaling Laws for Reward Model Overoptimization (2023)") §1). In machine learning it describes optimizing a proxy, such as a learned [reward model](#/glossary/reward-model), until it stops tracking the goal it stood in for.
+
+**Learn more:** [Scaling Laws for Reward…](#/papers/gao2022overoptimization "Scaling Laws for Reward Model Overoptimization (2023)") abstract and §1. Goodhart's own writing is not listed here.
+
+**Related:** [reward model overoptimization](#/glossary/reward-model-overoptimization), [reward hacking](#/glossary/reward-hacking), [reward tampering](#/glossary/reward-tampering)
 
 
 <a id="gpu-kernel-and-kernel-fusion"></a>
@@ -1204,7 +1652,7 @@ Group Relative Policy Optimization, an RL algorithm for LLMs that drops PPO's va
 
 **Learn more:** [DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)") ([PDF p. 11](https://arxiv.org/pdf/2402.03300#page=11)) §4.1.1–4.1.2 (PDF pp. 11, 14), which introduces it (with a learned reward model); [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)") ([PDF p. 2](https://arxiv.org/pdf/2501.12948#page=2)) §2.1–2.2 (PDF pp. 2–4), which uses it with rule-based rewards.
 
-**Related:** [PPO](#/glossary/ppo), [reinforcement learning](#/glossary/reinforcement-learning), [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr)
+**Related:** [PPO](#/glossary/ppo), [reinforcement learning](#/glossary/reinforcement-learning), [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr), [DAPO](#/glossary/dapo)
 
 
 <a id="letter-h"></a>
@@ -1229,6 +1677,17 @@ A tool that tries to prove a goal in a proof assistant automatically by handing 
 **Learn more:** [Quarry ("Planning to Hammer")](#/papers/zhang2026quarry "Planning to Hammer: Difficulty-Aware Decomposition for Automating Rocq Proofs (2026)") §2.2.
 
 **Related:** [proof assistant](#/glossary/proof-assistant), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [tactic](#/glossary/tactic), [first-order logic](#/glossary/first-order-logic)
+
+
+<a id="hierarchical-model"></a>
+
+## Hierarchical model
+
+A model in which the values for individual units (options, questions, models) are themselves drawn from a shared distribution whose parameters are learned from all units together. Each unit's estimate is then pulled toward the group average, more strongly when its own data are noisy (general definition; see [shrinkage](#/glossary/shrinkage)). [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") §3.4: "it is as if we draw true values at random" from a distribution whose mean is uncertain; its hierarchical model shrinks the estimates toward a mix of the prior mean and the average estimate (PDF p. 8).
+
+**Learn more:** [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") §3.4 (PDF p. 8).
+
+**Related:** [Bayes' rule, prior and posterior](#/glossary/bayes-rule-prior-and-posterior), [shrinkage](#/glossary/shrinkage), [item response theory (IRT)](#/glossary/item-response-theory-irt), [random-effects meta-analysis](#/glossary/random-effects-meta-analysis)
 
 
 <a id="hilberts-tenth-problem"></a>
@@ -1294,6 +1753,17 @@ Searching over the settings of a learning or prompting pipeline that are fixed b
 
 <a id="letter-i"></a>
 
+<a id="idempotent-operation"></a>
+
+## Idempotent operation
+
+An operation whose effect is the same whether it runs once or several times: "set the balance to 10" is idempotent, "add 10 to the balance" is not (general definition). It matters for agents that retry: retrying a non-idempotent write after a timeout can perform it twice. [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") studies idempotent request identifiers for retries (abstract, §I); [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") finds that in AppWorld "duplicating a non-idempotent write preserves every value the evaluator checks while creating an extra record" (abstract).
+
+**Learn more:** [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") abstract and §I; [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") abstract. Neither defines it (general definition).
+
+**Related:** [transaction (atomicity)](#/glossary/transaction-atomicity), [test oracle](#/glossary/test-oracle), [fault injection](#/glossary/fault-injection)
+
+
 <a id="imitation-learning"></a>
 
 ## Imitation learning
@@ -1315,7 +1785,20 @@ Gotcha: clipping is not neutral. [Spurious Rewards](#/papers/shao2025spurious "S
 
 **Learn more:** [Spurious Rewards](#/papers/shao2025spurious "Spurious Rewards: Rethinking Training Signals in RLVR (2025)") ([PDF p. 5](https://arxiv.org/pdf/2506.10947#page=5)) §4, Eq. 1 (PDF p. 5); [ProRL](#/papers/liu2025prorl "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models (2025)") §2.3, for DAPO's decoupled clipping; [DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)") §4.1.1, for PPO and GRPO.
 
-**Related:** [PPO](#/glossary/ppo), [GRPO](#/glossary/grpo), [policy gradient](#/glossary/policy-gradient), [policy entropy](#/glossary/policy-entropy), [KL penalty](#/glossary/kl-penalty)
+**Related:** [PPO](#/glossary/ppo), [GRPO](#/glossary/grpo), [policy gradient](#/glossary/policy-gradient), [policy entropy](#/glossary/policy-entropy), [KL penalty](#/glossary/kl-penalty), [DAPO](#/glossary/dapo), [off-policy learning](#/glossary/off-policy-learning)
+
+
+<a id="importance-sampling-and-importance-weighting"></a>
+
+## Importance sampling and importance weighting
+
+Estimating an average over one distribution from samples drawn from another (the proposal): each sample is weighted by the ratio of its probability under the target distribution to its probability under the proposal (general definition). The Horvitz–Thompson estimator is the survey version: when each item is chosen for labelling with a known probability π, dividing each labelled value by its π gives an unbiased estimate of the total or the mean, though only some items were labelled (general definition).
+
+Examples: [DISCERN ("Pay Only for Disagreement")](#/papers/balachandran2026discern "Pay Only for Disagreement: Certified No-Regression Verdicts for Model Updates with Matching Label-Complexity Bounds (2026)") labels only some of the cases where two model versions disagree and uses an "importance-weighted (Horvitz–Thompson) increment" (§4.2); [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") approximates Bayesian posteriors by importance sampling with the prior as proposal (§3.2); [STaR (Self-Taught Reasoner)](#/papers/zelikman2022star "STaR: Bootstrapping Reasoning With Reasoning (2022)") suggests that its rationalization step "could be framed as an off-policy estimate of the objective …, sampling from the hint-augmented model as a proposal distribution" (§5). The [importance ratio](#/glossary/importance-ratio-and-clipping) of PPO-style RL is the same weight, per token.
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.2; [DISCERN ("Pay Only for Disagreement")](#/papers/balachandran2026discern "Pay Only for Disagreement: Certified No-Regression Verdicts for Model Updates with Matching Label-Complexity Bounds (2026)") §4.2. Neither defines it (general definition).
+
+**Related:** [importance ratio and clipping](#/glossary/importance-ratio-and-clipping), [off-policy learning](#/glossary/off-policy-learning), [Bayes' rule, prior and posterior](#/glossary/bayes-rule-prior-and-posterior)
 
 
 <a id="index-database"></a>
@@ -1346,7 +1829,7 @@ Example: `SELECT DISTINCT id FROM Emp` and `SELECT id FROM Emp` return the same 
 
 ## Interquartile mean (IQM)
 
-The mean of the middle half of a set of scores: sort them, drop the lowest and highest quarters, and average the rest. It is less swayed by a few extreme scores than the mean, and uses more of the data than the median. APE reports the IQM over 24 tasks, citing Agarwal et al. (2021, not listed here) ([APE](#/papers/zhou2022ape "Large Language Models Are Human-Level Prompt Engineers (2023)") §4.1).
+The mean of the middle half of a set of scores: sort them, drop the lowest and highest quarters, and average the rest. It is less swayed by a few extreme scores than the mean, and uses more of the data than the median. APE reports the IQM over 24 tasks, citing Agarwal et al. 2021 ([APE](#/papers/zhou2022ape "Large Language Models Are Human-Level Prompt Engineers (2023)") §4.1), which proposes it as a robust aggregate across runs and tasks ([Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)") §4.3).
 
 **Learn more:** [APE](#/papers/zhou2022ape "Large Language Models Are Human-Level Prompt Engineers (2023)") ([PDF p. 6](https://arxiv.org/pdf/2211.01910#page=6)) §4.1 (PDF p. 6), which uses it without defining it (general definition).
 
@@ -1362,6 +1845,17 @@ An evolutionary algorithm that splits its population into several sub-population
 **Learn more:** [C-Evolve](#/papers/li2025cevolve "C-Evolve: Consensus-based Evolution for Prompt Groups (2025)") §1, §4.1 and §5.3.
 
 **Related:** [evolutionary search](#/glossary/evolutionary-search), [genetic algorithm](#/glossary/genetic-algorithm), [exponential moving average (EMA)](#/glossary/exponential-moving-average-ema)
+
+
+<a id="item-response-theory-irt"></a>
+
+## Item response theory (IRT)
+
+A family of models from educational testing that explain each test-taker's result on each question by a hidden ability of the taker and a difficulty (sometimes also a discrimination) of the question (general definition). The Rasch model, the simplest, gives the chance of a correct answer as σ(ability − difficulty), with σ the logistic function. In LLM evaluation the takers are models or prompts: [Towards Reliable LLM Evaluation](#/papers/xu2026siren "Towards Reliable LLM Evaluation: Correcting the Winner's Curse in Adaptive Benchmarking (2026)") compares its method with PromptEval, which fits a Rasch model over prompts and benchmark items (§4.3, App. C.3), and [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") warns that modelling question difficulty with IRT "should deal with the prediction noise first" (§6.1).
+
+**Learn more:** [Towards Reliable LLM Evaluation](#/papers/xu2026siren "Towards Reliable LLM Evaluation: Correcting the Winner's Curse in Adaptive Benchmarking (2026)") §4.3 and App. C.3; [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §6.1. Neither defines it (general definition).
+
+**Related:** [latent variable](#/glossary/latent-variable), [hierarchical model](#/glossary/hierarchical-model), [Bradley-Terry model](#/glossary/bradley-terry-model)
 
 
 <a id="letter-j"></a>
@@ -1401,6 +1895,19 @@ A semiring is a set with an addition and a multiplication that obey the laws of 
 **Related:** [bag semantics](#/glossary/bag-semantics), [set semantics](#/glossary/set-semantics), [data provenance](#/glossary/data-provenance), [formal semantics](#/glossary/formal-semantics)
 
 
+<a id="kendalls-tau"></a>
+
+## Kendall's tau
+
+A rank correlation between two orderings of the same items, computed from pairs of items: a pair is concordant if both orderings put it in the same order and discordant otherwise, and τ = (concordant − discordant) / number of pairs, from 1 (same order) to −1 (reversed). τ_b adds a correction for ties ([MEMO](#/papers/xie2026memo "MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games (2026)") App. A).
+
+Example: [SALUS](#/papers/zhou2026salus "SALUS: Automated Auditing of NL-to-SQL Benchmarks through Weak Supervision of Multi-Agent Output (2026)") compares a benchmark's ranking of systems on its development set with their ranking on the hidden test set this way, and derives an expected τ under its noise model (§5.5, App. B.3).
+
+**Learn more:** [MEMO](#/papers/xie2026memo "MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games (2026)") App. A, which gives τ_b, citing Kendall (1938), not listed here; [SALUS](#/papers/zhou2026salus "SALUS: Automated Auditing of NL-to-SQL Benchmarks through Weak Supervision of Multi-Agent Output (2026)") §5.5 and App. B.3.
+
+**Related:** [Spearman's rank correlation](#/glossary/spearmans-rank-correlation), [Pearson correlation](#/glossary/pearson-correlation)
+
+
 <a id="kl-divergence"></a>
 
 ## KL divergence
@@ -1423,7 +1930,31 @@ A term in RL training of an LLM that penalizes the trained model for drifting aw
 **Related:** [PPO](#/glossary/ppo), [GRPO](#/glossary/grpo), [reward hacking](#/glossary/reward-hacking)
 
 
+<a id="kv-cache"></a>
+
+## KV cache
+
+The attention keys and values that a transformer stores for the tokens so far and reuses at each new step instead of recomputing them: "the attention keys and values stored and reused during generation" ([Which Decisions Low-Bit Quantization…](#/papers/wu2026lowbit "Which Decisions Low-Bit Quantization Breaks, and How to Predict Them (2026)") App. A.14). It grows with the context length and often limits how many sequences fit in memory. Multi-query attention shrinks it by "using a full set of query heads but sharing key and value heads per attention block", which "significantly reduces memory usage and cache update costs" ([AlphaCode](#/papers/li2022alphacode "Competition-Level Code Generation with AlphaCode (2022)") §4.1).
+
+**Learn more:** [Which Decisions Low-Bit Quantization…](#/papers/wu2026lowbit "Which Decisions Low-Bit Quantization Breaks, and How to Predict Them (2026)") App. A.14; [AlphaCode](#/papers/li2022alphacode "Competition-Level Code Generation with AlphaCode (2022)") §4.1, citing Shazeer (2019), not listed here.
+
+**Related:** [post-training quantization](#/glossary/post-training-quantization), [mixture of experts (MoE)](#/glossary/mixture-of-experts-moe)
+
+
 <a id="letter-l"></a>
+
+<a id="label-noise"></a>
+
+## Label noise
+
+Wrong labels in a dataset: examples whose given label differs from the true one. In class-conditional noise the chance that a label is wrong, and what it is changed to, depends only on the true class (a cat mislabelled as a dog more often than as a car), not on the particular example; [Pervasive Label Errors in…](#/papers/northcutt2021labelerrors "Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks (2021)") contrasts it with symmetric noise (§2). Confident learning, the method that paper uses, estimates how often each true class carries each given label from a model's out-of-sample predicted probabilities (here from cross-validation) and flags likely errors, which the authors then had crowd workers check (abstract, §3).
+
+In RL with verifiable rewards the labels are reference answers or a verifier's verdicts: [Noisy Data is Destructive…](#/papers/zhu2026noisyrlvr "Noisy Data is Destructive to Reinforcement Learning with Verifiable Rewards (2026)") studies training on incorrect annotations (abstract), and [Prompt Dominance and Asymmetric…](#/papers/hou2026grpo "Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K (2026)") flips a verifier's verdict with probability ε (§6; ε is that paper's flip rate, not the clipping threshold of [importance ratio and clipping](#/glossary/importance-ratio-and-clipping)).
+
+**Learn more:** [Pervasive Label Errors in…](#/papers/northcutt2021labelerrors "Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks (2021)") §2 and §3, which builds on the confident-learning paper (Northcutt, Jiang and Chuang), not listed here; [Noisy Data is Destructive…](#/papers/zhu2026noisyrlvr "Noisy Data is Destructive to Reinforcement Learning with Verifiable Rewards (2026)") abstract; [Prompt Dominance and Asymmetric…](#/papers/hou2026grpo "Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K (2026)") §6.
+
+**Related:** [weak supervision](#/glossary/weak-supervision), [gold query](#/glossary/gold-query), [reward hacking](#/glossary/reward-hacking), [test oracle](#/glossary/test-oracle)
+
 
 <a id="language-integrated-query"></a>
 
@@ -1469,6 +2000,41 @@ A partially ordered set in which every pair of elements has a least upper bound 
 **Related:** [query containment](#/glossary/query-containment), [monotone aggregate function](#/glossary/monotone-aggregate-function)
 
 
+<a id="law-of-total-variance"></a>
+
+## Law of total variance
+
+Total variance = the variance of the conditional means + the mean of the conditional variances (general definition). In LLM evaluation, with questions x and several sampled answers per question, it splits the variance of a score into data variance (questions differ in difficulty) and prediction variance (the model answers the same question differently from sample to sample) ([Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §1, §2.1).
+
+**Learn more:** [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §1 and §2.1.
+
+**Related:** [standard error](#/glossary/standard-error), [paired comparison](#/glossary/paired-comparison), [bootstrap resampling](#/glossary/bootstrap-resampling)
+
+
+<a id="learn-then-test-ltt"></a>
+
+## Learn-then-test (LTT)
+
+A method for choosing settings (a threshold, a configuration) from a family of candidates so that a risk, such as an error rate, stays below a target with high probability: compute for each candidate a p-value against the claim that its risk exceeds the target, and accept candidates with a [multiple-testing](#/glossary/multiple-testing) procedure, for example by testing them in a fixed order (general description). [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") describes it as calibrating "a family of predictive procedures against a risk requirement" (§II), and [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") as giving "high-probability control of more general risks" than conformal risk control (§2).
+
+Example: [Selection Without Signal, Recovery…](#/papers/iscan2026falsification "Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (2026)") issues a certificate from "the Hoeffding--Bentkus (HB) Learn-then-Test bound": it turns the harm rate observed on n examples into a p-value against the claim that the true rate exceeds α, and the certificate issues if that p-value is at most δ (§2.1, Eq. 1).
+
+**Learn more:** [Selection Without Signal, Recovery…](#/papers/iscan2026falsification "Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (2026)") §2.1; [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") §II; [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §2. The original paper (Angelopoulos et al., 2021) is not listed here.
+
+**Related:** [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control), [concentration inequality](#/glossary/concentration-inequality), [multiple testing](#/glossary/multiple-testing), [certificate](#/glossary/certificate)
+
+
+<a id="learning-to-defer"></a>
+
+## Learning to defer
+
+Designing a model together with a rule for when to hand a case to a human expert, or to a stronger and costlier system, instead of answering itself, so that the pair does best overall (general definition). It extends [selective prediction](#/glossary/selective-prediction), where abstained cases simply go unanswered: in [When to Trust the Cheap Check](#/papers/kiyani2026weakstrong "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning (2026)")'s words, the learning-to-defer literature "extends selective prediction to human-AI collaboration, studying the optimal division of labor between model and expert" (§2). Its own policies decide when to defer from a cheap verifier to a strong one.
+
+**Learn more:** [When to Trust the Cheap Check](#/papers/kiyani2026weakstrong "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning (2026)") §2.
+
+**Related:** [selective prediction](#/glossary/selective-prediction), [calibration](#/glossary/calibration), [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control)
+
+
 <a id="left-deep-and-bushy-plans"></a>
 
 ## Left-deep and bushy plans
@@ -1491,6 +2057,28 @@ An LLM judge's tendency to rate longer inputs more favourably: "a phenomenon in 
 **Related:** [positional bias](#/glossary/positional-bias), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
 
 
+<a id="levenshtein-distance"></a>
+
+## Levenshtein distance
+
+The edit distance between two strings: the fewest single-character insertions, deletions and substitutions that turn one into the other (general definition). [Is This LLM Library…](#/papers/berlotattwell2025libraryfails "Is This LLM Library Learning? Evaluation Must Account For Compute and Behaviour (2026)") computes it, as "the minimum number of deletions, replacements, or insertions required to convert the lemma into the proof", to score how much of a lemma reappears in a proof (App. F, PDF p. 24). [UOJ-Bench ("Beyond Problem Solving")](#/papers/xu2026uojbench "Beyond Problem Solving: UOJ-Bench for Evaluating Code Generation, Hacking, and Repair in Competitive Programming (2026)") keeps a (buggy code, fixed code) pair only if a similarity based on it is at least 0.95, to leave out rewrites from scratch (§3.2, App. C.5).
+
+**Learn more:** [Is This LLM Library…](#/papers/berlotattwell2025libraryfails "Is This LLM Library Learning? Evaluation Must Account For Compute and Behaviour (2026)") ([PDF p. 24](https://arxiv.org/pdf/2504.03048#page=24)) App. F (PDF p. 24), citing Levenshtein (1966), not listed here; [UOJ-Bench ("Beyond Problem Solving")](#/papers/xu2026uojbench "Beyond Problem Solving: UOJ-Bench for Evaluating Code Generation, Hacking, and Repair in Competitive Programming (2026)") §3.2 and App. C.5.
+
+**Related:** [tree edit distance](#/glossary/tree-edit-distance), [exact match](#/glossary/exact-match), [BLEU and ROUGE](#/glossary/bleu-and-rouge)
+
+
+<a id="library-learning"></a>
+
+## Library learning
+
+Building up a library of reusable pieces (functions, tools, lemmas, checklists) while solving tasks, and reusing them on later tasks. [Is This LLM Library…](#/papers/berlotattwell2025libraryfails "Is This LLM Library Learning? Evaluation Must Account For Compute and Behaviour (2026)") describes it as "the creation and exploitation of reusable and composable functions, tools, or lemmas" (abstract, PDF p. 1); having found that three such systems "fail to consistently outperform the simple baseline of prompting the model" once computational cost is accounted for, the authors conclude that "a serious re-examination of ICL LLM-based library learning is in order" (abstract; §1, PDF p. 2).
+
+**Learn more:** [Is This LLM Library…](#/papers/berlotattwell2025libraryfails "Is This LLM Library Learning? Evaluation Must Account For Compute and Behaviour (2026)") ([PDF p. 1](https://arxiv.org/pdf/2504.03048#page=1)) abstract (PDF p. 1) and §1 (PDF p. 2); [LEGO-Prover](#/papers/wang2023legoprover "LEGO-Prover: Neural Theorem Proving with Growing Libraries (2024)") §3.1, a library of lemmas kept in [vector stores](#/glossary/vector-store).
+
+**Related:** [agent skill](#/glossary/agent-skill), [procedural memory](#/glossary/procedural-memory), [vector store](#/glossary/vector-store)
+
+
 <a id="like-and-ilike"></a>
 
 ## LIKE and ILIKE
@@ -1502,6 +2090,17 @@ SQL's pattern-matching conditions on strings: `s LIKE 'ab%'` is true when s star
 **Related:** [finite-state machine](#/glossary/finite-state-machine), [index (database)](#/glossary/index-database), [mutation testing](#/glossary/mutation-testing)
 
 
+<a id="line-and-statement-coverage"></a>
+
+## Line and statement coverage
+
+The share of a program's lines, or statements, that at least one test executes. In [Who Judges the Judge](#/papers/liu2023onlinejudge "Who Judges the Judge: An Empirical Study on Online Judge Tests (2023)")'s words, line coverage "measures the percentage of executed lines of the source code against the total lines of code when running the test suite" (§2.2, PDF p. 3); [CodeT](#/papers/chen2022codet "CodeT: Code Generation with Generated Tests (2023)") defines statement coverage the same way for statements (App. H.2). Both are weaker than [branch coverage](#/glossary/branch-and-path-coverage): a line can run in a test without its wrong cases being tested.
+
+**Learn more:** [Who Judges the Judge](#/papers/liu2023onlinejudge "Who Judges the Judge: An Empirical Study on Online Judge Tests (2023)") §2.2 (PDF p. 3); [CodeT](#/papers/chen2022codet "CodeT: Code Generation with Generated Tests (2023)") App. H.2.
+
+**Related:** [branch and path coverage](#/glossary/branch-and-path-coverage), [mutation testing](#/glossary/mutation-testing), [online judge](#/glossary/online-judge), [test oracle](#/glossary/test-oracle)
+
+
 <a id="linear-and-nonlinear-integer-arithmetic"></a>
 
 ## Linear and nonlinear integer arithmetic
@@ -1511,6 +2110,19 @@ Linear integer arithmetic (LIA) is the logic of formulas over integer variables 
 **Learn more:** [SQLSolver](#/papers/ding2023sqlsolver "Proving Query Equivalence Using Linear Integer Arithmetic (2023)") §4.1 (PDF p. 10); [Verifying SQL Queries using…](#/papers/mohamed2024cvc5sql "Verifying SQL Queries using Theories of Tables and Relations (2024)") ([PDF p. 7](https://arxiv.org/pdf/2405.03057#page=7)) §2.1 (PDF p. 7).
 
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [decidable and undecidable](#/glossary/decidable-and-undecidable), [equisatisfiable](#/glossary/equisatisfiable), [first-order logic](#/glossary/first-order-logic)
+
+
+<a id="linear-programming-lp-and-milp"></a>
+
+## Linear programming (LP and MILP)
+
+An optimization model with a linear objective and linear constraints: minimize cᵀx subject to Ax ≤ b. In a mixed-integer linear program (MILP) some variables must take integer values. The points that satisfy the constraints form the feasible set; the best objective value is the optimal value, and the points that reach it are the optimizers ([ModelEquivBench](#/papers/zhu2026modelequivbench "ModelEquivBench: Certifying Multi-Relational Evaluation of LLM-Generated Optimization Models (2026)") §3.1). The LP relaxation of a MILP drops the integer requirements and bounds its optimal value. Duality supplies checkable [certificates](#/glossary/certificate): the value of every feasible solution of the dual LP bounds the primal optimal value (weak duality), so a primal and a dual solution with equal values prove both optimal, and Farkas' lemma gives a certificate that a system of linear inequalities has no solution (general definitions).
+
+Example: [ModelEquivBench](#/papers/zhu2026modelequivbench "ModelEquivBench: Certifying Multi-Relational Evaluation of LLM-Generated Optimization Models (2026)") asks whether an LLM-written optimization model is equivalent to a reference model in several senses (same feasible set, same optimal value, optimizer sets in bijection), and backs positive answers with exact certificates such as Farkas and primal–dual evidence (§1, §3.1).
+
+**Learn more:** [ModelEquivBench](#/papers/zhu2026modelequivbench "ModelEquivBench: Certifying Multi-Relational Evaluation of LLM-Generated Optimization Models (2026)") §1, §2.2 and §3.1 (general definitions).
+
+**Related:** [certificate](#/glossary/certificate), [query equivalence](#/glossary/query-equivalence), [optimizing SMT solver](#/glossary/optimizing-smt-solver), [set cover problem](#/glossary/set-cover-problem)
 
 
 <a id="list-semantics"></a>
@@ -1642,6 +2254,19 @@ A link between two kinds of things in which an item on either side can be linked
 **Related:** [normalized schema](#/glossary/normalized-schema), [integrity constraint](#/glossary/integrity-constraint)
 
 
+<a id="markov-chain"></a>
+
+## Markov chain
+
+A random process moving between states in which the next state depends only on the current one, not on the path that led there, with fixed transition probabilities (general definition). A stationary distribution is a distribution over the states that one step leaves unchanged; many chains settle into it over time.
+
+Example: [interwhen](#/papers/bhat2026interwhen "interwhen: A Generalizable Framework for Steering Reasoning Models with Test-time Verification (2026)") models an LLM's reasoning as a two-state Markov chain, compliant or not, with transition probabilities such as Pr(P_{t+1} = 1 | P_t = 1) = 1 − δ, and compares the chains with and without verification-based steering (§4.4, App. A). [The Hallucination Snowball](#/papers/singh2026snowball "The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines (2026)") models the form a hallucination takes from stage to stage of a pipeline as "a first-order Markov process over four states" (§4).
+
+**Learn more:** [interwhen](#/papers/bhat2026interwhen "interwhen: A Generalizable Framework for Steering Reasoning Models with Test-time Verification (2026)") §4.4 and App. A; [The Hallucination Snowball](#/papers/singh2026snowball "The Hallucination Snowball: Modeling Error Propagation as State Transitions in Multi-Agent LLM Pipelines (2026)") §4. Neither defines it (general definition).
+
+**Related:** [Markov decision process](#/glossary/markov-decision-process), [finite-state machine](#/glossary/finite-state-machine)
+
+
 <a id="markov-decision-process"></a>
 
 ## Markov decision process
@@ -1652,7 +2277,7 @@ Example: QUITE models query rewriting as an MDP (S, A, T, r, γ): a state is the
 
 **Learn more:** [QUITE](#/papers/song2025quite "QUITE: A Query Rewrite System Beyond Rules with LLM Agents (2025)") ([PDF p. 5](https://arxiv.org/pdf/2506.07675#page=5)) §4.1 (PDF p. 5); [LITHE](#/papers/dharwada2025lithe "LITHE: A Query Rewrite Advisor using LLMs (2026)") ([PDF p. 10](https://arxiv.org/pdf/2502.12918#page=10)) §5 (PDF p. 10). LITHE cites Puterman's 1994 book on MDPs (ref. [41], PDF p. 27) and QUITE his 1990 handbook chapter (ref. [62], PDF p. 14); neither is on this site.
 
-**Related:** [reinforcement learning](#/glossary/reinforcement-learning), [Monte Carlo tree search](#/glossary/monte-carlo-tree-search-mcts), [optimizer cost estimate](#/glossary/optimizer-cost-estimate)
+**Related:** [reinforcement learning](#/glossary/reinforcement-learning), [Monte Carlo tree search](#/glossary/monte-carlo-tree-search-mcts), [optimizer cost estimate](#/glossary/optimizer-cost-estimate), [POMDP (partially observable Markov decision process)](#/glossary/pomdp-partially-observable-markov-decision-process), [Markov chain](#/glossary/markov-chain)
 
 
 <a id="masked-language-model"></a>
@@ -1723,6 +2348,17 @@ It differs from [differential testing](#/glossary/differential-testing), which r
 **Learn more:** [QTRAN](#/papers/lin2025qtran "QTRAN: Extending Metamorphic-Oracle Based Logical Bug Detection Techniques for Multiple-DBMS Dialect Support (2025)") §2 (PDF pp. 4–5), which defines it for database testing with a relation that is "either equivalence (=) or an approximate relation based on a predefined metamorphic relationship"; [ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") §VII (PDF p. 11). The technique's original paper is not listed here.
 
 **Related:** [test oracle](#/glossary/test-oracle), [differential testing](#/glossary/differential-testing), [query equivalence](#/glossary/query-equivalence), [NULL and three-valued logic](#/glossary/null-and-three-valued-logic)
+
+
+<a id="minimax-optimality"></a>
+
+## Minimax optimality
+
+An algorithm is minimax optimal when its worst-case cost (error, number of samples) matches, up to constant or stated factors, a lower bound that no algorithm can beat in the worst case (general definition). [Self-Improvement in Language Models](#/papers/huang2024sharpening "Self-Improvement in Language Models: The Sharpening Mechanism (2025)") proves lower bounds for its setting and states that its SFT-based approach "is minimax optimal" under stated conditions (abstract, §1.2).
+
+**Learn more:** [Self-Improvement in Language Models](#/papers/huang2024sharpening "Self-Improvement in Language Models: The Sharpening Mechanism (2025)") abstract and §1.2, which use the term without defining it (general definition).
+
+**Related:** [best arm identification](#/glossary/best-arm-identification), [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy)
 
 
 <a id="minimum-description-length-mdl"></a>
@@ -1802,6 +2438,17 @@ What a node is varies: in LaSER a node is a whole SQL query and an edge a cost-i
 **Related:** [beam search](#/glossary/beam-search), [Markov decision process](#/glossary/markov-decision-process), [reinforcement learning](#/glossary/reinforcement-learning), [phase ordering](#/glossary/phase-ordering)
 
 
+<a id="multi-agent-debate"></a>
+
+## Multi-agent debate
+
+Several LLM agents answer or check the same question and exchange their reasoning over rounds, revising their positions, before a final answer or verdict is taken, often by vote (general definition, after Du et al. 2023, not listed here). [VeRA](#/papers/cheng2026vera "VeRA: Renewing Reasoning Benchmarks with Executable Specifications (2026)") checks answers by structured debate with "five agents and up to five rounds" (App. L). [Large Language Models Cannot…](#/papers/huang2023selfcorrect "Large Language Models Cannot Self-Correct Reasoning Yet (2024)") argues that multi-agent debate "does not outperform self-consistency" with the same number of responses (§4).
+
+**Learn more:** [VeRA](#/papers/cheng2026vera "VeRA: Renewing Reasoning Benchmarks with Executable Specifications (2026)") App. L; [Large Language Models Cannot…](#/papers/huang2023selfcorrect "Large Language Models Cannot Self-Correct Reasoning Yet (2024)") §4.
+
+**Related:** [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [self-correction](#/glossary/self-correction), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
+
+
 <a id="multi-armed-bandit-ucb"></a>
 
 ## Multi-armed bandit (UCB)
@@ -1836,7 +2483,7 @@ Example: [Sample More, Reflect Less](#/papers/mirzaei2026samplemore "Sample More
 
 **Learn more:** [Sample More, Reflect Less](#/papers/mirzaei2026samplemore "Sample More, Reflect Less: Self-Refine and Reflexion Lose to Repeated Sampling at Equal Token Cost, from 1.5B to 7B (2026)") ([PDF p. 8](https://arxiv.org/pdf/2607.28576#page=8)) §4.5 (PDF p. 8) and §4.7 (PDF p. 10); [ESPO](#/papers/liu2026espo "ESPO: Error-Structured Prompt Optimization via Diagnose, Diversify, and Stabilize (2026)") ([PDF p. 4](https://arxiv.org/pdf/2609.04197#page=4)) §3.4 (PDF p. 4). Holm's paper, which [Sample More, Reflect Less](#/papers/mirzaei2026samplemore "Sample More, Reflect Less: Self-Refine and Reflexion Lose to Repeated Sampling at Equal Token Cost, from 1.5B to 7B (2026)") cites, is not listed here.
 
-**Related:** [bootstrap resampling](#/glossary/bootstrap-resampling), [McNemar's exact test](#/glossary/mcnemars-exact-test)
+**Related:** [bootstrap resampling](#/glossary/bootstrap-resampling), [McNemar's exact test](#/glossary/mcnemars-exact-test), [Bonferroni correction](#/glossary/bonferroni-correction), [false discovery rate (FDR)](#/glossary/false-discovery-rate-fdr), [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse)
 
 
 <a id="mutation-testing"></a>
@@ -1854,7 +2501,29 @@ Mutation testing changes the program; mutation-based [fuzzing](#/glossary/fuzzin
 **Related:** [branch and path coverage](#/glossary/branch-and-path-coverage), [counterexample database](#/glossary/counterexample-database), [fuzzing](#/glossary/fuzzing)
 
 
+<a id="mutual-information"></a>
+
+## Mutual information
+
+How much knowing one random quantity tells about another: the reduction in uncertainty ([Shannon entropy](#/glossary/shannon-entropy)) about one from learning the other, zero exactly when they are independent (general definition). [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") bounds the conditional mutual information between a judge's "own" committed answer and the candidate answer it was shown, as a measure of how much the candidate leaks into the judge's answer (§4).
+
+**Learn more:** [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") §4, which uses it without defining it (general definition).
+
+**Related:** [Shannon entropy](#/glossary/shannon-entropy), [KL divergence](#/glossary/kl-divergence), [self-information](#/glossary/self-information)
+
+
 <a id="letter-n"></a>
+
+<a id="neuro-symbolic-ai"></a>
+
+## Neuro-symbolic AI
+
+Systems that combine neural models, such as LLMs, which are good at producing plausible candidates, with symbolic, model-based components such as planners, solvers or verifiers, which reason with explicit rules and can give guarantees (general definition). [LLM-Modulo ("LLMs Can't Plan](#/papers/kambhampati2024llmmodulo "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024)") argues for such a combination for planning, with LLMs as "approximate knowledge sources" and external verifiers checking their plans (abstract, §1).
+
+**Learn more:** [LLM-Modulo ("LLMs Can't Plan](#/papers/kambhampati2024llmmodulo "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024)") abstract and §1 (general definition).
+
+**Related:** [System 1 and System 2](#/glossary/system-1-and-system-2), [autoformalization](#/glossary/autoformalization), [proof assistant](#/glossary/proof-assistant), [counterexample-guided inductive synthesis (CEGIS)](#/glossary/counterexample-guided-inductive-synthesis-cegis)
+
 
 <a id="nondeterministic-query"></a>
 
@@ -1865,6 +2534,17 @@ A query that can legally return different results on the same database, for exam
 **Learn more:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) § Challenge (the home of this term: sources of nondeterminism and candidate definitions of equivalence); [Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)") ([PDF p. 1](https://arxiv.org/pdf/2608.15709#page=1)) §1 (PDF pp. 1–2) on "tie-sensitive top-k" and why one engine run can't show two such queries differ.
 
 **Related:** [list semantics](#/glossary/list-semantics), [spurious counterexample](#/glossary/spurious-counterexample), [query equivalence](#/glossary/query-equivalence)
+
+
+<a id="noninferiority-test"></a>
+
+## Noninferiority test
+
+A test that a new version is not worse than the old one by more than a chosen margin δ: it passes when the lower end of the confidence interval for (new − old) lies above −δ (general definition). It is one of the two one-sided tests of an [equivalence test](#/glossary/equivalence-test-tost); a plain test that finds "no significant difference" does not show it. [What Does a Harness…](#/papers/xu2026harnessrepair "What Does a Harness Repair? A Preregistered Study of Visibility, Baseline Adequacy and Evaluation Defects (2026)") tests a simpler setting for non-inferiority against a comparator with the rule "holds if the lower bound of θ > −δ" (§3.3); [DISCERN ("Pay Only for Disagreement")](#/papers/balachandran2026discern "Pay Only for Disagreement: Certified No-Regression Verdicts for Model Updates with Matching Label-Complexity Bounds (2026)") calls its Safe(ε) verdict "a tolerance statement in the spirit of noninferiority testing" (§3).
+
+**Learn more:** [What Does a Harness…](#/papers/xu2026harnessrepair "What Does a Harness Repair? A Preregistered Study of Visibility, Baseline Adequacy and Evaluation Defects (2026)") §1 and §3.3; [DISCERN ("Pay Only for Disagreement")](#/papers/balachandran2026discern "Pay Only for Disagreement: Certified No-Regression Verdicts for Model Updates with Matching Label-Complexity Bounds (2026)") §3. Neither defines it (general definition).
+
+**Related:** [equivalence test (TOST)](#/glossary/equivalence-test-tost), [statistical power](#/glossary/statistical-power), [regression testing](#/glossary/regression-testing)
 
 
 <a id="normalized-gain"></a>
@@ -1885,6 +2565,17 @@ A schema designed so that each fact is stored in one place, with tables split al
 **Learn more:** [Fundamental Challenges in Evaluating…](#/papers/renggli2025text2sql "Fundamental Challenges in Evaluating Text2SQL Solutions and Detecting Their Limitations (2025)") §5.2, which uses the term without defining it (general definition).
 
 **Related:** [functional dependency](#/glossary/functional-dependency), [integrity constraint](#/glossary/integrity-constraint), [many-to-many relationship](#/glossary/many-to-many-relationship), [gold query](#/glossary/gold-query)
+
+
+<a id="novelty-search"></a>
+
+## Novelty search
+
+Search that rewards finding solutions or behaviours unlike those found before, instead of progress toward a fixed objective, which can lead into dead ends (general definition). [Voyager](#/papers/wang2023voyager "Voyager: An Open-Ended Embodied Agent with Large Language Models (2024)") says its automatic curriculum, built around the goal of "discovering as many diverse things as possible", "can be perceived as an in-context form of novelty search" (§1).
+
+**Learn more:** [Voyager](#/papers/wang2023voyager "Voyager: An Open-Ended Embodied Agent with Large Language Models (2024)") §1, which cites novelty-search work not listed here (general definition).
+
+**Related:** [open-endedness](#/glossary/open-endedness), [evolutionary search](#/glossary/evolutionary-search), [exploration and exploitation](#/glossary/exploration-and-exploitation), [island model](#/glossary/island-model)
 
 
 <a id="np-complete-and-the-polynomial-hierarchy"></a>
@@ -1926,6 +2617,30 @@ A condition is NULL-rejecting on a column if it can't be true when that column i
 
 <a id="letter-o"></a>
 
+<a id="odds-ratio"></a>
+
+## Odds ratio
+
+A comparison of two success rates θ_A and θ_B through their odds: OR = [θ_A / (1 − θ_A)] / [θ_B / (1 − θ_B)]; 1 means no difference ([Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.3).
+
+**Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §3.3.
+
+**Related:** [Fisher's exact test](#/glossary/fishers-exact-test), [delta method](#/glossary/delta-method)
+
+
+<a id="off-policy-learning"></a>
+
+## Off-policy learning
+
+In RL, learning from experience generated by a different policy (the behaviour policy, often an older version of the model) than the one being improved; on-policy learning uses only fresh samples from the current policy (general definition). Off-policy updates are usually reweighted, for instance by the [importance ratio](#/glossary/importance-ratio-and-clipping), to correct for the mismatch. It is not the same as [offline RL](#/glossary/online-and-offline-rl), which learns from a fixed dataset, though offline RL is off-policy.
+
+Examples: [Prompt Dominance and Asymmetric…](#/papers/hou2026grpo "Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K (2026)") makes GRPO training "deliberately off-policy" by using each batch of samples for 32 consecutive optimizer steps, so that by the end "the data is 32 policy updates stale", and compares ways of correcting for it (§5). [ExpeL](#/papers/zhao2023expel "ExpeL: LLM Agents Are Experiential Learners (2024)") says its agent "uses off-policy learning", gathering experience with one policy and improving another (App. A.4).
+
+**Learn more:** [Prompt Dominance and Asymmetric…](#/papers/hou2026grpo "Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K (2026)") §5; [ExpeL](#/papers/zhao2023expel "ExpeL: LLM Agents Are Experiential Learners (2024)") App. A.4, citing Watkins and Dayan (1992), not listed here. Neither defines it (general definition).
+
+**Related:** [online and offline RL](#/glossary/online-and-offline-rl), [importance ratio and clipping](#/glossary/importance-ratio-and-clipping), [importance sampling and importance weighting](#/glossary/importance-sampling-and-importance-weighting), [experience replay](#/glossary/experience-replay), [PPO](#/glossary/ppo)
+
+
 <a id="olap-and-oltp"></a>
 
 ## OLAP and OLTP
@@ -1945,7 +2660,18 @@ In online RL the model being trained keeps generating new outputs, which are sco
 
 **Learn more:** [Tülu 3](#/papers/lambert2024tulu "Tulu 3: Pushing Frontiers in Open Language Model Post-Training (2024)") ([PDF p. 21](https://arxiv.org/pdf/2411.15124#page=21)) §5.1.2 (PDF p. 21) and §8.2 (PDF p. 48), which calls standard DPO's preference data "collected ahead of time, often from a distinct language model, and are thus considered as offline", in contrast to "online methods like PPO where the RM provides online feedback to generations from the policy"; [mmGRPO](#/papers/ziems2025mmgrpo "Composing Policy Gradients and Prompt Optimization for Language Model Programs (2026)") §2 and §5.2; [A State-of-the-Art SQL Reasoning…](#/papers/ali2025sqlrlvr "A State-of-the-Art SQL Reasoning Model using RLVR (2025)") §3.
 
-**Related:** [reinforcement learning](#/glossary/reinforcement-learning), [policy gradient](#/glossary/policy-gradient), [rejection sampling](#/glossary/rejection-sampling), [expert iteration](#/glossary/expert-iteration)
+**Related:** [reinforcement learning](#/glossary/reinforcement-learning), [policy gradient](#/glossary/policy-gradient), [rejection sampling](#/glossary/rejection-sampling), [expert iteration](#/glossary/expert-iteration), [off-policy learning](#/glossary/off-policy-learning)
+
+
+<a id="online-judge"></a>
+
+## Online judge
+
+A platform that hosts programming problems and automatically judges submitted solutions by running them on a predefined test suite for each problem: "Online Judge (OJ) systems are designed for providing coding tasks and then evaluating the solutions submitted by users" ([Who Judges the Judge](#/papers/liu2023onlinejudge "Who Judges the Judge: An Empirical Study on Online Judge Tests (2023)") §1, PDF p. 1). A solution the tests accept may still be wrong. Some judges let users "hack" an accepted solution with an input that makes it fail; UOJ's hacks are "fully verifiable" because every hackable problem has a correct reference solution and an input validator ([UOJ-Bench ("Beyond Problem Solving")](#/papers/xu2026uojbench "Beyond Problem Solving: UOJ-Bench for Evaluating Code Generation, Hacking, and Repair in Competitive Programming (2026)") §3.1). A problem with several correct outputs needs a special judge, a checker program in place of an exact comparison with the expected output (general definition).
+
+**Learn more:** [Who Judges the Judge](#/papers/liu2023onlinejudge "Who Judges the Judge: An Empirical Study on Online Judge Tests (2023)") §1 (PDF p. 1); [UOJ-Bench ("Beyond Problem Solving")](#/papers/xu2026uojbench "Beyond Problem Solving: UOJ-Bench for Evaluating Code Generation, Hacking, and Repair in Competitive Programming (2026)") §3.1.
+
+**Related:** [test oracle](#/glossary/test-oracle), [line and statement coverage](#/glossary/line-and-statement-coverage), [plausible patch](#/glossary/plausible-patch), [Pass@k](#/glossary/passk)
 
 
 <a id="open-coding"></a>
@@ -1957,6 +2683,17 @@ A qualitative research method for building categories from the data instead of f
 **Learn more:** [DLBench](#/papers/lin2025dlbench "DLBench: A Comprehensive Benchmark for SQL Translation with Large Language Models (2025)") §VI-C (PDF p. 9), which cites Khandkar (not listed here) without describing the method (general definition).
 
 **Related:** [Cohen's kappa](#/glossary/cohens-kappa)
+
+
+<a id="open-endedness"></a>
+
+## Open-endedness
+
+A system's ability to keep producing new and interesting artifacts without end, instead of converging on one solution. [Darwin Gödel Machine (DGM)](#/papers/zhang2025dgm "Darwin G\'odel Machine: Open-Ended Evolution of Self-Improving Agents (2026)") cites Hughes et al. (2024), not listed here, who "characterized open-endedness as a system's capacity to generate sequences of artifacts that are both novel and learnable from an observer's perspective" (§2). Open-ended search keeps an archive of stepping stones, "interesting yet suboptimal solutions or features that may enable future breakthroughs" (§1).
+
+**Learn more:** [Darwin Gödel Machine (DGM)](#/papers/zhang2025dgm "Darwin G\'odel Machine: Open-Ended Evolution of Self-Improving Agents (2026)") §1 and §2; [Voyager](#/papers/wang2023voyager "Voyager: An Open-Ended Embodied Agent with Large Language Models (2024)") §1, an open-ended agent in Minecraft.
+
+**Related:** [novelty search](#/glossary/novelty-search), [Gödel machine](#/glossary/gödel-machine), [evolutionary search](#/glossary/evolutionary-search), [island model](#/glossary/island-model)
 
 
 <a id="optimizer-cost-estimate"></a>
@@ -1983,6 +2720,17 @@ An SMT solver that does more than find values satisfying a formula: "Given a for
 **Learn more:** [RATest](#/papers/miao2019ratest "Explaining Wrong Queries Using Small Examples (2019)") §4 and §4.2; §6 names Z3 as "an efficient optimizing SMT Solver".
 
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [counterexample database](#/glossary/counterexample-database), [data provenance](#/glossary/data-provenance), [witness (provenance)](#/glossary/witness-provenance)
+
+
+<a id="options-framework"></a>
+
+## Options framework
+
+A way to represent skills in RL: an option is a temporally extended action, "a triple ⟨I, π, β⟩ of an initiation set I ⊆ S, a policy π, and a termination condition β" ([Dynamic Agent Skills](#/papers/li2026dynamicskills "Dynamic Agent Skills: A Lifecycle Survey and Taxonomy of Evolving Skill Libraries (2026)") §3.2): the states where it can start, how it acts, and when it stops. An agent can choose among options as it chooses among single actions.
+
+**Learn more:** [Dynamic Agent Skills](#/papers/li2026dynamicskills "Dynamic Agent Skills: A Lifecycle Survey and Taxonomy of Evolving Skill Libraries (2026)") §3.2, after Sutton et al. (1999), not listed here.
+
+**Related:** [agent skill](#/glossary/agent-skill), [Markov decision process](#/glossary/markov-decision-process), [reinforcement learning](#/glossary/reinforcement-learning)
 
 
 <a id="out-of-distribution-generalization"></a>
@@ -2035,6 +2783,17 @@ Example: modelling aggregates such as `SUM` as [uninterpreted functions](#/gloss
 
 <a id="letter-p"></a>
 
+<a id="paired-comparison"></a>
+
+## Paired comparison
+
+Comparing two systems on the same test items by analysing the per-item differences, instead of comparing their two averages. Items differ greatly in difficulty and similar systems tend to get the same items right, so the differences vary much less than the scores, and a paired test detects a smaller real difference with the same items (general definition). [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") reports that "greatly reduced data noise is possible only with the paired analysis" (§1) and measures paired variances for all pairs of models (§1, §3.1).
+
+**Learn more:** [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §1 and §3.1.
+
+**Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [sign test](#/glossary/sign-test), [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test), [Student's t-test and t-interval](#/glossary/students-t-test-and-t-interval), [permutation test](#/glossary/permutation-test), [bootstrap resampling](#/glossary/bootstrap-resampling), [law of total variance](#/glossary/law-of-total-variance)
+
+
 <a id="pareto-front"></a>
 
 ## Pareto front
@@ -2080,7 +2839,7 @@ Example: Brown et al. report that on MATH with Llama-3-8B-Instruct, coverage (th
 
 The share of tasks on which all k independent trials succeed: a reliability measure. It falls as k grows unless the agent succeeds every time, unlike [pass@k](#/glossary/passk), where one success in k is enough.
 
-**Learn more:** [GRACE](#/papers/hsu2026grace "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift (2026)") ([PDF p. 10](https://arxiv.org/pdf/2607.09175#page=10)) §5.1 (PDF p. 10), which contrasts pass@k's "best-of-k criterion" with pass^k's "trial-level reliability under an all-k" criterion and reports pass^3; the metric comes from τ-bench, which is not listed here.
+**Learn more:** [GRACE](#/papers/hsu2026grace "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift (2026)") ([PDF p. 10](https://arxiv.org/pdf/2607.09175#page=10)) §5.1 (PDF p. 10), which contrasts pass@k's "best-of-k criterion" with pass^k's "trial-level reliability under an all-k" criterion and reports pass^3; the metric comes from τ-bench ([τ-bench](#/papers/yao2024taubench "$\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (2025)")).
 
 **Related:** [pass@k](#/glossary/passk)
 
@@ -2094,6 +2853,19 @@ A number from −1 to +1 for how closely two lists of paired values follow a str
 **Learn more:** [Round-Trip Correctness (RTC)](#/papers/allamanis2024roundtrip "Unsupervised Evaluation of Code LLMs with Round-Trip Correctness (2024)") §4.1, which uses it without defining it (general definition).
 
 **Related:** [Spearman's rank correlation](#/glossary/spearmans-rank-correlation), [Cohen's kappa](#/glossary/cohens-kappa)
+
+
+<a id="permutation-test"></a>
+
+## Permutation test
+
+A test that compares an observed statistic with its values after randomly reshuffling labels that, if the null hypothesis is true, don't matter; the p-value is the share of reshuffles that give a value at least as extreme as the observed one (general definition). The paired sign-flip version flips the sign of each item's difference at random: if the two systems are equally good, each difference is as likely to be negative as positive (this assumes the differences are symmetric). With few items all 2ⁿ sign patterns can be enumerated, giving an exact p-value.
+
+Example: [FIRE](#/papers/agarwal2026fire "FIRE: Failure-Informed Runtime Engineering for Reliable Language-Model Agents (2026)") uses "two-sided paired sign-flip permutation tests over tasks", with exact sign-flip p-values for small screens (§4, §5.3, App. B); [Not All Skills Help](#/papers/wang2026assay "Not All Skills Help: Measuring and Repairing Agent Knowledge (2026)") reports that its per-skill permutation tests lack power at its number of random masks (App. K.1).
+
+**Learn more:** [FIRE](#/papers/agarwal2026fire "FIRE: Failure-Informed Runtime Engineering for Reliable Language-Model Agents (2026)") §4 and App. B; [Not All Skills Help](#/papers/wang2026assay "Not All Skills Help: Measuring and Repairing Agent Knowledge (2026)") App. K.1. Neither defines it (general definition).
+
+**Related:** [sign test](#/glossary/sign-test), [paired comparison](#/glossary/paired-comparison), [bootstrap resampling](#/glossary/bootstrap-resampling), [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test), [statistical power](#/glossary/statistical-power)
 
 
 <a id="perplexity"></a>
@@ -2120,6 +2892,17 @@ Example: Starburst's authors found that rule interactions make it "very difficul
 **Related:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules), [transformation and implementation rules](#/glossary/transformation-and-implementation-rules), [cost-based optimization](#/glossary/cost-based-optimization), [Monte Carlo tree search](#/glossary/monte-carlo-tree-search-mcts)
 
 
+<a id="plausible-patch"></a>
+
+## Plausible patch
+
+A patch, or program, that passes all the tests of a given suite but may still be wrong, because the tests miss its bug. [TrickCatcher](#/papers/liu2024trickcatcher "LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs (2025)") calls such programs plausible programs, "those that pass existing test suites yet still contain bugs" (abstract); [SWE-ABS](#/papers/yu2026sweabs "SWE-ABS: Adversarial Benchmark Strengthening Exposes Inflated Success Rates on Test-based Benchmark (2026)") shows a patch by a top SWE-Bench agent that "is plausible but incorrect", passing the original tests while violating the actual requirement (§1).
+
+**Learn more:** [SWE-ABS](#/papers/yu2026sweabs "SWE-ABS: Adversarial Benchmark Strengthening Exposes Inflated Success Rates on Test-based Benchmark (2026)") §1; [TrickCatcher](#/papers/liu2024trickcatcher "LLM-Powered Test Case Generation for Detecting Bugs in Plausible Programs (2025)") abstract.
+
+**Related:** [gold patch](#/glossary/gold-patch), [automated program repair](#/glossary/automated-program-repair), [test oracle](#/glossary/test-oracle), [mutation testing](#/glossary/mutation-testing), [resolve rate](#/glossary/resolve-rate)
+
+
 <a id="policy-entropy"></a>
 
 ## Policy entropy
@@ -2140,6 +2923,17 @@ A family of RL methods, [PPO](#/glossary/ppo) and [GRPO](#/glossary/grpo) among 
 **Learn more:** [Reinforcement Learning with Verifiable…](#/papers/wen2025rlvr "Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs (2025)") ([PDF p. 20](https://arxiv.org/pdf/2506.14245#page=20)) §4 (Eq. 3) and App. A.7 (PDF p. 20), which lists PPO among policy-gradient approaches; [Absolute Zero](#/papers/zhao2025absolutezero "Absolute Zero: Reinforced Self-play Reasoning with Zero Data (2025)") ([PDF p. 8](https://arxiv.org/pdf/2505.03335#page=8)) §3.3.5 (PDF p. 8); [mmGRPO](#/papers/ziems2025mmgrpo "Composing Policy Gradients and Prompt Optimization for Language Model Programs (2026)") §2, which calls GRPO a policy-gradient method. Sutton et al.'s paper is not listed here.
 
 **Related:** [reinforcement learning](#/glossary/reinforcement-learning), [PPO](#/glossary/ppo), [GRPO](#/glossary/grpo), [importance ratio and clipping](#/glossary/importance-ratio-and-clipping), [online and offline RL](#/glossary/online-and-offline-rl), [value function](#/glossary/value-function)
+
+
+<a id="pomdp-partially-observable-markov-decision-process"></a>
+
+## POMDP (partially observable Markov decision process)
+
+A [Markov decision process](#/glossary/markov-decision-process) in which the agent does not see the state itself, only observations that depend on it, so it must act on the history of what it has observed (general definition). [τ-bench](#/papers/yao2024taubench "$\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (2025)") formulates each τ-bench task as a POMDP (S, A, O, T, R, U), with state, action and observation spaces, a transition function, a reward function and an instruction space (§3).
+
+**Learn more:** [τ-bench](#/papers/yao2024taubench "$\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (2025)") §3 (general definition).
+
+**Related:** [Markov decision process](#/glossary/markov-decision-process), [reinforcement learning](#/glossary/reinforcement-learning), [Pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials)
 
 
 <a id="positional-bias"></a>
@@ -2175,6 +2969,17 @@ Proximal Policy Optimization, the RL algorithm that the DeepSeekMath authors des
 **Related:** [GRPO](#/glossary/grpo), [reinforcement learning](#/glossary/reinforcement-learning)
 
 
+<a id="pre-registration"></a>
+
+## Pre-registration
+
+Fixing a study's hypotheses, design, endpoints and decision rules in a dated written plan before the data are collected, so that the analysis cannot be tuned to the results; later changes are reported as deviations (general definition). [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") fixed its confirmatory study's settings "in a dated written plan before the first run started" (§5.3); [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") froze its panel, seeds, split schemes and decision rules "before any pool of the panel was generated" (§3.5); [What Does a Harness…](#/papers/xu2026harnessrepair "What Does a Harness Repair? A Preregistered Study of Visibility, Baseline Adequacy and Evaluation Defects (2026)") preregistered its study and reports all its primary endpoints (abstract).
+
+**Learn more:** [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") §5.3; [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §3.5; [What Does a Harness…](#/papers/xu2026harnessrepair "What Does a Harness Repair? A Preregistered Study of Visibility, Baseline Adequacy and Evaluation Defects (2026)") abstract (general definition).
+
+**Related:** [adaptive data analysis](#/glossary/adaptive-data-analysis), [multiple testing](#/glossary/multiple-testing), [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse), [statistical power](#/glossary/statistical-power)
+
+
 <a id="premise-selection"></a>
 
 ## Premise selection
@@ -2197,6 +3002,17 @@ A join of a table's foreign-key column with the primary key it refers to, such a
 **Related:** [integrity constraint](#/glossary/integrity-constraint), [many-to-many relationship](#/glossary/many-to-many-relationship), [star and snowflake schemas](#/glossary/star-and-snowflake-schemas), [cardinality estimation](#/glossary/cardinality-estimation)
 
 
+<a id="procedural-memory"></a>
+
+## Procedural memory
+
+An agent's stored know-how about how to act, kept across tasks: lessons drawn from its earlier successes and failures that are "stored and injected in context at test time", which "leaves model weights untouched" ([DAEDALUS](#/papers/edy2026daedalus "DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks (2026)") §1).
+
+**Learn more:** [DAEDALUS](#/papers/edy2026daedalus "DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks (2026)") §1; [ExpeL](#/papers/zhao2023expel "ExpeL: LLM Agents Are Experiential Learners (2024)"), one such system, which that section cites.
+
+**Related:** [agent skill](#/glossary/agent-skill), [library learning](#/glossary/library-learning), [experience replay](#/glossary/experience-replay), [reflective prompt optimization](#/glossary/reflective-prompt-optimization)
+
+
 <a id="production-rule-rule-engine"></a>
 
 ## Production rule (rule engine)
@@ -2206,6 +3022,28 @@ A rule made of a condition and an action: whenever the condition holds, the acti
 **Learn more:** [Starburst query rewrite](#/papers/pirahesh1992starburst "Extensible/Rule Based Query Rewrite Optimization in Starburst (1992)") §4 (PDF pp. 8–9).
 
 **Related:** [forward chaining](#/glossary/forward-chaining), [phase ordering](#/glossary/phase-ordering), [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules)
+
+
+<a id="program-equivalence"></a>
+
+## Program equivalence
+
+Two programs are equivalent if they behave the same on every input: "if, for every input x, they either both halt with the same output or both fail to halt" ([Program Semantic Inequivalence Game…](#/papers/micelibarone2025sinq "Program Semantic Inequivalence Game with Large Language Models (2025)") §2.1). Proving it is undecidable in general (see [Rice's theorem](#/glossary/halting-problem-and-rices-theorem)), while showing that two programs differ needs only one input on which they disagree. [Query equivalence](#/glossary/query-equivalence) is the special case for database queries.
+
+**Learn more:** [Program Semantic Inequivalence Game…](#/papers/micelibarone2025sinq "Program Semantic Inequivalence Game with Large Language Models (2025)") §2.1; [Semantic Equivalence Self-Play (SEQ/SINQ](#/papers/poon2026selfplay "Improving LLM Code Reasoning via Semantic Equivalence Self-Play with Formal Verification (2026)") § "Step 2a" and App. A, which proves Haskell functions equivalent with Liquid Haskell.
+
+**Related:** [query equivalence](#/glossary/query-equivalence), [translation validation](#/glossary/translation-validation), [differential testing](#/glossary/differential-testing), [refinement type](#/glossary/refinement-type), [halting problem and Rice's theorem](#/glossary/halting-problem-and-rices-theorem)
+
+
+<a id="program-slicing"></a>
+
+## Program slicing
+
+Finding the parts of a program that can affect, or be affected by, chosen lines, by following data dependencies (which values flow where) and control dependencies (which conditions decide whether a line runs). A backward slice collects what the chosen lines depend on, a forward slice what depends on them; an intraprocedural slice stays within one function (general definition). [SWE-ABS](#/papers/yu2026sweabs "SWE-ABS: Adversarial Benchmark Strengthening Exposes Inflated Success Rates on Test-based Benchmark (2026)") computes "the forward and backward slice from modified lines" of a patch on a program dependence graph, to aim new tests at the code the patch can affect (§3.1.3).
+
+**Learn more:** [SWE-ABS](#/papers/yu2026sweabs "SWE-ABS: Adversarial Benchmark Strengthening Exposes Inflated Success Rates on Test-based Benchmark (2026)") §3.1.3 and App. A.3.2.
+
+**Related:** [symbolic execution](#/glossary/symbolic-execution), [delta debugging](#/glossary/delta-debugging), [branch and path coverage](#/glossary/branch-and-path-coverage)
 
 
 <a id="program-synthesis"></a>
@@ -2380,6 +3218,30 @@ Query rewriting replaces a query with an equivalent one that runs faster; databa
 
 <a id="letter-r"></a>
 
+<a id="random-effects-meta-analysis"></a>
+
+## Random-effects meta-analysis
+
+Combining one effect estimate from each of several studies (or models) into an average while allowing the true effect to differ between them: each estimate is weighted by the inverse of its own variance plus an estimated between-study variance τ², for which DerSimonian–Laird is a standard estimator (general definition; [Auditing Reward Hackability in…](#/papers/rajan2026hackability "Auditing Reward Hackability in Code RL Training Environments (2026)") §5). I² is the share of the spread among the estimates beyond what chance alone would produce; 0% means they agree as well as their noise allows (general definition).
+
+Example: [Auditing Reward Hackability in…](#/papers/rajan2026hackability "Auditing Reward Hackability in Code RL Training Environments (2026)") pools per-model effects over 134 SWE-bench Verified submissions this way (§5).
+
+**Learn more:** [Auditing Reward Hackability in…](#/papers/rajan2026hackability "Auditing Reward Hackability in Code RL Training Environments (2026)") §5 (general definitions).
+
+**Related:** [standard error](#/glossary/standard-error), [hierarchical model](#/glossary/hierarchical-model), [multiple testing](#/glossary/multiple-testing)
+
+
+<a id="react"></a>
+
+## ReAct
+
+A prompting pattern for LLM agents that interleaves reasoning with actions: the model writes a thought, takes an action (a tool call, a search), reads the result, and repeats. Its authors describe it as using LLMs "to generate both reasoning traces and task-specific actions in an interleaved manner" ([ReAct](#/papers/yao2022react "ReAct: Synergizing Reasoning and Acting in Language Models (2023)") abstract). It underlies many agent harnesses.
+
+**Learn more:** [ReAct](#/papers/yao2022react "ReAct: Synergizing Reasoning and Acting in Language Models (2023)") abstract and §1; [UOJ-Bench ("Beyond Problem Solving")](#/papers/xu2026uojbench "Beyond Problem Solving: UOJ-Bench for Evaluating Code Generation, Hacking, and Repair in Competitive Programming (2026)") §4.3, which uses "a ReAct framework" for its agentic evaluation.
+
+**Related:** [agent harness](#/glossary/agent-harness), [tool calling (function calling)](#/glossary/tool-calling-function-calling), [program-of-thought and tool-integrated reasoning](#/glossary/program-of-thought-and-tool-integrated-reasoning)
+
+
 <a id="reasoning-boundary"></a>
 
 ## Reasoning boundary
@@ -2424,6 +3286,17 @@ Judging an output without a reference answer, tests or other ground truth; for c
 **Related:** [LLM-as-a-judge](#/glossary/llm-as-a-judge), [test oracle](#/glossary/test-oracle)
 
 
+<a id="refinement-type"></a>
+
+## Refinement type
+
+A type with a logical condition that its values must satisfy, such as "integers greater than 0" or "lists of length n"; a checker, often an [SMT solver](#/glossary/sat-and-smt-solvers), proves at compile time that the code respects the conditions (general definition). Liquid Haskell "embeds refinement types into the language", which [Semantic Equivalence Self-Play (SEQ/SINQ](#/papers/poon2026selfplay "Improving LLM Code Reasoning via Semantic Equivalence Self-Play with Formal Verification (2026)") uses to prove two Haskell functions equivalent (§2).
+
+**Learn more:** [Semantic Equivalence Self-Play (SEQ/SINQ](#/papers/poon2026selfplay "Improving LLM Code Reasoning via Semantic Equivalence Self-Play with Formal Verification (2026)") §2 (general definition).
+
+**Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [formal specification](#/glossary/formal-specification), [Hoare triple](#/glossary/hoare-triple), [program equivalence](#/glossary/program-equivalence), [proof assistant](#/glossary/proof-assistant)
+
+
 <a id="reflective-prompt-optimization"></a>
 
 ## Reflective prompt optimization
@@ -2446,6 +3319,17 @@ Re-running tests on a new version of a system to catch behaviour that changed fr
 **Learn more:** [Massive Stochastic Testing of SQL](#/papers/slutz1998rags "Massive Stochastic Testing of SQL (1998)") §2 (PDF p. 2).
 
 **Related:** [differential testing](#/glossary/differential-testing), [fuzzing](#/glossary/fuzzing), [test oracle](#/glossary/test-oracle)
+
+
+<a id="regression-to-the-mean"></a>
+
+## Regression to the mean
+
+Items picked because they scored unusually high (or low) on one noisy measurement tend to score closer to the average when measured again, by chance alone. [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") relates the [optimizer's curse](#/glossary/winners-curse-optimizers-curse) to it: "high performers on one test are likely to perform less well on subsequent tests" (§4, PDF p. 10). [What Stops a Small…](#/papers/bozoglan2026slmdbagent "What Stops a Small Language Model From Driving a Database Agent (2026)") notes that items re-read because they had scored low are expected to improve by regression to the mean alone (§8.6).
+
+**Learn more:** [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") §4 (PDF p. 10); [What Stops a Small…](#/papers/bozoglan2026slmdbagent "What Stops a Small Language Model From Driving a Database Agent (2026)") §8.6.
+
+**Related:** [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse), [shrinkage](#/glossary/shrinkage), [hierarchical model](#/glossary/hierarchical-model)
 
 
 <a id="reinforcement-learning"></a>
@@ -2518,6 +3402,17 @@ Choosing the final output from several sampled candidates by scoring them, with 
 **Related:** [best-of-N sampling](#/glossary/best-of-n-sampling), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [reward model](#/glossary/reward-model)
 
 
+<a id="resolve-rate"></a>
+
+## Resolve rate
+
+The share of a coding benchmark's instances that an agent solves. On SWE-bench, "% Resolved ... is the proportion of instances for which all tests pass successfully after the model generated patch is applied to the repository" ([SWE-agent](#/papers/yang2024sweagent "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering (2024)") §4). A resolved instance may still be wrong if its tests are weak (see [plausible patch](#/glossary/plausible-patch)).
+
+**Learn more:** [SWE-agent](#/papers/yang2024sweagent "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering (2024)") §4, citing the SWE-bench paper, not listed here.
+
+**Related:** [Pass@k](#/glossary/passk), [gold patch](#/glossary/gold-patch), [plausible patch](#/glossary/plausible-patch), [execution accuracy](#/glossary/execution-accuracy)
+
+
 <a id="retrieval-augmented-generation-rag"></a>
 
 ## Retrieval-augmented generation (RAG)
@@ -2537,7 +3432,7 @@ The policy raises its reward by exploiting flaws in how the reward is computed i
 
 **Learn more:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation) (the home of this challenge); [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)") ([PDF p. 4](https://arxiv.org/pdf/2501.12948#page=4)) §2.2 (PDF p. 4) and §6 (PDF p. 11).
 
-**Related:** [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr), [execution accuracy](#/glossary/execution-accuracy), [soundness and completeness](#/glossary/soundness-and-completeness), [reward shaping](#/glossary/reward-shaping), [best-of-N sampling](#/glossary/best-of-n-sampling)
+**Related:** [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr), [execution accuracy](#/glossary/execution-accuracy), [soundness and completeness](#/glossary/soundness-and-completeness), [reward shaping](#/glossary/reward-shaping), [best-of-N sampling](#/glossary/best-of-n-sampling), [reward model overoptimization](#/glossary/reward-model-overoptimization)
 
 
 <a id="reward-model"></a>
@@ -2549,6 +3444,17 @@ A model trained to score responses, often from human preference comparisons, and
 **Learn more:** [Weaver](#/papers/saadfalcon2025weaver "Shrinking the Generation-Verification Gap with Weak Verifiers (2025)") (abstract, §1), which says "a significant performance gap remains" between LM judges or reward models and oracle verifiers; [JudgeBench](#/papers/tan2024judgebench "JudgeBench: A Benchmark for Evaluating LLM-based Judges (2025)") §4.3, which compares its benchmark with RewardBench, a benchmark for reward models.
 
 **Related:** [LLM-as-a-judge](#/glossary/llm-as-a-judge), [outcome and process rewards](#/glossary/outcome-and-process-rewards), [reward hacking](#/glossary/reward-hacking), [best-of-N sampling](#/glossary/best-of-n-sampling), [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr)
+
+
+<a id="reward-model-overoptimization"></a>
+
+## Reward model overoptimization
+
+Optimizing a policy so hard against a learned [reward model](#/glossary/reward-model) that the true objective it stands in for gets worse while the reward model's score keeps rising; an instance of [Goodhart's law](#/glossary/goodharts-law). [Scaling Laws for Reward…](#/papers/gao2022overoptimization "Scaling Laws for Reward Model Overoptimization (2023)") §1: "Optimizing too much against such a model eventually hinders the true objective, a phenomenon we refer to as *overoptimization*"; the paper measures how this effect scales (title, abstract). [Prompt Dominance and Asymmetric…](#/papers/hou2026grpo "Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K (2026)") describes it as "a proxy reward going up while the true objective falls" (§7).
+
+**Learn more:** [Scaling Laws for Reward…](#/papers/gao2022overoptimization "Scaling Laws for Reward Model Overoptimization (2023)") abstract and §1; [Prompt Dominance and Asymmetric…](#/papers/hou2026grpo "Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K (2026)") §7.
+
+**Related:** [reward hacking](#/glossary/reward-hacking), [KL penalty](#/glossary/kl-penalty), [Goodhart's law](#/glossary/goodharts-law), [reward model](#/glossary/reward-model), [best-of-N sampling](#/glossary/best-of-n-sampling)
 
 
 <a id="reward-shaping"></a>
@@ -2584,6 +3490,30 @@ Reinforcement learning in which the reward comes from a program that checks the 
 **Learn more:** RL with verifiable rewards (RLVR / GRPO) (the home of this technique: how it works, limits, uses in SQL); [Tülu 3](#/papers/lambert2024tulu "Tulu 3: Pushing Frontiers in Open Language Model Post-Training (2024)") ([PDF p. 30](https://arxiv.org/pdf/2411.15124#page=30)) §6 (PDF p. 30).
 
 **Related:** [reinforcement learning](#/glossary/reinforcement-learning), [GRPO](#/glossary/grpo), [reward hacking](#/glossary/reward-hacking), [certificate](#/glossary/certificate), [outcome and process rewards](#/glossary/outcome-and-process-rewards)
+
+
+<a id="rogan-gladen-correction"></a>
+
+## Rogan-Gladen correction
+
+A correction of a rate measured with an imperfect detector. If the detector flags a fraction e_det of the items and has true- and false-positive rates TPR and FPR, then e_det = TPR · e_true + FPR · (1 − e_true), so the true rate is estimated as (e_det − FPR) / (TPR − FPR) ([SALUS](#/papers/zhou2026salus "SALUS: Automated Auditing of NL-to-SQL Benchmarks through Weak Supervision of Multi-Agent Output (2026)") §5.4). The denominator is [Youden's index](#/glossary/youdens-index): when the detector barely tells the classes apart, the correction becomes unstable.
+
+**Learn more:** [SALUS](#/papers/zhou2026salus "SALUS: Automated Auditing of NL-to-SQL Benchmarks through Weak Supervision of Multi-Agent Output (2026)") §5.4, citing Rogan and Gladen (1978), not listed here.
+
+**Related:** [true and false positive rates](#/glossary/true-and-false-positive-rates), [Youden's index](#/glossary/youdens-index), [label noise](#/glossary/label-noise)
+
+
+<a id="rtl-and-the-chip-design-flow"></a>
+
+## RTL and the chip design flow
+
+Terms of hardware design, where LLM agents now also work (general definitions). RTL (register-transfer level) code describes a chip as registers and the logic between them, in a hardware description language such as Verilog. Logic synthesis compiles RTL into logic gates, and technology mapping maps those gates onto a library's cells; the result is judged by PPA, power, performance (timing) and area. A testbench is code that drives a design in simulation with inputs (stimulus) and checks its outputs (a checker), and an equivalence check proves that a rewritten design keeps the original's behaviour. The software for these steps is called EDA (electronic design automation) tools, not to be confused with an [estimation of distribution algorithm (EDA)](#/glossary/estimation-of-distribution-algorithm-eda).
+
+Example: [ChipMEM](#/papers/alrabah2026chipmem "ChipMEM: Verification-Grounded Memory for EDA Agents (2026)") optimizes RTL for area "using Yosys for synthesis and equivalence and ABC for technology mapping", and also generates testbench stimulus and checkers (§4).
+
+**Learn more:** [ChipMEM](#/papers/alrabah2026chipmem "ChipMEM: Verification-Grounded Memory for EDA Agents (2026)") §1 and §4, which use the terms without defining them (general definitions).
+
+**Related:** [translation validation](#/glossary/translation-validation), [test oracle](#/glossary/test-oracle), [program equivalence](#/glossary/program-equivalence)
 
 
 <a id="letter-s"></a>
@@ -2664,7 +3594,7 @@ Letting a model abstain on the inputs it is least sure of and measuring its erro
 
 **Learn more:** [process- vs outcome-based feedback](#/papers/uesato2022process "Solving math word problems with process- and outcome-based feedback (2022)") ([PDF p. 10](https://arxiv.org/pdf/2211.14275#page=10)) §3.4 (PDF p. 10).
 
-**Related:** [reward model](#/glossary/reward-model), [best-of-N sampling](#/glossary/best-of-n-sampling)
+**Related:** [reward model](#/glossary/reward-model), [best-of-N sampling](#/glossary/best-of-n-sampling), [learning to defer](#/glossary/learning-to-defer), [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control)
 
 
 <a id="selectivity"></a>
@@ -2704,6 +3634,17 @@ Having an LLM revise its own output, usually after feedback such as an error mes
 **Related:** [test-time scaling](#/glossary/test-time-scaling), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [automated program repair](#/glossary/automated-program-repair), [reflective prompt optimization](#/glossary/reflective-prompt-optimization)
 
 
+<a id="self-distillation"></a>
+
+## Self-distillation
+
+[Distillation](#/glossary/distillation) in which the teacher is the model itself, under different inputs or at an earlier stage, instead of a stronger model. [When Does Continual Learning Require Learning](#/papers/harrington2026continual "When Does Continual Learning Require Learning (2026)") §3.2: SDFT "is self-distillation under a forward-KL loss against soft targets from a teacher; in the original work the teacher is the model itself on demonstration-conditioned inputs". In its sequential version the teacher is the previous stage's model, which pulls the student "toward its own previous-stage distribution".
+
+**Learn more:** [When Does Continual Learning Require Learning](#/papers/harrington2026continual "When Does Continual Learning Require Learning (2026)") §3.2. The SDFT paper (Shenfeld et al.) is not listed here.
+
+**Related:** [distillation](#/glossary/distillation), [catastrophic forgetting](#/glossary/catastrophic-forgetting), [backward and forward transfer (BWT and FWT)](#/glossary/backward-and-forward-transfer-bwt-and-fwt), [KL divergence](#/glossary/kl-divergence)
+
+
 <a id="self-information"></a>
 
 ## Self-information
@@ -2712,7 +3653,7 @@ How surprising an outcome is under a probability model: an outcome with probabil
 
 **Learn more:** [Efficient Prompting Methods for…](#/papers/chang2024promptsurvey "Efficient Prompting Methods for Large Language Models: A Survey (2024)") ([PDF p. 19](https://arxiv.org/pdf/2404.01077#page=19)) §4.2.1 (PDF p. 19), citing Shannon 1948 (not listed here), without defining it (general definition).
 
-**Related:** [perplexity](#/glossary/perplexity), [KL divergence](#/glossary/kl-divergence), [minimum description length (MDL)](#/glossary/minimum-description-length-mdl)
+**Related:** [perplexity](#/glossary/perplexity), [KL divergence](#/glossary/kl-divergence), [minimum description length (MDL)](#/glossary/minimum-description-length-mdl), [Shannon entropy](#/glossary/shannon-entropy)
 
 
 <a id="self-play"></a>
@@ -2763,6 +3704,17 @@ Gotcha: `x NOT IN (subquery)` is not the same as `NOT EXISTS` once NULLs appear:
 **Related:** [correlated subquery](#/glossary/correlated-subquery), [logical plan](#/glossary/logical-plan), [NULL and three-valued logic](#/glossary/null-and-three-valued-logic)
 
 
+<a id="sequential-probability-ratio-test-sprt"></a>
+
+## Sequential probability ratio test (SPRT)
+
+A test that looks at observations one at a time and stops as soon as the evidence is strong enough: it tracks the ratio of the data's probability under the two hypotheses and stops when the ratio crosses an upper or a lower threshold. Among tests with the same error rates it needs the fewest observations on average (Wald; general definition). [Solving a Million-Step LLM…](#/papers/meyerson2025maker "Solving a Million-Step LLM Task with Zero Errors (2025)") draws answers for a step "until one has been sampled k times more than any other" (first-to-ahead-by-k voting), "motivated by the optimality of such an approach in the sequential probability ratio test (SPRT)", and analyses it as a generalization of the gambler's ruin problem, the classic question of how likely a random walk is to reach one boundary before another (§3.2).
+
+**Learn more:** [Solving a Million-Step LLM…](#/papers/meyerson2025maker "Solving a Million-Step LLM Task with Zero Errors (2025)") §3.2, which cites Wald's book, not listed here (general definition).
+
+**Related:** [E-process (testing by betting)](#/glossary/e-process-testing-by-betting), [confidence sequence (anytime-valid inference)](#/glossary/confidence-sequence-anytime-valid-inference), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting)
+
+
 <a id="set-cover-problem"></a>
 
 ## Set cover problem
@@ -2787,6 +3739,41 @@ In SQL-checking and benchmark papers the term often means only that results are 
 **Related:** [bag semantics](#/glossary/bag-semantics), [bag-set semantics](#/glossary/bag-set-semantics), [query equivalence](#/glossary/query-equivalence)
 
 
+<a id="severe-test"></a>
+
+## Severe test
+
+A test that a claim "would probably have failed were it false". In the error-statistical view of Mayo and Spanos that [Selection Without Signal, Recovery…](#/papers/iscan2026falsification "Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (2026)") cites, "a claim is corroborated only to the extent that it has passed" such a test (§1). Passing a test that the claim would have passed even if false is no evidence for it.
+
+**Learn more:** [Selection Without Signal, Recovery…](#/papers/iscan2026falsification "Selection Without Signal, Recovery Through Expression: A Measurement Study of Post-Hoc Falsification Operators for Frozen Small Code Models (2026)") §1, citing Mayo and Spanos (2006), not listed here.
+
+**Related:** [test oracle](#/glossary/test-oracle), [statistical power](#/glossary/statistical-power), [mutation testing](#/glossary/mutation-testing), [certificate](#/glossary/certificate)
+
+
+<a id="shannon-entropy"></a>
+
+## Shannon entropy
+
+The average surprise of a random outcome: H = −Σ p(x) log p(x), the expected [self-information](#/glossary/self-information). It is 0 when the outcome is certain and largest when all outcomes are equally likely (general definition). [Self-Play Only Evolves When…](#/papers/liu2026infogain "Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain (2026)") §2.2 says it "characterises the total uncertainty of a distribution" and "does not distinguish reusable structure from randomness".
+
+**Learn more:** [Self-Play Only Evolves When…](#/papers/liu2026infogain "Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain (2026)") §2.2, citing Shannon (1948), not listed here (general definition).
+
+**Related:** [self-information](#/glossary/self-information), [KL divergence](#/glossary/kl-divergence), [mutual information](#/glossary/mutual-information), [policy entropy](#/glossary/policy-entropy), [minimum description length (MDL)](#/glossary/minimum-description-length-mdl)
+
+
+<a id="shrinkage"></a>
+
+## Shrinkage
+
+Pulling noisy individual estimates part way toward a common value, such as a prior mean or the average of all estimates, more strongly the noisier they are. It trades a little bias for less error, and it undoes the upward bias of picking the top estimate (the [winner's curse](#/glossary/winners-curse-optimizers-curse)). In [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)")'s normal models the adjusted estimate is a weighted average of the estimate and the prior mean, with weight 1/(1 + variance ratio) on the estimate (§3.2, Eq. 6a, PDF p. 7).
+
+Example: [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") shrinks each accepted change's measured advantage by its loop's own estimate of how much of the spread between candidates is real, and reports that this "largely removes the average bias" (§6).
+
+**Learn more:** [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") §3.2 (PDF p. 7); [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") §5.1 and §6.
+
+**Related:** [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse), [Bayes' rule, prior and posterior](#/glossary/bayes-rule-prior-and-posterior), [hierarchical model](#/glossary/hierarchical-model), [regression to the mean](#/glossary/regression-to-the-mean)
+
+
 <a id="sign-test"></a>
 
 ## Sign test
@@ -2795,7 +3782,7 @@ A test of whether one system beats another more often than chance, using only th
 
 **Learn more:** [Skill Issue](#/papers/kozyrev2026skillissue "Skill Issue: Lessons from Optimizing Repository SKILLs for Coding Agents (2026)") §4.2; [Which Self-Improvements Should We…](#/papers/sun2026reuse "Which Self-Improvements Should We Trust? Reliable Self-Improvement When Agents Reuse Their Benchmarks (2026)") §2.2 and Eq. 3, an exact one-sided paired sign test used as an acceptance gate.
 
-**Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [multiple testing](#/glossary/multiple-testing), [statistical power](#/glossary/statistical-power)
+**Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [multiple testing](#/glossary/multiple-testing), [statistical power](#/glossary/statistical-power), [binomial test](#/glossary/binomial-test), [permutation test](#/glossary/permutation-test)
 
 
 <a id="small-counterexample-property"></a>
@@ -2894,6 +3881,17 @@ A grouping of SQL statements by what they act on: DQL (data query language) read
 **Related:** [SQL standard](#/glossary/sql-standard), [SQL dialect](#/glossary/sql-dialect), [stored procedure and trigger](#/glossary/stored-procedure-and-trigger)
 
 
+<a id="standard-error"></a>
+
+## Standard error
+
+The typical error of an estimate such as an average: the standard deviation it would have across repeats of the experiment. For the mean of n independent values with standard deviation σ it is σ/√n, so four times the data halves it ([BudgetAPO](#/papers/liu2026budgetapo "How Should a Prompt Optimizer Spend a Tight Budget? BudgetAPO with Noise-Adaptive Evaluation (2026)") §3.1). Example: [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") computes that a model with 50% accuracy on HumanEval's 164 questions has an unpaired standard error of about 4% (§2.1).
+
+**Learn more:** [BudgetAPO](#/papers/liu2026budgetapo "How Should a Prompt Optimizer Spend a Tight Budget? BudgetAPO with Noise-Adaptive Evaluation (2026)") §3.1; [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §2.1 and §3.1.
+
+**Related:** [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt), [z-score](#/glossary/z-score), [confidence interval and coverage](#/glossary/confidence-interval-and-coverage), [bootstrap resampling](#/glossary/bootstrap-resampling), [clustered standard errors and cluster bootstrap](#/glossary/clustered-standard-errors-and-cluster-bootstrap), [law of total variance](#/glossary/law-of-total-variance)
+
+
 <a id="star-and-snowflake-schemas"></a>
 
 ## Star and snowflake schemas
@@ -2914,6 +3912,17 @@ The chance that a test detects an effect of a given size when the effect is real
 **Learn more:** [When the Reward Suite Is Leaky](#/papers/zhang2026leaky "When the Reward Suite Is Leaky: A Preregistered Causal Contrast of Natural Verifier False Positives in RLVR (2026)") §4.7, which gives a minimum detectable slope at 80% power.
 
 **Related:** [multiple testing](#/glossary/multiple-testing), [equivalence test (TOST)](#/glossary/equivalence-test-tost), [sign test](#/glossary/sign-test)
+
+
+<a id="stochastic-dominance"></a>
+
+## Stochastic dominance
+
+A random score X stochastically dominates another, Y, if X is at least as likely as Y to exceed every threshold τ and strictly more likely for some τ: P(X > τ) ≥ P(Y > τ) for all τ ([Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)") §4.3, footnote). On a performance profile, a plot of the share of runs or tasks that reach each threshold, which [Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)") proposes for RL benchmarks (§4.2), the dominating method's curve lies on or above the other's everywhere. The authors note that with many tasks such curves often cross, so stochastic dominance "is rarely observed" (§4.3).
+
+**Learn more:** [Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)") §4.2 and §4.3.
+
+**Related:** [interquartile mean (IQM)](#/glossary/interquartile-mean-iqm), [Pareto front](#/glossary/pareto-front), [Mann-Whitney U test](#/glossary/mann-whitney-u-test)
 
 
 <a id="stored-procedure-and-trigger"></a>
@@ -2938,6 +3947,30 @@ For a precondition P and a program fragment S, the strongest postcondition descr
 **Learn more:** [Mediator](#/papers/wang2017mediator "Verifying Equivalence of Database-Driven Applications (2017)") ([PDF p. 16](https://arxiv.org/pdf/1710.07660#page=16)) §6.1 and Fig. 10 (PDF p. 16), which uses the notion without defining it (general definition), whose rules for deletes and updates are unsound when the condition contains a subquery that reads the updated table.
 
 **Related:** [Hoare triple](#/glossary/hoare-triple), [symbolic execution](#/glossary/symbolic-execution), [loop invariant](#/glossary/loop-invariant)
+
+
+<a id="students-t-test-and-t-interval"></a>
+
+## Student's t-test and t-interval
+
+Tests and intervals for a mean when the standard deviation is estimated from a small sample: they use the t distribution, which has heavier tails than the normal and approaches it as the sample grows (general definition). A paired t-test applies this to the per-item differences between two systems (see [paired comparison](#/glossary/paired-comparison)); a one-sided test asks only whether the difference is positive. It assumes roughly normal differences, which is why [A Sober Look at…](#/papers/hochlehnert2025sober "A Sober Look at Progress in Language Model Reasoning: Pitfalls and Paths to Reproducibility (2025)") pairs it with the [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test), "to ensure robustness to distributional assumptions" (§4.2).
+
+Example: [Grounding Agent Memory](#/papers/suresh2026grounding "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents (2026)") reports run-level means "with 95% Student-t confidence intervals" (§4).
+
+**Learn more:** [A Sober Look at…](#/papers/hochlehnert2025sober "A Sober Look at Progress in Language Model Reasoning: Pitfalls and Paths to Reproducibility (2025)") §4.2; [Grounding Agent Memory](#/papers/suresh2026grounding "Grounding Agent Memory: Environment-Probing Curation for Enterprise Agents (2026)") §4 and App. B.2. Neither defines it (general definition).
+
+**Related:** [paired comparison](#/glossary/paired-comparison), [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test), [standard error](#/glossary/standard-error), [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt)
+
+
+<a id="submodular-function"></a>
+
+## Submodular function
+
+A set function with diminishing returns: adding an item to a set gains at most as much as adding it to a smaller subset of that set, f(A ∪ {x}) − f(A) ≥ f(B ∪ {x}) − f(B) when A ⊆ B (general definition). For such functions that also never decrease, greedily adding the item with the largest gain gets within a factor 1 − 1/e of the best set of a given size (Nemhauser, Wolsey and Fisher 1978, not listed here). [VaG ("When Self-Evolution Backfires")](#/papers/shang2026vag "When Self-Evolution Backfires: Pre-Commit Gating against Skill Contamination in LLM Agents (2026)") argues that the value of an agent's set of skills shows "bounded submodularity": a further skill from a domain the set already covers adds less (§3).
+
+**Learn more:** [VaG ("When Self-Evolution Backfires")](#/papers/shang2026vag "When Self-Evolution Backfires: Pre-Commit Gating against Skill Contamination in LLM Agents (2026)") §2 and §3 (general definition).
+
+**Related:** [set cover problem](#/glossary/set-cover-problem), [agent skill](#/glossary/agent-skill)
 
 
 <a id="subquery-nested-query"></a>
@@ -2980,6 +4013,17 @@ In constraint solving, ruling out candidate solutions that are only rearrangemen
 Defining a translation from one language into another along the source language's grammar: each grammar rule gets a translation rule that builds the translation of a construct from the translations of its parts. [Formal semantics of SQL queries](#/papers/negri1991semantics "Formal semantics of SQL queries (1991)") gives SQL a formal meaning this way: each translation rule "defines that the translation TR⟨X⟩ of the nonterminal ⟨X⟩ on the LHS of the syntax rule is the concatenation of the translations TR⟨Y₁⟩ … TR⟨Yₙ⟩ with some additional E3VPC symbols interleaved", where E3VPC is the authors' extended three-valued predicate calculus (§3).
 
 **Related:** [formal semantics](#/glossary/formal-semantics), [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form), [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast), [NULL and three-valued logic](#/glossary/null-and-three-valued-logic)
+
+
+<a id="system-1-and-system-2"></a>
+
+## System 1 and System 2
+
+Kahneman's names for fast, automatic, intuitive thinking (System 1) and slow, deliberate, effortful reasoning (System 2) (general definition). LLM papers use them loosely: [LLM-Modulo ("LLMs Can't Plan](#/papers/kambhampati2024llmmodulo "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024)") pictures an LLM as "a pseudo System 1" (Fig. 1) and argues that LLMs are unlikely to have System 2 competencies by themselves but can be valuable resources in solving System 2 tasks (§1).
+
+**Learn more:** [LLM-Modulo ("LLMs Can't Plan](#/papers/kambhampati2024llmmodulo "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024)") §1 and Fig. 1, citing Kahneman (2011), not listed here (general definition).
+
+**Related:** [neuro-symbolic AI](#/glossary/neuro-symbolic-ai), [test-time scaling](#/glossary/test-time-scaling)
 
 
 <a id="letter-t"></a>
@@ -3100,6 +4144,17 @@ A classic way to score how well a document matches a query by the words they sha
 **Related:** [BM25](#/glossary/bm25), [dense retrieval](#/glossary/dense-retrieval), [premise selection](#/glossary/premise-selection)
 
 
+<a id="tool-calling-function-calling"></a>
+
+## Tool calling (function calling)
+
+An LLM API mode in which the caller declares functions with a schema (name, parameters and their types), and the model can answer with a structured call, a function name with arguments, instead of free text; the harness runs the function and returns the result to the model (general definition). Benchmarks grade the call's structure: [Noise Floor Audit for Agent Benchmarks](#/papers/chen2026noisefloor "Noise Floor Audit for Agent Benchmarks (2026)") calls each endpoint "through their native tool or function-calling interface" and scores the predicted calls by "AST exactness" against reference calls (§3).
+
+**Learn more:** [Noise Floor Audit for Agent Benchmarks](#/papers/chen2026noisefloor "Noise Floor Audit for Agent Benchmarks (2026)") §1 and §3 (general definition).
+
+**Related:** [agent harness](#/glossary/agent-harness), [ReAct](#/glossary/react), [constrained decoding](#/glossary/constrained-decoding), [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast)
+
+
 <a id="top-k-and-nucleus-top-p-sampling"></a>
 
 ## Top-k and nucleus (top-p) sampling
@@ -3109,6 +4164,28 @@ Ways to sample an LLM's next token from only part of its distribution, to avoid 
 **Learn more:** [AmbiQT](#/papers/bhaskar2023ambiqt "Benchmarking and Improving Text-to-SQL Generation under Ambiguity (2023)") §6.2; the original papers it cites are not listed here.
 
 **Related:** [beam search](#/glossary/beam-search), [constrained decoding](#/glossary/constrained-decoding), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting)
+
+
+<a id="totalized-functions-junk-values"></a>
+
+## Totalized functions (junk values)
+
+Proof assistants such as Lean define partial operations on all inputs by giving them default ("junk") values where they are mathematically undefined: in Lean, 2 / 0 = 0, and subtraction of natural numbers stops at zero, so 2 − 3 = 0 (general definition). A formal statement that leaves out a side condition can then be true for the wrong reason, or mean something other than intended. [Faults in Our Formal Benchmarking](#/papers/ammanamanchi2026leandefects "Faults in Our Formal Benchmarking: Dataset Defects and Evaluation Failures in Lean Theorem Proving (2026)") builds checkers for issues "arising from Lean's totalized arithmetic, where division by zero returns zero (2/0=0)", and for natural-number subtraction "that may truncate to zero" (§4.1).
+
+**Learn more:** [Faults in Our Formal Benchmarking](#/papers/ammanamanchi2026leandefects "Faults in Our Formal Benchmarking: Dataset Defects and Evaluation Failures in Lean Theorem Proving (2026)") §4.1 (general definition).
+
+**Related:** [proof assistant](#/glossary/proof-assistant), [autoformalization](#/glossary/autoformalization), [formal specification](#/glossary/formal-specification), [soundness and completeness](#/glossary/soundness-and-completeness)
+
+
+<a id="transaction-atomicity"></a>
+
+## Transaction (atomicity)
+
+A group of database reads and writes that runs as one unit: either all its changes take effect or none do (atomicity), and concurrent transactions do not see each other's unfinished work (isolation) (general definition). [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") compares checks made before an agent's write with "atomic guards" that check and write as one step, so the data cannot change in between, and reports that a full atomic guard recorded no unsafe effects in its episodes (abstract).
+
+**Learn more:** [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") abstract and §I. Nothing on this site defines it (general definition).
+
+**Related:** [idempotent operation](#/glossary/idempotent-operation), [OLAP and OLTP](#/glossary/olap-and-oltp), [stored procedure and trigger](#/glossary/stored-procedure-and-trigger), [SQL statement categories (DDL, DML, DQL, DCL, TCL)](#/glossary/sql-statement-categories-ddl-dml-dql-dcl-tcl)
 
 
 <a id="transformation-and-implementation-rules"></a>
@@ -3148,6 +4225,28 @@ The smallest total cost of node insertions, deletions and relabellings that turn
 **Related:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast)
 
 
+<a id="true-and-false-positive-rates"></a>
+
+## True and false positive rates
+
+For a binary checker (a test, a judge, a verifier): the true-positive rate (TPR, also sensitivity or recall) is the share of truly positive cases it flags as positive, and the false-positive rate (FPR) the share of truly negative cases it flags as positive; specificity is 1 − FPR (general definition). Which side counts as positive varies between papers. For an LLM judge, [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") takes acceptance as positive: TPR = Pr[judge accepts | answer correct] and FPR = Pr[accepts | answer wrong] (§3). In that convention a checker's false accepts (a pass on wrong work) and false rejects (a fail on correct work), as [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") calls them (§1), are its false positives and false negatives.
+
+**Learn more:** [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") §3; [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") §1.
+
+**Related:** [Youden's index](#/glossary/youdens-index), [Rogan-Gladen correction](#/glossary/rogan-gladen-correction), [AUROC](#/glossary/auroc), [F1 score](#/glossary/f1-score), [soundness and completeness](#/glossary/soundness-and-completeness), [test oracle](#/glossary/test-oracle)
+
+
+<a id="trusted-computing-base"></a>
+
+## Trusted computing base
+
+The components that must be correct for a system's guarantee to hold; a bug anywhere in them can break the guarantee unnoticed (general definition, from computer security). For a proof assistant it is ideally a small kernel that checks proofs. [Faults in Our Formal Benchmarking](#/papers/ammanamanchi2026leandefects "Faults in Our Formal Benchmarking: Dataset Defects and Evaluation Failures in Lean Theorem Proving (2026)") notes that Lean's `native_decide` "expands the trusted computing base beyond the kernel by trusting the compiler/codegen result", so that bugs in native code generation become a risk to soundness (§3.2).
+
+**Learn more:** [Faults in Our Formal Benchmarking](#/papers/ammanamanchi2026leandefects "Faults in Our Formal Benchmarking: Dataset Defects and Evaluation Failures in Lean Theorem Proving (2026)") §3.2 (general definition).
+
+**Related:** [proof assistant](#/glossary/proof-assistant), [certificate](#/glossary/certificate), [soundness and completeness](#/glossary/soundness-and-completeness), [extraction (proof assistants)](#/glossary/extraction-proof-assistants)
+
+
 <a id="letter-u"></a>
 
 <a id="uninterpreted-function"></a>
@@ -3159,6 +4258,17 @@ A function symbol in a solver formula about which the solver assumes nothing exc
 **Learn more:** [VeriEQL](#/papers/he2024verieql "VeriEQL: Bounded Equivalence Verification for Complex SQL Queries with Integrity Constraints (2024)") ([PDF p. 6](https://arxiv.org/pdf/2403.03193#page=6)) §3.1 (PDF p. 6); [EQUITAS](#/papers/zhou2019equitas "Automated verification of query equivalence using satisfiability modulo theories (2019)") §3.4.1 (PDF p. 7).
 
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [over-approximation and under-approximation](#/glossary/over-approximation-and-under-approximation)
+
+
+<a id="union-bound"></a>
+
+## Union bound
+
+The chance that at least one of several events happens is at most the sum of their chances (general definition). It is how a guarantee for one test becomes a guarantee for many: testing each of K candidates at failure probability δ/K keeps the chance that any of them fails below δ, as in the [Bonferroni correction](#/glossary/bonferroni-correction), at a cost that grows with K. [Ratchet](#/papers/zhang2026ratchet "Ratchet: How Reliable Must an LLM Judge Be to Retire a Skill? (2026)") notes that its guarantee needs a bounded candidate set, since otherwise "the union bound runs over an unbounded set" (§4).
+
+**Learn more:** [Ratchet](#/papers/zhang2026ratchet "Ratchet: How Reliable Must an LLM Judge Be to Retire a Skill? (2026)") §3 and §4; [Certified Long-Horizon Code Agent…](#/papers/wang2026valve "Certified Long-Horizon Code Agent Evolution via Validation-Gated Skill Optimization (2026)") App. A. Neither defines it (general definition).
+
+**Related:** [concentration inequality](#/glossary/concentration-inequality), [Bonferroni correction](#/glossary/bonferroni-correction), [multiple testing](#/glossary/multiple-testing), [learn-then-test (LTT)](#/glossary/learn-then-test-ltt)
 
 
 <a id="union-of-conjunctive-queries"></a>
@@ -3233,7 +4343,29 @@ A way to fit a model with a [latent variable](#/glossary/latent-variable) h when
 **Related:** [latent variable](#/glossary/latent-variable), [KL divergence](#/glossary/kl-divergence)
 
 
+<a id="vector-store"></a>
+
+## Vector store
+
+A store of documents together with their embedding vectors, from an embedding model, that, given a query, embeds it and returns the documents whose vectors are nearest (general definition). [LEGO-Prover](#/papers/wang2023legoprover "LEGO-Prover: Neural Theorem Proving with Growing Libraries (2024)") keeps its lemma library in vector stores, each of which "maintains its data in pairs consisting of documents and their corresponding embeddings" (§3.1).
+
+**Learn more:** [LEGO-Prover](#/papers/wang2023legoprover "LEGO-Prover: Neural Theorem Proving with Growing Libraries (2024)") §3.1.
+
+**Related:** [dense retrieval](#/glossary/dense-retrieval), [approximate nearest-neighbour search (ANNS)](#/glossary/approximate-nearest-neighbour-search-anns), [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag), [library learning](#/glossary/library-learning)
+
+
 <a id="letter-w"></a>
+
+<a id="wald-interval"></a>
+
+## Wald interval
+
+The textbook confidence interval: estimate ± z × standard error, about ± 1.96 standard errors for 95%, from the normal approximation of the [central limit theorem](#/glossary/central-limit-theorem-clt) (general definition). For a success rate p̂ from n trials it is p̂ ± 1.96 √(p̂(1 − p̂)/n): too narrow for small n or rates near 0 or 1, and of zero width when p̂ is 0 or 1, which the [Wilson score interval](#/glossary/wilson-score-interval) avoids. [Towards Reliable LLM Evaluation](#/papers/xu2026siren "Towards Reliable LLM Evaluation: Correcting the Winner's Curse in Adaptive Benchmarking (2026)") shows a further failure: a Wald interval computed on the same items used to select a winner inherits the winner's upward bias (§4, §4.1).
+
+**Learn more:** [Towards Reliable LLM Evaluation](#/papers/xu2026siren "Towards Reliable LLM Evaluation: Correcting the Winner's Curse in Adaptive Benchmarking (2026)") §4 and §4.1 (general definition).
+
+**Related:** [Wilson score interval](#/glossary/wilson-score-interval), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval), [standard error](#/glossary/standard-error), [confidence interval and coverage](#/glossary/confidence-interval-and-coverage), [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse)
+
 
 <a id="wasserstein-distance"></a>
 
@@ -3287,7 +4419,7 @@ A confidence interval for a success rate measured over n trials. Unlike the simp
 
 **Learn more:** [How Fast Do Agents Rot?](#/papers/mittal2026rot "How Fast Do Agents Rot? An Empirical Study of Long-Horizon Degradation in LLM Agents for Production Decision-Making (2026)") ([PDF p. 5](https://arxiv.org/pdf/2609.01660#page=5)) §3.4 (PDF p. 5), which uses it "since several cells involve success rates close to 0 or 1". Wilson's paper is not listed here.
 
-**Related:** [bootstrap resampling](#/glossary/bootstrap-resampling), [Akaike information criterion (AIC)](#/glossary/akaike-information-criterion-aic)
+**Related:** [bootstrap resampling](#/glossary/bootstrap-resampling), [Akaike information criterion (AIC)](#/glossary/akaike-information-criterion-aic), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval), [Wald interval](#/glossary/wald-interval)
 
 
 <a id="window-function"></a>
@@ -3301,6 +4433,19 @@ An SQL function computed over a set of rows related to the current row (its wind
 **Related:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules)
 
 
+<a id="winners-curse-optimizers-curse"></a>
+
+## Winner's curse (optimizer's curse)
+
+When the best of several options is chosen by noisy estimates, the winner's estimate is biased upward, even if each estimate is unbiased on its own: the winner is likely to be one that got lucky. [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") §1: "When the best of several noisy estimates is selected, its estimate is biased upward." [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") calls the decision-analysis version the optimizer's curse: whoever picks by estimates "should expect to be disappointed on average" (abstract, PDF p. 1); the auction version, the winner's curse, is "the tendency for the highest bidder in an auction with common or interdependent values to have overestimated the value of the item being sold" (§4, PDF p. 10).
+
+Example: in prompt and agent optimization, the best candidate's score on the validation set that picked it overstates its score on fresh data; [Towards Reliable LLM Evaluation](#/papers/xu2026siren "Towards Reliable LLM Evaluation: Correcting the Winner's Curse in Adaptive Benchmarking (2026)") writes that "the observed winner's score need not estimate the fresh-data performance" of the procedure (abstract), and [SAGE (Statistical Acceptance Gate)](#/papers/wang2026sage "SAGE: A Statistical Acceptance Gate for Self-Evolving Agents (2026)") calls edits that a naive gate keeps because they were lucky the Optimizer's Curse (§3.1).
+
+**Learn more:** [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") abstract (PDF p. 1) and §4 (PDF p. 10); [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") §1.
+
+**Related:** [shrinkage](#/glossary/shrinkage), [regression to the mean](#/glossary/regression-to-the-mean), [empirical risk minimization (ERM)](#/glossary/empirical-risk-minimization-erm), [multiple testing](#/glossary/multiple-testing), [adaptive data analysis](#/glossary/adaptive-data-analysis), [pre-registration](#/glossary/pre-registration)
+
+
 <a id="witness-provenance"></a>
 
 ## Witness (provenance)
@@ -3312,7 +4457,31 @@ A set of input rows on which a query still produces a given output row: given a 
 **Related:** [data provenance](#/glossary/data-provenance), [counterexample database](#/glossary/counterexample-database), [optimizing SMT solver](#/glossary/optimizing-smt-solver)
 
 
+<a id="letter-y"></a>
+
+<a id="youdens-index"></a>
+
+## Youden's index
+
+A binary checker's true-positive rate minus its false-positive rate, J = TPR − FPR, from −1 to 1: 1 is a perfect checker, 0 one at chance level (it accepts right and wrong cases equally often), and below 0 an inverted one ([RLVεR ("Rate or Fate?")](#/papers/rad2026rlver "Rate or Fate? RLV$^\varepsilon$R: Reinforcement Learning with Verifiable Noisy Rewards (2026)") §1). [RLVεR ("Rate or Fate?")](#/papers/rad2026rlver "Rate or Fate? RLV$^\varepsilon$R: Reinforcement Learning with Verifiable Noisy Rewards (2026)") reads it as a reward checker's "net discriminative power"; [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") calls the same quantity a judge's discrimination (§3).
+
+**Learn more:** [RLVεR ("Rate or Fate?")](#/papers/rad2026rlver "Rate or Fate? RLV$^\varepsilon$R: Reinforcement Learning with Verifiable Noisy Rewards (2026)") §1, citing Youden (1950), not listed here.
+
+**Related:** [true and false positive rates](#/glossary/true-and-false-positive-rates), [Rogan-Gladen correction](#/glossary/rogan-gladen-correction), [AUROC](#/glossary/auroc), [reward model](#/glossary/reward-model)
+
+
 <a id="letter-z"></a>
+
+<a id="z-score"></a>
+
+## z-score
+
+A difference expressed in standard errors: for two systems' mean scores, z = (Ā − B̄) / SE[A − B] ([Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §3.1). When N is moderately large the [central limit theorem](#/glossary/central-limit-theorem-clt) makes it roughly standard normal if there is no real difference, so |z| > 1.96 corresponds to a two-sided p-value below 0.05 (§3.1).
+
+**Learn more:** [Measuring all the noises of LLM Evals](#/papers/wang2025evalnoise "Measuring all the noises of LLM Evals (2025)") §3.1 and App. D.
+
+**Related:** [standard error](#/glossary/standard-error), [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt), [paired comparison](#/glossary/paired-comparison), [Wald interval](#/glossary/wald-interval)
+
 
 <a id="zero-rl-training"></a>
 
