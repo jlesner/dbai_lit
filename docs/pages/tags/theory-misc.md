@@ -1,0 +1,12 @@
+# Tag <span class="tag sub big">theory-misc</span>
+
+A subtag of <a class="tag" href="#/tags/theory">theory</a>
+
+<a class="tag" href="#/tags/theory">theory</a> items in none of <a class="tag sub" href="#/tags/theory-set">theory-set</a>, <a class="tag sub" href="#/tags/theory-bag">theory-bag</a>, <a class="tag sub" href="#/tags/theory-null">theory-null</a>, <a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a>, e.g. automata and complexity results for languages other than SQL.
+
+<!-- filter -->
+
+## Papers
+
+- **[A Linear Algorithm for Testing Equivalence of Finite Automata](https://ecommons.cornell.edu/handle/1813/5958 "A Linear Algorithm for Testing Equivalence of Finite Automata (1971)")** (Cornell University technical report TR 71-114, December 1971). Decides whether two finite automata with start states (deterministic in later terms: δ maps each state and symbol to one state, §II, PDF p. 4) accept the same strings, in time the authors bound by a constant times the size of the input alphabet times the number of states of the larger automaton (abstract, PDF p. 2; Thm. 1, PDF p. 6, gives the sum of both automata's states), on a random access computer (§IV, PDF p. 6). <span class="links">[🔎](#/papers/hopcroft1971linear "Summary") · [PDF](https://ecommons.cornell.edu/handle/1813/5958)</span> <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/theory-misc">theory-misc</a></span>
+- **[Word Problems Requiring Exponential Time](https://dl.acm.org/doi/pdf/10.1145/800125.804029, "Word Problems Requiring Exponential Time (Preliminary Report) (1973)")**: Word Problems Requiring Exponential Time (Preliminary Report) (Preliminary Report (Stockmeyer and Meyer), STOC 1973). Pins down the inherent complexity of deciding whether two regular-like expressions (regular expressions over a set of letters, optionally with squaring or complement) describe different sets of words, and of similar word problems for integer expressions, quantified Boolean formulas and the first-order theory of equality, mostly as completeness under log-space or log-linear reductions (§2, table on PDF p. 3). <span class="links">[🔎](#/papers/stockmeyer1973word "Summary") · [PDF](https://dl.acm.org/doi/pdf/10.1145/800125.804029,) · [DOI](https://doi.org/10.1145/800125.804029)</span> <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/theory-misc">theory-misc</a></span>

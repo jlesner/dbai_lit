@@ -5,12 +5,12 @@
 <p class="tags"><a class="tag" href="#/tags/general">general</a><a class="tag" href="#/tags/labels">labels</a></p>
 
 ## Challenge
-Every claim about DSL use rests on tasks whose answers a program checks. A gym needs, for each DSL (XPath first, then SQL, SPARQL, recurrence rules, regular expressions, and K as the control):
+Every claim about DSL use rests on tasks whose answers a program checks.
 - **Families that differ in what they produce:** an output for a given program and input; a program from examples; a program from an English question; a verdict on whether two programs agree, with a distinguishing input when they don't.
 - **A size setting on two axes:** the data (rows, nodes, events) and the composition (steps, predicates, joins, rule exceptions), so that success can be plotted against size ([Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)).
 - **Checks with measured false accepts:** each check rejects planted wrong answers and degenerate ones (§ 8, T8).
 
-Some DSLs already have families that pass those gates: regular expressions and recurrence rules; SQL is the yardstick there. AutoScraper's web-extraction evaluation counts a generated XPath as correct when its precision and recall both equal 1 ([AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") §3.3), a check by results rather than by matching a reference path (ours).
+Some DSLs already have families that pass those gates: regular expressions and recurrence rules; SQL is the yardstick there. AutoScraper's web-extraction evaluation counts a generated XPath as correct when its precision and recall both equal 1 ([AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") §3.3), a check by results rather than by matching a reference path (ours). For OCL and Alloy, whose constraints can't always be run, one study scores correctness with an LLM judge it validated against one author's labels ([A framework for assessing…](#/papers/delgado2026constraintdsl "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models (2026)") §1, §5.1, Tab. 2; LLM as judge), the kind of check that keys made by code replace (ours).
 
 ## Why it matters
 - **Everything else is scored here:** the loop, the size curves and the control all depend on it (ours).

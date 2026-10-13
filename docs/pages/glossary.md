@@ -166,13 +166,13 @@ Area under the ROC curve: how well a score separates two classes over all possib
 
 ## Autoformalization
 
-Translating mathematics written in natural language (a problem statement, sometimes its proof) into the formal language of a [proof assistant](#/glossary/proof-assistant) such as Lean, so that a machine can check proofs of it. Training sets for LLM theorem provers are built this way: [DeepSeek-Prover-V2](#/papers/ren2025deepseekproverv2 "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition (2025)") says they are "typically derived by formalizing existing natural-language mathematical corpora" (§2.1).
+Translating natural-language statements into a formal language that a machine can check. In mathematics the target is a [proof assistant](#/glossary/proof-assistant) such as Lean: a problem statement (sometimes its proof) is formalized so that a machine can check proofs of it. Training sets for LLM theorem provers are built this way: [DeepSeek-Prover-V2](#/papers/ren2025deepseekproverv2 "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition (2025)") says they are "typically derived by formalizing existing natural-language mathematical corpora" (§2.1). In logical reasoning the target is a solver's input: [first-order logic](#/glossary/first-order-logic) as code for the Z3 solver in legal entailment ([Know Your Limits](#/papers/wang2026limits "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning (2026)") §1, §3.2), rules, formulas, SMT-LIB or constraint models for four solvers ([Adaptive LLM-Symbolic Reasoning via…](#/papers/xu2025adaptive "Adaptive LLM-Symbolic Reasoning via Dynamic Logical Solver Composition (2026)") §2, App. A), statutes as SMT-LIB ([Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)") §1).
 
-Gotcha: a formal statement can say something other than the original, and a proof of it then proves nothing about the original. Goedel-Prover-V2's authors report that in existing Lean datasets "over 80% of unsolved problems are incorrectly formalized", from a human evaluation of a sample ([Goedel-Prover-V2](#/papers/lin2025goedelproverv2 "Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction (2025)") §2.2).
+Gotcha: a formal statement can say something other than the original, and a proof of it then proves nothing about the original. Goedel-Prover-V2's authors report that in existing Lean datasets "over 80% of unsolved problems are incorrectly formalized", from a human evaluation of a sample ([Goedel-Prover-V2](#/papers/lin2025goedelproverv2 "Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction (2025)") §2.2). In the solver setting, [Know Your Limits](#/papers/wang2026limits "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning (2026)") reports formalizations that add assumptions the text doesn't state (§5.3).
 
-**Learn more:** [STP](#/papers/dong2025stp "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving (2025)") ([PDF p. 4](https://arxiv.org/pdf/2502.00212#page=4)) §2 (PDF p. 4), which defines it as "translating natural language math statements and/or proofs to formal language"; [LeanDojo](#/papers/yang2023leandojo "LeanDojo: Theorem Proving with Retrieval-Augmented Language Models (2023)") ([PDF p. 4](https://arxiv.org/pdf/2306.15626#page=4)) §2 (PDF p. 4); [Goedel-Prover-V2](#/papers/lin2025goedelproverv2 "Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction (2025)") ([PDF p. 3](https://arxiv.org/pdf/2508.03613#page=3)) §2.2 (PDF p. 3), on training a formalizer and judging whether its output is faithful; [DeepSeek-Prover-V2](#/papers/ren2025deepseekproverv2 "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition (2025)") ([PDF p. 6](https://arxiv.org/pdf/2504.21801#page=6)) §2.3 (PDF p. 6), which adds "problems derived from autoformalization" to its training data.
+**Learn more:** [STP](#/papers/dong2025stp "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving (2025)") ([PDF p. 4](https://arxiv.org/pdf/2502.00212#page=4)) §2 (PDF p. 4), which defines it as "translating natural language math statements and/or proofs to formal language"; [LeanDojo](#/papers/yang2023leandojo "LeanDojo: Theorem Proving with Retrieval-Augmented Language Models (2023)") ([PDF p. 4](https://arxiv.org/pdf/2306.15626#page=4)) §2 (PDF p. 4); [Goedel-Prover-V2](#/papers/lin2025goedelproverv2 "Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction (2025)") ([PDF p. 3](https://arxiv.org/pdf/2508.03613#page=3)) §2.2 (PDF p. 3), on training a formalizer and judging whether its output is faithful; [DeepSeek-Prover-V2](#/papers/ren2025deepseekproverv2 "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition (2025)") ([PDF p. 6](https://arxiv.org/pdf/2504.21801#page=6)) §2.3 (PDF p. 6), which adds "problems derived from autoformalization" to its training data. Beyond mathematics: [Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)") ([PDF p. 1](https://arxiv.org/pdf/2604.25031#page=1)) §1 (PDF p. 1), which defines it as "the automatic translation of natural-language statements into formal, machine-checkable representations"; [Know Your Limits](#/papers/wang2026limits "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning (2026)") ([PDF p. 1](https://arxiv.org/pdf/2606.16118#page=1)) §1 (PDF p. 1) and §3.2 (PDF p. 5); [Adaptive LLM-Symbolic Reasoning via…](#/papers/xu2025adaptive "Adaptive LLM-Symbolic Reasoning via Dynamic Logical Solver Composition (2026)") ([PDF p. 3](https://arxiv.org/pdf/2510.06774#page=3)) §2 (PDF p. 3).
 
-**Related:** [proof assistant](#/glossary/proof-assistant), [formal specification](#/glossary/formal-specification), [expert iteration](#/glossary/expert-iteration)
+**Related:** [proof assistant](#/glossary/proof-assistant), [formal specification](#/glossary/formal-specification), [expert iteration](#/glossary/expert-iteration), [first-order logic](#/glossary/first-order-logic), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [neuro-symbolic AI](#/glossary/neuro-symbolic-ai)
 
 
 <a id="automated-program-repair"></a>
@@ -640,6 +640,17 @@ A procedure that rewrites a query so that it states what the schema's constraint
 **Learn more:** [Equivalence of Queries Combining…](#/papers/cohen2006setbag "Equivalence of Queries Combining Set and Bag-Set Semantics (2006)") §5 (PDF p. 8); [Few Rows Tell Them Apart](#/papers/cohen2026fewrows "Few Rows Tell Them Apart: Equivalence of Queries Mixing Set and Bag Semantics (2026)") ([PDF p. 9](https://arxiv.org/pdf/2609.09978#page=9)) §4 (PDF pp. 9–10), for keys and foreign keys.
 
 **Related:** [integrity constraint](#/glossary/integrity-constraint), [conjunctive query](#/glossary/conjunctive-query)
+
+
+<a id="chi-square-test-of-independence"></a>
+
+## Chi-square test of independence
+
+A test of whether two categorical variables are related, from a table of counts: for each cell it compares the observed count O with the count E expected if the variables were independent, and sums (O − E)²/E; a large sum, and so a small p-value, is evidence that they are related (general definition). [A framework for assessing…](#/papers/delgado2026constraintdsl "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models (2026)") uses it to ask whether the prompt template affects whether generated code is correct, one test per language and model, with the null hypothesis of "no association between the prompt template and accuracy" (§5.3.3, Eq. 5, Tab. 5). With small expected counts the approximation fails, and [Fisher's exact test](#/glossary/fishers-exact-test) is the usual alternative (general definition).
+
+**Learn more:** [A framework for assessing…](#/papers/delgado2026constraintdsl "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models (2026)") ([PDF p. 21](https://arxiv.org/pdf/2603.05278#page=21)) §5.3.3 (PDF pp. 21–22), which gives the statistic and its use but not the test's derivation (general definition); the original paper is not listed here.
+
+**Related:** [Fisher's exact test](#/glossary/fishers-exact-test), [McNemar's exact test](#/glossary/mcnemars-exact-test), [multiple testing](#/glossary/multiple-testing)
 
 
 <a id="church-rosser-property"></a>
@@ -1270,6 +1281,17 @@ The tree a browser or HTML parser builds from a web page (the Document Object Mo
 **Learn more:** [AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") ([PDF p. 5](https://arxiv.org/pdf/2404.12753#page=5)) §4.2 (PDF p. 5), which uses it without defining it (general definition).
 
 **Related:** [wrapper (web data extraction)](#/glossary/wrapper-web-data-extraction), [accessibility tree](#/glossary/accessibility-tree)
+
+
+<a id="domain-specific-language-dsl"></a>
+
+## Domain-specific language (DSL)
+
+A language made for one kind of task rather than for general programming: OCL and Alloy state constraints on a software model, against general-purpose languages (GPLs) such as Python, Java or C ([A framework for assessing…](#/papers/delgado2026constraintdsl "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models (2026)") §1); SQL and regular expressions are DSLs too ([Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") §5). [Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") treats a DSL as the set of strings valid for "an application of interest" (§2.1) and says DSLs are "by definition specialized and thus unlikely to have been encountered often enough (or at all) during pretraining" (§1), so many are [low-resource](#/glossary/low-resource-programming-language); common ones such as SQL are not (§5).
+
+**Learn more:** [Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") ([PDF p. 1](https://arxiv.org/pdf/2305.19234#page=1)) §1 (PDF p. 1), §2.1 and §5; [A framework for assessing…](#/papers/delgado2026constraintdsl "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models (2026)") ([PDF p. 2](https://arxiv.org/pdf/2603.05278#page=2)) §1 (PDF p. 2), which uses the term without defining it.
+
+**Related:** [low-resource programming language](#/glossary/low-resource-programming-language), [semantic parsing](#/glossary/semantic-parsing), [context-free grammar](#/glossary/context-free-grammar), [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form)
 
 
 <a id="letter-e"></a>
@@ -2332,6 +2354,17 @@ The finding, from Liu et al. (not listed here), that LLMs use information at the
 **Related:** [positional bias](#/glossary/positional-bias)
 
 
+<a id="low-resource-programming-language"></a>
+
+## Low-resource programming language
+
+A programming language with little public code to train on, so code LLMs write it worse than well-represented, high-resource ones: [MultiPL-T](#/papers/cassano2023multiplt "Knowledge Transfer from High-Resource to Low-Resource Programming Languages for Code LLMs (2024)") names Java, Python and JavaScript as high-resource and OCaml and Racket as low-resource (abstract). The terms come from machine translation, where a language is "high resource" with many public high-quality training samples and "low resource" with only a few; DSLs "tend to be at the lower end" ([A framework for assessing…](#/papers/delgado2026constraintdsl "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models (2026)") §2.2). One remedy is training data translated from a high-resource language and kept only when translated tests pass ([MultiPL-T](#/papers/cassano2023multiplt "Knowledge Transfer from High-Resource to Low-Resource Programming Languages for Code LLMs (2024)") abstract).
+
+**Learn more:** [A framework for assessing…](#/papers/delgado2026constraintdsl "A framework for assessing the capabilities of code generation of constraint domain-specific languages with large language models (2026)") ([PDF p. 4](https://arxiv.org/pdf/2603.05278#page=4)) §2.2 (PDF p. 4); [MultiPL-T](#/papers/cassano2023multiplt "Knowledge Transfer from High-Resource to Low-Resource Programming Languages for Code LLMs (2024)") ([PDF p. 1](https://arxiv.org/pdf/2308.09895#page=1)) abstract (PDF p. 1).
+
+**Related:** [domain-specific language (DSL)](#/glossary/domain-specific-language-dsl), [distillation](#/glossary/distillation)
+
+
 <a id="letter-m"></a>
 
 <a id="magic-sets"></a>
@@ -2354,6 +2387,17 @@ A significance test for whether values from one group tend to be larger than val
 **Learn more:** [SQLess](#/papers/lin2024sqless "SQLess: Dialect-Agnostic SQL Query Simplification (2024)") §5.3 (PDF p. 9), which uses it without defining it (general definition).
 
 **Related:** [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test), [sign test](#/glossary/sign-test), [multiple testing](#/glossary/multiple-testing), [statistical power](#/glossary/statistical-power)
+
+
+<a id="many-sorted-first-order-logic"></a>
+
+## Many-sorted first-order logic
+
+[First-order logic](#/glossary/first-order-logic) in which every object has a type, called a sort, and each function and predicate fixes the sorts of its arguments and result, so a formula can't apply a vehicle's predicate to a person (general definition). [Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)") writes its formalizations in it, as SMT-LIB for an SMT solver (§1); its schemas declare sorts and typed functions, such as `(declare-sort Vehicle 0)` and `(declare-fun speed (Vehicle Int) Real)` (App. B).
+
+**Learn more:** [Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)") ([PDF p. 1](https://arxiv.org/pdf/2604.25031#page=1)) §1 (PDF p. 1), which names it without defining it, and App. B (PDF p. 13); [Verifying SQL Queries using…](#/papers/mohamed2024cvc5sql "Verifying SQL Queries using Theories of Tables and Relations (2024)") ([PDF p. 3](https://arxiv.org/pdf/2405.03057#page=3)) §1.2 (PDF p. 3), which works in many-sorted logic and sets out its notation (signatures, sorts), and §2 (PDF p. 4), a many-sorted theory of database tables. The textbook definition is not listed here (general definition).
+
+**Related:** [first-order logic](#/glossary/first-order-logic), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [uninterpreted function](#/glossary/uninterpreted-function)
 
 
 <a id="many-to-many-relationship"></a>
@@ -2626,6 +2670,17 @@ How much knowing one random quantity tells about another: the reduction in uncer
 
 
 <a id="letter-n"></a>
+
+<a id="natural-language-inference-nli"></a>
+
+## Natural language inference (NLI)
+
+Deciding whether a hypothesis text follows from a premise text (entailment), contradicts it, or neither (neutral) (general definition). Models trained for it give a probability for each label and serve as a check of meaning: [Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)") runs one both ways between a rule and its back-translation, since texts with the same meaning should entail each other (§5). Gotcha: a dataset's labels may record a reader's interpretation rather than strict logic. [Know Your Limits](#/papers/wang2026limits "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning (2026)") says so of ContractNLI's, re-annotates a subset so that a hypothesis is entailed only when premise ∧ ¬hypothesis is unsatisfiable, and finds most changed labels moving to Neutral (§3.1, Tab. 1).
+
+**Learn more:** [Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)") ([PDF p. 4](https://arxiv.org/pdf/2604.25031#page=4)) §5 (PDF p. 4); [Know Your Limits](#/papers/wang2026limits "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning (2026)") ([PDF p. 3](https://arxiv.org/pdf/2606.16118#page=3)) §3.1 (PDF p. 3). Neither defines the task, and no paper on this site does (general definition).
+
+**Related:** [back-translation](#/glossary/back-translation), [satisfiable and valid](#/glossary/satisfiable-and-valid), [reference-free evaluation](#/glossary/reference-free-evaluation), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
+
 
 <a id="neuro-symbolic-ai"></a>
 
@@ -3236,6 +3291,17 @@ Testing that states a property the code must always satisfy and checks it on man
 **Learn more:** [Disproving Program Equivalence with LLMs](#/papers/allamanis2025disproving "Disproving Program Equivalence with LLMs (2025)") §4.2.
 
 **Related:** [fuzzing](#/glossary/fuzzing), [differential testing](#/glossary/differential-testing), [metamorphic testing](#/glossary/metamorphic-testing), [test oracle](#/glossary/test-oracle)
+
+
+<a id="pseudo-relevance-feedback"></a>
+
+## Pseudo-relevance feedback
+
+In search, treating the top-ranked results of a query as relevant, without anyone judging them, and using what they share, usually their common words, to improve the search, for example by expanding the query (general definition). [Externalising Reasoning by Teaching…](#/papers/gemmellgorriz2026externalising "Externalising Reasoning by Teaching Language Models to Use Programs as Tools (2026)") uses it in decoding instead: BM25 retrieves training pairs whose English descriptions match the input, and the frequencies of words in their code, weighted by retrieval score, are mixed into the model's next-token probabilities (§4.2.2–4.2.4, Eqs. 4.1–4.2, PDF pp. 53–55).
+
+**Learn more:** [Externalising Reasoning by Teaching…](#/papers/gemmellgorriz2026externalising "Externalising Reasoning by Teaching Language Models to Use Programs as Tools (2026)") §4.2.2–4.2.4 (PDF pp. 53–55), which builds on Lavrenko and Croft's relevance models, not listed here; the search sense is a general definition.
+
+**Related:** [BM25](#/glossary/bm25), [TF-IDF](#/glossary/tf-idf), [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag)
 
 
 <a id="pspace"></a>
@@ -4185,6 +4251,17 @@ A table-shaped notation for a [select-project-join](#/glossary/select-project-jo
 **Learn more:** [Equivalences Among Relational Expressions…](#/papers/sagiv1980union "Equivalences Among Relational Expressions with the Union and Difference Operators (1980)") §2.4 (PDF pp. 3–4); [Equivalences among Relational Expressions](#/papers/aho1979equivalences "Equivalences among Relational Expressions (1979)") §1–4 (PDF pp. 1–11).
 
 **Related:** [conjunctive query](#/glossary/conjunctive-query), [homomorphism (containment mapping)](#/glossary/homomorphism-containment-mapping), [query containment](#/glossary/query-containment), [union of conjunctive queries](#/glossary/union-of-conjunctive-queries)
+
+
+<a id="tabular-question-answering-tqa"></a>
+
+## Tabular question answering (TQA)
+
+Answering a natural-language question from a given table, using only what the table holds, scored by [exact match](#/glossary/exact-match) with the gold answer ([Externalising Reasoning by Teaching…](#/papers/gemmellgorriz2026externalising "Externalising Reasoning by Teaching Language Models to Use Programs as Tools (2026)") §6.2, PDF p. 88). Models typically read the table flattened into text beside the question (§6.2.2, PDF p. 89). Unlike [text-to-SQL](#/glossary/text-to-sql), no query is required, and cells that mix words and values make a purely programmatic answer difficult (§6.2.1, PDF p. 89).
+
+**Learn more:** [Externalising Reasoning by Teaching…](#/papers/gemmellgorriz2026externalising "Externalising Reasoning by Teaching Language Models to Use Programs as Tools (2026)") §6.2 (PDF pp. 88–89).
+
+**Related:** [exact match](#/glossary/exact-match), [text-to-SQL](#/glossary/text-to-sql), [semantic parsing](#/glossary/semantic-parsing), [lost in the middle](#/glossary/lost-in-the-middle)
 
 
 <a id="tactic"></a>
