@@ -1,83 +1,66 @@
-# Research path: self-taught DSL skills
+# DSLs for LLMs, LLMs for DSLs
 
-**The 10× claim:** compact open models, taught to use domain-specific languages (XPath, SQL, SPARQL, iCalendar recurrence rules, regular expressions) through label-free proposer–solver [self-play](#/glossary/self-play) against each language's engine, with what they learn kept in prompts, keep their success rate on tasks ten times larger. The engine runs the procedure exactly; the model writes a short program, and a skill learned from the engine's verdicts tells it how to write it and when to use it.
+**The domain:** a DSL here is a small language that an engine runs over data: XPath over documents, SQL over tables, SPARQL over knowledge graphs, iCalendar recurrence rules over time, regular expressions over text. Each has a reference engine, so a program's result is computed, not judged. Formats that no engine runs, such as the tag structure of a PDF, are outside this sense.
 
-This is one candidate research path among several, not a chosen plan. Its challenges sit in the search area [LLM methods on checkable problems](#/tags:llm-methods-on-checkable-problems).
+## DSLs for LLMs
 
----
+In two senses.
 
-## The four challenge areas
+**As the LLM's tool.** An LLM samples each token, so any token can go wrong, and over a long job the chances multiply: on controlled agent tasks, the authors find that success "follows a geometric law in 28 of 36 model-task cells tested, governed by a single measurable quantity: per-step reliability" ([How Fast Do Agents Rot?](#/papers/mittal2026rot "How Fast Do Agents Rot? An Empirical Study of Long-Horizon Degradation in LLM Agents for Production Decision-Making (2026)") p. 2). Context is scarce too: attention compares every pair of tokens, so its cost grows with the square of the context's length (ours). A DSL program moves the procedure out of the model: the model writes a few tokens, and the engine runs them exactly over data of any size. The program is precise where English is ambiguous, and the language's vocabulary (path steps, joins, recurrence parts) carries ways of solving that the model needn't reinvent. The evidence is mixed:
+- **For:** as more objects were added to a reasoning task, the PAL authors report that "CoT's accuracy is unstable and drops, while PAL remains consistently close to 100%" ([PAL (Program-aided Language Models)](#/papers/gao2022pal "PAL: Program-aided Language Models (2022)") §5.2); Logic-LM, which hands logic problems to a solver, "becomes increasingly effective as the required reasoning depth increases" ([Logic-LM](#/papers/pan2023logiclm "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning (2023)") §4.3), though its own accuracy also falls with depth, less steeply than chain of thought's (Fig. 3).
+- **Against:** over 14 tasks and 6 LLMs, "results from LLM written code are not always better than using textual reasoning, even if the task could be solved through code", and models choosing between code and text showed "an astonishingly inverse scaling behavior" ([Steering Large Language Models…](#/papers/chen2024steering "Steering Large Language Models between Code Execution and Textual Reasoning (2025)") abstract).
+- **Not yet measured:** a short search on 2026-10-13 found no study of compact open models writing DSLs over data as the data or the task grows, and no measurement of how many tokens a DSL program saves against English for the same task (ours: `//book[price>30]/title` is 23 characters).
 
-- **C1, the gym:** task families in each DSL whose answer keys are made by code, each with a size setting on two axes: the data (rows, nodes, events) and the composition (steps, joins, predicates, rule exceptions). Everything else is scored here, so the checks must not accept wrong answers. A later step accepts a decided *agree* in equivalence tasks where a decision procedure exists, so answers become *differ* (with a document), *agree* or *unknown*; until then the family is witness-only.
-- **C2, reach with size:** the measurement behind the claim. Data size separates DSL use from plain-text reasoning, since the program stays the same length while the data grows; composition separates a learned skill from zero-shot DSL use. The 10× is claimed on composition, at a fixed success rate.
-- **C3, learning in prompts without labels:** a proposer writes problems at the edge of what the solver can do, the engine judges the answers, and the passing work becomes a skill document and a library of verified examples. Who writes the skill is the experiment: the compact model itself, or a frontier model writing for it.
-- **C4, learning or recall:** the same loop on a DSL with little training data, K through the open-source ngn/k engine, shows whether the loop teaches or only reminds.
-- **Across areas, comparison under noise:** every claim is a comparison between arms on generated tasks, with the usual risks of noise and of scoring on the set that picked the winner.
+**As model problems.** DSL tasks with answers a program checks serve LLM methods as SQL's do; the task families, and how strongly each is checked, are in the table under § One loop, both directions. The engine makes every answer key, so instances come in any number and at any size.
 
-## How they connect
+## LLMs for DSLs
 
-```
- DSL engines: XPath, SQL, SPARQL, RRULE, regex; K (ngn/k) as the control (C4)
-     │ run every program and judge every answer
-     ▼
- the gym (C1) ──► proposer: a problem at the solver's edge
-                      │
-                      ▼
-                  solver: a compact model writes a program ──► engine ──► verdict
-                      ▲                                                    │
-                      │                                                    ▼
-                  skill document + verified-example library ◄── written by the compact
-                      (C3)                                         model or a frontier teacher
-                      │
-                      ▼
- success as tasks grow (C2), against: the same model with the engine and no skill;
- plain text where the data fits in context; a frontier model
-```
+The same fluency serves the people who use DSLs: writing them from English, porting them between dialects, checking that two of them agree, explaining one. Formal tools only partly solve these, and unchecked LLMs err, shown domain by domain: SQL, calendars, regular expressions, on weaker evidence. For XPath, the AutoScraper authors report that "models with small parameter sizes have significant difficulties in understanding and writing executable paths" ([AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") §5.2): on the SWDE web-extraction benchmark, with their own method, 24.06% of Phi-3-medium's generated extraction paths are fully correct (precision and recall both 1, §3.3), against 71.56% of GPT-4-Turbo's (Tab. 2), though such models "can understand webpage content well" and "still struggle to comprehend webpage structures" (§6.1).
 
-C1 supplies and scores the tasks. C3 is the loop. C2 is what the loop is for, and C4 is its control. The engine is the only judge, so no label comes from a person or an LLM.
-
-## Challenges by area
-
-- **C1, the gym:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation).
-- **C2, reach with size:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability) · [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy).
-- **C3, learning in prompts:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory) · [Self-improvement that compounds](#/challenges/compounding_self_improvement).
-- **C4, learning or recall:** [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts).
-- **Across areas:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise).
-
-## The agenda
+## One loop, both directions
 
 ```
- reliability holds with size: a compact model's success rate holds    (C2)
-   on 10× more composed tasks, in several DSLs
-   ▲
- the loop: skill document + example library from the engine's         (C3)
-   verdicts; compact-written against frontier-written; learns when
-   to use the engine as well as how
-   ▲                                ▲
- the gym, XPath first (C1)          the control: the same loop on K (C4)
-
- techniques: program_aided_reasoning (the solver's move) · proposer_solver_self_play (the loop)
-             · prompt_evolution and cross_problem_memory (the store) · propose_and_verify (the judge)
+        proposes an answer              runs or checks it; no trust in the LLM
+  LLM ──────────────────► program or document ──────────────────────► checker
+   ▲                                                                   │
+   │                                  verdict ◄────────────────────────┤
+   │                       (certified, evidence only                   │ can't be
+   │                        or failed; the table below)                ▼ checked
+   │                                    │                          "unknown"
+   │                                    ▼
+   │                    a trusted answer (certified rows only)
+   │                                    │
+   └── skills and examples ◄────────────┘
+       learned from what passed
 ```
 
-Why this shape:
-- **Each step feeds the next.** The gym gives the loop its problems and verdicts; the loop gives the measurement its arms; the control says whether the measurement shows learning.
-- **The attack leaves the weights fixed**. Engine-judged self-play is known in weight space, for Python ([Absolute Zero](#/papers/zhao2025absolutezero "Absolute Zero: Reinforced Self-play Reasoning with Zero Data (2025)")) and SQL ([SQL-Zero](#/papers/pedrozo2026sqlzero "SQL-Zero: Self-Evolving Text-to-SQL (2026)")). In prompt space, the closest works found use an LLM judge ([From Context to Skills](#/papers/si2026ctx2skill "From Context to Skills: Can Language Models Learn from Context Skillfully? (2026)")) or accumulate the agent's own successes without a proposer ([Self-Generated In-Context Examples Improve…](#/papers/sarukkai2025selfgenerated "Self-Generated In-Context Examples Improve LLM Agents for Sequential Decision-Making Tasks (2025)")); the Ctx2Skill authors name a sound check in place of their judge as future work (App. B), so the gap may not stay open for long. A quick search on 2026-10-13 (16 queries) found no work that runs the whole loop; this is our reading, not a survey.
-- **Easy to explain:** the model writes a short program, the engine runs it, and the skill grows only from what the engine accepted.
+The checker is the engine for most tasks, and a decision procedure or a proof checker where two programs must be shown to agree.
 
-**The first experiment:** XPath 1.0, one open model family at three sizes, skills written by the model itself or by a frontier model, against zero-shot use; K joins as the control once the loop shows a gain.
+A **[certificate](#/glossary/certificate)** here is evidence that a program checks without trusting the LLM. In a DSL most checks are runs of the engine, but how much a pass proves depends on the task:
 
-**[Certificates](#/glossary/certificate) this path produces:** the engine's verdict on every answer; distinguishing documents (or databases) for every pair of programs found to differ; and skill entries admitted only with the verified examples behind them.
+| Task family | What checks an answer | What a pass proves |
+|---|---|---|
+| Predict a program's output on a document | Run the program in the engine and compare | Certified, as far as the engine is right; where the semantics is prose, a second engine cross-checks (§ Why DSLs) |
+| Write a program from examples | Run it on the examples, and on held-out documents from the same hidden source | Evidence only: a program that hard-codes the examples passes them, and held-out documents catch some such programs, not all (ours) |
+| Write a program from English | Compare its results with those of a hidden reference program made by code | Evidence only: agreement on the test documents. With no reference program, nothing checks it, as for [text-to-SQL](#/glossary/text-to-sql) |
+| Show that two programs differ | Run both on the document offered | Certified: the document is a counterexample |
+| Show that two programs agree | A decision procedure, in the DSLs and fragments that have one, or a proof in a fragment a prover covers, as for SQL. | Certified only by a decision procedure or a proof; agreement on test documents is evidence |
+| Build an input: given a program and a wanted result, a document on which the program returns it | Run the program on the document | Certified: one run checks it, in any DSL (ours; it generalizes the counterexample) |
+| Port a program to another dialect or DSL | The *differ* and *agree* rows, between the old program and the new | As strong as the agreement check |
+| Minimize: an equivalent program no longer than a given length | The agreement check, and the length | As strong as the agreement check; for regular expressions a tool solves most instances |
+| Repair: keep a program's meaning and give it a property, such as a regular expression safe from catastrophic backtracking, or make it pass failing tests | The agreement check and a checker for the property; or the tests | As strong as both checks; passing tests is evidence only |
+| Rewrite for speed: a faster equivalent program | The agreement check, and measured time or plan cost | As strong as the agreement check; the speedup is measured and noisy, and worthless without agreement |
 
-## Milestones
+For developing LLM methods, the certified rows are exact rewards, all but *agree* in every DSL at once, and the evidence rows are rewards that some wrong answers pass ([Weak checkers get exploited](#/challenges/weak_checker_exploitation)). For LLMs applied to DSLs, an answer can be trusted only on a certified row. The bet is the one made for SQL, made general: what a model learns from the verdicts (a skill, a library of verified examples) makes its next programs more reliable, and more reliable programs earn more verdicts.
 
-None yet.
+## Why DSLs
 
-## Open
+The four reasons given for SQL, for the family:
 
-- **Can compact models write useful skills?** The evidence found leans against it: Dynamic Cheatsheet's authors tie its gains to model scale ([Dynamic Cheatsheet](#/papers/suzgun2025cheatsheet "Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory (2025)") §4.5), and skill packs frontier agents wrote for themselves before solving scored below no skills on all three configurations tested ([SkillsBench](#/papers/li2026skillsbench "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks (2026)") App. D.6). With the engine's verdicts as feedback, it is open.
-- **Does handing the procedure to an engine help compact models at all?** Code written by the model "is not always better" than textual reasoning, and the choice between them scales inversely in the authors' tests ([Steering Large Language Models…](#/papers/chen2024steering "Steering Large Language Models between Code Execution and Textual Reasoning (2025)") abstract); the gains that grow with problem size were shown with API models ([PAL (Program-aided Language Models)](#/papers/gao2022pal "PAL: Program-aided Language Models (2022)") §5.2, [Logic-LM](#/papers/pan2023logiclm "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning (2023)") §4.3).
-- **XPath passes its gate only conditionally**: no family as generated; the fixes are the gym's requirements.
+- **Precise semantics, mostly fixed once:** SQL's semantics are formalized; W3C publishes a [formal semantics](#/glossary/formal-semantics) for XPath 2.0 ("XQuery 1.0 and XPath 2.0 Formal Semantics", W3C Recommendation, 2010, revised 2015), though lxml, the common engine, implements XPath 1.0; the SPARQL 1.1 Recommendation "defines the syntax and semantics" of the language (abstract). iCalendar's are prose, and regular expressions differ by dialect. Where the semantics is prose, two engines checking each other stand in for it.
+- **A mature toolchain:** each DSL has free, offline engines (lxml; SQLite and PostgreSQL; rdflib and Jena; python-dateutil; Python `re` and RE2), and checking is running them, so no solver is needed for most tasks (ours).
+- **Data that matters:** each DSL reaches one kind of data (documents, tables, knowledge graphs, calendars, text); the domain notes give sourced signs of scale for SQL and calendars, and none is recorded yet for the others.
+- **A data language for LLMs, many times over:** LLM agents are typically built to act through the Linux shell or a Python interpreter ([SWE-agent](#/papers/yang2024sweagent "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering (2024)") §1). Each DSL a model uses reliably adds a precise way to query and change one kind of data, and a skill that works across DSLs would add them all (ours; no source yet shows agents failing for want of them).
 
 ## Explore
 

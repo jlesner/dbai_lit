@@ -10,7 +10,7 @@ Every claim about DSL use rests on tasks whose answers a program checks. A gym n
 - **A size setting on two axes:** the data (rows, nodes, events) and the composition (steps, predicates, joins, rule exceptions), so that success can be plotted against size ([Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)).
 - **Checks with measured false accepts:** each check rejects planted wrong answers and degenerate ones (§ 8, T8).
 
-AutoScraper's web-extraction evaluation counts a generated XPath as correct when its precision and recall both equal 1 ([AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") §3.3), a check by results rather than by matching a reference path (ours).
+Some DSLs already have families that pass those gates: regular expressions and recurrence rules; SQL is the yardstick there. AutoScraper's web-extraction evaluation counts a generated XPath as correct when its precision and recall both equal 1 ([AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") §3.3), a check by results rather than by matching a reference path (ours).
 
 ## Why it matters
 - **Everything else is scored here:** the loop, the size curves and the control all depend on it (ours).
