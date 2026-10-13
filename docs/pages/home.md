@@ -1,6 +1,6 @@
 # DSLs for LLMs, LLMs for DSLs
 
-**Talk:** <a href="talk/" target="_blank" rel="noopener">DSLs for LLMs, LLMs for DSLs</a>, slides on this case (press F for full screen, arrow keys to move).
+**Talk:** <a href="talk2/" target="_blank" rel="noopener">DSLs for LLMs, LLMs for DSLs</a>, slides on this case (press F for full screen, arrow keys to move).
 
 **The domain:** a DSL here is a small language that an engine runs over data: XPath and XQuery over XML documents, JSONPath over JSON, SQL over tables, SQL/PGQ over property graphs, SPARQL over knowledge graphs, [Datalog](#/glossary/datalog) over facts, iCalendar recurrence rules over time, regular expressions over text. Each has a standard or a published [formal semantics](#/glossary/formal-semantics), and two or more solid free engines (§ Why DSLs), so a program's result is computed, not judged, and one engine can check another. Outside this sense:
 - formats that no engine runs, such as the tag structure of a PDF;
