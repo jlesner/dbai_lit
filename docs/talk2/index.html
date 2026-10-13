@@ -152,7 +152,6 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
       <div class="lang">Regex</div><div class="code">^[0-9]{3}-[0-9]{4}$</div><div class="arr"><a href="https://www.gnu.org/software/grep/" target="_blank" rel="noopener">grep</a>, <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a></div><div class="arr">text</div>
     </div>
     <div class="band" style="margin-top:22px;font-size:38px;padding-top:14px">Each has a standard or a formal semantics, and two or more free engines: the result is computed, not judged</div>
-    <p class="src" style="margin:10px 0 0;text-align:center">Left out: <a href="https://www.iso.org/standard/21413.html" target="_blank" rel="noopener">Prolog</a> (a query may never finish) and <a href="https://webstore.iec.ch/publication/94107" target="_blank" rel="noopener">GQL</a> (we found no free engine that implements its 2024 ISO standard)</p>
   </div>
 </section>
 
@@ -258,22 +257,80 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
 </section>
 
 <section class="slide" data-label="6">
-  <h2>One loop: the LLM proposes, a checker decides</h2>
+  <h2>Problem 1: LLMs don't reliably choose to write code</h2>
+  <div class="body">
+    <svg viewBox="0 0 660 640" style="flex:0 0 640px;width:640px">
+      <rect x="170" y="20" width="300" height="96" rx="14" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+      <text x="320" y="62" text-anchor="middle" font-size="28">a task that code</text><text x="320" y="96" text-anchor="middle" font-size="28">could solve</text>
+      <path d="M320,122 V196" stroke="#1F2430" stroke-width="3" marker-end="url(#ah)"/>
+      <rect x="220" y="204" width="200" height="90" rx="14" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="2.5"/>
+      <text x="320" y="262" text-anchor="middle" font-size="38" font-weight="700">LLM</text>
+      <path d="M270,300 C230,360 170,380 150,420" stroke="#1F2430" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M370,300 C410,360 490,380 510,420" stroke="#1F2430" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <text x="320" y="380" text-anchor="middle" font-size="40" font-weight="700" fill="#A8701A">?</text>
+      <rect x="10" y="430" width="270" height="84" rx="14" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+      <text x="155" y="484" text-anchor="middle" font-size="32">writes code</text>
+      <rect x="370" y="430" width="280" height="84" rx="14" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+      <text x="510" y="484" text-anchor="middle" font-size="32">reasons in text</text>
+      <text x="320" y="590" text-anchor="middle" font-size="28" fill="#5F6672">knowing when to write code</text>
+      <text x="320" y="626" text-anchor="middle" font-size="28" fill="#5F6672">is a skill of its own (ours)</text>
+    </svg>
+    <div class="col" style="flex:1;justify-content:center;gap:30px">
+      <blockquote>currently there is no optimal method to correctly steer LLMs to write code when needed</blockquote>
+      <p style="margin:0;font-size:30px">Code answers <q style="font-family:var(--serif)">are not always better than using textual reasoning, even if the task could be solved through code</q></p>
+      <p style="margin:0;font-size:30px">Which models write code shows <q style="font-family:var(--serif)">an astonishingly inverse scaling behavior</q></p>
+      <p class="src" style="margin:0"><a href="https://arxiv.org/abs/2410.03524" target="_blank" rel="noopener">chen2024steering</a>, abstract: 7 steering methods, 14 tasks, 6 LLMs; the study's code is Python, carrying it to DSLs is ours</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-label="7">
+  <h2>Problem 2: the DSL they write is often wrong</h2>
+  <div class="body" style="flex-direction:column;gap:14px">
+    <div class="cards" style="grid-template-columns:1.4fr 1fr;flex:1;min-height:0">
+      <div class="card" style="gap:10px">
+        <h3>XPath: extracting from web pages</h3>
+        <svg viewBox="0 0 800 300" style="width:100%;flex:1;min-height:0">
+          <g font-size="28" font-weight="700"><text x="0" y="80">Phi-3-medium</text><text x="0" y="230">GPT-4-Turbo</text></g>
+          <line x1="220" y1="20" x2="220" y2="290" stroke="#1F2430" stroke-width="2"/>
+          <rect x="220" y="34" width="129.9" height="46" fill="#2E7D4F"/><text x="362" y="68" font-size="26" font-weight="700" fill="#2E7D4F">24% correct</text>
+          <rect x="220" y="86" width="281.8" height="46" fill="#A63D3D"/><text x="514" y="120" font-size="26" font-weight="700" fill="#A63D3D">52% won't run</text>
+          <rect x="220" y="184" width="386.4" height="46" fill="#2E7D4F"/><text x="619" y="218" font-size="26" font-weight="700" fill="#2E7D4F">72% correct</text>
+          <rect x="220" y="236" width="21.9" height="46" fill="#A63D3D"/><text x="254" y="270" font-size="26" font-weight="700" fill="#A63D3D">4% won't run</text>
+        </svg>
+        <p class="src" style="margin:0"><a href="https://arxiv.org/abs/2404.12753" target="_blank" rel="noopener">huang2024autoscraper</a> Tab. 2 (SWDE, the authors' method); correct: precision, recall and F1 all 1 (§3.3)</p>
+      </div>
+      <div class="card" style="gap:10px">
+        <h3>Datalog: writing programs</h3>
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:26px">
+          <div><div class="stat" style="color:var(--bad)">32%</div><div class="statlab">don't compile</div></div>
+          <div><div class="stat" style="color:var(--warn)">16%</div><div class="statlab">compile but compute the wrong relations</div></div>
+        </div>
+        <p class="src" style="margin:0"><a href="https://arxiv.org/abs/2609.37233" target="_blank" rel="noopener">li2026datalogbench</a> §6.3: 3,264 programs from models prompted directly</p>
+      </div>
+    </div>
+    <div class="band" style="margin-top:0;font-size:34px;padding-top:10px">So check every program before trusting it</div>
+  </div>
+</section>
+
+<section class="slide" data-label="8">
+  <h2>One loop: the LLM writes DSL, its engine checks</h2>
   <div class="body">
     <svg viewBox="0 0 1456 690">
       <rect x="40" y="90" width="260" height="130" rx="16" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="3"/>
       <text x="170" y="170" text-anchor="middle" font-size="44" font-weight="700">LLM</text>
       <path d="M306,155 H500" stroke="#2C5D8F" stroke-width="4" marker-end="url(#ahA)"/>
-      <text x="403" y="138" text-anchor="middle" font-size="28" fill="#2C5D8F">proposes</text>
+      <text x="403" y="138" text-anchor="middle" font-size="28" fill="#2C5D8F">writes</text>
       <rect x="510" y="90" width="320" height="130" rx="16" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
-      <text x="670" y="148" text-anchor="middle" font-size="32" font-weight="700">a program</text>
-      <text x="670" y="190" text-anchor="middle" font-size="28" fill="#5F6672">or a document</text>
+      <text x="670" y="148" text-anchor="middle" font-size="32" font-weight="700">a DSL program</text>
+      <text x="670" y="190" text-anchor="middle" font-size="28" fill="#5F6672">or an input document</text>
+      <text x="670" y="264" text-anchor="middle" font-size="24" class="mono" fill="#2C5D8F">//book[price&gt;30]/title</text>
       <path d="M836,155 H1120" stroke="#1F2430" stroke-width="4" marker-end="url(#ah)"/>
       <text x="978" y="138" text-anchor="middle" font-size="28">runs or checks it</text>
       <text x="978" y="190" text-anchor="middle" font-size="24" fill="#5F6672">no trust in the LLM</text>
       <rect x="1130" y="90" width="300" height="130" rx="16" fill="#FFFFFF" stroke="#1F2430" stroke-width="3"/>
-      <text x="1280" y="148" text-anchor="middle" font-size="34" font-weight="700">checker</text>
-      <text x="1280" y="190" text-anchor="middle" font-size="24" fill="#5F6672">usually the engine</text>
+      <text x="1280" y="148" text-anchor="middle" font-size="30" font-weight="700">the DSL&#39;s engine</text>
+      <text x="1280" y="190" text-anchor="middle" font-size="24" fill="#5F6672">e.g. lxml for XPath</text>
       <!-- verdicts -->
       <path d="M1280,226 V300 M500,300 H1300" fill="none" stroke="#1F2430" stroke-width="3"/>
       <path d="M500,300 V330 M760,300 V330 M1030,300 V330 M1300,300 V330" fill="none" stroke="#1F2430" stroke-width="3"/>
@@ -293,7 +350,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
   </div>
 </section>
 
-<section class="slide" data-label="7">
+<section class="slide" data-label="9">
   <h2>A document that tells two programs apart</h2>
   <div class="body" style="gap:36px">
     <div class="col" style="flex:0 0 560px">
@@ -323,7 +380,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
   </div>
 </section>
 
-<section class="slide" data-label="8">
+<section class="slide" data-label="10">
   <h2>How much a pass proves depends on the task</h2>
   <div class="body" style="flex-direction:column;gap:22px">
     <svg viewBox="0 0 1456 66" style="height:66px;flex:0 0 auto">
@@ -345,7 +402,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
   </div>
 </section>
 
-<section class="slide" data-label="9">
+<section class="slide" data-label="11">
   <h2 style="font-size:52px;margin-bottom:24px">All task families and their checks</h2>
   <table class="t">
     <tr><th>Task family</th><th>What checks an answer</th><th>What a pass proves</th></tr>
@@ -362,7 +419,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
   </table>
 </section>
 
-<section class="slide" data-label="10">
+<section class="slide" data-label="12">
   <h2>The bet: verdicts make programs more reliable</h2>
   <div class="body">
     <svg viewBox="0 0 1456 690">
@@ -388,7 +445,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
   </div>
 </section>
 
-<section class="slide" data-label="11">
+<section class="slide" data-label="13">
   <h2>Do gains on checkable tasks carry over?</h2>
   <div class="body" style="flex-direction:column;gap:0">
     <svg viewBox="37 0 1382 462" style="flex:1;min-height:0;width:100%">
@@ -415,44 +472,6 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
       <text x="738" y="410" text-anchor="middle" font-size="30" fill="#2C5D8F">carries over?</text>
     </svg>
   </div>
-</section>
-
-<section class="slide" data-label="12">
-  <h2>Not yet measured</h2>
-  <div class="body cards" style="grid-template-columns:1fr 1fr">
-    <div class="card" style="gap:22px;padding:30px 36px">
-      <svg viewBox="0 0 640 340" style="width:100%;height:360px">
-        <rect x="70" y="8" width="500" height="64" rx="14" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="3"/>
-        <text x="320" y="50" text-anchor="middle" font-size="28" font-weight="700">compact open model writes a DSL</text>
-        <g stroke="#7D828B" stroke-width="2">
-          <rect x="40" y="200" width="30" height="30" fill="url(#cell)"/>
-          <rect x="120" y="170" width="60" height="60" fill="url(#cell)"/>
-          <rect x="230" y="130" width="100" height="100" fill="url(#cell)"/>
-          <rect x="380" y="90" width="140" height="140" fill="url(#cell)"/>
-        </g>
-        <g text-anchor="middle" font-size="46" class="serif" fill="#2C5D8F">
-          <text x="55" y="282">?</text><text x="150" y="282">?</text><text x="280" y="282">?</text><text x="450" y="282">?</text>
-        </g>
-        <path d="M30,300 H600" stroke="#2C5D8F" stroke-width="4" marker-end="url(#ahA)"/>
-        <text x="600" y="334" text-anchor="end" font-size="24" fill="#5F6672">data or task grows</text>
-      </svg>
-      <p style="font-size:36px;line-height:1.25">How compact open models do at writing DSLs over data <b>as the data or the task grows</b></p>
-    </div>
-    <div class="card" style="gap:22px;padding:30px 36px">
-      <svg viewBox="0 0 640 340" style="width:100%;height:360px">
-        <text x="0" y="34" font-size="26" fill="#5F6672">reasoning in English: procedure and data in context</text>
-        <rect x="0" y="52" width="300" height="56" rx="8" fill="url(#cell)" stroke="#7D828B" stroke-width="2"/>
-        <rect x="300" y="52" width="270" height="56" rx="8" fill="none" stroke="#7D828B" stroke-width="2.5" stroke-dasharray="10 8"/>
-        <text x="600" y="96" text-anchor="middle" font-size="46" class="serif" fill="#2C5D8F">?</text>
-        <text x="0" y="170" font-size="26" fill="#5F6672">writing a program</text>
-        <rect x="0" y="188" width="44" height="56" rx="8" fill="url(#cell)" stroke="#7D828B" stroke-width="2"/>
-        <text x="60" y="226" font-size="26" class="mono">//book[price&gt;30]/title</text>
-        <text x="320" y="310" text-anchor="middle" font-size="40" class="serif" fill="#2C5D8F">tokens saved: ? ×</text>
-      </svg>
-      <p style="font-size:36px;line-height:1.25">How many tokens a DSL program <b>saves against English</b> for the same task</p>
-    </div>
-  </div>
-  <p class="src" style="margin:22px 0 0;text-align:center;font-size:26px">A short search on 2026-10-13 found no study of either · pictures are schematic, not data (ours)</p>
 </section>
 
 
