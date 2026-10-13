@@ -82,5 +82,5 @@ The authors report gains on the BIRD benchmark over the untrained model at two s
 
 ## On this site
 
-- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/nondet-eval">nondet-eval</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a></span>

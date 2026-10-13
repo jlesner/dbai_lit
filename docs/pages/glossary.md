@@ -140,6 +140,17 @@ Finding stored vectors close to a query vector quickly, with an index that gives
 **Related:** [locality-sensitive hashing (MinHash)](#/glossary/locality-sensitive-hashing-minhash), [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag), [contrastive learning](#/glossary/contrastive-learning)
 
 
+<a id="at-least-once-delivery"></a>
+
+## At-least-once delivery
+
+A delivery guarantee of messaging and streaming systems: no message is lost, but some may arrive more than once, for example again after a crash and restart. A consumer that adds each message's amount to a running total then counts some amounts twice, unless its processing is an [idempotent operation](#/glossary/idempotent-operation). [ArrivalBench](#/papers/kothari2026arrivalbench "ArrivalBench: Agent-Generated Data Pipelines Are Correct Once and Wrong Under Time (2026)") quotes Kafka's documentation: "messages are never lost but may be redelivered" (§1).
+
+**Learn more:** [ArrivalBench](#/papers/kothari2026arrivalbench "ArrivalBench: Agent-Generated Data Pipelines Are Correct Once and Wrong Under Time (2026)") §1, which quotes the Kafka documentation; its duplicate-delivery and crash-and-retry hazards replay such deliveries to agent-written pipelines (§3). The Kafka documentation is not listed here.
+
+**Related:** [idempotent operation](#/glossary/idempotent-operation), [watermark (stream processing)](#/glossary/watermark-stream-processing), [fault injection](#/glossary/fault-injection)
+
+
 <a id="auroc"></a>
 
 ## AUROC
@@ -670,7 +681,7 @@ An apparent ability that comes from cues the questioner unknowingly supplies, na
 
 ## Clopper-Pearson interval
 
-An exact confidence interval for a success rate from k successes in n trials. It is built from binomial tail probabilities instead of a normal approximation, so it covers the true rate at least as often as its nominal level for every n, at the price of being wider than needed (general definition). A one-sided version gives an upper bound on a failure rate, as in [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") (§3) and [When Does Combining Language…](#/papers/chen2026cofailure "When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models (2026)") (abstract, §1).
+An exact confidence interval for a success rate from k successes in n trials. It is built from binomial tail probabilities instead of a normal approximation, so it covers the true rate at least as often as its nominal level for every n, at the price of being wider than needed (general definition). A one-sided version gives an upper bound on a failure rate, as in [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") (§3) and [When Does Combining Language…](#/papers/chen2026cofailure "When Does Combining Language Models Help? A Co-Failure Ceiling on Routing, Voting, and Mixture-of-Agents Across 67 Frontier Models (2026)") (§5).
 
 **Learn more:** [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") App. A.3, which describes it, citing Clopper and Pearson (1934), not listed here; [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §3 and App. A.2.
 
@@ -805,7 +816,9 @@ Comparing two methods at equal compute or cost rather than one call each. A meth
 
 ## Concentration inequality
 
-A bound on the chance that the average of independent random values lands far from its expected value (general definition). Hoeffding's inequality uses only the values' range: for n values in [0, 1], the chance that their average exceeds its expected value by more than t is at most exp(−2nt²). Bernstein's and Bennett's inequalities also use the variance, so they are tighter when the variance is small; empirical-Bernstein versions estimate the variance from the data. Papers turn them into a radius: how far an observed rate can be from the true one, except with a chosen small probability.
+A bound on the chance that the average of independent random values lands far from its expected value (general definition). Papers turn them into a radius: how far an observed rate can be from the true one, except with a chosen small probability.
+
+Kinds: Hoeffding's inequality uses only the values' range: for n values in [0, 1], the chance that their average exceeds its expected value by more than t is at most exp(−2nt²). Bernstein's and Bennett's inequalities also use the variance, so they are tighter when the variance is small; empirical-Bernstein versions estimate the variance from the data.
 
 Examples: [Ratchet](#/papers/zhang2026ratchet "Ratchet: How Reliable Must an LLM Judge Be to Retire a Skill? (2026)") uses a Hoeffding radius for a skill's measured success rate (§4); [BudgetAPO](#/papers/liu2026budgetapo "How Should a Prompt Optimizer Spend a Tight Budget? BudgetAPO with Noise-Adaptive Evaluation (2026)") a Bernstein bound that ties the number of paired comparisons to the chance of a wrong decision (App. A.2); [Certified Long-Horizon Code Agent…](#/papers/wang2026valve "Certified Long-Horizon Code Agent Evolution via Validation-Gated Skill Optimization (2026)") a one-sided Bennett radius (§3.1, App. A.2).
 
@@ -840,7 +853,9 @@ The full parse tree of a program's text under its grammar, keeping every token, 
 
 ## Confidence interval and coverage
 
-A 95% confidence interval comes from a procedure that, over many repeats of the experiment, would give intervals containing the true value 95% of the time; 95% is its nominal coverage. In [Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)")'s words, "if we rerun the experiment and construct the CI using a different set of runs, the fraction of calculated CIs ... that contain the true score would tend towards α × 100%, where ... α is the nominal coverage rate" (§2). The actual coverage, the share of repeats in which the interval really contains the truth, can fall short of the nominal one when the procedure's assumptions fail, for instance with few data points ([Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §1). A single computed interval either contains the truth or not; the 95% describes the procedure.
+A 95% confidence interval comes from a procedure that, over many repeats of the experiment, would give intervals containing the true value 95% of the time; 95% is its nominal coverage. A single computed interval either contains the truth or not; the 95% describes the procedure. The actual coverage, the share of repeats in which the interval really contains the truth, can fall short of the nominal one when the procedure's assumptions fail, for instance with few data points ([Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §1).
+
+In [Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)")'s words, "if we rerun the experiment and construct the CI using a different set of runs, the fraction of calculated CIs ... that contain the true score would tend towards α × 100%, where ... α is the nominal coverage rate" (§2).
 
 **Learn more:** [Deep Reinforcement Learning at…](#/papers/agarwal2021rliable "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)") §2; [Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)") §1 and §3, which measure the coverage of several interval methods.
 
@@ -864,7 +879,9 @@ Example: [DISCERN ("Pay Only for Disagreement")](#/papers/balachandran2026discer
 
 ## Conformal prediction and conformal risk control
 
-Methods that turn any model's scores into guarantees using a held-out calibration set, assuming only that calibration cases and test cases are [exchangeable](#/glossary/exchangeability) (general definition). Split conformal prediction picks a score threshold on the calibration set so that prediction sets contain the true answer at a chosen rate. Conformal risk control "extends split conformal prediction to expected control of monotone losses" ([Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §2): it "selects a threshold on a calibration set so that the expected value of a bounded, monotone loss is at most a nominal level α on exchangeable test data" (§1). For abstention the loss is 1 when the system answers and is wrong, so the guarantee bounds the rate of wrong answers.
+Methods that turn any model's scores into guarantees using a held-out calibration set, assuming only that calibration cases and test cases are [exchangeable](#/glossary/exchangeability) (general definition). Split conformal prediction picks a score threshold on the calibration set so that prediction sets contain the true answer at a chosen rate. Conformal risk control "extends split conformal prediction to expected control of monotone losses" ([Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §2): it "selects a threshold on a calibration set so that the expected value of a bounded, monotone loss is at most a nominal level α on exchangeable test data" (§1).
+
+For abstention the loss is 1 when the system answers and is wrong, so the guarantee bounds the rate of wrong answers.
 
 Variants on this site: conformal selection, which picks the test cases to accept while bounding the [false discovery rate](#/glossary/false-discovery-rate-fdr) among them, e.g. by split-conformal Benjamini–Hochberg ([ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §2); and online conformal prediction, which adjusts a threshold after each outcome so that a long-run error rate tracks a target (general definition), named by [When to Trust the Cheap Check](#/papers/kiyani2026weakstrong "When to Trust the Cheap Check: Weak and Strong Verification for Reasoning (2026)") §5 as sharing a limitation of its own threshold updates.
 
@@ -919,6 +936,17 @@ A harness feature that shortens an agent's conversation history when it grows to
 **Learn more:** [StaminaBench](#/papers/sobal2026staminabench "StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns (2026)") §4 and §5, which use the term without defining it (general definition).
 
 **Related:** [agent harness](#/glossary/agent-harness), [lost in the middle](#/glossary/lost-in-the-middle), [progressive disclosure](#/glossary/progressive-disclosure)
+
+
+<a id="context-free-grammar"></a>
+
+## Context-free grammar
+
+A grammar in which every rule rewrites one non-terminal symbol into a sequence of terminal and non-terminal symbols, wherever that non-terminal appears. [A logic for rule-based…](#/papers/coburn1993logic "A logic for rule-based query optimization in graph-based data models (1993)") §2 gives the formal version: a grammar is a set of non-terminal symbols, a set of terminal symbols, a start symbol and a finite set of production rules, and "In a context-free grammar the left-hand-side of each production rule contains a single element of N" (the non-terminals). [BNF](#/glossary/bnf-backus-naur-form) is a notation for such grammars: [Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") assumes each domain-specific language's grammar "is a context-free grammar in Backus–Naur Form (BNF)" (§2.1), with rules of the form `<symbol> ::= <expr1> | <expr2> | ...`, where each alternative "is a sequence of nonterminal and terminal symbols" (§3).
+
+**Learn more:** [A logic for rule-based…](#/papers/coburn1993logic "A logic for rule-based query optimization in graph-based data models (1993)") §2 (PDF p. 5); [Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") ([PDF p. 2](https://arxiv.org/pdf/2305.19234#page=2)) §2.1 and §3 (PDF pp. 2–3).
+
+**Related:** [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form), [Earley parser](#/glossary/earley-parser), [constrained decoding](#/glossary/constrained-decoding), [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast)
 
 
 <a id="contrastive-learning"></a>
@@ -1002,6 +1030,17 @@ Working out which of an agent's earlier actions caused a later success or failur
 **Learn more:** [Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)") §1; nothing on this site treats it in depth.
 
 **Related:** [reinforcement learning](#/glossary/reinforcement-learning), [outcome and process rewards](#/glossary/outcome-and-process-rewards), [reward shaping](#/glossary/reward-shaping)
+
+
+<a id="cross-fitting"></a>
+
+## Cross-fitting
+
+Split the items into k folds; for each fold, estimate the parameters a method needs on the other k − 1 folds and apply the method to the held-out fold; then pool the held-out results. No item is used both to fit the parameters and to evaluate the decision made with them, which keeps the evaluation from rewarding parameters fitted to the items they are scored on. [VRR-Stop ("Verify](#/papers/wu2026vrrstop "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents (2026)") calibrates its stopping rule this way with five folds (App. B).
+
+**Learn more:** [VRR-Stop ("Verify](#/papers/wu2026vrrstop "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents (2026)") App. B, "Calibration protocol and cross-fitting".
+
+**Related:** [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse), [expectation-maximization (EM)](#/glossary/expectation-maximization-em)
 
 
 <a id="curriculum-learning"></a>
@@ -1222,19 +1261,43 @@ Other senses: the word also names compressing data rather than a model. Test-sui
 **Related:** [reinforcement learning](#/glossary/reinforcement-learning), [rejection sampling](#/glossary/rejection-sampling), [expert iteration](#/glossary/expert-iteration), [cold start](#/glossary/cold-start), [self-distillation](#/glossary/self-distillation)
 
 
+<a id="dom-tree"></a>
+
+## DOM tree
+
+The tree a browser or HTML parser builds from a web page (the Document Object Model): each element, such as a `<div>` or a `<td>`, is a node whose children are the elements and text nested inside it, and its attributes (`class`, `href`) belong to the node (general definition). XPath expressions and CSS selectors pick nodes out of it by their path from the root. Example: [AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") §4.2 prunes the DOM tree before asking an LLM for an XPath, moving down from the root towards the node that holds the target value ("top-down"), and back up to "a more reliable and broadly applicable node" when needed ("step-back").
+
+**Learn more:** [AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") ([PDF p. 5](https://arxiv.org/pdf/2404.12753#page=5)) §4.2 (PDF p. 5), which uses it without defining it (general definition).
+
+**Related:** [wrapper (web data extraction)](#/glossary/wrapper-web-data-extraction), [accessibility tree](#/glossary/accessibility-tree)
+
+
 <a id="letter-e"></a>
 
 <a id="e-process-testing-by-betting"></a>
 
 ## E-process (testing by betting)
 
-A running measure of evidence against a null hypothesis that may be checked after every observation. In testing by betting it is a gambler's wealth: start with 1 and, at each observation, bet a fraction of it at odds that are fair if the null hypothesis is true. Under the null the wealth stays near 1 on average; when the null is false it tends to grow. Ville's inequality says that a nonnegative wealth that does not grow on average under the null (a supermartingale) ever reaches 1/α with probability at most α, so rejecting the null as soon as the wealth reaches 1/α gives a test that stays valid however and whenever one stops ([PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §4; supermartingale: general definition).
+A running measure of evidence against a null hypothesis that may be checked after every observation. In testing by betting it is a gambler's wealth: start with 1 and, at each observation, bet a fraction of it at odds that are fair if the null hypothesis is true. Under the null the wealth stays near 1 on average; when the null is false it tends to grow.
+
+Ville's inequality says that a nonnegative wealth that does not grow on average under the null (a supermartingale) ever reaches 1/α with probability at most α, so rejecting the null as soon as the wealth reaches 1/α gives a test that stays valid however and whenever one stops ([PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §4; supermartingale: general definition).
 
 Example: PACE commits a candidate change to an agent as soon as such a wealth, betting on the candidate winning the pairs where it and the incumbent disagree, reaches 1/α ([PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §4).
 
 **Learn more:** [PACE](#/papers/shawn2026pace "PACE: Anytime-Valid Acceptance Tests for Self-Evolving Agents (2026)") §2 and §4.
 
 **Related:** [confidence sequence (anytime-valid inference)](#/glossary/confidence-sequence-anytime-valid-inference), [sequential probability ratio test (SPRT)](#/glossary/sequential-probability-ratio-test-sprt), [McNemar's exact test](#/glossary/mcnemars-exact-test), [sign test](#/glossary/sign-test)
+
+
+<a id="earley-parser"></a>
+
+## Earley parser
+
+A parsing algorithm for [context-free grammars](#/glossary/context-free-grammar), from Earley (1970), whose paper [Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") cites as "An efficient context-free parsing algorithm". It reads the text left to right, so it can tell where a text stops being valid and which symbols may come next (general definition). [Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") consults an Earley parser built from a predicted grammar to extract "the longest valid prefix" of an LLM's program, "along with a set of valid terminals that can follow the prefix", and lets the LLM choose among those terminals (§3.2, Alg. 1). That is a form of [constrained decoding](#/glossary/constrained-decoding) for models reached only through an API.
+
+Earley's paper is not listed here.
+
+**Related:** [context-free grammar](#/glossary/context-free-grammar), [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form), [constrained decoding](#/glossary/constrained-decoding)
 
 
 <a id="elo-rating"></a>
@@ -1252,7 +1315,7 @@ A rating for players (here, candidate agents) from pairwise results. Each compar
 
 ## Empirical risk minimization (ERM)
 
-Choosing the candidate (a model, a prompt) that scores best on the available sample of examples, as a stand-in for the one that would score best on the unknown distribution those examples come from. The winner's score on the sample tends to overstate its true score, the more so when many candidates are compared on few examples (see [multiple testing](#/glossary/multiple-testing)). SAMMO frames prompt optimization this way, using "a sampled score in the spirit of empirical risk minimization (ERM)" ([SAMMO](#/papers/schnabel2024sammo "Symbolic Prompt Program Search: A Structure-Aware Approach to Efficient Compile-Time Prompt Optimization (2024)") §3, Eq. 3).
+Choosing the candidate (a model, a prompt) that scores best on the available sample of examples, as a stand-in for the one that would score best on the unknown distribution those examples come from. The winner's sample score tends to overstate its true score: the [winner's curse](#/glossary/winners-curse-optimizers-curse), worse when many candidates are compared on few examples (see [multiple testing](#/glossary/multiple-testing)). SAMMO frames prompt optimization this way, using "a sampled score in the spirit of empirical risk minimization (ERM)" ([SAMMO](#/papers/schnabel2024sammo "Symbolic Prompt Program Search: A Structure-Aware Approach to Efficient Compile-Time Prompt Optimization (2024)") §3, Eq. 3).
 
 **Learn more:** [SAMMO](#/papers/schnabel2024sammo "Symbolic Prompt Program Search: A Structure-Aware Approach to Efficient Compile-Time Prompt Optimization (2024)") §3 (general definition; the paper uses the term without defining it).
 
@@ -1336,6 +1399,17 @@ A match on one database doesn't make the queries equivalent: a wrong query can r
 **Learn more:** [BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)") ([PDF p. 6](https://arxiv.org/pdf/2305.03111#page=6)) §5 (PDF p. 6) for the definition; [Semantic Evaluation for Text-to-SQL…](#/papers/zhong2020testsuite "Semantic Evaluation for Text-to-SQL with Distilled Test Suites (2020)") §1; [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 2](https://arxiv.org/pdf/2510.26840#page=2)) §2 (PDF p. 2), Eq. 1.
 
 **Related:** [text-to-SQL](#/glossary/text-to-sql), [gold query](#/glossary/gold-query), [query equivalence](#/glossary/query-equivalence), [counterexample database](#/glossary/counterexample-database)
+
+
+<a id="expectation-maximization-em"></a>
+
+## Expectation-maximization (EM)
+
+A way to fit a model with a hidden variable (a [latent variable](#/glossary/latent-variable)) that is never observed: alternate an E-step, which computes for each data point how likely each value of the hidden variable is under the current parameters, and an M-step, which re-estimates the parameters from those weighted assignments, until the fit stops improving. It can settle on a local optimum, so it is often run from several random starts (general definition). Example ([VRR-Stop ("Verify](#/papers/wu2026vrrstop "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents (2026)") App. A.4): each answer's count of accepting votes out of M calls to an LLM judge is modelled as a mixture of two binomial distributions, one for valid answers and one for invalid ones; EM estimates the share of valid answers and the two acceptance rates, and so the judge's false-accept and false-reject rates, without labels.
+
+**Learn more:** [VRR-Stop ("Verify](#/papers/wu2026vrrstop "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents (2026)") App. A.4, which gives the E- and M-steps for this mixture and keeps the best of several random restarts; App. E shows the estimate degrading as the judge stops telling valid from invalid answers. The general description is not taken from a source on this site (general definition).
+
+**Related:** [latent variable](#/glossary/latent-variable), [identifiability](#/glossary/identifiability), [Youden's index](#/glossary/youdens-index)
 
 
 <a id="experience-replay"></a>
@@ -1423,7 +1497,9 @@ The harmonic mean of precision (the share of predicted positives that are right)
 
 ## False discovery rate (FDR)
 
-Among the results declared significant, the expected share that are false alarms. Controlling it, instead of the chance of any false alarm (the familywise error rate; see [Bonferroni correction](#/glossary/bonferroni-correction)), keeps more power when many tests are run and many effects are real. The Benjamini–Hochberg procedure is the usual way: sort the m p-values and declare significant the k smallest, for the largest k whose p-value is at most kα/m. Online FDR procedures do the same for a stream of tests decided one at a time (general definitions).
+Among the results declared significant, the expected share that are false alarms. Controlling it, instead of the chance of any false alarm (the familywise error rate; see [Bonferroni correction](#/glossary/bonferroni-correction)), keeps more power when many tests are run and many effects are real.
+
+Procedures: The Benjamini–Hochberg procedure is the usual way: sort the m p-values and declare significant the k smallest, for the largest k whose p-value is at most kα/m. Online FDR procedures do the same for a stream of tests decided one at a time (general definitions).
 
 Example: [Phantom Gains](#/papers/xu2026phantomgains "Phantom Gains: Auditing Self-Improvement Against a Measured Null (2026)") tests each problem's gain after self-training "with a one-sided Fisher exact test under FDR control", and notes that such a procedure is adaptive: "an arm containing many true effects raises its own admissible cutoff" (§4.2).
 
@@ -1764,6 +1840,17 @@ An operation whose effect is the same whether it runs once or several times: "se
 **Related:** [transaction (atomicity)](#/glossary/transaction-atomicity), [test oracle](#/glossary/test-oracle), [fault injection](#/glossary/fault-injection)
 
 
+<a id="identifiability"></a>
+
+## Identifiability
+
+A model is identifiable when different parameter values always give different distributions of the observable data, so that enough data can in principle pin the parameters down; when two settings give the same distribution, no amount of data tells them apart (general definition). [VRR-Stop ("Verify](#/papers/wu2026vrrstop "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents (2026)") states that its two-binomial mixture of judge votes is identifiable "if and only if the two component acceptance rates differ", that is, when the judge's [Youden's index](#/glossary/youdens-index) J is not 0 (App. A.4), and asks only that the sign of a gain be identifiable (§1).
+
+**Learn more:** [VRR-Stop ("Verify](#/papers/wu2026vrrstop "Verify, Repair, Repeat, or Stop? Robust Stopping for Noisy Verify-Repair Loops in LLM Agents (2026)") App. A.4 and §4.2, which use the term without defining it (general definition).
+
+**Related:** [expectation-maximization (EM)](#/glossary/expectation-maximization-em), [latent variable](#/glossary/latent-variable), [Youden's index](#/glossary/youdens-index)
+
+
 <a id="imitation-learning"></a>
 
 ## Imitation learning
@@ -2035,6 +2122,19 @@ Designing a model together with a rule for when to hand a case to a human expert
 **Related:** [selective prediction](#/glossary/selective-prediction), [calibration](#/glossary/calibration), [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control)
 
 
+<a id="least-to-most-prompting"></a>
+
+## Least-to-most prompting
+
+A prompting method (Zhou et al., not listed here) in two stages, each with its own prompt: the first reduces a problem to simpler sub-questions, the second answers them one after another, so later answers can use earlier ones. [PAL (Program-aided Language Models)](#/papers/gao2022pal "PAL: Program-aided Language Models (2022)") App. I describes it this way: "Problem reducing stage turns the problem into sub-problems, and the solving stage solves them sequentially. It keeps two prompts, each for an individual stage." [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)") App. H.1 calls it a method that "decomposes complex problems into sequential subquestions that are solved incrementally".
+
+Example ([PAL (Program-aided Language Models)](#/papers/gao2022pal "PAL: Program-aided Language Models (2022)") App. I, PDF p. 24): the reducing prompt turns "how old is Kody?" into the sub-questions "How old is Mohamed?", "How old was Mohamed four years ago?" and "How old was Kody four years ago?"; the solving prompt answers "How old was Mohamed four years ago?" (56) and then uses that answer for "How old is Kody?" (32).
+
+**Learn more:** [PAL (Program-aided Language Models)](#/papers/gao2022pal "PAL: Program-aided Language Models (2022)") ([PDF p. 24](https://arxiv.org/pdf/2211.10435#page=24)) App. I (PDF pp. 24–25); [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)") ([PDF p. 64](https://arxiv.org/pdf/2501.12948#page=64)) App. H.1 (PDF p. 64).
+
+**Related:** [program-of-thought and tool-integrated reasoning](#/glossary/program-of-thought-and-tool-integrated-reasoning), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting)
+
+
 <a id="left-deep-and-bushy-plans"></a>
 
 ## Left-deep and bushy plans
@@ -2116,7 +2216,9 @@ Linear integer arithmetic (LIA) is the logic of formulas over integer variables 
 
 ## Linear programming (LP and MILP)
 
-An optimization model with a linear objective and linear constraints: minimize cᵀx subject to Ax ≤ b. In a mixed-integer linear program (MILP) some variables must take integer values. The points that satisfy the constraints form the feasible set; the best objective value is the optimal value, and the points that reach it are the optimizers ([ModelEquivBench](#/papers/zhu2026modelequivbench "ModelEquivBench: Certifying Multi-Relational Evaluation of LLM-Generated Optimization Models (2026)") §3.1). The LP relaxation of a MILP drops the integer requirements and bounds its optimal value. Duality supplies checkable [certificates](#/glossary/certificate): the value of every feasible solution of the dual LP bounds the primal optimal value (weak duality), so a primal and a dual solution with equal values prove both optimal, and Farkas' lemma gives a certificate that a system of linear inequalities has no solution (general definitions).
+An optimization model with a linear objective and linear constraints: minimize cᵀx subject to Ax ≤ b. In a mixed-integer linear program (MILP) some variables must take integer values. The points that satisfy the constraints form the feasible set; the best objective value is the optimal value, and the points that reach it are the optimizers ([ModelEquivBench](#/papers/zhu2026modelequivbench "ModelEquivBench: Certifying Multi-Relational Evaluation of LLM-Generated Optimization Models (2026)") §3.1).
+
+Relaxation and duality: The LP relaxation of a MILP drops the integer requirements and bounds its optimal value. Duality supplies checkable [certificates](#/glossary/certificate): the value of every feasible solution of the dual LP bounds the primal optimal value (weak duality), so a primal and a dual solution with equal values prove both optimal, and Farkas' lemma gives a certificate that a system of linear inequalities has no solution (general definitions).
 
 Example: [ModelEquivBench](#/papers/zhu2026modelequivbench "ModelEquivBench: Certifying Multi-Relational Evaluation of LLM-Generated Optimization Models (2026)") asks whether an LLM-written optimization model is equivalent to a reference model in several senses (same feasible set, same optimal value, optimizer sets in bijection), and backs positive answers with exact certificates such as Farkas and primal–dual evidence (§1, §3.1).
 
@@ -2158,6 +2260,17 @@ Hashing designed so that similar items are likely to land in the same bucket, wh
 **Learn more:** [Alpha-SQL](#/papers/li2025alphasql "Alpha-SQL: Zero-Shot Text-to-SQL using Monte Carlo Tree Search (2025)") §4.3, which uses them without defining them (general definition).
 
 **Related:** [approximate nearest-neighbour search (ANNS)](#/glossary/approximate-nearest-neighbour-search-anns), [schema linking](#/glossary/schema-linking)
+
+
+<a id="logic-programming"></a>
+
+## Logic programming
+
+Programming by stating what is true, as facts and if-then rules in logic, and asking queries that an inference engine answers by deduction, instead of writing out the steps of the computation (general definition). [Logic-LM](#/papers/pan2023logiclm "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning (2023)") §3.1 calls Prolog "arguably the most prominent symbolic language to describe deductive reasoning problems" and adopts its grammar "to represent a problem as facts, rules, and queries": a fact is a predicate with arguments, such as Age(Peter, 31) for "Peter's age is 31"; a rule says that if some facts are true, further facts are also true; a query "is simply another fact required to be proved based on known facts and rules". Its engine, Pyke, answers by [forward and backward chaining](#/glossary/forward-chaining) (§3.2). Inductive logic programming goes the other way and learns such a program from examples ([LLMs Gaming Verifiers](#/papers/helff2026gaming "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking (2026)") §2).
+
+**Learn more:** [Logic-LM](#/papers/pan2023logiclm "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning (2023)") ([PDF p. 4](https://arxiv.org/pdf/2305.12295#page=4)) §3.1 (PDF p. 4) and §3.2 (PDF p. 5); [LLMs Gaming Verifiers](#/papers/helff2026gaming "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking (2026)") ([PDF p. 2](https://arxiv.org/pdf/2604.15149#page=2)) §2 (PDF p. 2), on inductive logic programming.
+
+**Related:** [Datalog](#/glossary/datalog), [forward chaining](#/glossary/forward-chaining), [first-order logic](#/glossary/first-order-logic), [production rule (rule engine)](#/glossary/production-rule-rule-engine)
 
 
 <a id="logical-bug"></a>
@@ -2505,7 +2618,7 @@ Mutation testing changes the program; mutation-based [fuzzing](#/glossary/fuzzin
 
 ## Mutual information
 
-How much knowing one random quantity tells about another: the reduction in uncertainty ([Shannon entropy](#/glossary/shannon-entropy)) about one from learning the other, zero exactly when they are independent (general definition). [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") bounds the conditional mutual information between a judge's "own" committed answer and the candidate answer it was shown, as a measure of how much the candidate leaks into the judge's answer (§4).
+How much knowing one random quantity tells about another: the reduction in uncertainty ([Shannon entropy](#/glossary/shannon-entropy)) about one from learning the other, zero exactly when they are independent (general definition). [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") gives a lower bound on the conditional mutual information between a judge's "own" committed answer and the candidate answer it was shown, as a measure of how much the candidate leaks into the judge's answer (§4).
 
 **Learn more:** [More Convincing, Not More Correct](#/papers/zhou2026convincing "More Convincing, Not More Correct: Self-Play Reward Hacking of Reference-Free LLM Judges (2026)") §4, which uses it without defining it (general definition).
 
@@ -2934,6 +3047,17 @@ A [Markov decision process](#/glossary/markov-decision-process) in which the age
 **Learn more:** [τ-bench](#/papers/yao2024taubench "$\tau$-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (2025)") §3 (general definition).
 
 **Related:** [Markov decision process](#/glossary/markov-decision-process), [reinforcement learning](#/glossary/reinforcement-learning), [Pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials)
+
+
+<a id="population-based-training"></a>
+
+## Population-based training
+
+Training several copies of a learner in parallel and, at intervals, replacing the worst performers with copies of the best, so that effort moves to the most promising runs. In its original form (Jaderberg et al. 2017, not listed here) the copies are neural networks trained with different hyperparameters, and a replaced copy takes over a better one's weights and then perturbs its hyperparameters (general definition). [Self-Generated In-Context Examples Improve…](#/papers/sarukkai2025selfgenerated "Self-Generated In-Context Examples Improve LLM Agents for Sequential Decision-Making Tasks (2025)") applies the idea to databases of agent trajectories: it keeps a population of 5 databases and, following what it calls "standard population-based training practices", replaces "the bottom 20% of databases (based on validation performance)" with "copies of the top 20%" (App. B.3).
+
+**Learn more:** [Self-Generated In-Context Examples Improve…](#/papers/sarukkai2025selfgenerated "Self-Generated In-Context Examples Improve LLM Agents for Sequential Decision-Making Tasks (2025)") ([PDF p. 5](https://arxiv.org/pdf/2505.00234#page=5)) §5.2 (PDF p. 5) and App.
+
+**Related:** [evolutionary search](#/glossary/evolutionary-search), [island model](#/glossary/island-model), [hyperparameter optimization](#/glossary/hyperparameter-optimization)
 
 
 <a id="positional-bias"></a>
@@ -3507,13 +3631,37 @@ A correction of a rate measured with an imperfect detector. If the detector flag
 
 ## RTL and the chip design flow
 
-Terms of hardware design, where LLM agents now also work (general definitions). RTL (register-transfer level) code describes a chip as registers and the logic between them, in a hardware description language such as Verilog. Logic synthesis compiles RTL into logic gates, and technology mapping maps those gates onto a library's cells; the result is judged by PPA, power, performance (timing) and area. A testbench is code that drives a design in simulation with inputs (stimulus) and checks its outputs (a checker), and an equivalence check proves that a rewritten design keeps the original's behaviour. The software for these steps is called EDA (electronic design automation) tools, not to be confused with an [estimation of distribution algorithm (EDA)](#/glossary/estimation-of-distribution-algorithm-eda).
+Terms of hardware design, where LLM agents now also work (general definitions). RTL (register-transfer level) code describes a chip as registers and the logic between them, in a hardware description language such as Verilog. Logic synthesis compiles RTL into logic gates, and technology mapping maps those gates onto a library's cells; the result is judged by PPA, power, performance (timing) and area.
+
+A testbench is code that drives a design in simulation with inputs (stimulus) and checks its outputs (a checker), and an equivalence check proves that a rewritten design keeps the original's behaviour. The software for these steps is called EDA (electronic design automation) tools, not to be confused with an [estimation of distribution algorithm (EDA)](#/glossary/estimation-of-distribution-algorithm-eda).
 
 Example: [ChipMEM](#/papers/alrabah2026chipmem "ChipMEM: Verification-Grounded Memory for EDA Agents (2026)") optimizes RTL for area "using Yosys for synthesis and equivalence and ABC for technology mapping", and also generates testbench stimulus and checkers (§4).
 
 **Learn more:** [ChipMEM](#/papers/alrabah2026chipmem "ChipMEM: Verification-Grounded Memory for EDA Agents (2026)") §1 and §4, which use the terms without defining them (general definitions).
 
 **Related:** [translation validation](#/glossary/translation-validation), [test oracle](#/glossary/test-oracle), [program equivalence](#/glossary/program-equivalence)
+
+
+<a id="rubric"></a>
+
+## Rubric
+
+A grading guide for open-ended answers: a set of criteria stated in words, each checked separately, often by an [LLM judge](#/glossary/llm-as-a-judge), whose verdicts together make the grade (general definition). In CL-bench, as [From Context to Skills](#/papers/si2026ctx2skill "From Context to Skills: Can Language Models Learn from Context Skillfully? (2026)") uses it, each criterion is itself called a rubric, "a single sentence defining one specific, binary (pass/fail) criterion for judging a model's response" (the Challenger's prompt, Fig. 6), and a task counts as solved "only when every rubric passes" (§3.2). [An Imperfect Verifier is Good Enough](#/papers/plesner2026imperfect "An Imperfect Verifier is Good Enough: Learning with Noisy Rewards (2026)") §1 likens a set of unit tests to "a set of text-based rubric criteria".
+
+**Learn more:** [From Context to Skills](#/papers/si2026ctx2skill "From Context to Skills: Can Language Models Learn from Context Skillfully? (2026)") ([PDF p. 32](https://arxiv.org/pdf/2604.27660#page=32)) Fig. 6 (PDF p. 32) and §3.2 (PDF p. 4); [An Imperfect Verifier is Good Enough](#/papers/plesner2026imperfect "An Imperfect Verifier is Good Enough: Learning with Noisy Rewards (2026)") ([PDF p. 2](https://arxiv.org/pdf/2604.07666#page=2)) §1 (PDF p. 2).
+
+**Related:** [LLM-as-a-judge](#/glossary/llm-as-a-judge), [reference-free evaluation](#/glossary/reference-free-evaluation), [outcome and process rewards](#/glossary/outcome-and-process-rewards), [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr)
+
+
+<a id="rule-of-three"></a>
+
+## Rule of three
+
+When n independent trials show zero failures, about 3/n is a one-sided 95% upper confidence bound on the true failure rate: zero failures in 40 trials is consistent with a true rate near 7.5%. The 3 comes from solving (1 − p)ⁿ = 0.05, which gives p ≈ −ln(0.05)/n ≈ 3/n (general derivation). It replaces intervals that collapse on an all-zero sample: [ArrivalBench](#/papers/kothari2026arrivalbench "ArrivalBench: Agent-Generated Data Pipelines Are Correct Once and Wrong Under Time (2026)") notes that a bootstrap over such a sample returns [0.0, 0.0], "which reads as certainty and is not" (§3).
+
+**Learn more:** [ArrivalBench](#/papers/kothari2026arrivalbench "ArrivalBench: Agent-Generated Data Pipelines Are Correct Once and Wrong Under Time (2026)") §3, "Zero-event rates and determinism", which uses it for every rate of exactly 0% or 100% without deriving it. The derivation is not taken from a source on this site (general definition).
+
+**Related:** [confidence interval and coverage](#/glossary/confidence-interval-and-coverage), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval), [bootstrap resampling](#/glossary/bootstrap-resampling)
 
 
 <a id="letter-s"></a>
@@ -4378,6 +4526,17 @@ A distance between two probability distributions: the least total cost of moving
 **Related:** [KL penalty](#/glossary/kl-penalty)
 
 
+<a id="watermark-stream-processing"></a>
+
+## Watermark (stream processing)
+
+In a stream processor, a threshold on how late data may arrive: events older than it are dropped instead of updating results. Spark's guide, as [ArrivalBench](#/papers/kothari2026arrivalbench "ArrivalBench: Agent-Generated Data Pipelines Are Correct Once and Wrong Under Time (2026)") quotes it: "data later than the threshold will start getting dropped" (§1). Dropping late data is the documented behaviour, so whether a pipeline that drops it is wrong depends on what the task asks: ArrivalBench requires the final result to match a recomputation over all the data and grades the drop as a failure "by design" (App. B).
+
+**Learn more:** [ArrivalBench](#/papers/kothari2026arrivalbench "ArrivalBench: Agent-Generated Data Pipelines Are Correct Once and Wrong Under Time (2026)") §1, which quotes Spark's guide, and App. B, "Watermarks and the late-arrival hazard". Spark's guide is not listed here.
+
+**Related:** [at-least-once delivery](#/glossary/at-least-once-delivery)
+
+
 <a id="weak-supervision"></a>
 
 ## Weak supervision
@@ -4387,6 +4546,17 @@ Statistical methods that combine several cheap, noisy labelling sources (heurist
 **Learn more:** [Weaver](#/papers/saadfalcon2025weaver "Shrinking the Generation-Verification Gap with Weak Verifiers (2025)") §1 and §4.2.
 
 **Related:** [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [LLM-as-a-judge](#/glossary/llm-as-a-judge), [Cohen's kappa](#/glossary/cohens-kappa)
+
+
+<a id="weak-to-strong-supervision"></a>
+
+## Weak-to-strong supervision
+
+Training or guiding a stronger model with signals from a weaker one: a teacher that, "despite being weaker than the learner", "still provides useful guidance" ([Absolute Zero](#/papers/zhao2025absolutezero "Absolute Zero: Reinforced Self-play Reasoning with Zero Data (2025)") §5). It reverses the usual direction of [distillation](#/glossary/distillation). Example: MultiPL-T fine-tunes CodeLlama-34B and 70B on data generated by StarCoderBase-15B, which its authors call "a form of weak-to-strong supervision …, where a smaller model is used to generate data for training a larger model" ([MultiPL-T](#/papers/cassano2023multiplt "Knowledge Transfer from High-Resource to Low-Resource Programming Languages for Code LLMs (2024)") §2.1). Work on overseeing stronger models asks the same: "whether weaker supervision can elicit or evaluate stronger behavior" ([Code Monitor Red Teaming](#/papers/liao2026codemonitor "Code Monitor Red Teaming for Public-Test-Passing Code (2026)") App. A.3). The work all three cite, Burns et al., is not listed here.
+
+**Learn more:** [Absolute Zero](#/papers/zhao2025absolutezero "Absolute Zero: Reinforced Self-play Reasoning with Zero Data (2025)") ([PDF p. 14](https://arxiv.org/pdf/2505.03335#page=14)) §5 (PDF p. 14); [MultiPL-T](#/papers/cassano2023multiplt "Knowledge Transfer from High-Resource to Low-Resource Programming Languages for Code LLMs (2024)") ([PDF p. 6](https://arxiv.org/pdf/2308.09895#page=6)) §2.1 (PDF p. 6); [Code Monitor Red Teaming](#/papers/liao2026codemonitor "Code Monitor Red Teaming for Public-Test-Passing Code (2026)") ([PDF p. 11](https://arxiv.org/pdf/2607.20852#page=11)) App. A.3 (PDF p. 11).
+
+**Related:** [distillation](#/glossary/distillation), [monitor (AI control)](#/glossary/monitor-ai-control), [weak supervision](#/glossary/weak-supervision) (a different idea: combining noisy labelling sources)
 
 
 <a id="weight-averaging"></a>
@@ -4455,6 +4625,17 @@ A set of input rows on which a query still produces a given output row: given a 
 **Learn more:** [RATest](#/papers/miao2019ratest "Explaining Wrong Queries Using Small Examples (2019)") §2.2. Buneman et al.'s paper is not listed here.
 
 **Related:** [data provenance](#/glossary/data-provenance), [counterexample database](#/glossary/counterexample-database), [optimizing SMT solver](#/glossary/optimizing-smt-solver)
+
+
+<a id="wrapper-web-data-extraction"></a>
+
+## Wrapper (web data extraction)
+
+A program that pulls given fields out of the pages of one website by their place in the page's structure, the tree of nested HTML elements, often as an XPath expression, a path through that tree to the node that holds the value (general definition; [AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") §4.1: "the wrapper method that generates an XPath"). The authors gloss learned wrappers as "a DOM-specific parser that can extract content" (§2), and say wrapper-based methods suit "structured websites with stable layouts" but struggle with entirely new site structures, which need new customized functions written by hand (§1).
+
+**Learn more:** [AutoScraper](#/papers/huang2024autoscraper "AutoScraper: A Progressive Understanding Web Agent for Web Scraper Generation (2024)") ([PDF p. 1](https://arxiv.org/pdf/2404.12753#page=1)) §1 (PDF p. 1), §2 (PDF p. 2) and §4.1 (PDF p. 5).
+
+**Related:** [accessibility tree](#/glossary/accessibility-tree), [DOM tree](#/glossary/dom-tree)
 
 
 <a id="letter-y"></a>

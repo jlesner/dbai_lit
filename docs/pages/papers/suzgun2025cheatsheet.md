@@ -95,5 +95,5 @@ The authors report accuracy in %:
 
 ## On this site
 
-- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
+- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts) · [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

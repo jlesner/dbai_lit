@@ -82,4 +82,5 @@ Agent Skills are folders of instructions, scripts and reference files that an LL
 
 ## On this site
 
+- **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

@@ -18,7 +18,7 @@ The authors want to test how well LLMs reason and use long inputs. They say such
 
 ## Background and terms
 
-**Terms to know:** [exact match](#/glossary/exact-match) · [data contamination](#/glossary/data-contamination) (the paper says "data leakage") · [pass@k](#/glossary/passk) (HumanEval is scored by pass@1, §3.3) · [Pearson r](#/glossary/pearson-correlation) · [lost in the middle](#/glossary/lost-in-the-middle).
+**Terms to know:** [exact match](#/glossary/exact-match) · [data contamination](#/glossary/data-contamination) (the paper says "data leakage") · [pass@k](#/glossary/passk) (HumanEval is scored by pass@1, §3.3) · [Pearson r](#/glossary/pearson-correlation) · [lost in the middle](#/glossary/lost-in-the-middle). · [context-free grammar](#/glossary/context-free-grammar) (the rules S3Eval uses to generate syntactically valid queries, §2.1)
 
 **The paper's own terms:**
 - **SQL execution task**: given a table and an SQL query, the model must output the query's execution result; scored by exact match of the answer (§2.1).
@@ -34,7 +34,6 @@ The authors want to test how well LLMs reason and use long inputs. They say such
 **Missing glossary terms:**
 - **Kendall τ**: a rank correlation; it measures "whether the relative ranking of models is consistent across the benchmarks" (§3.3). The paper prints it and Pearson r as percentages (e.g. 99.1).
 - **Needle-in-a-haystack**: a long-context test in which "a vital piece of information is concealed within a lengthy document" and the model must find it (§1, Fig. 1).
-- **Context-free grammar**: rules that generate syntactically valid queries (§2.1).
 
 **Builds on:**
 - TaPEx ([TAPEX](#/papers/liu2021tapex "TAPEX: Table Pre-training via Learning a Neural SQL Executor (2022)")), which pretrains a model as a SQL executor: the task and the six reasoning types follow it (§1, §2.1, §5.3).

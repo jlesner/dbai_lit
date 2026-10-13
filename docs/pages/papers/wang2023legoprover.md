@@ -84,4 +84,5 @@ Earlier LLM provers write each formal proof as one block and attack each problem
 
 ## On this site
 
+- **Discussed in:** [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>

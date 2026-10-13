@@ -9,7 +9,7 @@ Code: [CodeT](https://github.com/microsoft/CodeT)
 
 ## In brief
 
-- The same code model that samples candidate programs is prompted to write test cases (input and expected output) for the problem; every program runs on every test, programs that pass the same tests form a consensus set, and the set scored by its numbers of programs and tests supplies the answer ("dual execution agreement", RANSAC-inspired) (abstract; §2.1–2.2). Zero-shot on HumanEval, MBPP, APPS and CodeContests with three Codex models, InCoder-6B and CodeGen-16B (§3).
+- The same code model that samples candidate programs is prompted to write test cases (input and expected output) for the problem; every program runs on every test, programs that pass the same tests form a consensus set, and the set scored by its numbers of programs and tests supplies the answer ("dual execution agreement", RANSAC-inspired) (abstract; §2.1–2.2). Zero-shot on HumanEval, MBPP, APPS and CodeContests with three Codex models, InCoder-6B and CodeGen-16B (§3); APPS and CodeContests with code-davinci-002 only (§4.2).
 - It needs no labelled data or trained ranker (§1). In Tab. 2 its pass@1 on HumanEval and MBPP is above both the baseline (greedy decoding for pass@1, App. A) and the authors' replication of AlphaCode's output clustering, "AlphaCode-C", for all five models (§4.1).
 - Model-written tests as the check for choosing among sampled programs, a code analogue of LLM-built test databases for choosing among SQL candidates. The tests are themselves unchecked: the authors measure test accuracy against the canonical solution and a "toxicity" rate, tests that some generated program passes while the canonical solution fails, and report that test quality "strongly correlates" with the gain (§4.3, Fig. 4).
 

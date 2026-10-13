@@ -1,13 +1,13 @@
 # Can a memory across problems be checked before it is reused?
 
-> In the listed systems, lessons, playbooks, skills and harness edits carried from one problem to the next are never checked by a sound check before reuse, and the agents that edit them can't name what an edit will break.
+> In the listed systems outside formal proof libraries, lessons, playbooks, skills and harness edits carried from one problem to the next are never checked by a sound check before reuse, and the agents that edit them can't name what an edit will break.
 
 <p class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/promptopt">promptopt</a></p>
 
 **Source:** added. The method is Memory across problems.
 
 ## Challenge
-A memory across problems puts what an LLM concluded earlier back into its prompt. The listed systems guard their stores in several ways (listed with sources in Memory across problems), but none checks an *entry* with a sound check before reuse (our reading). Two gaps follow:
+A memory across problems puts what an LLM concluded earlier back into its prompt. The listed systems guard their stores in several ways (listed with sources in Memory across problems), but outside formal proof libraries none checks an *entry* with a sound check before reuse (our reading). The exception: LEGO-Prover's library holds only lemmas "verified by the Isabelle prover" ([LEGO-Prover](#/papers/wang2023legoprover "LEGO-Prover: Neural Theorem Proving with Growing Libraries (2024)") §4.3.2; abstract). Two gaps follow:
 - **A wrong entry gets in and stays.** ACE's authors say that without reliable feedback "the constructed context can be polluted by spurious or misleading signals" ([ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)") §4.4), and its released code only ever adds entries. Dynamic Cheatsheet's authors report that smaller models leave "the memory populated with flawed or incomplete strategies" ([Dynamic Cheatsheet](#/papers/suzgun2025cheatsheet "Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory (2025)") §1). Combee's authors leave open "whether accumulated information becomes redundant or contradictory" ([Combee](#/papers/li2026combee "Combee: Scaling Parallel Prompt Learning for Self-Improving LLM Agents (2026)") App. B).
 - **An edit's damage is invisible until it shows.** AHE's agent "cannot reliably name the tasks the same edit is about to break" ([Agentic Harness Engineering (AHE)](#/papers/lin2026ahe "Agentic Harness Engineering: Observability-Driven Automatic Evolution of Coding-Agent Harnesses (2026)") §4.4.2). GEPA's prompt held per-task lessons (task IDs, literal error strings) and transferred below baseline, which the authors read as overfitting; their RELAI-VCL rejects any candidate that gains "by sacrificing previously working behavior" ([Do Agent Optimizers Compound?](#/papers/wang2026compound "Do Agent Optimizers Compound? A Continual-Learning Evaluation on Terminal-Bench 2.0 (2026)") App. B.2, §6.2, §4.4), an outcome gate, not a sound check (our reading).
 
