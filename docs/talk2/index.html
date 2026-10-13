@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSLs and LLMs</title>
+<!--
+  Self-contained slide deck: no network, no external files. Speaker script: script.md beside this file.
+  Keys: → / Space / PgDn next · ← / PgUp previous · Home / End · F fullscreen · N slide number.
+  Swipe left/right on touch screens. The URL hash (#5) names the slide. Print gives one slide per page.
+-->
+<style>
+:root{
+  --bg:#FAF8F3; --panel:#FFFFFF; --ink:#1F2430; --muted:#5F6672; --line:#C9CDD4;
+  --accent:#2C5D8F; --accent-soft:#E1EAF4;
+  --ok:#2E7D4F; --ok-soft:#E0EFE5; --warn:#A8701A; --warn-soft:#F5EAD6;
+  --bad:#A63D3D; --bad-soft:#F3DFDF; --unk:#7D828B; --unk-soft:#ECEDEF;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,"DejaVu Sans Mono",monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);overflow:hidden}
+body{font-family:var(--sans);color:var(--ink)}
+#stage{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:50% 50%}
+.slide{position:absolute;inset:0;padding:52px 72px 48px;display:none;flex-direction:column}
+.slide.active{display:flex}
+h1,h2{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0}
+h2{font-size:62px;line-height:1.1;margin-bottom:30px}
+.body{flex:1;min-height:0;display:flex;gap:44px}
+.body > svg{width:100%;height:100%}
+svg{fill:var(--ink)}
+svg text{font-family:var(--sans)}
+svg .mono{font-family:var(--mono)}
+svg .serif{font-family:var(--serif)}
+.muted{color:var(--muted)}
+.src{font-size:24px;color:var(--muted)}
+code,.code{font-family:var(--mono)}
+.col{display:flex;flex-direction:column;gap:22px;min-width:0}
+.panel{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:26px 30px}
+blockquote{margin:0;font-family:var(--serif);font-size:36px;line-height:1.3}
+h1,h2,h3,p,li,blockquote,.band{text-wrap:balance}
+blockquote::before{content:"\201C"}blockquote::after{content:"\201D"}
+
+/* title */
+.title-slide{justify-content:center;padding:72px 110px}
+.title-slide h1{font-size:118px;line-height:1.02}
+.title-slide .sub{font-size:42px;color:var(--muted);margin:34px 0 0;max-width:1250px;line-height:1.25}
+.title-slide svg{margin-top:56px;height:250px;width:100%}
+
+/* slide 2 grid */
+.dsl-grid{display:grid;grid-template-columns:170px 1fr 370px 250px;column-gap:18px;row-gap:9px;align-items:center;font-size:28px;width:100%;align-content:start}
+.dsl-grid .hd{font-size:24px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.dsl-grid .lang{font-weight:700;font-size:32px}
+.dsl-grid .code{font-size:23px;background:var(--accent-soft);border-radius:10px;padding:9px 14px;white-space:nowrap;overflow:hidden}
+.dsl-grid .arr{white-space:nowrap}
+.dsl-grid .arr::before{content:"\2192\00a0";color:var(--accent)}
+.band{margin-top:40px;font-family:var(--serif);font-size:44px;text-align:center;color:var(--accent);border-top:2px solid var(--line);padding-top:22px}
+
+/* cards */
+.cards{display:grid;gap:28px;width:100%}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:26px 30px;display:flex;flex-direction:column;gap:12px;min-height:0}
+.card h3{margin:0;font-size:38px;font-family:var(--serif);font-weight:600}
+.card p{margin:0;font-size:var(--cp,30px);line-height:1.3}
+.card ul{margin:0;padding-left:1.1em;font-size:30px;line-height:1.3}
+.card li+li{margin-top:10px}
+.card.ok{border-top:12px solid var(--ok)}
+.card.mid{border-top:12px solid var(--accent)}
+.card.warn{border-top:12px solid var(--warn)}
+.tag{display:inline-block;font-size:22px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:8px}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.mid{background:var(--accent-soft);color:var(--accent)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+
+/* appendix */
+.appx h2{font-size:52px;margin-bottom:24px}
+.appx-index{columns:2;column-gap:60px;font-size:40px;line-height:1.75;margin:0;padding:0;list-style:none}
+.appx-index a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--line)}
+.appx-index a:hover{color:var(--accent);border-color:var(--accent)}
+.appx-index b{display:inline-block;width:96px;color:var(--accent);font-family:var(--mono)}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
+table.t{border-collapse:collapse;width:100%;font-size:23px;line-height:1.25}
+table.t th{text-align:left;font-size:21px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:2px solid var(--ink);padding:8px 12px}
+table.t td{border-bottom:1px solid var(--line);padding:9px 12px;vertical-align:top}
+table.t td:first-child{font-weight:600;width:24%}
+td.c-ok{color:var(--ok);font-weight:600} td.c-warn{color:var(--warn);font-weight:600} td.c-mid{color:var(--accent);font-weight:600}
+table.t.big{font-size:34px;margin:auto 0} table.t.big th{font-size:22px} table.t.big td{padding:var(--pad,20px) 14px}
+.stat{font-family:var(--serif);font-size:120px;line-height:1;color:var(--accent)}
+.statlab{font-size:30px;color:var(--muted);margin-top:8px}
+pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid var(--line);border-radius:12px;padding:20px 24px;margin:0;white-space:pre}
+
+#num{position:fixed;right:14px;bottom:10px;font:600 16px var(--sans);color:var(--muted);background:rgba(255,255,255,.8);padding:3px 9px;border-radius:6px;display:none}
+#num.on{display:block}
+
+@media print{
+  @page{size:1600px 900px;margin:0}
+  html,body{overflow:visible;height:auto}
+  #stage{position:static;transform:none!important;width:1600px;height:auto}
+  .slide{display:flex!important;position:relative;width:1600px;height:900px;break-after:page;page-break-after:always}
+  #num{display:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- shared arrowheads -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1F2430"/></marker>
+    <marker id="ahA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2C5D8F"/></marker>
+    <marker id="ahG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E7D4F"/></marker>
+    <marker id="ahM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7D828B"/></marker>
+    <pattern id="cell" width="14" height="14" patternUnits="userSpaceOnUse"><rect x="1" y="1" width="12" height="12" rx="1.5" fill="#9DB6D2"/></pattern>
+    <g id="doc"><path d="M0,0 h44 l16,16 v60 h-60 z" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/><path d="M44,0 v16 h16" fill="none" stroke="#1F2430" stroke-width="2.5"/><path d="M10,30 h38 M10,42 h38 M10,54 h28" stroke="#9AA1AC" stroke-width="3"/></g>
+    <g id="key"><circle cx="14" cy="14" r="12" fill="none" stroke="#2E7D4F" stroke-width="5"/><path d="M26,14 h34 M48,14 v12 M58,14 v9" stroke="#2E7D4F" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+  </defs>
+</svg>
+
+<div id="stage">
+
+
+<section class="slide title-slide" data-label="1">
+  <h1>DSLs for LLMs,<br>LLMs for DSLs</h1>
+  <p class="sub">Small languages that engines run over data, and a loop that checks what an LLM writes in them</p>
+  <svg viewBox="0 0 1380 250">
+    <rect x="210" y="70" width="300" height="120" rx="18" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="3"/>
+    <text x="360" y="145" text-anchor="middle" font-size="46" font-weight="700">LLM</text>
+    <rect x="870" y="70" width="300" height="120" rx="18" fill="#FFFFFF" stroke="#1F2430" stroke-width="3"/>
+    <text x="1020" y="145" text-anchor="middle" font-size="46" font-weight="700">DSL</text>
+    <path d="M520,100 C640,40 740,40 860,100" fill="none" stroke="#2C5D8F" stroke-width="4" marker-end="url(#ahA)"/>
+    <text x="690" y="38" text-anchor="middle" font-size="32" fill="#2C5D8F">writes a program</text>
+    <path d="M860,160 C740,220 640,220 520,160" fill="none" stroke="#2E7D4F" stroke-width="4" marker-end="url(#ahG)"/>
+    <text x="690" y="244" text-anchor="middle" font-size="32" fill="#2E7D4F">returns a checked result</text>
+  </svg>
+</section>
+
+<section class="slide" data-label="2">
+  <h2>A DSL: a small language an engine runs over data</h2>
+  <div class="body" style="flex-direction:column;gap:0">
+    <div class="dsl-grid">
+      <div class="hd">language</div><div class="hd">a program</div><div class="hd">free engines</div><div class="hd">runs over</div>
+      <div class="lang">XPath</div><div class="code">//book[price&gt;30]/title</div><div class="arr"><a href="https://lxml.de/" target="_blank" rel="noopener">lxml</a>, <a href="https://github.com/sissaschool/elementpath" target="_blank" rel="noopener">elementpath</a></div><div class="arr">documents</div>
+      <div class="lang">XQuery</div><div class="code">for $b in //book return $b/title</div><div class="arr"><a href="https://www.saxonica.com/" target="_blank" rel="noopener">Saxon-HE</a>, <a href="https://basex.org/" target="_blank" rel="noopener">BaseX</a></div><div class="arr">documents</div>
+      <div class="lang">JSONPath</div><div class="code">$.store.book[?@.price&gt;30].title</div><div class="arr"><a href="https://github.com/jg-rp/python-jsonpath-rfc9535" target="_blank" rel="noopener">Python</a>, <a href="https://github.com/swaggerexpert/jsonpath" target="_blank" rel="noopener">JS</a> libraries</div><div class="arr">JSON</div>
+      <div class="lang">SQL</div><div class="code">SELECT title FROM book WHERE price&gt;30</div><div class="arr"><a href="https://sqlite.org/" target="_blank" rel="noopener">SQLite</a>, <a href="https://duckdb.org/" target="_blank" rel="noopener">DuckDB</a>, <a href="https://www.postgresql.org/" target="_blank" rel="noopener">Postgres</a></div><div class="arr">tables</div>
+      <div class="lang">SQL/PGQ</div><div class="code">(a:Person)-[k:Knows]-&gt;{1,3}(b:Person)</div><div class="arr"><a href="https://github.com/cwida/duckpgq-extension" target="_blank" rel="noopener">DuckPGQ</a>, <a href="https://www.oracle.com/database/free/" target="_blank" rel="noopener">Oracle Free</a></div><div class="arr">property graphs</div>
+      <div class="lang">SPARQL</div><div class="code">SELECT ?t { ?b :title ?t }</div><div class="arr"><a href="https://github.com/RDFLib/rdflib" target="_blank" rel="noopener">rdflib</a>, <a href="https://github.com/oxigraph/oxigraph" target="_blank" rel="noopener">Oxigraph</a>, <a href="https://jena.apache.org/" target="_blank" rel="noopener">Jena</a></div><div class="arr">knowledge graphs</div>
+      <div class="lang">Datalog</div><div class="code">path(x,z) :- path(x,y), edge(y,z).</div><div class="arr"><a href="https://souffle-lang.github.io/" target="_blank" rel="noopener">Souffl&eacute;</a>, <a href="https://potassco.org/clingo/" target="_blank" rel="noopener">clingo</a></div><div class="arr">facts</div>
+      <div class="lang">RRULE</div><div class="code">FREQ=WEEKLY;BYDAY=MO,WE</div><div class="arr"><a href="https://github.com/dateutil/dateutil" target="_blank" rel="noopener">dateutil</a>, <a href="https://github.com/jkbrzt/rrule" target="_blank" rel="noopener">rrule.js</a></div><div class="arr">calendars</div>
+      <div class="lang">Regex</div><div class="code">^[0-9]{3}-[0-9]{4}$</div><div class="arr"><a href="https://www.gnu.org/software/grep/" target="_blank" rel="noopener">grep</a>, <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a></div><div class="arr">text</div>
+    </div>
+    <div class="band" style="margin-top:22px;font-size:38px;padding-top:14px">Each has a standard or a formal semantics, and two or more free engines: the result is computed, not judged</div>
+    <p class="src" style="margin:10px 0 0;text-align:center">Left out: <a href="https://www.iso.org/standard/21413.html" target="_blank" rel="noopener">Prolog</a> (a query may never finish) and <a href="https://webstore.iec.ch/publication/94107" target="_blank" rel="noopener">GQL</a> (we found no free engine that implements its 2024 ISO standard)</p>
+  </div>
+</section>
+
+<section class="slide" data-label="3">
+  <h2>Over a long job, per-step errors compound</h2>
+  <div class="body">
+    <svg viewBox="0 0 1040 660" style="flex:0 0 1000px;width:1000px">
+      <g stroke="#E3E5E9" stroke-width="2">
+        <line x1="120" y1="60" x2="980" y2="60"/><line x1="120" y1="185" x2="980" y2="185"/><line x1="120" y1="310" x2="980" y2="310"/><line x1="120" y1="435" x2="980" y2="435"/>
+      </g>
+      <line x1="120" y1="560" x2="980" y2="560" stroke="#1F2430" stroke-width="2.5"/>
+      <line x1="120" y1="60" x2="120" y2="560" stroke="#1F2430" stroke-width="2.5"/>
+      <g font-size="26" fill="#5F6672" text-anchor="end">
+        <text x="106" y="69">100%</text><text x="106" y="194">75%</text><text x="106" y="319">50%</text><text x="106" y="444">25%</text><text x="106" y="569">0</text>
+      </g>
+      <g font-size="26" fill="#5F6672" text-anchor="middle">
+        <text x="120" y="600">0</text><text x="335" y="600">25</text><text x="550" y="600">50</text><text x="765" y="600">75</text><text x="980" y="600">100</text>
+      </g>
+      <text x="550" y="645" text-anchor="middle" font-size="30">steps in the job</text>
+      <text x="40" y="310" text-anchor="middle" font-size="30" transform="rotate(-90 40 310)">every step right</text>
+      <polyline fill="none" stroke="#2C5D8F" stroke-width="6" points="120.0,60.0 137.2,69.9 154.4,79.7 171.6,89.3 188.8,98.6 206.0,107.8 223.2,116.8 240.4,125.6 257.6,134.3 274.8,142.7 292.0,151.0 309.2,159.2 326.4,167.2 343.6,175.0 360.8,182.6 378.0,190.1 395.2,197.5 412.4,204.7 429.6,211.8 446.8,218.7 464.0,225.5 481.2,232.2 498.4,238.7 515.6,245.1 532.8,251.4 550.0,257.5 567.2,263.5 584.4,269.4 601.6,275.2 618.8,280.9 636.0,286.4 653.2,291.9 670.4,297.2 687.6,302.4 704.8,307.6 722.0,312.6 739.2,317.5 756.4,322.3 773.6,327.1 790.8,331.7 808.0,336.2 825.2,340.7 842.4,345.1 859.6,349.3 876.8,353.5 894.0,357.6 911.2,361.7 928.4,365.6 945.6,369.5 962.8,373.3 980.0,377.0"/>
+      <polyline fill="none" stroke="#7FA0C4" stroke-width="6" points="120.0,60.0 137.2,108.8 154.4,152.7 171.6,192.5 188.8,228.3 206.0,260.6 223.2,289.8 240.4,316.2 257.6,339.9 274.8,361.4 292.0,380.8 309.2,398.2 326.4,414.0 343.6,428.2 360.8,441.1 378.0,452.7 395.2,463.1 412.4,472.6 429.6,481.1 446.8,488.8 464.0,495.7 481.2,502.0 498.4,507.7 515.6,512.8 532.8,517.4 550.0,521.5 567.2,525.3 584.4,528.7 601.6,531.7 618.8,534.5 636.0,537.0 653.2,539.2 670.4,541.2 687.6,543.1 704.8,544.7 722.0,546.2 739.2,547.6 756.4,548.8 773.6,549.9 790.8,550.9 808.0,551.7 825.2,552.5 842.4,553.3 859.6,553.9 876.8,554.5 894.0,555.1 911.2,555.5 928.4,556.0 945.6,556.4 962.8,556.7 980.0,557.0"/>
+      <polyline fill="none" stroke="#B9C9DC" stroke-width="6" points="120.0,60.0 137.2,155.0 154.4,231.9 171.6,294.3 188.8,344.8 206.0,385.7 223.2,418.8 240.4,445.6 257.6,467.3 274.8,485.0 292.0,499.2 309.2,510.8 326.4,520.1 343.6,527.7 360.8,533.8 378.0,538.8 395.2,542.8 412.4,546.1 429.6,548.7 446.8,550.9 464.0,552.6 481.2,554.0 498.4,555.2 515.6,556.1 532.8,556.8 550.0,557.4 567.2,557.9 584.4,558.3 601.6,558.6 618.8,558.9 636.0,559.1 653.2,559.3 670.4,559.4 687.6,559.5 704.8,559.6 722.0,559.7 739.2,559.7 756.4,559.8 773.6,559.8 790.8,559.9 808.0,559.9 825.2,559.9 842.4,559.9 859.6,559.9 876.8,560.0 894.0,560.0 911.2,560.0 928.4,560.0 945.6,560.0 962.8,560.0 980.0,560.0"/>
+      <line x1="550" y1="60" x2="550" y2="560" stroke="#5F6672" stroke-width="2" stroke-dasharray="6 8"/>
+      <circle cx="550" cy="257.5" r="9" fill="#2C5D8F"/>
+      <circle cx="550" cy="521.5" r="9" fill="#7FA0C4"/>
+      <circle cx="550" cy="557.4" r="9" fill="#B9C9DC"/>
+      <g font-size="30">
+        <rect x="640" y="80" width="340" height="190" rx="10" fill="#FFFFFF" stroke="#C9CDD4" stroke-width="2"/>
+        <text x="660" y="116" font-size="23" fill="#5F6672">each step</text><text x="960" y="116" font-size="23" fill="#5F6672" text-anchor="end">all 50 steps</text>
+        <line x1="660" y1="156" x2="706" y2="156" stroke="#2C5D8F" stroke-width="6"/><text x="718" y="166">99%</text><text x="960" y="166" text-anchor="end" font-weight="700">61%</text>
+        <line x1="660" y1="200" x2="706" y2="200" stroke="#7FA0C4" stroke-width="6"/><text x="718" y="210">95%</text><text x="960" y="210" text-anchor="end" font-weight="700">8%</text>
+        <line x1="660" y1="244" x2="706" y2="244" stroke="#B9C9DC" stroke-width="6"/><text x="718" y="254">90%</text><text x="960" y="254" text-anchor="end" font-weight="700">0.5%</text>
+      </g>
+    </svg>
+    <div class="col" style="justify-content:center;flex:1">
+      <div class="panel">
+        <p style="margin:0 0 14px;font-size:28px" class="muted">On controlled agent tasks, success</p>
+        <blockquote style="font-size:34px">follows a geometric law in 28 of 36 model-task cells tested, governed by a single measurable quantity: per-step reliability</blockquote>
+        <p class="src" style="margin:16px 0 0"><a href="https://arxiv.org/abs/2609.01660" target="_blank" rel="noopener">mittal2026rot</a>, p. 2; its released analysis gives 27 of 36, most labelled geometric by default (our own check)</p>
+      </div>
+      <p class="src" style="margin:0">Curves: our arithmetic, p<sup>n</sup></p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-label="4">
+  <h2>Context is scarce: attention compares all token pairs</h2>
+  <div class="body" style="flex-direction:column;gap:18px">
+    <svg viewBox="0 0 1456 600" style="flex:1">
+      <rect x="120" y="408" width="112" height="112" fill="url(#cell)"/>
+      <rect x="400" y="296" width="224" height="224" fill="url(#cell)"/>
+      <rect x="820" y="72" width="448" height="448" fill="url(#cell)"/>
+      <g text-anchor="middle">
+        <text x="176" y="572" font-size="36" font-weight="700">8 tokens</text><text x="176" y="388" font-size="30" fill="#5F6672">64 pairs</text>
+        <text x="512" y="572" font-size="36" font-weight="700">16 tokens</text><text x="512" y="276" font-size="30" fill="#5F6672">256 pairs</text>
+        <text x="1044" y="572" font-size="36" font-weight="700">32 tokens</text><text x="1044" y="52" font-size="30" fill="#5F6672">1,024 pairs</text>
+      </g>
+      <path d="M250,470 L380,430" stroke="#5F6672" stroke-width="3" fill="none" marker-end="url(#ahM)"/>
+      <path d="M642,420 L800,360" stroke="#5F6672" stroke-width="3" fill="none" marker-end="url(#ahM)"/>
+    </svg>
+    <div class="band" style="margin-top:0">Twice the context, four times the comparisons <span class="src">(ours)</span></div>
+  </div>
+</section>
+
+<section class="slide" data-label="5">
+  <h2>A DSL moves the procedure out of the model</h2>
+  <div class="body">
+    <svg viewBox="0 0 1456 690">
+      <line x1="728" y1="10" x2="728" y2="680" stroke="#C9CDD4" stroke-width="2"/>
+      <!-- left: in English -->
+      <text x="340" y="44" text-anchor="middle" font-size="38" font-weight="700">Reasoning in English</text>
+      <rect x="150" y="80" width="380" height="490" rx="14" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+      <text x="340" y="118" text-anchor="middle" font-size="24" fill="#5F6672">the model's context</text>
+      <g stroke="#2C5D8F" stroke-width="10" stroke-linecap="round">
+        <line x1="185" y1="150" x2="470" y2="150"/><line x1="185" y1="176" x2="430" y2="176"/><line x1="185" y1="202" x2="490" y2="202"/>
+      </g>
+      <g stroke="#B5BBC4" stroke-width="10" stroke-linecap="round">
+        <line x1="185" y1="240" x2="495" y2="240"/><line x1="185" y1="266" x2="495" y2="266"/><line x1="185" y1="292" x2="495" y2="292"/><line x1="185" y1="318" x2="495" y2="318"/><line x1="185" y1="344" x2="495" y2="344"/><line x1="185" y1="370" x2="495" y2="370"/><line x1="185" y1="396" x2="495" y2="396"/><line x1="185" y1="422" x2="495" y2="422"/><line x1="185" y1="448" x2="495" y2="448"/><line x1="185" y1="474" x2="495" y2="474"/><line x1="185" y1="500" x2="495" y2="500"/><line x1="185" y1="526" x2="495" y2="526"/>
+      </g>
+      <line x1="300" y1="370" x2="360" y2="370" stroke="#A63D3D" stroke-width="10" stroke-linecap="round"/>
+      <line x1="230" y1="474" x2="280" y2="474" stroke="#A63D3D" stroke-width="10" stroke-linecap="round"/>
+      <text x="125" y="182" text-anchor="end" font-size="26" fill="#2C5D8F">procedure</text>
+      <text x="125" y="390" text-anchor="end" font-size="26" fill="#5F6672">every row</text>
+      <text x="125" y="420" text-anchor="end" font-size="26" fill="#5F6672">of data</text>
+      <text x="340" y="625" text-anchor="middle" font-size="30">every token is sampled;</text>
+      <text x="340" y="662" text-anchor="middle" font-size="30" fill="#A63D3D">any one can go wrong</text>
+      <!-- right: a program -->
+      <text x="1092" y="44" text-anchor="middle" font-size="38" font-weight="700">Writing a program</text>
+      <rect x="842" y="80" width="500" height="80" rx="12" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="2.5"/>
+      <text x="1092" y="132" text-anchor="middle" font-size="34" class="mono">//book[price&gt;30]/title</text>
+      <text x="1092" y="196" text-anchor="middle" font-size="28" fill="#2C5D8F">22 characters from the model</text>
+      <path d="M1092,214 V262" stroke="#1F2430" stroke-width="3" marker-end="url(#ah)"/>
+      <rect x="962" y="270" width="260" height="84" rx="12" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+      <text x="1092" y="324" text-anchor="middle" font-size="34" font-weight="700">engine</text>
+      <path d="M1092,360 V408" stroke="#1F2430" stroke-width="3" marker-end="url(#ah)"/>
+      <use href="#doc" x="900" y="430"/><use href="#doc" x="960" y="430"/><use href="#doc" x="1020" y="430"/><use href="#doc" x="1080" y="430"/><use href="#doc" x="1140" y="430"/><use href="#doc" x="1200" y="430"/>
+      <use href="#doc" x="930" y="470"/><use href="#doc" x="990" y="470"/><use href="#doc" x="1050" y="470"/><use href="#doc" x="1110" y="470"/><use href="#doc" x="1170" y="470"/>
+      <text x="1092" y="625" text-anchor="middle" font-size="30">run exactly,</text>
+      <text x="1092" y="662" text-anchor="middle" font-size="30" fill="#2E7D4F">over data of any size</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide" data-label="6">
+  <h2>One loop: the LLM proposes, a checker decides</h2>
+  <div class="body">
+    <svg viewBox="0 0 1456 690">
+      <rect x="40" y="90" width="260" height="130" rx="16" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="3"/>
+      <text x="170" y="170" text-anchor="middle" font-size="44" font-weight="700">LLM</text>
+      <path d="M306,155 H500" stroke="#2C5D8F" stroke-width="4" marker-end="url(#ahA)"/>
+      <text x="403" y="138" text-anchor="middle" font-size="28" fill="#2C5D8F">proposes</text>
+      <rect x="510" y="90" width="320" height="130" rx="16" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+      <text x="670" y="148" text-anchor="middle" font-size="32" font-weight="700">a program</text>
+      <text x="670" y="190" text-anchor="middle" font-size="28" fill="#5F6672">or a document</text>
+      <path d="M836,155 H1120" stroke="#1F2430" stroke-width="4" marker-end="url(#ah)"/>
+      <text x="978" y="138" text-anchor="middle" font-size="28">runs or checks it</text>
+      <text x="978" y="190" text-anchor="middle" font-size="24" fill="#5F6672">no trust in the LLM</text>
+      <rect x="1130" y="90" width="300" height="130" rx="16" fill="#FFFFFF" stroke="#1F2430" stroke-width="3"/>
+      <text x="1280" y="148" text-anchor="middle" font-size="34" font-weight="700">checker</text>
+      <text x="1280" y="190" text-anchor="middle" font-size="24" fill="#5F6672">usually the engine</text>
+      <!-- verdicts -->
+      <path d="M1280,226 V300 M500,300 H1300" fill="none" stroke="#1F2430" stroke-width="3"/>
+      <path d="M500,300 V330 M760,300 V330 M1030,300 V330 M1300,300 V330" fill="none" stroke="#1F2430" stroke-width="3"/>
+      <rect x="390" y="336" width="220" height="70" rx="35" fill="#E0EFE5" stroke="#2E7D4F" stroke-width="2.5"/><text x="500" y="382" text-anchor="middle" font-size="30" font-weight="700" fill="#2E7D4F">certified</text>
+      <rect x="650" y="336" width="220" height="70" rx="35" fill="#F5EAD6" stroke="#A8701A" stroke-width="2.5"/><text x="760" y="382" text-anchor="middle" font-size="28" font-weight="700" fill="#A8701A">evidence only</text>
+      <rect x="920" y="336" width="220" height="70" rx="35" fill="#F3DFDF" stroke="#A63D3D" stroke-width="2.5"/><text x="1030" y="382" text-anchor="middle" font-size="30" font-weight="700" fill="#A63D3D">failed</text>
+      <rect x="1190" y="336" width="220" height="70" rx="35" fill="#ECEDEF" stroke="#7D828B" stroke-width="2.5"/><text x="1300" y="382" text-anchor="middle" font-size="30" font-weight="700" fill="#5F6672">unknown</text>
+      <text x="1300" y="440" text-anchor="middle" font-size="22" fill="#5F6672">can't be checked</text>
+      <!-- certified -> trusted -> back -->
+      <path d="M500,412 V476" stroke="#2E7D4F" stroke-width="4" marker-end="url(#ahG)"/>
+      <rect x="370" y="484" width="260" height="76" rx="14" fill="#FFFFFF" stroke="#2E7D4F" stroke-width="3"/>
+      <text x="500" y="532" text-anchor="middle" font-size="30" font-weight="700" fill="#2E7D4F">trusted answer</text>
+      <path d="M364,522 H170 V228" fill="none" stroke="#2E7D4F" stroke-width="4" marker-end="url(#ahG)"/>
+      <text x="190" y="600" font-size="30" fill="#2E7D4F">skills and examples</text>
+      <text x="190" y="638" font-size="30" fill="#2E7D4F">learned from what passed</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide" data-label="7">
+  <h2>A document that tells two programs apart</h2>
+  <div class="body" style="gap:36px">
+    <div class="col" style="flex:0 0 560px">
+      <p style="margin:0;font-size:26px" class="muted">program A</p>
+      <pre class="code">//book[price&gt;30]/title</pre>
+      <p style="margin:10px 0 0;font-size:26px" class="muted">program B</p>
+      <pre class="code">//book[not(price&lt;=30)]/title</pre>
+    </div>
+    <div class="col" style="flex:0 0 420px">
+      <p style="margin:0;font-size:26px" class="muted">the document</p>
+<pre class="code">&lt;lib&gt;
+  &lt;book&gt;
+    &lt;title&gt;A&lt;/title&gt;
+    &lt;price&gt;40&lt;/price&gt;
+  &lt;/book&gt;
+  &lt;book&gt;
+    &lt;title&gt;B&lt;/title&gt;
+  &lt;/book&gt;
+&lt;/lib&gt;</pre>
+    </div>
+    <div class="col" style="flex:1">
+      <p style="margin:0;font-size:26px" class="muted">results</p>
+      <div class="panel" style="font-size:34px;line-height:1.6">A → <b>A</b><br>B → <b>A, B</b></div>
+      <p style="margin:0;font-size:27px">Book B has no price: <code>price&gt;30</code> is false, <code>not(price&lt;=30)</code> is true.</p>
+      <p class="src" style="margin:0">Our example, run in lxml. Anyone can rerun it: a certificate that A and B differ.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-label="8">
+  <h2>How much a pass proves depends on the task</h2>
+  <div class="body" style="flex-direction:column;gap:22px">
+    <svg viewBox="0 0 1456 66" style="height:66px;flex:0 0 auto">
+      <defs><linearGradient id="spec" x1="0" x2="1"><stop offset="0" stop-color="#2E7D4F"/><stop offset=".5" stop-color="#2C5D8F"/><stop offset="1" stop-color="#A8701A"/></linearGradient></defs>
+      <rect x="0" y="16" width="1456" height="14" rx="7" fill="url(#spec)"/>
+      <text x="0" y="58" font-size="24" fill="#2E7D4F">proves more</text>
+      <text x="1456" y="58" font-size="24" fill="#A8701A" text-anchor="end">proves less</text>
+    </svg>
+    <div class="cards" style="grid-template-columns:1.15fr 1fr 1fr;flex:1">
+      <div class="card ok"><span class="tag ok">certified</span>
+        <ul><li>Predict a program's output</li><li>Show two programs differ: the document is a counterexample</li><li>Build an input that gives a wanted result</li><li>Show two programs agree, only by a decision procedure or proof</li></ul></div>
+      <div class="card mid"><span class="tag mid">as strong as the agreement check</span>
+        <ul><li>Port to another dialect</li><li>Minimize</li><li>Repair</li><li>Rewrite for speed</li></ul></div>
+      <div class="card warn"><span class="tag warn">evidence only</span>
+        <ul><li>Write a program from examples</li><li>Write a program from English, against a hidden reference program</li></ul>
+        <p class="muted" style="font-size:26px;margin-top:auto">some wrong answers pass</p></div>
+    </div>
+    <p style="margin:0;font-size:30px;text-align:center">For LLM methods, certified checks are exact rewards; for users, only certified answers can be trusted</p>
+  </div>
+</section>
+
+<section class="slide" data-label="9">
+  <h2 style="font-size:52px;margin-bottom:24px">All task families and their checks</h2>
+  <table class="t">
+    <tr><th>Task family</th><th>What checks an answer</th><th>What a pass proves</th></tr>
+    <tr><td>Predict a program's output</td><td>Run it in the engine and compare</td><td class="c-ok">Certified, as far as the engine is right</td></tr>
+    <tr><td>Show two programs differ</td><td>Run both on the document offered</td><td class="c-ok">Certified: a counterexample</td></tr>
+    <tr><td>Build an input for a wanted result</td><td>Run the program on the document</td><td class="c-ok">Certified, in any DSL (ours)</td></tr>
+    <tr><td>Show two programs agree</td><td>A decision procedure where one exists, or a proof</td><td class="c-ok">Certified only by those; test documents are evidence</td></tr>
+    <tr><td>Port to another dialect or DSL</td><td>The differ and agree checks</td><td class="c-mid">As strong as the agreement check</td></tr>
+    <tr><td>Minimize</td><td>Agreement check, and the length</td><td class="c-mid">As strong as the agreement check</td></tr>
+    <tr><td>Repair (e.g. regex safe from catastrophic backtracking)</td><td>Agreement check and a property checker, or tests</td><td class="c-mid">As strong as both; tests are evidence only</td></tr>
+    <tr><td>Rewrite for speed</td><td>Agreement check, and measured time or plan cost</td><td class="c-mid">As strong as the agreement check; speedup is noisy</td></tr>
+    <tr><td>Write from examples</td><td>Run on the examples and on held-out documents</td><td class="c-warn">Evidence only</td></tr>
+    <tr><td>Write from English</td><td>Compare with a hidden reference program</td><td class="c-warn">Evidence only; with no reference, nothing checks it</td></tr>
+  </table>
+</section>
+
+<section class="slide" data-label="10">
+  <h2>The bet: verdicts make programs more reliable</h2>
+  <div class="body">
+    <svg viewBox="0 0 1456 690">
+      <g fill="none" stroke="#2C5D8F" stroke-width="5" marker-end="url(#ahA)">
+        <path d="M893,119 A280,280 0 0 1 1000.8,282"/>
+        <path d="M1000.8,408 A280,280 0 0 1 873,584.4"/>
+        <path d="M583,584.4 A280,280 0 0 1 455.2,408"/>
+        <path d="M455.2,282 A280,280 0 0 1 563,119"/>
+      </g>
+      <g text-anchor="middle">
+        <rect x="578" y="17" width="300" height="96" rx="14" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="3"/>
+        <text x="728" y="59" font-size="30" font-weight="700">LLM writes</text><text x="728" y="95" font-size="30" font-weight="700">programs</text>
+        <rect x="848" y="297" width="320" height="96" rx="14" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+        <text x="1008" y="355" font-size="30" font-weight="700">engine checks them</text>
+        <rect x="598" y="577" width="260" height="96" rx="14" fill="#E0EFE5" stroke="#2E7D4F" stroke-width="3"/>
+        <text x="728" y="635" font-size="30" font-weight="700" fill="#2E7D4F">verdicts</text>
+        <rect x="278" y="297" width="340" height="96" rx="14" fill="#FFFFFF" stroke="#1F2430" stroke-width="2.5"/>
+        <text x="448" y="338" font-size="28" font-weight="700">skills and a library</text><text x="448" y="374" font-size="28" font-weight="700">of verified examples</text>
+        <text x="733" y="340" font-size="28" class="serif" fill="#5F6672">One bet,</text>
+        <text x="733" y="376" font-size="28" class="serif" fill="#5F6672">every DSL</text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="slide" data-label="11">
+  <h2>Do gains on checkable tasks carry over?</h2>
+  <div class="body" style="flex-direction:column;gap:0">
+    <svg viewBox="37 0 1382 462" style="flex:1;min-height:0;width:100%">
+      <text x="40" y="34" font-size="24" font-weight="700" fill="#2C5D8F" letter-spacing="1.5">A CANDIDATE QUESTION, NOT SETTLED</text>
+      <rect x="40" y="90" width="540" height="330" rx="16" fill="#E0EFE5" stroke="#2E7D4F" stroke-width="3"/>
+      <text x="310" y="152" text-anchor="middle" font-size="42" font-weight="700" fill="#2E7D4F">Drills</text>
+      <text x="310" y="200" text-anchor="middle" font-size="30">checkable DSL tasks</text>
+      <text x="310" y="268" text-anchor="middle" font-size="28">predict a program's output</text>
+      <text x="310" y="310" text-anchor="middle" font-size="28">find a counterexample</text>
+      <text x="310" y="380" text-anchor="middle" font-size="26" fill="#5F6672">the engine scores every try</text>
+      <rect x="896" y="50" width="520" height="170" rx="16" fill="#FFFFFF" stroke="#2C5D8F" stroke-width="3"/>
+      <text x="1156" y="102" text-anchor="middle" font-size="34" font-weight="700">Near: the same DSL</text>
+      <text x="1156" y="146" text-anchor="middle" font-size="28">write a query from English</text>
+      <text x="1156" y="186" text-anchor="middle" font-size="26" fill="#A8701A">examples check it, only in part</text>
+      <rect x="896" y="290" width="520" height="170" rx="16" fill="#FFFFFF" stroke="#2C5D8F" stroke-width="3"/>
+      <text x="1156" y="342" text-anchor="middle" font-size="34" font-weight="700">Far: other domains</text>
+      <text x="1156" y="386" text-anchor="middle" font-size="28">open-ended work</text>
+      <text x="1156" y="426" text-anchor="middle" font-size="26" fill="#A8701A">no program checks it</text>
+      <g fill="none" stroke="#2C5D8F" stroke-width="4" stroke-dasharray="12 9" marker-end="url(#ahA)">
+        <path d="M590,200 C700,150 780,135 884,135"/>
+        <path d="M590,320 C700,370 780,375 884,375"/>
+      </g>
+      <text x="738" y="128" text-anchor="middle" font-size="30" fill="#2C5D8F">carries over?</text>
+      <text x="738" y="410" text-anchor="middle" font-size="30" fill="#2C5D8F">carries over?</text>
+    </svg>
+  </div>
+</section>
+
+<section class="slide" data-label="12">
+  <h2>Not yet measured</h2>
+  <div class="body cards" style="grid-template-columns:1fr 1fr">
+    <div class="card" style="gap:22px;padding:30px 36px">
+      <svg viewBox="0 0 640 340" style="width:100%;height:360px">
+        <rect x="70" y="8" width="500" height="64" rx="14" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="3"/>
+        <text x="320" y="50" text-anchor="middle" font-size="28" font-weight="700">compact open model writes a DSL</text>
+        <g stroke="#7D828B" stroke-width="2">
+          <rect x="40" y="200" width="30" height="30" fill="url(#cell)"/>
+          <rect x="120" y="170" width="60" height="60" fill="url(#cell)"/>
+          <rect x="230" y="130" width="100" height="100" fill="url(#cell)"/>
+          <rect x="380" y="90" width="140" height="140" fill="url(#cell)"/>
+        </g>
+        <g text-anchor="middle" font-size="46" class="serif" fill="#2C5D8F">
+          <text x="55" y="282">?</text><text x="150" y="282">?</text><text x="280" y="282">?</text><text x="450" y="282">?</text>
+        </g>
+        <path d="M30,300 H600" stroke="#2C5D8F" stroke-width="4" marker-end="url(#ahA)"/>
+        <text x="600" y="334" text-anchor="end" font-size="24" fill="#5F6672">data or task grows</text>
+      </svg>
+      <p style="font-size:36px;line-height:1.25">How compact open models do at writing DSLs over data <b>as the data or the task grows</b></p>
+    </div>
+    <div class="card" style="gap:22px;padding:30px 36px">
+      <svg viewBox="0 0 640 340" style="width:100%;height:360px">
+        <text x="0" y="34" font-size="26" fill="#5F6672">reasoning in English: procedure and data in context</text>
+        <rect x="0" y="52" width="300" height="56" rx="8" fill="url(#cell)" stroke="#7D828B" stroke-width="2"/>
+        <rect x="300" y="52" width="270" height="56" rx="8" fill="none" stroke="#7D828B" stroke-width="2.5" stroke-dasharray="10 8"/>
+        <text x="600" y="96" text-anchor="middle" font-size="46" class="serif" fill="#2C5D8F">?</text>
+        <text x="0" y="170" font-size="26" fill="#5F6672">writing a program</text>
+        <rect x="0" y="188" width="44" height="56" rx="8" fill="url(#cell)" stroke="#7D828B" stroke-width="2"/>
+        <text x="60" y="226" font-size="26" class="mono">//book[price&gt;30]/title</text>
+        <text x="320" y="310" text-anchor="middle" font-size="40" class="serif" fill="#2C5D8F">tokens saved: ? ×</text>
+      </svg>
+      <p style="font-size:36px;line-height:1.25">How many tokens a DSL program <b>saves against English</b> for the same task</p>
+    </div>
+  </div>
+  <p class="src" style="margin:22px 0 0;text-align:center;font-size:26px">A short search on 2026-10-13 found no study of either · pictures are schematic, not data (ours)</p>
+</section>
+
+
+</div>
+<div id="num"></div>
+
+<script>
+(function(){
+  var stage=document.getElementById('stage');
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  var num=document.getElementById('num');
+  var labels=slides.map(function(s){return s.getAttribute('data-label');});
+  var cur=0;
+  function fit(){
+    var s=Math.min(window.innerWidth/1600,window.innerHeight/900);
+    stage.style.transform='translate(-50%,-50%) scale('+s+')';
+  }
+  function show(i,push){
+    i=Math.max(0,Math.min(slides.length-1,i));
+    slides[cur].classList.remove('active');
+    cur=i; slides[cur].classList.add('active');
+    num.textContent=labels[cur]+' / '+slides.length;
+    if(push!==false && location.hash!=='#'+labels[cur]) history.replaceState(null,'','#'+labels[cur]);
+  }
+  function fromHash(){
+    var h=decodeURIComponent(location.hash.slice(1));
+    var i=labels.indexOf(h);
+    show(i<0?0:i,false);
+  }
+  window.addEventListener('resize',fit);
+  window.addEventListener('hashchange',fromHash);
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    var k=e.key;
+    if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='ArrowDown'){show(cur+1);e.preventDefault();}
+    else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){show(cur-1);e.preventDefault();}
+    else if(k==='Home'){show(0);}
+    else if(k==='End'){show(slides.length-1);}
+    else if(k==='n'||k==='N'){num.classList.toggle('on');}
+    else if(k==='f'||k==='F'){
+      if(!document.fullscreenElement){document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen();}
+      else{document.exitFullscreen&&document.exitFullscreen();}
+    }
+  });
+  var x0=null;
+  document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(x0===null) return;
+    var dx=e.changedTouches[0].clientX-x0; x0=null;
+    if(Math.abs(dx)>50) show(cur+(dx<0?1:-1));
+  });
+  slides[0].classList.add('active');
+  fit(); fromHash();
+})();
+</script>
+</body>
+</html>
