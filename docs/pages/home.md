@@ -8,7 +8,7 @@ This is one candidate research path among several, not a chosen plan. Its challe
 
 ## The four challenge areas
 
-- **C1, the gym:** task families in each DSL whose answer keys are made by code (predict a program's output, write a program from examples, write one from English, decide whether two programs agree and show where they don't), each with a size setting on two axes: the data (rows, nodes, events) and the composition (steps, joins, predicates, rule exceptions). Everything else is scored here, so the checks must not accept wrong answers.
+- **C1, the gym:** task families in each DSL whose answer keys are made by code, each with a size setting on two axes: the data (rows, nodes, events) and the composition (steps, joins, predicates, rule exceptions). Everything else is scored here, so the checks must not accept wrong answers. A later step accepts a decided *agree* in equivalence tasks where a decision procedure exists, so answers become *differ* (with a document), *agree* or *unknown*; until then the family is witness-only.
 - **C2, reach with size:** the measurement behind the claim. Data size separates DSL use from plain-text reasoning, since the program stays the same length while the data grows; composition separates a learned skill from zero-shot DSL use. The 10× is claimed on composition, at a fixed success rate.
 - **C3, learning in prompts without labels:** a proposer writes problems at the edge of what the solver can do, the engine judges the answers, and the passing work becomes a skill document and a library of verified examples. Who writes the skill is the experiment: the compact model itself, or a frontier model writing for it.
 - **C4, learning or recall:** the same loop on a DSL with little training data, K through the open-source ngn/k engine, shows whether the loop teaches or only reminds.
@@ -65,13 +65,7 @@ Why this shape:
 - **The attack leaves the weights fixed**. Engine-judged self-play is known in weight space, for Python ([Absolute Zero](#/papers/zhao2025absolutezero "Absolute Zero: Reinforced Self-play Reasoning with Zero Data (2025)")) and SQL ([SQL-Zero](#/papers/pedrozo2026sqlzero "SQL-Zero: Self-Evolving Text-to-SQL (2026)")). In prompt space, the closest works found use an LLM judge ([From Context to Skills](#/papers/si2026ctx2skill "From Context to Skills: Can Language Models Learn from Context Skillfully? (2026)")) or accumulate the agent's own successes without a proposer ([Self-Generated In-Context Examples Improve…](#/papers/sarukkai2025selfgenerated "Self-Generated In-Context Examples Improve LLM Agents for Sequential Decision-Making Tasks (2025)")); the Ctx2Skill authors name a sound check in place of their judge as future work (App. B), so the gap may not stay open for long. A quick search on 2026-10-13 (16 queries) found no work that runs the whole loop; this is our reading, not a survey.
 - **Easy to explain:** the model writes a short program, the engine runs it, and the skill grows only from what the engine accepted.
 
-**The first experiment:**
-- **DSL:** XPath 1.0, with lxml as the engine and elementpath as a second implementation that cross-checks every answer key. K (ngn/k), the control, joins once the loop shows a gain on XPath: the control only matters when there is a gain to explain.
-- **Learner:** one open model family at three sizes (about 4B, 8B and 32B), so "compact" is a curve. **Teacher:** the learner itself, or a frontier model.
-- **Families:** output prediction; path from examples, checked on held-out pages rendered from the same hidden template (a path that hard-codes the shown nodes fails there); path from an English question rendered by code from a hidden gold path; equivalence with a distinguishing document. The engine is always used: tasks answerable in text, where the skill must learn when not to call it, are a later step.
-- **Size:** document size, and steps and predicates per path.
-- **Arms:** no skill (zero-shot DSL use, the main baseline), self-written skill, frontier-written skill; plain text where the document fits in context; a frontier model with the engine.
-- **Stop rule:** if zero-shot XPath on the small model already holds its success rate across the composition range, the headroom isn't there: move the first experiment to another DSL before building the loop.
+**The first experiment:** XPath 1.0, one open model family at three sizes, skills written by the model itself or by a frontier model, against zero-shot use; K joins as the control once the loop shows a gain.
 
 **[Certificates](#/glossary/certificate) this path produces:** the engine's verdict on every answer; distinguishing documents (or databases) for every pair of programs found to differ; and skill entries admitted only with the verified examples behind them.
 
@@ -83,7 +77,7 @@ None yet.
 
 - **Can compact models write useful skills?** The evidence found leans against it: Dynamic Cheatsheet's authors tie its gains to model scale ([Dynamic Cheatsheet](#/papers/suzgun2025cheatsheet "Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory (2025)") §4.5), and skill packs frontier agents wrote for themselves before solving scored below no skills on all three configurations tested ([SkillsBench](#/papers/li2026skillsbench "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks (2026)") App. D.6). With the engine's verdicts as feedback, it is open.
 - **Does handing the procedure to an engine help compact models at all?** Code written by the model "is not always better" than textual reasoning, and the choice between them scales inversely in the authors' tests ([Steering Large Language Models…](#/papers/chen2024steering "Steering Large Language Models between Code Execution and Textual Reasoning (2025)") abstract); the gains that grow with problem size were shown with API models ([PAL (Program-aided Language Models)](#/papers/gao2022pal "PAL: Program-aided Language Models (2022)") §5.2, [Logic-LM](#/papers/pan2023logiclm "Logic-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning (2023)") §4.3).
-- **XPath still needs its gate check** before the gym is built on it.
+- **XPath passes its gate only conditionally**: no family as generated; the fixes are the gym's requirements.
 
 ## Explore
 
