@@ -67,4 +67,5 @@ Reductions are log-space unless marked log-linear.
 
 ## On this site
 
+- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/theory-misc">theory-misc</a></span>

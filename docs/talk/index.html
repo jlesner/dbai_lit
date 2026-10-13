@@ -40,6 +40,7 @@ code,.code{font-family:var(--mono)}
 .col{display:flex;flex-direction:column;gap:22px;min-width:0}
 .panel{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:26px 30px}
 blockquote{margin:0;font-family:var(--serif);font-size:36px;line-height:1.3}
+h1,h2,h3,p,li,blockquote,.band{text-wrap:balance}
 blockquote::before{content:"\201C"}blockquote::after{content:"\201D"}
 
 /* title */
@@ -128,7 +129,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
     <rect x="210" y="70" width="300" height="120" rx="18" fill="#E1EAF4" stroke="#2C5D8F" stroke-width="3"/>
     <text x="360" y="145" text-anchor="middle" font-size="46" font-weight="700">LLM</text>
     <rect x="870" y="70" width="300" height="120" rx="18" fill="#FFFFFF" stroke="#1F2430" stroke-width="3"/>
-    <text x="1020" y="145" text-anchor="middle" font-size="46" font-weight="700">engine</text>
+    <text x="1020" y="145" text-anchor="middle" font-size="46" font-weight="700">DSL</text>
     <path d="M520,100 C640,40 740,40 860,100" fill="none" stroke="#2C5D8F" stroke-width="4" marker-end="url(#ahA)"/>
     <text x="690" y="38" text-anchor="middle" font-size="32" fill="#2C5D8F">writes a program</text>
     <path d="M860,160 C740,220 640,220 520,160" fill="none" stroke="#2E7D4F" stroke-width="4" marker-end="url(#ahG)"/>
@@ -137,7 +138,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
 </section>
 
 <section class="slide" data-label="2">
-  <h2>A DSL here: a small language an engine runs over data</h2>
+  <h2>A DSL: a small language an engine runs over data</h2>
   <div class="body" style="flex-direction:column;gap:0">
     <div class="dsl-grid">
       <div class="hd">language</div><div class="hd">a program</div><div class="hd">free engines</div><div class="hd">runs over</div>
@@ -192,7 +193,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
       <div class="panel">
         <p style="margin:0 0 14px;font-size:28px" class="muted">On controlled agent tasks, success</p>
         <blockquote style="font-size:34px">follows a geometric law in 28 of 36 model-task cells tested, governed by a single measurable quantity: per-step reliability</blockquote>
-        <p class="src" style="margin:16px 0 0"><a href="https://arxiv.org/abs/2609.01660" target="_blank" rel="noopener">mittal2026rot</a>, p. 2</p>
+        <p class="src" style="margin:16px 0 0"><a href="https://arxiv.org/abs/2609.01660" target="_blank" rel="noopener">mittal2026rot</a>, p. 2; its released analysis gives 27 of 36, most labelled geometric by default (our own check)</p>
       </div>
       <p class="src" style="margin:0">Curves: our arithmetic, p<sup>n</sup></p>
     </div>
@@ -219,7 +220,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
 </section>
 
 <section class="slide" data-label="5">
-  <h2>A DSL program moves the procedure out of the model</h2>
+  <h2>A DSL moves the procedure out of the model</h2>
   <div class="body">
     <svg viewBox="0 0 1456 690">
       <line x1="728" y1="10" x2="728" y2="680" stroke="#C9CDD4" stroke-width="2"/>
@@ -374,7 +375,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
       <p style="margin:0;font-size:28px">Phi-3-medium <q>can understand webpage content well</q> yet <q>still struggle to comprehend webpage structures</q></p>
       <p class="src" style="margin:0"><a href="https://arxiv.org/abs/2404.12753" target="_blank" rel="noopener">huang2024autoscraper</a> Tab. 2 (SWDE, their method: 24.06% vs 71.56%), §6.1</p>
       <p style="margin:6px 0 0;font-size:28px"><b>Datalog</b>, prompted directly: 32% of programs don't compile; 16% compile but compute the wrong relations</p>
-      <p class="src" style="margin:0"><a href="https://arxiv.org/abs/2609.37233" target="_blank" rel="noopener">li2026datalogbench</a> §6.3 (3,264 programs; paper not yet fully checked by us)</p>
+      <p class="src" style="margin:0"><a href="https://arxiv.org/abs/2609.37233" target="_blank" rel="noopener">li2026datalogbench</a> §6.3 (3,264 programs)</p>
     </div>
   </div>
 </section>
@@ -456,7 +457,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
 </section>
 
 <section class="slide" data-label="13">
-  <h2>The bet: verdicts make the next programs more reliable</h2>
+  <h2>The bet: verdicts make programs more reliable</h2>
   <div class="body">
     <svg viewBox="0 0 1456 690">
       <g fill="none" stroke="#2C5D8F" stroke-width="5" marker-end="url(#ahA)">
@@ -482,6 +483,37 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
 </section>
 
 <section class="slide" data-label="14">
+  <h2>Do gains on checkable tasks carry over?</h2>
+  <div class="body" style="flex-direction:column;gap:0">
+    <svg viewBox="37 0 1382 462" style="flex:none;height:487px">
+      <text x="40" y="34" font-size="24" font-weight="700" fill="#2C5D8F" letter-spacing="1.5">A CANDIDATE QUESTION, NOT SETTLED</text>
+      <rect x="40" y="90" width="540" height="330" rx="16" fill="#E0EFE5" stroke="#2E7D4F" stroke-width="3"/>
+      <text x="310" y="152" text-anchor="middle" font-size="42" font-weight="700" fill="#2E7D4F">Drills</text>
+      <text x="310" y="200" text-anchor="middle" font-size="30">checkable DSL tasks</text>
+      <text x="310" y="268" text-anchor="middle" font-size="28">predict a program's output</text>
+      <text x="310" y="310" text-anchor="middle" font-size="28">find a counterexample</text>
+      <text x="310" y="380" text-anchor="middle" font-size="26" fill="#5F6672">the engine scores every try</text>
+      <rect x="896" y="50" width="520" height="170" rx="16" fill="#FFFFFF" stroke="#2C5D8F" stroke-width="3"/>
+      <text x="1156" y="102" text-anchor="middle" font-size="34" font-weight="700">Near: the same DSL</text>
+      <text x="1156" y="146" text-anchor="middle" font-size="28">write a query from English</text>
+      <text x="1156" y="186" text-anchor="middle" font-size="26" fill="#A8701A">examples check it, only in part</text>
+      <rect x="896" y="290" width="520" height="170" rx="16" fill="#FFFFFF" stroke="#2C5D8F" stroke-width="3"/>
+      <text x="1156" y="342" text-anchor="middle" font-size="34" font-weight="700">Far: other domains</text>
+      <text x="1156" y="386" text-anchor="middle" font-size="28">open-ended work</text>
+      <text x="1156" y="426" text-anchor="middle" font-size="26" fill="#A8701A">no program checks it</text>
+      <g fill="none" stroke="#2C5D8F" stroke-width="4" stroke-dasharray="12 9" marker-end="url(#ahA)">
+        <path d="M590,200 C700,150 780,135 884,135"/>
+        <path d="M590,320 C700,370 780,375 884,375"/>
+      </g>
+      <text x="738" y="128" text-anchor="middle" font-size="30" fill="#2C5D8F">carries over?</text>
+      <text x="738" y="410" text-anchor="middle" font-size="30" fill="#2C5D8F">carries over?</text>
+    </svg>
+    <div class="band" style="margin-top:14px;font-size:36px;padding-top:14px">Like a soldier's drills: practised where every move is scored, for a fight where none can be (our analogy)</div>
+    <p class="src" style="margin:10px 0 0;text-align:center">Prior work (A12): shown for RL on the weights, mostly onto tasks that are still checkable. With frozen weights: one precedent with a tuned prefix, mostly negative results for text prompts, and, in a quick sweep, no study of text prompts learned against a program checker on compact open models.</p>
+  </div>
+</section>
+
+<section class="slide" data-label="15">
   <h2>Not yet measured</h2>
   <div class="body cards" style="grid-template-columns:1fr 1fr">
     <div class="card" style="justify-content:center;gap:24px;padding:40px">
@@ -511,6 +543,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
     <li><a href="#A8"><b>A8</b>Weak checks can be gamed</a></li>
     <li><a href="#A9"><b>A9</b>Which DSLs we have rated</a></li>
     <li><a href="#A11"><b>A11</b>Sources</a></li>
+    <li><a href="#A12"><b>A12</b>Carry-over: prior work</a></li>
   </ul>
 </section>
 
@@ -532,7 +565,7 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
 </section>
 
 <section class="slide appx" data-label="A2">
-  <h2>Per-step reliability: what <a href="https://arxiv.org/abs/2609.01660" target="_blank" rel="noopener">mittal2026rot</a> reports, and our caveats</h2>
+  <h2>Per-step reliability: <a href="https://arxiv.org/abs/2609.01660" target="_blank" rel="noopener">mittal2026rot</a> and our caveats</h2>
   <div class="body">
     <div class="col" style="flex:1">
       <div class="panel"><blockquote style="font-size:32px">success follows a geometric law in 28 of 36 model-task cells tested</blockquote><p class="src" style="margin:12px 0 0">p. 2; quote checked at the source</p></div>
@@ -540,7 +573,8 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
         <li>The steep collapse is on one family, the agentic tool-use task</li>
         <li>That family has 15 trials per cell</li>
         <li>Its headline projection (0.42 at 8 steps) isn't (mean r)<sup>8</sup>: 0.61<sup>8</sup> ≈ 0.02</li>
-      </ul><p class="src">our own reading of the paper; no full check of it yet</p></div>
+        <li>Its released analysis gives 27 of 36, 17 of them labelled geometric because that fit failed</li>
+      </ul><p class="src">our own full reading of the paper (2026-10-13)</p></div>
     </div>
     <div class="col" style="flex:0 0 560px;justify-content:center">
       <p style="margin:0;font-size:28px;font-weight:600">2 successes in 15 trials</p>
@@ -645,12 +679,12 @@ pre.code{font-size:28px;line-height:1.4;background:var(--panel);border:2px solid
     <div class="cards" style="grid-template-columns:330px 1fr;row-gap:22px;align-items:stretch">
       <div class="card" style="justify-content:center"><h3>Regex</h3><p class="muted">regular fragment</p></div>
       <div class="card" style="border-left:12px solid var(--ok);justify-content:center"><p>An automaton decides it: <b>agree</b> or <b>differ</b></p></div>
-      <div class="card" style="justify-content:center"><h3>XPath</h3><p class="muted">navigational, no value tests</p></div>
+      <div class="card" style="justify-content:center"><h3>XPath</h3><p class="muted">navigational, no counting or value tests</p></div>
       <div class="card" style="border-left:12px solid var(--ok);justify-content:center"><p>A static analyzer decides it; outside that fragment, search for a document</p></div>
       <div class="card" style="justify-content:center"><h3>SQL</h3></div>
       <div class="card" style="border-left:12px solid var(--warn);justify-content:center"><p>Search for a database that tells them apart; finding none doesn't prove agreement</p></div>
     </div>
-    <p class="src" style="margin:0">Regex: <a href="https://ecommons.cornell.edu/handle/1813/5958" target="_blank" rel="noopener">hopcroft1971linear</a> (automaton equivalence); <a href="https://doi.org/10.1145/800125.804029" target="_blank" rel="noopener">stockmeyer1973word</a> (its cost) · XPath: <a href="https://doi.org/10.1145/1250734.1250773" target="_blank" rel="noopener">geneves2007efficient</a> (the decision procedure), <a href="https://arxiv.org/abs/0812.3550" target="_blank" rel="noopener">geneves2008analyzer</a> §2 Ex. 3 (the tool) · SQL: our query-equivalence notes</p>
+    <p class="src" style="margin:0">Regex: <a href="https://ecommons.cornell.edu/handle/1813/5958" target="_blank" rel="noopener">hopcroft1971linear</a> (deterministic automaton equivalence); <a href="https://doi.org/10.1145/800125.804029" target="_blank" rel="noopener">stockmeyer1973word</a> (its cost for regular expressions) · XPath: <a href="https://doi.org/10.1145/1250734.1250773" target="_blank" rel="noopener">geneves2007efficient</a> §8, Thm. 6.3 (the decision procedure), <a href="https://arxiv.org/abs/0812.3550" target="_blank" rel="noopener">geneves2008analyzer</a> §2 Ex. 3, Fig. 7, §3.1 (the tool) · SQL: our query-equivalence notes</p>
   </div>
 </section>
 
@@ -683,36 +717,51 @@ if doc == example_3: return "C"</pre>
 
 <section class="slide appx" data-label="A9">
   <h2>Which DSLs we have rated as homes for 10× goals</h2>
-  <table class="t big" style="font-size:30px;--pad:12px">
+  <table class="t big" style="font-size:28px;--pad:9px">
     <tr><th>DSL</th><th>Status in our comparison of checkable domains</th></tr>
     <tr><td>SQL</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
     <tr><td>Calendars</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
-    <tr><td>Regular expressions</td><td class="c-mid">Rated, on weaker evidence</td></tr>
-    <tr><td>Datalog (with CodeQL)</td><td class="c-ok">Rated</td></tr>
-    <tr><td>JSONPath (with jq, JMESPath)</td><td class="c-mid">Rated, on weaker evidence</td></tr>
-    <tr><td>SPARQL</td><td class="c-warn">In one early survey row only</td></tr>
-    <tr><td>XPath 1.0</td><td class="c-warn">Conditionally: no task family passes as generated</td></tr>
-    <tr><td>SQL/PGQ</td><td class="c-warn">A screened idea only</td></tr>
-    <tr><td>XQuery</td><td class="c-warn">Not yet</td></tr>
+    <tr><td>Regular expressions</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
+    <tr><td>Datalog (with CodeQL)</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
+    <tr><td>JSONPath (with jq, JMESPath)</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
+    <tr><td>SPARQL</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
+    <tr><td>XPath 1.0</td><td class="c-mid">A near miss: 2 of 3 task families pass</td></tr>
+    <tr><td>SQL/PGQ (with GQL's pattern core)</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
+    <tr><td>XQuery</td><td class="c-ok">Rated; sourced signs of scale</td></tr>
   </table>
+  <p class="src" style="margin:10px 0 0">10× level: SQL H; Datalog, SPARQL, SQL/PGQ M; regex, XQuery L. New ratings checked at their sources by a second agent.</p>
 </section>
 
 <section class="slide appx" data-label="A11">
   <h2>Sources</h2>
   <table class="t" style="font-size:23px;margin:auto 0">
     <tr><th>Key</th><th>Where</th><th>Paper fully checked by us?</th></tr>
-    <tr><td><a href="https://arxiv.org/abs/2609.01660" target="_blank" rel="noopener">mittal2026rot</a></td><td>p. 2; caveats from our own reading</td><td class="c-warn">Not yet</td></tr>
+    <tr><td><a href="https://arxiv.org/abs/2609.01660" target="_blank" rel="noopener">mittal2026rot</a></td><td>p. 2; caveats from our own reading</td><td class="c-ok">Yes</td></tr>
     <tr><td><a href="https://arxiv.org/abs/2211.10435" target="_blank" rel="noopener">gao2022pal</a> (PAL)</td><td>§5.2 and its figure data</td><td class="c-ok">Yes</td></tr>
     <tr><td><a href="https://arxiv.org/abs/2305.12295" target="_blank" rel="noopener">pan2023logiclm</a> (Logic-LM)</td><td>§4.3, Fig. 3</td><td class="c-ok">Yes</td></tr>
     <tr><td><a href="https://arxiv.org/abs/2410.03524" target="_blank" rel="noopener">chen2024steering</a></td><td>abstract</td><td class="c-ok">Yes</td></tr>
     <tr><td><a href="https://arxiv.org/abs/2404.12753" target="_blank" rel="noopener">huang2024autoscraper</a></td><td>Tab. 2, §3.3, §6.1</td><td class="c-ok">Yes</td></tr>
     <tr><td><a href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener">yang2024sweagent</a></td><td>§1 (agents act through a shell or Python)</td><td class="c-ok">Yes</td></tr>
-    <tr><td><a href="https://doi.org/10.1145/1250734.1250773" target="_blank" rel="noopener">geneves2007efficient</a>, <a href="https://arxiv.org/abs/0812.3550" target="_blank" rel="noopener">geneves2008analyzer</a></td><td>XPath decision procedure and its tool (A7)</td><td class="c-warn">Not yet</td></tr>
-    <tr><td><a href="https://ecommons.cornell.edu/handle/1813/5958" target="_blank" rel="noopener">hopcroft1971linear</a>, <a href="https://doi.org/10.1145/800125.804029" target="_blank" rel="noopener">stockmeyer1973word</a></td><td>Automaton equivalence and its cost (A7)</td><td class="c-warn">Not yet</td></tr>
-    <tr><td><a href="https://arxiv.org/abs/2609.37233" target="_blank" rel="noopener">li2026datalogbench</a> (DatalogBench)</td><td>§3, §6.3, App. O</td><td class="c-warn">Not yet</td></tr>
-    <tr><td><a href="https://arxiv.org/abs/2609.23032" target="_blank" rel="noopener">arXiv 2609.23032</a> (GQL, SQL/PGQ engines)</td><td>abstract</td><td class="c-warn">Abstract only</td></tr>
+    <tr><td><a href="https://doi.org/10.1145/1250734.1250773" target="_blank" rel="noopener">geneves2007efficient</a>, <a href="https://arxiv.org/abs/0812.3550" target="_blank" rel="noopener">geneves2008analyzer</a></td><td>§8, Thm. 6.3; the tool: §2 Ex. 3, Fig. 7, §3.1 (A7)</td><td class="c-ok">Yes</td></tr>
+    <tr><td><a href="https://ecommons.cornell.edu/handle/1813/5958" target="_blank" rel="noopener">hopcroft1971linear</a>, <a href="https://doi.org/10.1145/800125.804029" target="_blank" rel="noopener">stockmeyer1973word</a></td><td>Automaton equivalence; its cost for regular expressions (A7)</td><td class="c-ok">Cited result checked</td></tr>
+    <tr><td><a href="https://arxiv.org/abs/2609.37233" target="_blank" rel="noopener">li2026datalogbench</a></td><td>§3, §6.3, App. O</td><td class="c-ok">Yes</td></tr>
+    <tr><td><a href="https://arxiv.org/abs/2609.23032" target="_blank" rel="noopener">mandarapu2026divergence</a></td><td>GQL and SQL/PGQ engines: abstract, Tab. 2, §5</td><td class="c-ok">Yes</td></tr>
   </table>
-  <p class="src" style="margin:18px 0 0">"Ours" marks our arithmetic, examples and framing. Standards (A6): <a href="https://www.w3.org/TR/2010/REC-xquery-semantics-20101214/" target="_blank" rel="noopener">draper2010semantics</a>, <a href="https://www.w3.org/TR/2013/REC-sparql11-query-20130321/" target="_blank" rel="noopener">harris2013sparql</a>, <a href="https://www.w3.org/TR/1999/REC-xpath-19991116/" target="_blank" rel="noopener">clark1999xpath</a>; ISO/IEC 9075-16:2023 (SQL/PGQ) and 39075:2024 (GQL); W3C XQuery 3.1; IETF RFC 9535 (JSONPath); IEEE Std 1003.1 § 9.4 and ECMA-262 § 22.2 (regex). Engines: run by us on one example each, 2026-10-13.</p>
+  <p class="src" style="margin:12px 0 0">"Cited result checked": only the result we cite, checked at the paper. "Ours" marks our arithmetic, examples and framing. Standards (A6): <a href="https://www.w3.org/TR/2010/REC-xquery-semantics-20101214/" target="_blank" rel="noopener">draper2010semantics</a>, <a href="https://www.w3.org/TR/2013/REC-sparql11-query-20130321/" target="_blank" rel="noopener">harris2013sparql</a>, <a href="https://www.w3.org/TR/1999/REC-xpath-19991116/" target="_blank" rel="noopener">clark1999xpath</a>; ISO/IEC 9075-16:2023 (SQL/PGQ) and 39075:2024 (GQL); W3C XQuery 3.1; IETF RFC 9535 (JSONPath); IEEE Std 1003.1 § 9.4 and ECMA-262 § 22.2 (regex). Engines: run by us on one example each, 2026-10-13.</p>
+</section>
+
+<section class="slide appx" data-label="A12">
+  <h2>Carry-over from checkable tasks: prior work</h2>
+  <table class="t" style="font-size:22px;margin:auto 0">
+    <tr><th>Setting</th><th>What the authors report</th><th>Source</th></tr>
+    <tr><td>RL on the weights, onto checkable targets</td><td>After RL on 5K logic puzzles, a 7B model generalizes to AIME and AMC; trained only on code tasks it proposes itself, a model reports top coding and math results, ahead of zero-setting models trained on curated examples</td><td><a href="https://arxiv.org/abs/2502.14768" target="_blank" rel="noopener">Logic-RL</a>; <a href="https://arxiv.org/abs/2505.03335" target="_blank" rel="noopener">zhao2025absolutezero</a> (abstracts)</td></tr>
+    <tr><td>RL vs supervised tuning</td><td>On math-only data, "RL-tuned models generalize well across domains, while SFT-tuned models often forget general capabilities" (Qwen3&#8209;14B)</td><td><a href="https://arxiv.org/abs/2507.00432" target="_blank" rel="noopener">Huan et al. 2025</a> (abstract)</td></tr>
+    <tr><td>RL on the weights, onto open-ended tasks</td><td>Long chain of thought learned with verifiable rewards "does not generalize well to open-ended tasks"</td><td><a href="https://arxiv.org/abs/2509.20357" target="_blank" rel="noopener">RLMT</a> (abstract)</td></tr>
+    <tr><td>Frozen weights, a tuned prefix</td><td>A system message prefix-tuned on a synthetic task where hallucination is easy to measure reduces it on three real summarization tasks (13B models); fine-tuning the whole model "can counterintuitively increase hallucination"</td><td><a href="https://arxiv.org/abs/2310.06827" target="_blank" rel="noopener">SynTra</a> (abstract)</td></tr>
+    <tr><td>Frozen weights, optimized text prompts</td><td>GEPA's optimized agent "transfers below the unoptimized baseline" on new tasks; an optimized prompt's lead on one benchmark "often fails to transfer to another"</td><td><a href="https://arxiv.org/abs/2607.14004" target="_blank" rel="noopener">wang2026compound</a>; <a href="https://arxiv.org/abs/2605.26655" target="_blank" rel="noopener">Gong et al. 2026</a> (abstracts)</td></tr>
+    <tr><td class="c-mid">Not found (ours)</td><td>A text prompt, skill or example library learned against a program checker on checkable DSL tasks, on compact open models, tested near and far against weight training with the same checker</td><td>A quick sweep, 2026-10-13</td></tr>
+  </table>
+  <p class="src" style="margin:16px 0 0">Each quote checked in the paper's abstract. Of these papers, only zhao2025absolutezero has had a full check by us.</p>
 </section>
 
 </div>
@@ -749,7 +798,7 @@ if doc == example_3: return "C"</pre>
     if(k==='ArrowRight'||k==='PageDown'||k===' '||k==='ArrowDown'){show(cur+1);e.preventDefault();}
     else if(k==='ArrowLeft'||k==='PageUp'||k==='ArrowUp'){show(cur-1);e.preventDefault();}
     else if(k==='Home'){show(0);}
-    else if(k==='End'){show(labels.indexOf('14'));}
+    else if(k==='End'){show(labels.indexOf('15'));}
     else if(k==='a'||k==='A'){show(labels.indexOf('A0'));}
     else if(k==='n'||k==='N'){num.classList.toggle('on');}
     else if(k==='f'||k==='F'){

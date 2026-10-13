@@ -8,8 +8,8 @@ Read: [PDF](https://inria.hal.science/inria-00502789/document) · [DOI](https://
 
 ## In brief
 
-- Decides XPath emptiness, containment, overlap and coverage, with or without regular tree type constraints (DTDs and other XML schemas), by testing whether one formula over finite trees is satisfiable (abstract, PDF p. 1; §8, PDF pp. 8–9); the XPath fragment "covers all features except counting [8] and data values" (§1, PDF p. 1).
-- XPath expressions and regular tree types are translated in linear size into cycle-free formulas of a sub-logic of the alternation-free modal μ-calculus with converse, in which least and greatest fixpoints coincide on finite trees, so the logic is closed under negation (Lemma 4.2, PDF p. 3; Prop. 5.1, PDF p. 5; §5.2, PDF pp. 5–6); a bottom-up algorithm, implemented with BDDs, decides satisfiability in time exponential in the number of elements of the formula's "Lean" set (Lemma 6.7 and §7, PDF p. 8).
+- Decides XPath emptiness, containment, overlap and coverage, with or without regular tree type constraints (DTDs and other XML schemas), by testing whether one formula over finite trees is satisfiable (abstract, PDF p. 1; §8, PDF pp. 8–9); the XPath fragment "covers all features except counting [8] and data values" (§1, PDF p. 1), though its abstract syntax (Fig. 3, PDF p. 3) has 11 of XPath 1.0's 13 axes (no attribute or namespace axis).
+- The authors translate XPath expressions and regular tree types in linear size into cycle-free formulas of a sub-logic of the alternation-free modal μ-calculus with converse, in which least and greatest fixpoints coincide on finite trees, so the logic is closed under negation (Lemma 4.2, PDF p. 3; Prop. 5.1, PDF p. 5; §5.2, PDF pp. 5–6); a bottom-up algorithm, implemented with BDDs, decides satisfiability in time exponential in the number of elements of the formula's "Lean" set (Lemma 6.7 and §7, PDF p. 8). Detailed proofs are deferred to a long version, its ref. [16] (§2, PDF p. 2).
 - General comparisons of data values from an infinite domain, which earlier works showed "may lead to undecidability" (§1, PDF p. 1), stay outside it.
 
 ## In plain words

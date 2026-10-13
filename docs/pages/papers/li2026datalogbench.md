@@ -11,7 +11,7 @@ Code: [DatalogBench](https://github.com/ZJU-PL/DatalogBench)
 
 - A benchmark of text-to-Datalog synthesis in the Soufflé dialect: each task gives a natural-language question and the input and output relation signatures, and a candidate program counts only if it compiles and reproduces the expected output on every held-out evaluation variant (abstract; §3; §5.2). Evaluates LLMs prompted directly, with and without relation descriptions and an input–output example, and coding agents that get execution feedback (abstract; §5.1).
 - Tasks are curated from public Datalog-based artifacts, renamed and given regenerated facts, with auxiliary predicates left for the model to invent (§4.1); the execution oracle is validated by mutation analysis whose operators delete a rule, delete a body atom or rebind a join variable (§4.3); failures are split into compile-time and semantic ones and sliced by recursion and auxiliary predicates (§6.3).
-- An LLM benchmark for a DSL whose answer key an engine computes and whose oracle strength is measured rather than assumed, with the limit stated that the mutants never alter a negation, an aggregate function or a grouping scope (§4.3); it also shows that execution feedback on a single demonstration instance lets coding agents return programs the held-out variants reject (§6.2).
+- An LLM benchmark for a DSL whose answer key an engine computes and whose oracle strength is measured rather than assumed (§4.3), with the limit stated that the mutants never alter a negation, an aggregate function or a grouping scope (§4.3); it also shows that execution feedback on a single demonstration instance lets coding agents return programs the held-out variants reject (§6.2).
 
 ## In plain words
 

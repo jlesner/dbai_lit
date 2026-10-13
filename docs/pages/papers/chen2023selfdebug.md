@@ -20,11 +20,10 @@ On SQL no tests are given, so the model judges its own query. There, with code e
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [pass@k](#/glossary/passk) · [code reranking](#/glossary/reranking) · [program repair](#/glossary/automated-program-repair)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [pass@k](#/glossary/passk) · [code reranking](#/glossary/reranking) · [program repair](#/glossary/automated-program-repair) · [rubber-duck debugging](#/glossary/rubber-duck-debugging) (the authors' analogy for the Explanation step, §1, §3)
 
 **The paper's own terms:**
 - **Self-Debugging**: the method; a pretrained model, not fine-tuned, repeats debugging turns of three steps, Generation, Explanation and Feedback, though a turn "does not always include all steps above" (§3, Fig. 1).
-- **Rubber duck debugging**: the authors' analogy for the Explanation step, a programmer explaining code "line-by-line" to a rubber duck (§1, §3).
 - **Simple feedback**: a sentence saying only whether the code is right or wrong, with no explanation (§3).
 - **Unit test feedback (UT)**: the feedback adds the results of running the given unit tests, such as runtime errors and failing outputs (§3, Fig. 5).
 - **Code explanation feedback (Expl)**: the model explains its own code in natural language (§3); on Spider it then compares the explanation with the question (§4.1).

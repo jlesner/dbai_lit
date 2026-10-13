@@ -91,5 +91,5 @@ Reasoning models are often trained by reinforcement learning on questions with k
 
 ## On this site
 
-- **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
+- **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>

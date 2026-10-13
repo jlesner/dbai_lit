@@ -860,6 +860,17 @@ The full parse tree of a program's text under its grammar, keeping every token, 
 **Related:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast), [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form)
 
 
+<a id="conditional-average-treatment-effect-cate"></a>
+
+## Conditional average treatment effect (CATE)
+
+The [average treatment effect](#/glossary/average-treatment-effect-ate) within a subgroup that shares some covariates, such as the prompts of one dataset or task type (general definition). It shows whether a treatment helps some kinds of cases and hurts others. [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") reports "naive (unweighted) CATE" per dataset for two kinds of prompt edit, beside its weighted estimates (App. F, Tab. 6; §5.2).
+
+**Learn more:** [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") App. F and §5.2, which use the term without defining it (general definition).
+
+**Related:** [average treatment effect (ATE)](#/glossary/average-treatment-effect-ate), [propensity score and inverse probability weighting (IPTW)](#/glossary/propensity-score-and-inverse-probability-weighting-iptw), [confounder](#/glossary/confounder)
+
+
 <a id="confidence-interval-and-coverage"></a>
 
 ## Confidence interval and coverage
@@ -901,6 +912,17 @@ Other senses: [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Cer
 **Learn more:** [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §1 and §2, citing Angelopoulos et al. (2024), not listed here; [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §2, citing Jin and Candès (2023), not listed here.
 
 **Related:** [selective prediction](#/glossary/selective-prediction), [learn-then-test (LTT)](#/glossary/learn-then-test-ltt), [exchangeability](#/glossary/exchangeability), [calibration](#/glossary/calibration), [certificate](#/glossary/certificate)
+
+
+<a id="confounder"></a>
+
+## Confounder
+
+A variable that affects both which cases get a treatment and their outcome, so that a raw comparison of treated and untreated cases mixes the treatment's effect with the variable's (general definition). Example: [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") treats the prompt's state before an edit as the confounder of an edit's effect on accuracy (§2), and names unmeasured ones, such as optimizers inserting meta-instructions after earlier failures (§4.1).
+
+**Learn more:** [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") §2 and §4.1, which use the term without defining it (general definition).
+
+**Related:** [propensity score and inverse probability weighting (IPTW)](#/glossary/propensity-score-and-inverse-probability-weighting-iptw), [exchangeability](#/glossary/exchangeability), [average treatment effect (ATE)](#/glossary/average-treatment-effect-ate)
 
 
 <a id="conjunctive-query"></a>
@@ -958,6 +980,17 @@ A grammar in which every rule rewrites one non-terminal symbol into a sequence o
 **Learn more:** [A logic for rule-based…](#/papers/coburn1993logic "A logic for rule-based query optimization in graph-based data models (1993)") §2 (PDF p. 5); [Grammar Prompting](#/papers/wang2023grammar "Grammar Prompting for Domain-Specific Language Generation with Large Language Models (2023)") ([PDF p. 2](https://arxiv.org/pdf/2305.19234#page=2)) §2.1 and §3 (PDF pp. 2–3).
 
 **Related:** [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form), [Earley parser](#/glossary/earley-parser), [constrained decoding](#/glossary/constrained-decoding), [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast)
+
+
+<a id="continual-pre-training"></a>
+
+## Continual pre-training
+
+Continuing a pretrained model's next-token training on new raw text, such as code or a domain's documents, before any instruction tuning (general definition). [CodeI/O](#/papers/li2025codeio "CodeI/O: Condensing Reasoning Patterns via Code Input-Output Prediction (2025)") places its own training stage "Similar to continual pre-training on raw code", before general instruction tuning (§1), and [Revisiting Reinforcement Learning for…](#/papers/cheng2025guru "Revisiting Reinforcement Learning for LLM Reasoning from A Cross-Domain Perspective (2025)") explains which domains gain from other domains' RL data by the base model's exposure "during continual pretraining" (§1).
+
+**Learn more:** [CodeI/O](#/papers/li2025codeio "CodeI/O: Condensing Reasoning Patterns via Code Input-Output Prediction (2025)") §1; [Revisiting Reinforcement Learning for…](#/papers/cheng2025guru "Revisiting Reinforcement Learning for LLM Reasoning from A Cross-Domain Perspective (2025)") §1. Neither defines it (general definition).
+
+**Related:** [catastrophic forgetting](#/glossary/catastrophic-forgetting), [distillation](#/glossary/distillation)
 
 
 <a id="contrastive-learning"></a>
@@ -1405,9 +1438,11 @@ A score that counts an answer as right only if it equals the gold answer, usuall
 
 A sequence of random cases is exchangeable when every reordering of it has the same joint distribution: no case is special because of its position (general definition). Independent draws from one distribution are exchangeable. It is the assumption behind [conformal](#/glossary/conformal-prediction-and-conformal-risk-control) guarantees: the calibration cases and the cases met later must be exchangeable, which drift, a changed task or a patched checker can break ([Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") §5 "Drift and re-evaluation").
 
-**Learn more:** [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §1 ("exchangeable test data"); [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §3, whose "certificate exchangeability" assumes that accepted deployment certificates are exchangeable with the calibration ones; [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") §5. None defines it (general definition).
+In causal inference the word has another sense: treated and untreated cases are exchangeable when whether a case got the treatment says nothing about the outcomes it would have had either way; *conditional* exchangeability asks this only among cases with the same measured covariates, that is, no [confounder](#/glossary/confounder) is left unmeasured (general definition). [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") assumes that, given a prompt's pre-edit state, "treatment assignment is conditionally independent of untreated potential outcomes", and calls it "unlikely to hold exactly" (§4.1).
 
-**Related:** [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control), [out-of-distribution generalization](#/glossary/out-of-distribution-generalization), [learn-then-test (LTT)](#/glossary/learn-then-test-ltt)
+**Learn more:** [Certified Against Which Oracle?](#/papers/liu2026whichoracle "Certified Against Which Oracle? Execution Labels Set the Reported Risk of Conformal Abstention for Text-to-SQL (2026)") §1 ("exchangeable test data"); [ADMITOR ("Admission Without Answers")](#/papers/lian2026admitor "Admission Without Answers: Label-Free Certification and Experience Learning for LLM-Based Optimization Modeling (2026)") §3, whose "certificate exchangeability" assumes that accepted deployment certificates are exchangeable with the calibration ones; [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") §5. None defines it (general definition). Causal sense: [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") §4.1.
+
+**Related:** [conformal prediction and conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control), [out-of-distribution generalization](#/glossary/out-of-distribution-generalization), [learn-then-test (LTT)](#/glossary/learn-then-test-ltt), [propensity score and inverse probability weighting (IPTW)](#/glossary/propensity-score-and-inverse-probability-weighting-iptw)
 
 
 <a id="execution-accuracy"></a>
@@ -1421,6 +1456,17 @@ A match on one database doesn't make the queries equivalent: a wrong query can r
 **Learn more:** [BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)") ([PDF p. 6](https://arxiv.org/pdf/2305.03111#page=6)) §5 (PDF p. 6) for the definition; [Semantic Evaluation for Text-to-SQL…](#/papers/zhong2020testsuite "Semantic Evaluation for Text-to-SQL with Distilled Test Suites (2020)") §1; [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 2](https://arxiv.org/pdf/2510.26840#page=2)) §2 (PDF p. 2), Eq. 1.
 
 **Related:** [text-to-SQL](#/glossary/text-to-sql), [gold query](#/glossary/gold-query), [query equivalence](#/glossary/query-equivalence), [counterexample database](#/glossary/counterexample-database)
+
+
+<a id="execution-trace"></a>
+
+## Execution trace
+
+A record of a program's run: the statements executed, in order, with the values of its variables after each (general definition). [SemCoder](#/papers/ding2024semcoder "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning (2024)") counts program traces as "concrete semantics" that "capture actual execution effects" (§2), and its trace representation "only captures variable state changes", so it keeps only programs without external resources such as files or keyboard input (§3.2). Agent papers use "trace" for a different record: the log of an agent's steps and tool calls.
+
+**Learn more:** [SemCoder](#/papers/ding2024semcoder "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning (2024)") §2, §3.2, which uses the term without defining it (general definition).
+
+**Related:** [output and input prediction](#/glossary/output-and-input-prediction), [formal semantics](#/glossary/formal-semantics)
 
 
 <a id="expectation-maximization-em"></a>
@@ -2234,6 +2280,17 @@ Linear integer arithmetic (LIA) is the logic of formulas over integer variables 
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [decidable and undecidable](#/glossary/decidable-and-undecidable), [equisatisfiable](#/glossary/equisatisfiable), [first-order logic](#/glossary/first-order-logic)
 
 
+<a id="linear-probe"></a>
+
+## Linear probe
+
+A linear classifier trained on a frozen model's hidden states (its internal activations) to predict some label, such as a fact the input states or the answer to a multiple-choice question; the model's own weights never change (general definition). [The Unreasonable Effectiveness of…](#/papers/hase2024easydata "The Unreasonable Effectiveness of Easy Training Data for Hard Tasks (2024)") uses one as a cheap way to fit a model to training data, "linear classifiers trained on frozen model hidden states" (§4), and [AutoPrompt](#/papers/shin2020autoprompt "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts (2020)") calls such "probing classifiers" open to false positives, since high probe accuracy doesn't show the model holds the knowledge (§1).
+
+**Learn more:** [The Unreasonable Effectiveness of…](#/papers/hase2024easydata "The Unreasonable Effectiveness of Easy Training Data for Hard Tasks (2024)") §4, App. D; [AutoPrompt](#/papers/shin2020autoprompt "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts (2020)") §1. Neither gives a general definition (general definition).
+
+**Related:** [contrastive learning](#/glossary/contrastive-learning)
+
+
 <a id="linear-programming-lp-and-milp"></a>
 
 ## Linear programming (LP and MILP)
@@ -2336,9 +2393,9 @@ Example ([PSV (Propose](#/papers/wilf2025psv "Propose, Solve, Verify: Self-Play 
 
 ## LoRA (low-rank adaptation)
 
-A cheap way to fine-tune a large model: its weights stay frozen, and small added matrices (an "adapter") are trained whose product is added to some of the weight matrices. The adapter is stored and swapped separately from the model.
+A cheap way to fine-tune a large model: its weights stay frozen, and small added matrices (an "adapter") are trained whose product is added to some of the weight matrices. The adapter is stored and swapped separately from the model. QLoRA trains such adapters on a copy of the model whose frozen weights are stored in low precision (4-bit), to cut memory further (general definition).
 
-**Learn more:** nothing on this site defines it (general definition; Hu et al., 2021, is not listed here). [Naive Prompt Optimization (NPO)](#/papers/chang2026npo "Naive Prompt Optimization: Rethinking the Need for Complex Prompt Search (2026)") §2.6 trains a LoRA adapter for its GRPO baseline.
+**Learn more:** nothing on this site defines it (general definition; Hu et al., 2021, is not listed here). [Naive Prompt Optimization (NPO)](#/papers/chang2026npo "Naive Prompt Optimization: Rethinking the Need for Complex Prompt Search (2026)") §2.6 trains a LoRA adapter for its GRPO baseline. QLoRA: [The Unreasonable Effectiveness of…](#/papers/hase2024easydata "The Unreasonable Effectiveness of Easy Training Data for Hard Tasks (2024)") §4 (citing Dettmers et al., 2023, not listed here) and [Sparks of Tabular Reasoning](#/papers/stoisser2025sparks "Sparks of Tabular Reasoning via Text2SQL Reinforcement Learning (2025)") App. C fine-tune with it.
 
 **Related:** [GRPO](#/glossary/grpo), [catastrophic forgetting](#/glossary/catastrophic-forgetting)
 
@@ -2671,6 +2728,17 @@ How much knowing one random quantity tells about another: the reduction in uncer
 
 <a id="letter-n"></a>
 
+<a id="named-entity-recognition-ner"></a>
+
+## Named-entity recognition (NER)
+
+Finding the names of things in a text (people, places, drugs, symptoms) and labelling each with its type (general definition). It can check a generated text against its source: an entity in the output that the source never mentions is a likely hallucination. [SynTra (Synthetic Transfer)](#/papers/jones2023syntra "Teaching Language Models to Hallucinate Less with Synthetic Tasks (2023)") counts such "ungrounded" entities in clinical notes with a commercial NER service (§3.3, App. B.5).
+
+**Learn more:** [SynTra (Synthetic Transfer)](#/papers/jones2023syntra "Teaching Language Models to Hallucinate Less with Synthetic Tasks (2023)") §3.3, App. B.5, which uses the term without defining it (general definition).
+
+**Related:** [reference-free evaluation](#/glossary/reference-free-evaluation)
+
+
 <a id="natural-language-inference-nli"></a>
 
 ## Natural language inference (NLI)
@@ -2680,6 +2748,17 @@ Deciding whether a hypothesis text follows from a premise text (entailment), con
 **Learn more:** [Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)") ([PDF p. 4](https://arxiv.org/pdf/2604.25031#page=4)) §5 (PDF p. 4); [Know Your Limits](#/papers/wang2026limits "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning (2026)") ([PDF p. 3](https://arxiv.org/pdf/2606.16118#page=3)) §3.1 (PDF p. 3). Neither defines the task, and no paper on this site does (general definition).
 
 **Related:** [back-translation](#/glossary/back-translation), [satisfiable and valid](#/glossary/satisfiable-and-valid), [reference-free evaluation](#/glossary/reference-free-evaluation), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
+
+
+<a id="negative-transfer"></a>
+
+## Negative transfer
+
+When training on, or reusing what was learned from, one task or domain lowers performance on another (general definition). Example: [Revisiting Reinforcement Learning for…](#/papers/cheng2025guru "Revisiting Reinforcement Learning for LLM Reasoning from A Cross-Domain Perspective (2025)") reports that RL on harder math data "introduces a risk of negative transfer to easier tasks in other domains" (§3.3); [MEMO](#/papers/xie2026memo "MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games (2026)") reports a context learned on one game lowering scores on another (§5); [Memory Transfer Learning (MTL](#/papers/kim2026memorytransfer "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents (2026)") uses the term for memories carried from other coding benchmarks that hurt, and analyses it per task (§4.4.1).
+
+**Learn more:** [Revisiting Reinforcement Learning for…](#/papers/cheng2025guru "Revisiting Reinforcement Learning for LLM Reasoning from A Cross-Domain Perspective (2025)") §3.3; [MEMO](#/papers/xie2026memo "MEMO: Memory-Augmented Model Context Optimization for Robust Multi-Turn Multi-Agent LLM Games (2026)") §5; [Memory Transfer Learning (MTL](#/papers/kim2026memorytransfer "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents (2026)") abstract, §4.4.1. None defines it (general definition).
+
+**Related:** [catastrophic forgetting](#/glossary/catastrophic-forgetting), [backward and forward transfer (BWT and FWT)](#/glossary/backward-and-forward-transfer-bwt-and-fwt), [out-of-distribution generalization](#/glossary/out-of-distribution-generalization)
 
 
 <a id="neuro-symbolic-ai"></a>
@@ -2936,6 +3015,17 @@ A join that also keeps the rows that find no match, filling the other side's col
 **Related:** [NULL-rejecting](#/glossary/null-rejecting), [correlated subquery](#/glossary/correlated-subquery), [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin), [join algorithms (nested-loop, hash and merge join)](#/glossary/join-algorithms-nested-loop-hash-and-merge-join), [NULL and three-valued logic](#/glossary/null-and-three-valued-logic)
 
 
+<a id="output-and-input-prediction"></a>
+
+## Output and input prediction
+
+Two tasks about a given program: predict its output for a given input, or find an input that produces a given output. Running the program checks both answers: the output against the actual one, an input by running it and comparing the result (several inputs may be right). [CodeI/O](#/papers/li2025codeio "CodeI/O: Condensing Reasoning Patterns via Code Input-Output Prediction (2025)") trains on them "given a function along with its corresponding textual query", with answers in natural language (§1), and keys each instance by executing the code (§2); [SemCoder](#/papers/ding2024semcoder "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning (2024)") evaluates and trains on the same pair (§5, App. H).
+
+**Learn more:** [CodeI/O](#/papers/li2025codeio "CodeI/O: Condensing Reasoning Patterns via Code Input-Output Prediction (2025)") §1–§2; [SemCoder](#/papers/ding2024semcoder "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning (2024)") §5, App. H.
+
+**Related:** [execution trace](#/glossary/execution-trace), [test oracle](#/glossary/test-oracle)
+
+
 <a id="over-approximation-and-under-approximation"></a>
 
 ## Over-approximation and under-approximation
@@ -3159,6 +3249,17 @@ Fixing a study's hypotheses, design, endpoints and decision rules in a dated wri
 **Related:** [adaptive data analysis](#/glossary/adaptive-data-analysis), [multiple testing](#/glossary/multiple-testing), [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse), [statistical power](#/glossary/statistical-power)
 
 
+<a id="prefix-tuning"></a>
+
+## Prefix-tuning
+
+Keeping a model's weights fixed and training a few continuous vectors that are added to its input as if they were extra tokens, though they stand for no real word, by gradient descent (a "soft prompt"). [SynTra (Synthetic Transfer)](#/papers/jones2023syntra "Teaching Language Models to Hallucinate Less with Synthetic Tasks (2023)") appends such vectors to the system message, "Following Li et al." (§2.1 footnote), since "the set of possible system messages is discrete, precluding continuous optimization" (§2.3); [Efficient Prompting Methods for…](#/papers/chang2024promptsurvey "Efficient Prompting Methods for Large Language Models: A Survey (2024)") lists prefix tuning among soft-prompt methods that "freeze original parameters and fine-tune only a small number of additional soft prompt" tokens (§2.2.2).
+
+**Learn more:** [SynTra (Synthetic Transfer)](#/papers/jones2023syntra "Teaching Language Models to Hallucinate Less with Synthetic Tasks (2023)") §2.1, §2.3, App. A; [Efficient Prompting Methods for…](#/papers/chang2024promptsurvey "Efficient Prompting Methods for Large Language Models: A Survey (2024)") §2.2.2. Li and Liang (2021) is not listed here.
+
+**Related:** [LoRA (low-rank adaptation)](#/glossary/lora-low-rank-adaptation), [textual gradient](#/glossary/textual-gradient)
+
+
 <a id="premise-selection"></a>
 
 ## Premise selection
@@ -3179,6 +3280,17 @@ A join of a table's foreign-key column with the primary key it refers to, such a
 **Learn more:** [DSB](#/papers/ding2021dsb "DSB: a decision support benchmark for workload-driven and traditional database systems (2021)") §1 (PDF p. 1) and §3 (PDF p. 4), whose data generator picks foreign keys in a fact table that point into two dimension tables; neither defines the term (general definition).
 
 **Related:** [integrity constraint](#/glossary/integrity-constraint), [many-to-many relationship](#/glossary/many-to-many-relationship), [star and snowflake schemas](#/glossary/star-and-snowflake-schemas), [cardinality estimation](#/glossary/cardinality-estimation)
+
+
+<a id="principal-component-analysis-pca"></a>
+
+## Principal component analysis (PCA)
+
+Finds the few directions along which a set of vectors varies most, so that high-dimensional data, such as a model's hidden states, can be projected onto them and compared (general definition). [Does Math Reasoning Improve…](#/papers/huan2025mathtransfer "Does Math Reasoning Improve General LLM Capabilities? Understanding Transferability of LLM Reasoning (2025)") projects hidden states before and after fine-tuning onto their first principal components to measure how far training moved them (§3).
+
+**Learn more:** [Does Math Reasoning Improve…](#/papers/huan2025mathtransfer "Does Math Reasoning Improve General LLM Capabilities? Understanding Transferability of LLM Reasoning (2025)") §1, §3, which uses it without defining it (general definition).
+
+**Related:** [t-SNE](#/glossary/t-sne)
 
 
 <a id="procedural-memory"></a>
@@ -3280,6 +3392,17 @@ Gotcha: a proof file can compile with steps marked as skipped (`Admitted` in Roc
 **Learn more:** [LeanDojo](#/papers/yang2023leandojo "LeanDojo: Theorem Proving with Retrieval-Augmented Language Models (2023)") ([PDF p. 1](https://arxiv.org/pdf/2306.15626#page=1)) §1 (PDF p. 1); [A Coq mechanised formal…](#/papers/benzaken2019coq "A Coq mechanised formal semantics for realistic SQL queries: formally reconciling SQL and bag relational algebra (2019)") §1 (PDF p. 1); [Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)") ([PDF p. 2](https://arxiv.org/pdf/2608.15709#page=2)) §1 (PDF p. 2), whose proofs are "checked in isolation by the Rocq kernel".
 
 **Related:** [tactic](#/glossary/tactic), [formal semantics](#/glossary/formal-semantics), [certificate](#/glossary/certificate), [autoformalization](#/glossary/autoformalization)
+
+
+<a id="propensity-score-and-inverse-probability-weighting-iptw"></a>
+
+## Propensity score and inverse probability weighting (IPTW)
+
+A propensity score is a case's estimated chance of getting a treatment given its measured covariates. Inverse probability of treatment weighting (IPTW) weights each treated case by one over that chance and each untreated case by one over the chance of no treatment, so that in the weighted data the covariates no longer predict treatment, and treated and untreated outcomes can be compared as if treatment had been assigned at random, provided no [confounder](#/glossary/confounder) is left unmeasured (general definition). Example: [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") fits a logistic propensity model on each prompt's pre-edit state, computes stabilized weights capped at 10, and compares accuracy gains with and without an edit type under them (§4.2).
+
+**Learn more:** [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") §2, §4.1–4.2, which cites Rosenbaum and Rubin (1983) and Robins et al. (2000), neither on this site.
+
+**Related:** [confounder](#/glossary/confounder), [exchangeability](#/glossary/exchangeability), [average treatment effect (ATE)](#/glossary/average-treatment-effect-ate), [conditional average treatment effect (CATE)](#/glossary/conditional-average-treatment-effect-cate)
 
 
 <a id="property-based-testing"></a>
@@ -3708,6 +3831,17 @@ Example: [ChipMEM](#/papers/alrabah2026chipmem "ChipMEM: Verification-Grounded M
 **Related:** [translation validation](#/glossary/translation-validation), [test oracle](#/glossary/test-oracle), [program equivalence](#/glossary/program-equivalence)
 
 
+<a id="rubber-duck-debugging"></a>
+
+## Rubber-duck debugging
+
+Debugging by explaining a program line by line, out loud, as if to a rubber duck: putting each step into words exposes where the code's behaviour departs from the intent (general definition). LLM papers borrow it for a model explaining code to itself: [Self-Debugging](#/papers/chen2023selfdebug "Teaching Large Language Models to Self-Debug (2023)") names it as the analogy for its explanation step (§1, §3), and [SemCoder](#/papers/ding2024semcoder "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning (2024)") trains a model on "verbally and statically explaining why the bug happens" (§6.3; abstract: "human verbal debugging").
+
+**Learn more:** [Self-Debugging](#/papers/chen2023selfdebug "Teaching Large Language Models to Self-Debug (2023)") §1, §3; [SemCoder](#/papers/ding2024semcoder "SemCoder: Training Code Language Models with Comprehensive Semantics Reasoning (2024)") abstract, §6.3. Neither gives a general definition (general definition).
+
+**Related:** [self-correction](#/glossary/self-correction)
+
+
 <a id="rubric"></a>
 
 ## Rubric
@@ -3754,6 +3888,17 @@ Example: `x > 3 ∧ x < 5` is satisfiable (x = 4); `x > 3 ∧ x < 2` is unsatisf
 **Learn more:** [Verifying SQL Queries using…](#/papers/mohamed2024cvc5sql "Verifying SQL Queries using Theories of Tables and Relations (2024)") ([PDF p. 3](https://arxiv.org/pdf/2405.03057#page=3)) §1.2 (PDF p. 3), which defines satisfiable and unsatisfiable relative to a theory ("valid" is the standard term, a general definition; no paper on this site defines it); [VeriEQL](#/papers/he2024verieql "VeriEQL: Bounded Equivalence Verification for Complex SQL Queries with Integrity Constraints (2024)") ([PDF p. 3](https://arxiv.org/pdf/2403.03193#page=3)) §1 (PDF p. 3), for how an equivalence checker reads the two outcomes.
 
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [unsat core](#/glossary/unsat-core), [first-order logic](#/glossary/first-order-logic)
+
+
+<a id="scalable-oversight"></a>
+
+## Scalable oversight
+
+The problem of supervising AI systems whose outputs people can't reliably check, because the tasks are beyond them or the systems may outperform them (general definition). [The Unreasonable Effectiveness of…](#/papers/hase2024easydata "The Unreasonable Effectiveness of Easy Training Data for Hard Tasks (2024)") gives it as "how to give a good reward signal to a model when it is difficult to assess if its outputs are correct" (§1, citing Amodei et al., 2016), and [Easy-to-Hard Generalization](#/papers/sun2024easytohard "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision (2024)") as supervising AI systems "that can potentially outperform humans in most skills" (§1, citing Bowman et al., 2022). Training on easy items people can label and testing on hard ones is one way to study it.
+
+**Learn more:** [The Unreasonable Effectiveness of…](#/papers/hase2024easydata "The Unreasonable Effectiveness of Easy Training Data for Hard Tasks (2024)") §1–§2; [Easy-to-Hard Generalization](#/papers/sun2024easytohard "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision (2024)") §1, §2.1. Neither cited source is on this site.
+
+**Related:** [weak-to-strong supervision](#/glossary/weak-to-strong-supervision), [monitor (AI control)](#/glossary/monitor-ai-control), [reward model](#/glossary/reward-model)
 
 
 <a id="scalar-subquery"></a>
@@ -3832,7 +3977,9 @@ Sample several answers to the same question (with chain of thought, at a tempera
 
 Example: ReViSQL samples n candidate queries, groups them by execution result, and returns a random query from the largest group, which its authors call "the standard procedure used in prior work" ([ReViSQL](#/papers/zhu2026revisql "Human-Level Text-to-SQL via Reinforcement Learning on Verified Data, Without Pipeline Engineering (2026)") §5.2).
 
-**Learn more:** [Self-Consistency](#/papers/wang2022selfconsistency "Self-Consistency Improves Chain of Thought Reasoning in Language Models (2023)") ([PDF p. 3](https://arxiv.org/pdf/2203.11171#page=3)) §2 (PDF pp. 3–4), which introduces it as a decoding strategy that takes "a majority vote" over the sampled answers; [ReViSQL](#/papers/zhu2026revisql "Human-Level Text-to-SQL via Reinforcement Learning on Verified Data, Without Pipeline Engineering (2026)") ([PDF p. 10](https://arxiv.org/pdf/2603.20004#page=10)) §5.2 (PDF p. 10).
+Weighted voting is the same, "but weights each solution according to its RM score", a [reward model](#/glossary/reward-model)'s ([Easy-to-Hard Generalization](#/papers/sun2024easytohard "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision (2024)") §3.4, citing [process- vs outcome-based feedback](#/papers/uesato2022process "Solving math word problems with process- and outcome-based feedback (2022)")).
+
+**Learn more:** [Self-Consistency](#/papers/wang2022selfconsistency "Self-Consistency Improves Chain of Thought Reasoning in Language Models (2023)") ([PDF p. 3](https://arxiv.org/pdf/2203.11171#page=3)) §2 (PDF pp. 3–4), which introduces it as a decoding strategy that takes "a majority vote" over the sampled answers; [ReViSQL](#/papers/zhu2026revisql "Human-Level Text-to-SQL via Reinforcement Learning on Verified Data, Without Pipeline Engineering (2026)") ([PDF p. 10](https://arxiv.org/pdf/2603.20004#page=10)) §5.2 (PDF p. 10); weighted voting: [Easy-to-Hard Generalization](#/papers/sun2024easytohard "Easy-to-Hard Generalization: Scalable Alignment Beyond Human Supervision (2024)") §3.4.
 
 **Related:** [pass@k](#/glossary/passk), [execution accuracy](#/glossary/execution-accuracy), [best-of-N sampling](#/glossary/best-of-n-sampling)
 
@@ -4241,6 +4388,17 @@ Kahneman's names for fast, automatic, intuitive thinking (System 1) and slow, de
 
 
 <a id="letter-t"></a>
+
+<a id="t-sne"></a>
+
+## t-SNE
+
+A method that draws high-dimensional vectors, such as embeddings, as a 2-D map in which points that are near neighbours in the original space stay near; distances between far-apart clusters on the map mean little (general definition). [Memory Transfer Learning (MTL](#/papers/kim2026memorytransfer "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents (2026)") uses it to show memory embeddings clustering by benchmark or mixing across benchmarks (§4.3.1, Fig. 4).
+
+**Learn more:** [Memory Transfer Learning (MTL](#/papers/kim2026memorytransfer "Memory Transfer Learning: How Memories are Transferred Across Domains in Coding Agents (2026)") §4.3.1, Fig. 4, which uses it without defining it (general definition).
+
+**Related:** [principal component analysis (PCA)](#/glossary/principal-component-analysis-pca)
+
 
 <a id="tableau"></a>
 
