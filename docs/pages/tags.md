@@ -1,12 +1,17 @@
-Topic tags, grouped by search area. A subtag narrows its tag; click any tag to see its papers and challenges.
+Topic tags, grouped by search area under the same groups as the papers. A subtag narrows its tag; click any tag to see its papers and challenges.
 
 <!-- filter -->
 
-<p class="jump"><a href="#/tags:llm-methods-on-checkable-problems">LLM methods on checkable problems</a> · <a href="#/tags:text-to-sql">text-to-SQL</a> · <a href="#/tags:dialect-translation">dialect translation</a> · <a href="#/tags:rewrite-rules">rewrite rules</a> · <a href="#/tags:query-equivalence">query equivalence</a> · <a href="#/tags:nondeterministic-queries">nondeterministic queries</a> · <a href="#/tags:across-all-areas">Across all areas</a></p>
+<div class="jump topics"><a class="d0" href="#/tags:llm-methods">LLM methods</a><a class="d1" href="#/tags:llm-methods-on-checkable-problems">LLM methods on checkable problems</a><a class="d0" href="#/tags:llms-for-dsls">LLMs for DSLs</a><a class="d1" href="#/tags:text-to-sql">text-to-SQL</a><a class="d1" href="#/tags:dialect-translation">dialect translation</a><a class="d1" href="#/tags:rewrite-rules">rewrite rules</a><a class="d0" href="#/tags:dsl-foundations">DSL foundations</a><a class="d1" href="#/tags:query-equivalence">query equivalence</a><a class="d1" href="#/tags:nondeterministic-queries">nondeterministic queries</a><a class="d0" href="#/tags:across-all-areas">Across all areas</a></div>
+
+<a id="llm-methods"></a>
+
+## LLM methods
+
 
 <a id="llm-methods-on-checkable-problems"></a>
 
-## LLM methods on checkable problems
+### LLM methods on checkable problems
 
 - <a class="tag" href="#/tags/promptopt">promptopt</a>: **Prompt-space optimizers**: methods that improve an LLM system by changing its prompts, instructions, demonstrations or prompt programs rather than its weights, and their dependencies. Subtags: <a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/promptopt-misc">promptopt-misc</a>
 - <a class="tag" href="#/tags/scaling">scaling</a>: **Inference-time scaling**: spends more LLM inference compute for a better answer. Subtags: <a class="tag sub" href="#/tags/scaling-general">scaling-general</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a>
@@ -20,15 +25,20 @@ Topic tags, grouped by search area. A subtag narrows its tag; click any tag to s
 - <a class="tag" href="#/tags/pairs">pairs</a>: Ships a dataset or benchmark of query pairs or equivalence instances you can evaluate a checker on. Subtags: <a class="tag sub" href="#/tags/pairs-check">pairs-check</a><a class="tag sub" href="#/tags/pairs-code">pairs-code</a><a class="tag sub" href="#/tags/pairs-rewrite">pairs-rewrite</a>
 - <a class="tag" href="#/tags/workload">workload</a>: Query or data generators for testing or benchmarking, with no equivalence pairs: benchmark kits and random query generators.
 
+<a id="llms-for-dsls"></a>
+
+## LLMs for DSLs
+
+
 <a id="text-to-sql"></a>
 
-## text-to-SQL
+### text-to-SQL
 
 - <a class="tag" href="#/tags/nl2sql">nl2sql</a>: Text-to-SQL: generation, evaluation, or candidate selection. Subtags: <a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a><a class="tag sub" href="#/tags/nl2sql-misc">nl2sql-misc</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a>
 
 <a id="dialect-translation"></a>
 
-## dialect translation
+### dialect translation
 
 - <a class="tag" href="#/tags/dialect">dialect</a>: **Translates SQL between dialects or DBMSs, or checks such translations or how engines differ**: translators and migration tools, dialect-agnostic parsing, cross-dialect benchmarks, cross-engine refuters, engine semantics. Subtags: <a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/dialect-misc">dialect-misc</a><a class="tag sub" href="#/tags/dialect-pairs">dialect-pairs</a><a class="tag sub" href="#/tags/dialect-parse">dialect-parse</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a>
 - <a class="tag" href="#/tags/difftest">difftest</a>: **Differential testing across engines**: runs the same query, or a query and its translation, on two or more DBMSs, engine versions or configurations, and treats a difference in results as evidence of a bug or a bad translation.
@@ -36,7 +46,7 @@ Topic tags, grouped by search area. A subtag narrows its tag; click any tag to s
 
 <a id="rewrite-rules"></a>
 
-## rewrite rules
+### rewrite rules
 
 - <a class="tag" href="#/tags/rewrite">rewrite</a>: Query rewriting, LLM or rule-based, and rewrite benchmarks. Subtags: <a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rewrite-eval">rewrite-eval</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a><a class="tag sub" href="#/tags/rewrite-smt">rewrite-smt</a>
 - <a class="tag" href="#/tags/rules">rules</a>: **Rewrite rules are a first-class object or output** (dialect translation rules count too): a rule catalogue or library, a rule language or DSL, verification of rules, or **discovery** of new rules, whether mined, synthesized, LLM-proposed or distilled from verified rewrites. Subtags: <a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/rules-lib">rules-lib</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a>
@@ -44,9 +54,14 @@ Topic tags, grouped by search area. A subtag narrows its tag; click any tag to s
 - <a class="tag" href="#/tags/workload">workload</a>: Query or data generators for testing or benchmarking, with no equivalence pairs: benchmark kits and random query generators.
 - <a class="tag" href="#/tags/qo">qo</a>: Query optimizers, and the foundations of query optimization. Subtags: <a class="tag sub" href="#/tags/qo-learned">qo-learned</a><a class="tag sub" href="#/tags/qo-rules">qo-rules</a>
 
+<a id="dsl-foundations"></a>
+
+## DSL foundations
+
+
 <a id="query-equivalence"></a>
 
-## query equivalence
+### query equivalence
 
 - <a class="tag" href="#/tags/judge">judge</a>: **Decides equivalence or correctness directly, with no sound backend**, by an LLM or another learned model: SQL equivalence judges, and LLM judges, generative verifiers and reward models studied against checkable ground truth. Subtags: <a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a>
 - <a class="tag" href="#/tags/pairs">pairs</a>: Ships a dataset or benchmark of query pairs or equivalence instances you can evaluate a checker on. Subtags: <a class="tag sub" href="#/tags/pairs-check">pairs-check</a><a class="tag sub" href="#/tags/pairs-code">pairs-code</a><a class="tag sub" href="#/tags/pairs-rewrite">pairs-rewrite</a>
@@ -60,7 +75,7 @@ Topic tags, grouped by search area. A subtag narrows its tag; click any tag to s
 
 <a id="nondeterministic-queries"></a>
 
-## nondeterministic queries
+### nondeterministic queries
 
 - <a class="tag" href="#/tags/nondet">nondet</a>: **Nondeterministic queries or order-aware semantics**: defines equivalence for queries with more than one correct output (ties under `ORDER BY … LIMIT`, unordered aggregates, `random`), models results as lists or as sets of possible outputs, or detects or filters nondeterministic queries before comparing results. Subtags: <a class="tag sub" href="#/tags/nondet-eval">nondet-eval</a><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a>
 
