@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2604.15163) · [arXiv](https://arxiv.org/abs/2604.15163)  
 Code: [DPC](https://github.com/HKUSTDial/DPC)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -92,5 +92,5 @@ Each result is the authors' claim; Tab. 2 and Tab. 3 use N = 5 candidates.
 
 ## On this site
 
-- **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification)
+- **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>

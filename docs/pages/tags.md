@@ -2,7 +2,7 @@ Topic tags, grouped by search area under the same groups as the papers. A subtag
 
 <!-- filter -->
 
-<div class="jump topics"><a class="d0" href="#/tags:llm-methods">LLM methods</a><a class="d1" href="#/tags:llm-methods-on-checkable-problems">LLM methods on checkable problems</a><a class="d0" href="#/tags:llms-for-dsls">LLMs for DSLs</a><a class="d1" href="#/tags:text-to-sql">text-to-SQL</a><a class="d1" href="#/tags:dialect-translation">dialect translation</a><a class="d1" href="#/tags:rewrite-rules">rewrite rules</a><a class="d0" href="#/tags:dsl-foundations">DSL foundations</a><a class="d1" href="#/tags:query-equivalence">query equivalence</a><a class="d1" href="#/tags:nondeterministic-queries">nondeterministic queries</a><a class="d0" href="#/tags:across-all-areas">Across all areas</a></div>
+<div class="jump topics"><a class="d0" href="#/tags:llm-methods">LLM methods</a><a class="d1" href="#/tags:llm-methods-on-checkable-problems">LLM methods on checkable problems</a><a class="d0" href="#/tags:llms-for-dsls">LLMs for DSLs</a><a class="d1" href="#/tags:llms-for-dsls-beyond-sql">LLMs for DSLs beyond SQL</a><a class="d1" href="#/tags:text-to-sql">text-to-SQL</a><a class="d1" href="#/tags:dialect-translation">dialect translation</a><a class="d1" href="#/tags:rewrite-rules">rewrite rules</a><a class="d0" href="#/tags:dsl-foundations">DSL foundations</a><a class="d1" href="#/tags:query-equivalence">query equivalence</a><a class="d1" href="#/tags:nondeterministic-queries">nondeterministic queries</a><a class="d0" href="#/tags:across-all-areas">Across all areas</a></div>
 
 <a id="llm-methods"></a>
 
@@ -21,6 +21,10 @@ Topic tags, grouped by search area under the same groups as the papers. A subtag
 - <a class="tag" href="#/tags/stats">stats</a>: **Statistics for comparing LLM methods or systems** on evaluations with checked answers: the item's main result or released method is a statistical tool or finding about such comparisons, e.g. decomposing evaluation noise; paired tests, intervals and power for small item sets; selection bias after search (winner's curse, reuse of a holdout, hidden model selection).
 - <a class="tag" href="#/tags/labels">labels</a>: **Benchmark ground truth**: audits that measure how often a benchmark's labels, tests or verifiers are wrong (false accepts or false rejects of the grading), and benchmarks or pipelines whose labels a check backs (proofs, certified counterexamples, executable specifications).
 - <a class="tag" href="#/tags/compact">compact</a>: **Compact against frontier models**: the item's own results compare compact models (small, quantized or low-cost tiers), helped by inference or a harness or not, with larger ones on checked tasks, or measure what compression does to success on checked tasks.
+- <a class="tag" href="#/tags/offload">offload</a>: **Engine against text on the same task**: the item's own results compare an LLM that hands a procedure to an engine or interpreter (a program, query or formalization that is executed) with the LLM doing the same work in text or with the data in its context, or study when, or to which engine, to hand it.
+- <a class="tag" href="#/tags/rarelang">rarelang</a>: **Languages rare in pretraining**: the item's own results measure LLMs writing programs in a language or library that is rare or absent in pretraining (low-resource, esoteric, new or private), scored by running them (tests, compiler, interpreter), or test a way to teach one (prompts, documentation, memory, weights).
+- <a class="tag" href="#/tags/gym">gym</a>: **Generators of checkable tasks**: procedural generators of tasks whose answers a program computes and checks (environments, puzzle or program suites), released as a resource, or audits of such generators' checks.
+- <a class="tag" href="#/tags/transfer">transfer</a>: **Gains checked outside the check**: the item's own results measure whether a gain made against a check, in weights or in prompts, holds on targets chosen before the run outside that check's training distribution (other representations, domains or open-ended tasks).
 - <a class="tag" href="#/tags/judge">judge</a>: **Decides equivalence or correctness directly, with no sound backend**, by an LLM or another learned model: SQL equivalence judges, and LLM judges, generative verifiers and reward models studied against checkable ground truth. Subtags: <a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a>
 - <a class="tag" href="#/tags/pairs">pairs</a>: Ships a dataset or benchmark of query pairs or equivalence instances you can evaluate a checker on. Subtags: <a class="tag sub" href="#/tags/pairs-check">pairs-check</a><a class="tag sub" href="#/tags/pairs-code">pairs-code</a><a class="tag sub" href="#/tags/pairs-rewrite">pairs-rewrite</a>
 - <a class="tag" href="#/tags/workload">workload</a>: Query or data generators for testing or benchmarking, with no equivalence pairs: benchmark kits and random query generators.
@@ -29,6 +33,12 @@ Topic tags, grouped by search area under the same groups as the papers. A subtag
 
 ## LLMs for DSLs
 
+
+<a id="llms-for-dsls-beyond-sql"></a>
+
+### LLMs for DSLs beyond SQL
+
+- <a class="tag" href="#/tags/dsl">dsl</a>: 
 
 <a id="text-to-sql"></a>
 
@@ -66,7 +76,7 @@ Topic tags, grouped by search area under the same groups as the papers. A subtag
 - <a class="tag" href="#/tags/judge">judge</a>: **Decides equivalence or correctness directly, with no sound backend**, by an LLM or another learned model: SQL equivalence judges, and LLM judges, generative verifiers and reward models studied against checkable ground truth. Subtags: <a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a>
 - <a class="tag" href="#/tags/pairs">pairs</a>: Ships a dataset or benchmark of query pairs or equivalence instances you can evaluate a checker on. Subtags: <a class="tag sub" href="#/tags/pairs-check">pairs-check</a><a class="tag sub" href="#/tags/pairs-code">pairs-code</a><a class="tag sub" href="#/tags/pairs-rewrite">pairs-rewrite</a>
 - <a class="tag" href="#/tags/prove">prove</a>: **Proves** equivalence for *all* databases: sound provers, optimizer-memo verification, verified-by-construction rewriting. Subtags: <a class="tag sub" href="#/tags/prove-general">prove-general</a><a class="tag sub" href="#/tags/prove-itp">prove-itp</a><a class="tag sub" href="#/tags/prove-memo">prove-memo</a><a class="tag sub" href="#/tags/prove-smt">prove-smt</a>
-- <a class="tag" href="#/tags/bounded">bounded</a>: Bounded or small-model equivalence checking, plus the theory of when a bound is complete, including the canonical-database argument for conjunctive queries. Subtags: <a class="tag sub" href="#/tags/bounded-smt">bounded-smt</a><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a>
+- <a class="tag" href="#/tags/bounded">bounded</a>: Bounded or small-model equivalence checking, plus the theory of when a bound is complete, including the canonical-database argument for conjunctive queries. Subtags: <a class="tag sub" href="#/tags/bounded-misc">bounded-misc</a><a class="tag sub" href="#/tags/bounded-smt">bounded-smt</a><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a>
 - <a class="tag" href="#/tags/cex">cex</a>: **Refutes**: the tool outputs a **concrete database** (counterexample, test, or distinguishing/separating instance) that is executed or checked, bounded or not. Subtags: <a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/cex-misc">cex-misc</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/cex-smt">cex-smt</a>
 - <a class="tag" href="#/tags/smt">smt</a>: The method is built on an SMT solver (Z3, cvc5): it encodes into the solver itself. Subtags: <a class="tag sub" href="#/tags/smt-misc">smt-misc</a>
 - <a class="tag" href="#/tags/itp">itp</a>: Built on an **interactive theorem prover** (proof assistant: Coq/Rocq, Lean, Isabelle, Agda, HOL, …). Subtags: <a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/itp-sql">itp-sql</a>

@@ -4,7 +4,7 @@
 
 Read: [Paper](http://www.w3.org/TR/2010/REC-xquery-semantics-20101214/)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

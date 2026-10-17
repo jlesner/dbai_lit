@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2606.07856) · [arXiv](https://arxiv.org/abs/2606.07856)  
 Code: [trapdoor-loom](https://github.com/izzortsi/trapdoor-loom)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

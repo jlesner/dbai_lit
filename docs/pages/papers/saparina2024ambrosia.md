@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2406.19073) · [arXiv](https://arxiv.org/abs/2406.19073)  
 Code: [ambrosia](https://github.com/saparina/ambrosia)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -78,5 +78,5 @@ A database question can have several readings: "What activities does each gym of
 
 ## On this site
 
-- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification)
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>

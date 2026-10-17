@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2609.21341) · [arXiv](https://arxiv.org/abs/2609.21341) · [DOI](https://doi.org/10.57967/hf/10485)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -88,4 +88,5 @@ Small open-weight language models are "assumed to fail at agentic database work 
 
 ## On this site
 
+- **Discussed in:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>

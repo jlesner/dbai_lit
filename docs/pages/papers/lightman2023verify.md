@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2305.20050) · [arXiv](https://arxiv.org/abs/2305.20050)  
 Code: [prm800k](https://github.com/openai/prm800k)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

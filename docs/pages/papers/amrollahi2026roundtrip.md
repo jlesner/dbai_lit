@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2604.25031) · [arXiv](https://arxiv.org/abs/2604.25031)  
 Code: [roundtrip-autoformalization](https://github.com/daneshvar-amrollahi/roundtrip-autoformalization)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -71,7 +71,7 @@ When an LLM translates an English rule into machine-checkable logic, there is us
 - **Rules in isolation:** densely cross-referenced rules "likely" need the connected cluster as input; "We leave this to future work." (Limitations)
 - **Diagnosis:** effectiveness is "contingent on the reliability of the diagnosis function" (abstract).
 - **Human studies:** "a single annotator on a small sample from the Claude pipeline", read "as a directional anchor rather than an exact rate" (App. F).
-- **Single runs:** one run per reported result (§6.2); on wildlife with Claude, Full's lead over Regenerate on failing-rule count disappears across replicates, though Full still beats Random and keeps its cost advantage (App. G).
+- **Single runs:** one run per reported result (§6.2); on wildlife with Claude, Full's lead over Regenerate on equivalent-rule count disappears across replicates, though Full still beats Random and keeps its cost advantage (App. G).
 - **Use:** outputs, "including those that pass roundtrip verification, should not be used in safety-critical applications" without "independent review by a qualified formal methods expert" (Risks).
 
 ## Open problems and building blocks
@@ -83,5 +83,5 @@ When an LLM translates an English rule into machine-checkable logic, there is us
 
 ## On this site
 
-- **Discussed in:** [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
+- **Discussed in:** [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/smt-misc">smt-misc</a></span>

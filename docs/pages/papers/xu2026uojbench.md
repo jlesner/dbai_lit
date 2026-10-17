@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2606.12864) · [arXiv](https://arxiv.org/abs/2606.12864)  
 Code: [UOJ-Bench](https://github.com/hehezhou/UOJ-Bench)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

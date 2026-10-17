@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2601.05579) · [arXiv](https://arxiv.org/abs/2601.05579) · [DOI](https://doi.org/10.1145/3744916.3773257)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

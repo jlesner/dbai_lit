@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2607.09175) · [arXiv](https://arxiv.org/abs/2607.09175)  
 Code: [GRACE](https://github.com/RedMind-Research/GRACE)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Keeps an agent's persistent system instruction as a typed semantic graph, updated from operational experience while the model, tools and harness stay fixed (abstract).
 - Validates each proposed update within the local neighborhood of the nodes it changes (abstract).
-- A test case for [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory): each update passes an LLM's contradiction and redundancy check on the edited neighborhood (§1, §4), not a check on task results and not a sound one; the held-out set is never used for evolution (Tab. 5 caption, §5.1). It reports pass^3 rising from 0.091 zero-shot to 0.661±0.158 on a τ²-bench-derived telecom harness (abstract).
+- A test case for [Checking a memory across problems before it is reused](#/challenges/verified_memory): each update goes through up to three rounds of an LLM contradiction-and-redundancy check on the edited neighborhood and proceeds when the cap is reached (§4.2, App. G), not a check on task results and not a sound one; the held-out set is never used for evolution (Tab. 5 caption, §5.1). It reports pass^3 rising from 0.091 zero-shot to 0.661±0.158 on a τ²-bench-derived telecom harness (abstract).
 
 ## In plain words
 
@@ -65,7 +65,7 @@ Five runs per condition, evaluated at ℓ6, ℓ8 and ℓ10 only (§5.1, Fig. 3).
 - **Frontier references.** Unrevised Gemini 3.1 Pro scores 0.242, and every GRACE run ends above it (§5.2, Tabs. 9, 14).
 - **Ablation.** GRACE without SA reaches 0.458 at ℓ6, then falls to 0.248 at ℓ10 (Tab. 8). Its gap to GRACE is not distinguishable at ℓ6 (permutation p = 0.54) but separates at ℓ8 and ℓ10 (p = 0.016), which the authors read as SA mattering "through consolidation over time rather than through an immediate boost" (§5.2, Tab. 10).
 - **Contradictions.** A post-hoc LLM-judge audit counts 3.35 contradictions on average for HCE against 1.75 to 1.90 for the graph conditions, on one trajectory per condition, not the five replications; the ablation also has more redundancy and nodes than GRACE (§5.3).
-- **Size and cost.** At ℓ10 HCE's instruction is 1.6× longer than GRACE's, a gap that widens every batch (§5.3, Tab. 12). GRACE makes about six internal calls per step against HCE's one, but its whole-run offline cost is about 5% higher, and at Gemini 2.5 Flash list input pricing the shorter instruction recovers the extra cost "within the first one or two experience batches of deployment" (abstract, §5.1, §5.3, Tabs. 6–7).
+- **Size and cost.** At ℓ10 HCE's instruction is 1.6× longer than GRACE's, a gap that widens every batch (§5.3, Tab. 15). GRACE makes about six internal calls per step against HCE's one, but its whole-run offline cost is about 5% higher, and at Gemini 2.5 Flash list input pricing the shorter instruction recovers the extra cost "within the first one or two experience batches of deployment" (abstract, §5.1, §5.3, Tabs. 6–7).
 - **Retention.** Backward transfer from the single-trajectory study is positive or zero for GRACE except Mobile Data in Cycle 1, a drop later recovered, and persistently negative for HCE, reported "as illustrative rather than replicated" (§5.3).
 
 ## Limits the authors state
@@ -80,10 +80,10 @@ Five runs per condition, evaluated at ℓ6, ℓ8 and ℓ10 only (§5.1, Fig. 3).
 ## Open problems and building blocks
 
 - **Open:** "the most informative next experiments are a budget-matched flat-text control, a second benchmark domain, and an audit with an independent judge" (§7), with human agreement (App. F); "A budget-matched comparison against the full ACE pipeline remains future work" (§2).
-- **Released:** the implementation, reproduction runner, frozen task split, prompts, configuration and per-run results (App. G "Reproducibility"; abstract). §4.1 says the release's example schema uses other type names. All prompts are printed (App. H), per-run values listed (App. E).
+- **Released:** the implementation, reproduction runner, frozen task split, prompts, configuration and per-run results (App. All prompts are printed (App. H), per-run values listed (App. E).
 - **To reuse it:** an LLM for every stage with JSON outputs, a type schema in YAML or code, and τ²-bench at a pinned commit (§4.1, App. G). Gemini 2.5 Flash is to be retired on October 16, 2026, and graph granularity is model dependent (App. G).
 
 ## On this site
 
-- **Discussed in:** [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

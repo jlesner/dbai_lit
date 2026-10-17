@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2510.06774) · [arXiv](https://arxiv.org/abs/2510.06774) · [DOI](https://doi.org/10.18653/v1/2026.eacl-long.54)  
 Code: [adaptive_symbolic_reasoning](https://github.com/idiap/adaptive_symbolic_reasoning)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

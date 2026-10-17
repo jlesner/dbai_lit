@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2607.12227) · [arXiv](https://arxiv.org/abs/2607.12227)  
 Code: [harness-evolution](https://github.com/rethinking-harness-evolution/code)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

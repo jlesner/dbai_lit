@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2602.09051) · [arXiv](https://arxiv.org/abs/2602.09051)  
 Code: [RuleFlow](https://github.com/ADAPT-uiuc/RuleFlow)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

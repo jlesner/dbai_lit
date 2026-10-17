@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2510.04618) · [arXiv](https://arxiv.org/abs/2510.04618)  
 Code: [ace](https://github.com/ace-agent/ace)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -19,7 +19,7 @@ Many LLM applications improve without fine-tuning, by changing the model's input
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [reinforcement learning](#/glossary/reinforcement-learning) · [GRPO](#/glossary/grpo) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) (BIRD-SQL answers are graded by GPT-4o-mini, §4.1) · [pass@1](#/glossary/passk)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [reinforcement learning](#/glossary/reinforcement-learning) · [GRPO](#/glossary/grpo) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) (BIRD-SQL answers are graded by GPT-4o-mini, §4.1) · [pass@1](#/glossary/passk) · [prompt caching](#/glossary/prompt-caching) (and KV cache reuse, §4.7)
 
 **The paper's own terms:**
 - **context adaptation** (also "context engineering"): improving a model by building or modifying its inputs rather than its weights (§2.1).
@@ -33,8 +33,7 @@ Many LLM applications improve without fine-tuning, by changing the model's input
 - **TGC / SGC**: Task Goal Completion and Scenario Goal Completion, AppWorld's official scores, each reported on its test-normal and test-challenge splits (§4.1).
 - **rollout**: the paper's unit of adaptation cost, counted per role in Tab. 12–13.
 
-**Missing glossary terms:**
-- **KV (key-value) cache reuse, prompt caching**: reusing the state computed for a repeated input instead of recomputing it (§4.7).
+**Missing glossary terms:** none.
 
 **Builds on:**
 - Dynamic Cheatsheet (DC, [Dynamic Cheatsheet](#/papers/suzgun2025cheatsheet "Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory (2025)")), a test-time memory of strategies the model rewrites: ACE is "Inspired by the agentic design of Dynamic Cheatsheet" (§3).
@@ -90,5 +89,5 @@ Many LLM applications improve without fine-tuning, by changing the model's input
 
 ## On this site
 
-- **Discussed in:** [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

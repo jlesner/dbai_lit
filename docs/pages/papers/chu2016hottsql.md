@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/1607.04822) · [arXiv](https://arxiv.org/abs/1607.04822) · [DOI](https://doi.org/10.1145/3062341.3062348)  
 Code: [Cosette](https://github.com/uwdb/Cosette)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

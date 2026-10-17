@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2602.17633) · [arXiv](https://arxiv.org/abs/2602.17633)  
 Code: [weak-and-strong-verification](https://github.com/nooranisima/weak-and-strong-verification)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

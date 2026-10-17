@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2601.01126) · [arXiv](https://arxiv.org/abs/2601.01126)  
 Code: [RoboPhD](https://github.com/andborth/RoboPhD)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - An evolution agent rewrites a text-to-SQL agent (a database-analysis script and SQL-generation instructions) from performance feedback, with ELO-based selection (abstract).
 - Starts from a 70-line baseline agent; evaluated on BIRD (abstract).
-- Agent evolution for SQL without training, with compact models: it reports its largest gains on cheaper models, +8.9 points over a naive Claude Haiku against +2.3 over Opus 4.5 (abstract), which bears on [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy).
+- Agent evolution for SQL that changes code and instructions, not weights: it reports its largest gains on cheaper models, +8.9 points over a naive Claude Haiku against +2.3 over Opus 4.5 (abstract), with Haiku 4.5 writing the SQL in every evolution round (§4.1); bears on [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy).
 
 ## In plain words
 

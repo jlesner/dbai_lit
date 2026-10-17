@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2503.01747) · [arXiv](https://arxiv.org/abs/2503.01747)  
 Code: [bayes_evals](https://github.com/sambowyer/bayes_evals) · [no_clt_paper](https://github.com/sambowyer/no_clt_paper)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

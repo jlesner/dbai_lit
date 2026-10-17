@@ -5,7 +5,7 @@
 Read: [PDF](https://www.vldb.org/pvldb/vol19/p3732-alrashed.pdf) · [DOI](https://doi.org/10.14778/3836663.3836721)  
 Code: [nl2sql-verification](https://figshare.com/s/c88a751bc29d9751816b)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -84,5 +84,5 @@ Model-written SQL can run yet return believable wrong data: "failures are decept
 
 ## On this site
 
-- **Discussed in:** [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification)
+- **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a></span>

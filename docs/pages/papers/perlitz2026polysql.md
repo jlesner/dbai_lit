@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2605.07796) · [arXiv](https://arxiv.org/abs/2605.07796)  
 Code: [polysql](https://github.com/IBM/polysql)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

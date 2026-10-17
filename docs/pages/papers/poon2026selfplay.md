@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2604.17010) · [arXiv](https://arxiv.org/abs/2604.17010) · [DOI](https://doi.org/10.18653/v1/2026.findings-acl.1615)  
 Code: [llm-self-play-liquidhaskell](https://github.com/Baki-0501/llm-self-play-liquidhaskell)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

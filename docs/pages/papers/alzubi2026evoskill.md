@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2603.02766) · [arXiv](https://arxiv.org/abs/2603.02766)  
 Code: [EvoSkill](https://github.com/sentient-agi/EvoSkill)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Grows a coding agent's library of skill folders (instructions, trigger metadata, helper scripts) from the agent's failures on labeled training questions, with the model frozen (abstract; §2).
 - A Proposer reads failed traces with the ground-truth answers and a history of earlier proposals, a Skill-Builder writes the new or edited skill, and the candidate joins a fixed-capacity frontier of the best programs if the frontier is not yet full or its validation score beats the weakest member (§2.1–2.2, Alg. 1); Claude Code with Opus 4.5 on OfficeQA and SealQA (§3.1–3.2).
-- Near transfer of a gated skill with weights fixed: the authors report that one skill evolved on SealQA, applied unchanged to a stratified BrowseComp sample, raised accuracy by an absolute 5.3% (§3.3), and say "broader investigation across more diverse task pairs is needed" (§4.3). Its gate is a score on labeled validation questions, not a sound check ([Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)).
+- Near transfer of a gated skill with weights fixed: the authors report that one skill evolved on SealQA, applied unchanged to a stratified BrowseComp sample, raised accuracy by an absolute 5.3% (§3.3), and say "broader investigation across more diverse task pairs is needed" (§4.3). Its gate is a score on labeled validation questions, not a sound check ([Checking a memory across problems before it is reused](#/challenges/verified_memory)).
 
 ## In plain words
 

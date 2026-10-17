@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2508.03613) · [arXiv](https://arxiv.org/abs/2508.03613)  
 Code: [Goedel-Prover-V2](https://github.com/Goedel-LM/Goedel-Prover-V2)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

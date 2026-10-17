@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2511.08462) · [arXiv](https://arxiv.org/abs/2511.08462)  
 Code: [qlcoder](https://github.com/neuralprogram/qlcoder)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -90,4 +90,5 @@ Static analysis tools such as CodeQL detect potential vulnerabilities with queri
 
 ## On this site
 
+- **Discussed in:** [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>

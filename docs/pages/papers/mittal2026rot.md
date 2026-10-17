@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.01660) · [arXiv](https://arxiv.org/abs/2609.01660)  
 Code: [agent-horizon-degradation](https://github.com/shubmittal/agent-horizon-degradation)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

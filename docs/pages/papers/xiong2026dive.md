@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2608.12486) · [arXiv](https://arxiv.org/abs/2608.12486)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -88,5 +88,5 @@ No limitations section; caveats:
 
 ## On this site
 
-- **Discussed in:** [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>

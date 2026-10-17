@@ -4,12 +4,12 @@
 
 Read: [PDF](https://arxiv.org/pdf/2606.15390) · [arXiv](https://arxiv.org/abs/2606.15390)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Curates an agent's natural-language skill library by measurement rather than LLM judgment: randomized masking on a small development set gives each skill a causal score per development task, from which it splits skills whose effect varies across tasks into conditional variants (an LLM rewrites them, behind a development-set gate), retires inert ones, merges near-duplicates, and at inference suppresses the skills predicted to hurt each test task, using its nearest development tasks (abstract; §2.1–2.3).
-- Seven models from four providers in non-reasoning mode, on AppWorld (`test_normal`, `test_challenge`) with a ReAct agent and τ-bench retail, with 15 development tasks per benchmark and five hand-written, protected templates added to every library; compared with published skill-curation results on AppWorld and with each model's unaugmented agent (§2; §3.1; App. B).
+- Seven models from four providers in non-reasoning mode, on AppWorld (`test_normal`, `test_challenge`) with a ReAct agent and τ-bench retail, with 15 development tasks per benchmark and five hand-written, protected templates added to every library; compared on AppWorld with "the best available published method" for four of the models (ACE, CUGA or Gupta et al.) and on both benchmarks with each model's unaugmented agent (§2; §3.1; App. B).
 - Skills that help some task types and hurt others, whose effects "cancel in aggregate" so global curation misses them (abstract; §2.1); the authors call it "the first empirical characterisation of causal heterogeneity in agent skill libraries" (§1). In their sequential ablation the hand-written templates add almost as much as per-task masking (App. H, Tab. 7), and two models show no gain on τ-bench (App. A.3).
 
 ## In plain words
@@ -87,4 +87,5 @@ The authors claim the pipeline "cannot degrade performance below any prefix of s
 
 ## On this site
 
+- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

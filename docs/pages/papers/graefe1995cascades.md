@@ -4,7 +4,7 @@
 
 Read: [Paper](http://sites.computer.org/debull/95SEP-CD.pdf)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

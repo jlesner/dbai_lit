@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2502.19414) · [arXiv](https://arxiv.org/abs/2502.19414)  
 Code: [REFUTE](https://github.com/falsifiers/REFUTE)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

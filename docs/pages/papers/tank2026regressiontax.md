@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2607.22520) · [arXiv](https://arxiv.org/abs/2607.22520)  
 Code: [meta-skill-creator](https://github.com/sentient-agi/meta-skill-creator)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

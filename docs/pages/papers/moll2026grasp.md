@@ -5,12 +5,12 @@
 Read: [PDF](https://arxiv.org/pdf/2605.29668) · [arXiv](https://arxiv.org/abs/2605.29668)  
 Code: [GRASP](https://github.com/jomoll/GRASP)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Improves an LLM agent through edits to a bounded library of skills (Markdown instructions injected into its context), with no weight updates: an LLM labels each failed trace with a failure mode, and a skill writer proposes add, modify or remove edits for the most frequent modes (abstract; §2.1–2.2).
-- Each candidate is re-run on a balanced probe of previously failing and previously passing dev episodes and accepted only if it fixes more than it breaks and adds no new regression (§2.3); five models on MedAgentBench and MedAgentBench-v2, scored by exact match against ground-truth answers and FHIR server state, with FHIR-AgentBench and four AgentBench environments as support (§3.1–3.2).
+- Each candidate is re-run on a balanced probe of previously failing and previously passing dev episodes and accepted only if, against a fresh run of the current library on the same probe, it gains more fixes than regressions and has no more regressions than that library (§2.3, Eq. 1); five models on MedAgentBench and MedAgentBench-v2, scored by exact match against ground-truth answers and FHIR server state (§3.1; App. D), with FHIR-AgentBench and four AgentBench environments as support (§1; §3.1–3.2).
 - A validation gate tested against ungated self-improvement: the authors report that the same gate lifts each of five baselines in-domain and none out of distribution (abstract; §4.6, Tab. 5), and that skill writing without validation is no better than no skills (abstract); their ablation shows that this holds with one proposal per batch, while applying all four proposals without a gate scores well above no skills (§4.5, Tab. 4). Scores are against FHIR state, not clinical correctness (Limitations).
 
 ## In plain words
@@ -84,4 +84,5 @@ All are the authors' reports.
 
 ## On this site
 
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

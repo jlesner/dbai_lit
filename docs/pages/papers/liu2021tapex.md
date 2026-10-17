@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2107.07653) · [arXiv](https://arxiv.org/abs/2107.07653)  
 Code: [Table-Pretraining](https://github.com/microsoft/Table-Pretraining)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

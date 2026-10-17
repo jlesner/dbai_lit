@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/0812.3550) · [arXiv](https://arxiv.org/abs/0812.3550)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -36,6 +36,7 @@ XPath is a small language for picking out parts of an XML document (a tree of ne
 - **binary decision diagram (BDD)** (general definition): a compact graph that stores a Boolean function, letting a program work on large sets of states at once (§4 cites Bryant 1986).
 
 **Builds on:**
+- Genevès (2006), the PhD thesis "Logics for XML", and Genevès, Layaïda and Schmitt (2007), "Efficient static analysis of XML paths and types" (PLDI 2007, a programming-languages conference; [Efficient Static Analysis of…](#/papers/geneves2007efficient "Efficient Static Analysis of XML Paths and Types (2007)")): the logic and solver this manual documents, "formally described" there (§1, §4).
 - MONA (Klarlund, Møller and Schwartzbach, 2001), a solver for MSO formulas, the speed comparison point (§4).
 
 ## Problem and setting
@@ -45,6 +46,7 @@ XPath is a small language for picking out parts of an XML document (a tree of ne
 - **XPath fragment** (Fig. 7): paths, union, intersection, qualifiers (bracketed filters) with and, or and not, attribute and name tests, over forward and reverse axes (e.g. child, ancestor, preceding-sibling). Some uses of `position` and `count` are rewritten into the fragment (Fig. 8); "We observed that, in practice, many XPath expressions contain syntactic sugars that can also fit into this fragment" (§3.2 "Supported XPath Expressions").
 - **Context:** two compared expressions must start "from the same evaluation context, which can be any set of nodes", the same for both (§2, Example 3).
 - **Schemas:** tree grammars "written in usual notations like DTD, XML Schema, or Relax NG", standard schema languages for XML (§3.2 "Supported XML Types").
+- **What correct means:** the semantics of formulas "is formally defined in" the thesis and the PLDI paper (§3.2), not in this report.
 
 ## Approach
 
@@ -55,6 +57,7 @@ XPath is a small language for picking out parts of an XML document (a tree of ne
   - Containment can be decided as implication because the logic is closed under negation; the cycle-freeness restriction ensures this, since converse moves may interact with recursion so that the finite model property is lost (that a satisfiable formula has a finite model) (§3.2, §4).
   - The logic is as expressive as tree automata and as MSO of finite trees (§4).
   - Satisfiability is decided in exponential time, more precisely time 2^O(n) with n "proportional to (and smaller than) the size of the logical formula" (§4).
+  - The algorithm "has been proved sound and complete" in the thesis and the PLDI paper (§4).
   - The complexity is "optimal since it subsumes tree automata and less expressive logics such as CTL" (§4) (CTL: a temporal logic used in model checking).
 
 ## Results
@@ -85,5 +88,5 @@ No experiments (§2–§4). The worked examples show the solver's traces (§2). 
 
 ## On this site
 
-- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
+- **Discussed in:** [Distinguishing documents for two programs in any DSL](#/challenges/dsl_counterexamples) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-misc">cex-misc</a><a class="tag sub" href="#/tags/prove-general">prove-general</a></span>

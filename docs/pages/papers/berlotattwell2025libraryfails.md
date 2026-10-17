@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2504.03048) · [arXiv](https://arxiv.org/abs/2504.03048) · [DOI](https://doi.org/10.18653/v1/2026.eacl-long.163)  
 Code: [llm_lib_learning_fails](https://github.com/ikb-a/llm_lib_learning_fails)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Re-runs three in-context library-learning systems, LEGO-Prover (Isabelle lemmas, miniF2F), TroVE and AgentOptimizer (Python functions and tools, MATH and table QA), and measures whether what they learn is reused directly (all three, §3.1–3.2) or by editing (LEGO-Prover only, §3.2) (abstract; §1; §3).
 - Gives the LEGO-Prover and TroVE baselines about the same compute, matched by a token-cost proxy (§4.1); AgentOptimizer showed no gain over its baseline even without that correction, so none was run (§4.1–4.2, Tab. 4). LEGO-Prover runs with five LLMs, from Llama3.1-8B to o3-mini (§3.2, Tab. 2–3).
-- A library whose entries a prover checks is still barely reused: the authors report "no evidence of the direct reuse of learned lemmas" in LEGO-Prover (abstract), though their Tab. 2 shows one lemma reused verbatim (App. H), and evidence against soft reuse (§3.2, Fig. 4), and accuracy gains that "often vanish or reverse" once compute is matched (abstract; §4.2, Fig. 6–7), which they suggest "may be largely or wholly due to hidden test-time scaling" (§6). Bears on [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory).
+- A library whose entries a prover checks is still barely reused: the authors report "no evidence of the direct reuse of learned lemmas" in LEGO-Prover (abstract), though their Tab. 2 shows one lemma reused verbatim (App. H), and evidence against soft reuse (§3.2, Fig. 4), and accuracy gains that "often vanish or reverse" once compute is matched (abstract; §4.2, Fig. 6–7), which they suggest "may be largely or wholly due to hidden test-time scaling" (§6). Bears on [Checking a memory across problems before it is reused](#/challenges/verified_memory).
 
 ## In plain words
 

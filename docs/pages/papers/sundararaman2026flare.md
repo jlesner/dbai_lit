@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2608.02919) · [arXiv](https://arxiv.org/abs/2608.02919)  
 Code: [FLARE](https://github.com/microsoft/FLARE---Few-shot-Learning-based-Adaptive-Reflective-Engine)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

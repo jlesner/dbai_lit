@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2608.03794) · [arXiv](https://arxiv.org/abs/2608.03794)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -20,7 +20,7 @@ Across 11 models, GPT-4o and GPT-4o-mini generally lead in almost all phases, wh
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [gold query](#/glossary/gold-query) · [integrity constraint](#/glossary/integrity-constraint) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [normalization](#/glossary/normalized-schema)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [gold query](#/glossary/gold-query) · [integrity constraint](#/glossary/integrity-constraint) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [normalization](#/glossary/normalized-schema) · [Jaccard similarity](#/glossary/jaccard-similarity) (§2.2.2)
 
 **The paper's own terms:**
 - **Database lifecycle phases P1–P5**: Design (from requirements to a schema of entities, data types and foreign-key dependencies), Implementation (from that schema to Data Definition Language, the `CREATE TABLE` statements, valid in an engine such as SQLite), Operation (Data Manipulation Language: queries and updates, as Text2SQL and Progressive-Text2SQL), Debugging (a flawed SQL statement plus its error message, to be corrected), Maintenance (a site-reliability-engineer or database-administrator role) (§2.1).
@@ -34,7 +34,6 @@ Across 11 models, GPT-4o and GPT-4o-mini generally lead in almost all phases, wh
 - **Curse of specialization**: models "fine-tuned specifically for SQL generation exhibit significant performance degradation in broader database management tasks" (§1); the abstract calls it "catastrophic forgetting".
 
 **Missing glossary terms:**
-- **Jaccard similarity**: the size of the overlap of two sets divided by the size of their union (§2.2.2).
 - **Coefficient of variation**: the standard deviation divided by the mean (§5.1, Tab. 3).
 
 **Builds on:**

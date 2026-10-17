@@ -4,11 +4,11 @@
 
 Read: [PDF](https://arxiv.org/pdf/2405.10276) · [arXiv](https://arxiv.org/abs/2405.10276) · [DOI](https://doi.org/10.18653/v1/2024.findings-acl.100)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
-- Reruns OPRO with small LLMs (the LLaMA-2 family, Mistral 7B) as the optimizer (abstract).
+- Reruns OPRO with small LLMs (the LLaMA-2 family, Mistral 7B) as both optimizer and scorer (abstract; §3.2).
 - Compares OPRO-found instructions with Zero-shot-CoT and Few-shot-CoT baselines (§3.1).
 
 ## In plain words

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2607.06341) · [arXiv](https://arxiv.org/abs/2607.06341)  
 Code: [CoqProver-Code](https://anonymous.4open.science/r/CoqProver-Code-57BB)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

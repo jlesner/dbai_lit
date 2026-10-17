@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.39533) · [arXiv](https://arxiv.org/abs/2609.39533)  
 Code: [CATCH](https://github.com/THUAIS-Lab/CATCH)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

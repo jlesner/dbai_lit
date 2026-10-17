@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2510.05318) · [arXiv](https://arxiv.org/abs/2510.05318)  
 Code: [BIRD-Interact](https://github.com/bird-bench/BIRD-Interact)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

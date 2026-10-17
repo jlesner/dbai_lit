@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2608.07213) · [arXiv](https://arxiv.org/abs/2608.07213)  
 Code: [memory-crystallization](https://github.com/ai-jiaqian/text-to-sql-memory-crystallization)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -87,5 +87,5 @@ A text-to-SQL system can fix a wrong first query by spending extra compute on a 
 
 ## On this site
 
-- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-sql">hacking-sql</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>

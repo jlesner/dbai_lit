@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2407.21787) · [arXiv](https://arxiv.org/abs/2407.21787)  
 Code: [large_language_monkeys](https://github.com/ScalingIntelligence/large_language_monkeys)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -84,5 +84,5 @@ Headline: on real GitHub issues, an open model inside a code-editing agent solve
 
 ## On this site
 
-- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>

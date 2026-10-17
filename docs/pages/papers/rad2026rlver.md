@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2601.04411) · [arXiv](https://arxiv.org/abs/2601.04411)  
 Code: [Noisy-RL](https://github.com/cognichip/Noisy-RL)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

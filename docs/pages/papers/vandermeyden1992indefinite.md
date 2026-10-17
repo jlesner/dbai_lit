@@ -4,7 +4,7 @@
 
 Read: [PDF](https://dl.acm.org/doi/pdf/10.1145/137097.137902) · [DOI](https://doi.org/10.1145/137097.137902)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -69,6 +69,7 @@ The author's claims, for < only; lower bounds can be established with conjunctiv
 - **Prop. 5.4 (PDF p. 13):** width-bounded databases over four monadic predicates with unboundedly many sequential disjuncts are co-NP-hard. With Thm. 4.5 and Prop. 5.1, the paper says Thm. 5.3 "characterizes the maximal class" with PTIME combined complexity in its parameters (cf. Fig. 4, PDF p. 5).
 - **Thm. 5.5–Prop. 5.8 (PDF p. 13):** width-bounded monadic databases with conjunctive queries are polynomial with both varying; monadic disjunctive queries are in co-NP with both varying; monadic databases have polynomial expression complexity for conjunctive and disjunctive queries.
 - **Thm. 6.4 (PDF p. 14):** each fixed monadic disjunctive query has linear-time data complexity, by a non-constructive proof.
+- §7 (PDF p. 15) points to the author's thesis [21], where "bounded concurrency" gives a tractable class able to express interval data.
 
 ## Limits the authors state
 

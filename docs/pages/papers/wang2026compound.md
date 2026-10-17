@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2607.14004) · [arXiv](https://arxiv.org/abs/2607.14004)  
 Code: [Continual-Learning-Terminal-Bench](https://github.com/relai-ai/Continual-Learning-Terminal-Bench)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -85,5 +85,5 @@ All four stages are in Tab. 8 (§6.5), repeated in Tab. 1. Each is the authors' 
 
 ## On this site
 
-- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

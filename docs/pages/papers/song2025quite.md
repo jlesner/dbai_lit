@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2506.07675) · [arXiv](https://arxiv.org/abs/2506.07675)  
 Code: [QUITE](https://github.com/Yuyang-Song/QUITE)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -80,5 +80,5 @@ Query rewriting turns a slow SQL query into a faster one that returns the same a
 
 ## On this site
 
-- **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a></span>

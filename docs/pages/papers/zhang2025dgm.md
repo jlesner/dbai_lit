@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2505.22954) · [arXiv](https://arxiv.org/abs/2505.22954)  
 Code: [dgm](https://github.com/jennyzzt/dgm)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

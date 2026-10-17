@@ -5,7 +5,7 @@
 Read: [PDF](https://dl.acm.org/doi/pdf/10.1145/3728908) · [DOI](https://doi.org/10.1145/3728908)  
 Code: [QTRAN](https://github.com/QTRANll/QTRAN)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

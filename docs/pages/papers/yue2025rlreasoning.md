@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2504.13837) · [arXiv](https://arxiv.org/abs/2504.13837)  
 Code: [limit-of-RLVR](https://github.com/LeapLabTHU/limit-of-RLVR)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

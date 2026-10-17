@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2110.14168) · [arXiv](https://arxiv.org/abs/2110.14168)  
 Code: [grade-school-math](https://github.com/openai/grade-school-math)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

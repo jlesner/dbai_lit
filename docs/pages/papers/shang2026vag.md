@@ -4,13 +4,13 @@
 
 Read: [PDF](https://arxiv.org/pdf/2608.05810) · [arXiv](https://arxiv.org/abs/2608.05810)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Finds that a self-evolving agent that admits every skill it distills from its own trajectories improves, peaks and then degrades as the pool grows, and argues that removing a defective skill afterwards cannot undo the skills later distilled with it in context (abstract; Introduction; Methodology).
 - Verifier-as-Gatekeeper admits a skill only if a schema check, a single-skill A-B replay on held-out Terminal-Bench 2 tasks and one LLM review all pass it, then promotes a subset to the agent's context by greedy marginal gain on joint replays; the benchmark's deterministic checker grades the tasks (abstract; Methodology; Experiments).
-- A check on what enters an agent's memory before it can steer later rounds: the authors report that removing the culprit skills afterwards recovers "only 17% of the degradation" (Introduction). Its round-by-round curves are on the tasks the skills were distilled from, which the authors call "an optimistic upper bound"; the held-out split is used only for transfer (Experiments, Tabs. 1 and 3).
+- A check on what enters an agent's memory before it can steer later rounds: the authors report that removing the culprit skills afterwards recovers "only 17% of the degradation" (Introduction; its Fig. 4 gives 1.7 of 12.3 points instead). Its round-by-round curves are on the tasks the skills were distilled from, which the authors call "an optimistic upper bound"; the held-out split is used only for transfer (Experiments, Tabs. 1 and 3).
 
 ## In plain words
 
@@ -70,4 +70,5 @@ Does admitting every skill make performance peak then fall, and can gating preve
 
 ## On this site
 
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2607.17352) · [arXiv](https://arxiv.org/abs/2607.17352)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -36,7 +36,7 @@ Strong agents that write machine-checked proofs in the Lean proof checker use ha
 - **coevolution**: evolving solvers together with their environments or task curricula, so that the tasks change as the solvers improve (§2).
 
 **Builds on:**
-- The Darwin Gödel Machine (DGM), an agent that rewrites its own code and tests the variants on coding benchmarks (the parent-selection weight is "DGM-style", §3.4), and Hyperagents, which put a task agent and a meta agent that edits itself and the task agent into one program (§1). Neither is on this site.
+- The Darwin Gödel Machine (DGM), an agent that rewrites its own code and tests the variants on coding benchmarks (the parent-selection weight is "DGM-style", §3.4), and Hyperagents, which put a task agent and a meta agent that edits itself and the task agent into one program (§1). DGM is on this site as [Darwin Gödel Machine (DGM)](#/papers/zhang2025dgm "Darwin G\'odel Machine: Open-Ended Evolution of Self-Improving Agents (2026)"); Hyperagents is not.
 - LEAP and Goedel-Architect, hand-designed workflows around a fixed prover built on plans of intermediate lemmas, the line the paper follows (§1, §2). Not on this site.
 - Coevolution and automatic curricula (POET, MCC, PAIRED), and the Red Queen Gödel Machine, which coevolves the evaluator; here the evaluator stays fixed and task difficulty coevolves (§2). Not on this site.
 
@@ -90,5 +90,5 @@ All from one coevolving run and one fixed-benchmark run (App. A).
 
 ## On this site
 
-- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

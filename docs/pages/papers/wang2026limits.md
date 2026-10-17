@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2606.16118) · [arXiv](https://arxiv.org/abs/2606.16118)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -92,4 +92,5 @@ The authors report that adding formal structure helps, with the LLM reading its 
 
 ## On this site
 
+- **Discussed in:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/smt-misc">smt-misc</a></span>

@@ -8,7 +8,7 @@ Rules are **proved, or tested by a procedure** (a prover, a bounded checker, a t
 
 ## Challenges
 
-- **[Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules)**: Rewriters have edge-case bugs that change query results ([ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") Tab. II), and so do published rules. Find them with counterexamples.
+- **[Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules)**: Rewriters have edge-case bugs that change query results ([ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") Tab. II), and so do published rules (§ What's known). Find them with counterexamples.
 
 ## Papers
 

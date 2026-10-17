@@ -4,7 +4,7 @@
 
 Read: [PDF](https://ecommons.cornell.edu/handle/1813/5958)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

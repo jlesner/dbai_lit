@@ -4,7 +4,7 @@
 
 Read: [PDF](https://dl.acm.org/doi/pdf/10.1145/1265530.1265535) · [DOI](https://doi.org/10.1145/1265530.1265535)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

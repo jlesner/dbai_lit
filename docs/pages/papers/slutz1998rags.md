@@ -4,7 +4,7 @@
 
 Read: [PDF](https://www.vldb.org/conf/1998/p618.pdf)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

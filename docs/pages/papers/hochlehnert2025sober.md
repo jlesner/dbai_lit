@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2504.07086) · [arXiv](https://arxiv.org/abs/2504.07086)  
 Code: [sober-reasoning](https://github.com/bethgelab/sober-reasoning)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2412.14063) · [arXiv](https://arxiv.org/abs/2412.14063) · [DOI](https://doi.org/10.1109/ICSE55347.2025.00161)  
 Code: [coq-modeling](https://github.com/rkthomps/coq-modeling)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2609.29144) · [arXiv](https://arxiv.org/abs/2609.29144)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -83,4 +83,5 @@ An LLM agent can improve without retraining by keeping a short advice text that 
 
 ## On this site
 
+- **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

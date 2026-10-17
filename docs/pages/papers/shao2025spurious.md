@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2506.10947) · [arXiv](https://arxiv.org/abs/2506.10947)  
 Code: [Spurious_Rewards](https://github.com/ruixin31/Spurious_Rewards)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

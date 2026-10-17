@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2010.02840) · [arXiv](https://arxiv.org/abs/2010.02840) · [DOI](https://doi.org/10.18653/v1/2020.emnlp-main.29)  
 Code: [test-suite-sql-eval](https://github.com/taoyds/test-suite-sql-eval)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -91,5 +91,5 @@ A [text-to-SQL](#/glossary/text-to-sql) model is graded against a human-written 
 
 ## On this site
 
-- **Discussed in:** [Canonical forms for queries](#/challenges/query_canonical_forms) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Canonical forms for queries](#/challenges/query_canonical_forms) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>

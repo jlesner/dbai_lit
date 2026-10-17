@@ -4,7 +4,7 @@
 
 Read: [Paper](http://www.w3.org/TR/2013/REC-sparql11-query-20130321/)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -17,7 +17,7 @@ RDF, in the document's words, is "a directed, labeled graph data format for repr
 
 ## Background and terms
 
-**Terms to know:** [formal semantics](#/glossary/formal-semantics) · [bag semantics](#/glossary/bag-semantics) · [relational algebra](#/glossary/relational-algebra) · [outer join](#/glossary/outer-join) · [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form)
+**Terms to know:** [formal semantics](#/glossary/formal-semantics) · [bag semantics](#/glossary/bag-semantics) · [relational algebra](#/glossary/relational-algebra) · [outer join](#/glossary/outer-join) · [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form) · [knowledge graph](#/glossary/knowledge-graph) (RDF, the data format quoted above: triples whose predicate labels an edge between two nodes, abstract, §1)
 
 In the glossary's terms (our bridge): the algebra plays relational algebra's role, solutions are bags, OPTIONAL acts like a left outer join that leaves variables unbound instead of NULL, and MINUS resembles an anti-semijoin. The grammar uses EBNF, an extended BNF (§19.8).
 
@@ -33,7 +33,6 @@ In the glossary's terms (our bridge): the algebra plays relational algebra's rol
 - **Entailment regime**: a rule set that says which graphs are well-formed and which statements follow from a graph, used to extend matching beyond plain subgraph matching (§18.7).
 
 **Missing glossary terms:**
-- **RDF**: the graph data format quoted above (abstract, §1): triples whose predicate labels an edge between two nodes.
 - **Entailment**: graph G entails graph H when H's statements follow from G; under **simple entailment**, the base case, H's blank nodes can be replaced by terms so that H becomes part of G (general definition; §5.1.2 relies on it, §18.3.1).
 
 **Builds on** (none on this site):

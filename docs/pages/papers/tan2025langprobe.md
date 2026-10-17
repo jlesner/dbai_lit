@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2502.20315) · [arXiv](https://arxiv.org/abs/2502.20315) · [DOI](https://doi.org/10.18653/v1/2025.findings-emnlp.1172)  
 Code: [langProBe](https://github.com/Shangyint/langProBe)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

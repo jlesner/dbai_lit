@@ -4,7 +4,7 @@
 
 Read: [PDF](https://link.springer.com/content/pdf/10.1007/s00778-008-0122-1.pdf) · [DOI](https://doi.org/10.1007/s00778-008-0122-1)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

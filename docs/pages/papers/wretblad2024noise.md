@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2402.12243) · [arXiv](https://arxiv.org/abs/2402.12243) · [DOI](https://doi.org/10.18653/v1/2024.acl-short.34)  
 Code: [text-to-SQL-noise](https://github.com/niklaswretblad/the-effects-of-noise-in-text-to-SQL)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

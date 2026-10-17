@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2502.14768) · [arXiv](https://arxiv.org/abs/2502.14768)  
 Code: [Logic-RL](https://github.com/Unakar/Logic-RL)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2505.19514) · [arXiv](https://arxiv.org/abs/2505.19514)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -82,4 +82,5 @@ Most prompt optimizers tune a prompt on one fixed set of examples, so the prompt
 
 ## On this site
 
+- **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2606.16999) · [arXiv](https://arxiv.org/abs/2606.16999)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -87,4 +87,5 @@ Small code models, run locally and never fine-tuned, often write programs that l
 
 ## On this site
 
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>

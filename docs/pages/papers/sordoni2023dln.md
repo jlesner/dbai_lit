@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2306.12509) · [arXiv](https://arxiv.org/abs/2306.12509)  
 Code: [deep-language-networks](https://github.com/microsoft/deep-language-networks)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2401.06751) · [arXiv](https://arxiv.org/abs/2401.06751) · [DOI](https://doi.org/10.18653/v1/2024.acl-long.378)  
 Code: [easy-to-hard-generalization](https://github.com/allenai/easy-to-hard-generalization)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

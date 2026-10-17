@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2506.13131) · [arXiv](https://arxiv.org/abs/2506.13131)  
 Code: [alphaevolve_results](https://github.com/google-deepmind/alphaevolve_results)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/1802.10233) · [arXiv](https://arxiv.org/abs/1802.10233) · [DOI](https://doi.org/10.1145/3183713.3190662)  
 Code: [calcite](https://github.com/apache/calcite)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

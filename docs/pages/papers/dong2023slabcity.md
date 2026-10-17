@@ -5,7 +5,7 @@
 Read: [DOI](https://doi.org/10.14778/3611479.3611515)  
 Code: [SlabCity](https://github.com/eidos06/SlabCity)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -29,6 +29,7 @@ Poorly written queries, from software or less experienced users, limit what a da
 - **coverage**: how many input queries a technique optimizes; **latency reduction**: input latency over output latency (§5.2–5.3, PDF pp. 9–10).
 
 **Builds on:**
+- CEGIS, from Solar-Lezama's thesis [58] (§4.1, PDF p. 4).
 - The bounded verifiers "in Cosette [26, 66]" and the full verifiers of Cosette and SPES (§4.4, PDF p. 8): [Cosette](#/papers/chu2017cosette "Cosette: An Automated Prover for SQL (2017)"), [Speeding up symbolic reasoning…](#/papers/wang2018symbolic "Speeding up symbolic reasoning for relational queries (2018)"), [SPES](#/papers/zhou2020spes "SPES: A Symbolic Approach to Proving Query Equivalence Under Bag Semantics (2022)"). Per §6 (PDF p. 12), Cosette builds [proof assistant](#/glossary/proof-assistant) proofs or counterexamples; EQUITAS ([EQUITAS](#/papers/zhou2019equitas "Automated verification of query equivalence using satisfiability modulo theories (2019)")) and SPES (refs. [73, 74]) translate each query into a logical formula an SMT solver checks.
 - Its baselines (§5.1, PDF p. 9; §6, PDF p. 11): LearnedRewrite ([LearnedRewrite](#/papers/zhou2021learnedrewrite "A learned query rewrite system using Monte Carlo tree search (2021)")), which orders the rewrite rules of Apache Calcite (an open-source query-processing framework) by [Monte Carlo tree search](#/glossary/monte-carlo-tree-search-mcts), and WeTune ([WeTune](#/papers/wang2022wetune "WeTune: Automatic Discovery and Verification of Query Rewrite Rules (2022)")), an automatic rewrite-rule generator.
 - Prior synthesis-based rewriters it goes beyond (§1, PDF p. 2): FGH-rule [67], where a rule fixes a template for a query in Datalog (a rule-based query language with recursion) that synthesis completes, and Sia [72], which only adds WHERE predicates.

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2602.13217) · [arXiv](https://arxiv.org/abs/2602.13217)  
 Code: [VeRA](https://github.com/Marco-Cheng/VeRA)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -91,4 +91,5 @@ No limitations section; these caveats are scattered.
 
 ## On this site
 
+- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>

@@ -5,7 +5,7 @@
 Read: [DOI](https://doi.org/10.1145/3180155.3180202)  
 Code: [evosql](https://github.com/SERG-Delft/evosql) · [evosql-appendix](https://zenodo.org/records/1166023)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2605.05973) · [arXiv](https://arxiv.org/abs/2605.05973)  
 Code: [siren](https://github.com/jefferyz001/siren)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.00088) · [arXiv](https://arxiv.org/abs/2609.00088)  
 Code: [evaluator-integrity](https://github.com/idilgozel/evaluator-integrity)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

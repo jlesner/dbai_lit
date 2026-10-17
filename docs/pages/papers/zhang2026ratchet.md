@@ -5,11 +5,11 @@
 Read: [PDF](https://arxiv.org/pdf/2605.22148) · [arXiv](https://arxiv.org/abs/2605.22148)  
 Code: [Self-Evolving-Agents-Ratchet](https://github.com/amazon-science/Self-Evolving-Agents-Ratchet)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
-- A skill library kept by one frozen LLM in five roles over an append-only log: a router picks at most one skill per task, a critic labels failures, a synthesizer writes skills from clustered failure patterns, and a curator retires a skill once its measured contribution (passes minus failures over its routed trials) falls to −τ after enough trials and caps the active library at a fixed width (§3); the authors prove a floor on how far below the no-skill control a governed library can fall, finite because of the width and τ (§4, Prop. 1).
+- A skill library kept by one frozen LLM in five roles over an append-only log: a router picks at most one skill per task, a critic labels failures, a synthesizer writes skills from clustered failure patterns, and a curator retires a skill once its measured contribution (passes minus failures over its routed trials) falls to −τ after enough trials and caps the active library at a fixed width (§3); the authors state a floor on how far below the no-skill control a governed library can fall, finite because of the width and τ (§4, Prop. 1; as printed it fails for skills with fewer than Nmin trials, and their own statistic doesn't meet its unbiasedness assumption even under unit tests).
 - Modelling the grader as a channel with a false-pass and a pass-to-fail rate, they prove that a false-pass rate at or above (1−τ)/2 makes the rule retire nothing "at any sample size", while pass-to-fail errors cost resolution (abstract; §4.1, Prop. 2). Tested with unit-test grading on an MBPP+ slice (Claude Opus 4.7; §5), with error channels injected into the training reward on a long-form report-composition testbed and other slices (§6.2), and by an offline audit of one LLM judge against a deterministic citation grader and a held-out judge (§6.1).
 - Pruning a memory needs a grader that rarely passes failures: past that boundary, genuine evictions fall to about zero while the end-task score moves little and not monotonically, so the authors call the score "the wrong alarm" (§6.2, Fig. 3); their audited strict judge has a pass-to-fail rate of about 0.95, safe in the fatal direction but barely able to tell good skills from bad (§6.1). The abstract's claim about LLM-written skills is SkillsBench's, not a result of this paper (§1).
 
@@ -82,10 +82,10 @@ An LLM agent writing its own library of reusable instructions (skills) must also
 ## Open problems and building blocks
 
 - **Open:** judge stability under prompt variation "is itself an open measurement problem" (§6); they expect explicit deduplication "to matter on larger, more heterogeneous suites" (§5.1).
-- **Released:** a code repository linked under the author list (title page).
 - **To reuse it:** a frozen served LLM in five roles and "no accelerator of its own"; per round, one Router and one Solver call per task, one Critic call per failure, one Synthesizer call per uncovered cluster (§3). Defaults and role inputs: App. G. The authors advise measuring both grader rates offline first (§6.2).
 - **Beyond its domain:** "Neither proposition mentions a skill"; a memory bank, retrieval corpus or score-pruned tool registry retired by a threshold "inherits the same floor" (§7).
 
 ## On this site
 
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

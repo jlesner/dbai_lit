@@ -40,3 +40,4 @@
 - **[Logos](https://github.com/WindOctober/Logos)**: implements [Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)")
 - **[sql-zero](https://anonymous.4open.science/r/sql-zero-artifact-478E)**: implements [SQL-Zero](#/papers/pedrozo2026sqlzero "SQL-Zero: Self-Evolving Text-to-SQL (2026)")
 - **[text-to-sql-ai-eval](https://figshare.com/s/c75141469fb6dc74b890)**: implements [The Stochastic Shift](#/papers/alrashed2026stochastic "The Stochastic Shift: A New Evaluation Paradigm for Text-to-SQL with AI Operators (2026)")
+- **[Text2GraphQuery-DataGen](https://github.com/ldbc/Text2GraphQuery-DataGen)**: implements [Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)")

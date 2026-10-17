@@ -4,7 +4,7 @@
 
 Read: [PDF](https://link.springer.com/content/pdf/10.1007/3-540-57530-8_8.pdf) · [DOI](https://doi.org/10.1007/3-540-57530-8_8)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -38,6 +38,7 @@ They define a query algebra over databases seen as labelled graphs, where a quer
 **Builds on** (none on this site):
 - Algebras for complex objects [2, 5, 8, 9, 10, 17, 18]; those of Becker and Güting [2] and Vandenberg and DeWitt [18] "appear to satisfy all of the above requirements" but build in a type system (§1, PDF pp. 3–4).
 - Refinement constraints for query algebras [5, 20], whose languages are "strictly first order" and "do not appear capable of reasoning about more general rewrite rules" (§1, PDF p. 4).
+- Hui Zeng's master's thesis [21], the source of the proofs of Lemma 4.1 and Lemma A.2 (§4.2, PDF p. 21).
 
 ## Problem and setting
 
@@ -81,6 +82,7 @@ They define a query algebra over databases seen as labelled graphs, where a quer
 
 - **Open:** Tab. 1's ellipses mark where extensions are "desirable": more constraint forms, and operators for access paradigms "not currently expressible" (§2, PDF p. 5). The language "should be viewed as a kernel", and "extensions to the language are desirable and likely" (§4.1, PDF p. 20). The goal: a logic to "prove the correctness of real-world rule-based query optimizers for graph-based data models" (§1, PDF p. 3).
 - **Released:** Nothing stated.
+- **To reuse it:** queries, constraints and storage choices are all written in the calculus (footnote 2, PDF p. 10; §4.1–4.2, PDF pp. 19–21); footnote 1 cites a master's thesis on parsing SQL into a complex-object algebra [19] (PDF p. 3).
 - **Beyond its domain:** indexed non-terminal grammars "have a potential for more widespread use in defining higher-order syntax often required by logics that reason about programs", the authors believe (§5, PDF p. 24).
 
 ## On this site

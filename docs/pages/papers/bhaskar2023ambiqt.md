@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2310.13659) · [arXiv](https://arxiv.org/abs/2310.13659) · [DOI](https://doi.org/10.18653/v1/2023.emnlp-main.436)  
 Code: [AmbiQT](https://github.com/testzer0/AmbiQT)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -89,5 +89,5 @@ Top-5 EXM on AmbiQT unless stated.
 
 ## On this site
 
-- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification)
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>

@@ -5,7 +5,7 @@
 Read: [DOI](https://doi.org/10.14778/3485450.3485456)  
 Code: [LearnedRewrite](https://github.com/XuanheZhou/LearnedRewrite)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

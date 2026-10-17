@@ -8,7 +8,7 @@ Query rewriting, LLM or rule-based, and rewrite benchmarks.
 
 ## Challenges
 
-- **[Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules)**: Rewriters have edge-case bugs that change query results ([ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") Tab. II), and so do published rules. Find them with counterexamples.
+- **[Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules)**: Rewriters have edge-case bugs that change query results ([ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") Tab. II), and so do published rules (§ What's known). Find them with counterexamples.
 - **[Verified query speedups](#/challenges/verified_query_speedup)**: "Q2 is faster than Q1" is worth nothing unless Q2 ≡ Q1 has also been established.
 
 ## Papers

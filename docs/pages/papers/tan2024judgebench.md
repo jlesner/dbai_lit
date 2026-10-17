@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2410.12784) · [arXiv](https://arxiv.org/abs/2410.12784)  
 Code: [JudgeBench](https://github.com/ScalerLab/JudgeBench)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

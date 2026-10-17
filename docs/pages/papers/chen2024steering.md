@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2410.03524) · [arXiv](https://arxiv.org/abs/2410.03524)  
 Code: [CodeSteer-v1.0](https://github.com/yongchao98/CodeSteer-v1.0)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

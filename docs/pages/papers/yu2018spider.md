@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/1809.08887) · [arXiv](https://arxiv.org/abs/1809.08887)  
 Code: [spider](https://github.com/taoyds/spider)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -81,5 +81,5 @@ Test-set Exact Matching accuracy (Tab. 2) and Component Matching F1 (Tab. 3).
 
 ## On this site
 
-- **Discussed in:** [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification)
+- **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>

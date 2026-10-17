@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.23032) · [arXiv](https://arxiv.org/abs/2609.23032)  
 Code: [gpml-conformance](https://github.com/samyama-ai/gpml-conformance)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -19,7 +19,7 @@ Graph databases answer queries for paths through networks of nodes and edges. Tw
 
 ## Background and terms
 
-**Terms to know:** [differential testing](#/glossary/differential-testing) · [metamorphic testing](#/glossary/metamorphic-testing) · [test oracle](#/glossary/test-oracle) · [bag semantics](#/glossary/bag-semantics) · [formal semantics](#/glossary/formal-semantics) · [SQL standard](#/glossary/sql-standard) · [nondeterministic query](#/glossary/nondeterministic-query)
+**Terms to know:** [differential testing](#/glossary/differential-testing) · [metamorphic testing](#/glossary/metamorphic-testing) · [test oracle](#/glossary/test-oracle) · [bag semantics](#/glossary/bag-semantics) · [formal semantics](#/glossary/formal-semantics) · [SQL standard](#/glossary/sql-standard) · [nondeterministic query](#/glossary/nondeterministic-query) · [property graph](#/glossary/property-graph) (its formal definition, §2)
 
 **The paper's own terms:**
 - **GQL, SQL/PGQ, GPML**: GQL (ISO/IEC 39075:2024) is called "the first international standard for a graph query language"; SQL/PGQ is Part 16 of SQL:2023; both build on the same pattern-matching core, GPML (§1).
@@ -34,8 +34,7 @@ Graph databases answer queries for paths through networks of nodes and edges. Tw
 - **documented language difference / departure from the standard**: a divergence that the engine's own manual explains, against one it doesn't (§6; Fig. 2).
 - **openCypher**: the query language that Neo4j, Memgraph, Apache AGE and Kùzu implement, with its descendants (§8); it has no restrictor keyword (§4).
 
-**Missing glossary terms:**
-- **property graph**: a graph of node and edge identifiers in which each edge connects an ordered (directed) or unordered (undirected) pair of nodes, each element carries a set of labels, and elements may have named property values; parallel edges and self-loops are allowed (§2).
+**Missing glossary terms:** none.
 
 **Builds on:**
 - Deutsch et al. (2022), the reference exposition of GPML written by members of the standards committee, whose six worked answers Gate B uses (§1; §3.1).
@@ -88,4 +87,5 @@ Graph databases answer queries for paths through networks of nodes and edges. Tw
 
 ## On this site
 
+- **Discussed in:** [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/nondet-eval">nondet-eval</a></span>

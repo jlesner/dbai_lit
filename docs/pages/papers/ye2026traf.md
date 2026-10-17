@@ -5,7 +5,7 @@
 Read: [PDF](https://dl.acm.org/doi/pdf/10.1145/3834861) · [DOI](https://doi.org/10.1145/3834861)  
 Code: [Elucidating-Type-Conversions](https://github.com/YeWenjia/Elucidating-Type-Conversions-in-SQL-Engines)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

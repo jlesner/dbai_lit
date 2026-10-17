@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2603.05278) · [arXiv](https://arxiv.org/abs/2603.05278) · [DOI](https://doi.org/10.1016/j.jss.2026.112871)  
 Code: [code-generation-framework-for-dsls](https://github.com/david-xander/code-generation-framework-for-dsls)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

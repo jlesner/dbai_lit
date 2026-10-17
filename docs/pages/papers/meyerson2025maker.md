@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2511.09030) · [arXiv](https://arxiv.org/abs/2511.09030)  
 Code: [neuro-san-benchmarking](https://github.com/cognizant-ai-lab/neuro-san-benchmarking)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

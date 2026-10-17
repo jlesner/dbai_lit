@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2603.09022) · [arXiv](https://arxiv.org/abs/2603.09022)  
 Code: [MEMO](https://github.com/openverse-ai/MEMO)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -15,7 +15,7 @@ Code: [MEMO](https://github.com/openverse-ai/MEMO)
 
 ## In plain words
 
-When LLMs play long two-player text games, results swing from run to run: an early slip changes the rest of the game, and small prompt wording changes reorder which model looks best. The authors argue this makes win rates and rankings unreliable, and that fixed prompts and existing prompt optimizers, which keep no memory between rounds, do not fix it (§1). MEMO changes only what the model is told, never its weights (§1): candidate prompts compete in rounds of games, reliable winners are kept, lessons from finished games go into a lasting notebook of tips, and some games restart from rare, decisive positions (abstract). Across five games, with 2,000 practice games per game, they report the average win rate against three outside opponent models rising from 25.1% to 49.5% for GPT-4o-mini and from 20.9% to 44.3% for Qwen-2.5-7B-Instruct, compared with the unoptimized default prompt (abstract, Tab. 2). They present it as outperforming prompt optimizers and, on Qwen, as competitive with reinforcement-learning training at 19 times fewer games, though such training "remains more effective in perfect-information settings" (abstract; §5).
+When LLMs play long two-player text games, results swing from run to run: an early slip changes the rest of the game, and small prompt wording changes reorder which model looks best. The authors argue this makes win rates and rankings unreliable, and that fixed prompts and existing prompt optimizers, which keep no memory between rounds, do not fix it (§1). MEMO changes only what the model is told, never its weights (§1): candidate prompts compete in rounds of games, reliable winners are kept, lessons from finished games go into a lasting notebook of tips, and some games restart from rare, decisive positions (abstract). Across five games, with 2,000 practice games per game, they report the average win rate against three outside opponent models rising from 25.1% to 49.5% for GPT-4o-mini and from 20.9% to 44.3% for Qwen-2.5-7B-Instruct, compared with the unoptimized default prompt (abstract, Tab. 2). They present it as outperforming prompt optimizers and, on Qwen, as competitive with reinforcement-learning training at 19 times fewer games. Such training "remains more effective in perfect-information settings" (abstract; §5).
 
 ## Background and terms
 
@@ -86,5 +86,5 @@ When LLMs play long two-player text games, results swing from run to run: an ear
 
 ## On this site
 
-- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

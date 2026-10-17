@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2504.06542) · [arXiv](https://arxiv.org/abs/2504.06542) · [DOI](https://doi.org/10.1145/3729303)  
 Code: [polygon-artifact-evaluation](https://zenodo.org/records/15059866) · [polygon-sql](https://github.com/polygon-sql/polygon)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

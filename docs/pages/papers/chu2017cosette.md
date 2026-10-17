@@ -5,7 +5,7 @@
 Read: [Paper](https://www.cidrdb.org/cidr2017/papers/p51-chu-cidr17.pdf)  
 Code: [Cosette](https://github.com/uwdb/Cosette)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

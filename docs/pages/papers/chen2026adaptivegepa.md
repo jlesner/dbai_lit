@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2609.38762) · [arXiv](https://arxiv.org/abs/2609.38762)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -20,7 +20,7 @@ On a fixed mix of four benchmarks, one Qwen3-8B run, whose router and editing mo
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [agent harness](#/glossary/agent-harness) · [Pareto front](#/glossary/pareto-front) · [GRPO](#/glossary/grpo) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk)
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [agent harness](#/glossary/agent-harness) · [Pareto front](#/glossary/pareto-front) · [GRPO](#/glossary/grpo) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk) · [Jaccard similarity](#/glossary/jaccard-similarity) ("Jaccard overlap", zero when the union is empty, §3.3)
 
 **The paper's own terms:**
 - **full-program optimization**: editing a program's prompts, modules, control flow, tool use and inference settings, as executable source, with model weights fixed (§2).
@@ -35,8 +35,7 @@ On a fixed mix of four benchmarks, one Qwen3-8B run, whose router and editing mo
 - **family mean**: the unweighted average of the four task scores, times 100; the example mean weights each test example equally (§4.1, Tab. 2).
 - **feedback set / validation set**: examples for reflection, and a separate set (the Pareto set) for selection; 45 per family each (§3.1, App. B).
 
-**Missing glossary terms:**
-- **Jaccard overlap**: for two sets, the size of their intersection divided by the size of their union; zero when the union is empty (§3.3).
+**Missing glossary terms:** none.
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")): its reflective search, per-request [Pareto](#/glossary/pareto-front) parent selection and merge eligibility rules are kept (§3.4, App. A, §5); its full-program adapter, evolving one program on the whole mixture (GEPA-FPA-ALL), is the "closest baseline" (§4.1).

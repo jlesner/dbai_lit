@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2603.29399) · [arXiv](https://arxiv.org/abs/2603.29399)  
 Code: [ELT-Bench](https://github.com/uiuc-kang-lab/ELT-Bench)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -19,7 +19,7 @@ Data teams build pipelines that copy data from many sources into a cloud warehou
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [agent harness](#/glossary/agent-harness)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [agent harness](#/glossary/agent-harness) · [Fleiss' kappa](#/glossary/fleiss-kappa) (three annotators, §3.1.3)
 
 **The paper's own terms:**
 - **ELT pipeline** (Extract-Load-Transform): data is extracted from sources with connectors such as Airbyte, loaded raw into a cloud warehouse such as Snowflake, then transformed there by SQL models, typically in dbt, a SQL transformation framework (Fig. 2). In ELT-Bench the agent also writes Terraform configuration to set up the connections (Fig. 3).
@@ -31,7 +31,6 @@ Data teams build pipelines that copy data from many sources into a cloud warehou
 - **Strata A/B/C**: columns both scripts accept (A), only the patched script accepts (B), both reject (C) (§3.2.2).
 
 **Missing glossary terms:**
-- **Fleiss' kappa (κ)**: a chance-corrected agreement score like [Cohen's kappa](#/glossary/cohens-kappa), for three or more raters (§3.1.3).
 - **McNemar's test with Yates' continuity correction**: a chi-square test on paired labels asking whether the cases where the two sides disagree lean one way; here, each script against human consensus (§3.2.2).
 
 **Builds on:**

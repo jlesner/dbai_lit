@@ -96,6 +96,17 @@ A text file of instructions, procedures and know-how that an agent loads into it
 **Related:** [agent harness](#/glossary/agent-harness), [reflective prompt optimization](#/glossary/reflective-prompt-optimization), [meta-prompt](#/glossary/meta-prompt)
 
 
+<a id="agglomerative-clustering"></a>
+
+## Agglomerative clustering
+
+Grouping items from the bottom up: start with each item as its own cluster and repeatedly merge the two closest clusters, until a set number of clusters or a distance cut is reached (general definition). A linkage rule gives the distance between two clusters; with average linkage it is the mean distance between their members. [Instruction Retrieval at Inference…](#/papers/alkiek2025instructionretrieval "Instruction Retrieval at Inference Time for Small Language Models (2025)") groups a benchmark's training questions this way, with average linkage and cosine distance between question embeddings, and has a teacher model write one instruction per cluster (§3).
+
+**Learn more:** [Instruction Retrieval at Inference…](#/papers/alkiek2025instructionretrieval "Instruction Retrieval at Inference Time for Small Language Models (2025)") §3 "Corpus construction", which uses it without defining it (general definition).
+
+**Related:** [cosine similarity](#/glossary/cosine-similarity), [dense retrieval](#/glossary/dense-retrieval)
+
+
 <a id="akaike-information-criterion-aic"></a>
 
 ## Akaike information criterion (AIC)
@@ -127,6 +138,17 @@ Many decision-makers relying on the same model, or on models that make the same 
 **Learn more:** [Correlated Errors in Large Language Models](#/papers/kim2025correlated "Correlated Errors in Large Language Models (2025)") §2, citing Kleinberg and Raghavan (2021) and others, not listed here.
 
 **Related:** [common-mode failure](#/glossary/common-mode-failure), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
+
+
+<a id="answer-set-programming"></a>
+
+## Answer set programming
+
+A form of [logic programming](#/glossary/logic-programming) for search problems: the program's rules and constraints say what a solution must satisfy, and a solver finds the answer sets, the sets of facts that satisfy all of them (general definition). The inductive logic programming system Popper uses it to propose candidate rules, which it then tests against the examples in Prolog ([Reason Popper-ly](#/papers/chen2026popper "Reason Popper-ly: Patching In-Context Reasoning with Inductive Logic Programming (2026)") §2.2).
+
+**Learn more:** [Reason Popper-ly](#/papers/chen2026popper "Reason Popper-ly: Patching In-Context Reasoning with Inductive Logic Programming (2026)") §2.2, which uses it without defining it (general definition).
+
+**Related:** [logic programming](#/glossary/logic-programming), [inductive logic programming (ILP)](#/glossary/inductive-logic-programming-ilp), [declarative programming](#/glossary/declarative-programming), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers)
 
 
 <a id="approximate-nearest-neighbour-search-anns"></a>
@@ -382,6 +404,17 @@ An optimization problem with another nested inside it: each choice in the outer 
 **Learn more:** [Recursive self-improvement of AI…](#/papers/srikanth2026aide2 "Recursive self-improvement of AI research agents (2026)") §2 (general definition).
 
 **Related:** [hyperparameter optimization](#/glossary/hyperparameter-optimization), [agent harness](#/glossary/agent-harness), [meta-prompt](#/glossary/meta-prompt)
+
+
+<a id="big-m-constraint"></a>
+
+## Big-M constraint
+
+A way to write a condition such as "if x = 1 then u_j ≥ u_i + 1" as one linear inequality, u_j ≥ u_i + 1 − M(1 − x): a large constant M makes the inequality hold trivially when the 0–1 variable x is 0 (general definition). Integer-programming models use it to switch constraints on and off. [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") App. G (Mode B) reports an LLM swapping a constraint stated as "enforced only if x" for this "textbook big-M encoding", which it calls "strictly weaker for CP-SAT"; §5.2 lists such rewrites as weakening [constraint propagation](#/glossary/constraint-propagation). The example is a Miller–Tucker–Zemlin (MTZ) ordering constraint, the standard way to rule out subtours in routing models (general definition).
+
+**Learn more:** [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §5.2 and App. G, Mode B, which use it without defining it (general definition).
+
+**Related:** [linear programming (LP and MILP)](#/glossary/linear-programming-lp-and-milp), [constraint propagation](#/glossary/constraint-propagation), [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem)
 
 
 <a id="bijection"></a>
@@ -642,6 +675,17 @@ A procedure that rewrites a query so that it states what the schema's constraint
 **Related:** [integrity constraint](#/glossary/integrity-constraint), [conjunctive query](#/glossary/conjunctive-query)
 
 
+<a id="chat-template"></a>
+
+## Chat template
+
+The wrapper a chat model expects around each conversation: role markers (system, user, assistant) and special tokens that the model saw in fine-tuning, sometimes with a default system message (general definition). A prompt sent without the template, or with another model's, is out of distribution for the model. [Same Answer, New Box](#/papers/lyu2026sameanswer "Same Answer, New Box: How Much of RLVR's Out-of-Domain Gain Is Answer Format? (2026)") sends its prompts in each checkpoint's own template and keeps its default system message, which for one model asks for the answer in a box (§3, §6); it leaves out of its pooled results a pair whose base and RL models ship different templates (App. A).
+
+**Learn more:** [Same Answer, New Box](#/papers/lyu2026sameanswer "Same Answer, New Box: How Much of RLVR's Out-of-Domain Gain Is Answer Format? (2026)") §3, §6 and App. A, which use it without defining it (general definition).
+
+**Related:** [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling)
+
+
 <a id="chi-square-test-of-independence"></a>
 
 ## Chi-square test of independence
@@ -773,6 +817,17 @@ Example: DeepSeek-R1-Zero "relies exclusively on reinforcement learning without 
 **Related:** [reinforcement learning](#/glossary/reinforcement-learning), [distillation](#/glossary/distillation), [rejection sampling](#/glossary/rejection-sampling), [curriculum learning](#/glossary/curriculum-learning)
 
 
+<a id="combinatory-logic"></a>
+
+## Combinatory logic
+
+A way of writing functions with no variables at all: every function is built by applying a few fixed functions, the combinators, to each other (general definition). Three suffice: i returns its argument, k makes a constant function, and s passes one argument to two functions and applies the first result to the second. It computes the same functions as the [lambda calculus](#/glossary/lambda-calculus-and-beta-reduction). The esoteric language Unlambda is built on s, k and i ([EsoLang-Bench](#/papers/sharma2026esolang "EsoLang-Bench: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages (2026)") §3.2, App. B).
+
+**Learn more:** [EsoLang-Bench](#/papers/sharma2026esolang "EsoLang-Bench: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages (2026)") §3.2 and App. B, which use it without defining it (general definition).
+
+**Related:** [lambda calculus and beta-reduction](#/glossary/lambda-calculus-and-beta-reduction), [fixed-point combinator (Y combinator)](#/glossary/fixed-point-combinator-y-combinator), [esoteric programming language (esolang)](#/glossary/esoteric-programming-language-esolang), [Turing-complete](#/glossary/turing-complete)
+
+
 <a id="combined-semantics"></a>
 
 ## Combined semantics
@@ -810,6 +865,17 @@ A failure that hits several supposedly independent checks at once because they s
 **Learn more:** [Engineering Reliable Commit Gates…](#/papers/zheng2026vpcontrol "Engineering Reliable Commit Gates for Agentic AI: Cost-Aware Verification Portfolios under Common-Mode Data Failures (2026)") §I.
 
 **Related:** [algorithmic monoculture](#/glossary/algorithmic-monoculture), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [test oracle](#/glossary/test-oracle)
+
+
+<a id="complete-and-incomplete-search"></a>
+
+## Complete and incomplete search
+
+A complete search keeps going until it finds a solution or proves that none exists (for an optimization problem, until it proves that its best solution is optimal); an incomplete one, such as local search, random restarts or a fixed iteration cap, can stop without that guarantee and return a wrong "no solution" or a suboptimal answer (general definition). [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §5.2 names "silent loss of completeness" (Mode D) as one way LLM-written Python solvers go wrong when the prompt asks for speed; App. B.4 counts local search, multiple restarts and iteration caps among the changes.
+
+**Learn more:** [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §5.2, App. B.4 and App. G, Mode D, which use it without defining it (general definition).
+
+**Related:** [constraint optimization problem (COP)](#/glossary/constraint-optimization-problem-cop), [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem), [hill climbing](#/glossary/hill-climbing), [soundness and completeness](#/glossary/soundness-and-completeness)
 
 
 <a id="compute-matched-comparison"></a>
@@ -949,6 +1015,28 @@ Generating text while allowing, at each step, only the tokens that keep the outp
 **Related:** [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form), [top-k and nucleus (top-p) sampling](#/glossary/top-k-and-nucleus-top-p-sampling)
 
 
+<a id="constraint-optimization-problem-cop"></a>
+
+## Constraint optimization problem (COP)
+
+A [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem) with an objective to minimize or maximize: a solution must meet every constraint and also be optimal (general definition). A checker for one must therefore test optimality, not only feasibility. [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §4.1 draws its benchmark's problems, some of each kind, from CSPLib and other sources, and each ships with a verifier for "CSP feasibility and COP optimality".
+
+**Learn more:** [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §4.1–4.2, which use it without defining it (general definition).
+
+**Related:** [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem), [linear programming (LP and MILP)](#/glossary/linear-programming-lp-and-milp), [complete and incomplete search](#/glossary/complete-and-incomplete-search)
+
+
+<a id="constraint-propagation"></a>
+
+## Constraint propagation
+
+A constraint solver's step of removing, from each variable's possible values, those that cannot be part of any solution given the constraints, before and between search decisions; each removal can enable more (general definition). How well a model propagates depends on how its constraints are written: [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §5.1–5.2 reports LLM-written rewrites that "weaken propagation" (Mode B) and redundant machinery added where "CP-SAT's propagation already does the work".
+
+**Learn more:** [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §5.1–5.2, which use it without defining it (general definition).
+
+**Related:** [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem), [big-M constraint](#/glossary/big-m-constraint), [search annotation](#/glossary/search-annotation), [symmetry breaking](#/glossary/symmetry-breaking)
+
+
 <a id="constraint-satisfaction-problem"></a>
 
 ## Constraint satisfaction problem
@@ -969,6 +1057,28 @@ A harness feature that shortens an agent's conversation history when it grows to
 **Learn more:** [StaminaBench](#/papers/sobal2026staminabench "StaminaBench: Stress-Testing Coding Agents over 100 Interaction Turns (2026)") §4 and §5, which use the term without defining it (general definition).
 
 **Related:** [agent harness](#/glossary/agent-harness), [lost in the middle](#/glossary/lost-in-the-middle), [progressive disclosure](#/glossary/progressive-disclosure)
+
+
+<a id="context-engineering"></a>
+
+## Context engineering
+
+Choosing and arranging what goes into a model's context window, and managing it as a task runs: which instructions, documents, tool results and history to include, where, and what to drop or summarize. [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") defines it as "the careful construction and management of a model's context window" and argues that "where and how information is presented in a model's context strongly influences task performance" (§ "Limitations & Future Work", PDF p. 42).
+
+**Learn more:** [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") § "Limitations & Future Work" (PDF p. 42).
+
+**Related:** [context rot](#/glossary/context-rot), [context compaction](#/glossary/context-compaction), [agent harness](#/glossary/agent-harness), [progressive disclosure](#/glossary/progressive-disclosure)
+
+
+<a id="context-rot"></a>
+
+## Context rot
+
+A model's answers getting worse as its input grows longer, even well within its context window. [LOCA-bench](#/papers/zeng2026locabench "LOCA-bench: Benchmarking Language Agents Under Controllable and Extreme Context Growth (2026)") §1: "As more tokens are added, performance often becomes less consistent and more error-prone, an effect commonly referred to as 'context rot'"; [RLM (Recursive Language Models)](#/papers/zhang2025rlm "Recursive Language Models (2025)") §1 describes quality that "degrades steeply as prompts get longer". Both papers cite [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") for the term, a report from Chroma titled "Context Rot", which measures the effect by extending [needle-in-a-haystack](#/glossary/needle-in-a-haystack-niah) tests (PDF p. 3). It is related to, but wider than, [lost in the middle](#/glossary/lost-in-the-middle), which is about where in the input the needed part sits.
+
+**Learn more:** [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") (title, PDF p. 1; the test, PDF p. 3); [LOCA-bench](#/papers/zeng2026locabench "LOCA-bench: Benchmarking Language Agents Under Controllable and Extreme Context Growth (2026)") §1; [RLM (Recursive Language Models)](#/papers/zhang2025rlm "Recursive Language Models (2025)") §1.
+
+**Related:** [needle in a haystack (NIAH)](#/glossary/needle-in-a-haystack-niah), [lost in the middle](#/glossary/lost-in-the-middle), [context engineering](#/glossary/context-engineering), [context compaction](#/glossary/context-compaction)
 
 
 <a id="context-free-grammar"></a>
@@ -1026,6 +1136,17 @@ Example ([Unnesting Arbitrary Queries](#/papers/neumann2015unnesting "Unnesting 
 **Learn more:** [Unnesting Arbitrary Queries](#/papers/neumann2015unnesting "Unnesting Arbitrary Queries (2015)") §1 (PDF pp. 1–2); [A Coq mechanised formal…](#/papers/benzaken2019coq "A Coq mechanised formal semantics for realistic SQL queries: formally reconciling SQL and bag relational algebra (2019)") §2.2.2 (PDF p. 3), on how correlated subqueries with aggregates are evaluated.
 
 **Related:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules), [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin)
+
+
+<a id="cosine-similarity"></a>
+
+## Cosine similarity
+
+A score of how closely two vectors point the same way: their dot product divided by the product of their lengths, which is the cosine of the angle between them, 1 for the same direction and 0 for perpendicular ones (general definition). On text embeddings it is the usual measure of how close two texts are in meaning. [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") uses it to measure how similar each needle is to its question and to the surrounding text (PDF pp. 9, 11–12, 19).
+
+**Learn more:** [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") (PDF pp. 9, 11–12, 19), which uses it without defining it (general definition).
+
+**Related:** [dense retrieval](#/glossary/dense-retrieval), [vector store](#/glossary/vector-store), [approximate nearest-neighbour search (ANNS)](#/glossary/approximate-nearest-neighbour-search-anns)
 
 
 <a id="cost-based-optimization"></a>
@@ -1187,6 +1308,28 @@ Examples: Chaudhuri and Vardi state that equivalence of relational queries is un
 **Related:** [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy), [soundness and completeness](#/glossary/soundness-and-completeness), [bounded verification](#/glossary/bounded-verification), [first-order logic](#/glossary/first-order-logic)
 
 
+<a id="declarative-programming"></a>
+
+## Declarative programming
+
+Writing a program as a description of what a solution must satisfy, such as variables and constraints, and leaving how to find it to a solver or search procedure (general definition). SQL, [Datalog](#/glossary/datalog) and constraint-modelling languages are declarative. [A Reality Check of…](#/papers/amonkar2025realitycheck "A Reality Check of Language Models as Formalizers on Constraint Satisfaction Problems (2026)") splits an LLM's formalization of a planning problem into a "declarative component (i.e., the variables and constraints)" and a search component (§4), and says formalization "decouples problem description from solution via declarative programming, leaving the heavy-lifting of search to the solver" (§5.2).
+
+**Learn more:** [A Reality Check of…](#/papers/amonkar2025realitycheck "A Reality Check of Language Models as Formalizers on Constraint Satisfaction Problems (2026)") §4 and §5.2, which use it without defining it (general definition).
+
+**Related:** [logic programming](#/glossary/logic-programming), [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem), [answer set programming](#/glossary/answer-set-programming), [autoformalization](#/glossary/autoformalization)
+
+
+<a id="decoder-only-and-encoder-decoder-models"></a>
+
+## Decoder-only and encoder-decoder models
+
+Two transformer designs. A decoder-only model, such as the GPT and Llama families, reads and writes one sequence left to right; at each position it "may only attend to prior tokens" ([Lost in the Middle](#/papers/liu2023lostmiddle "Lost in the Middle: How Language Models Use Long Contexts (2024)") §4.1). An encoder-decoder model, such as T5, first reads the whole input with a "bidirectional encoder", so each part is processed in light of what comes before and after it, and then a decoder generates the output (§4.1–4.2). The authors report that encoder-decoder models are more robust to where the relevant information sits, but only on inputs no longer than those seen in training (§1, §4.1).
+
+**Learn more:** [Lost in the Middle](#/papers/liu2023lostmiddle "Lost in the Middle: How Language Models Use Long Contexts (2024)") §4.1–4.2.
+
+**Related:** [lost in the middle](#/glossary/lost-in-the-middle), [masked language model](#/glossary/masked-language-model), [KV cache](#/glossary/kv-cache)
+
+
 <a id="delta-debugging"></a>
 
 ## Delta debugging
@@ -1231,6 +1374,17 @@ Retrieval by learned vectors rather than shared words: an encoder turns the quer
 **Related:** [BM25](#/glossary/bm25), [TF-IDF](#/glossary/tf-idf), [contrastive learning](#/glossary/contrastive-learning), [approximate nearest-neighbour search (ANNS)](#/glossary/approximate-nearest-neighbour-search-anns), [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag), [premise selection](#/glossary/premise-selection)
 
 
+<a id="dfa-minimization-and-equivalence"></a>
+
+## DFA minimization and equivalence
+
+A deterministic finite automaton (DFA) is a [finite-state machine](#/glossary/finite-state-machine) over strings with exactly one next state for each state and character. Every regular language has a unique DFA with the fewest states, its minimal DFA, and two automata accept the same strings exactly when their minimal DFAs match (general definition). Equivalence can also be tested directly: [A Linear Algorithm for…](#/papers/hopcroft1971linear "A Linear Algorithm for Testing Equivalence of Finite Automata (1971)") gives an algorithm whose running time is "bounded by a constant times the product of the number of states of the larger automaton with the size of the input alphabet" (abstract, PDF p. 2), and notes that a minimization algorithm also tests equivalence (§I). Since a [regular expression](#/glossary/regular-expression-and-regular-language) converts to a DFA, this decides whether two regexes match the same strings: [Query4Regex](#/papers/hahn2026query4regex "Query4Regex: Verifiable Regex Transformation through Formal Operations from NL and DSL Queries (2026)") scores model-written regexes by it (§4.3, PDF pp. 3–4), and [Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") measures a regex's complexity by its minimal DFA's number of states (§5).
+
+**Learn more:** [A Linear Algorithm for…](#/papers/hopcroft1971linear "A Linear Algorithm for Testing Equivalence of Finite Automata (1971)") abstract (PDF p. 2), §I and §III; [Query4Regex](#/papers/hahn2026query4regex "Query4Regex: Verifiable Regex Transformation through Formal Operations from NL and DSL Queries (2026)") §4.3 (PDF pp. 3–4); [Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") §5 "Data", which uses "minimized DFA" without defining it (general definition).
+
+**Related:** [regular expression and regular language](#/glossary/regular-expression-and-regular-language), [finite-state machine](#/glossary/finite-state-machine), [program equivalence](#/glossary/program-equivalence), [query learning (membership and equivalence queries)](#/glossary/query-learning-membership-and-equivalence-queries)
+
+
 <a id="differential-evolution"></a>
 
 ## Differential evolution
@@ -1266,6 +1420,17 @@ It differs from [metamorphic testing](#/glossary/metamorphic-testing), which run
 **Learn more:** [Massive Stochastic Testing of SQL](#/papers/slutz1998rags "Massive Stochastic Testing of SQL (1998)") §2 (PDF pp. 1–2); [ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") §VII (PDF p. 11), which describes it as "executing the same test case in different implementations to verify if they yield matching results" and explains why it suits query rewriters poorly. The earlier work [ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") cites for it (McKeeman; Evans and Savoia) is not listed here.
 
 **Related:** [test oracle](#/glossary/test-oracle), [metamorphic testing](#/glossary/metamorphic-testing), [fuzzing](#/glossary/fuzzing)
+
+
+<a id="diffusion-language-model"></a>
+
+## Diffusion language model
+
+A language model that writes a whole passage at once by repeated denoising: it starts from a sequence of masked or noisy tokens and fills in or corrects many positions in parallel over several steps, instead of producing one token after another from left to right (general definition). [The Communication Bottleneck](#/papers/suau2026bottleneck "The Communication Bottleneck: A Round-Trip Study of Tree-Structured Expression Serialization in Language Models (2026)") includes two, Dream-v0-7B and LLaDA-8B (§3.1), to test whether "parallel denoising yields a different serialization", and reports that it "does not escape the bottleneck" the paper finds in left-to-right models (§3.1–3.2).
+
+**Learn more:** [The Communication Bottleneck](#/papers/suau2026bottleneck "The Communication Bottleneck: A Round-Trip Study of Tree-Structured Expression Serialization in Language Models (2026)") §3.1–3.2, which use it without defining it (general definition).
+
+**Related:** [decoder-only and encoder-decoder models](#/glossary/decoder-only-and-encoder-decoder-models), [masked language model](#/glossary/masked-language-model)
 
 
 <a id="direct-preference-optimization-dpo"></a>
@@ -1377,6 +1542,28 @@ Choosing the candidate (a model, a prompt) that scores best on the available sam
 **Related:** [multiple testing](#/glossary/multiple-testing), [bootstrap resampling](#/glossary/bootstrap-resampling), [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse)
 
 
+<a id="ensemble-methods"></a>
+
+## Ensemble methods
+
+Combining several learned models, for example by voting or averaging, so that their individual errors partly cancel. [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1 describes them as methods that "aggregate results from multiple learners to combat overfitting (and underfitting)" and, inspired by them, runs several copies of a program-synthesis tool with different grammars in parallel.
+
+**Learn more:** [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1, which cites Dietterich (2000, not listed here).
+
+**Related:** [overfitting](#/glossary/overfitting), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [weight averaging](#/glossary/weight-averaging)
+
+
+<a id="enumerative-synthesis"></a>
+
+## Enumerative synthesis
+
+[Program synthesis](#/glossary/program-synthesis) by listing a grammar's programs from smallest to largest and checking each against the specification. [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §4.2 describes it as a technique that "enumerates expressions within a given grammar in order of size and returns the first candidate that satisfies the given examples". Because it returns the smallest fitting program, it prefers simple answers, but the number of candidates grows fast with size.
+
+**Learn more:** [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §4.2 (its hybrid enumeration extends it).
+
+**Related:** [program synthesis](#/glossary/program-synthesis), [syntax-guided synthesis (SyGuS)](#/glossary/syntax-guided-synthesis-sygus), [counterexample-guided inductive synthesis (CEGIS)](#/glossary/counterexample-guided-inductive-synthesis-cegis)
+
+
 <a id="equisatisfiable"></a>
 
 ## Equisatisfiable
@@ -1397,6 +1584,17 @@ A test that shows two results are the same within a chosen margin, instead of fa
 **Learn more:** [Flat Score, Amplified Failures](#/papers/jang2026flatscore "Flat Score, Amplified Failures: How the Error Budget Masks Damage in Quantized LLM Agents (2026)") § "Experimental Setup" ("equivalence tests (two one-sided tests, TOST) at ±7.5 points") and § "Final Task Reward…".
 
 **Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [bootstrap resampling](#/glossary/bootstrap-resampling), [multiple testing](#/glossary/multiple-testing), [noninferiority test](#/glossary/noninferiority-test)
+
+
+<a id="esoteric-programming-language-esolang"></a>
+
+## Esoteric programming language (esolang)
+
+A programming language made to be strange or hard on purpose, as a joke, a puzzle or a test of an idea, not for practical use; Brainfuck, with eight one-character commands moving a pointer over a tape, is the best known. [EsoLang-Bench](#/papers/sharma2026esolang "EsoLang-Bench: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages (2026)") uses five as a benchmark, describing their "hard-by-design primitives" and "negligible deployment value" (abstract, §1); all five are [Turing-complete](#/glossary/turing-complete), so the problems stay solvable while the languages are rare in training data (§1). [Frontier Coding Agents Use…](#/papers/sharma2026metaprogramming "Frontier Coding Agents Use Metaprogramming to Adapt to Unfamiliar Programming Languages (2026)") uses them as "controlled proxies for unfamiliar executable interfaces" (§1).
+
+**Learn more:** [EsoLang-Bench](#/papers/sharma2026esolang "EsoLang-Bench: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages (2026)") abstract, §1, §3.2 and App. B (the five languages); [Frontier Coding Agents Use…](#/papers/sharma2026metaprogramming "Frontier Coding Agents Use Metaprogramming to Adapt to Unfamiliar Programming Languages (2026)") §1.
+
+**Related:** [low-resource programming language](#/glossary/low-resource-programming-language), [data contamination](#/glossary/data-contamination), [Turing-complete](#/glossary/turing-complete), [combinatory logic](#/glossary/combinatory-logic)
 
 
 <a id="estimation-of-distribution-algorithm-eda"></a>
@@ -1637,6 +1835,28 @@ An exact test of whether two groups' success rates differ, from the 2×2 table o
 **Related:** [McNemar's exact test](#/glossary/mcnemars-exact-test), [binomial test](#/glossary/binomial-test), [odds ratio](#/glossary/odds-ratio), [false discovery rate (FDR)](#/glossary/false-discovery-rate-fdr)
 
 
+<a id="fixed-point-combinator-y-combinator"></a>
+
+## Fixed-point combinator (Y combinator)
+
+A function fix such that fix(g) = g(fix(g)) for every g, which makes recursion possible without naming the function being defined: g describes one step and receives the finished solver as its argument ([λ-RLM ("The Y-Combinator for LLMs")](#/papers/roy2026ycombinator "The Y-Combinator for LLMs: Solving Long-Context Rot with $\lambda$-Calculus (2026)") §2). In the untyped [lambda calculus](#/glossary/lambda-calculus-and-beta-reduction), the Y combinator, λg. (λx. g (x x)) (λx. g (x x)), is one such term (§2, Def. 1). [λ-RLM ("The Y-Combinator for LLMs")](#/papers/roy2026ycombinator "The Y-Combinator for LLMs: Solving Long-Context Rot with $\lambda$-Calculus (2026)") builds its recursive long-context reasoning on one, so that the model never manages function names (§1).
+
+**Learn more:** [λ-RLM ("The Y-Combinator for LLMs")](#/papers/roy2026ycombinator "The Y-Combinator for LLMs: Solving Long-Context Rot with $\lambda$-Calculus (2026)") §2 (Def. 1 and a worked factorial example).
+
+**Related:** [lambda calculus and beta-reduction](#/glossary/lambda-calculus-and-beta-reduction), [combinatory logic](#/glossary/combinatory-logic)
+
+
+<a id="fleiss-kappa"></a>
+
+## Fleiss' kappa
+
+An agreement score for three or more raters who each put the same items into categories: like [Cohen's kappa](#/glossary/cohens-kappa), it compares observed agreement with the agreement expected by chance, 1 for perfect agreement and 0 for chance level (general definition). [Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)") reports it for its annotators' quality ratings, describing it as "agreement beyond chance; higher is better" (§5.2, Tab. 3 caption); [ELT-Bench-Verified](#/papers/zanoli2026eltverified "ELT-Bench-Verified: Benchmark Quality Issues Underestimate AI Agent Capabilities (2026)") reports it for three annotators of a benchmark audit (§1).
+
+**Learn more:** [Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)") §5.2, Tab. 3 caption; [ELT-Bench-Verified](#/papers/zanoli2026eltverified "ELT-Bench-Verified: Benchmark Quality Issues Underestimate AI Agent Capabilities (2026)") §1 and §3.1.3. Neither defines its formula (general definition).
+
+**Related:** [Cohen's kappa](#/glossary/cohens-kappa)
+
+
 <a id="formal-semantics"></a>
 
 ## Formal semantics
@@ -1672,6 +1892,17 @@ A rule-based reasoning method that starts from known facts and keeps applying ev
 **Related:** [production rule (rule engine)](#/glossary/production-rule-rule-engine), [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules)
 
 
+<a id="friedman-test"></a>
+
+## Friedman test
+
+A rank-based test for comparing several treatments measured on the same blocks (subjects, tasks): within each block the treatments are ranked, and the test asks whether some treatment ranks consistently higher than the rest, without assuming normal data. [From Raw Experience to Skill Consumption](#/papers/huang2026skillconsumption "From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills (2026)") calls it "a non-parametric repeated-measures analysis of variance" in which "each task instance [is] a block and each format (or extractor) [is] a treatment", testing "the null hypothesis that all treatments produce equal performance" (App. C; also §5.2).
+
+**Learn more:** [From Raw Experience to Skill Consumption](#/papers/huang2026skillconsumption "From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills (2026)") §5.2 and App. C.
+
+**Related:** [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test), [paired comparison](#/glossary/paired-comparison), [multiple testing](#/glossary/multiple-testing)
+
+
 <a id="functional-dependency"></a>
 
 ## Functional dependency
@@ -1700,6 +1931,17 @@ Mutation-based fuzzing changes the inputs; [mutation testing](#/glossary/mutatio
 
 <a id="letter-g"></a>
 
+<a id="generalized-linear-mixed-model-glmm"></a>
+
+## Generalized linear mixed model (GLMM)
+
+A regression for outcomes that are not normal, such as right/wrong, that has two kinds of terms: fixed effects for the conditions being compared, and random effects, one per group (an instance, a seed), drawn from a normal distribution so that repeated measurements of one group are not treated as independent (general definition). [Is Code Better Than…](#/papers/tong2026codevslanguage "Is Code Better Than Language for Algorithmic Reasoning? (2026)") §3.2 fits one to per-run accuracy, with a logistic link, fixed effects for route, difficulty and their interaction, and random intercepts per instance and per seed.
+
+**Learn more:** [Is Code Better Than…](#/papers/tong2026codevslanguage "Is Code Better Than Language for Algorithmic Reasoning? (2026)") §3.2, which writes out the model's equations.
+
+**Related:** [hierarchical model](#/glossary/hierarchical-model), [clustered standard errors and cluster bootstrap](#/glossary/clustered-standard-errors-and-cluster-bootstrap), [item response theory (IRT)](#/glossary/item-response-theory-irt)
+
+
 <a id="genetic-algorithm"></a>
 
 ## Genetic algorithm
@@ -1709,6 +1951,17 @@ An [evolutionary search](#/glossary/evolutionary-search) method that keeps a pop
 **Learn more:** [Promptbreeder](#/papers/fernando2023promptbreeder "Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution (2023)") ([PDF p. 17](https://arxiv.org/pdf/2309.16797#page=17)) §3, §3.2.5, App. A (PDF p. 17) and App. J.2 (PDF p. 27), which use the term without defining it (general definition). Harvey's microbial genetic algorithm, which it cites for the tournament, is not listed here.
 
 **Related:** [evolutionary search](#/glossary/evolutionary-search), [estimation of distribution algorithm (EDA)](#/glossary/estimation-of-distribution-algorithm-eda), [island model](#/glossary/island-model)
+
+
+<a id="gf2-and-algebraic-normal-form"></a>
+
+## GF(2) and algebraic normal form
+
+GF(2) is arithmetic on the two values 0 and 1, where addition is XOR and multiplication is AND (general definition). Every Boolean function can be written as a polynomial over it, an XOR of monomials, each monomial an AND of some of the variables; this is its algebraic normal form (ANF). For example, x OR y is x ⊕ y ⊕ xy. [Tool Use Reduces Depth-Induced…](#/papers/koplow2026depthcollapse "Tool Use Reduces Depth-Induced Collapse in OOD Reasoning (2026)") builds its benchmark from Boolean functions in this form: "Every Boolean function admits a polynomial representation over this field" (§1), written "as XORs of monomials" (§3.1).
+
+**Learn more:** [Tool Use Reduces Depth-Induced…](#/papers/koplow2026depthcollapse "Tool Use Reduces Depth-Induced Collapse in OOD Reasoning (2026)") §1 and §3.1, which use them without defining GF(2) (general definition).
+
+**Related:** [Boolean minimization](#/glossary/boolean-minimization), [disjunctive normal form (DNF)](#/glossary/disjunctive-normal-form-dnf)
 
 
 <a id="gödel-machine"></a>
@@ -1739,7 +1992,7 @@ The reference fix that comes with a benchmark issue, such as one from SWE-bench:
 
 The human-written reference SQL query for a benchmark question ("gold SQL"); a system's query is scored by comparing its result with the gold query's. Gold queries can be wrong: SpotIt's authors report that when a generated query and the gold query disagreed, it was often the gold query that was incorrect ([SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") §1, PDF p. 2).
 
-**Learn more:** [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 1](https://arxiv.org/pdf/2510.26840#page=1)) §1–2 (PDF pp. 1–2). The challenge in this repo: [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification).
+**Learn more:** [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 1](https://arxiv.org/pdf/2510.26840#page=1)) §1–2 (PDF pp. 1–2). The challenge in this repo: [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification).
 
 **Related:** [execution accuracy](#/glossary/execution-accuracy), [text-to-SQL](#/glossary/text-to-sql), [gold patch](#/glossary/gold-patch)
 
@@ -1766,6 +2019,17 @@ A GPU kernel is a function that runs on a graphics processor: one launch runs th
 **Related:** [program synthesis](#/glossary/program-synthesis)
 
 
+<a id="graph-edit-distance"></a>
+
+## Graph edit distance
+
+The smallest number (or total cost) of edits, such as adding, deleting or relabelling a node or an edge, that turns one graph into another (general definition); [tree edit distance](#/glossary/tree-edit-distance) is the same idea for trees. Computing it exactly is hard for large graphs. [STRuCT-LLM](#/papers/stoisser2025structllm "STRuCT-LLM: Unifying Tabular and Graph Reasoning with Reinforcement Learning for Semantic Parsing (2025)") §3.3.2 builds a reward from it: it turns the subgraphs that a predicted and a gold Cypher query target into [property graphs](#/glossary/property-graph) and measures "the minimal set of edit operations required to transform a predicted subgraph into its gold-standard counterpart".
+
+**Learn more:** [STRuCT-LLM](#/papers/stoisser2025structllm "STRuCT-LLM: Unifying Tabular and Graph Reasoning with Reinforcement Learning for Semantic Parsing (2025)") §3.3.2.
+
+**Related:** [tree edit distance](#/glossary/tree-edit-distance), [graph isomorphism](#/glossary/graph-isomorphism), [Levenshtein distance](#/glossary/levenshtein-distance), [reward shaping](#/glossary/reward-shaping)
+
+
 <a id="graph-isomorphism"></a>
 
 ## Graph isomorphism
@@ -1775,6 +2039,17 @@ Deciding whether two graphs are the same up to renaming their nodes. It is in NP
 **Learn more:** [Optimization of real conjunctive queries](#/papers/chaudhuri1993real "Optimization of real conjunctive queries (1993)") §1 (PDF p. 2) and §5 (Thm. 5.2, PDF p. 7); [Deciding Equivalences among Conjunctive…](#/papers/cohen2007aggregate "Deciding Equivalences among Conjunctive Aggregate Queries (2007)") §5.2–5.3 (PDF pp. 21–22), which calls graph isomorphism "a task for which no polynomial time algorithm is known" (§5.2); [Optimal Implementation of Conjunctive…](#/papers/chandra1977conjunctive "Optimal Implementation of Conjunctive Queries in Relational Data Bases (1977)") Thm. 8 (PDF p. 6).
 
 **Related:** [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy), [query equivalence](#/glossary/query-equivalence), [bag semantics](#/glossary/bag-semantics)
+
+
+<a id="graph-neural-network-gnn"></a>
+
+## Graph neural network (GNN)
+
+A neural network for data shaped as a graph: each node keeps a vector, and each layer updates it from its neighbours' vectors, so after k layers a node's vector reflects its k-step neighbourhood (general definition). [Unified Multi-Dimensional Benchmark for…](#/papers/wang2026graphgym "Unified Multi-Dimensional Benchmark for Complex Graph Reasoning in Large Language Models (2026)") App. E.10 describes them as "neural architectures designed to learn representations over graph-structured data", and the paper compares LLMs with four variants (GCN, GAT, GIN and GraphSAGE) trained per task (§4.2, App. E.1).
+
+**Learn more:** [Unified Multi-Dimensional Benchmark for…](#/papers/wang2026graphgym "Unified Multi-Dimensional Benchmark for Complex Graph Reasoning in Large Language Models (2026)") App. E.10; §4.2 and App. E.1 for the variants.
+
+**Related:** [Weisfeiler-Lehman graph kernel](#/glossary/weisfeiler-lehman-graph-kernel), [graph isomorphism](#/glossary/graph-isomorphism)
 
 
 <a id="greedy-decoding-and-temperature-sampling"></a>
@@ -1788,6 +2063,17 @@ Two ways to choose an LLM's next token. Greedy decoding always takes the most li
 **Related:** [top-k and nucleus (top-p) sampling](#/glossary/top-k-and-nucleus-top-p-sampling), [beam search](#/glossary/beam-search), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting)
 
 
+<a id="grounding-and-lifted-planning"></a>
+
+## Grounding and lifted planning
+
+A planning problem written in PDDL describes actions as schemas over variables, such as move(?from, ?to). Grounding replaces the variables with every combination of the problem's objects, giving the full list of concrete actions and facts (ground fluents); most planners ground first, and that list can grow very fast with the number of objects. A lifted planner searches over the schemas directly, without grounding everything first (general definition). [Language Models as Higher-Order…](#/papers/jiang2026higherorder "Language Models as Higher-Order Planning Formalizers (2026)") §2.1 counts a problem's ground fluents, induced by its objects and relations, and names a lifted planner as one way to expand its higher-order programs (§3.1, §8).
+
+**Learn more:** [Language Models as Higher-Order…](#/papers/jiang2026higherorder "Language Models as Higher-Order Planning Formalizers (2026)") §2.1, §3.1 and §8, which use the terms without defining lifted planning (general definition).
+
+**Related:** [classical planning (STRIPS and PDDL)](#/glossary/classical-planning-strips-and-pddl), [satisficing planning](#/glossary/satisficing-planning), [first-order logic](#/glossary/first-order-logic)
+
+
 <a id="grpo"></a>
 
 ## GRPO
@@ -1797,6 +2083,17 @@ Group Relative Policy Optimization, an RL algorithm for LLMs that drops PPO's va
 **Learn more:** [DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)") ([PDF p. 11](https://arxiv.org/pdf/2402.03300#page=11)) §4.1.1–4.1.2 (PDF pp. 11, 14), which introduces it (with a learned reward model); [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)") ([PDF p. 2](https://arxiv.org/pdf/2501.12948#page=2)) §2.1–2.2 (PDF pp. 2–4), which uses it with rule-based rewards.
 
 **Related:** [PPO](#/glossary/ppo), [reinforcement learning](#/glossary/reinforcement-learning), [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr), [DAPO](#/glossary/dapo)
+
+
+<a id="gspo"></a>
+
+## GSPO
+
+Group Sequence Policy Optimization, a variant of [GRPO](#/glossary/grpo) that keeps GRPO's group-normalized advantages but computes the [importance ratio and clipping](#/glossary/importance-ratio-and-clipping) once per whole sequence instead of per token. [An Imperfect Verifier is Good Enough](#/papers/plesner2026imperfect "An Imperfect Verifier is Good Enough: Learning with Noisy Rewards (2026)") App. E: GSPO "retains group-normalized advantages but uses sequence-level importance ratios and clipping"; it uses GSPO instead of GRPO for one task "with the aim of stabilizing training" (§6.1).
+
+**Learn more:** [An Imperfect Verifier is Good Enough](#/papers/plesner2026imperfect "An Imperfect Verifier is Good Enough: Learning with Noisy Rewards (2026)") §6.1 and App. E. Its original paper (Zheng et al., 2025) is not listed here.
+
+**Related:** [GRPO](#/glossary/grpo), [DAPO](#/glossary/dapo), [PPO](#/glossary/ppo), [importance ratio and clipping](#/glossary/importance-ratio-and-clipping)
 
 
 <a id="letter-h"></a>
@@ -1821,6 +2118,17 @@ A tool that tries to prove a goal in a proof assistant automatically by handing 
 **Learn more:** [Quarry ("Planning to Hammer")](#/papers/zhang2026quarry "Planning to Hammer: Difficulty-Aware Decomposition for Automating Rocq Proofs (2026)") §2.2.
 
 **Related:** [proof assistant](#/glossary/proof-assistant), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [tactic](#/glossary/tactic), [first-order logic](#/glossary/first-order-logic)
+
+
+<a id="hidden-state"></a>
+
+## Hidden state
+
+The vector a neural network's layer computes for one input position; in a transformer, each layer turns each token's vector into a new one, and the last layer's vectors are used to predict the next token (general definition). Studies of what a model represents read these vectors, for instance with a [linear probe](#/glossary/linear-probe). [TokDrift](#/papers/li2025tokdrift "TokDrift: When LLM Speaks in Subwords but Code Speaks in Grammar (2025)") §5.2 compares a code model's hidden states before and after a meaning-preserving rewrite of the input, using the last token's state.
+
+**Learn more:** [TokDrift](#/papers/li2025tokdrift "TokDrift: When LLM Speaks in Subwords but Code Speaks in Grammar (2025)") §5.2, which uses it without defining it (general definition).
+
+**Related:** [linear probe](#/glossary/linear-probe), [KV cache](#/glossary/kv-cache), [tokenization and byte-pair encoding (BPE)](#/glossary/tokenization-and-byte-pair-encoding-bpe)
 
 
 <a id="hierarchical-model"></a>
@@ -1854,6 +2162,17 @@ Local search that starts from a candidate and keeps moving to the best neighbour
 **Learn more:** [QueryBooster](#/papers/bai2023querybooster "QueryBooster: Improving SQL Performance Using Middleware Services for Human-Centered Query Rewriting (2023)") §6.1, which cites a textbook (Russell and Norvig, not listed here).
 
 **Related:** [coordinate ascent](#/glossary/coordinate-ascent), [evolutionary search](#/glossary/evolutionary-search), [minimum description length (MDL)](#/glossary/minimum-description-length-mdl)
+
+
+<a id="hit1"></a>
+
+## Hit@1
+
+For a system that returns a ranked list of answers, the share of questions whose top-ranked answer is in the set of correct answers. [Diagnosing and Addressing Pitfalls…](#/papers/zhang2025kgqagen "Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking (2025)") App. G.3: "Hit@1 measures whether the model's top-ranked answer appears in the ground-truth set"; the authors report it beside precision, recall and F1 because Hit@1 "alone could obscure over-generation" (App. G).
+
+**Learn more:** [Diagnosing and Addressing Pitfalls…](#/papers/zhang2025kgqagen "Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking (2025)") App. G.3.
+
+**Related:** [recall@k and mean reciprocal rank (MRR)](#/glossary/recallk-and-mean-reciprocal-rank-mrr), [exact match](#/glossary/exact-match), [knowledge graph](#/glossary/knowledge-graph)
 
 
 <a id="hoare-triple"></a>
@@ -1967,6 +2286,39 @@ A data structure kept beside a table, often a B-tree or a hash table on one or m
 **Related:** [query plan and EXPLAIN](#/glossary/query-plan-and-explain), [query optimizer](#/glossary/query-optimizer), [LIKE and ILIKE](#/glossary/like-and-ilike), [cost-based optimization](#/glossary/cost-based-optimization)
 
 
+<a id="inductive-bias"></a>
+
+## Inductive bias
+
+The assumptions built into a model or learning method that make it prefer some solutions over others that fit the training data equally well; without some such preference, a learner cannot generalize beyond the examples it has seen (general definition). A model's architecture, its training data's format and its tokenizer all carry such biases. [Tokenization counts](#/papers/singh2024tokenization "Tokenization counts: the impact of tokenization on arithmetic in frontier LLMs (2024)") argues that tokenization "could be the source of useful or harmful inductive biases" for arithmetic (abstract, §1).
+
+**Learn more:** [Tokenization counts](#/papers/singh2024tokenization "Tokenization counts: the impact of tokenization on arithmetic in frontier LLMs (2024)") abstract and §1, which use it without defining it (general definition).
+
+**Related:** [no-free-lunch theorem](#/glossary/no-free-lunch-theorem), [tokenization and byte-pair encoding (BPE)](#/glossary/tokenization-and-byte-pair-encoding-bpe), [out-of-distribution generalization](#/glossary/out-of-distribution-generalization)
+
+
+<a id="inductive-logic-programming-ilp"></a>
+
+## Inductive logic programming (ILP)
+
+Learning a [logic program](#/glossary/logic-programming) from examples. Given background knowledge B, positive examples E⁺ and negative examples E⁻, ILP looks for a program H such that B together with H entails every positive example and none of the negative ones ([Reason Popper-ly](#/papers/chen2026popper "Reason Popper-ly: Patching In-Context Reasoning with Inductive Logic Programming (2026)") §2.2, Eqs. 1–2; [LLMs Gaming Verifiers](#/papers/helff2026gaming "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking (2026)") §2 calls the two conditions completeness and consistency). Example ([LLMs Gaming Verifiers](#/papers/helff2026gaming "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking (2026)") §3): from trains labelled eastbound or not, learn the rule `eastbound(T) :- has_car(T,C), car_color(C,red).`
+
+**Learn more:** [Reason Popper-ly](#/papers/chen2026popper "Reason Popper-ly: Patching In-Context Reasoning with Inductive Logic Programming (2026)") §2.2 (Eqs. 1–2; its system Popper); [LLMs Gaming Verifiers](#/papers/helff2026gaming "LLMs Gaming Verifiers: RLVR can Lead to Reward Hacking (2026)") ([PDF p. 2](https://arxiv.org/pdf/2604.15149#page=2)) §2 (PDF p. 2).
+
+**Related:** [logic programming](#/glossary/logic-programming), [answer set programming](#/glossary/answer-set-programming), [program synthesis](#/glossary/program-synthesis), [Datalog](#/glossary/datalog)
+
+
+<a id="information-dispersion"></a>
+
+## Information dispersion
+
+How spread out, across a long input, the information a task needs is. A low-dispersion task needs only a few short passages, as in [needle-in-a-haystack](#/glossary/needle-in-a-haystack-niah) tests; a high-dispersion one needs information from much of the input. [LongProc ("Long Procedural Generation")](#/papers/ye2025longproc "LongProc: Benchmarking Long-Context Language Models on Long Procedural Generation (2025)") §1 says most long-context benchmarks "only test low-dispersion scenarios, requiring LCLMs to locate and use a few relevant snippets within the long contexts", and §2 rates benchmarks by it, citing Goldman et al. (2024, not listed here) for the notion.
+
+**Learn more:** [LongProc ("Long Procedural Generation")](#/papers/ye2025longproc "LongProc: Benchmarking Long-Context Language Models on Long Procedural Generation (2025)") §1 and §2 (Tab. 1).
+
+**Related:** [needle in a haystack (NIAH)](#/glossary/needle-in-a-haystack-niah), [context rot](#/glossary/context-rot), [lost in the middle](#/glossary/lost-in-the-middle)
+
+
 <a id="integrity-constraint"></a>
 
 ## Integrity constraint
@@ -2014,6 +2366,39 @@ A family of models from educational testing that explain each test-taker's resul
 
 
 <a id="letter-j"></a>
+
+<a id="jaccard-similarity"></a>
+
+## Jaccard similarity
+
+The size of the overlap of two sets divided by the size of their union, |A ∩ B| / |A ∪ B|: 1 for equal sets, 0 for disjoint ones (also called the Jaccard index). A related score, containment, divides by one set's size instead, |A ∩ B| / |A|. [SketchOps](#/papers/song2026sketchops "Mergeable Model-Side Aggregation States for Long-Context Language Models (2026)") App. B.2 defines both and sets them to zero when the denominator's set is empty; [What Drives Recovery in…](#/papers/prokopiou2026lastcq "What Drives Recovery in Agentic Text-to-Cypher? LAST-CQ: An LLM Agent Self-Refinement Framework (2026)") applies it to two query results as sets of canonicalized rows (App. C "Set-metric definitions", PDF p. 15); [LRR (Localized Regex Repair)](#/papers/sung2025lrr "Repairing Regex Vulnerabilities via Localization-Guided Instructions (2026)") §5.2.3 estimates it between two regular expressions' languages from 100 strings sampled from each. [MinHash](#/glossary/locality-sensitive-hashing-minhash) estimates it without comparing the sets in full.
+
+**Learn more:** [SketchOps](#/papers/song2026sketchops "Mergeable Model-Side Aggregation States for Long-Context Language Models (2026)") App. B.2; [What Drives Recovery in…](#/papers/prokopiou2026lastcq "What Drives Recovery in Agentic Text-to-Cypher? LAST-CQ: An LLM Agent Self-Refinement Framework (2026)") ([PDF p. 15](https://arxiv.org/pdf/2609.12746#page=15)) App. C (PDF p. 15); [LRR (Localized Regex Repair)](#/papers/sung2025lrr "Repairing Regex Vulnerabilities via Localization-Guided Instructions (2026)") §5.2.3; [DBLifeBench](#/papers/zheng2026dblifebench "Evaluating LLMs in Database Scenarios: A Lifecycle Benchmark for Assessing Their Potential in Core Database Tasks (2026)") §2.2.2.
+
+**Related:** [locality-sensitive hashing (MinHash)](#/glossary/locality-sensitive-hashing-minhash), [F1 score](#/glossary/f1-score), [streaming sketch (HyperLogLog and Count-Min)](#/glossary/streaming-sketch-hyperloglog-and-count-min)
+
+
+<a id="jaro-winkler-similarity"></a>
+
+## Jaro-Winkler similarity
+
+A string similarity between 0 and 1 that counts the characters two strings share within a small distance of each other's position, discounts those that appear in a different order, and gives extra weight to a shared prefix; it was designed for matching short strings such as names (general definition). [Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)") uses it to compare generated graph queries with the gold ones as text, "to quantify whether the predicted query follows a similar writing style" (§6), citing Winkler (1990, not listed here).
+
+**Learn more:** [Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)") §1 and §6, which use it without defining it (general definition).
+
+**Related:** [Levenshtein distance](#/glossary/levenshtein-distance), [BLEU and ROUGE](#/glossary/bleu-and-rouge), [exact match](#/glossary/exact-match)
+
+
+<a id="jeffreys-interval"></a>
+
+## Jeffreys interval
+
+An interval for a success rate estimated from s successes in m trials: the equal-tailed Bayesian [credible interval](#/glossary/bayesian-credible-interval) from the Beta(½, ½) prior, that is, the 2.5% and 97.5% quantiles of a Beta(s + ½, m − s + ½) [distribution](#/glossary/beta-distribution) for a 95% interval (general definition). It behaves well near 0% and 100%, where the [Wald interval](#/glossary/wald-interval) fails. [Tool Use Reduces Depth-Induced…](#/papers/koplow2026depthcollapse "Tool Use Reduces Depth-Induced Collapse in OOD Reasoning (2026)") shades 95% Jeffreys intervals around its accuracy curves (§3.1, §4, §4.3) without defining them.
+
+**Learn more:** [Tool Use Reduces Depth-Induced…](#/papers/koplow2026depthcollapse "Tool Use Reduces Depth-Induced Collapse in OOD Reasoning (2026)") §3.1, §4 and §4.3, which use it without defining it (general definition).
+
+**Related:** [Bayesian credible interval](#/glossary/bayesian-credible-interval), [beta distribution](#/glossary/beta-distribution), [Wilson score interval](#/glossary/wilson-score-interval), [Clopper-Pearson interval](#/glossary/clopper-pearson-interval)
+
 
 <a id="join-algorithms-nested-loop-hash-and-merge-join"></a>
 
@@ -2085,6 +2470,17 @@ A term in RL training of an LLM that penalizes the trained model for drifting aw
 **Related:** [PPO](#/glossary/ppo), [GRPO](#/glossary/grpo), [reward hacking](#/glossary/reward-hacking)
 
 
+<a id="knowledge-graph"></a>
+
+## Knowledge graph
+
+Facts stored as a graph: nodes are entities (people, places, works) and labelled edges are relations between them. [Diagnosing and Addressing Pitfalls…](#/papers/zhang2025kgqagen "Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking (2025)") §4 writes one as a set of triples (subject, predicate, object), each "a factual statement"; [Spider4SSC & S2CLite](#/papers/vejvar2025spider4ssc "Spider4SSC \& S2CLite: A text-to-multi-query-language dataset using lightweight ontology-agnostic SPARQL to Cypher parser (2025)") §1 describes knowledge graphs as "structured data models where nodes represent unique entities and oriented edges denote their properties and interactions". The main standard model is RDF, in which "every resource, relationship or property is represented as a triple" ([Spider4SSC & S2CLite](#/papers/vejvar2025spider4ssc "Spider4SSC \& S2CLite: A text-to-multi-query-language dataset using lightweight ontology-agnostic SPARQL to Cypher parser (2025)") §1), queried with the W3C language SPARQL ([SPARQL 1.1 Query Language](#/papers/harris2013sparql "SPARQL 1.1 Query Language (2013)")); the other common model is the [property graph](#/glossary/property-graph). Knowledge graph question answering (KGQA) answers natural-language questions from a knowledge graph's facts ([Diagnosing and Addressing Pitfalls…](#/papers/zhang2025kgqagen "Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking (2025)")).
+
+**Learn more:** [Diagnosing and Addressing Pitfalls…](#/papers/zhang2025kgqagen "Diagnosing and Addressing Pitfalls in KG-RAG Datasets: Toward More Reliable Benchmarking (2025)") §4 "Notations"; [Spider4SSC & S2CLite](#/papers/vejvar2025spider4ssc "Spider4SSC \& S2CLite: A text-to-multi-query-language dataset using lightweight ontology-agnostic SPARQL to Cypher parser (2025)") §1 and §4.1 (RDF triples against property-graph objects); [SPARQL 1.1 Query Language](#/papers/harris2013sparql "SPARQL 1.1 Query Language (2013)"), the SPARQL standard.
+
+**Related:** [property graph](#/glossary/property-graph), [multi-hop question answering](#/glossary/multi-hop-question-answering), [Hit@1](#/glossary/hit1), [semantic parsing](#/glossary/semantic-parsing)
+
+
 <a id="kv-cache"></a>
 
 ## KV cache
@@ -2109,6 +2505,17 @@ In RL with verifiable rewards the labels are reference answers or a verifier's v
 **Learn more:** [Pervasive Label Errors in…](#/papers/northcutt2021labelerrors "Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks (2021)") §2 and §3, which builds on the confident-learning paper (Northcutt, Jiang and Chuang), not listed here; [Noisy Data is Destructive…](#/papers/zhu2026noisyrlvr "Noisy Data is Destructive to Reinforcement Learning with Verifiable Rewards (2026)") abstract; [Prompt Dominance and Asymmetric…](#/papers/hou2026grpo "Prompt Dominance and Asymmetric Verifier Costs: Empirical Ablations of GRPO at 1B Scale on GSM8K (2026)") §6.
 
 **Related:** [weak supervision](#/glossary/weak-supervision), [gold query](#/glossary/gold-query), [reward hacking](#/glossary/reward-hacking), [test oracle](#/glossary/test-oracle)
+
+
+<a id="lambda-calculus-and-beta-reduction"></a>
+
+## Lambda calculus and beta-reduction
+
+A minimal programming language with only three kinds of expressions: variables, functions of one argument written λx. e (nameless), and applications of one expression to another. It computes by beta-reduction, applying a function by substitution: (λx. e) a reduces to e with every free x replaced by a ([λ-RLM ("The Y-Combinator for LLMs")](#/papers/roy2026ycombinator "The Y-Combinator for LLMs: Solving Long-Context Rot with $\lambda$-Calculus (2026)") §2). Example: (λx. x) y reduces to y. Despite its size it can express any computation, with recursion supplied by a [fixed-point combinator](#/glossary/fixed-point-combinator-y-combinator).
+
+**Learn more:** [λ-RLM ("The Y-Combinator for LLMs")](#/papers/roy2026ycombinator "The Y-Combinator for LLMs: Solving Long-Context Rot with $\lambda$-Calculus (2026)") §2, "A Short Primer on λ-Calculus", with worked examples.
+
+**Related:** [fixed-point combinator (Y combinator)](#/glossary/fixed-point-combinator-y-combinator), [combinatory logic](#/glossary/combinatory-logic), [De Bruijn index](#/glossary/de-bruijn-index), [Turing-complete](#/glossary/turing-complete)
 
 
 <a id="language-integrated-query"></a>
@@ -2234,6 +2641,17 @@ The edit distance between two strings: the fewest single-character insertions, d
 **Learn more:** [Is This LLM Library…](#/papers/berlotattwell2025libraryfails "Is This LLM Library Learning? Evaluation Must Account For Compute and Behaviour (2026)") ([PDF p. 24](https://arxiv.org/pdf/2504.03048#page=24)) App. F (PDF p. 24), citing Levenshtein (1966), not listed here; [UOJ-Bench ("Beyond Problem Solving")](#/papers/xu2026uojbench "Beyond Problem Solving: UOJ-Bench for Evaluating Code Generation, Hacking, and Repair in Competitive Programming (2026)") §3.2 and App. C.5.
 
 **Related:** [tree edit distance](#/glossary/tree-edit-distance), [exact match](#/glossary/exact-match), [BLEU and ROUGE](#/glossary/bleu-and-rouge)
+
+
+<a id="lexing"></a>
+
+## Lexing
+
+The first step of parsing a program: turning its stream of characters into a sequence of tokens (keywords, names, numbers, operators) according to the language's grammar, which a parser then builds into an [abstract syntax tree](#/glossary/abstract-syntax-tree-ast) ([TokDrift](#/papers/li2025tokdrift "TokDrift: When LLM Speaks in Subwords but Code Speaks in Grammar (2025)") §2.2). It is deterministic, and in most languages formatting changes such as extra spaces don't change the tokens. An LLM's tokenizer splits code differently, by learned statistics rather than the grammar, which is the mismatch [TokDrift](#/papers/li2025tokdrift "TokDrift: When LLM Speaks in Subwords but Code Speaks in Grammar (2025)") studies (abstract; §2).
+
+**Learn more:** [TokDrift](#/papers/li2025tokdrift "TokDrift: When LLM Speaks in Subwords but Code Speaks in Grammar (2025)") §2.2.
+
+**Related:** [tokenization and byte-pair encoding (BPE)](#/glossary/tokenization-and-byte-pair-encoding-bpe), [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast), [context-free grammar](#/glossary/context-free-grammar)
 
 
 <a id="library-learning"></a>
@@ -2376,6 +2794,17 @@ Example: `SELECT name FROM Emp WHERE age > 30` has the logical plan: scan `Emp`,
 **Related:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules), [branch and path coverage](#/glossary/branch-and-path-coverage), [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin), [query plan and EXPLAIN](#/glossary/query-plan-and-explain), [query optimizer](#/glossary/query-optimizer), [transformation and implementation rules](#/glossary/transformation-and-implementation-rules)
 
 
+<a id="logit-bias"></a>
+
+## Logit bias
+
+A fixed amount added to a token's score (logit) before sampling, which makes the model choose that token more or less often; many model APIs let the caller set one per token (general definition). [PoT (Program of Thoughts prompting)](#/papers/chen2022pot "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks (2023)") §3.1 lowers the score of the `#` token "by a small bias", −2, so that zero-shot programs aren't written as comments.
+
+**Learn more:** [PoT (Program of Thoughts prompting)](#/papers/chen2022pot "Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks (2023)") §3.1, which uses it without naming the general term (general definition).
+
+**Related:** [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling), [constrained decoding](#/glossary/constrained-decoding)
+
+
 <a id="loop-invariant"></a>
 
 ## Loop invariant
@@ -2404,9 +2833,9 @@ A cheap way to fine-tune a large model: its weights stay frozen, and small added
 
 ## Lost in the middle
 
-The finding, from Liu et al. (not listed here), that LLMs use information at the start or end of a long input better than information in its middle. [S3Eval](#/papers/lei2023s3eval "S3Eval: A Synthetic, Scalable, Systematic Evaluation Suite for Large Language Models (2024)") §5.1 reports the same on its table tasks: ChatGPT and CodeLlama "achieve higher performance when the answer is located at the beginning or end of the context, compared to when it appears in the middle". LLM-AutoDiff cites the effect as one reason to send feedback only on failed examples, so that errors aren't "diluted within a large block" of correct ones ([LLM-AutoDiff (AdalFlow)](#/papers/yin2025llmautodiff "LLM-AutoDiff: Auto-Differentiate Any LLM Workflow (2025)") §3.4.1).
+The finding, from [Lost in the Middle](#/papers/liu2023lostmiddle "Lost in the Middle: How Language Models Use Long Contexts (2024)"), that LLMs use information at the start or end of a long input better than information in its middle: "performance is often highest when relevant information occurs at the beginning or end of the input context, and significantly degrades when models must access relevant information in the middle of long contexts" (abstract; §1). [S3Eval](#/papers/lei2023s3eval "S3Eval: A Synthetic, Scalable, Systematic Evaluation Suite for Large Language Models (2024)") §5.1 reports the same on its table tasks: ChatGPT and CodeLlama "achieve higher performance when the answer is located at the beginning or end of the context, compared to when it appears in the middle". LLM-AutoDiff cites the effect as one reason to send feedback only on failed examples, so that errors aren't "diluted within a large block" of correct ones ([LLM-AutoDiff (AdalFlow)](#/papers/yin2025llmautodiff "LLM-AutoDiff: Auto-Differentiate Any LLM Workflow (2025)") §3.4.1).
 
-**Learn more:** [S3Eval](#/papers/lei2023s3eval "S3Eval: A Synthetic, Scalable, Systematic Evaluation Suite for Large Language Models (2024)") §5.1; [LLM-AutoDiff (AdalFlow)](#/papers/yin2025llmautodiff "LLM-AutoDiff: Auto-Differentiate Any LLM Workflow (2025)") §3.4.1.
+**Learn more:** [Lost in the Middle](#/papers/liu2023lostmiddle "Lost in the Middle: How Language Models Use Long Contexts (2024)") abstract and §1, which reports it; [S3Eval](#/papers/lei2023s3eval "S3Eval: A Synthetic, Scalable, Systematic Evaluation Suite for Large Language Models (2024)") §5.1; [LLM-AutoDiff (AdalFlow)](#/papers/yin2025llmautodiff "LLM-AutoDiff: Auto-Differentiate Any LLM Workflow (2025)") §3.4.1.
 
 **Related:** [positional bias](#/glossary/positional-bias)
 
@@ -2423,6 +2852,17 @@ A programming language with little public code to train on, so code LLMs write i
 
 
 <a id="letter-m"></a>
+
+<a id="macro-recall-balanced-accuracy"></a>
+
+## Macro recall (balanced accuracy)
+
+The mean of the recalls on each class, each class's recall being the share of its items that are labelled correctly; with two classes it is also called balanced accuracy (general definition). Unlike plain accuracy, it doesn't let a large class hide poor results on a small one. [claimcheck](#/papers/amster2026claimcheck "claimcheck: Measuring and Improving Specification Faithfulness (2026)") reports it as the mean of the `confirmed` and `disputed` recalls (Tab. 2 caption).
+
+**Learn more:** [claimcheck](#/papers/amster2026claimcheck "claimcheck: Measuring and Improving Specification Faithfulness (2026)") §5.1, Tab. 2 caption.
+
+**Related:** [true and false positive rates](#/glossary/true-and-false-positive-rates), [F1 score](#/glossary/f1-score), [Youden's index](#/glossary/youdens-index)
+
 
 <a id="magic-sets"></a>
 
@@ -2750,6 +3190,28 @@ Deciding whether a hypothesis text follows from a premise text (entailment), con
 **Related:** [back-translation](#/glossary/back-translation), [satisfiable and valid](#/glossary/satisfiable-and-valid), [reference-free evaluation](#/glossary/reference-free-evaluation), [LLM-as-a-judge](#/glossary/llm-as-a-judge)
 
 
+<a id="needle-in-a-haystack-niah"></a>
+
+## Needle in a haystack (NIAH)
+
+A long-context test in which "a known sentence (the 'needle') is placed in a long document of unrelated text (the 'haystack'), and the model is prompted to retrieve it" ([Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") PDF p. 3). It is easy to scale, but [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") calls it "fundamentally a simple retrieval task" that mostly tests direct word matching (PDF p. 3), and [LongProc ("Long Procedural Generation")](#/papers/ye2025longproc "LongProc: Benchmarking Long-Context Language Models on Long Procedural Generation (2025)") §2 notes that its extensions still need only a few snippets of the input. Variants hide several needles ([LongProc ("Long Procedural Generation")](#/papers/ye2025longproc "LongProc: Benchmarking Long-Context Language Models on Long Procedural Generation (2025)") §2) or keep the needle fixed while the text grows ([RLM (Recursive Language Models)](#/papers/zhang2025rlm "Recursive Language Models (2025)") §3). The original test is Kamradt (2023), not listed here.
+
+**Learn more:** [Context Rot](#/papers/hong2025contextrot "Context Rot: How Increasing Input Tokens Impacts LLM Performance (2025)") (PDF pp. 3–4); [LongProc ("Long Procedural Generation")](#/papers/ye2025longproc "LongProc: Benchmarking Long-Context Language Models on Long Procedural Generation (2025)") §2; [S3Eval](#/papers/lei2023s3eval "S3Eval: A Synthetic, Scalable, Systematic Evaluation Suite for Large Language Models (2024)") §1, Fig. 1; [RLM (Recursive Language Models)](#/papers/zhang2025rlm "Recursive Language Models (2025)") §3.
+
+**Related:** [context rot](#/glossary/context-rot), [lost in the middle](#/glossary/lost-in-the-middle), [information dispersion](#/glossary/information-dispersion)
+
+
+<a id="negative-log-likelihood-nll"></a>
+
+## Negative log-likelihood (NLL)
+
+Minus the logarithm of the probability a model assigns to a given text (or the average over its tokens): lower means the model finds the text likelier (general definition). It is the usual training loss for language models, and its per-token average, exponentiated, is [perplexity](#/glossary/perplexity). [Reasoning Core](#/papers/sileo2026reasoningcore "Reasoning Core: Designing Broad Procedural Data for Completion-Supervised Reasoning Training (2026)") measures how adding a collection of auxiliary training data changes a model's NLL on evaluation sets (§4.2).
+
+**Learn more:** [Reasoning Core](#/papers/sileo2026reasoningcore "Reasoning Core: Designing Broad Procedural Data for Completion-Supervised Reasoning Training (2026)") §4.1–4.2, which use it without defining it (general definition).
+
+**Related:** [perplexity](#/glossary/perplexity), [KL divergence](#/glossary/kl-divergence), [Shannon entropy](#/glossary/shannon-entropy)
+
+
 <a id="negative-transfer"></a>
 
 ## Negative transfer
@@ -2772,13 +3234,24 @@ Systems that combine neural models, such as LLMs, which are good at producing pl
 **Related:** [System 1 and System 2](#/glossary/system-1-and-system-2), [autoformalization](#/glossary/autoformalization), [proof assistant](#/glossary/proof-assistant), [counterexample-guided inductive synthesis (CEGIS)](#/glossary/counterexample-guided-inductive-synthesis-cegis)
 
 
+<a id="no-free-lunch-theorem"></a>
+
+## No-free-lunch theorem
+
+A family of results saying that no learner is best on every problem: in [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)")'s words, "for every learner there exists a function that cannot be efficiently learned, where efficiency is defined by the number of examples required" (§1). A learner does well only on problems that fit its [inductive bias](#/glossary/inductive-bias). [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") proves such theorems for syntax-guided synthesis with counterexample-guided synthesis (§1, §3).
+
+**Learn more:** [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1 and §3, which cite Shalev-Shwartz and Ben-David (§5.1 of their textbook, not listed here).
+
+**Related:** [overfitting](#/glossary/overfitting), [inductive bias](#/glossary/inductive-bias), [syntax-guided synthesis (SyGuS)](#/glossary/syntax-guided-synthesis-sygus)
+
+
 <a id="nondeterministic-query"></a>
 
 ## Nondeterministic query
 
 A query that can legally return different results on the same database, for example top-k with ties (`ORDER BY … LIMIT k` when rows tie on every sort key, so which of the tied rows make the cut is open), or `random`. For such queries, "the two results differ" no longer proves two queries inequivalent, and each use must say which notion of equivalence it means.
 
-**Learn more:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) § Challenge (the home of this term: sources of nondeterminism and candidate definitions of equivalence); [Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)") ([PDF p. 1](https://arxiv.org/pdf/2608.15709#page=1)) §1 (PDF pp. 1–2) on "tie-sensitive top-k" and why one engine run can't show two such queries differ.
+**Learn more:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) § What's known (the home of this term: its subsections Sources of nondeterminism and Candidate definitions of equivalence); [Logos](#/papers/ke2026logos "Logos: Certified Order-Sensitive SQL Rewrites with Mechanized Semantics and LLM Guidance (2026)") ([PDF p. 1](https://arxiv.org/pdf/2608.15709#page=1)) §1 (PDF pp. 1–2) on "tie-sensitive top-k" and why one engine run can't show two such queries differ.
 
 **Related:** [list semantics](#/glossary/list-semantics), [spurious counterexample](#/glossary/spurious-counterexample), [query equivalence](#/glossary/query-equivalence)
 
@@ -3039,6 +3512,17 @@ Example: modelling aggregates such as `SUM` as [uninterpreted functions](#/gloss
 **Related:** [spurious counterexample](#/glossary/spurious-counterexample), [soundness and completeness](#/glossary/soundness-and-completeness)
 
 
+<a id="overfitting"></a>
+
+## Overfitting
+
+A learned function fitting the examples it was given but not the cases beyond them. [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1: "Overfitting occurs when a learned function explains a given set of observations but does not generalize correctly beyond it"; it shows that program synthesis overfits too: with a more expressive grammar, more wrong programs fit the examples. A benchmark can be overfit the same way, by tuning a method to its test items.
+
+**Learn more:** [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1.
+
+**Related:** [no-free-lunch theorem](#/glossary/no-free-lunch-theorem), [ensemble methods](#/glossary/ensemble-methods), [out-of-distribution generalization](#/glossary/out-of-distribution-generalization), [data contamination](#/glossary/data-contamination), [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse)
+
+
 <a id="letter-p"></a>
 
 <a id="paired-comparison"></a>
@@ -3148,6 +3632,17 @@ Example: Starburst's authors found that rule interactions make it "very difficul
 **Learn more:** [ReSequel](#/papers/fathollahzadeh2026resequel "ReSequel: Robust LLM-assisted Query Rewriting and Optimization using Templatization and Sampling (2026)") ([PDF p. 2](https://arxiv.org/pdf/2606.20853#page=2)) §2.1 (PDF p. 2), Fig. 2 (PDF p. 3) and §9 (PDF p. 12); [Starburst query rewrite](#/papers/pirahesh1992starburst "Extensible/Rule Based Query Rewrite Optimization in Starburst (1992)") §4 (PDF pp. 8–9). Nothing on this site defines the compiler term (general definition).
 
 **Related:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules), [transformation and implementation rules](#/glossary/transformation-and-implementation-rules), [cost-based optimization](#/glossary/cost-based-optimization), [Monte Carlo tree search](#/glossary/monte-carlo-tree-search-mcts)
+
+
+<a id="placebo-control"></a>
+
+## Placebo control
+
+In an experiment, a comparison arm that keeps everything about the intervention except the one ingredient under test, so that the difference between the two arms measures that ingredient alone (general definition; the term comes from drug trials, where the placebo is an inactive pill). [Auditing and Decomposing Feedback-Driven…](#/papers/liang2026testgen "Auditing and Decomposing Feedback-Driven Evolution in LLM Test Generation under the Oracle Problem (2026)") uses a "density-matched placebo" arm for this purpose (§1, §2.4, §3.3).
+
+**Learn more:** [Auditing and Decomposing Feedback-Driven…](#/papers/liang2026testgen "Auditing and Decomposing Feedback-Driven Evolution in LLM Test Generation under the Oracle Problem (2026)") §1, §2.4 and §3.3, which use it without defining the general term (general definition).
+
+**Related:** [confounder](#/glossary/confounder), [average treatment effect (ATE)](#/glossary/average-treatment-effect-ate), [compute-matched comparison](#/glossary/compute-matched-comparison)
 
 
 <a id="plausible-patch"></a>
@@ -3381,6 +3876,17 @@ How agents find their skills in the Agent Skills format: the task doesn't name t
 **Related:** [agent skill](#/glossary/agent-skill)
 
 
+<a id="prompt-caching"></a>
+
+## Prompt caching
+
+A model provider's reuse of the computation it did for an input prefix it has seen recently (the [KV cache](#/glossary/kv-cache) for those tokens), so that a later request starting with the same text is faster and cheaper (general definition). It rewards putting long, fixed material first. [Oolong](#/papers/bertsch2025oolong "Oolong: Evaluating Long Context Reasoning and Aggregation Capabilities (2026)") asks 25 questions about each long context window "to allow for prompt caching, reducing the time to evaluate local models and the cost to evaluate on most APIs" (§2.2); [ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)") argues that it makes a long, growing context cheaper to serve (§4.7, App. A.3).
+
+**Learn more:** [Oolong](#/papers/bertsch2025oolong "Oolong: Evaluating Long Context Reasoning and Aggregation Capabilities (2026)") §2.2; [ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)") §4.7 and App. A.3. Neither defines it (general definition).
+
+**Related:** [KV cache](#/glossary/kv-cache), [context compaction](#/glossary/context-compaction)
+
+
 <a id="proof-assistant"></a>
 
 ## Proof assistant
@@ -3403,6 +3909,17 @@ A propensity score is a case's estimated chance of getting a treatment given its
 **Learn more:** [Why Prompt Optimization Works,…](#/papers/gong2026whypo "Why Prompt Optimization Works, and Why It Sometimes Doesn't: A Causal-Inspired Edit-Level Analysis (2026)") §2, §4.1–4.2, which cites Rosenbaum and Rubin (1983) and Robins et al. (2000), neither on this site.
 
 **Related:** [confounder](#/glossary/confounder), [exchangeability](#/glossary/exchangeability), [average treatment effect (ATE)](#/glossary/average-treatment-effect-ate), [conditional average treatment effect (CATE)](#/glossary/conditional-average-treatment-effect-cate)
+
+
+<a id="property-graph"></a>
+
+## Property graph
+
+A graph data model in which nodes and edges each carry labels (their kind) and key–value properties. [Graphiti](#/papers/he2025graphiti "Graphiti: Bridging Graph and Relational Database Queries (2025)") §3.1: nodes model entities, edges model relationships, and each stores "pairs of property keys and values" and a label; [Same Pattern](#/papers/mandarapu2026divergence "Same Pattern, Different Answer: A Reference Semantics and Divergence Map for GQL and SQL/PGQ Path Patterns (2026)") §2 gives the formal version: node and edge identifiers, a map sending each edge to an ordered (directed) or unordered pair of nodes, a set of labels per element and a partial map from element and property name to value, with parallel edges and self-loops allowed. Unlike RDF, where every fact is a triple, a property graph stores properties on the nodes and edges themselves ([Spider4SSC & S2CLite](#/papers/vejvar2025spider4ssc "Spider4SSC \& S2CLite: A text-to-multi-query-language dataset using lightweight ontology-agnostic SPARQL to Cypher parser (2025)") §1; see [knowledge graph](#/glossary/knowledge-graph)). Cypher is its most widely used query language, and GQL and SQL/PGQ are newer ISO standards ([Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)") §1, §3); their queries match patterns such as variable-length paths, e.g. `(a)-[*1..3]->(b)` for paths of one to three edges ([Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)") App. B.4).
+
+**Learn more:** [Graphiti](#/papers/he2025graphiti "Graphiti: Bridging Graph and Relational Database Queries (2025)") §3.1 (Defs. 3.1–3.3); [Same Pattern](#/papers/mandarapu2026divergence "Same Pattern, Different Answer: A Reference Semantics and Divergence Map for GQL and SQL/PGQ Path Patterns (2026)") §2; [Spider4SSC & S2CLite](#/papers/vejvar2025spider4ssc "Spider4SSC \& S2CLite: A text-to-multi-query-language dataset using lightweight ontology-agnostic SPARQL to Cypher parser (2025)") §1 and §4.1; [Text2GraphQuery-Bench](#/papers/lyu2026text2graphquery "Text2GraphQuery-Bench: A Text to Graph Query Benchmark (2026)") §1 and §3.
+
+**Related:** [knowledge graph](#/glossary/knowledge-graph), [graph edit distance](#/glossary/graph-edit-distance), [schema mapping](#/glossary/schema-mapping), [query equivalence](#/glossary/query-equivalence)
 
 
 <a id="property-based-testing"></a>
@@ -3488,6 +4005,17 @@ Sense difference: some papers use "hint" for text given to an LLM, not to the op
 **Learn more:** [QUITE](#/papers/song2025quite "QUITE: A Query Rewrite System Beyond Rules with LLM Agents (2025)") ([PDF p. 3](https://arxiv.org/pdf/2506.07675#page=3)) §2.2 (PDF p. 3) and §6.1 (PDF p. 8).
 
 **Related:** [query plan and EXPLAIN](#/glossary/query-plan-and-explain), [cost-based optimization](#/glossary/cost-based-optimization), [common table expression](#/glossary/common-table-expression-cte)
+
+
+<a id="query-learning-membership-and-equivalence-queries"></a>
+
+## Query learning (membership and equivalence queries)
+
+A learning setting in which the learner asks a teacher questions instead of only receiving examples. A membership query asks whether one input is in the target (or what the target outputs on it); an equivalence query proposes a whole hypothesis, which the teacher accepts or answers with a counterexample, an input on which the two differ ([Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") App. A). Angluin's L* algorithm learns regular languages from such queries ([Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") §2). [Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") notes that "finitely many membership labels are generally insufficient to identify the full target language" (App. A); [CodeARC](#/papers/wei2025codearc "CodeARC: Benchmarking Reasoning Capabilities of LLM Agents for Inductive Program Synthesis (2025)") says its program-synthesis setup "parallels the classic learnability framework of queries and counterexamples" (§1). Angluin (1987) is not listed here.
+
+**Learn more:** [Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") §2 and App. A; [CodeARC](#/papers/wei2025codearc "CodeARC: Benchmarking Reasoning Capabilities of LLM Agents for Inductive Program Synthesis (2025)") §1 and §3.1.
+
+**Related:** [counterexample-guided inductive synthesis (CEGIS)](#/glossary/counterexample-guided-inductive-synthesis-cegis), [active learning](#/glossary/active-learning), [DFA minimization and equivalence](#/glossary/dfa-minimization-and-equivalence), [symmetric difference](#/glossary/symmetric-difference)
 
 
 <a id="query-optimizer"></a>
@@ -3588,6 +4116,17 @@ Merging several ranked lists into one by giving each item, in each list, the sco
 **Related:** [recall@k and mean reciprocal rank (MRR)](#/glossary/recallk-and-mean-reciprocal-rank-mrr), [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag)
 
 
+<a id="redos-and-catastrophic-backtracking"></a>
+
+## ReDoS and catastrophic backtracking
+
+ReDoS (regular expression denial of service) is an attack in which "a malicious user submits a crafted string that forces the regex engine into a prolonged, resource-intensive matching process, leading to resource exhaustion and service failure" ([LRR (Localized Regex Repair)](#/papers/sung2025lrr "Repairing Regex Vulnerabilities via Localization-Guided Instructions (2026)") §1). Its cause is catastrophic backtracking: most regex engines match by trying one way of matching after another, and for some regexes, such as `(a+)+$` on a long run of a's followed by a b, the number of ways grows exponentially (general definition for the mechanism). [Why Aren't Regular Expressions…](#/papers/davis2021lingua "Why Aren't Regular Expressions a Lingua Franca? An Empirical Study on the Re-use and Portability of Regular Expressions (2019)") §2.2 calls such a "super-linear (SL) match" one that "may require polynomial or exponential time in the worst case", and finds that "some regex engines fall prey to super-linear behavior and others avoid it" (§7.2.3).
+
+**Learn more:** [LRR (Localized Regex Repair)](#/papers/sung2025lrr "Repairing Regex Vulnerabilities via Localization-Guided Instructions (2026)") §1 and §3; [Why Aren't Regular Expressions…](#/papers/davis2021lingua "Why Aren't Regular Expressions a Lingua Franca? An Empirical Study on the Re-use and Portability of Regular Expressions (2019)") §2.2 and §7.2.3.
+
+**Related:** [regular expression and regular language](#/glossary/regular-expression-and-regular-language), [fuzzing](#/glossary/fuzzing)
+
+
 <a id="reference-free-evaluation"></a>
 
 ## Reference-free evaluation
@@ -3643,6 +4182,17 @@ Items picked because they scored unusually high (or low) on one noisy measuremen
 **Learn more:** [The Optimizer's Curse](#/papers/smith2006optimizerscurse "The Optimizer's Curse: Skepticism and Postdecision Surprise in Decision Analysis (2006)") §4 (PDF p. 10); [What Stops a Small…](#/papers/bozoglan2026slmdbagent "What Stops a Small Language Model From Driving a Database Agent (2026)") §8.6.
 
 **Related:** [winner's curse (optimizer's curse)](#/glossary/winners-curse-optimizers-curse), [shrinkage](#/glossary/shrinkage), [hierarchical model](#/glossary/hierarchical-model)
+
+
+<a id="regular-expression-and-regular-language"></a>
+
+## Regular expression and regular language
+
+A regular expression (regex) is a pattern that describes a set of strings. In the classical sense of automata theory it is built from single characters with concatenation, union (either-or) and the Kleene star (zero or more repetitions), and the strings it matches form a regular language, exactly the languages a [finite automaton](#/glossary/finite-state-machine) recognizes ([Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") §3). [Query4Regex](#/papers/hahn2026query4regex "Query4Regex: Verifiable Regex Transformation through Formal Operations from NL and DSL Queries (2026)") adds intersection, complement and bounded repetition, which keep its task "within regular languages", so that answers can be checked exactly (§1, PDF p. 2). Practical regex engines differ: "Most programming languages support regexes", but "PCRE … and POSIX Regular Expressions … have influenced but not standardized the various regex dialects" ([Why Aren't Regular Expressions…](#/papers/davis2021lingua "Why Aren't Regular Expressions a Lingua Franca? An Empirical Study on the Re-use and Portability of Regular Expressions (2019)") §2.1), and features such as backreferences and lookarounds go beyond regular languages ([Query4Regex](#/papers/hahn2026query4regex "Query4Regex: Verifiable Regex Transformation through Formal Operations from NL and DSL Queries (2026)") §1). Engines also differ in what counts as a match: under full-match semantics the regex must match the whole input, under partial-match semantics any part of it (general definition; [Why Aren't Regular Expressions…](#/papers/davis2021lingua "Why Aren't Regular Expressions a Lingua Franca? An Empirical Study on the Re-use and Portability of Regular Expressions (2019)") §7.1.1 tests with the latter).
+
+**Learn more:** [Why Aren't Regular Expressions…](#/papers/davis2021lingua "Why Aren't Regular Expressions a Lingua Franca? An Empirical Study on the Re-use and Portability of Regular Expressions (2019)") §2.1; [Query4Regex](#/papers/hahn2026query4regex "Query4Regex: Verifiable Regex Transformation through Formal Operations from NL and DSL Queries (2026)") §1 (PDF p. 2); [Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") §3 and App. C (Tab. 5); [Word Problems Requiring Exponential Time](#/papers/stockmeyer1973word "Word Problems Requiring Exponential Time (Preliminary Report) (1973)"), on how hard it is to decide whether two regular expressions are equivalent (introduction).
+
+**Related:** [finite-state machine](#/glossary/finite-state-machine), [DFA minimization and equivalence](#/glossary/dfa-minimization-and-equivalence), [ReDoS and catastrophic backtracking](#/glossary/redos-and-catastrophic-backtracking), [LIKE and ILIKE](#/glossary/like-and-ilike), [context-free grammar](#/glossary/context-free-grammar)
 
 
 <a id="reinforcement-learning"></a>
@@ -3702,6 +4252,17 @@ A declarative query language in which a query describes its result with a formul
 **Learn more:** [A Formal Semantics of SQL Queries](#/papers/guagliardo2017semantics "A formal semantics of SQL queries, its validation, and applications (2017)") §5 (PDF p. 7); [HoTTSQL](#/papers/chu2016hottsql "HoTTSQL: proving query rewrites with univalent SQL semantics (2017)") §6.1. Codd's papers are not listed here.
 
 **Related:** [relational algebra](#/glossary/relational-algebra), [first-order logic](#/glossary/first-order-logic), [expressive power](#/glossary/expressive-power), [language-integrated query](#/glossary/language-integrated-query)
+
+
+<a id="repl-read-eval-print-loop"></a>
+
+## REPL (read-eval-print loop)
+
+An interactive programming session: it reads a piece of code, runs it, prints the result and waits for the next piece, keeping variables and other state between pieces (general definition), as Python's interactive shell does. [RLM (Recursive Language Models)](#/papers/zhang2025rlm "Recursive Language Models (2025)") §1 initializes a "Read-Eval-Print Loop (REPL) programming environment" in which a long prompt is stored "as the value of a variable" that the model inspects with code; [λ-RLM ("The Y-Combinator for LLMs")](#/papers/roy2026ycombinator "The Y-Combinator for LLMs: Solving Long-Context Rot with $\lambda$-Calculus (2026)") replaces that open-ended loop with a fixed library of combinators (abstract, §1).
+
+**Learn more:** [RLM (Recursive Language Models)](#/papers/zhang2025rlm "Recursive Language Models (2025)") §1–2; [λ-RLM ("The Y-Combinator for LLMs")](#/papers/roy2026ycombinator "The Y-Combinator for LLMs: Solving Long-Context Rot with $\lambda$-Calculus (2026)") abstract and §1. Neither defines it (general definition).
+
+**Related:** [program-of-thought and tool-integrated reasoning](#/glossary/program-of-thought-and-tool-integrated-reasoning), [agent harness](#/glossary/agent-harness), [ReAct](#/glossary/react)
 
 
 <a id="reranking"></a>
@@ -3890,6 +4451,17 @@ Example: `x > 3 ∧ x < 5` is satisfiable (x = 4); `x > 3 ∧ x < 2` is unsatisf
 **Related:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [unsat core](#/glossary/unsat-core), [first-order logic](#/glossary/first-order-logic)
 
 
+<a id="satisficing-planning"></a>
+
+## Satisficing planning
+
+Planning that accepts any valid plan, not necessarily a shortest or cheapest one; an optimal planner must also prove that no better plan exists, which is usually much slower (general definition). [On the Generalization Gap in LLM Planning](#/papers/belcamino2026generalizationgap "On the Generalization Gap in LLM Planning: Tests and Verifier-Reward RL (2026)") takes its reference plans from "the satisficing planner Probe" (§3) and compares models' plans with them (§4.2), so a reference plan need not be the shortest.
+
+**Learn more:** [On the Generalization Gap in LLM Planning](#/papers/belcamino2026generalizationgap "On the Generalization Gap in LLM Planning: Tests and Verifier-Reward RL (2026)") §3 and §4.2, which use it without defining it (general definition).
+
+**Related:** [classical planning (STRIPS and PDDL)](#/glossary/classical-planning-strips-and-pddl), [grounding and lifted planning](#/glossary/grounding-and-lifted-planning), [best-first search](#/glossary/best-first-search)
+
+
 <a id="scalable-oversight"></a>
 
 ## Scalable oversight
@@ -3932,6 +4504,28 @@ In [text-to-SQL](#/glossary/text-to-sql), working out which tables, columns and 
 **Learn more:** [BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)") §6.6, which reports that ChatGPT "erroneously associates" questions with inappropriate columns and tables and that schema linking "continues to be a significant obstacle for models". The papers that introduced the term are not listed here.
 
 **Related:** [text-to-SQL](#/glossary/text-to-sql), [execution accuracy](#/glossary/execution-accuracy)
+
+
+<a id="schema-mapping"></a>
+
+## Schema mapping
+
+A declarative statement of how data in one database schema correspond to data in another, usually as rules from patterns over the source to facts over the target, which can be used to translate a database from one schema to the other (general definition). [Graphiti](#/papers/he2025graphiti "Graphiti: Bridging Graph and Relational Database Queries (2025)") adapts the idea to translate a graph database into an equivalent relational one, and says its rule language "generalizes the standard concept of schema mapping" (§4.1; also §1–2), citing the Clio papers (not listed here).
+
+**Learn more:** [Graphiti](#/papers/he2025graphiti "Graphiti: Bridging Graph and Relational Database Queries (2025)") §1, §2 and §4.1, which use it without defining it (general definition).
+
+**Related:** [property graph](#/glossary/property-graph), [chase](#/glossary/chase), [integrity constraint](#/glossary/integrity-constraint), [query equivalence](#/glossary/query-equivalence)
+
+
+<a id="search-annotation"></a>
+
+## Search annotation
+
+An instruction in a constraint model that tells the solver how to search: which variable to decide next and which of its values to try first (general definition). It changes how fast a solver finds a solution, not which solutions exist. [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §3.1 names "explicit search annotations (e.g. `int_search` in MiniZinc, `AddDecisionStrategy` in CP-SAT)" among the efficiency techniques its prompt suggests, and App. B.4–B.5 reports how often LLM-written solvers added them and how their correctness changed.
+
+**Learn more:** [Formalize, Don't Optimize](#/papers/wang2026heuristictrap "Formalize, Don't Optimize: The Heuristic Trap in LLM-Generated Combinatorial Solvers (2026)") §3.1 and App. B.4–B.5, which use it without defining it (general definition).
+
+**Related:** [constraint propagation](#/glossary/constraint-propagation), [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem), [query hint](#/glossary/query-hint)
 
 
 <a id="select-project-join-spj-query"></a>
@@ -4122,6 +4716,17 @@ The average surprise of a random outcome: H = −Σ p(x) log p(x), the expected 
 **Related:** [self-information](#/glossary/self-information), [KL divergence](#/glossary/kl-divergence), [mutual information](#/glossary/mutual-information), [policy entropy](#/glossary/policy-entropy), [minimum description length (MDL)](#/glossary/minimum-description-length-mdl)
 
 
+<a id="shap"></a>
+
+## SHAP
+
+A way to explain one prediction of a model by giving each input feature a share of it, based on Shapley values from game theory: a feature's share is its average contribution to the prediction over all orders in which features could be added (general definition). The shares add up to the difference between the prediction and the average prediction. [The Communication Bottleneck](#/papers/suau2026bottleneck "The Communication Bottleneck: A Round-Trip Study of Tree-Structured Expression Serialization in Language Models (2026)") trains a classifier on its results, asks "What predicts failure?", and reports each feature's mean absolute SHAP value as a share of the total (§3.3, App. G), citing Lundberg and Lee (2017, not listed here).
+
+**Learn more:** [The Communication Bottleneck](#/papers/suau2026bottleneck "The Communication Bottleneck: A Round-Trip Study of Tree-Structured Expression Serialization in Language Models (2026)") §3.3 and App. G, which use it without defining Shapley values (general definition).
+
+**Related:** [linear probe](#/glossary/linear-probe), [identifiability](#/glossary/identifiability)
+
+
 <a id="shrinkage"></a>
 
 ## Shrinkage
@@ -4299,6 +4904,17 @@ Example: the SQLProcBench procedures that RISE translates "exhibit complex contr
 **Related:** [SQL dialect](#/glossary/sql-dialect), [test oracle](#/glossary/test-oracle)
 
 
+<a id="streaming-sketch-hyperloglog-and-count-min"></a>
+
+## Streaming sketch (HyperLogLog and Count-Min)
+
+A fixed-size summary of a stream of items from which certain questions can be answered approximately, however long the stream (general definition). HyperLogLog (HLL) estimates the number of distinct items: it keeps m registers, uses some bits of each item's hash to pick a register and the rest to compute a rank (one plus their number of leading zeros), and each register keeps the largest rank it has seen; two sketches merge by taking the larger value in each register, and the estimate's relative error is about 1.04/√m ([SketchOps](#/papers/song2026sketchops "Mergeable Model-Side Aggregation States for Long-Context Language Models (2026)") §2.3, §5.4, App. C.1). Count-Min estimates how often an item occurs: it keeps rows of counters with one hash per row, adds one to a counter in each row per occurrence, and reads an item's frequency as the smallest of its counters (App. D). [SketchOps](#/papers/song2026sketchops "Mergeable Model-Side Aggregation States for Long-Context Language Models (2026)") calls distinct counting "cardinality estimation" (§2.3), which is not the optimizer's [cardinality estimation](#/glossary/cardinality-estimation) of result sizes.
+
+**Learn more:** [SketchOps](#/papers/song2026sketchops "Mergeable Model-Side Aggregation States for Long-Context Language Models (2026)") §2.3, §4.1, §5.4, App. C (HLL) and App. D (Count-Min). The original papers (Flajolet et al., 2007; Cormode and Muthukrishnan, 2004) are not listed here.
+
+**Related:** [locality-sensitive hashing (MinHash)](#/glossary/locality-sensitive-hashing-minhash), [Jaccard similarity](#/glossary/jaccard-similarity), [idempotent operation](#/glossary/idempotent-operation), [cardinality estimation](#/glossary/cardinality-estimation)
+
+
 <a id="strongest-postcondition"></a>
 
 ## Strongest postcondition
@@ -4345,6 +4961,17 @@ A complete `SELECT` query used inside another query: in `WHERE` or `HAVING` (wit
 **Related:** [correlated subquery](#/glossary/correlated-subquery), [scalar subquery](#/glossary/scalar-subquery), [LATERAL](#/glossary/lateral), [common table expression (CTE)](#/glossary/common-table-expression-cte), [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin)
 
 
+<a id="symbolic-equivalence"></a>
+
+## Symbolic equivalence
+
+Two algebraic expressions being equal for every value of their variables, such as (x + 1)² and x² + 2x + 1 (general definition). A computer algebra system can check it by simplifying the difference of the two to zero, though a simplifier that fails to reach zero doesn't prove they differ. [The Communication Bottleneck](#/papers/suau2026bottleneck "The Communication Bottleneck: A Round-Trip Study of Tree-Structured Expression Serialization in Language Models (2026)") uses it as an exact check of a recovered expression: "sympy.simplify" of the difference equals 0 (§2.2).
+
+**Learn more:** [The Communication Bottleneck](#/papers/suau2026bottleneck "The Communication Bottleneck: A Round-Trip Study of Tree-Structured Expression Serialization in Language Models (2026)") §2.2, which uses it without defining it (general definition).
+
+**Related:** [program equivalence](#/glossary/program-equivalence), [query equivalence](#/glossary/query-equivalence), [decidable and undecidable](#/glossary/decidable-and-undecidable)
+
+
 <a id="symbolic-execution"></a>
 
 ## Symbolic execution
@@ -4354,6 +4981,17 @@ Running a program or query on unknowns instead of concrete values, so that the r
 **Learn more:** [VeriEQL](#/papers/he2024verieql "VeriEQL: Bounded Equivalence Verification for Complex SQL Queries with Integrity Constraints (2024)") ([PDF p. 3](https://arxiv.org/pdf/2403.03193#page=3)) §1 and Fig. 1 (PDF p. 3), whose symbolic database stands for every database up to a size bound; [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 3](https://arxiv.org/pdf/2510.26840#page=3)) §2 (PDF p. 3), which describes VeriEQL's encoding of "the symbolic execution of the two SQL queries", and §4.1 (PDF p. 5), which states as a theorem that SpotIt's symbolic execution matches concrete execution.
 
 **Related:** [bounded verification](#/glossary/bounded-verification), [SAT and SMT solvers](#/glossary/sat-and-smt-solvers), [counterexample database](#/glossary/counterexample-database), [concolic testing](#/glossary/concolic-testing)
+
+
+<a id="symmetric-difference"></a>
+
+## Symmetric difference
+
+The elements in exactly one of two sets: A △ B = (A − B) ∪ (B − A). For two languages, it is the strings that one accepts and the other doesn't, so two languages are equal exactly when it is empty. In [Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") an equivalence oracle answers a wrong hypothesis with counterexamples drawn from the symmetric difference of the hypothesis's language and the target's (§3, App. A).
+
+**Learn more:** [Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") §3 and App. A.
+
+**Related:** [query learning (membership and equivalence queries)](#/glossary/query-learning-membership-and-equivalence-queries), [DFA minimization and equivalence](#/glossary/dfa-minimization-and-equivalence), [Jaccard similarity](#/glossary/jaccard-similarity)
 
 
 <a id="symmetry-breaking"></a>
@@ -4374,6 +5012,17 @@ In constraint solving, ruling out candidate solutions that are only rearrangemen
 Defining a translation from one language into another along the source language's grammar: each grammar rule gets a translation rule that builds the translation of a construct from the translations of its parts. [Formal semantics of SQL queries](#/papers/negri1991semantics "Formal semantics of SQL queries (1991)") gives SQL a formal meaning this way: each translation rule "defines that the translation TR⟨X⟩ of the nonterminal ⟨X⟩ on the LHS of the syntax rule is the concatenation of the translations TR⟨Y₁⟩ … TR⟨Yₙ⟩ with some additional E3VPC symbols interleaved", where E3VPC is the authors' extended three-valued predicate calculus (§3).
 
 **Related:** [formal semantics](#/glossary/formal-semantics), [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form), [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast), [NULL and three-valued logic](#/glossary/null-and-three-valued-logic)
+
+
+<a id="syntax-guided-synthesis-sygus"></a>
+
+## Syntax-guided synthesis (SyGuS)
+
+A form of [program synthesis](#/glossary/program-synthesis) in which the problem gives "a logical specification for the desired functionality" and "a grammar of allowed implementations" ([Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1), over a background theory (such as integer arithmetic) that fixes the meaning of the grammar's symbols; a solution is an expression from the grammar that makes the specification valid for every input (Def. 1, §3.1). SyGuS solvers often use [counterexample-guided synthesis](#/glossary/counterexample-guided-inductive-synthesis-cegis), and a richer grammar can make them [overfit](#/glossary/overfitting) the examples ([Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1).
+
+**Learn more:** [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)") §1 and §3.1 (Def. 1), which takes the definition from Alur et al. (2013, not listed here).
+
+**Related:** [program synthesis](#/glossary/program-synthesis), [counterexample-guided inductive synthesis (CEGIS)](#/glossary/counterexample-guided-inductive-synthesis-cegis), [enumerative synthesis](#/glossary/enumerative-synthesis), [formal specification](#/glossary/formal-specification)
 
 
 <a id="system-1-and-system-2"></a>
@@ -4500,7 +5149,7 @@ Example: PSV runs its self-play loop in two settings. In "transfer learning" it 
 
 Translating a natural-language question about a database into an SQL query whose result answers the question ([SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") §2). Systems are scored by comparing their query's result with that of a human-written [gold query](#/glossary/gold-query).
 
-**Learn more:** [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 2](https://arxiv.org/pdf/2510.26840#page=2)) §2 (PDF p. 2); [BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)") §1. The challenge in this repo: [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification).
+**Learn more:** [SpotIt](#/papers/klopfenstein2025spotit "SpotIt: Evaluating Text-to-SQL Evaluation with Formal Verification (2026)") ([PDF p. 2](https://arxiv.org/pdf/2510.26840#page=2)) §2 (PDF p. 2); [BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)") §1. The challenge in this repo: [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification).
 
 **Related:** [execution accuracy](#/glossary/execution-accuracy), [gold query](#/glossary/gold-query), [SQL dialect](#/glossary/sql-dialect)
 
@@ -4525,6 +5174,17 @@ A classic way to score how well a document matches a query by the words they sha
 **Learn more:** [Rango](#/papers/thompson2024rango "Rango: Adaptive Retrieval-Augmented Proving for Automated Software Verification (2025)") ([PDF p. 3](https://arxiv.org/pdf/2412.14063#page=3)) §III-B (PDF p. 3), citing Spärck Jones 1972 (not listed here), and §V-D (PDF p. 8), which compares it with BM25 and dense retrieval for retrieving proofs; neither defines it (general definition).
 
 **Related:** [BM25](#/glossary/bm25), [dense retrieval](#/glossary/dense-retrieval), [premise selection](#/glossary/premise-selection)
+
+
+<a id="tokenization-and-byte-pair-encoding-bpe"></a>
+
+## Tokenization and byte-pair encoding (BPE)
+
+Tokenization is "the segmenting of an input sequence of bytes into discrete tokens", with a vocabulary of tokens learned beforehand from a corpus ([Tokenization counts](#/papers/singh2024tokenization "Tokenization counts: the impact of tokenization on arithmetic in frontier LLMs (2024)") §1); each token is one step of the model. Byte-pair encoding is the most common way to learn the vocabulary: start from single characters (in practice bytes), repeatedly add the most frequent adjacent pair as a new token until a set vocabulary size is reached, and cut new text by applying the merges in the learned order ([Tokenization counts](#/papers/singh2024tokenization "Tokenization counts: the impact of tokenization on arithmetic in frontier LLMs (2024)") §1). WordPiece follows the same principle with a different merge rule, and a pre-tokenization step, such as splitting at whitespace, usually stops tokens from spanning word boundaries ([TokDrift](#/papers/li2025tokdrift "TokDrift: When LLM Speaks in Subwords but Code Speaks in Grammar (2025)") §2.1). Because the vocabulary comes from statistics, not grammar, similar strings can be cut very differently: [Tokenization counts](#/papers/singh2024tokenization "Tokenization counts: the impact of tokenization on arithmetic in frontier LLMs (2024)") §1, Fig. 2, shows that only some 3-digit numbers get a token of their own in GPT-3's tokenizer.
+
+**Learn more:** [Tokenization counts](#/papers/singh2024tokenization "Tokenization counts: the impact of tokenization on arithmetic in frontier LLMs (2024)") §1; [TokDrift](#/papers/li2025tokdrift "TokDrift: When LLM Speaks in Subwords but Code Speaks in Grammar (2025)") §2.1.
+
+**Related:** [lexing](#/glossary/lexing), [inductive bias](#/glossary/inductive-bias), [hidden state](#/glossary/hidden-state)
 
 
 <a id="tool-calling-function-calling"></a>
@@ -4628,6 +5288,17 @@ The components that must be correct for a system's guarantee to hold; a bug anyw
 **Learn more:** [Faults in Our Formal Benchmarking](#/papers/ammanamanchi2026leandefects "Faults in Our Formal Benchmarking: Dataset Defects and Evaluation Failures in Lean Theorem Proving (2026)") §3.2 (general definition).
 
 **Related:** [proof assistant](#/glossary/proof-assistant), [certificate](#/glossary/certificate), [soundness and completeness](#/glossary/soundness-and-completeness), [extraction (proof assistants)](#/glossary/extraction-proof-assistants)
+
+
+<a id="turing-complete"></a>
+
+## Turing-complete
+
+Able to express any computation that a general-purpose programming language can, given enough memory and time (general definition). Most programming languages are, and so are very small systems such as the [lambda calculus](#/glossary/lambda-calculus-and-beta-reduction). [EsoLang-Bench](#/papers/sharma2026esolang "EsoLang-Bench: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages (2026)") relies on it so that "the same algorithmic problems that are solvable in Python or JavaScript are in principle solvable" in each of its five esoteric languages (abstract, §1); [ADAS](#/papers/hu2024adas "Automated Design of Agentic Systems (2024)") rests its claim that searching over code can find "any possible agentic systems" on Python being Turing complete (§1).
+
+**Learn more:** [EsoLang-Bench](#/papers/sharma2026esolang "EsoLang-Bench: Evaluating Genuine Reasoning in Large Language Models via Esoteric Programming Languages (2026)") abstract, §1 and §3.2; [ADAS](#/papers/hu2024adas "Automated Design of Agentic Systems (2024)") §1. Neither defines it (general definition).
+
+**Related:** [halting problem and Rice's theorem](#/glossary/halting-problem-and-rices-theorem), [decidable and undecidable](#/glossary/decidable-and-undecidable), [esoteric programming language (esolang)](#/glossary/esoteric-programming-language-esolang), [expressive power](#/glossary/expressive-power)
 
 
 <a id="letter-u"></a>
@@ -4803,6 +5474,17 @@ Combining models that share a starting point, such as a base model and a copy fi
 **Learn more:** [Goedel-Prover-V2](#/papers/lin2025goedelproverv2 "Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction (2025)") §2.3, which calls it "model averaging", doesn't define it (general definition), and cites Wortsman et al. (not listed here).
 
 **Related:** [pass@k](#/glossary/passk), [catastrophic forgetting](#/glossary/catastrophic-forgetting)
+
+
+<a id="weisfeiler-lehman-graph-kernel"></a>
+
+## Weisfeiler-Lehman graph kernel
+
+A similarity score between graphs that repeatedly relabels each node with a compressed label combining its own label and its neighbours' labels, then compares how many labels of each kind the two graphs have after a few rounds (general definition; the subtree kernel is the common version). It is fast, and graphs it scores as different can't be isomorphic, but some different graphs score the same. [Can Large Language Models…](#/papers/lin2026procedures "Can Large Language Models Generalize Procedures Across Representations? (2026)") uses it with 3 iterations to compare the structure of procedures written as graphs (§5.1).
+
+**Learn more:** [Can Large Language Models…](#/papers/lin2026procedures "Can Large Language Models Generalize Procedures Across Representations? (2026)") §5.1, which uses it without defining it (general definition); Shervashidze et al. (2011) is not listed here.
+
+**Related:** [graph isomorphism](#/glossary/graph-isomorphism), [graph neural network (GNN)](#/glossary/graph-neural-network-gnn), [graph edit distance](#/glossary/graph-edit-distance)
 
 
 <a id="wilcoxon-signed-rank-test"></a>

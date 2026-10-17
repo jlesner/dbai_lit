@@ -9,7 +9,7 @@ Pure theory, no released tool.
 ## Challenges
 
 - **[Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence)**: What does "equivalent" mean when a query can legitimately return different results on the same database, run to run, and how do we check it without false counterexamples or false agreement?
-- **[Canonical forms for queries](#/challenges/query_canonical_forms)**: An open problem: normal forms for useful SQL fragments, so that comparing two queries' forms decides (or nearly decides) equivalence. Sound when the forms match; silent when they don't.
+- **[Canonical forms for queries](#/challenges/query_canonical_forms)**: Normal forms for useful SQL fragments, so that comparing two queries' forms decides (or nearly decides) equivalence. Sound when the forms match; silent when they don't.
 - **[Query equivalence: prove or refute](#/challenges/query_equivalence)**: Decide whether two SQL queries return the same result on every database, and back the answer with a certificate.
 
 ## Papers

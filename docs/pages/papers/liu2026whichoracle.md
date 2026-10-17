@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.25938) · [arXiv](https://arxiv.org/abs/2609.25938)  
 Code: [text-to-sql-oracle-certificates](https://github.com/yahiko-l/text-to-sql-oracle-certificates)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

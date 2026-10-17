@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2604.15149) · [arXiv](https://arxiv.org/abs/2604.15149)  
 Code: [llms-gaming-verifiers](https://github.com/ml-research/llms-gaming-verifiers)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -19,7 +19,7 @@ Models rewarded by an imperfect checker can learn to exploit it rather than solv
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [reward hacking](#/glossary/reward-hacking)
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [reward hacking](#/glossary/reward-hacking) · [inductive logic programming (ILP)](#/glossary/inductive-logic-programming-ilp) (completeness and consistency, §2; the eastbound rule, §3)
 
 **The paper's own terms:**
 - **reward shortcut**: a hypothesis that is complete and consistent (see ILP below) on the original task but not on its renamed copy (§3 "Quantifying Reward Shortcuts").
@@ -29,8 +29,7 @@ Models rewarded by an imperfect checker can learn to exploit it rather than solv
 - **shortcut count**: tasks, of 250 per tier, that pass extensional and fail isomorphic verification; divided by the number of tasks it is the **shortcut rate** (Supp. B).
 - **hacking gap**: extensional minus isomorphic reward during training (§4; Supp. C).
 
-**Missing glossary terms:**
-- **inductive logic programming (ILP)**: learning a logic program H from background knowledge B and positive and negative examples, so that B with H entails all positives (**completeness**) and stays consistent with the negatives (**consistency**) (§2). The rule `eastbound(T) :- has_car(T,C), car_color(C,red).` says a train is eastbound if it has a red car (§3).
+**Missing glossary terms:** none.
 
 **Builds on:**
 - SLR-Bench (Helff 2025, not listed here), which "frames reasoning as a sequence of ILP tasks" about trains (§3 "Setup").

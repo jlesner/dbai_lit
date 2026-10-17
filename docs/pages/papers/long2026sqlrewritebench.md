@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2607.09251) · [arXiv](https://arxiv.org/abs/2607.09251)  
 Code: [SQL-RewriteBench](https://github.com/SQL-RewriteBench/benchmark)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

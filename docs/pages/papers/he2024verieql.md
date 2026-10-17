@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2403.03193) · [arXiv](https://arxiv.org/abs/2403.03193) · [DOI](https://doi.org/10.1145/3649849)  
 Code: [VeriEQL](https://github.com/VeriEQL/VeriEQL) · [VeriEQL-artifact-evaluation](https://zenodo.org/records/10795614)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

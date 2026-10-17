@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2501.12948) · [arXiv](https://arxiv.org/abs/2501.12948) · [DOI](https://doi.org/10.1038/s41586-025-09422-z)  
 Code: [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

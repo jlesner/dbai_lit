@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2502.07316) · [arXiv](https://arxiv.org/abs/2502.07316)  
 Code: [CodeIO](https://github.com/hkust-nlp/CodeIO)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

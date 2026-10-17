@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2404.12753) · [arXiv](https://arxiv.org/abs/2404.12753) · [DOI](https://doi.org/10.18653/v1/2024.emnlp-main.141)  
 Code: [AutoScraper](https://github.com/EZ-hwh/AutoScraper)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

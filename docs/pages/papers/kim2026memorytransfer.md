@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2604.14004) · [arXiv](https://arxiv.org/abs/2604.14004)  
 Code: [MemoryTransferLearning](https://github.com/KangsanKim07/MemoryTransferLearning)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - A coding agent gets memories built from its own runs on other coding benchmarks (the target benchmark left out) in its system prompt; four memory formats, from raw command traces to task-agnostic insights, on six benchmarks with GPT-5-mini, and Insight memories only with DeepSeek V3.2 and Qwen3-Coder (abstract; §3.1; Tab. 1).
 - gpt-5-mini writes the Workflow, Summary and Insight memories from mini-swe-agent trajectories, with a success or failure prompt chosen by an LLM judge's label (Trajectory memories keep the run's commands and outputs as they are), and the top three by embedding similarity are retrieved (§3.1.1–3.1.2, §3.2.2); analyses cover what transfers, abstraction, negative transfer, pool size, cross-model memory and retrieval methods (§4).
-- Memory carried across task families, written from runs that an LLM judge labels success or failure (the label only picks the writing prompt; failed runs become memories too), with no check of the memory itself (§3.1.1, App. E; our reading), against [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory). It reports that cross-domain memory improves average performance by 3.7% (abstract), mainly through procedural know-how such as validation routines rather than task-specific code (abstract; §4.2.1), with low-level traces "often" causing negative transfer (abstract).
+- Memory carried across task families, written from runs that an LLM judge labels success or failure (the label only picks the writing prompt; failed runs become memories too), with no check of the memory itself (§3.1.1, App. E; our reading), against [Checking a memory across problems before it is reused](#/challenges/verified_memory). It reports that cross-domain memory improves average performance by 3.7% (abstract), mainly through procedural know-how such as validation routines rather than task-specific code (abstract; §4.2.1), with low-level traces "often" causing negative transfer (abstract).
 
 ## In plain words
 
@@ -88,5 +88,5 @@ Coding agents that learn from their own past runs keep notes, called memories, b
 
 ## On this site
 
-- **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
+- **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

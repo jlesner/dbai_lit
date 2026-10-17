@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2411.17501) · [arXiv](https://arxiv.org/abs/2411.17501)  
 Code: [inference-scaling-limits](https://github.com/benediktstroebl/inference-scaling-limits)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

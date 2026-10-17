@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2402.03300) · [arXiv](https://arxiv.org/abs/2402.03300)  
 Code: [DeepSeek-Math](https://github.com/deepseek-ai/DeepSeek-Math)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

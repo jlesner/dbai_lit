@@ -2,10 +2,10 @@
 
 **S3Eval** · NAACL 2024
 
-Read: [PDF](https://arxiv.org/pdf/2310.15147) · [arXiv](https://arxiv.org/abs/2310.15147)  
+Read: [PDF](https://arxiv.org/pdf/2310.15147) · [arXiv](https://arxiv.org/abs/2310.15147) · [DOI](https://doi.org/10.18653/v1/2024.naacl-long.69)  
 Code: [S3Eval](https://github.com/lfy79001/S3Eval)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -18,7 +18,7 @@ The authors want to test how well LLMs reason and use long inputs. They say such
 
 ## Background and terms
 
-**Terms to know:** [exact match](#/glossary/exact-match) · [data contamination](#/glossary/data-contamination) (the paper says "data leakage") · [pass@k](#/glossary/passk) (HumanEval is scored by pass@1, §3.3) · [Pearson r](#/glossary/pearson-correlation) · [lost in the middle](#/glossary/lost-in-the-middle). · [context-free grammar](#/glossary/context-free-grammar) (the rules S3Eval uses to generate syntactically valid queries, §2.1)
+**Terms to know:** [exact match](#/glossary/exact-match) · [data contamination](#/glossary/data-contamination) (the paper says "data leakage") · [pass@k](#/glossary/passk) (HumanEval is scored by pass@1, §3.3) · [Pearson r](#/glossary/pearson-correlation) · [lost in the middle](#/glossary/lost-in-the-middle). · [context-free grammar](#/glossary/context-free-grammar) (the rules S3Eval uses to generate syntactically valid queries, §2.1) · [needle in a haystack (NIAH)](#/glossary/needle-in-a-haystack-niah) (§1, Fig. 1)
 
 **The paper's own terms:**
 - **SQL execution task**: given a table and an SQL query, the model must output the query's execution result; scored by exact match of the answer (§2.1).
@@ -33,7 +33,6 @@ The authors want to test how well LLMs reason and use long inputs. They say such
 
 **Missing glossary terms:**
 - **Kendall τ**: a rank correlation; it measures "whether the relative ranking of models is consistent across the benchmarks" (§3.3). The paper prints it and Pearson r as percentages (e.g. 99.1).
-- **Needle-in-a-haystack**: a long-context test in which "a vital piece of information is concealed within a lengthy document" and the model must find it (§1, Fig. 1).
 
 **Builds on:**
 - TaPEx ([TAPEX](#/papers/liu2021tapex "TAPEX: Table Pre-training via Learning a Neural SQL Executor (2022)")), which pretrains a model as a SQL executor: the task and the six reasoning types follow it (§1, §2.1, §5.3).

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2604.27660) · [arXiv](https://arxiv.org/abs/2604.27660)  
 Code: [Ctx2Skill](https://github.com/S1s-Z/Ctx2Skill)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2405.03057) · [arXiv](https://arxiv.org/abs/2405.03057) · [DOI](https://doi.org/10.29007/rlt7)  
 Code: [cvc5](https://github.com/cvc5/cvc5)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2402.08699) · [arXiv](https://arxiv.org/abs/2402.08699)  
 Code: [icml2024-roundtrip-correctness](https://github.com/google-deepmind/icml2024-roundtrip-correctness)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

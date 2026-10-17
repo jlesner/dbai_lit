@@ -4,7 +4,7 @@
 
 Read: [PDF](https://www.vldb.org/pvldb/vol19/p4594-narasayya.pdf) · [DOI](https://doi.org/10.14778/3827998.3828074)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

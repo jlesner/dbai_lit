@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.27067) · [arXiv](https://arxiv.org/abs/2609.27067)  
 Code: [ChipMEM](https://github.com/aalrabah/ChipMEM)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -86,4 +86,5 @@ Memory on against off, same agent and model.
 
 ## On this site
 
+- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

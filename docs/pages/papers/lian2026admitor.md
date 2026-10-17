@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2608.15565) · [arXiv](https://arxiv.org/abs/2608.15565)  
 Code: [AdmitOR](https://github.com/junbolian/AdmitOR)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2308.10144) · [arXiv](https://arxiv.org/abs/2308.10144) · [DOI](https://doi.org/10.1609/aaai.v38i17.29936)  
 Code: [ExpeL](https://github.com/LeapLabTHU/ExpeL)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

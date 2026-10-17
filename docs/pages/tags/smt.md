@@ -52,6 +52,7 @@ The method is built on an SMT solver (Z3, cvc5): it encodes into the solver itse
 
 - **[Cosette](https://github.com/uwdb/Cosette)**: implements [Cosette](#/papers/chu2017cosette "Cosette: An Automated Prover for SQL (2017)"), [HoTTSQL](#/papers/chu2016hottsql "HoTTSQL: proving query rewrites with univalent SQL semantics (2017)"), [UDP](#/papers/chu2018udp "Axiomatic foundations and algorithms for deciding semantic equivalences of SQL queries (2018)")
 - **[cvc5](https://github.com/cvc5/cvc5)**: implements [Verifying SQL Queries using…](#/papers/mohamed2024cvc5sql "Verifying SQL Queries using Theories of Tables and Relations (2024)")
+- **[LoopInvGen](https://github.com/SaswatPadhi/LoopInvGen)**: implements [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)")
 - **[ParSEval](https://github.com/sfu-db/ParSEval)**: implements [ParSEval](#/papers/chen2025parseval "ParSEval: Plan-aware Test Database Generation for SQL Equivalence Evaluation (2025)")
 - **[polygon-artifact-evaluation](https://zenodo.org/records/15059866)**: implements [Polygon](#/papers/zhao2025polygon "Polygon: Symbolic Reasoning for SQL using Conflict-Driven Under-Approximation Search (2025)")
 - **[polygon-sql](https://github.com/polygon-sql/polygon)**: implements [Polygon](#/papers/zhao2025polygon "Polygon: Symbolic Reasoning for SQL using Conflict-Driven Under-Approximation Search (2025)")

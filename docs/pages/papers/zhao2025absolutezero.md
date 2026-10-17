@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2505.03335) · [arXiv](https://arxiv.org/abs/2505.03335)  
 Code: [Absolute-Zero-Reasoner](https://github.com/LeapLabTHU/Absolute-Zero-Reasoner)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

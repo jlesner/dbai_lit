@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2305.03495) · [arXiv](https://arxiv.org/abs/2305.03495) · [DOI](https://doi.org/10.18653/v1/2023.emnlp-main.494)  
 Code: [LMOps](https://github.com/microsoft/LMOps)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

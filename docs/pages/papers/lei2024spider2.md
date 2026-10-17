@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2411.07763) · [arXiv](https://arxiv.org/abs/2411.07763)  
 Code: [Spider2](https://github.com/xlang-ai/Spider2)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -87,5 +87,5 @@ Text-to-SQL turns an English question into a database query. The authors argue t
 
 ## On this site
 
-- **Discussed in:** [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification)
+- **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>

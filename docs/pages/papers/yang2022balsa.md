@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2201.01441) · [arXiv](https://arxiv.org/abs/2201.01441) · [DOI](https://doi.org/10.1145/3514221.3517885)  
 Code: [balsa](https://github.com/balsa-project/balsa)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

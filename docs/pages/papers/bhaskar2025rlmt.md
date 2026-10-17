@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2509.20357) · [arXiv](https://arxiv.org/abs/2509.20357)  
 Code: [RLMT](https://github.com/princeton-pli/RLMT)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

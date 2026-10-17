@@ -5,17 +5,17 @@
 Read: [PDF](https://arxiv.org/pdf/2608.27311) · [arXiv](https://arxiv.org/abs/2608.27311)  
 Code: [HarnessLens](https://github.com/jhxu5214/HarnessLens)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Budget-aware evolution of agent harnesses (instructions, tools, runtime components) (abstract).
-- Derives candidate edits from trajectories and verifies each only on behavior-relevant tasks, behind an attributable-evidence gate (abstract).
-- A gate on harness changes, relevant to [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory).
+- Derives candidate edits from trajectories and verifies each selectively on behavior-relevant tasks, behind an attributable-evidence gate (abstract).
+- A gate on harness changes, relevant to [Checking a memory across problems before it is reused](#/challenges/verified_memory).
 
 ## In plain words
 
-An agent harness is the software around a language model that makes it an agent: its instructions, skills, tool descriptions and similar settings. The authors ask whether a harness can improve itself from the records of its own runs. They say existing methods typically test every proposed edit on one fixed task set, wasting runs on unrelated tasks and letting an overall score hide what an edit broke (abstract). HarnessLens has LLM roles read past runs and propose one edit at a time, tested on tasks chosen for the behavior it targets plus tasks it might break. An edit is kept only if an LLM reviewer traces at least one improved task to it and finds no task it broke, and the pass rate also rises on a second, mostly fresh batch (§4). With one DeepSeek model, three coding-agent harnesses and four benchmarks, the authors report that average held-out performance rises by 7.6–13.6% over the unedited harness, on a smaller budget than three earlier harness-evolution methods (abstract, §5.2). They present it as better verification than these methods (§1).
+An agent harness is the software around a language model that makes it an agent: its instructions, skills, tool descriptions and similar settings. The authors ask whether a harness can improve itself from the records of its own runs. They say existing methods typically test every proposed edit on one fixed task set, wasting runs on unrelated tasks and letting an overall score hide what an edit broke (abstract). HarnessLens has LLM roles read past runs and propose one edit at a time, tested on tasks chosen for the behavior it targets plus tasks it might break. An edit is kept only if an LLM reviewer traces at least one improved task to it and finds no task it broke, and the pass rate also rises on a second, mostly fresh batch (§4). Tests use one DeepSeek model, three coding-agent harnesses and four benchmarks. The authors report that average held-out performance rises by 7.6–13.6% over the unedited harness. Its budget was smaller than three earlier harness-evolution methods' (abstract, §5.2). They present it as better verification than these methods (§1).
 
 ## Background and terms
 

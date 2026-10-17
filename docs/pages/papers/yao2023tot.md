@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2305.10601) · [arXiv](https://arxiv.org/abs/2305.10601)  
 Code: [tree-of-thought-llm](https://github.com/princeton-nlp/tree-of-thought-llm)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

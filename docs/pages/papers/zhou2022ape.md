@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2211.01910) · [arXiv](https://arxiv.org/abs/2211.01910)  
 Code: [automatic_prompt_engineer](https://github.com/keirp/automatic_prompt_engineer)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

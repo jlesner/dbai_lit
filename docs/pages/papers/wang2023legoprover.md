@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2310.00656) · [arXiv](https://arxiv.org/abs/2310.00656)  
 Code: [LEGO-Prover](https://github.com/wiio12/LEGO-Prover)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Proves Isabelle theorems with ChatGPT block by block: a decomposer proposes sub-goal lemmas, a formalizer writes the proof using lemmas retrieved from a growing skill library, and an evolver generalizes library lemmas and proves the requested sub-goals (abstract; §3; ChatGPT, §4.1).
 - Only lemmas Isabelle verifies, with no `sorry` or `oops`, enter the library; failed lemma statements are kept as requests for the evolver (§3.2, §3.3). Evaluated on miniF2F with 100 attempts per problem, in rounds so the library grows between attempts (§4.1).
-- A memory across problems whose entries a sound checker admits. The authors report that 24% of the miniF2F-valid problems it proved used retrieved skills (§4.3.2); [Is This LLM Library…](#/papers/berlotattwell2025libraryfails "Is This LLM Library Learning? Evaluation Must Account For Compute and Behaviour (2026)") re-runs it and reports "no evidence of the direct reuse of learned lemmas" (abstract; one verbatim reuse in its Tab. 2). Bears on [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory).
+- A memory across problems whose entries a sound checker admits. The authors report that 24% of the miniF2F-valid problems it proved used retrieved skills (§4.3.2); [Is This LLM Library…](#/papers/berlotattwell2025libraryfails "Is This LLM Library Learning? Evaluation Must Account For Compute and Behaviour (2026)") re-runs it and reports "no evidence of the direct reuse of learned lemmas" (abstract; one verbatim reuse in its Tab. 2). Bears on [Checking a memory across problems before it is reused](#/challenges/verified_memory).
 
 ## In plain words
 
@@ -84,5 +84,5 @@ Earlier LLM provers write each formal proof as one block and attack each problem
 
 ## On this site
 
-- **Discussed in:** [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory)
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>

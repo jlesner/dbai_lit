@@ -2,10 +2,7 @@
 
 **Talk:** <a href="talk2/" target="_blank" rel="noopener">DSLs for LLMs, LLMs for DSLs</a>, slides on this case (press F for full screen, arrow keys to move).
 
-**The domain:** a DSL here is a small language that an engine runs over data: XPath and XQuery over XML documents, JSONPath over JSON, SQL over tables, SQL/PGQ over property graphs, SPARQL over knowledge graphs, [Datalog](#/glossary/datalog) over facts, iCalendar recurrence rules over time, regular expressions over text. Each has a standard or a published [formal semantics](#/glossary/formal-semantics), and two or more solid free engines (§ Why DSLs), so a program's result is computed, not judged, and one engine can check another. Outside this sense:
-- formats that no engine runs, such as the tag structure of a PDF;
-- Prolog, though ISO/IEC 13211-1:1995 standardizes it: a query may never finish, and its answers depend on the order of the clauses, so a run doesn't always give a result to check (ours); Datalog, its function-free relative, always reaches its result in its pure form (ours; engines such as Soufflé add arithmetic, under which a program may not finish);
-- GQL (ISO/IEC 39075:2024), until free engines implement it: on path patterns that GQL shares with SQL/PGQ, one preprint reports that 15 of 26 cross-engine disagreements are silent (its headline aggregation, one release each of five products; [Same Pattern](#/papers/mandarapu2026divergence "Same Pattern, Different Answer: A Reference Semantics and Divergence Map for GQL and SQL/PGQ Path Patterns (2026)") abstract, Tab. 2), and that no engine it measured "parses the order the standard's own examples are written in", except the authors' own (abstract); only one external release took a restrictor at all, so only it could be asked (§5, Tab. 3).
+**The domain:** a DSL here is a small language that an engine runs over data: XPath and XQuery over XML documents, JSONPath over JSON, SQL over tables, SQL/PGQ over [property graphs](#/glossary/property-graph), SPARQL over [knowledge graphs](#/glossary/knowledge-graph), [Datalog](#/glossary/datalog) over facts, iCalendar recurrence rules over time, regular expressions over text. Each has a standard or a published [formal semantics](#/glossary/formal-semantics), and two or more solid free engines (§ Why DSLs), so a program's result is computed, not judged, and one engine can check another.
 
 ## DSLs for LLMs
 
@@ -73,5 +70,5 @@ The four reasons given for SQL, for the family:
 
 - **[Papers](#/papers)**: what each paper does, with links to the paper and its code.
 - **[Tags](#/tags)**: topic tags linking papers, projects and challenges.
-- **[Challenges](#/challenges)**: open research challenges, why they matter, and what signal can check an answer.
+- **[Challenges](#/challenges)**: open research challenges, why they matter, why they are hard, and what signal can check an answer.
 - **[Glossary](#/glossary)**: the field's terms in plain words.

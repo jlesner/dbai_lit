@@ -4,7 +4,7 @@
 
 Read: [PDF](https://dl.acm.org/doi/pdf/10.1145/800125.804029,) · [DOI](https://doi.org/10.1145/800125.804029)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -17,7 +17,7 @@ Testing whether two regular expressions describe the same strings "has several e
 
 ## Background and terms
 
-**Terms to know:** [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [PSPACE](#/glossary/pspace) · [3-SAT](#/glossary/3-sat) · [first-order logic](#/glossary/first-order-logic) · [satisfiable and valid](#/glossary/satisfiable-and-valid)
+**Terms to know:** [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [PSPACE](#/glossary/pspace) · [3-SAT](#/glossary/3-sat) · [first-order logic](#/glossary/first-order-logic) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [regular expression and regular language](#/glossary/regular-expression-and-regular-language) (Kleene's: only ∪, ·, *)
 
 **The paper's own terms:**
 - **regular-like expression**: built from letters and the empty string with concatenation (·), union (∪), star (*), complement (¬) and squaring (², E·E) (§2, PDF p. 1).
@@ -27,7 +27,6 @@ Testing whether two regular expressions describe the same strings "has several e
 - **complete in a family**: every member reduces to C, and C is a member (§2, PDF p. 3).
 
 **Missing glossary terms:**
-- **regular expression** (Kleene's): only ∪, ·, *.
 - **nondeterministic Turing machine** (a model computer that may choose its next step): it accepts if some choices do (§2, PDF p. 2); a class like nondeterministic linear space is what it accepts within that bound (general definition).
 
 **Builds on:**

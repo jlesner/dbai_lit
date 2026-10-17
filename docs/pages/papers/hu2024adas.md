@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2408.08435) · [arXiv](https://arxiv.org/abs/2408.08435)  
 Code: [ADAS](https://github.com/ShengranHu/ADAS)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -21,7 +21,7 @@ With agents run on GPT-3.5 and designed by GPT-4, the best discovered agent beat
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) (the paper says "agentic system"), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [bootstrap resampling](#/glossary/bootstrap-resampling), [F1 score](#/glossary/f1-score) (the reading-comprehension metric, 0–100, Tab. 1; not defined in the paper).
+**Terms to know:** [agent harness](#/glossary/agent-harness) (the paper says "agentic system"), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [bootstrap resampling](#/glossary/bootstrap-resampling), [F1 score](#/glossary/f1-score) (the reading-comprehension metric, 0–100, Tab. 1; not defined in the paper), [Turing-complete](#/glossary/turing-complete) (the claim that code can express any agent rests on it, §1).
 
 **The paper's own terms:**
 - **Foundation Model (FM)**: a large pretrained model, e.g. GPT (§1).
@@ -33,7 +33,6 @@ With agents run on GPT-3.5 and designed by GPT-4, the best discovered agent beat
 - **Stepping stones**: earlier designs that later ones build on, even if not high-scoring at first (§4.1).
 
 **Missing glossary terms:**
-- **Turing complete**: able to express any computation; the authors rest the claim that code can express any agent on it (§1).
 - **AutoML, Neural Architecture Search (NAS)**: learning usually hand-designed parts of machine-learning systems; NAS searches for neural-network architectures (§1, §5).
 - **Open-endedness algorithms**: searches that keep an archive of diverse, interesting discoveries as stepping stones, not only chasing one score (§3, §4.1).
 

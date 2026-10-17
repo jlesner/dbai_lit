@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2506.07962) · [arXiv](https://arxiv.org/abs/2506.07962)  
 Code: [llm_correlated_errors](https://github.com/nikhgarg/llm_correlated_errors_public)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

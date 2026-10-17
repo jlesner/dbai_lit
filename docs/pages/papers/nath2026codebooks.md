@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2605.28360) · [arXiv](https://arxiv.org/abs/2605.28360)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -90,4 +90,5 @@ Automatic prompt optimization (APO) methods usually find one prompt per task, ap
 
 ## On this site
 
+- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

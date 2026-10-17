@@ -5,7 +5,7 @@
 Read: [PDF](https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&arnumber=11334627) · [DOI](https://doi.org/10.1109/ase63991.2025.00076)  
 Code: [DLBench](https://github.com/dlbenchll/DLBench)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

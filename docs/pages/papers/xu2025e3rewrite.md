@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2508.09023) · [arXiv](https://arxiv.org/abs/2508.09023)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -70,5 +70,5 @@ None stated.
 
 ## On this site
 
-- **Discussed in:** [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory) · [Verified query speedups](#/challenges/verified_query_speedup) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Verified query speedups](#/challenges/verified_query_speedup) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a></span>

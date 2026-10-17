@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2501.19393) · [arXiv](https://arxiv.org/abs/2501.19393) · [DOI](https://doi.org/10.18653/v1/2025.emnlp-main.1025)  
 Code: [s1](https://github.com/simplescaling/s1)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

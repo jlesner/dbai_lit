@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2203.14465) · [arXiv](https://arxiv.org/abs/2203.14465) · [DOI](https://doi.org/10.52202/068431-1126)  
 Code: [STaR](https://github.com/ezelikman/STaR)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -82,4 +82,5 @@ Making a model reason in writing (a rationale) before answering takes either a c
 
 ## On this site
 
+- **Discussed in:** [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>

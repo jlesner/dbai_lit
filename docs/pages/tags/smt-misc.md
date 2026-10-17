@@ -15,5 +15,6 @@ A subtag of <a class="tag" href="#/tags/smt">smt</a>
 
 ## Projects
 
+- **[LoopInvGen](https://github.com/SaswatPadhi/LoopInvGen)**: implements [Overfitting in Synthesis](#/papers/padhi2019overfitting "Overfitting in Synthesis: Theory and Practice (2019)")
 - **[roundtrip-autoformalization](https://github.com/daneshvar-amrollahi/roundtrip-autoformalization)**: implements [Faithful Autoformalization via Roundtrip…](#/papers/amrollahi2026roundtrip "Faithful Autoformalization via Roundtrip Verification and Repair (2026)")
 - **[SQLRepair](https://github.com/kpresler/SQLRepair)**: implements [SQLRepair](#/papers/preslermarshall2021sqlrepair "SQLRepair: Identifying and Repairing Mistakes in Student-Authored SQL Queries (2021)")

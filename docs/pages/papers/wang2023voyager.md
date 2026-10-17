@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2305.16291) · [arXiv](https://arxiv.org/abs/2305.16291)  
 Code: [Voyager](https://github.com/MineDojo/Voyager)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - A GPT-4 agent in Minecraft that writes its actions as code and keeps the programs that work in an ever-growing skill library, indexed by the embedding of their description and retrieved for new tasks; an automatic curriculum proposes the next task (abstract; §2.1–2.2).
 - Iterative prompting: each program is run, and environment feedback and execution errors go back into the prompt; a second GPT-4 instance acting as a critic decides whether the task succeeded, and only then is the program added to the library (§2.3).
-- The executable skill library that later memory and skill papers build on ([LEGO-Prover](#/papers/wang2023legoprover "LEGO-Prover: Neural Theorem Proving with Growing Libraries (2024)") §2 cites its "dynamic growing skill library"). Its gate is an LLM's verdict, not a sound check: the authors use the critic "instead of manually coding success checkers for each new task" (§2.3) and note it occasionally fails (§4). Bears on [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory).
+- The executable skill library that later memory and skill papers build on ([LEGO-Prover](#/papers/wang2023legoprover "LEGO-Prover: Neural Theorem Proving with Growing Libraries (2024)") §2 cites its "dynamic growing skill library"). Its gate is an LLM's verdict, not a sound check: the authors use the critic "instead of manually coding success checkers for each new task" (§2.3) and note it occasionally fails (§4). Bears on [Checking a memory across problems before it is reused](#/challenges/verified_memory).
 
 ## In plain words
 
@@ -87,4 +87,5 @@ The authors' claims, for Voyager on GPT-4; Tab. 1 and Tab. 2 average three runs.
 
 ## On this site
 
+- **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>

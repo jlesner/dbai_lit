@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2203.07814) · [arXiv](https://arxiv.org/abs/2203.07814) · [DOI](https://doi.org/10.1126/science.abq1158)  
 Code: [code_contests](https://github.com/google-deepmind/code_contests)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

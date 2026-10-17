@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2404.04352) · [arXiv](https://arxiv.org/abs/2404.04352) · [DOI](https://doi.org/10.1145/3654995)  
 Code: [qr-hint](https://github.com/yihaoh/qr-hint)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

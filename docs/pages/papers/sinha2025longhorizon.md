@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2509.09677) · [arXiv](https://arxiv.org/abs/2509.09677)  
 Code: [measuring-execution](https://github.com/long-horizon-execution/measuring-execution)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

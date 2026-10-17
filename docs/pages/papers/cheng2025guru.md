@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2506.14965) · [arXiv](https://arxiv.org/abs/2506.14965) · [DOI](https://doi.org/10.52202/085713-4479)  
 Code: [Reasoning360](https://github.com/LLM360/Reasoning360)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

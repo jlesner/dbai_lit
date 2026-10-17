@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2004.00481) · [arXiv](https://arxiv.org/abs/2004.00481) · [DOI](https://doi.org/10.1109/icde53745.2022.00250)  
 Code: [spes](https://github.com/georgia-tech-db/spes)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

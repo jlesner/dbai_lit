@@ -5,7 +5,7 @@
 Read: [PDF](https://www.cs.yale.edu/homes/piskac/papers/2024SIGMOD.pdf) · [DOI](https://doi.org/10.1145/3626768)  
 Code: [SQLSolver](https://github.com/SJTU-IPADS/SQLSolver)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

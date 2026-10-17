@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2608.22331) · [arXiv](https://arxiv.org/abs/2608.22331)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -85,4 +85,5 @@ On the frozen BFCL subset and these three endpoints; the reported arms "primaril
 
 ## On this site
 
+- **Discussed in:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>

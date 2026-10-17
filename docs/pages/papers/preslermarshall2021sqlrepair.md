@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2102.05729) · [arXiv](https://arxiv.org/abs/2102.05729) · [DOI](https://doi.org/10.1109/ICSE-SEET52601.2021.00030)  
 Code: [SQLRepair](https://github.com/kpresler/SQLRepair)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

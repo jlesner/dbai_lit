@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2603.18620) · [arXiv](https://arxiv.org/abs/2603.18620)  
 Code: [learning-to-self-evolve](https://github.com/chenyn66/learning-to-self-evolve)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

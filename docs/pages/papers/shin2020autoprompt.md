@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2010.15980) · [arXiv](https://arxiv.org/abs/2010.15980) · [DOI](https://doi.org/10.18653/v1/2020.emnlp-main.346)  
 Code: [autoprompt](https://github.com/ucinlp/autoprompt)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

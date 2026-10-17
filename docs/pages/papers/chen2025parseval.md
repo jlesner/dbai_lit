@@ -5,7 +5,7 @@
 Read: [PDF](https://dbgroup.cs.tsinghua.edu.cn/jnwang/papers/vldb2025-parseval.pdf) · [DOI](https://doi.org/10.14778/3749646.3749727)  
 Code: [ParSEval](https://github.com/sfu-db/ParSEval)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -81,5 +81,5 @@ Text-to-SQL benchmarks score a model's query by running it and the reference que
 
 ## On this site
 
-- **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Text-to-SQL can't be verified against intent](#/challenges/text_to_sql_verification) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
+- **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-smt">cex-smt</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>

@@ -4,7 +4,7 @@
 
 Read: [Paper](https://www.w3.org/TR/1999/REC-xpath-19991116)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

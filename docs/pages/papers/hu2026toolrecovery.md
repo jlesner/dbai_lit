@@ -4,7 +4,7 @@
 
 Read: [PDF](https://arxiv.org/pdf/2610.07781) · [arXiv](https://arxiv.org/abs/2610.07781)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -81,4 +81,5 @@ A measurement study. Each run is scored under the three evaluation targets (§3,
 
 ## On this site
 
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2512.21326) · [arXiv](https://arxiv.org/abs/2512.21326)  
 Code: [eval-arena](https://github.com/all-the-noises/eval-arena)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -89,4 +89,5 @@ Part of any benchmark score gap between two LLMs is luck. The author separates p
 
 ## On this site
 
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>

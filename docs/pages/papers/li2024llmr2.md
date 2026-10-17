@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2404.12872) · [arXiv](https://arxiv.org/abs/2404.12872) · [DOI](https://doi.org/10.14778/3696435.3696440)  
 Code: [LLM-R2](https://github.com/DAMO-NLP-SG/LLM-R2)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

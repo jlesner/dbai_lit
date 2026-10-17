@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2605.02909) · [arXiv](https://arxiv.org/abs/2605.02909)  
 Code: [llm-verifier-noise](https://github.com/eth-sri/llm-verifier-noise)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -87,4 +87,5 @@ Main runs: Fig. 2 (curves, no value labels).
 
 ## On this site
 
+- **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>

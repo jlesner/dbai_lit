@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2405.15793) · [arXiv](https://arxiv.org/abs/2405.15793) · [DOI](https://doi.org/10.52202/079017-1601)  
 Code: [SWE-agent](https://github.com/SWE-agent/SWE-agent)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -90,5 +90,5 @@ The authors present the interface as a new concept and SWE-agent as, "to the bes
 
 ## On this site
 
-- **Discussed in:** [Can a memory across problems be checked before it is reused?](#/challenges/verified_memory) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>

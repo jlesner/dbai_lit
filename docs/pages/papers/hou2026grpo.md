@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2610.04928) · [arXiv](https://arxiv.org/abs/2610.04928)  
 Code: [llm-from-scratch](https://github.com/Helios-YQH/llm-from-scratch)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -87,4 +87,5 @@ The paper asks "what estimator choices do to the learning signal, and what a deg
 
 ## On this site
 
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>

@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2308.09895) · [arXiv](https://arxiv.org/abs/2308.09895) · [DOI](https://doi.org/10.1145/3689735)  
 Code: [MultiPL-T](https://doi.org/10.5281/zenodo.12453932)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

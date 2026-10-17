@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.00468) · [arXiv](https://arxiv.org/abs/2609.00468)  
 Code: [what-survives](https://anonymous.4open.science/r/ICSE2027-What_Survives_The_Next_Model)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

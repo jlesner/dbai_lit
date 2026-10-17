@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2505.03818) · [arXiv](https://arxiv.org/abs/2505.03818)  
 Code: [semantic_neq_game](https://github.com/Avmb/semantic_neq_game)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

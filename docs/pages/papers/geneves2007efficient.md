@@ -4,7 +4,7 @@
 
 Read: [PDF](https://inria.hal.science/inria-00502789/document) · [DOI](https://doi.org/10.1145/1250734.1250773)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -80,5 +80,5 @@ The question: decide these problems, with or without type constraints, to type-c
 
 ## On this site
 
-- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
+- **Discussed in:** [Repairing and rewriting DSL programs with a certified result](#/challenges/certified_dsl_repair) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
 - **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/prove-general">prove-general</a></span>

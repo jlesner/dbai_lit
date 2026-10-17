@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.37233) · [arXiv](https://arxiv.org/abs/2609.37233)  
 Code: [DatalogBench](https://github.com/ZJU-PL/DatalogBench)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
@@ -84,4 +84,5 @@ Datalog is a rule language whose rules can refer to themselves (recursion), used
 
 ## On this site
 
+- **Discussed in:** [Repairing and rewriting DSL programs with a certified result](#/challenges/certified_dsl_repair) · [Distinguishing documents for two programs in any DSL](#/challenges/dsl_counterexamples) · [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>

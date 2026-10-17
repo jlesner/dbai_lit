@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2609.10969) · [arXiv](https://arxiv.org/abs/2609.10969) · [DOI](https://doi.org/10.6084/m9.figshare.33511441.v1)  
 Code: [vpcontrol](https://doi.org/10.6084/m9.figshare.33511441.v1)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 

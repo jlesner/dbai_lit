@@ -5,13 +5,13 @@
 Read: [PDF](https://arxiv.org/pdf/2410.10680) · [arXiv](https://arxiv.org/abs/2410.10680) · [DOI](https://doi.org/10.48786/EDBT.2025.74)  
 Code: [LLMs_SQL_Understading](https://github.com/AnanyaRahaman/LLMs_SQL_Understading)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
 - Tests LLMs on syntax error detection, missing-token identification, query performance prediction, query equivalence and query explanation, with labelled datasets built from known workloads (abstract).
 - Relates performance to query complexity and syntactic features (abstract).
-- Its query-equivalence task benchmarks LLMs as SQL equivalence judges on hand-made labelled pairs (§3.2, Tab. 7), like [Can the Rookies Cut…](#/papers/singh2024sqlequiquest "Can the Rookies Cut the Tough Cookie? Exploring the Use of LLMs for SQL Equivalence Checking (2024)"); the authors report that all models struggle with equivalence and performance estimation (abstract).
+- Its query-equivalence task benchmarks LLMs as SQL equivalence judges on hand-made labelled pairs (§3.2, Tab. 7), like [Can the Rookies Cut…](#/papers/singh2024sqlequiquest "Can the Rookies Cut the Tough Cookie? Exploring the Use of LLMs for SQL Equivalence Checking (2024)"); the authors report that all models struggle with equivalence and performance estimation (abstract), which their own Tab. 7 contradicts for equivalence.
 
 ## In plain words
 

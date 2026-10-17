@@ -5,7 +5,7 @@
 Read: [PDF](https://arxiv.org/pdf/2603.28052) · [arXiv](https://arxiv.org/abs/2603.28052)  
 Code: [meta-harness-tbench2-artifact](https://github.com/stanford-iris-lab/meta-harness-tbench2-artifact)
 
-<p class="notice">An AI-written summary for orientation, not a source: check the original paper before relying on anything here.</p>
+<p class="notice">A summary for orientation, not a source: check the original paper before relying on anything here.</p>
 
 ## In brief
 
