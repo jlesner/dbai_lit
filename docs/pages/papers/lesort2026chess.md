@@ -20,7 +20,7 @@ They report that Gemini 3.5 Flash, the strongest model evaluated, solves only ab
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [Elo rating](#/glossary/elo-rating).
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [Elo rating](#/glossary/elo-rating) · [one-sided Welch test](#/glossary/welchs-t-test) (three optimizer runs against three baseline runs, "unadjusted", at p < 0.05, Tab. 3 caption).
 
 **The paper's own terms:**
 - **puzzle**: position–move pairs along a reference solution (one to five solver moves). Each position is queried separately; the puzzle counts as solved only if every predicted move matches (§3). **Position accuracy** counts single moves instead (App. B.2).
@@ -31,9 +31,6 @@ They report that Gemini 3.5 Flash, the strongest model evaluated, solves only ab
 - **decision endpoint**: Jev 1.13 "acts as a zero-shot classifier that chooses among the legal moves" instead of generating text, so it cannot play an illegal move (§4.2).
 - **Stockfish, regret**: Stockfish is a chess engine, run at search depth 20. Regret is the gap between its evaluation of its own best move and of the model's move, in centipawns, hundredths of a pawn (§5.5, App. B.2).
 - **rollout**: a short game from a starting position against Stockfish, at most ten model moves (§5.5).
-
-**Missing glossary terms:**
-- **one-sided Welch test**: a t-test of whether one group's mean exceeds another's, without assuming equal variances. The paper compares three optimizer runs with three baseline runs, "unadjusted", at p < 0.05 (Tab. 3 caption).
 
 **Builds on:**
 - DSPy ([DSPy](#/papers/khattab2023dspy "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines (2024)")), a framework that compiles LLM pipelines with optimizers; the paper runs its COPRO, BootstrapFewShot, BootstrapRandomSearch and SIMBA and cites DSPy for them (§4.1).
@@ -65,7 +62,7 @@ They report that Gemini 3.5 Flash, the strongest model evaluated, solves only ab
 - **Content (§5.3, Fig. 5):** one algorithm's prompts look alike across models; SIMBA stresses chess guidance and examples, GEPA longer chess instructions with formatting and persona. Flash Lite's prompts hold only examples and chess guidance, "showing that the largest gain does not require the longest prompt".
 - **Transfer (§5.4, Fig. 6):** of 49 cross-model pairs, 31 have positive mean changes, 16 negative and two are unchanged, so "Transfer therefore depends on the source–target pairing". Jev's prompt improves all seven other models, while Flash Lite's, with the largest native gain, degrades five of the seven. Qwen, Jev, Haiku and DeepSeek receive significant gains from other models' prompts.
 - **Play (§5.5, Tab. 4):** "Mean regret decreases slightly for all three optimized models", without "a statistically significant reduction in mean regret in the evaluated rollouts"; illegal-attempt rates rise for Flash Lite and Qwen and fall for DeepSeek.
-- **Puzzle regret (App. B.2, Tab. 7):** median regret, position accuracy and puzzle accuracy give "similar, but not identical, model rankings".
+- **Puzzle regret (App. B.2, Tab. 7):** median regret, position accuracy and puzzle accuracy "rank the five models identically within each column".
 
 ## Limits the authors state
 
@@ -87,4 +84,4 @@ They report that Gemini 3.5 Flash, the strongest model evaluated, solves only ab
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/promptopt-misc">promptopt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/promptopt">promptopt</a></span>

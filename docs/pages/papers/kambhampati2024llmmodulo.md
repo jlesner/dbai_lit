@@ -9,7 +9,7 @@ Read: [PDF](https://arxiv.org/pdf/2402.01817) · [arXiv](https://arxiv.org/abs/2
 ## In brief
 
 - Argues that autoregressive LLMs cannot plan or verify plans by themselves, so cannot improve by critiquing their own output, drawing mainly on the authors' earlier studies (abstract; §2.1–2.2).
-- Proposes LLM-Modulo frameworks, a generate-test-critique loop: the LLM proposes candidate plans, a bank of critics checks them, and a controller feeds critiques back until every hard critic accepts; hard critics are sound, often model-based (e.g. the VAL plan validator) but possibly simulators, and soft ones may be LLMs (§3, §3.1–3.2). Two case studies, Blocks World with VAL and the TravelPlanner benchmark, report preliminary results detailed in other papers (§4).
+- Proposes LLM-Modulo frameworks, a generate-test-critique loop: the LLM proposes candidate plans, a bank of critics checks them, and a controller feeds critiques back until every hard critic accepts; hard critics are sound, often model-based (e.g. the VAL plan validator) but possibly simulators, and soft ones may be LLMs (§3, §3.1–3.2). Two case studies, Blocks World with VAL and the TravelPlanner benchmark, report results detailed in other papers, the travel-planning ones called preliminary (§4).
 - The authors' claim that the framework's soundness "is inherited from the soundness of the correctness (hard) critics" (§3.1) is the case for sound external checking of LLM proposals; listed [On the Self-Verification Limitations…](#/papers/stechly2024selfverification "On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks (2024)"), from the same group, tests the self-critique half, and listed [The Limits of Inference…](#/papers/stroebl2024resampling "The Limits of Inference Scaling Through Resampling (2024)") (§2) and [The Illusion of Diminishing Returns](#/papers/sinha2025longhorizon "The Illusion of Diminishing Returns: Measuring Long Horizon Execution in LLMs (2026)") (§1) cite it.
 
 ## In plain words
@@ -18,7 +18,7 @@ Many papers claim that LLMs can plan (produce a sequence of actions that reaches
 
 ## Background and terms
 
-**Terms to know:** [classical planning (STRIPS and PDDL)](#/glossary/classical-planning-strips-and-pddl) · [soundness and completeness](#/glossary/soundness-and-completeness) · [self-correction](#/glossary/self-correction) · [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem) · [NP-complete](#/glossary/np-complete-and-the-polynomial-hierarchy) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers)
+**Terms to know:** [classical planning (STRIPS and PDDL)](#/glossary/classical-planning-strips-and-pddl) · [soundness and completeness](#/glossary/soundness-and-completeness) · [self-correction](#/glossary/self-correction) · [constraint satisfaction problem](#/glossary/constraint-satisfaction-problem) · [NP-complete](#/glossary/np-complete-and-the-polynomial-hierarchy) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [System 1 and System 2](#/glossary/system-1-and-system-2) (the paper calls LLMs "a giant pseudo System 1", §1, Fig. 1) · [Clever Hans effect](#/glossary/clever-hans-effect) (the authors say iterative human prompting is "notorious" for it, §3) · [neuro-symbolic](#/glossary/neuro-symbolic-ai) (the authors call LLM-Modulo a "better neuro-symbolic approach" than pipelines that only translate text for a solver, abstract; §1)
 
 **The paper's own terms:**
 - **LLM-Modulo framework**: a Generate-Test-Critique loop in which the LLM generates candidate plans and a bank of critics critiques them (§3, Fig. 3). The name is "loosely inspired by SAT Modulo Theories" (§1).
@@ -31,11 +31,6 @@ Many papers claim that LLMs can plan (produce a sequence of actions that reaches
 - **Soundness and completeness of the system**: plans have "soundness guarantees because of the external sound critics"; completeness (finding a plan when one exists) rests on the LLM's candidates (§3; see Limits).
 - **Approximate knowledge source**: LLMs as a source of ideas and domain knowledge, "albeit sans guarantees" (§1, §2.3).
 - **VAL**: an automatic plan validator for PDDL that works off a domain model (§3.1).
-
-**Missing glossary terms:**
-- **System 1 / System 2**: fast, intuitive thinking against slow, deliberate reasoning (Kahneman, 2011); the paper calls LLMs "a giant pseudo System 1" (§1, Fig. 1).
-- **Clever Hans effect**: an apparent ability that in fact comes from cues the human supplies; the authors say iterative human prompting is "notorious" for it (§3).
-- **Neuro-symbolic**: combining neural models with symbolic, model-based components; the authors call LLM-Modulo a "better neuro-symbolic approach" than pipelines that only translate text for a solver (abstract; §1).
 
 **Builds on:**
 - The authors' planning studies: Valmeekam et al. (2023c), and PlanBench (Valmeekam et al., 2023b), planning problems in domains like those of the International Planning Competition (§2.1, §4).
@@ -84,4 +79,4 @@ Many papers claim that LLMs can plan (produce a sequence of actions that reaches
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/survey">survey</a></span>

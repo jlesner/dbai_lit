@@ -18,7 +18,7 @@ SQL's ISO standard is a thousand-page document that the authors call often under
 
 ## Background and terms
 
-**Terms to know:** [formal semantics](#/glossary/formal-semantics) · [proof assistant](#/glossary/proof-assistant) · [bag semantics](#/glossary/bag-semantics) · [set semantics](#/glossary/set-semantics) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [correlated subquery](#/glossary/correlated-subquery) · [relational algebra](#/glossary/relational-algebra) · [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin) · [extraction](#/glossary/extraction-proof-assistants)
+**Terms to know:** [formal semantics](#/glossary/formal-semantics) · [proof assistant](#/glossary/proof-assistant) · [bag semantics](#/glossary/bag-semantics) · [set semantics](#/glossary/set-semantics) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [correlated subquery](#/glossary/correlated-subquery) · [relational algebra](#/glossary/relational-algebra) · [semijoin and anti-semijoin](#/glossary/semijoin-and-anti-semijoin) · [extraction](#/glossary/extraction-proof-assistants) · [structural induction](#/glossary/structural-induction) (here done by induction on size, §4.3, PDF p. 11)
 
 **The paper's own terms:**
 - **SQLCoq**: the authors' Coq SQL syntax with its executable bag semantics (§1, PDF p. 2; §3, PDF pp. 6–10).
@@ -28,9 +28,6 @@ SQL's ISO standard is a thousand-page document that the authors call often under
 - **Environment and slice**: an environment is a stack of slices, one per nesting level, innermost on top; a slice holds the level's attribute names, its GROUP BY expressions and its tuples (a group if the level groups, otherwise one tuple) (§2.3, PDF p. 5).
 - **Simple and complex expressions**: simple ones (values, attributes, functions) are evaluated on one tuple; complex ones may also contain aggregates, none inside another, and are in that case evaluated on a collection of tuples (§3.1, PDF p. 6).
 - **Well-sorted instance**: all tuples of a table have the same labels (column names) (Def. 4.1, PDF p. 11). **Well-formed query**: the labels in its FROM clauses are pairwise disjoint, and its subqueries are well-formed (Def. 4.2, PDF p. 11).
-
-**Missing glossary terms:**
-- **Structural induction**: proving a property for every query by proving it for each way a query is built, assuming it for the parts; here done by induction on size (§4.3, PDF p. 11).
 
 **Builds on:**
 - The textbook extended relational algebra of Garcia-Molina, Ullman and Widom [8], which SQLAlg extends and which, the authors note, gives grouping no formal definition (§4.1–4.2, PDF pp. 10–11).
@@ -82,4 +79,4 @@ No experiments.
 ## On this site
 
 - **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/itp-sql">itp-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/theory">theory</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

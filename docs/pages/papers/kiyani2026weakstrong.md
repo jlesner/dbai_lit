@@ -19,7 +19,7 @@ LLM systems check outputs with cheap signals such as [self-consistency](#/glossa
 
 ## Background and terms
 
-**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [selective prediction](#/glossary/selective-prediction) · [Pareto front](#/glossary/pareto-front)
+**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [selective prediction](#/glossary/selective-prediction) · [Pareto front](#/glossary/pareto-front) · [calibration](#/glossary/calibration) (here, correct by the strong verifier, Assumption 4.1) · [learning to defer (L2D)](#/glossary/learning-to-defer) (§2) · [online conformal prediction](#/glossary/conformal-prediction-and-conformal-risk-control) (with quantile tracking; named, not defined, in §5) · [importance weighting](#/glossary/importance-sampling-and-importance-weighting) (§5)
 
 **The paper's own terms:**
 - **weak verification**: a fast check scoring each prompt–response pair from 0 to 1, higher meaning more likely correct, e.g. self-consistency, learned critiques, proxy rewards (§1, §3); in the experiments, DeepSeek-Chat (a general LLM) prompted for a score (App. B.4).
@@ -29,12 +29,6 @@ LLM systems check outputs with cheap signals such as [self-consistency](#/glossa
 - **sharpness**: how often the weak score lies near 0 or 1 (§4); App. B.3 measures it as the score's distance from 0.5.
 - **exploration probabilities**: small chances that SSV calls the strong verifier even on decisive scores (§5, Alg. 1).
 - **Strong-Only (Oracle)** calls the strong verifier on every query; **Weak-Only (Greedy)** generates n candidates and accepts the highest-scoring one, never calling it (§6 "Baselines"). "Oracle" means the strong verifier, not ground truth.
-
-**Missing glossary terms:**
-- **calibration**: a score is calibrated when, among responses scored p, a fraction p is correct; here, correct by the strong verifier (Assumption 4.1).
-- **learning to defer (L2D)**: in the paper's words, it extends selective prediction "to human-AI collaboration, studying the optimal division of labor between model and expert" (§2).
-- **online conformal prediction and quantile tracking**: methods that adjust a threshold after each outcome so a long-run error rate tracks a target, with no assumptions on the data (general definition; named, not defined, in §5).
-- **importance weighting**: dividing an observed value by the chance it was observed, to keep averages unbiased (§5).
 
 **Builds on:**
 - Selective prediction and learning to defer, e.g. Gangrade et al. (2021), Mozannar and Sontag (2021): "Our setting can be viewed as an instance of L2D, where deferral means invoking strong verification" (§2).
@@ -81,4 +75,4 @@ LLM systems check outputs with cheap signals such as [self-consistency](#/glossa
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a></span>

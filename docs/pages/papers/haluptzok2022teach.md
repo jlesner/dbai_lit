@@ -90,4 +90,4 @@ All on the held-out P3 test puzzles; few-shot with the medium prompt unless note
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

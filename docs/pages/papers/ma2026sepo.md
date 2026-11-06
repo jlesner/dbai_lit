@@ -1,6 +1,6 @@
 # SEPO: Evidence-Grounded Prompt Optimization via Structural Editing
 
-**SEPO** · preprint 2026
+**SEPO** · accepted at Findings of EMNLP 2026
 
 Read: [PDF](https://arxiv.org/pdf/2608.28067) · [arXiv](https://arxiv.org/abs/2608.28067)
 
@@ -18,7 +18,7 @@ Prompt optimisers let a large model rewrite a prompt and score each version on t
 
 ## Background and terms
 
-**Terms to know:** [Pareto frontier](#/glossary/pareto-front)
+**Terms to know:** [Pareto frontier](#/glossary/pareto-front) · [lexicase selection](#/glossary/lexicase-selection) (SEPO uses it with probability 0.8, otherwise a random pick, §3.4, citing Spector 2012)
 
 **The paper's own terms:**
 - **worker / architect**: the worker is the frozen model whose prompt is optimised (Llama-3.1-8B-Instruct or Qwen3-8B, open models of about 8B parameters); the architect is the frozen model that writes edits, Qwen3.5-397B-A17B, a mixture-of-experts model with 17B of 397B parameters active (§3.1, §4.1, App. A.2).
@@ -31,15 +31,12 @@ Prompt optimisers let a large model rewrite a prompt and score each version on t
 - **evidence packet**: up to six training examples shown to both architect calls: two "focus" examples from the parent's newly broken ones (favouring examples many archive members solve), one "anchor" from its newly fixed ones, three random "train probes"; no focus slot when nothing is newly broken (§3.3, App. D.1–D.2).
 - **metric call**: scoring the worker once on one training example; the budget is 2000 per task and seed, architect calls not counted (§4.1).
 - **archive, Gate 1, Gate 2**: the archive is the pool of kept prompts. A child must beat its parent on the three probes (Gate 1); after full training scoring it is kept if it solves an example no archive member solves, is shorter than its parent, or scores higher (Gate 2, Eq. 6) (§3.4).
-
-**Missing glossary terms:**
-- **lexicase selection**: a parent-selection method from genetic programming that filters candidates through the training examples in random order, keeping "specialists" that solve rare or hard examples; SEPO uses it with probability 0.8, otherwise a random pick (§3.4, citing Spector 2012).
 - **macro accuracy**: the unweighted mean of per-task accuracies (§4.1); pp = percentage points.
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), "the strongest baseline" (abstract): reflective per-module edits with a Pareto-frontier archive (§2).
 - MPO, Modular Prompt Optimisation (Sharma and Henley 2026, not listed here): refines each section of a fixed cross-task schema (§2).
-- APSF (Liu et al. 2026c, not listed here): optimises self-discovered prompt factors (§2).
+- APSF (Liu et al. 2026b, not listed here): optimises self-discovered prompt factors (§2).
 
 ## Problem and setting
 
@@ -64,7 +61,7 @@ The authors' claims, on held-out test splits:
 - **Wins (§4.2):** 13/14 tasks against GEPA on Llama, 11/14 on Qwen, at least 11/14 against every other baseline.
 - **Where gains concentrate (§4.2):** procedural multi-step tasks; Word Sorting on Llama 58.2% against GEPA's 39.3% (seed 0.0%).
 - **Budget curves (Fig. 3, Llama worker):** at or above every baseline at each checkpoint up to 2000 calls.
-- **Ablations (Tab. 2–3, Fig. 4, §4.3; five tasks, Llama):** removing any one design principle (localised edits, lineage feedback, several branches) costs 1.8–4.7 pp on the five-task mean, most for dropping multiple branches; without the attribution call, prompts roughly double in length and edits grow and are accepted less often. Matched controls with random targets, or random errors in place of newly broken examples, lower the net gain per proposal (§4.3).
+- **Ablations (Tab. 2–3, Fig. 4, §4.3; five tasks, Llama):** removing any one design principle (localised edits, lineage feedback, several branches) costs 1.8–4.7 pp on the five-task mean, most for dropping multiple branches; without the attribution call, prompts roughly double in length and edits grow and are accepted less often. Matched controls with random targets, or random errors in place of newly broken examples, lower the net gain per proposal (§4.3; App. H.3, Tab. 17). Keeping several branches but replacing lexicase with GEPA's parent sampling, or no longer admitting children just for solving an example no kept prompt solves, costs 0.9 and 0.6 pp (App. H.2, H.4).
 - **Edit types (Tab. 4, §4.4):** most edits add a rule, many also drop or refine one; "Edits stay overwhelmingly step-local".
 - **Auditability (§4.4, Fig. 5–6, App. E.2–E.3):** in one Word Sorting run (Llama, random seed 45), the log shows a self-verification rule followed by worker repetition loops, then its replacement by a rule not to re-process the sorted list.
 - **Cost (Tab. 5, §4.5; Llama worker)**: SEPO lies on both the optimisation-time and test-time Pareto frontiers, with the less accurate APSF the only other method on both (§1 (iv)); 2.9M optimisation tokens per cell against GEPA's 4.1M, 203k deployment tokens (spent answering the test set) against 424k, a 236-token prompt against 1,324.
@@ -88,4 +85,4 @@ The authors' claims, on held-out test splits:
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

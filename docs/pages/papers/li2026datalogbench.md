@@ -19,7 +19,7 @@ Datalog is a rule language whose rules can refer to themselves (recursion), used
 
 ## Background and terms
 
-**Terms to know:** [Datalog](#/glossary/datalog) · [logic programming](#/glossary/logic-programming) · [program synthesis](#/glossary/program-synthesis) · [test oracle](#/glossary/test-oracle) · [mutation testing](#/glossary/mutation-testing) · [data contamination](#/glossary/data-contamination) · [text-to-SQL](#/glossary/text-to-sql)
+**Terms to know:** [Datalog](#/glossary/datalog) · [logic programming](#/glossary/logic-programming) · [program synthesis](#/glossary/program-synthesis) · [test oracle](#/glossary/test-oracle) · [mutation testing](#/glossary/mutation-testing) · [data contamination](#/glossary/data-contamination) · [text-to-SQL](#/glossary/text-to-sql) · [least fixed point](#/glossary/least-fixed-point) (§3) · [stratified negation](#/glossary/stratified-negation) (§3) · [safety](#/glossary/safety-datalog-rules) (App. A) · [predicate invention](#/glossary/predicate-invention) (§3)
 
 **The paper's own terms:**
 - **auxiliary predicate**: a relation the program defines that is neither input nor output; task schemas never name them (§3; §4.1).
@@ -29,12 +29,6 @@ Datalog is a rule language whose rules can refer to themselves (recursion), used
 - **Compile Pass (CP)** and **Exact Match (EX)**: the share of tasks whose program Soufflé accepts, and whose program also reproduces the expected output on every evaluation variant (§5.2, Eq. 2). EX compares outputs, not program text.
 - **repaired exact match (EX†)**: a diagnostic that also credits a program made exact by synthesizing only its omitted declarations for auxiliary predicates (§5.2).
 - **Direct cells**: the 24 model–prompt combinations of direct prompting; an agent's **matched** cell is its own model with signatures and no example (§5.1).
-
-**Missing glossary terms:**
-- **least fixed point**: a Datalog program's output, reached by applying the rules until nothing new is derived (§3).
-- **stratified negation**: negation allowed only when no cycle in the dependency graph passes through a negated literal, so every negated predicate is fully computed before use (§3).
-- **safety**: every variable in a rule's head, in a negated atom or in a comparison must also occur in a positive body atom (App. A).
-- **predicate invention**: inventing, naming and, in Soufflé, declaring with typed attributes the auxiliary predicates a decomposition needs (§3).
 
 **Builds on:**
 - Datalog synthesizers that take input–output examples (e.g. Si et al., 2018; Raghothaman et al., 2020), whose way of stating intent §1 calls "neither natural nor easy" (§2); EGS (Thakkar et al., 2021; example-guided), GenSynth (Mendelson et al., 2021; genetic search) and ProSynth (Raghothaman et al., 2020; [provenance](#/glossary/data-provenance)-guided) are run as baselines (App. M).
@@ -85,4 +79,4 @@ Datalog is a rule language whose rules can refer to themselves (recursion), used
 ## On this site
 
 - **Discussed in:** [Repairing and rewriting DSL programs with a certified result](#/challenges/certified_dsl_repair) · [Distinguishing documents for two programs in any DSL](#/challenges/dsl_counterexamples) · [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/dsl-datalog">dsl-datalog</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

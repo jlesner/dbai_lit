@@ -11,7 +11,7 @@ Code: [ReTool](https://github.com/ReTool-RL/ReTool)
 
 - Trains an LLM with reinforcement learning to interleave Python code, run in a sandbox, with its text reasoning on competition math, rewarded only on whether the final answer matches (abstract; §2.3.1, Eq. 2).
 - Cold-start fine-tuning on reasoning traces whose hand calculations were rewritten as code plus interpreter output (§2.2, Fig. 8), then PPO with rollouts that pause at each code block, run it and feed back its output or error message (§2.3.1, Fig. 2); Qwen2.5-32B-Instruct, against text-only RL on that backbone, and DeepSeek-R1-Distill-Qwen-32B, against published models with scores copied from their sources, on AIME 2024 and 2025 (§3.1, Tab. 1).
-- The weight-space counterpart of prompting a model to hand computation to an interpreter: when to call the tool is learned from outcome reward alone, with no reward for executable code (§2.3.1). The authors report that by the end of RL training responses contain code on nearly 98% of the questions (§3.3, Fig. 3 (b)), so the learned policy calls the interpreter almost always on AIME.
+- The weight-space counterpart of prompting a model to hand computation to an interpreter: when to call the tool is first imitated from code-rewritten traces (§1; §2.2) and then refined by RL on outcome reward alone, with no reward for executable code (§2.3.1). The authors report that by the end of RL training responses contain code on nearly 98% of the questions (§3.3, Fig. 3 (b)), so the learned policy calls the interpreter almost always on AIME.
 
 ## In plain words
 
@@ -43,7 +43,7 @@ The question: can RL with a reward on the final answer alone teach an LLM when a
 
 - **Task:** competition math with a single checkable final answer, which the model must give in a specified format (e.g. inside `\boxed{}`); the reward is +1 when the answer is equivalent to the ground truth and −1 otherwise, checked by rules (§2.3.1, Eq. 2). How equivalence is decided is not described beyond "rule-based verification".
 - **Tool:** Python, run in a sandbox, with complete scripts including imports (App. A, Fig. 7).
-- **Models:** Qwen2.5-32B-Instruct (an open instruction-tuned model) as the main backbone, and DeepSeek-R1-Distill-Qwen-32B, a 32B Qwen model fine-tuned on outputs of DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")) (§2.3.2; §1). DeepSeek-R1 itself helps filter the cold-start data (§2.2).
+- **Models:** Qwen2.5-32B-Instruct (an open instruction-tuned model) as the main backbone, and DeepSeek-R1-Distill-Qwen-32B, a 32B Qwen model fine-tuned on outputs of DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")) (§2.3.2; §1). DeepSeek-R1 itself helps filter the cold-start data (§2.2).
 - **Evaluation:** AIME 2024 and AIME 2025 only; each set is run 32 times at temperature 1.0 and top-p 0.7, and the average estimates pass@1 (§3.1).
 - **Baselines:** text-based RL on the same backbone, which "includes a text-based cold-start SFT initialization to ensure a fair comparison" (Tab. 1 note; SFT is supervised fine-tuning); and seven published math and reasoning models, among them OpenAI o1-preview (OpenAI's reasoning model) and s1-32B (a 32B model tuned for test-time scaling), whose scores are copied from their sources (§3.1, Tab. 1).
 - **Not discussed:** which problems the RL stage trains on, how the reported checkpoint was chosen, and the size of the cold-start dataset.
@@ -81,4 +81,4 @@ None stated.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

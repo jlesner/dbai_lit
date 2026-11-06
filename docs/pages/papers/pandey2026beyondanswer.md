@@ -89,4 +89,4 @@ The authors ask how prompts shape an LLM's reasoning on scientific tasks, and wh
 ## On this site
 
 - **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

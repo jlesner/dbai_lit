@@ -78,4 +78,4 @@ Cloud database pipelines often recompute the same sub-queries. The authors argue
 ## On this site
 
 - **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/prove-smt">prove-smt</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

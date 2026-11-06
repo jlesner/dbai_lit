@@ -55,4 +55,4 @@ The authors' claims; there are no experiments.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-bag">theory-bag</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>

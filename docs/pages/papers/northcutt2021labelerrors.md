@@ -18,7 +18,7 @@ Researchers rank machine learning models by accuracy on a benchmark's test set, 
 
 ## Background and terms
 
-**Terms to know:** none in the glossary yet; see Missing glossary terms below.
+**Terms to know:** [label noise](#/glossary/label-noise) (assumed **class-conditional** here, depending "only on the latent true class, not the data", §3) · [out-of-sample predicted probabilities](#/glossary/cross-validation-and-out-of-sample-predictions) (here by cross-validation, §3) · [top-1 and top-5 accuracy](#/glossary/top-k-accuracy-top-1-and-top-5) (App. F)
 
 **The paper's own terms:**
 - **label error**: a flagged example counts as an error when fewer than 3 of 5 crowd workers agree it has its given label, the **agreement threshold** (§4); 4 and 5 of 5 are also reported (App. F). Errors are "correctable" (a majority agree on the suggested label), "multi-label" (both labels), "neither", or "non-agreement" (no majority) (§4).
@@ -26,12 +26,7 @@ Researchers rank machine learning models by accuracy on a benchmark's test set, 
 - **benign, unknown-label, pruned and correctable sets** (§5, Defs. 3–6): benign examples were not flagged, or were kept by the workers; unknown-label examples got no agreed single label; the pruned set drops them; the correctable set is the flagged examples relabeled by consensus.
 - **noise prevalence**: the correctable set's share of the pruned set (§5, Def. 7); it "differs from the fraction of label errors originally found in each of the test sets" (§5), Tab. 1's "% error".
 - **capacity**: roughly model size: "higher-capacity models (like NASNet)" against "models with fewer parameters (like ResNet-18)" (§1). NASNet, Xception, ResNet and VGG are image classifiers of different sizes.
-
-**Missing glossary terms:**
-- **label noise**: wrong labels in a dataset. The paper assumes it is **class-conditional**, depending "only on the latent true class, not the data" (§3).
 - **confident learning (CL)**: a method of Northcutt, Jiang and Chuang [33] that estimates, from a model's predicted probabilities and the given labels, how often each true class carries each given label, hence how many labels are wrong; the paper flags that many examples, those where the model most prefers another class to the given one (§3; App. C).
-- **out-of-sample predicted probabilities**: a model's class probabilities for examples it was not trained on, here by cross-validation (§3).
-- **top-1 and top-5 accuracy**: the share of examples whose true label is the model's first guess, or among its five top guesses (App. F).
 
 **Builds on:**
 - Confident learning [33], used as a filter; the contribution "is not in the methodology" (§3).
@@ -83,4 +78,4 @@ How common are label errors in widely used test sets, and do they change which m
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

@@ -18,7 +18,7 @@ LLM agents increasingly keep reusable procedures outside the model, often called
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [progressive disclosure](#/glossary/progressive-disclosure) · [LoRA](#/glossary/lora-low-rank-adaptation) · [reinforcement learning](#/glossary/reinforcement-learning) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [Pareto front](#/glossary/pareto-front)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [progressive disclosure](#/glossary/progressive-disclosure) · [LoRA](#/glossary/lora-low-rank-adaptation) · [reinforcement learning](#/glossary/reinforcement-learning) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [Pareto front](#/glossary/pareto-front) · [options framework](#/glossary/options-framework) (§3.2, from Sutton et al. (1999))
 
 **The paper's own terms:**
 - **skill** (§1): "a reusable procedure that an agent can call later", broader than the glossary's agent skill entry (the SKILL.md text form). Six senses (Tab. 1, §3.1): executable code; natural-language (NL) heuristic, a short lesson injected at retrieval time; SKILL.md package (routing metadata, instructions, optional code); parametric, e.g. a LoRA adapter; memory/trajectory (stored episodes); and capability label, grouped with registry-retrieved skills. By default "skill" means the first four; the last two are boundary cases (§3.1).
@@ -31,9 +31,6 @@ LLM agents increasingly keep reusable procedures outside the model, often called
 - **evidence grades** (§2.5, App. A.2): A, several controlled ablations or one clean ablation plus independent corroboration; B, one controlled study or a strong benchmark or deployment measurement; C, convergent benchmark behaviour without a clean causal ablation; D, architectural corroboration only. They are "qualitative audit labels, not statistical confidence intervals" (App. A.2).
 - **usage versus utility** (§8.1, §9.8): calling a skill, against the skill improving the outcome. **Operator velocity** (§8.2): counts of each edit kind per task or per dollar.
 - **PPVH**: a family of executable libraries with execution-grounded admission (§6.1). §9.1 names its "practice + verify" phases; the acronym is not expanded.
-
-**Missing glossary terms:**
-- **options framework** (§3.2): from Sutton et al. (1999), a skill as a temporally extended action: a set of states where it can start, a policy, and a termination condition.
 
 **Builds on:**
 - Sutton et al. (1999), the options framework, as starting point (§2.6, §3.2).
@@ -97,4 +94,4 @@ No experiments (§2: a literature audit). The seven patterns (§9, Tab. 7), with
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/survey">survey</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

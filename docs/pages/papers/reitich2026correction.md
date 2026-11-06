@@ -17,7 +17,7 @@ When an LLM system adds a model call (a revision, a re-solve, a judge's pick), i
 
 ## Background and terms
 
-**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [bootstrap resampling](#/glossary/bootstrap-resampling).
+**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Jeffreys smoothing](#/glossary/jeffreys-smoothing) (§3) · [dataset shift](#/glossary/dataset-shift) (a changed task-group mix is "a form of dataset shift", §6) · [conditional independence](#/glossary/conditional-independence) (here the final outcome depends on the first only through the middle one, §5.1).
 
 **The paper's own terms:**
 - **protocol operation**: one model call within "a structured sequence of model calls", fixed by its model, instruction, decoding rule and required output (§1).
@@ -30,11 +30,6 @@ When an LLM system adds a model call (a revision, a re-solve, a judge's pick), i
 - **pooled vs depth-conditioned predictor**: one rate pair for all tasks vs one per depth group, plugged into the accounting identity (Eq. 3, see Approach) (§3.1–3.2).
 - **anchor, posshuffle, oracle accuracy**: the baseline candidate (candidate 1); a fixed per-item reshuffle of presentation order; the best accuracy any selection could reach on the candidate sets (§4.1, Tab. 4).
 - **transition, direct vs composed**: the 2×2 table of success at one checkpoint given success at an earlier one; composed = product of the two one-step tables, direct = measured end to end (§5.1, Eq. 5). Its two rows are the items that failed and passed at the earlier checkpoint; a row's support is how many items it holds (§5.3).
-
-**Missing glossary terms:**
-- **Jeffreys smoothing**: estimating a rate as (count + 1/2) / (group size + 1), stabilizing small groups while pulling them toward 1/2 (§3).
-- **dataset shift**: a change between the population a quantity is estimated on and the one it is applied to; a changed task-group mix is "a form of dataset shift" (§6).
-- **conditional independence**: here, the final outcome depends on the first only through the middle one (§5.1).
 
 **Builds on:**
 - Huang et al. 2024 (ICLR), whose GPT-4 GSM8K totals are reanalyzed (§1, §2.3).
@@ -89,4 +84,4 @@ When an LLM system adds a model call (a revision, a re-solve, a judge's pick), i
 ## On this site
 
 - **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

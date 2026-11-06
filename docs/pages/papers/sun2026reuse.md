@@ -18,7 +18,7 @@ Self-improving AI systems propose changes to themselves (prompts, code) and keep
 
 ## Background and terms
 
-**Terms to know:** [multiple testing](#/glossary/multiple-testing) · [exact paired sign test](#/glossary/sign-test)
+**Terms to know:** [multiple testing](#/glossary/multiple-testing) · [exact paired sign test](#/glossary/sign-test) · [union bound](#/glossary/union-bound) (splitting α among the tests caps the total at α, §2.2) · [recursive self-improvement (RSI)](#/glossary/recursive-self-improvement-rsi) (abstract, §1) · [lower confidence bound](#/glossary/lower-confidence-bound) (App. A.1, A.3)
 
 **The paper's own terms:**
 - **promotion**: accepting a candidate as the new current system (the incumbent); a **false promotion** improves population performance by at most a threshold γ, zero in Thm. 1 and the experiments (§2.1, Tab. 2).
@@ -28,11 +28,6 @@ Self-improving AI systems propose changes to themselves (prompts, code) and keep
 - **running certificate C_t**: the sum over promotions of max{ℓ, 0}, where ℓ is a lower confidence bound on the step's gain, hidden from the proposer (§2.2); the **direct certificate D_t** bounds the gain over the starting system in one comparison, at a separate error level (Prop. A1).
 - **optimism gap**: the final gain measured on S minus the population gain (§3.1).
 - **threshold gate**: promote the candidate with the largest standardized mean gain on S if it exceeds a fixed threshold set by the round and promotion count (Def. A1).
-
-**Missing glossary terms:**
-- **recursive self-improvement (RSI)**: systems that propose modifications to themselves, with evaluation deciding which are kept (abstract, §1).
-- **union bound**: the chance that any of many tests errs is at most the sum of their error chances, so splitting α among them caps it at α (§2.2).
-- **lower confidence bound**: a value below the true quantity except with a chosen small probability (App. A.1, A.3).
 
 **Builds on:**
 - SGM (a Statistical Gödel Machine with a global error budget) and PACE (sequential tests valid however often results are checked), gates that, the authors say, "typically treat candidates as independent of the test data or restrict feedback" without accounting for what promotion decisions reveal (§4); not listed here.
@@ -81,4 +76,4 @@ Self-improving AI systems propose changes to themselves (prompts, code) and keep
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/stats">stats</a></span>

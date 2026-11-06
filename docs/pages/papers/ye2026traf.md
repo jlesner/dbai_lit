@@ -19,7 +19,7 @@ Database engines such as PostgreSQL, SQL Server, Oracle, MySQL and SQLite disagr
 
 ## Background and terms
 
-**Terms to know:** [formal semantics](#/glossary/formal-semantics) · [SQL dialect](#/glossary/sql-dialect) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [bag semantics](#/glossary/bag-semantics) · [correlated subquery](#/glossary/correlated-subquery) · [query optimizer](#/glossary/query-optimizer) · [fuzzing](#/glossary/fuzzing) · [relational algebra](#/glossary/relational-algebra) (§3.1, Fig. 2, PDF pp. 7–8)
+**Terms to know:** [formal semantics](#/glossary/formal-semantics) · [SQL dialect](#/glossary/sql-dialect) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [bag semantics](#/glossary/bag-semantics) · [correlated subquery](#/glossary/correlated-subquery) · [query optimizer](#/glossary/query-optimizer) · [fuzzing](#/glossary/fuzzing) · [relational algebra](#/glossary/relational-algebra) (§3.1, Fig. 2, PDF pp. 7–8) · [overload resolution](#/glossary/overload-resolution) (§3.2, PDF p. 8) · [type safety and type soundness](#/glossary/type-safety-and-type-soundness) (§5, PDF p. 27)
 
 **The paper's own terms:**
 - **implicit and explicit cast**: an explicit cast is written in the query (`CAST('1.1' AS FLOAT)`); an implicit cast is a conversion the engine applies itself, such as '1' to 1 before adding (§2.1, PDF p. 5; §3.4, PDF p. 12).
@@ -29,10 +29,6 @@ Database engines such as PostgreSQL, SQL Server, Oracle, MySQL and SQLite disagr
 - **instantiation**: one engine's definitions of the abstract operators, from documentation, and black-box experiments where it lacked detail (§4, PDF p. 19).
 - **cast insertion** (elaboration): rewrites a well-typed query so every implicit cast becomes explicit (§3.4, PDF p. 12).
 - **cast-free query**: a query with no explicit cast (§5, PDF p. 27; Fig. 12, PDF p. 28).
-
-**Missing glossary terms:**
-- **overload resolution**: choosing which typed version of an operator (integer `+` or real `+`) a call uses, from the argument types (§3.2, PDF p. 8).
-- **type safety and type soundness**: safety means a well-typed query evaluates to a table or a controlled error and does not "get stuck" (stop with neither); soundness adds that the table has the query's type (§5, PDF p. 27).
 
 **Builds on:**
 - Guagliardo and Libkin's formal semantics of SQL ([A Formal Semantics of SQL Queries](#/papers/guagliardo2017semantics "A formal semantics of SQL queries, its validation, and applications (2017)")), "whose core we follow here" (§7, PDF p. 38).
@@ -85,4 +81,4 @@ Database engines such as PostgreSQL, SQL Server, Oracle, MySQL and SQLite disagr
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation) · [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dialect-misc">dialect-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/dialect">dialect</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

@@ -18,7 +18,7 @@ Tuning models against one validation set many times could, in principle, fit its
 
 ## Background and terms
 
-**Terms to know:** [minimum description length (MDL)](#/glossary/minimum-description-length-mdl) · [hyperparameter optimization](#/glossary/hyperparameter-optimization) · [empirical risk minimization (ERM)](#/glossary/empirical-risk-minimization-erm) · [data contamination](#/glossary/data-contamination) · [reward model](#/glossary/reward-model) · [KL divergence](#/glossary/kl-divergence).
+**Terms to know:** [minimum description length (MDL)](#/glossary/minimum-description-length-mdl) · [hyperparameter optimization](#/glossary/hyperparameter-optimization) · [empirical risk minimization (ERM)](#/glossary/empirical-risk-minimization-erm) · [data contamination](#/glossary/data-contamination) · [reward model](#/glossary/reward-model) · [KL divergence](#/glossary/kl-divergence) · [adaptive data analysis](#/glossary/adaptive-data-analysis) (here, such hypotheses generalize "when their dependence on reused data is mediated by a bounded information channel", §1 "Related work") · [concentration inequality](#/glossary/concentration-inequality) (Hoeffding's inequality, for a model fixed independently of the n examples, with losses between 0 and 1, §3, App. B) · [union bound](#/glossary/union-bound) (covering many fixed models at once costs a term logarithmic in their number, §3, App. B) · [true and false positive rates](#/glossary/true-and-false-positive-rates) (sensitivity and specificity: the share of overfitting checkpoints the test flags, and the share of honest ones it leaves unflagged, §5; Tab. 5) · [PAC-Bayes](#/glossary/pac-bayes) (§3.1; App. A).
 
 **The paper's own terms:**
 - **explorer**: the agent that, in a loop, edits a training script, trains on the training set, asks for validation feedback and reports its best model (§2.1).
@@ -31,10 +31,6 @@ Tuning models against one validation set many times could, in principle, fit its
 - **compression certificate**: the authors' name for the output-compression test (§1; App. J); a checkpoint passes when the reproducer's validation metric is within 5% relative of the explorer's (Tab. 3).
 
 **Missing glossary terms:**
-- **adaptive data analysis**: theory of reusing one dataset to test hypotheses chosen after seeing earlier results; such hypotheses generalize "when their dependence on reused data is mediated by a bounded information channel" (§1 "Related work").
-- **Hoeffding's inequality and the union bound**: a model fixed independently of n examples, with losses between 0 and 1, has average loss on them unlikely to be far from its true expected loss; covering many fixed models at once costs a term logarithmic in their number (§3, App. B).
-- **PAC-Bayes**: generalization bounds that weigh each hypothesis by a prior chosen in advance instead of counting hypotheses (§3.1; App. A).
-- **sensitivity and specificity**: the share of overfitting checkpoints the test flags, and the share of honest ones it leaves unflagged (§5; Tab. 5).
 - **bits per byte (BPB)**: a language-model loss, the average bits needed to encode each byte of text; lower is better (Tab. 1; not defined in the paper).
 
 **Builds on:**
@@ -82,4 +78,4 @@ Tuning models against one validation set many times could, in principle, fit its
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

@@ -18,7 +18,7 @@ Most SQL analysis and rewriting tools turn a query into a tree with a grammar-ba
 
 ## Background and terms
 
-**Terms to know:** [SQL dialect](#/glossary/sql-dialect) · [test oracle](#/glossary/test-oracle) · [mutation testing](#/glossary/mutation-testing) · [text-to-SQL](#/glossary/text-to-sql) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [grammar, terminals and non-terminals](#/glossary/bnf-backus-naur-form) · [test-case reduction](#/glossary/delta-debugging)
+**Terms to know:** [SQL dialect](#/glossary/sql-dialect) · [test oracle](#/glossary/test-oracle) · [mutation testing](#/glossary/mutation-testing) · [text-to-SQL](#/glossary/text-to-sql) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [grammar, terminals and non-terminals](#/glossary/bnf-backus-naur-form) · [test-case reduction](#/glossary/delta-debugging) · [round-trip property](#/glossary/round-trip-property) (§7.1 "Metrics") · [SQL anti-pattern](#/glossary/sql-anti-pattern) (such as `SELECT *`, §6.1)
 
 **The paper's own terms:**
 - **query rewriting**: transforming a query into one that satisfies a target objective; it includes analysis, such as linting (§1). Broader than the glossary's [query rewriting](#/glossary/query-rewriting-and-rewrite-rules).
@@ -29,10 +29,6 @@ Most SQL analysis and rewriting tools turn a query into a tree with a grammar-ba
 - **`Other` / `Unsegmented` nodes**: leaves holding raw text, for a dialect-specific segment with no grammar symbol (e.g. T-SQL's OPTION clause, a [query hint](#/glossary/query-hint)) (§4.1), or for a fragment still unsegmented after the repair attempts (§4.3).
 - **Q-RT rate**: share of queries that print back identical after parse-and-print twice, ignoring whitespace and parentheses; pglast and SQLGlot need only match their own first output (§7.1 "Metrics", Eq. 1).
 - **SM rate**: on PostgreSQL queries, per element (tables, columns, aliases, joins, common operators, literal operands, precedence), the share of trees whose extracted values overlap with those of pglast, the official PostgreSQL parser (§7.1 "Metrics").
-
-**Missing glossary terms:**
-- **round-trip property**: parsing a query and printing the tree gives the input back; a property-based test, needing no labelled answers (§7.1 "Metrics").
-- **SQL anti-pattern**: poor practice that "could cause performance and maintainability issues", such as `SELECT *` (§6.1).
 
 **Builds on:**
 - SQLess ([SQLess](#/papers/lin2024sqless "SQLess: Dialect-Agnostic SQL Query Simplification (2024)")), a test-case reducer whose adaptive parser attempts to generate grammar rules for unparsed syntax: the "most closely related work" (§7.1 "Baselines"); the authors adopt its reduction algorithm and metrics and compare against it (§6.2).
@@ -90,4 +86,4 @@ Most SQL analysis and rewriting tools turn a query into a tree with a grammar-ba
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/dialect-parse">dialect-parse</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/dialect-parse">dialect-parse</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

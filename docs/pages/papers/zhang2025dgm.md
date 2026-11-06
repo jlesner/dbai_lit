@@ -19,17 +19,13 @@ The authors want to automate AI development, since most of today's AI systems ha
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [evolutionary search](#/glossary/evolutionary-search) · [exploration and exploitation](#/glossary/exploration-and-exploitation) · [hill climbing](#/glossary/hill-climbing) · [reward hacking](#/glossary/reward-hacking)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [evolutionary search](#/glossary/evolutionary-search) · [exploration and exploitation](#/glossary/exploration-and-exploitation) · [hill climbing](#/glossary/hill-climbing) · [reward hacking](#/glossary/reward-hacking) · [Gödel machine](#/glossary/gödel-machine) (Schmidhuber 2007; §1; §3) · [open-endedness](#/glossary/open-endedness) (per Hughes et al. (2024), §2)
 
 **The paper's own terms:**
 - **coding agent**: "a single system, implemented with a code repository and powered by frozen pretrained foundation models (FMs), capable of reading, writing, and executing code" (§3). In the glossary's terms, the DGM edits much of an agent harness, not weights (§1).
 - **self-improvement**: a coding task in which an agent edits its own code, excluding the archive and parent selection, which stay fixed (§3).
 - **open-ended exploration**: keeping the archive of all working agents and branching from any of them with non-zero chance, not only from the latest or best (§3); the kept agents are **stepping stones**, "interesting yet suboptimal solutions or features that may enable future breakthroughs" (§1).
 - **objective hacking**: "optimizing for the measurable objective instead of truly solving the underlying problem", which the authors liken to reward hacking (App. H).
-
-**Missing glossary terms:**
-- **Gödel machine**: Schmidhuber's (2007) self-improving program that rewrites its own code only with a formal proof that the rewrite is beneficial (§1; §3).
-- **open-endedness**: per Hughes et al. (2024), "a system's capacity to generate sequences of artifacts that are both novel and learnable from an observer's perspective" (§2).
 
 **Builds on:**
 - The Gödel machine (Schmidhuber, 2007), its proofs replaced by empirical evidence (§3).
@@ -84,4 +80,5 @@ The authors want to automate AI development, since most of today's AI systems ha
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

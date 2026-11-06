@@ -2,13 +2,14 @@
 
 > Checkers and benchmarks need many query pairs that are *nearly* equivalent. Where do they come from, and how are they labelled?
 
-<p class="tags"><a class="tag" href="#/tags/pairgen">pairgen</a><a class="tag sub" href="#/tags/dialect-pairs">dialect-pairs</a></p>
+<p class="tags"><a class="tag" href="#/tags/dialect">dialect</a><a class="tag" href="#/tags/pairgen">pairgen</a><a class="tag" href="#/tags/pairs">pairs</a></p>
 
 ## Challenge
 Build a steady supply of diverse query pairs with known or checkable labels, covering the SQL features where tools fail.
 
 ## What's known
 - Public pair sets are small or narrow: provers have been validated mainly on Calcite's equivalent-only rule tests (§ Why it matters), while LLM rewrites of TPC-DS queries and of ReSequel's workloads mostly fall outside what SQLSolver proves ([GenRewrite](#/papers/liu2024genrewrite "GenRewrite: Query Rewriting via Large Language Models (2026)"), [ReSequel](#/papers/fathollahzadeh2026resequel "ReSequel: Robust LLM-assisted Query Rewriting and Optimization using Templatization and Sampling (2026)"); [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps) § What's known).
+- Outside SQL, Poon et al.'s [self-play](#/glossary/self-play) has one model copy rewrite a Haskell function into an equivalent one with a Liquid Haskell proof or a different one with a diverging input, keeps a pair only if the tool accepts the proof or execution confirms the input, and scores its difficulty by how often a second copy misjudges it ([Semantic Equivalence Self-Play (SEQ/SINQ](#/papers/poon2026selfplay "Improving LLM Code Reasoning via Semantic Equivalence Self-Play with Formal Verification (2026)") §3.3, §3.4.1); its authors report that, with both games chosen equally often, accepted proofs were rare, so the verified pairs were mostly inequivalent (§5.4, §8).
 - Realistic pairs today cost hand work and lack certified labels (ours): SQL-RewriteBench's DBAs enriched workload queries by hand, with reference rewrites, because many lack a measurable rewrite opportunity ([SQL-RewriteBench](#/papers/long2026sqlrewritebench "SQL-RewriteBench: A Correctness-Gated, Full-Denominator Benchmark for Statement-Level SQL Rewriting (2026)") §4.1), and its labels are result consistency on packaged data (§5.1). XData's mutants were written by hand ([XData](#/papers/chandra2014xdata "Data generation for testing and grading SQL queries (2015)") §13.1; § Why it's hard).
 
 Still open (ours): a steady supply of diverse, realistic near-miss pairs, covering the SQL features where tools fail, each with a proof, a counterexample or an honest *unknown*.

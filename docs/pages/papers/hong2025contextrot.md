@@ -82,4 +82,4 @@ All are the authors' claims.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/longctx">longctx</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

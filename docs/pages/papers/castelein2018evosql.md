@@ -81,4 +81,4 @@ The authors report:
 ## On this site
 
 - **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-search">cex-search</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

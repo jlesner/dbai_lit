@@ -19,7 +19,7 @@ Reasoning models such as OpenAI's o1 answer better when they think longer, but o
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) (how o1 and DeepSeek R1 were trained, §1); other field terms are defined below.
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) (how o1 and DeepSeek R1 were trained, §1) · [Distillation into compact models](#/glossary/distillation) (here, fine-tuning on Gemini's traces and answers, §1, §2.1) · [majority voting](#/glossary/self-consistency-majority-voting) (§6.2) · [process reward model](#/glossary/outcome-and-process-rewards) (used to guide tree search, §6.2) · [paired bootstrap confidence interval](#/glossary/bootstrap-resampling) (a range for the score difference between two models, estimated by resampling the questions; entirely below zero means worse, Tab. 2 caption)
 
 **The paper's own terms**
 - **test-time scaling**: spending more compute when answering to get better results (§1). **Sequential** scaling builds later computation on earlier (one longer trace); **parallel** scaling combines independent attempts, e.g. by majority voting (§3.1).
@@ -30,15 +30,9 @@ Reasoning models such as OpenAI's o1 answer better when they think longer, but o
 - **token-, step- and class-conditional control**: baselines that say in the prompt how long to think: at most N tokens, at most N steps (text between blank lines, "around 100 tokens"), or a generic "short" or "long" prompt (§3.1, App. E.1). The token and step variants are trained on matching formats (Fig. 10).
 - **rejection sampling**: sampling until a generation fits the budget (§3.1; temperature 1, Fig. 6); an oracle (an idealized reference) that "captures the posterior over responses conditioned on its length" (§3.1), i.e. it shows what the model answers when its thinking happens to be that short.
 
-**Missing glossary terms**
-- **Distillation into compact models**: training a model on outputs of a stronger model; here, fine-tuning on Gemini's traces and answers (§1, §2.1).
-- **majority voting**: sample several solutions and return the most frequent answer (§6.2).
-- **process reward model**: a model that scores each reasoning step, used to guide tree search; an outcome reward model scores only whole solutions (§6.2).
-- **paired bootstrap confidence interval**: a range for the score difference between two models, estimated by resampling the questions; entirely below zero means worse (Tab. 2 caption).
-
 **Builds on**
 - OpenAI o1, a closed reasoning model whose test-time scaling they set out to reproduce openly (§1; not listed here).
-- DeepSeek R1, [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)"): o1-level via reinforcement learning (§1); its distilled 32B model, fine-tuned on 800K examples, is compared in Tab. 1 and §4.2.
+- DeepSeek R1, [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)"): o1-level via reinforcement learning (§1); its distilled 32B model, fine-tuned on 800K examples, is compared in Tab. 1 and §4.2.
 - LIMA, where 1,000 examples sufficed to align a model; they liken their own hypothesis (pretraining already gives the reasoning ability; fine-tuning activates it) to its "Superficial Alignment Hypothesis" (§6.1; not listed here).
 - [compute-optimal test-time scaling](#/papers/snell2024scaling "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters (2024)") (with [Large Language Monkeys](#/papers/brown2024monkeys "Large Language Monkeys: Scaling Inference Compute with Repeated Sampling (2024)")), for the sequential/parallel split (§3.1).
 
@@ -94,4 +88,4 @@ Reasoning models such as OpenAI's o1 answer better when they think longer, but o
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a></span>

@@ -18,7 +18,7 @@ Static analysis tools such as CodeQL detect potential vulnerabilities with queri
 
 ## Background and terms
 
-**Terms to know:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [domain-specific language (DSL)](#/glossary/domain-specific-language-dsl) · [low-resource programming language](#/glossary/low-resource-programming-language) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [vector store](#/glossary/vector-store) · [tool calling](#/glossary/tool-calling-function-calling) · [F1 score](#/glossary/f1-score) · [data contamination](#/glossary/data-contamination)
+**Terms to know:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [domain-specific language (DSL)](#/glossary/domain-specific-language-dsl) · [low-resource programming language](#/glossary/low-resource-programming-language) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [vector store](#/glossary/vector-store) · [tool calling](#/glossary/tool-calling-function-calling) · [F1 score](#/glossary/f1-score) · [data contamination](#/glossary/data-contamination) · [CVE and CWE](#/glossary/vulnerability-records-cve-nvd-cwe-cvss-epss) (each CVE with its buggy and patched versions, §1; CWE categories, Tab. 1) · [Model Context Protocol (MCP)](#/glossary/model-context-protocol-mcp) (how the agent calls its tools) · [static analysis](#/glossary/static-analysis) (§1) · [taint analysis](#/glossary/taint-analysis) (source, sink, sanitizer; §3.1) · [Language Server Protocol (LSP)](#/glossary/language-server-protocol-lsp) (QLCoder uses it "for syntax guidance", abstract)
 
 **The paper's own terms:**
 - **Vulnerability path query**: a CodeQL query that, run on a program's dataflow graph (how values flow between program points, across functions), returns paths from a source to a sink (§3.1).
@@ -26,13 +26,6 @@ Static analysis tools such as CodeQL detect potential vulnerabilities with queri
 - **Patched region**: the graph nodes for the code the fix changed (§3.1).
 - **Valid** and **successful** query: valid when it compiles and runs; successful when it also meets the two conditions below (§3.1).
 - **Context engineering**: the authors' name for designing the agent's initial prompt and toolbox (§3.2–3.3).
-
-**Missing glossary terms:**
-- **Static analysis**: "a technique to analyze programs without executing them" (§1).
-- **Taint analysis (source, sink, sanitizer)**: finding dataflow paths from a source, where untrusted data enters (e.g. an API endpoint accepting user input), to a sink where it does harm (e.g. a database write), that "lack proper sanitization" (e.g. filtering malicious data) (§3.1).
-- **CVE and CWE**: a CVE (Common Vulnerabilities and Exposures entry) is one recorded vulnerability, whose databases hold a description and the buggy and patched versions (§1); a CWE (Common Weakness Enumeration category) is a weakness type, such as path traversal (§1; Tab. 1).
-- **Model Context Protocol (MCP)**: a protocol through which an agent calls tools that a separate server provides (general definition).
-- **Language Server Protocol (LSP)**: the protocol editors use to ask a language's server for completions, error diagnostics and definitions (general definition); QLCoder uses it "for syntax guidance" (abstract).
 
 **Bridge:** in the glossary's terms, QLCoder is an [agent harness](#/glossary/agent-harness) around Claude Code.
 
@@ -91,4 +84,4 @@ Static analysis tools such as CodeQL detect potential vulnerabilities with queri
 ## On this site
 
 - **Discussed in:** [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag sub" href="#/tags/dsl-datalog">dsl-datalog</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

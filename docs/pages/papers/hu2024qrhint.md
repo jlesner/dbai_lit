@@ -19,7 +19,7 @@ A student's SQL query is wrong, and the instructor has a correct one. Teaching s
 
 ## Background and terms
 
-**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [bag semantics](#/glossary/bag-semantics) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [select-project-join (SPJ) query](#/glossary/select-project-join-spj-query) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [disjunctive normal form (DNF)](#/glossary/disjunctive-normal-form-dnf) · [soundness and completeness](#/glossary/soundness-and-completeness)
+**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [bag semantics](#/glossary/bag-semantics) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [select-project-join (SPJ) query](#/glossary/select-project-join-spj-query) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [disjunctive normal form (DNF)](#/glossary/disjunctive-normal-form-dnf) · [soundness and completeness](#/glossary/soundness-and-completeness) · [Boolean minimization](#/glossary/boolean-minimization) (on the second level of the polynomial hierarchy, per the paper, §1)
 
 **The paper's own terms:**
 - **SPJ, SPJA**: a query in the fragment is SPJA if it has grouping, aggregation or DISTINCT, otherwise SPJ (§3 "Queries").
@@ -28,9 +28,6 @@ A student's SQL query is wrong, and the instructor has a correct one. Teaching s
 - **cost of a repair**: a penalty w per site plus the syntax-tree nodes deleted and inserted, divided by the two predicates' combined size (Def. 3, Eq. 1).
 - **repair bound**: a lower and an upper formula enclosing everything fixes at the given sites can produce (§5.1).
 - **local optimality**: per-stage guarantees, under stated assumptions, that hints are necessary or minimal (§3.1 "Optimality").
-
-**Missing glossary terms:**
-- **Boolean minimization**: finding a smallest formula with a given truth table, where *don't-care* rows may take either value; on the second level of the polynomial hierarchy, per the paper (§1).
 
 **Builds on:**
 - SMT solvers for SQL "as with previous work" (§3 "SMT Solvers"): Chu et al.'s Cosette-line prover ([UDP](#/papers/chu2018udp "Axiomatic foundations and algorithms for deciding semantic equivalences of SQL queries (2018)")), the prover EQUITAS ([EQUITAS](#/papers/zhou2019equitas "Automated verification of query equivalence using satisfiability modulo theories (2019)")) and the explainer RATest ([RATest](#/papers/miao2019ratest "Explaining Wrong Queries Using Small Examples (2019)")). The authors say previous work mostly treats aggregates as [uninterpreted functions](#/glossary/uninterpreted-function) (§3).
@@ -80,4 +77,5 @@ A student's SQL query is wrong, and the instructor has a correct one. Teaching s
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/prove-smt">prove-smt</a></span>
+- **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

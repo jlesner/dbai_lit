@@ -19,7 +19,7 @@ Databases speed up queries by rewriting them into equivalent, faster ones, using
 
 ## Background and terms
 
-**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [logical plan](#/glossary/logical-plan) · [bag semantics](#/glossary/bag-semantics) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [integrity constraint](#/glossary/integrity-constraint) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [uninterpreted function](#/glossary/uninterpreted-function) · [satisfiable and valid](#/glossary/satisfiable-and-valid)
+**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [logical plan](#/glossary/logical-plan) · [bag semantics](#/glossary/bag-semantics) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [integrity constraint](#/glossary/integrity-constraint) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [uninterpreted function](#/glossary/uninterpreted-function) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [superoptimization](#/glossary/superoptimization) (§1, PDF p. 1)
 
 **The paper's own terms:**
 - **rewrite rule**: a source and a destination plan template plus constraints under which they are equivalent (§4, PDF p. 4).
@@ -27,9 +27,6 @@ Databases speed up queries by rewriting them into equivalent, faster ones, using
 - **constraints**: RelEq, AttrsEq, PredEq (two symbols are the same), SubAttrs (a column list belongs to a table), RefAttrs (a foreign key), Unique, NotNull (§4.2, PDF p. 5).
 - **promising rule**: verified, with a most relaxed constraint set (none can be dropped), and a destination with no more operators of each type (§4.3, PDF p. 5); **useful** if its rewrites made real queries faster (§6, PDF p. 10).
 - **U-expression** (from UDP, an earlier algebraic SQL equivalence prover, §5.1.1, PDF p. 6): a formula for how many times a row appears in a query's result, built from table counts, 0/1 condition tests, a test turning any positive count into 1 (duplicate removal), and sums over all possible rows (projection).
-
-**Missing glossary terms:**
-- **superoptimization**: a compiler technique that searches exhaustively for an equivalent optimal instruction sequence (§1, PDF p. 1).
 
 **Builds on:**
 - UDP ([UDP](#/papers/chu2018udp "Axiomatic foundations and algorithms for deciding semantic equivalences of SQL queries (2018)")), whose U-expressions WeTune applies to symbolic templates and extends with NULL handling (§5.1.1, PDF pp. 6–7).
@@ -81,4 +78,4 @@ Databases speed up queries by rewriting them into equivalent, faster ones, using
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Discovering new rewrite rules](#/challenges/rewrite_rule_discovery) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/pairgen-apply">pairgen-apply</a><a class="tag sub" href="#/tags/prove-smt">prove-smt</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rewrite-smt">rewrite-smt</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/pairgen-apply">pairgen-apply</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>

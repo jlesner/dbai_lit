@@ -18,7 +18,7 @@ Strong agents that write machine-checked proofs in the Lean proof checker use ha
 
 ## Background and terms
 
-**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [curriculum learning](#/glossary/curriculum-learning)
+**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [curriculum learning](#/glossary/curriculum-learning) · [self-evolving agent](#/glossary/self-evolving-agent) (§2) · [coevolution](#/glossary/coevolution) (§2)
 
 **The paper's own terms:**
 - **Lean, Mathlib**: Lean 4 is the proof assistant used; Mathlib is its community library of formalized mathematics; the paper gives the version as `v4.30.0` (App. A).
@@ -30,10 +30,6 @@ Strong agents that write machine-checked proofs in the Lean proof checker use ha
 - **node-level verification**: checking one item of the proof context, such as a helper lemma, in Lean on its own (§3.2, §4.5).
 - **raw score, difficulty coefficient**: raw score is the solve rate on that generation's benchmark; the coefficient measures how much harder the current benchmark is than the first; their product is the **difficulty-normalized score** (§3.3).
 - **`have` statement, binder**: a `have` is an intermediate claim inside a Lean proof; lifted out of its proof, it lacks the surrounding binders (declared variables), local hypotheses and type context (§4.5).
-
-**Missing glossary terms:**
-- **self-evolving agent**: an agent that improves by rewriting its own code or prompts, or by searching over agent designs, instead of keeping a fixed hand-designed workflow (§2).
-- **coevolution**: evolving solvers together with their environments or task curricula, so that the tasks change as the solvers improve (§2).
 
 **Builds on:**
 - The Darwin Gödel Machine (DGM), an agent that rewrites its own code and tests the variants on coding benchmarks (the parent-selection weight is "DGM-style", §3.4), and Hyperagents, which put a task agent and a meta agent that edits itself and the task agent into one program (§1). DGM is on this site as [Darwin Gödel Machine (DGM)](#/papers/zhang2025dgm "Darwin G\'odel Machine: Open-Ended Evolution of Self-Improving Agents (2026)"); Hyperagents is not.
@@ -91,4 +87,4 @@ All from one coevolving run and one fixed-benchmark run (App. A).
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

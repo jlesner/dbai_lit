@@ -84,4 +84,4 @@ In the glossary's terms (our reading), the Attacker's divergence check is [diffe
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

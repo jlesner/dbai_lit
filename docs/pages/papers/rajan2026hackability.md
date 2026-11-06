@@ -18,7 +18,7 @@ Code models can be trained by [reinforcement learning](#/glossary/reinforcement-
 
 ## Background and terms
 
-**Terms to know:** [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [reward hacking](#/glossary/reward-hacking) · [pass@k](#/glossary/passk) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [self-consistency](#/glossary/self-consistency-majority-voting) · [sign test](#/glossary/sign-test) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test)
+**Terms to know:** [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [reward hacking](#/glossary/reward-hacking) · [pass@k](#/glossary/passk) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [self-consistency](#/glossary/self-consistency-majority-voting) · [sign test](#/glossary/sign-test) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [random-effects meta-analysis](#/glossary/random-effects-meta-analysis) (DerSimonian-Laird, one effect per model; §5, Eq. 4) · [I² (heterogeneity)](#/glossary/random-effects-meta-analysis) (the paper says its 0% "means the inverse-variance-weighted heterogeneity statistic does not reject homogeneity", §5)
 
 In the glossary's terms, the paper's "reinforcement learning from execution feedback" (§1) is RLVR with a test suite as the checker.
 
@@ -34,10 +34,6 @@ In the glossary's terms, the paper's "reinforcement learning from execution feed
 - **per-augmentation defect rate**: the share of decisive gate checks in which the new test fails on the gold patch (Fig. 4 caption).
 - **diversity-biased retry**: a new attempt at higher temperature with a prompt "that explicitly asks the augmenter to assert different observable properties" (§3.3).
 - **difficulty stratum**: "the 93-developer human-rated stratum that SWE-bench Verified records for each task" (§5).
-
-**Missing glossary terms:**
-- **random-effects meta-analysis (DerSimonian-Laird)**: pools one effect estimate per study (here, per model) into an average, each weighted by the inverse of its variance plus an estimated between-study variance (§5, Eq. 4).
-- **I² (heterogeneity)**: the share of the spread between studies' estimates beyond what chance explains (general definition); the paper says its 0% "means the inverse-variance-weighted heterogeneity statistic does not reject homogeneity" (§5).
 
 **Builds on:**
 - The pipeline's four parts: verifier scoring from Ficek et al. [2] (NVIDIA), semi-formal reasoning for LLM code judging from Ugare and Chandra [13], iterative attacks from EvolveCoder (Ruan et al. [11]), and human-difficulty stratification from Bae et al. [1] (§1).
@@ -88,4 +84,4 @@ In the glossary's terms, the paper's "reinforcement learning from execution feed
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a></span>

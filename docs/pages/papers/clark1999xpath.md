@@ -20,7 +20,7 @@ It has no experiments or theorems and presents itself as a W3C Recommendation (a
 
 ## Background and terms
 
-**Terms to know:** [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form) (the grammar uses the EBNF notation of the XML Recommendation, an extended BNF, §1) · [DOM tree](#/glossary/dom-tree) (XPath's tree is its own model, which the document says differs from the DOM in places, §5, §5.3).
+**Terms to know:** [BNF (Backus-Naur form)](#/glossary/bnf-backus-naur-form) (the grammar uses the EBNF notation of the XML Recommendation, an extended BNF, §1) · [DOM tree](#/glossary/dom-tree) (XPath's tree is its own model, which the document says differs from the DOM in places, §5, §5.3) · [XML](#/glossary/xml) (the document relies on the XML 1.0 Recommendation, App. A.1) · [XML namespace](#/glossary/xml-namespace) (documents must conform to Namespaces in XML, §5) · [IEEE 754](#/glossary/ieee-754-floating-point) (every XPath number is an IEEE 754 double, including "Not-a-Number" (NaN), infinities and two zeros, §3.5) · [DTD](#/glossary/dtd-document-type-definition) (XPath takes unique IDs and attribute defaults from it, §5.2.1, §5.3).
 
 **The paper's own terms:**
 - **node**: one of seven types: root, element, text, attribute, namespace, processing instruction (an instruction to an application embedded in the XML) and comment (§5). The root is the parent of the top element (§5.1); an element is the parent of its attributes and namespace nodes, but they are not its children (§5.3, §5.4).
@@ -32,12 +32,6 @@ It has no experiments or theorems and presents itself as a W3C Recommendation (a
 - **axes**: thirteen, e.g. child, descendant, parent, ancestor, following-sibling, attribute and self (§2.2); **forward** axes count positions in document order, **reverse** axes (ancestor, preceding, …) backwards (§2.4).
 - **abbreviated syntax**: `child::` may be left out, `@` stands for `attribute::`, `//` for this node or any descendant, `.` and `..` for self and parent (§2.5).
 - **node-set**: "an unordered collection of nodes without duplicates", one of four value types with boolean, number and string (§1).
-
-**Missing glossary terms:**
-- **XML** (general definition): a text format for tree-shaped documents made of nested, named elements with attributes and text, e.g. `<book><price>40</price></book>`; the document relies on the XML 1.0 Recommendation (App. A.1).
-- **XML namespace** (general definition): a URI that qualifies element and attribute names, usually through a prefix such as `xsl:`; documents must conform to Namespaces in XML (§5).
-- **IEEE 754** (general definition, with this document's use): the standard for binary floating-point numbers; every XPath number is an IEEE 754 double, including "Not-a-Number" (NaN), infinities and two zeros (§3.5).
-- **DTD** (document type definition; general definition): a schema inside or alongside an XML file that declares its elements and attributes; XPath takes unique IDs and attribute defaults from it (§5.2.1, §5.3).
 
 **Bridges to the glossary:** in the glossary's terms, XPath is a [domain-specific language (DSL)](#/glossary/domain-specific-language-dsl) (ours).
 
@@ -93,4 +87,4 @@ No experiments and no theorems (§1–§6): a specification. Its stated design c
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-path">dsl-path</a></span>

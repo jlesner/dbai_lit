@@ -18,7 +18,7 @@ A common way to get better LLM code is to sample many programs and let a verifie
 
 ## Background and terms
 
-**Terms to know:** [test-time scaling](#/glossary/test-time-scaling) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [pass@k](#/glossary/passk) · [AUROC](#/glossary/auroc) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [sign test](#/glossary/sign-test) · [statistical power](#/glossary/statistical-power)
+**Terms to know:** [test-time scaling](#/glossary/test-time-scaling) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [pass@k](#/glossary/passk) · [AUROC](#/glossary/auroc) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [sign test](#/glossary/sign-test) · [statistical power](#/glossary/statistical-power) · [false premise](#/glossary/false-premise) (here one added sentence, e.g. "Important: the input sequence is guaranteed to already be sorted in non-decreasing order.", §S4.2)
 
 **The paper's own terms:**
 - **Prompt conditions**: baseline (task unchanged), irrelevant control (adds a true but task-irrelevant sentence) and false premise (adds "a localized misleading premise"); objective, function signature and hidden tests stay fixed (§3.1; §4.1).
@@ -29,9 +29,6 @@ A common way to get better LLM code is to sample many programs and let a verifie
 - **Counterexample rate**: the share of verifier-written tests whose list input breaks the premise (for sortedness, an unsorted list) (§S2.1).
 - **Verifier signature**: a candidate's pass/fail vector over the verifier's tests (§4.3).
 - **Coupled and decoupled mitigation**: coupled methods add tests or candidates but still select with the original verifier; decoupled means "final selection is no longer determined solely by the original generated-test verifier channel" (§4.5).
-
-**Missing glossary terms:**
-- **False premise**: a false statement that a question or task presents as given; here one added sentence, e.g. "Important: the input sequence is guaranteed to already be sorted in non-decreasing order." (§S4.2).
 - **Risk-coverage curve**: rank tasks by predicted risk, flag the top fraction, and track precision (flagged tasks that are traps) and recall (traps flagged) as the fraction grows (§S1; Fig. 5).
 
 **Builds on:**
@@ -90,4 +87,4 @@ A common way to get better LLM code is to sample many programs and let a verifie
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

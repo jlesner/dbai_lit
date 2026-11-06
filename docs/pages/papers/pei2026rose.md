@@ -19,7 +19,7 @@ Code: [ROSE](https://github.com/CedricPei/ROSE)
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [gold query](#/glossary/gold-query) · [query equivalence](#/glossary/query-equivalence) · [Cohen's kappa](#/glossary/cohens-kappa) (κ; the paper's primary measure, as "robust under skewed distributions", §5.1.2; formula App. D)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [gold query](#/glossary/gold-query) · [query equivalence](#/glossary/query-equivalence) · [Cohen's kappa](#/glossary/cohens-kappa) (κ; the paper's primary measure, as "robust under skewed distributions", §5.1.2; formula App. D) · [Matthews correlation coefficient (MCC)](#/glossary/matthews-correlation-coefficient-mcc) (reliable "when class sizes differ substantially", §5.1.2; App. D)
 
 **The paper's own terms:**
 - **NL2SQL**: the paper's name for text-to-SQL; it calls the gold query the **ground-truth SQL** (§1).
@@ -32,9 +32,6 @@ Code: [ROSE](https://github.com/CedricPei/ROSE)
 - **GoldX, AmbQ**: the Refuter's labels for a wrong gold query and an ambiguous question (§5.2.2).
 - **ROSE-VEC**: the authors' "Validation dataset with Expert Consensus" (§1), with splits from the text-to-SQL benchmarks BIRD ([BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)")) and Spider ([Spider](#/papers/yu2018spider "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task (2018)")) (App. J).
 - **ROSE_o3-2504**: version tag, backbone plus release month (App. E.1).
-
-**Missing glossary terms:**
-- **Matthews correlation coefficient (MCC)**: a correlation between predicted and true yes/no labels using all four cells of the confusion matrix; reliable "when class sizes differ substantially" (§5.1.2; App. D).
 
 **Builds on:**
 - LLM-SQL-Solver ([LLM-SQL-Solver](#/papers/zhao2023llmsqlsolver "LLM-SQL-Solver: Can LLMs Determine SQL Equivalence? (2025)")), which prompts an LLM to decide whether the prediction is equivalent to the gold query (§3.2, Tab. 1).
@@ -96,4 +93,4 @@ For leaderboards, one backbone per period is replaced only by a candidate better
 ## On this site
 
 - **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

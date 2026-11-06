@@ -19,7 +19,7 @@ Deep [reinforcement learning](#/glossary/reinforcement-learning) (RL) methods ar
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [interquartile mean (IQM)](#/glossary/interquartile-mean-iqm) · [Mann-Whitney U test](#/glossary/mann-whitney-u-test).
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [interquartile mean (IQM)](#/glossary/interquartile-mean-iqm) · [Mann-Whitney U test](#/glossary/mann-whitney-u-test) · [confidence interval (CI) and coverage](#/glossary/confidence-interval-and-coverage) (§2) · [stochastic dominance](#/glossary/stochastic-dominance) (§4.3, footnote).
 
 **The paper's own terms:**
 - **run**: one independent training of an algorithm; the paper counts runs per task, each giving one score (§2), though in the Atari 100k study one run trains on all 26 games (§3). A run "can be different from using a fixed random seed", as seeds may not control GPU non-determinism (§2, footnote).
@@ -30,10 +30,6 @@ Deep [reinforcement learning](#/glossary/reinforcement-learning) (RL) methods ar
 - **IQM, as used here**: the mean of the middle 50% of all run-task scores (§4.3).
 - **optimality gap**: "the amount by which the algorithm fails to meet a minimum score of" 1.0 (§4.3, Fig. 8).
 - **average probability of improvement**: the chance that one algorithm beats another on a randomly selected task, computed per task over all pairs of runs with the Mann-Whitney U-statistic (§4.3; App. A.7, Eq. A.2).
-
-**Missing glossary terms:**
-- **confidence interval (CI) and coverage**: an interval such that, over many reruns with new runs, the stated fraction of intervals (the nominal coverage, typically 95%) would contain the true score (§2).
-- **stochastic dominance**: one curve lies at or above another everywhere and strictly above somewhere (§4.3, footnote).
 
 **Builds on** (none on this site):
 - Earlier calls for rigor in deep RL, among them Henderson et al., Colas et al. and Jordan et al. (§6; App. A.3); "this paper focuses on reliable comparisons on a suite of tasks" (App. A.3).
@@ -87,4 +83,4 @@ Deep [reinforcement learning](#/glossary/reinforcement-learning) (RL) methods ar
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

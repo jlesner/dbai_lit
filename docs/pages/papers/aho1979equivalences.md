@@ -87,4 +87,4 @@ The authors' claims:
 ## On this site
 
 - **Discussed in:** [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>

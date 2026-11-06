@@ -19,7 +19,7 @@ Most tests of LLMs that turn questions into database queries grade one answer to
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [schema linking](#/glossary/schema-linking) · [stored procedure and trigger](#/glossary/stored-procedure-and-trigger) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [Pearson correlation](#/glossary/pearson-correlation) · [DML and DDL](#/glossary/sql-statement-categories-ddl-dml-dql-dcl-tcl) (DML statements change rows, DDL statements the schema, such as `ALTER TABLE`, §1)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [schema linking](#/glossary/schema-linking) · [stored procedure and trigger](#/glossary/stored-procedure-and-trigger) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [Pearson correlation](#/glossary/pearson-correlation) · [DML and DDL](#/glossary/sql-statement-categories-ddl-dml-dql-dcl-tcl) (DML statements change rows, DDL statements the schema, such as `ALTER TABLE`, §1) · [CRUD](#/glossary/crud) (§3.4)
 
 **The paper's own terms:**
 - **Priority and follow-up sub-task**: each task has an ambiguous priority sub-task, then a follow-up released only after the first is solved (§2). **State dependency**: the follow-up may work on data or objects (such as tables) the first sub-task changed or created (§3.2, Tab. 8).
@@ -32,9 +32,6 @@ Most tests of LLMs that turn questions into database queries grade one answer to
 - **Success rate (SR)**: the share of sub-tasks whose SQL passes all test cases, per sub-task and cumulative (§2, Tab. 2). **Normalized reward**: weights the priority sub-task 0.7 and the follow-up 0.3, with less after debugging in c-Interact (0.5 and 0.2) (App. F.2).
 - **Interaction test-time scaling (ITS)**: how success changes as more interaction turns are allowed. A model satisfies the "ITS Law" "if, given enough interactive turns, its performance can match or even surpass that of the idealized single-turn task" (§5.2).
 - **UserSim-Guard**: 2,100 questions with human-labelled reference actions, for testing user simulators (§6, App. O.1).
-
-**Missing glossary terms:**
-- **CRUD**: Create, Read, Update, Delete, the basic kinds of data operation (§3.4).
 
 **Builds on:**
 - LiveSQLBench, an open single-turn text-to-SQL benchmark whose tasks, databases, metadata and HKB the authors make interactive (§1, §3.1); not listed here.
@@ -87,4 +84,4 @@ Most tests of LLMs that turn questions into database queries grade one answer to
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-misc">nl2sql-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

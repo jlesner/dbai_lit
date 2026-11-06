@@ -18,7 +18,7 @@ LLM agents often solve similar tasks from scratch, which the authors say wastes 
 
 ## Background and terms
 
-**Terms to know:** [finite-state machine](#/glossary/finite-state-machine) (here deterministic, with start and goal states: Def. 1, §2.1).
+**Terms to know:** [finite-state machine](#/glossary/finite-state-machine) (here deterministic, with start and goal states: Def. 1, §2.1). · [trajectory](#/glossary/trajectory-agent) (raw logs "interleave reasoning text, tool calls, observations, and action histories", §3.2) · [library learning](#/glossary/library-learning) (the paper's "skill induction": building a library of reusable routines from an agent's past runs, §1, §5)
 
 **The paper's own terms:**
 - **FSM-defined scenario**: an environment whose dynamics form a finite-state machine: finite sets of states and actions, a deterministic transition function (a state and an action give exactly one next state), possible start states and goal states (Def. 1, §2.1).
@@ -31,10 +31,6 @@ LLM agents often solve similar tasks from scratch, which the authors say wastes 
 - **Reusability score**: an estimate of the fraction of traces whose graph a cluster's subgraph matches, "estimated from trace coverage and operation statistics" (§3.2).
 - **Distillation**, two senses: the pipeline's first phase, which recovers shared subgraphs from traces (§3.2); and "procedural-knowledge Distillation into compact models and transfer", small models reusing a stronger model's skills (§4.3).
 - **SR**, **Avg. Turns**: success rate and average agent turns per episode (§4.1). **Van.**, **+Sk.**: without and with the skill library (Tab. 2).
-
-**Missing glossary terms:**
-- **Agent trace (trajectory)**: the log of one agent episode; raw logs "interleave reasoning text, tool calls, observations, and action histories" (§3.2).
-- **Skill induction**: building a library of reusable routines from an agent's past runs (§1, §5).
 
 **Builds on:**
 - AWM (Agent Workflow Memory, Wang et al. 2024c), which extracts workflows from trajectories, and ASI (Wang et al. 2025, "Inducing programmatic skills for agentic tasks"), which induces executable skills: the experience-reuse work §1 starts from. §4.1 compares their offline variants, AWM-offline and ASI-offline, run on SKILL-DISCO's induction and evaluation splits (§4.2); offline is not defined further.
@@ -87,4 +83,4 @@ All in § "Limitations":
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

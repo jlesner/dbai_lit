@@ -77,4 +77,4 @@ LLM agents often run a verify-repair loop: a verifier checks a candidate answer,
 ## On this site
 
 - **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a></span>

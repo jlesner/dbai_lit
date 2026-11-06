@@ -18,7 +18,7 @@ AI coding agents (such as OpenHands or Claude Code) are guided by a file of codi
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk) · [Optimal Computing Budget Allocation (OCBA)](#/glossary/optimal-computing-budget-allocation-ocba) (cited to Chen and Lee (2011), App. B)
 
 **The paper's own terms:**
 - **coding rules**: the instruction file a coding agent gets with every task, "often instantiated as an AGENTS.md document and prepended to the backbone model's input context" (§1). In the experiments, OpenHands gets them through its AGENTS.md configuration and the OpenAI SDK agent in its system prompt (§5.1).
@@ -28,9 +28,6 @@ AI coding agents (such as OpenHands or Claude Code) are guided by a file of codi
 - **score set**: the scores a candidate has collected, one per iteration's evaluation; a new candidate "inherits the score set from its parent" to avoid what the paper calls a cold-start problem: no scores yet (§4.3).
 - **metrics** (§5.1): pass rate (PR), "the percentage of generated code that satisfy all provided test cases"; code lines (CLn); code characters (CC); generation time; token usage (Tok). The last four are averaged "only on code that is functionally correct".
 - **Manual rule**: a fixed rule set from awesome-cursorrules, a public collection of rule files (§5.1, App. F). Tabs. 3–4 label a baseline "Public rule".
-
-**Missing glossary terms:**
-- **Optimal Computing Budget Allocation (OCBA)**: a simulation-optimization method, cited to Chen and Lee (2011), for spreading a limited budget over noisy candidates to maximize the Probability of Correct Selection (PCS), "the probability that the candidate rule set with the highest sample mean is indeed the true best performer" (App. B).
 
 **Builds on:**
 - Prompt-Ops, cited to Wu et al. (2025), "a baseline designed for prompt optimization for LLMs" (§2.3, §5.1). Not on this site.
@@ -83,4 +80,4 @@ As the authors report:
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

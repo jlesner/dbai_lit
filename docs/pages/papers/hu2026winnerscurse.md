@@ -18,7 +18,7 @@ Self-improving LLM systems propose changes to themselves and keep a change when 
 
 ## Background and terms
 
-**Terms to know:** [McNemar's exact test](#/glossary/mcnemars-exact-test) · [multiple testing](#/glossary/multiple-testing) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization)
+**Terms to know:** [McNemar's exact test](#/glossary/mcnemars-exact-test) · [multiple testing](#/glossary/multiple-testing) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [winner's curse](#/glossary/winners-curse-optimizers-curse) (§1) · [shrinkage](#/glossary/shrinkage) (here, scaling a winner's measured advantage down by the share of the measured spread that is real, §3.1, §5.1) · [pre-registration](#/glossary/pre-registration) (here, fixing design, hypotheses and tests "in a dated written plan before the first run started", §5.3)
 
 **The paper's own terms:**
 - **generation, incumbent, candidate**: each generation a proposer writes K rewrites (candidates, K = 4 here) of the current instruction (the incumbent) (§3, §5); the **seed** is the starting instruction, distinct from random seeds (§5).
@@ -27,11 +27,6 @@ Self-improving LLM systems propose changes to themselves and keep a change when 
 - **inflation**: a program's selection-set score minus its held-out accuracy; **overstatement**: the gain measured on the selection set minus the held-out gain (§1).
 - **acceptance rules** (§3, §4): **greedy** commits the best-measured candidate if its measured gain is positive; **McNemar** is a one-sided exact test against the incumbent at a fixed level; **PACE**, the test of Shawn (2026) as published, bets half its "wealth" on each item where candidate and incumbent disagree and commits when the wealth reaches 1/α (α the level); **select-then-confirm** chooses on one half of the selection set and commits only if the winner also wins on the other half; **Bayes gates** commit the largest posterior mean (expected true effect given the scores and a prior over effects) if it and the measured gain are positive, with the prior from a separate **pilot** run whose candidates were also scored on a large evaluation set (**pilot-calibrated**) or from the loop's history (**online**).
 - **lock-in**: a "possible mechanism": the incumbent's lucky selection error, subtracted from later measured gains, "acts as an implicit threshold" if later candidates do not inherit an equally large error (§3.3).
-
-**Missing glossary terms:**
-- **winner's curse**: "When the best of several noisy estimates is selected, its estimate is biased upward" (§1).
-- **shrinkage**: scaling a winner's measured advantage down by the share of the measured spread that is real (§3.1, §5.1).
-- **pre-registration**: fixing design, hypotheses and tests "in a dated written plan before the first run started" (§5.3).
 
 **Builds on:**
 - PACE, Shawn (2026), one of two papers called "closest": it replaces greedy acceptance by a per-decision test (§2).
@@ -82,4 +77,5 @@ The authors report:
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

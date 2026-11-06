@@ -83,4 +83,4 @@ The paper asks whether findings about RL for LLM reasoning, drawn mostly from ma
 ## On this site
 
 - **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

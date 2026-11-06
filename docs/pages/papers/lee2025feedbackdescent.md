@@ -78,4 +78,4 @@ Question (§4): "Can a single optimization framework, with no domain-specific en
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

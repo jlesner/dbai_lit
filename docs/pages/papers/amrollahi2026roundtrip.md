@@ -84,4 +84,4 @@ When an LLM translates an English rule into machine-checkable logic, there is us
 ## On this site
 
 - **Discussed in:** [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/smt-misc">smt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

@@ -19,7 +19,7 @@ Checking only a reasoning model's final answer misses early mistakes, searching 
 
 ## Background and terms
 
-**Terms to know:** [test-time scaling](#/glossary/test-time-scaling) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [proof assistant](#/glossary/proof-assistant) · [formal specification](#/glossary/formal-specification) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [pass^k](#/glossary/passk-reliability-over-k-trials)
+**Terms to know:** [test-time scaling](#/glossary/test-time-scaling) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [proof assistant](#/glossary/proof-assistant) · [formal specification](#/glossary/formal-specification) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [Markov chain](#/glossary/markov-chain) (and its stationary distribution, §4.4)
 
 **The paper's own terms:**
 - **LLM-Process-Modulo**: checking the process (steps, tool calls), not only the final output as LLM-Modulo does (§1).
@@ -30,9 +30,6 @@ Checking only a reasoning model's final answer misses early mistakes, searching 
 - **solo and dual modes** (§5; §5.1): in solo mode the agent gets the user's information up front; in dual mode it talks with an LLM-simulated user.
 - **pass^4** (Tab. 3): a τ²-bench task scores 1 only if the final environment state and the write actions are right on four independent runs; also called reward. **Token %**: tokens relative to chain-of-thought, verification included (§5).
 - **sound and complete**: of the translation, soundness is "verifier's output matches the corresponding rule on all inputs" and completeness "every rule is encoded in some verifier" (§4.2); in the conclusion, complete checkers "catch all violating trajectories" (§7).
-
-**Missing glossary terms:**
-- **Markov chain, stationary distribution**: a random process whose next state depends only on its current one; the stationary distribution is the long-run share of time in each state (§4.4).
 
 **Builds on:**
 - LLM-Modulo, Kambhampati et al. (2024) ([LLM-Modulo ("LLMs Can't Plan](#/papers/kambhampati2024llmmodulo "Position: LLMs Can't Plan, But Can Help Planning in LLM-Modulo Frameworks (2024)")): verify the final output and retry (§1); the Generate-Test baseline (retry after a critic checks the whole answer) follows it (§5).
@@ -85,4 +82,5 @@ The goal (§3): for each instance, a trace that is provably compliant or no answ
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

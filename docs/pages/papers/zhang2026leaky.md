@@ -19,7 +19,7 @@ When a code model is trained by [reinforcement learning](#/glossary/reinforcemen
 
 ## Background and terms
 
-**Terms to know:** [RLVR](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [KL penalty](#/glossary/kl-penalty) · [reward hacking](#/glossary/reward-hacking) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [multiple testing](#/glossary/multiple-testing) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [statistical power](#/glossary/statistical-power) (§4.7) · [Spearman rank correlation (ρ)](#/glossary/spearmans-rank-correlation)
+**Terms to know:** [RLVR](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [KL penalty](#/glossary/kl-penalty) · [reward hacking](#/glossary/reward-hacking) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [multiple testing](#/glossary/multiple-testing) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [statistical power](#/glossary/statistical-power) (§4.7) · [Spearman rank correlation (ρ)](#/glossary/spearmans-rank-correlation) · [preregistration](#/glossary/pre-registration) (§1, §3.3) · [non-inferiority test](#/glossary/noninferiority-test) (here inferiority, a hardened-minus-leaky gap ≥ 1.5 points, is rejected when the one-sided 95% upper confidence bound on the gap falls below the margin, §4.1)
 
 **The paper's own terms:**
 - **natural false positive (FP)**: a wrong program a deployed suite accepts, per task, persistently and in one direction only (§1). A **rewarded FP** is a leaky-arm rollout that passes the original MBPP tests but fails the MBPP+ extra tests; **FP mass** is the fraction of rewarded rollouts that are FPs (§3.2).
@@ -30,10 +30,6 @@ When a code model is trained by [reinforcement learning](#/glossary/reinforcemen
 - **verified-wrong**: an FP record that signed, human-adjudicated predicates class as genuinely wrong code rather than one of four non-model causes, such as extra tests that reject correct code (§3.4).
 - **[C], [E], [I]**: confirmatory (preregistered), exploratory (computed after seeing the data), instrument-validity check (§1).
 - **channel**: a task where FPs concentrate and persist across seeds (§3.5, §4.5).
-
-**Missing glossary terms:**
-- **preregistration**: freezing design, margins and analyses in a signed document before the data exist (§1, §3.3).
-- **non-inferiority test**: a one-sided test that one condition is not worse than another by more than a fixed margin; here inferiority (hardened-minus-leaky gap ≥ 1.5 points) is rejected when the one-sided 95% upper confidence bound on the gap falls below the margin (§4.1).
 
 **Builds on:**
 - Rajan (2026), an audit of code-RL suites that names the causal test this paper runs (§1, §2 "Audit-side measurement").
@@ -90,4 +86,4 @@ When a code model is trained by [reinforcement learning](#/glossary/reinforcemen
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a></span>

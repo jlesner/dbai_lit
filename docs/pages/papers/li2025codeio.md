@@ -86,4 +86,4 @@ Math and code have plenty of training data, but the authors argue that most othe
 ## On this site
 
 - **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

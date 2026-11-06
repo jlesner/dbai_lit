@@ -18,7 +18,7 @@ Databases rewrite queries into cheaper ones, and a rewrite must give the same an
 
 ## Background and terms
 
-**Terms to know:** [relational algebra](#/glossary/relational-algebra) · [query equivalence](#/glossary/query-equivalence) · [query containment](#/glossary/query-containment) · [set semantics](#/glossary/set-semantics) · [conjunctive query](#/glossary/conjunctive-query) · [union of conjunctive queries](#/glossary/union-of-conjunctive-queries) · [homomorphism (containment mapping)](#/glossary/homomorphism-containment-mapping) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [tableau](#/glossary/tableau) · [finite Church–Rosser](#/glossary/church-rosser-property) · [Q3-SAT](#/glossary/3-sat)
+**Terms to know:** [relational algebra](#/glossary/relational-algebra) · [query equivalence](#/glossary/query-equivalence) · [query containment](#/glossary/query-containment) · [set semantics](#/glossary/set-semantics) · [conjunctive query](#/glossary/conjunctive-query) · [union of conjunctive queries](#/glossary/union-of-conjunctive-queries) · [homomorphism (containment mapping)](#/glossary/homomorphism-containment-mapping) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [tableau](#/glossary/tableau) · [finite Church–Rosser](#/glossary/church-rosser-property) · [Q3-SAT](#/glossary/3-sat) · [exact cover](#/glossary/exact-cover) (NP-complete per [16]; §8, PDF p. 15)
 
 **The paper's own terms:**
 - **restricted / monotonic expression**: built from select, project and join / also union (§2.2, PDF p. 3).
@@ -32,9 +32,6 @@ Databases rewrite queries into cheaper ones, and a rewrite must give the same an
 - **irreducible**: no §7 transformation applies (§7, PDF p. 13).
 - **repeated symbol; covered row**: a symbol in more than one row; row w of T₁ is covered by row v of T₂ if v has w's constants (also in the summary, where T₁'s summary has them), and an output variable or output constant wherever w has an output variable (§9.2, PDF p. 16).
 - **simple tableau**: a subclass from [4] ([Equivalences among Relational Expressions](#/papers/aho1979equivalences "Equivalences among Relational Expressions (1979)")) with polynomial equivalence algorithms; not defined here (§1, PDF p. 1).
-
-**Missing glossary terms:**
-- **exact cover**: choose some of given sets so every element lies in exactly one chosen set; NP-complete per [16] (§8, PDF p. 15).
 
 **Builds on:**
 - [Equivalences among Relational Expressions](#/papers/aho1979equivalences "Equivalences among Relational Expressions (1979)") [4]: tableaux, and the rules turning select-project-join expressions into them; this paper extends its tableau theory (§1, PDF pp. 1–2; §3, PDF p. 5).
@@ -87,4 +84,4 @@ The authors prove Thm. 3, Cor. 4, Thm. 5 and Thm. 12 (PDF pp. 9–14, see Approa
 ## On this site
 
 - **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>

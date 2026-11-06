@@ -93,4 +93,4 @@ GSM8K-Hard, gpt-4o-mini, mean ± standard deviation over 5 seeds, unless noted (
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

@@ -19,7 +19,7 @@ Developers use coding agents over long sessions of follow-up requests, but most 
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [Markov decision process](#/glossary/markov-decision-process) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [multiple testing](#/glossary/multiple-testing) · [statistical power](#/glossary/statistical-power) · [mixture of experts (MoE)](#/glossary/mixture-of-experts-moe) · [lost in the middle](#/glossary/lost-in-the-middle)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [Markov decision process](#/glossary/markov-decision-process) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [multiple testing](#/glossary/multiple-testing) · [statistical power](#/glossary/statistical-power) · [mixture of experts (MoE)](#/glossary/mixture-of-experts-moe) · [lost in the middle](#/glossary/lost-in-the-middle) · [context compaction](#/glossary/context-compaction) (here when the token count passes a threshold, App. F) · [REST API](#/glossary/rest-api) (App. C) · [vibe coding](#/glossary/vibe-coding) (not defined in the paper)
 
 **The paper's own terms:**
 - **interaction turn**: one user request; "multi-turn" means "multiple interaction turns between the user and the agent, not the internal tool-use steps the agent takes within a single user request" (§1, footnote 2).
@@ -31,11 +31,6 @@ Developers use coding agents over long sessions of follow-up requests, but most 
 - **feedback levels**: detailed (assertion messages), medium (pass/fail per test), minimal (only that tests failed) (§4.2).
 - **model provider agent**: the harness made by the model's maker (Mistral Vibe, Kimi CLI, QwenCode) (§4).
 - **infrastructure retries**: up to 10 re-runs of an agent call whose harness process fails, not counted against R (App. F).
-
-**Missing glossary terms:**
-- **REST API**: a server exposing typed resources over HTTP, with create/read/update/delete mapped to HTTP methods and outcomes given as status codes, so it can be tested as a black box (App. C).
-- **context compaction**: a harness compressing the conversation history when it passes a token threshold, so long sessions fit the context window (App. F).
-- **vibe coding**: not defined; generally, building software by prompting an agent and accepting its code with little review.
 
 **Builds on:**
 - Single-task coding benchmarks such as SWE-Bench ("real GitHub issues for agents to resolve"), the framing it contrasts with (§1; §2).
@@ -89,4 +84,4 @@ As the authors report, on the 20 scenarios.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a></span>

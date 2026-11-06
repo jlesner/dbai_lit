@@ -18,7 +18,7 @@ Prompt optimizers improve a pipeline of LLM calls by rewriting its prompts from 
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reinforcement learning](#/glossary/reinforcement-learning) · [GRPO](#/glossary/grpo)
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reinforcement learning](#/glossary/reinforcement-learning) · [GRPO](#/glossary/grpo) · [LM program](#/glossary/compound-ai-system-lm-program) (§ "Introduction")
 
 **The paper's own terms:**
 - **APO**: automatic prompt optimization. **Fixed-data APO** keeps one training set; **adaptive-data APO** may add accepted synthetic examples to it, never removing or changing originals (§ "Problem Formulation", Eqs. 1–2).
@@ -27,9 +27,6 @@ Prompt optimizers improve a pipeline of LLM calls by rewriting its prompts from 
 - **Failure mode**: a short name and a mechanism description with specific entities removed, plus the failed runs supporting it (§ "Failure Memory"; App. A.1). An LLM **assigner** files each imperfect execution under an existing mode, a new one, or a refined one (App. A.4). Only modes collected since the last synthesis event are **active** (App. A.1).
 - **Synthesis event**: a round of example generation, triggered after a set number of prompt-search steps (the **patience**) without a gain in the best average validation score (Alg. 1; App. A.6).
 - **Validity / faithfulness**: the verifier's two yes/no verdicts: the example is well formed, coherent and correctly labelled; and it matches the targeted failure mode and mutation direction (App. A.6).
-
-**Missing glossary terms:**
-- **LM program**: a program combining prompted LLM calls with retrieval, tools and intermediate computation, whose behaviour is set largely by its module prompts (§ "Introduction").
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), which "combines trace reflection with Pareto selection" (§ "Related Work"); FORGE's prompt branch is a reflective-search backbone the authors say it inspired (§ "Optimization Loop").
@@ -79,4 +76,4 @@ Prompt optimizers improve a pipeline of LLM calls by rewriting its prompts from 
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

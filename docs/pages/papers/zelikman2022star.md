@@ -19,15 +19,12 @@ Making a model reason in writing (a rationale) before answering takes either a c
 
 ## Background and terms
 
-**Terms to know:** [expert iteration](#/glossary/expert-iteration) · [rejection sampling](#/glossary/rejection-sampling) · [policy gradient](#/glossary/policy-gradient) · [latent variable](#/glossary/latent-variable) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [out-of-distribution generalization](#/glossary/out-of-distribution-generalization) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting)
+**Terms to know:** [expert iteration](#/glossary/expert-iteration) · [rejection sampling](#/glossary/rejection-sampling) · [policy gradient](#/glossary/policy-gradient) · [latent variable](#/glossary/latent-variable) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [out-of-distribution generalization](#/glossary/out-of-distribution-generalization) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [importance sampling](#/glossary/importance-sampling-and-importance-weighting) (§5's off-policy estimate with a proposal distribution, used there without a definition)
 
 **The paper's own terms:**
 - **rationale**: reasoning written before the final answer (§1); for arithmetic a "scratchpad", one line per digit pair with the carry (§4.2, Fig. 3).
 - **rationale generation**: the few-shot-prompted model writes a rationale, then an answer (§3.1).
 - **rationalization**: for a wrongly answered question, the correct answer is given "as a hint" and the model writes a rationale; it enters the training set as if written without the hint (§3.2). For CommonsenseQA the hint marks the right choice "(CORRECT)" (Fig. 2).
-
-**Missing glossary terms:**
-- **off-policy estimate with a proposal distribution**: estimating an objective defined over one model's outputs from samples drawn from another distribution (the proposal). §5 uses it without defining it; general definition.
 
 **Bridge (ours):** the answer filter is the check of the glossary's rejection sampling fine-tuning. The authors describe Expert Iteration as [self-play](#/glossary/self-play) by an "apprentice", [imitation learning](#/glossary/imitation-learning) with feedback from a slower "expert", then the improved apprentice replacing the expert; STaR's answer filter "can be seen as expert feedback", but they "have a fixed 'expert' and do not train a separate value function" (§2), that is, no model that predicts how likely a partial solution is to succeed (a [value function](#/glossary/value-function)).
 
@@ -83,4 +80,4 @@ Making a model reason in writing (a rationale) before answering takes either a c
 ## On this site
 
 - **Discussed in:** [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

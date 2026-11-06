@@ -19,16 +19,13 @@ Decision-support benchmarks pair a synthetic warehouse with analytical query tem
 
 ## Background and terms
 
-**Terms to know:** [query optimizer](#/glossary/query-optimizer) · [query plan and EXPLAIN](#/glossary/query-plan-and-explain) · [cardinality estimation](#/glossary/cardinality-estimation) · [selectivity](#/glossary/selectivity) · [index (database)](#/glossary/index-database) · [fact and dimension tables, snowflake schema](#/glossary/star-and-snowflake-schemas) (TPC-DS has several snowflake schemas, §2, PDF p. 2) · [q-error](#/glossary/q-error) (the paper cites Moerkotte, Neumann and Steidl (2009) for it, §6.4, PDF p. 9) · [OLAP](#/glossary/olap-and-oltp) (in our terms, the paper's decision-support workloads: analytical querying of a data warehouse) · [primary key-foreign key (PK–FK) join](#/glossary/primary-key-foreign-key-join) (the paper contrasts it with joins on columns "neither primary keys nor foreign keys", such as [many-to-many](#/glossary/many-to-many-relationship) joins, and with non-equi joins, whose condition is not an equality, §1, PDF p. 1)
+**Terms to know:** [query optimizer](#/glossary/query-optimizer) · [query plan and EXPLAIN](#/glossary/query-plan-and-explain) · [cardinality estimation](#/glossary/cardinality-estimation) · [selectivity](#/glossary/selectivity) · [index (database)](#/glossary/index-database) · [fact and dimension tables, snowflake schema](#/glossary/star-and-snowflake-schemas) (TPC-DS has several snowflake schemas, §2, PDF p. 2) · [q-error](#/glossary/q-error) (the paper cites Moerkotte, Neumann and Steidl (2009) for it, §6.4, PDF p. 9) · [OLAP](#/glossary/olap-and-oltp) (in our terms, the paper's decision-support workloads: analytical querying of a data warehouse) · [primary key-foreign key (PK–FK) join](#/glossary/primary-key-foreign-key-join) (the paper contrasts it with joins on columns "neither primary keys nor foreign keys", such as [many-to-many](#/glossary/many-to-many-relationship) joins, and with non-equi joins, whose condition is not an equality, §1, PDF p. 1) · [independence assumption](#/glossary/independence-assumption) (§6.4, PDF p. 9)
 
 **The paper's own terms:**
 - **workload-driven database system**: one that observes its workload, "passively or actively" collects execution feedback, and tunes itself (§1, PDF p. 2); the others are "traditional".
 - **query template, query instance**: a parameterized query, and that query with its parameters bound to values (§4.1, PDF p. 4).
 - **duplicate ratio**: the share of duplicate instances in a workload; an instance is distinct if no other has the same query text after DSB's canonical ordering of parameters (§5.2, §6.2, PDF pp. 6–7).
 - **preparation stage, test stage**: before testing, a system may use the database and a training workload to build statistics or models; the test stage runs and times the test workload (§5.3–5.4, PDF pp. 6–7).
-
-**Missing glossary terms:**
-- **independence assumption**: estimating a value combination's frequency as the product of each column's own frequency (§6.4, PDF p. 9).
 
 **Builds on:**
 - TPC-DS (Poess, Smith, Kollar and Larson, 2002), whose schema DSB keeps and whose templates and generator it adapts (§1, PDF p. 2).
@@ -75,4 +72,4 @@ Each is the authors' claim, on 100 GB databases, with test workloads from the de
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/workload">workload</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/workload">workload</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

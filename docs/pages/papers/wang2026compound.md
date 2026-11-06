@@ -19,7 +19,7 @@ Methods that automatically improve an LLM agent's prompts and code are usually t
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) (GEPA's method) · [agent harness](#/glossary/agent-harness) · [catastrophic forgetting](#/glossary/catastrophic-forgetting). The other field terms are defined below.
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) (GEPA's method) · [agent harness](#/glossary/agent-harness) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [overfitting](#/glossary/overfitting) (benchmark overfitting: an optimizer raising the score on a fixed evaluation set without improving, or while harming, performance on tasks outside it, §2.3) · [rollout](#/glossary/rollout) (one run of the agent on a task; optimization budgets are counted in rollouts, §5.2; the paper does not define the word).
 
 **The paper's own terms:**
 - **compounding question**: whether a method that optimized an agent once can optimize it again, on a task stream that now includes new tasks, "without unwinding the gains the first round of optimization produced" (§1.2). It should generalize somewhat to unseen tasks and keep improving without regressing on solved ones (§1.2).
@@ -29,10 +29,6 @@ Methods that automatically improve an LLM agent's prompts and code are usually t
 - **lifelong average**: the unweighted mean of those three pass rates (§3.3).
 - **"Post-hoc only" vs "enforced in-loop" regression handling**: regressions on prior tasks are at best checked after a candidate is accepted, or candidates that regress are rejected during search (Tab. 2).
 - **no-regression constraint**: RELAI-VCL's rule that "any candidate that improves performance on newly targeted tasks by sacrificing previously working behavior is rejected during search" (§4.4).
-
-**Missing glossary terms:**
-- **rollout**: one run of the agent on a task; optimization budgets are counted in rollouts (§5.2; the paper does not define the word).
-- **benchmark overfitting**: an optimizer raising the score on a fixed evaluation set without improving, or while harming, performance on tasks outside it (§2.3).
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), a reflective prompt optimizer (§2.1) and one of the three compared methods (§4.2).
@@ -86,4 +82,4 @@ All four stages are in Tab. 8 (§6.5), repeated in Tab. 1. Each is the authors' 
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

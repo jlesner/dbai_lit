@@ -79,4 +79,4 @@ All are the authors' claims.
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>

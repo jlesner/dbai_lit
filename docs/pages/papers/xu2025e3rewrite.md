@@ -28,7 +28,7 @@ A query can run faster when rewritten into an equivalent but cheaper form. Most 
 - **demonstration pool**: past (original, rewrite) pairs, the most similar put in the prompt as examples (§ "Hybrid Demonstration Retrieval").
 
 **Builds on:**
-- GRPO, adopted from DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")) because it needs no value network (§ "Reinforcement Learning for SQL Rewriting").
+- GRPO, adopted from DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")) because it needs no value network (§ "Reinforcement Learning for SQL Rewriting").
 - QED-Solver ([QED](#/papers/wang2024qed "QED: A Powerful Query Equivalence Decider for SQL (2024)")), a formal SQL equivalence checker, as the first equivalence stage (same section).
 - The rule-based rewriters it compares against: LearnedRewrite ([LearnedRewrite](#/papers/zhou2021learnedrewrite "A learned query rewrite system using Monte Carlo tree search (2021)")), LLM-R² ([LLM-R2](#/papers/li2024llmr2 "LLM-R2: A Large Language Model Enhanced Rule-Based Rewrite System for Boosting Query Efficiency (2024)")) and R-Bot ([R-Bot](#/papers/sun2024rbot "R-Bot: An LLM-based Query Rewrite System (2025)")) (§ "Introduction", § "Experiment Setting").
 
@@ -71,4 +71,4 @@ None stated.
 ## On this site
 
 - **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Verified query speedups](#/challenges/verified_query_speedup) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rewrite">rewrite</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

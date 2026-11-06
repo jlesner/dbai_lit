@@ -84,4 +84,4 @@ Under the semantics this paper targets, two SQL queries are equivalent if, on ev
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/prove-smt">prove-smt</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

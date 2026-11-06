@@ -88,4 +88,4 @@ All under 0-shot prompting unless stated.
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/pairs-code">pairs-code</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag sub" href="#/tags/pairs-prog">pairs-prog</a></span>

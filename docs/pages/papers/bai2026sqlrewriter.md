@@ -66,4 +66,4 @@ None stated.
 ## On this site
 
 - **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Discovering new rewrite rules](#/challenges/rewrite_rule_discovery)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/rules-lib">rules-lib</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/rules-lib">rules-lib</a></span>

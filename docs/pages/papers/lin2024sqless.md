@@ -75,4 +75,4 @@ To trigger deep bugs, most database testing techniques focus on generating long,
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/dialect-parse">dialect-parse</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/dialect-parse">dialect-parse</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

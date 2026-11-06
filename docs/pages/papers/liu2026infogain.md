@@ -18,7 +18,7 @@ Some LLM training loops try to improve a model without outside data: the same mo
 
 ## Background and terms
 
-**Terms to know:** [self-play](#/glossary/self-play) · [reinforcement learning](#/glossary/reinforcement-learning) · [minimum description length (MDL)](#/glossary/minimum-description-length-mdl) · [LoRA](#/glossary/lora-low-rank-adaptation) · [test-time scaling](#/glossary/test-time-scaling) · [reward hacking](#/glossary/reward-hacking) · [curriculum learning](#/glossary/curriculum-learning).
+**Terms to know:** [self-play](#/glossary/self-play) · [reinforcement learning](#/glossary/reinforcement-learning) · [minimum description length (MDL)](#/glossary/minimum-description-length-mdl) · [LoRA](#/glossary/lora-low-rank-adaptation) · [test-time scaling](#/glossary/test-time-scaling) · [reward hacking](#/glossary/reward-hacking) · [curriculum learning](#/glossary/curriculum-learning) · [Shannon entropy](#/glossary/shannon-entropy) (it "does not distinguish reusable structure from randomness", §2.2) · [prequential coding](#/glossary/prequential-coding) (§4, Eq. 7).
 
 **The paper's own terms:**
 - **Proposer, Solver, Verifier**: the three roles one LLM plays; the Proposer "generates tasks", the Solver "attempts solutions", the Verifier "provides training signals" (abstract). Proposer and Verifier form the **internal environment**; an **external environment**, when present, supplies "information sources such as documents or interactive worlds" (§2.1). A **triadic** loop evolves all three, which "share one base model" (§2.1).
@@ -29,8 +29,6 @@ Some LLM training loops try to improve a model without outside data: the same mo
 - **Abduction, deduction, induction** (Absolute Zero's code tasks, §4; App. D): from a program and its output, give an input; from a program and an input, the output; from input–output pairs, the program.
 
 **Missing glossary terms:**
-- **Shannon entropy**: the total uncertainty of a probability distribution, in bits; it "does not distinguish reusable structure from randomness" (§2.2).
-- **Prequential coding**: coding data item by item, each with the model trained on the items before it (§4, Eq. 7).
 - **One-way permutation**: a one-to-one function that is easy to compute but that no efficient (polynomial-time, possibly randomized) algorithm can invert except with negligible (vanishingly small) probability; "non-uniform" inverters may use extra advice fixed for each input size (general definition; §3.1 uses it undefined).
 
 **Builds on:**
@@ -80,4 +78,4 @@ Some LLM training loops try to improve a model without outside data: the same mo
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/survey">survey</a></span>

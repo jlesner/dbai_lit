@@ -1,6 +1,6 @@
 # Evaluating the Practical Effectiveness of LLM-Driven Index Tuning on Microsoft SQL Server
 
-**LLM-driven index tuning on SQL Server** · PVLDB 19(12) (reference-format block; not yet published) · 2026
+**LLM-driven index tuning on SQL Server** · PVLDB 19(12) 2026
 
 Read: [PDF](https://arxiv.org/pdf/2603.09181) · [arXiv](https://arxiv.org/abs/2603.09181)
 
@@ -18,7 +18,7 @@ A database index is an extra, sorted copy of some of a table's columns that lets
 
 ## Background and terms
 
-**Terms to know:** [query optimizer](#/glossary/query-optimizer) · [optimizer cost estimate](#/glossary/optimizer-cost-estimate) · [cardinality estimation](#/glossary/cardinality-estimation) · [query plan and EXPLAIN](#/glossary/query-plan-and-explain) · [selectivity](#/glossary/selectivity) · [common table expression (CTE)](#/glossary/common-table-expression-cte) · [data contamination](#/glossary/data-contamination)
+**Terms to know:** [query optimizer](#/glossary/query-optimizer) · [optimizer cost estimate](#/glossary/optimizer-cost-estimate) · [cardinality estimation](#/glossary/cardinality-estimation) · [query plan and EXPLAIN](#/glossary/query-plan-and-explain) · [selectivity](#/glossary/selectivity) · [common table expression (CTE)](#/glossary/common-table-expression-cte) · [data contamination](#/glossary/data-contamination) · [key columns, included columns, covering index](#/glossary/covering-index) (the paper's terms, §2.2.1, §4.1–4.2) · [query performance regression (QPR)](#/glossary/query-performance-regression-qpr) (used, not defined, in §1, §3.1)
 
 **The paper's own terms:**
 - **index configuration**: a set of indexes, "a subset (a.k.a. a configuration) from the candidate indexes" (§2.2.1); the original configuration is the pre-existing indexes (§2.3.1).
@@ -27,10 +27,6 @@ A database index is an extra, sorted copy of some of a table's columns that lets
 - **best, worst, first, median response**: of the five GPT-5 answers per prompt (§3.1, §3.4, App. A.1); the authors "use the two terms GPT-5 and LLM interchangeably" (§2.3).
 - **K**: the cap on the number of indexes in multi-query tuning (§5.1).
 - **α (alpha)**: the rule-based tuner's threshold: a table gets an index only if its scans' estimated cost exceeds α times the plan's cost (§4.2).
-
-**Missing glossary terms:**
-- **key columns, included columns, covering index**: an index is sorted on its key columns, in order, so a lookup on them (a seek) avoids a full scan; included columns are only stored in it; a covering index holds every column the query needs from that table, so the table itself need not be read (the paper's terms, §2.2.1, §4.1–4.2).
-- **query performance regression (QPR)**: a query that runs slower with the recommended indexes than before (used, not defined, in §1, §3.1).
 
 **Builds on:**
 - DTA and the "what-if" API (Chaudhuri and Narasayya), the baseline, called the "current state of the art (SOTA) in classic cost-based index tuning" (§2.2.1).
@@ -85,4 +81,4 @@ A database index is an extra, sorted copy of some of a table's columns that lets
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

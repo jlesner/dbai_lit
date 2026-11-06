@@ -33,7 +33,7 @@ Rewarding only correct final answers improves some models' first-try accuracy, b
 
 **Builds on:**
 - [Does Reinforcement Learning Really…](#/papers/yue2025rlreasoning "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model? (2025)"): the Pass@K study whose hypothesis the paper sets out to answer (§1, §2).
-- GRPO ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), which the paper says first noted Pass@1 gains without Pass@K gains (§1), and DeepSeek-R1 and R1-Zero ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")), whose observations App. A.5 sets out to explain.
+- GRPO ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), which the paper says first noted Pass@1 gains without Pass@K gains (§1), and DeepSeek-R1 and R1-Zero ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")), whose observations App. A.5 sets out to explain.
 - DAPO (Yu et al. 2025, not listed here): an open GRPO-style recipe that trained the base model Qwen2.5-32B on 17k math problems into DAPO-Qwen-32B, the math model pair; §5 reproduces its training (§3.1, §5).
 - AceReason-Nemotron (Chen et al. 2025b) and Skywork-OR1 (He et al. 2025), RL runs from the distilled model DeepSeek-R1-Distill-Qwen-7B; the paper extends AceReason's code experiments (§2, §3.2). §1 lists AceReason-Nemotron, [ProRL](#/papers/liu2025prorl "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models (2025)") and Shojaee et al. as conflicting observations.
 
@@ -82,4 +82,4 @@ Rewarding only correct final answers improves some models' first-try accuracy, b
 ## On this site
 
 - **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

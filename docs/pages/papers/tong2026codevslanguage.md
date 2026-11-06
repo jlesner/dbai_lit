@@ -83,4 +83,4 @@ When an LLM solves an algorithmic problem by writing code that Python runs, two 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/offload">offload</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/offload">offload</a><a class="tag" href="#/tags/study">study</a></span>

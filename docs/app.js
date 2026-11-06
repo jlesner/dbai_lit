@@ -1,6 +1,7 @@
 // Router for the site: #/<page>[:<anchor>] loads pages/<page>.md and renders it with marked.
 // #/glossary/<anchor> is the glossary page scrolled to one term. A page holding
 // "<!-- filter -->" gets a type-to-filter box. A wide diagram scales to fit the column and gets an Expand button.
+// #/tags/<expression> combines tags (combo below); a removed subtag's old link redirects to its expression.
 const content = document.getElementById('content');
 const SITE = document.title;
 
@@ -35,15 +36,22 @@ async function render() {
   const { page, anchor } = parseHash();
   if (page !== current) {
     const mine = ++generation;
-    const res = await fetch(`pages/${page}.md`);
+    let md = null;
+    if (/^tags\/.*[+,!]/.test(page)) md = await combo(page.slice(5));
+    else {
+      const res = await fetch(`pages/${page}.md`);
+      if (res.ok) md = await res.text();
+      else if (page.startsWith('tags/')) {
+        const to = (await tagSets()).redirects[page.slice(5)];
+        if (mine === generation && to) { location.replace(`#/tags/${to}`); return; }
+      }
+    }
     if (mine !== generation) return;  // another page was asked for meanwhile
-    if (!res.ok) {
+    if (md === null) {
       content.innerHTML = `<h1>Not found</h1><p>No page <code>${page}</code>. <a href="#/home">Home</a></p>`;
       current = null;
       return;
     }
-    const md = await res.text();
-    if (mine !== generation) return;
     const parts = pieces(md);
     const at = anchor ? md.indexOf(`<a id="${anchor}">`) : -1;
     let i = 0, seen = 0;
@@ -54,6 +62,7 @@ async function render() {
     const menu = document.querySelector(`.masthead__menu-item a[href="#/${page}"]`);
     const name = h1 ? h1.textContent : menu ? menu.textContent : '';
     document.title = (name && page !== 'home' ? name + ' · ' : '') + SITE;
+    if (page === 'tags') addCombine();
     const box = md.includes('<!-- filter -->') ? addFilter(page === 'glossary') : null;
     rendering = new Promise(done => {
       const next = () => {
@@ -73,6 +82,43 @@ async function render() {
   if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
   document.querySelectorAll('.masthead__menu-item a').forEach(a =>
     a.classList.toggle('active', a.getAttribute('href') === '#/' + page.split('/')[0]));
+}
+
+// Combined tags: '+' joins clauses that must all hold, ',' joins alternatives within one, '!' negates a tag
+// (against every tagged item). The members and their list lines come from pages/tagsets.md (JSON, build.py).
+let sets = null;
+async function tagSets() {
+  if (!sets) sets = fetch('pages/tagsets.md').then(r => r.json());
+  return sets;
+}
+async function combo(expr) {
+  const { tags, lines } = await tagSets();
+  const clauses = expr.split('+').map(c => c.split(',').map(l => ({ not: l.startsWith('!'), tag: l.replace(/^!/, '') })));
+  const unknown = clauses.flat().map(l => l.tag).filter(t => !tags[t]);
+  const esc = t => t.replace(/[&<>"]/g, c => `&#${c.charCodeAt(0)};`);
+  if (unknown.length) return `# Tags ${esc(expr)}\n\nNo tag ${unknown.map(t => '<code>' + esc(t) + '</code>').join(', ')}. <a href="#/tags">All tags</a>\n`;
+  const has = Object.fromEntries(Object.entries(tags).map(([t, ms]) => [t, new Set(ms)]));
+  const hits = Object.keys(lines).filter(m => clauses.every(c => c.some(l => has[l.tag].has(m) !== l.not)));
+  const chip = l => `${l.not ? 'not ' : ''}<a class="tag${l.tag.includes('-') ? ' sub' : ''}" href="#/tags/${l.tag}">${l.tag}</a>`;
+  const head = clauses.map(c => c.map(chip).join(' or ')).join(' and ');
+  const part = (title, kind) => {
+    const ls = hits.filter(m => m.startsWith(kind + ':')).sort((a, b) => a.toLowerCase() < b.toLowerCase() ? -1 : 1);
+    return ls.length ? `## ${title}\n\n${ls.map(m => lines[m]).join('\n')}\n\n` : '';
+  };
+  return `# Tags: ${hits.length} items\n\n<p class="jump">${head}</p>\n\n<!-- filter -->\n\n` +
+    part('Papers', 'paper') + part('Projects', 'project');
+}
+function addCombine() {
+  const box = document.createElement('input');
+  box.type = 'search';
+  box.placeholder = 'Combine tags, e.g. harness+!dsl-sql, then Enter';
+  box.className = 'filter';
+  box.addEventListener('keydown', e => {
+    const q = box.value.replace(/\s+/g, '').replace(/&/g, '+').replace(/\|/g, ',');
+    if (e.key === 'Enter' && q) location.hash = `#/tags/${q}`;
+  });
+  const h1 = content.querySelector('h1');
+  if (h1) h1.after(box); else content.prepend(box);
 }
 
 // Sections: each h2, h3 or h4 with the elements after it, up to the next of those; level is the 2, 3 or 4.

@@ -21,7 +21,7 @@ On telecom customer-service tasks, with Gemini 2.5 Flash as the agent and five r
 
 ## Background and terms
 
-**Terms to know:** [pass@k](#/glossary/passk) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [bootstrap resampling](#/glossary/bootstrap-resampling)
+**Terms to know:** [pass@k](#/glossary/passk) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [backward transfer (BWT)](#/glossary/backward-and-forward-transfer-bwt-and-fwt) (here the change in an intent's pass^3 between the ends of consecutive same-phase rounds, after the experience mix has shifted away from it; positive means retained, negative means forgetting, §5.1, §5.3; a **cycle** is one shift and return, §5.3) · [subpopulation shift](#/glossary/subpopulation-shift) (here the same kinds of tasks in both phases, in different proportions, §5.1, App. A)
 
 **The paper's own terms:**
 - **context evolution**: revising the agent's persistent system-level instruction (role, rules, procedures, domain assumptions) once per batch of experience, with model, tools and harness frozen; checkpoint ℓ_t is the instruction after update t (§1, §3).
@@ -31,10 +31,6 @@ On telecom customer-service tasks, with Gemini 2.5 Flash as the agent and five r
 - **k-hop typed neighborhood**: all nodes within k edges of the touched nodes, ignoring edges to the `identity` node, which links to every rule (§4.2, Eq. 12).
 - **HCE (Holistic Context Evolution)**: the flat-text baseline: one LLM call applies the diagnosis as incremental edits and checks its draft for conflicts and duplicates (§5.1, App. H.9).
 - **diagnosis**: a fixed two-stage LLM procedure shared by all conditions: reflect on each failed episode, then group the findings into themes (§5.1, App. G).
-
-**Missing glossary terms:**
-- **backward transfer (BWT)**: the change in an intent's pass^3 between the ends of consecutive same-phase rounds, after the experience mix has shifted away from it; positive means retained, negative means forgetting (§5.1, §5.3). A **cycle** is one shift and return (§5.3).
-- **subpopulation shift**: the same kinds of tasks in both phases, in different proportions (§5.1, App. A).
 
 **Builds on:**
 - ACE (Agentic Context Engineering, [ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)")), the "closest prior system", an itemized playbook with incremental updates; HCE adopts its incremental-update contract but "should therefore be read as an ACE-style incremental flat-text updater under our shared diagnosis, not as a reimplementation of ACE" (§2 "Relation to ACE").
@@ -86,4 +82,4 @@ Five runs per condition, evaluated at ℓ6, ℓ8 and ℓ10 only (§5.1, Fig. 3).
 ## On this site
 
 - **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

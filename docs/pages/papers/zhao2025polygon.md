@@ -18,7 +18,7 @@ Given several SQL queries and a property their outputs should have, such as two 
 
 ## Background and terms
 
-**Terms to know:** [symbolic execution](#/glossary/symbolic-execution) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [over-approximation and under-approximation](#/glossary/over-approximation-and-under-approximation) · [bounded verification](#/glossary/bounded-verification) · [query equivalence](#/glossary/query-equivalence) · [counterexample database](#/glossary/counterexample-database) · [soundness and completeness](#/glossary/soundness-and-completeness) · [unsat core](#/glossary/unsat-core) (Polygon reads the conflicting nodes from it, §3.6)
+**Terms to know:** [symbolic execution](#/glossary/symbolic-execution) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [over-approximation and under-approximation](#/glossary/over-approximation-and-under-approximation) · [bounded verification](#/glossary/bounded-verification) · [query equivalence](#/glossary/query-equivalence) · [counterexample database](#/glossary/counterexample-database) · [soundness and completeness](#/glossary/soundness-and-completeness) · [unsat core](#/glossary/unsat-core) (Polygon reads the conflicting nodes from it, §3.6) · [incorrectness logic](#/glossary/incorrectness-logic) (the authors say it inspired the work, §5, and that their UA notion is "consistent with" its idea of under-approximation, §3.2; not listed here)
 
 **The paper's own terms:**
 - **application condition** (C): a solver formula over the queries' outputs that the database must make true, e.g. that two outputs differ, for **equivalence refutation (ER)** (§1, §4).
@@ -29,9 +29,6 @@ Given several SQL queries and a property their outputs should have, such as two 
 - **UA map** (M): a UA for each node of the queries' abstract syntax trees (ASTs). A **satisfying UA map** gives every node a minimal UA and makes the encoding plus C satisfiable (Def. 3.4).
 - **conflict**: the part of a UA map on a node set V whose encoding plus C is already unsatisfiable (§3.6).
 - **sound / complete**, the paper's sense: every returned database satisfies C (Thm. 3.11); when nothing is returned, no satisfying database exists under the semantics of Fig. 8 (Thm. 3.12).
-
-**Missing glossary terms:**
-- **incorrectness logic**: O'Hearn's program logic about outputs a program can really reach. The authors say it inspired the work (§5) and that their UA notion is "consistent with" its idea of under-approximation (§3.2); not listed here.
 
 **Builds on:**
 - VeriEQL ([VeriEQL](#/papers/he2024verieql "VeriEQL: Bounded Equivalence Verification for Complex SQL Queries with Integrity Constraints (2024)")): semantics, table encoding (§3.1, §3.3) and ER pairs (§4).
@@ -83,4 +80,4 @@ Given several SQL queries and a property their outputs should have, such as two 
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-smt">bounded-smt</a><a class="tag sub" href="#/tags/cex-smt">cex-smt</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

@@ -85,4 +85,4 @@ Presenting this as machine-checking a published definition, they claim "the firs
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/itp-sql">itp-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

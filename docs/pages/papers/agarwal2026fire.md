@@ -18,7 +18,7 @@ Terminal agents often reach a working solution, then lose it in delivery: in the
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk) · [pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [self-correction](#/glossary/self-correction) · [test-time scaling](#/glossary/test-time-scaling)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk) · [pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [self-correction](#/glossary/self-correction) · [test-time scaling](#/glossary/test-time-scaling) · [paired sign-flip permutation test](#/glossary/permutation-test) (100,000 random flips for the panel, all flips enumerated for the seven-task screens; two-sided; §4 "Inference"; App. B)
 
 **The paper's own terms:**
 - **runtime policy**: an eligibility predicate (a test on the task description; in the frozen portfolio it "matches phrases in the task description"), a runtime predicate on the agent's action history, checked at prompt submission, before each tool call and at stop, an intervention, a release condition and tracked state (§3 "Policy abstraction"). The intervention either *instructs* (adds guidance and, at stop, requires another turn) or *denies* a tool call.
@@ -29,9 +29,6 @@ Terminal agents often reach a working solution, then lose it in delivery: in the
 - **eligible and silent tasks**: panel tasks the mid-tier portfolio applies to, and tasks it does not apply to, fixed in advance (preregistered), which measure off-target effects (§1; §4 "Four designs").
 - **triggered sham, always-verify, reconsider**: control arms. The sham fires at the real rules' events with generic review text of similar length; the other two add a generic request to verify or to reconsider (§4 "Four designs").
 - **Luna, Terra, Sol**: the authors' names for three GPT-5.6 provider routes, "in increasing order of success and price" (§4 "Setup").
-
-**Missing glossary terms:**
-- **paired sign-flip permutation test**: under the hypothesis of no effect, flip the sign of each task's difference between two conditions (100,000 random flips for the panel, all flips enumerated for the seven-task screens) and count how often the mean difference is as large in absolute value as observed; two-sided (§4 "Inference"; App. B).
 
 **Builds on:**
 - The two "standard" remedies (§1): self-checking ([Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)"); Self-Refine; more test-time computation, Snell et al., 2025, on this site as [compute-optimal test-time scaling](#/papers/snell2024scaling "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters (2024)")) and runtime rule enforcement (NeMo Guardrails, AgentSpec, Progent: systems that program conversational rails, enforce rules or restrict tool privileges for LLM agents).
@@ -83,4 +80,4 @@ The question: "Does the model respond to what an in-context instruction says, or
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a></span>

@@ -19,7 +19,7 @@ Contest sites grade programs with hidden test suites, whose verdicts, the author
 
 ## Background and terms
 
-**Terms to know:** [test oracle](#/glossary/test-oracle) · [differential testing](#/glossary/differential-testing) · [fuzzing](#/glossary/fuzzing) · [agent harness](#/glossary/agent-harness) · [agent skill](#/glossary/agent-skill) · [data contamination](#/glossary/data-contamination) · [bootstrap resampling](#/glossary/bootstrap-resampling)
+**Terms to know:** [test oracle](#/glossary/test-oracle) · [differential testing](#/glossary/differential-testing) · [fuzzing](#/glossary/fuzzing) · [agent harness](#/glossary/agent-harness) · [agent skill](#/glossary/agent-skill) · [data contamination](#/glossary/data-contamination) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [noninferiority test](#/glossary/noninferiority-test) (here an engine passes when the lower end of its 95% interval on the per-problem recall difference stays above −0.02, App. A "Per-engine known-bug coverage detail") · [special judge](#/glossary/online-judge) (problems where more than one output can be correct, graded by a custom output checker; both are excluded, §4; App. A "Problem selection")
 
 **The paper's own terms:**
 - **online judge, official suite**: a contest platform runs each submission on its hidden tests (the official suite) and marks one that passes accepted (§1).
@@ -31,10 +31,6 @@ Contest sites grade programs with hidden test suites, whose verdicts, the author
 - **legality**: under the validator gate, "legality means validator-passing under the encoded statement constraints" (§3).
 - **known-bug panel (REJ)**: officially rejected submissions, on which a suite's recovery of known bugs is measured (§4; App. A).
 - **cov@k**: the expected share of the buggy pool killed by a random set of k of an arm's legal inputs, order ignored; an arm with fewer than k legal inputs contributes all of them (§5).
-
-**Missing glossary terms:**
-- **noninferiority test**: a one-sided test that a method is worse than a reference by no more than a chosen margin; here an engine passes when the lower end of its 95% interval on the per-problem recall difference stays above −0.02 (App. A "Per-engine known-bug coverage detail").
-- **special judge (multi-answer problem)**: problems where more than one output can be correct, graded by a custom output checker; both are excluded (§4; App. A "Problem selection").
 
 **Builds on:**
 - Prior online-judge audits: Who-Judges-the-Judge [16] ([Who Judges the Judge](#/papers/liu2023onlinejudge "Who Judges the Judge: An Empirical Study on Online Judge Tests (2023)")), which uses random, differential and majority-vote testing "but does not certify its findings", and the TrickyBugs dataset [17] (§1, §2).
@@ -85,4 +81,4 @@ The question: can coding agents given only a statement and one reference solutio
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

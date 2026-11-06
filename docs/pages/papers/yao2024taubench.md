@@ -19,7 +19,7 @@ Existing agent benchmarks often give the agent all the information up front (§1
 
 ## Background and terms
 
-**Terms to know:** [pass@k](#/glossary/passk) · [pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials) · [Markov decision process](#/glossary/markov-decision-process) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling)
+**Terms to know:** [pass@k](#/glossary/passk) · [pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials) · [Markov decision process](#/glossary/markov-decision-process) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [POMDP](#/glossary/pomdp-partially-observable-markov-decision-process) (the paper casts each task as one: the state is the database plus the simulated user's state, actions are API calls and messages to the user, and the reward depends on the final state, §3)
 
 **The paper's own terms:**
 - **τ-retail and τ-airline**: the two customer-service domains, an online shop and an airline (§4.1).
@@ -28,9 +28,6 @@ Existing agent benchmarks often give the agent all the information up front (§1
 - **Reward**: 1 when the final database is identical to the annotated one and the agent's replies contain all required information (in the worked example, the required outputs as substrings); else 0 (§3 "Reward").
 - **pass^k** (read "pass hat k"): the paper's metric, "the chance that all k i.i.d. task trials are successful, averaged across tasks" (§3 "Pass^k metric"), i.e. over independent runs of each task. pass^1, the average reward, is the main metric.
 - **FC, ReAct, Act**: the agent methods. FC (function calling) uses the model's native tool-call interface, with the policy as system prompt; each turn the model messages the user or calls a tool. ReAct has the model write "Thought: … Action: …" as text, zero-shot; Act drops the thought (§5 "Methods").
-
-**Missing glossary terms:**
-- **POMDP** (partially observable Markov decision process): a Markov decision process in which the agent does not see the state itself, only observations of it. The paper casts each task as one: the state is the database plus the simulated user's state, actions are API calls and messages to the user, and the reward depends on the final state (§3).
 
 **Builds on:**
 - pass@k, from Chen et al. [5] for code generation checked by unit tests; pass^k is its reliability counterpart (§3).
@@ -86,4 +83,4 @@ Existing agent benchmarks often give the agent all the information up front (§1
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a></span>

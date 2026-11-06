@@ -18,7 +18,7 @@ An AI research agent is itself a program, so another agent can rewrite it. In AI
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [reward hacking](#/glossary/reward-hacking) · [multi-armed bandit (UCB)](#/glossary/multi-armed-bandit-ucb) · [exploration and exploitation](#/glossary/exploration-and-exploitation) · [GPU kernel and kernel fusion](#/glossary/gpu-kernel-and-kernel-fusion)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [reward hacking](#/glossary/reward-hacking) · [multi-armed bandit (UCB)](#/glossary/multi-armed-bandit-ucb) · [exploration and exploitation](#/glossary/exploration-and-exploitation) · [GPU kernel and kernel fusion](#/glossary/gpu-kernel-and-kernel-fusion) · [bi-level optimization](#/glossary/bi-level-optimization) (the authors frame RSI this way, §2)
 
 **The paper's own terms:**
 - **recursive self-improvement (RSI)**: optimizing an AI research agent's own code, where "each accepted rewrite becomes the agent that the next round edits" (abstract).
@@ -30,9 +30,6 @@ An AI research agent is itself a program, so another agent can rewrite it. In AI
 - **AIDE₀, AIDE₄₇, AIDE₈₅, AIDE_human**: the starting inner agent; the incumbent within the first 50 nodes (agents in the outer loop's tree; accepted at step 47); the final incumbent (step 85); and Weco's production research agent (§2.2; §3.2–3.3).
 - **research efficiency**: optimization capability at a fixed cost (§3.1).
 - **ignition test**: whether a discovered agent drives the outer loop better than the agent that discovered it; the treatment arm (one experimental condition) uses AIDE₄₇ as outer agent, the reference arm AIDE_human (§3.6).
-
-**Missing glossary terms:**
-- **bi-level optimization**: an optimization problem nested in another, each outer choice scored by solving the inner one; the authors frame RSI this way (§2).
 
 **Builds on:**
 - AIDE (Jiang et al., 2025), a tree-search agent for ML engineering: AIDE₀ is "a pared-down refactor" of it without the ML-specific parts (§2.2).
@@ -87,4 +84,4 @@ The question: how recursive self-improvement "can effectively advance frontier A
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

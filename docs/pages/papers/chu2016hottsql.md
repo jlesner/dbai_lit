@@ -19,7 +19,7 @@ Database systems speed up queries by rewriting them into queries that should ret
 
 ## Background and terms
 
-**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [query equivalence](#/glossary/query-equivalence) · [bag semantics](#/glossary/bag-semantics) · [set semantics](#/glossary/set-semantics) · [formal semantics](#/glossary/formal-semantics) · [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [conjunctive query](#/glossary/conjunctive-query) · [K-relation](#/glossary/k-relation-and-semiring-semantics) · [magic set rewrites](#/glossary/magic-sets)
+**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [query equivalence](#/glossary/query-equivalence) · [bag semantics](#/glossary/bag-semantics) · [set semantics](#/glossary/set-semantics) · [formal semantics](#/glossary/formal-semantics) · [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [conjunctive query](#/glossary/conjunctive-query) · [K-relation](#/glossary/k-relation-and-semiring-semantics) · [magic set rewrites](#/glossary/magic-sets) · [homotopy type theory and univalent types](#/glossary/homotopy-type-theory-and-univalent-types) (the paper uses a univalent type as a count, finite or infinite, whose equality to another count can be proved, §1, §2)
 
 **The paper's own terms:**
 - **Denotational semantics**: the meaning of each SQL construct is given as a mathematical function, built from the meanings of its parts (Fig. 7), here implemented in Coq (§5).
@@ -33,9 +33,6 @@ Database systems speed up queries by rewriting them into queries that should ret
 - **DopCert** ("Database OPtimizations CERTified"): the Coq system built on HoTTSQL: semantics, lemma and tactic library, decision procedure (an automatic yes-or-no check) and rule proofs (§1, §5).
 - **Ltac**: Coq's language for writing tactics (§2, §5.2).
 - **Functional extensionality**: two functions are equal if they agree on every input; implied by the Univalence Axiom (homotopy type theory's axiom that equivalent types are equal; §5.1.1 footnote 4).
-
-**Missing glossary terms:**
-- **Homotopy type theory and univalent types**: a recent "generalization of classical type theory by adding membership and equality proofs" (§1); the paper uses a univalent type as a count, finite or infinite, whose equality to another count can be proved (§1, §2).
 
 **Builds on:**
 - K-relations, Green et al. [23] ([Provenance Semirings](#/papers/green2007provenance "Provenance Semirings (2007)")), which the semantics generalizes in two ways: no finite support, and univalent types in place of numbers (§1, §2).
@@ -86,4 +83,4 @@ Database systems speed up queries by rewriting them into queries that should ret
 ## On this site
 
 - **Discussed in:** [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/itp-sql">itp-sql</a><a class="tag sub" href="#/tags/prove-itp">prove-itp</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>

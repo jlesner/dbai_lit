@@ -88,4 +88,4 @@ The author's claims, for < only; lower bounds can be established with conjunctiv
 ## On this site
 
 - **Discussed in:** [Query equivalence: prove or refute](#/challenges/query_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>

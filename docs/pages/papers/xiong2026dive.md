@@ -18,7 +18,7 @@ A deployed language model does not keep what it learns from new problems or feed
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [multi-armed bandit (UCB)](#/glossary/multi-armed-bandit-ucb) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [beam search](#/glossary/beam-search) · [reinforcement learning](#/glossary/reinforcement-learning) · [GRPO](#/glossary/grpo) · [rejection sampling](#/glossary/rejection-sampling) · [LoRA](#/glossary/lora-low-rank-adaptation) (the SFT baseline uses it, Supp. "Parameter-based Adaptation", PDF p. 21)
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [multi-armed bandit (UCB)](#/glossary/multi-armed-bandit-ucb) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [beam search](#/glossary/beam-search) · [reinforcement learning](#/glossary/reinforcement-learning) · [GRPO](#/glossary/grpo) · [rejection sampling](#/glossary/rejection-sampling) · [LoRA](#/glossary/lora-low-rank-adaptation) (the SFT baseline uses it, Supp. "Parameter-based Adaptation", PDF p. 21) · [magma](#/glossary/magma) (Equational Theories asks whether one identity implies another "over all possible magmas", Supp. "Dataset Statistics")
 
 **The paper's own terms:**
 - **frozen model**: its weights never change; it solves the task and revises its own skills, with no stronger teacher (§ "Introduction").
@@ -28,9 +28,6 @@ A deployed language model does not keep what it learns from new problems or feed
 - **experience and reflection subsets**: each population's own samples of the training (evolution) set, drawn with replacement; the first seeds skills, the second scores them and shows their failures (§ "Methodology").
 - **evolution operator**: a rewrite instruction plus a rule for choosing which skills (parents) it rewrites (§ "Methodology").
 - **parent-relative reward**: a new skill's accuracy on the reflection subset minus its best parent's (§ "Methodology").
-
-**Missing glossary terms:**
-- **magma**: a set with one binary operation and no further rules; Equational Theories asks whether one identity implies another "over all possible magmas" (Supp. "Dataset Statistics").
 
 **Builds on:**
 - Reflexion ([Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)")), MIPROv2 ([MIPRO (shipped in DSPy as MIPROv2)](#/papers/opsahlong2024mipro "Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs (2024)")) and GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), cited together as prior textual reflection and prompt optimization (§ "Introduction").
@@ -89,4 +86,4 @@ No limitations section; caveats:
 ## On this site
 
 - **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

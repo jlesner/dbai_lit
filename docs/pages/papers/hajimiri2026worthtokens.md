@@ -18,7 +18,7 @@ LLM agents that browse websites to finish tasks are often given extra modules th
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [agent skill](#/glossary/agent-skill) · [compute-matched comparison](#/glossary/compute-matched-comparison) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk) · [pass^k](#/glossary/passk-reliability-over-k-trials)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [agent skill](#/glossary/agent-skill) · [compute-matched comparison](#/glossary/compute-matched-comparison) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [accessibility tree](#/glossary/accessibility-tree) (in the BrowserGym form used here, each node has a role (e.g. button, heading) and an accessible name, one indented line per node, App. B)
 
 **The paper's own terms:**
 - **actor**: the LLM that, at each step, reads the current page and picks the next browser action (§1, Fig. 1).
@@ -30,9 +30,6 @@ LLM agents that browse websites to finish tasks are often given extra modules th
 - **Any-of-3 / All-of-3**: share of tasks solved in at least one / in all of three runs (§5.1); close to pass@3 and pass^3 over whole runs (our bridge).
 - **judge vs ground-truth evaluator**: each method's LLM judge decides which trajectories count as successes for its memory; App. F checks those verdicts against the benchmark's "ground-truth evaluator" (Tab. 9, Tab. 10 captions).
 - **BIDs**: the element IDs in the accessibility tree of BrowserGym (the framework the agents act through), "assigned dynamically" (§5.2).
-
-**Missing glossary terms:**
-- **accessibility tree**: a text tree of a web page's elements, exposed by browsers for assistive tools; in the BrowserGym form used here, each node has a role (e.g. button, heading) and an accessible name, one indented line per node (App. B).
 
 **Builds on:**
 - AWM (Wang et al., 2025b), ASI (Wang et al., 2025a) and ReasoningBank (Ouyang et al., 2026), the three methods re-evaluated: they induce natural-language workflows, Python skill functions and reasoning-strategy memories (§2, §3.2). None is on this site.
@@ -84,4 +81,5 @@ LLM agents that browse websites to finish tasks are often given extra modules th
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

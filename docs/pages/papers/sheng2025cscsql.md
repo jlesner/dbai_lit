@@ -83,4 +83,4 @@ Systems that turn a question into an SQL query often sample many candidate queri
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a><a class="tag sub" href="#/tags/nl2dsl-select">nl2dsl-select</a></span>

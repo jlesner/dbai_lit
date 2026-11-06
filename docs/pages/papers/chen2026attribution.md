@@ -17,7 +17,7 @@ Prompt optimizers let an LLM rewrite a prompt over many rounds. The authors say 
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [meta-prompt](#/glossary/meta-prompt) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [multi-armed bandit (UCB)](#/glossary/multi-armed-bandit-ucb).
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [meta-prompt](#/glossary/meta-prompt) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [multi-armed bandit (UCB)](#/glossary/multi-armed-bandit-ucb) · [occlusion attribution](#/glossary/occlusion-attribution) (the paper calls its version "counterfactual occlusion", § "Dynamic Attribution Mechanism").
 
 **The paper's own terms:**
 - **prompt drift**: a new prompt fixes earlier failures but breaks items the earlier prompt handled (abstract). Measured as **drift**, the share of items the previous prompt answered correctly that the new prompt gets wrong; **retention** is one minus drift (§ "Optimizer Phase", "Measuring Prompt Drift").
@@ -28,9 +28,6 @@ Prompt optimizers let an LLM rewrite a prompt over many rounds. The authors say 
 - **linguistic gradient**: the paper's analogy with gradient descent (Eq. 2–3): the derivative "could be explained as an attribution analysis of the impact exerted by the prompt on the LLM output", and high-attribution elements (e.g. task structure) are edited before fine-grained ones (e.g. word choice) (§ "Problem Formulation"); § "Introduction" calls this "a simulation of the learning rate in machine learning".
 - **meta-prompt components**: Prioritizing Weak Elements (focus on where the prompt underperforms) and Structured Reasoning (explicit analysis of in-context examples) (§ "The Impact of Meta-Prompt Design").
 - **LLM-MLLM workflow**: an MLLM is a multimodal LLM, one that also reads images. In MLLM settings the task model receives the images base64-encoded with the question; the optimizer's meta-prompt only gains a note on the task's multimodal background (§ "Multimodal Pipeline").
-
-**Missing glossary terms:**
-- **occlusion attribution**: estimating how much a part of an input contributes to an output by masking that part and measuring the change; the paper calls its version "counterfactual occlusion" (§ "Dynamic Attribution Mechanism").
 
 **Builds on:**
 - APE (Automatic Prompt Engineer, [APE](#/papers/zhou2022ape "Large Language Models Are Human-Level Prompt Engineers (2023)"): LLM-sampled candidate prompts, the best kept and resampled), APO ([ProTeGi](#/papers/pryzant2023protegi "Automatic Prompt Optimization with 'Gradient Descent' and Beam Search (2023)"), text "gradients" from error analysis with bandit selection) and OPRO ([OPRO](#/papers/yang2023opro "Large Language Models as Optimizers (2024)"), an LLM optimizer guided by a meta-prompt), the optimizers the related work starts from (§ "Related work").
@@ -78,4 +75,4 @@ Prompt optimizers let an LLM rewrite a prompt over many rounds. The authors say 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

@@ -19,7 +19,7 @@ Text-to-SQL benchmarks such as BIRD and Spider score a system by comparing its q
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [weak supervision](#/glossary/weak-supervision) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [F1 score](#/glossary/f1-score) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Pearson correlation](#/glossary/pearson-correlation)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [weak supervision](#/glossary/weak-supervision) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [F1 score](#/glossary/f1-score) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Pearson correlation](#/glossary/pearson-correlation) · [Rogan-Gladen correction](#/glossary/rogan-gladen-correction) (§5.4) · [Kendall's tau](#/glossary/kendalls-tau) (App. B.3)
 
 **The paper's own terms:**
 - **Annotation error**: a task whose gold SQL "does not correctly capture the intent" of its question (§3.1); the hand labels use five error types (§4.5, Tab. 2).
@@ -31,11 +31,7 @@ Text-to-SQL benchmarks such as BIRD and Spider score a system by comparing its q
 - **Transductive and Zero-Overlap**: by default SALUS trains on weak labels of the benchmark it then labels; "Zero-Overlap" runs first exclude every evaluation task (§5.1).
 - **Agent stacking**: SALUS with the decision plane replaced by one global rule over the four verdicts (§5.1.1).
 - **BIRD-Clean-xs**: the authors' hand-labelled set of 298 BIRD development tasks (§4).
-
-**Missing glossary terms:**
 - **CART and XGBoost**: a Classification and Regression Tree and a boosted ensemble of trees, the reliability-model candidates (§5.1).
-- **Rogan–Gladen correction**: estimating a true rate from a flagged rate, given the flagger's measured true- and false-positive rates (§5.4).
-- **Kendall's τ**: pairs ordered the same way in two rankings minus pairs ordered differently, divided by the number of pairs (App. B.3).
 
 **Builds on:**
 - SQLDriller (Yang et al.; [SQLDriller](#/papers/yang2025sqldriller "Automated Validating and Fixing of Text-to-SQL Translation with Execution Consistency (2025)")), "the most comparable fully automated method" (§1): it generates 10 SQL candidates, uses "a formal SQL equivalence checker" to build [counterexample databases](#/glossary/counterexample-database), and has an LLM answer the question on them (§2.2).
@@ -88,4 +84,5 @@ Text-to-SQL benchmarks such as BIRD and Spider score a system by comparing its q
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a></span>
+- **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a></span>

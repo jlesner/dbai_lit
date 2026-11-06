@@ -21,7 +21,7 @@ With five candidates per question, the authors report that DPC beats every selec
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [pass@k](#/glossary/passk) · [self-consistency](#/glossary/self-consistency-majority-voting) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [gold query](#/glossary/gold-query) · [counterexample database](#/glossary/counterexample-database) · [schema linking](#/glossary/schema-linking)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [pass@k](#/glossary/passk) · [self-consistency](#/glossary/self-consistency-majority-voting) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [gold query](#/glossary/gold-query) · [counterexample database](#/glossary/counterexample-database) · [schema linking](#/glossary/schema-linking) · [Hungarian algorithm](#/glossary/hungarian-algorithm) (here it pairs rows of the SQL result with rows of the Python result so that column overlap is as large as possible, §3.5, Alg. 1)
 
 **The paper's own terms:**
 - **Generation-Selection Gap**: high Pass@K (some candidate is right) that "fails to translate into execution accuracy (Pass@1)" (abstract). In the tables, "Upper Bound (Pass@N)" is "the theoretical maximum accuracy within the candidate pool" (Tab. 2 caption).
@@ -35,9 +35,6 @@ With five candidates per question, the authors report that DPC beats every selec
 - **Slicer, Tester, Solver**: the three LLM agents; the Slicer picks the needed tables and columns, the Tester writes the MDD's rows, the Solver writes the Python/Pandas answer (§3.3–3.4).
 - **Bipartite Soft-F1 (BS-F1)**: the score in [0, 1] that compares a SQL result with the Python result (§3.5, Alg. 1).
 - **Majority-Incorrect / Majority-Correct sets**: subsets of BIRD in Tab. 4; the paper describes the first as where "model-internal biases lead to consistent but erroneous outputs" (§4.3).
-
-**Missing glossary terms:**
-- **Hungarian algorithm**: a classic algorithm that finds the best one-to-one pairing between two sets given a cost for each pair; here it pairs rows of the SQL result with rows of the Python result so that column overlap is as large as possible (§3.5, Alg. 1).
 
 **Builds on:**
 - The two-candidate duel: "we select the two most dominant SQLs for a pairwise duel", citing the text-to-SQL systems DeepEye-SQL and CSC-SQL ([CSC-SQL](#/papers/sheng2025cscsql "CSC-SQL: Corrective Self-Consistency in Text-to-SQL via Reinforcement Learning (2025)")) (§3.2).
@@ -93,4 +90,4 @@ Each result is the authors' claim; Tab. 2 and Tab. 3 use N = 5 candidates.
 ## On this site
 
 - **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/nl2dsl-select">nl2dsl-select</a></span>

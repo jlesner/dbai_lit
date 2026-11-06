@@ -17,7 +17,7 @@ XPath is a small language for picking out parts of an XML document (a tree of ne
 
 ## Background and terms
 
-**Terms to know:** [satisfiable and valid](#/glossary/satisfiable-and-valid) · [query containment](#/glossary/query-containment) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [soundness and completeness](#/glossary/soundness-and-completeness)
+**Terms to know:** [satisfiable and valid](#/glossary/satisfiable-and-valid) · [query containment](#/glossary/query-containment) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [soundness and completeness](#/glossary/soundness-and-completeness) · [modal μ-calculus](#/glossary/modal-μ-calculus) (the paper's logic is "an alternation-free µ-calculus with converse for finite trees", §4) · [tree automaton and regular tree language](#/glossary/regular-tree-language-and-tree-automaton) (the authors say tree automata "provide the foundation for the Relax NG language" (an XML schema language), §4, and that the logic can encode "any regular tree grammar", §3.2 "Supported XML Types") · [monadic second-order logic (MSO)](#/glossary/monadic-second-order-logic-mso) (the authors say that on finite trees it is as expressive as tree automata and their logic, §4) · [binary decision diagram (BDD)](#/glossary/binary-decision-diagram-bdd) (§4 cites Bryant 1986)
 
 **The paper's own terms:**
 - **XML tree**: a document seen as "a finite tree of unbounded depth and arity" with two kinds of nodes: elements, which are ordered and may have child elements, and attributes, which are unordered leaves; "data values are ignored" (§3.1, Fig. 1).
@@ -28,12 +28,6 @@ XPath is a small language for picking out parts of an XML document (a tree of ne
 - **cycle-free**: intuitively, a formula that does not contain both a program and its converse inside the same recursion; only cycle-free formulas are allowed (§3.2 "Cycle-Freeness Restriction").
 - **predicates**: built-in and user-defined "logical macros" translated into the core logic, which the authors regard "as an assembly language" (§3.3; Figs. 5–6). Two of them: `select("e", φ)`, the nodes the XPath expression e selects when evaluated from nodes where formula φ holds (`select("e")` starts from the context mark `#`), and `type("file", start)`, the documents a schema file allows from a chosen start element (§3.2 "Supported XPath Expressions", "Supported XML Types"). Users may add their own (§3.4).
 - **Lean**: "the set of all basic subformulas that notably defines the search space that is going to be explored by the solver" (§2, Example 1).
-
-**Missing glossary terms:**
-- **modal μ-calculus** (general definition): a logic that describes a node by what holds at the nodes reachable by moves, with fixpoint operators for recursion; "alternation-free" limits how fixpoints nest, and "with converse" adds backward moves. The paper's logic is "an alternation-free µ-calculus with converse for finite trees" (§4).
-- **tree automaton and regular tree language** (general definition): an automaton that reads a tree rather than a string; the sets of trees such automata accept are the regular tree languages. The authors say tree automata "provide the foundation for the Relax NG language" (§4) (an XML schema language) and that the logic can encode "any regular tree grammar" (§3.2 "Supported XML Types").
-- **monadic second-order logic (MSO)** (general definition): a logic that can quantify over nodes and over sets of nodes; the authors say that on finite trees it is as expressive as tree automata and their logic (§4).
-- **binary decision diagram (BDD)** (general definition): a compact graph that stores a Boolean function, letting a program work on large sets of states at once (§4 cites Bryant 1986).
 
 **Builds on:**
 - Genevès (2006), the PhD thesis "Logics for XML", and Genevès, Layaïda and Schmitt (2007), "Efficient static analysis of XML paths and types" (PLDI 2007, a programming-languages conference; [Efficient Static Analysis of…](#/papers/geneves2007efficient "Efficient Static Analysis of XML Paths and Types (2007)")): the logic and solver this manual documents, "formally described" there (§1, §4).
@@ -89,4 +83,4 @@ No experiments (§2–§4). The worked examples show the solver's traces (§2). 
 ## On this site
 
 - **Discussed in:** [Distinguishing documents for two programs in any DSL](#/challenges/dsl_counterexamples) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-misc">cex-misc</a><a class="tag sub" href="#/tags/prove-general">prove-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag sub" href="#/tags/dsl-path">dsl-path</a></span>

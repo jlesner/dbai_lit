@@ -19,7 +19,7 @@ Turning English questions into database queries usually needs prompts and tools 
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [self-consistency](#/glossary/self-consistency-majority-voting) · [Elo rating](#/glossary/elo-rating) · [evolutionary algorithm](#/glossary/evolutionary-search)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [self-consistency](#/glossary/self-consistency-majority-voting) · [Elo rating](#/glossary/elo-rating) · [evolutionary algorithm](#/glossary/evolutionary-search) · [non-transitivity](#/glossary/non-transitivity) (§3.2.5)
 
 **The paper's own terms:**
 - **Evolution agent** (also "Evolution AI", "evolutionary agent"): Claude Code, Anthropic's coding-agent tool, running Claude Sonnet 4.5 or Opus 4.5; it writes each new agent version (§3.1, §3.2.4).
@@ -31,9 +31,6 @@ Turning English questions into database queries usually needs prompts and tools 
 - **Deep Focus**: before entering the competition, a new agent is tested against earlier rounds' agents on their questions and refined in the same session; `k` test rounds, default 1 (§3.2.4).
 - **Universal verification**: the model sees its query's result and replies `CORRECT` or with a better query, up to 2 times, plus one extra retry on an error or empty result (§3.2.3).
 - **"skip a tier"**: the authors' name for deploying an evolved cheaper model in place of a naive more expensive one (abstract, §4.2).
-
-**Missing glossary terms:**
-- **Non-transitivity**: A beats B and B beats C on some samples, yet C beats A on another, as in rock-paper-scissors (§3.2.5).
 
 **Builds on:**
 - Prompt optimizers APE ([APE](#/papers/zhou2022ape "Large Language Models Are Human-Level Prompt Engineers (2023)")), OPRO ([OPRO](#/papers/yang2023opro "Large Language Models as Optimizers (2024)")), DSPy ([DSPy](#/papers/khattab2023dspy "DSPy: Compiling Declarative Language Model Calls into Self-Improving Pipelines (2024)")), TextGrad (cited in its *Nature* version; the collection holds the preprint, [TextGrad](#/papers/yuksekgonul2024textgrad "TextGrad: Automatic 'Differentiation' via Text (2024)")) and ACE ([ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)")): these optimize prompts, RoboPhD whole agents; its use of earlier agents' errors is likened to TextGrad's "text gradients" (§2.1).
@@ -86,4 +83,4 @@ Turning English questions into database queries usually needs prompts and tools 
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-misc">nl2sql-misc</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

@@ -32,7 +32,7 @@ The authors note that text-to-SQL, turning a question into a database query, "is
 - **Tabular Aha-Moments** (§4.2): behaviours seen during GRPO that "resemble the Aha Moment described in DeepSeek-R1" (in DeepSeek-R1's RL training, the model learning to stop and rethink), such as occasional schema-aware reasoning without access to the table's content.
 
 **Builds on:**
-- DeepSeek-R1 [10] ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")): the two-stage recipe is "inspired by DeepSeek-R1" (§3.2), and §4.2 borrows its "Aha Moment".
+- DeepSeek-R1 [10] ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")): the two-stage recipe is "inspired by DeepSeek-R1" (§3.2), and §4.2 borrows its "Aha Moment".
 - GRPO from DeepSeekMath [29] ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), a paper on an open math-reasoning model (§3.2.1).
 - RL for SQL generation, Reasoning-SQL [27] and SQL-R1 [20] (§1); the class-based judge reward extends Reasoning-SQL's LLM rewards (§3.2.2). Not on this site.
 - Table question-answering methods H-STAR [1] and Plan-of-SQLs [4], which the authors say "tend to bias the model toward SQL-centric reasoning, potentially limiting generalization" (§1).
@@ -86,4 +86,4 @@ All scores are graded by o3-mini (§4.1; Limitations).
 ## On this site
 
 - **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a></span>

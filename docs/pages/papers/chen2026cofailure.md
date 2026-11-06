@@ -18,7 +18,7 @@ Systems that combine several LLMs (one model per question, voting, escalating fr
 
 ## Background and terms
 
-**Terms to know:** [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [Pearson correlation](#/glossary/pearson-correlation) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Cohen's kappa](#/glossary/cohens-kappa) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [AUROC](#/glossary/auroc) (the paper's "AUC").
+**Terms to know:** [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [Pearson correlation](#/glossary/pearson-correlation) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Cohen's kappa](#/glossary/cohens-kappa) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [AUROC](#/glossary/auroc) (the paper's "AUC") · [Clopper–Pearson interval](#/glossary/clopper-pearson-interval) (used undefined, §5) · [tetrachoric correlation](#/glossary/tetrachoric-correlation) (the paper says the one-factor model must be calibrated with it, not with the Pearson correlation of 0/1 correctness indicators, §5 "The mispricing is a large-pool phenomenon…") · [copula (Gaussian, single-factor, Clayton)](#/glossary/copula) (App. A.2, Prop. 7; a Gaussian copula with correlation below one has zero lower tail dependence, so joint extreme failures become vanishingly rare, Prop. 2; a Clayton copula has positive lower tail dependence, §5).
 
 **The paper's own terms:**
 - **Router, cascade, fusion, mixture-of-agents (MoA), Self-MoA**: a router picks one model per query; a cascade escalates from a cheap to a strong model on low confidence; fusion combines several outputs; MoA aggregates in layers; Self-MoA fuses samples of the single best model (§2; §5).
@@ -28,11 +28,6 @@ Systems that combine several LLMs (one model per question, voting, escalating fr
 - **Certificate**: in the glossary's terms not a [certificate](#/glossary/certificate) but a statistical bound: a Clopper–Pearson lower bound on β (below) that, with stated confidence, caps every selection policy's gain (Prop. 1).
 - **Ceiling-bound and realizability-bound regimes**: β clearly above zero caps every policy, or β is near zero and the gain is limited by how well a router finds the right model (§5 "Two regimes across three domains…"; Tab. 3).
 - **Common-mode atom**: a positive-probability set of queries all models fail, however large the pool (§5 "The driver is a common mode…").
-
-**Missing glossary terms:**
-- **Clopper–Pearson interval**: an exact confidence interval for a rate seen as k events in n trials, valid even when k is small (general definition; used undefined, §5).
-- **Tetrachoric correlation**: the correlation of hidden continuous scores assumed behind two yes/no outcomes; the paper says the one-factor model must be calibrated with it, not with the Pearson correlation of 0/1 correctness indicators (§5 "The mispricing is a large-pool phenomenon…").
-- **Copula (Gaussian, single-factor, Clayton)**: a way to join individual error rates into a joint distribution with a chosen dependence. Gaussian: the hidden scores are jointly normal; single-factor: one shared hidden factor (App. A.2, Prop. 7). A Gaussian copula with correlation below one has zero lower tail dependence: joint extreme failures become vanishingly rare (Prop. 2); a Clayton copula has positive lower tail dependence (§5).
 
 **Builds on:**
 - Kuncheva's Oracle combiner and Kuncheva et al.'s majority-vote limits: the ceiling itself is classical; the author claims that it bounds every selection policy, and its conversion into a certificate (§2).
@@ -85,4 +80,4 @@ Systems that combine several LLMs (one model per question, voting, escalating fr
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

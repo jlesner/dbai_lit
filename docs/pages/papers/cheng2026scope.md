@@ -18,7 +18,7 @@ An LLM agent can improve without retraining by keeping a short advice text that 
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [automated program repair](#/glossary/automated-program-repair) · [metamorphic testing](#/glossary/metamorphic-testing) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [AUROC](#/glossary/auroc) · [multiple testing](#/glossary/multiple-testing) · [catastrophic forgetting](#/glossary/catastrophic-forgetting)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [automated program repair](#/glossary/automated-program-repair) · [metamorphic testing](#/glossary/metamorphic-testing) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [AUROC](#/glossary/auroc) · [multiple testing](#/glossary/multiple-testing) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [backward transfer (BWT)](#/glossary/backward-and-forward-transfer-bwt-and-fwt) (named in §3) · [paired sign-flip test](#/glossary/permutation-test) (its p-values "require symmetry of seed-level differences", Tab. 2 caption)
 
 **The paper's own terms:**
 - **skill (policy)**: a natural-language text padded to exactly 360 characters, given to the actor with every task; the only state carried between rounds (§3, §5.4).
@@ -29,10 +29,6 @@ An LLM agent can improve without retraining by keeping a short advice text that 
 - **harmful update**: an accepted update after which the hidden checkpoint score decreased (Tab. 1 caption).
 - **cross-family interference**: a locally valid edit affecting unrelated families when deployed through one global skill (§1).
 - **Global vs. Scoped**: Global replaces the one skill for all tasks; Scoped stores an accepted skill in the current family's slot and gives each task its family's slot, or the initial skill if there is none (§3.2).
-
-**Missing glossary terms:**
-- **backward transfer (BWT)**: the change in score on earlier tasks after later updates; negative means forgetting (named in §3; definition as in [GRACE](#/papers/hsu2026grace "Scoped Verification for Reliable Long-Horizon Agentic Context Evolution under Distribution Shift (2026)") §5.1).
-- **paired sign-flip test**: a test that randomly flips the signs of paired per-stream differences to see how often so large a mean difference arises by chance; its p-values "require symmetry of seed-level differences" (Tab. 2 caption).
 
 **Builds on:**
 - Self-editing agents (§2 "Persistent agent change"): ADAS (Automated Design of Agentic Systems; Hu et al., 2025; [ADAS](#/papers/hu2024adas "Automated Design of Agentic Systems (2024)")), a search over agent designs; Gödel Agent (Yin et al., 2024), a self-referential agent; Darwin Gödel Machine (Zhang et al., 2025; [Darwin Gödel Machine (DGM)](#/papers/zhang2025dgm "Darwin G\'odel Machine: Open-Ended Evolution of Self-Improving Agents (2026)")), an archive of self-edited coding agents. The authors study the deployed lineage "rather than the best member of an archive".
@@ -84,4 +80,4 @@ An LLM agent can improve without retraining by keeping a short advice text that 
 ## On this site
 
 - **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

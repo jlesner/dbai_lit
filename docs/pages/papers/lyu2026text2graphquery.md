@@ -88,4 +88,4 @@ The pipeline has four stages (§4.1, Fig. 2; §4.3):
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/dsl">dsl</a><a class="tag" href="#/tags/rarelang">rarelang</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/rarelang">rarelang</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-graph">dsl-graph</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a></span>

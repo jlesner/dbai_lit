@@ -89,4 +89,4 @@ Coding agents that learn from their own past runs keep notes, called memories, b
 ## On this site
 
 - **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

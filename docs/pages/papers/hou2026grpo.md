@@ -19,7 +19,7 @@ In reinforcement learning (RL) on math problems, a program that checks the final
 
 ## Background and terms
 
-**Terms to know:** [GRPO](#/glossary/grpo) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [pass@k](#/glossary/passk) · [importance ratio and clipping](#/glossary/importance-ratio-and-clipping) · [reward hacking](#/glossary/reward-hacking) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling)
+**Terms to know:** [GRPO](#/glossary/grpo) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [pass@k](#/glossary/passk) · [importance ratio and clipping](#/glossary/importance-ratio-and-clipping) · [reward hacking](#/glossary/reward-hacking) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [off-policy training (stale data)](#/glossary/off-policy-learning) (here one [rollout](#/glossary/reinforcement-learning) batch (one step's sampled responses) is consumed as 32 successive optimizer steps, so the last step's data is 32 updates old, §5)
 
 **The paper's own terms:**
 - **verifier / grader**: a symbolic grader for GSM8K (a set of grade-school math word problems) that takes the answer from a `\boxed{}` or the final line, checks symbolic equality with the reference, and separately reports whether the `</think> <answer>` format is present (§2).
@@ -31,9 +31,6 @@ In reinforcement learning (RL) on math problems, a program that checks the final
 - **coverage ceiling**: pass@n over the fixed sample pool (Fig. 6).
 - **attainable gain, retained fraction**: for selection, best-of-32 minus the base rate (accuracy without selection, Fig. 6), over the ceiling minus the base rate; for RL, the trained arm minus the same-protocol prompting baseline, over the exact arm minus that baseline (Fig. 8).
 - **affine transform**: multiplying by a constant and adding a constant (§6.3).
-
-**Missing glossary terms:**
-- **off-policy training (stale data)**: updating the model on samples drawn by an earlier version of itself; here one [rollout](#/glossary/reinforcement-learning) batch (one step's sampled responses) is consumed as 32 successive optimizer steps, so the last step's data is 32 updates old (§5).
 
 **Builds on:**
 - GRPO from Shao et al. [11] ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), which "introduced the group-relative advantage used throughout this paper" (§7).
@@ -88,4 +85,4 @@ The paper asks "what estimator choices do to the learning signal, and what a deg
 ## On this site
 
 - **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

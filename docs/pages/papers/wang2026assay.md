@@ -18,7 +18,7 @@ LLM agents can improve without retraining by putting short written skills, rules
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [statistical power](#/glossary/statistical-power) · [Mann-Whitney U test](#/glossary/mann-whitney-u-test)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [statistical power](#/glossary/statistical-power) · [Mann-Whitney U test](#/glossary/mann-whitney-u-test) · [average treatment effect (ATE)](#/glossary/average-treatment-effect-ate) (here, of including one skill on one task, "marginalised over the distribution of co-occurring skills", §2.1)
 
 **The paper's own terms:**
 - **skill**: "short rules, heuristics, procedural templates" distilled from agent trajectories (§1), injected into the system prompt (§3.1); not the glossary entry's folder format.
@@ -29,9 +29,6 @@ LLM agents can improve without retraining by putting short written skills, rules
 - **causal heterogeneity**: a skill's largest minus smallest causal score across development tasks (Eq. 4); "causally heterogeneous" when this reaches a threshold (Def. 1).
 - **development gate**: a rewritten library must do at least as well as the original on all development tasks (§2.2; App. I).
 - **TGC, SGC**: AppWorld's Task Goal Completion, the primary metric, and Sub-Goal Completion, which "awards partial credit" for sub-goals (§3.1; App. J).
-
-**Missing glossary terms:**
-- **average treatment effect (ATE)**: the average change in an outcome caused by a treatment; here, by including one skill on one task, "marginalised over the distribution of co-occurring skills" (§2.1).
 
 **Builds on:**
 - Agents that store experience as text in their context, among them Reflexion [9] ([Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)")), ExpeL [23] and ACE [22] ([ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)")); in these methods, the authors say, every lifecycle decision is made by "LLM judgment operating within individual tasks" (§1; §4).
@@ -88,4 +85,4 @@ The authors claim the pipeline "cannot degrade performance below any prefix of s
 ## On this site
 
 - **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

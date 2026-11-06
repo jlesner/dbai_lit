@@ -85,4 +85,4 @@ Code: [Spotit-plus](https://github.com/ai-ar-research/SpotIt-plus)
 ## On this site
 
 - **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-smt">bounded-smt</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/cex-smt">cex-smt</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

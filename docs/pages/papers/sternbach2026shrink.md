@@ -20,7 +20,7 @@ The paper is theory only, and presents its advance as replacing the known expone
 
 ## Background and terms
 
-**Terms to know:** [conjunctive query](#/glossary/conjunctive-query) · [query containment](#/glossary/query-containment) · [query equivalence](#/glossary/query-equivalence) · [homomorphism](#/glossary/homomorphism-containment-mapping) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [set semantics](#/glossary/set-semantics) · [bag semantics](#/glossary/bag-semantics) · [canonical database](#/glossary/canonical-database) (§1, §2)
+**Terms to know:** [conjunctive query](#/glossary/conjunctive-query) · [query containment](#/glossary/query-containment) · [query equivalence](#/glossary/query-equivalence) · [homomorphism](#/glossary/homomorphism-containment-mapping) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [set semantics](#/glossary/set-semantics) · [bag semantics](#/glossary/bag-semantics) · [canonical database](#/glossary/canonical-database) (§1, §2) · [fixed-parameter tractable](#/glossary/fixed-parameter-tractable) (Thm. 5.2) · [polynomial delay](#/glossary/polynomial-delay) (Thm. 4.21)
 
 **The paper's own terms** (q is the contained query, q′ the containing one):
 - **position** (§2): a column of a table atom (relation and column number).
@@ -34,10 +34,6 @@ The paper is theory only, and presents its advance as replacing the known expone
 - **comparison graph CG, opposite graph, cycle reverse edges** (§4.3–4.4): CG links variables of q related by a comparison of q or one induced from q′ (a comparison of q′ whose two sides can map to them). The opposite graph of a CG component holds the order q forces plus a reverse edge for each induced comparison q leaves undecided; cycle reverse edges lie on a directed cycle (a cyclic order conflict).
 - **trichotomy query, minimal MFES, feedback query** (§4.4): a trichotomy query adds one of <, =, > for each cycle reverse edge. A match feedback edge set (MFES) is a set of cycle reverse edges whose removal leaves the graph acyclic; each minimal one gives a feedback query. A local assignment is a canonical assignment restricted to one component.
 - **Δ, w, |Ecycle(q)|** (§5): the size of the largest match set; the width, the minimum over legal separators of the separator's size plus its largest component (in RG+, RG plus cliques for comparison constraints); the number of cycle reverse edges.
-
-**Missing glossary terms:**
-- **fixed-parameter tractable** (Thm. 5.2): bounded by a function of some parameters times a polynomial in the input size.
-- **polynomial delay** (Thm. 4.21): an enumeration whose time between consecutive outputs is polynomial in the input size.
 
 **Builds on:**
 - Chandra and Merlin: one canonical database decides containment of plain conjunctive queries (§1–2; [Optimal Implementation of Conjunctive…](#/papers/chandra1977conjunctive "Optimal Implementation of Conjunctive Queries in Relational Data Bases (1977)")).
@@ -95,4 +91,4 @@ The main results, as the authors state them:
 ## On this site
 
 - **Discussed in:** [Query equivalence: prove or refute](#/challenges/query_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a><a class="tag sub" href="#/tags/theory-null">theory-null</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-null">theory-null</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>

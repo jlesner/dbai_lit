@@ -18,7 +18,7 @@ When an LLM acts in the world (posting tweets, calling APIs), what it did earlie
 
 ## Background and terms
 
-**Terms to know:** [reward hacking](#/glossary/reward-hacking) · [reinforcement learning](#/glossary/reinforcement-learning) · [LLM-as-a-judge](#/glossary/llm-as-a-judge)
+**Terms to know:** [reward hacking](#/glossary/reward-hacking) · [reinforcement learning](#/glossary/reinforcement-learning) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [Bradley-Terry model](#/glossary/bradley-terry-model) (the paper applies it to LLM comparisons, §4.1, App. A)
 
 **The paper's own terms:**
 - **feedback loop**: the LLM's completion changes the world state, which replaces the old state in its context window, so earlier completions shape later ones (§3.2 "Feedback loops induce optimization").
@@ -30,9 +30,6 @@ When an LLM acts in the world (posting tweets, calling APIs), what it did earlie
 - **policy-refinement**: the LLM raises the proxy by refining its policy for a fixed environment state, e.g. switching from sending money to adding funds after an `InsufficientBalance` error (§3.2, Fig. 2).
 - **sparse feedback**: "feedback that specifies an error with the current state without directing how the LLM should update", such as a server-side API error (§3.3).
 - **cycle, round, dialogue turn**: one pass of the loop; with tools, each injected error starts a round (§4.2).
-
-**Missing glossary terms:**
-- **Bradley-Terry model**: a statistical model turning pairwise judgments of which item is better into per-item scores; the paper applies it to LLM comparisons (§4.1, App. A).
 
 **Builds on:**
 - Pan et al. (2022), on reward hacking in traditional optimizers, which ICRH resembles because the proxy is under-specified (§1); §3.2 cites it with Clark & Amodei (2016) and Gao et al. (2023) ([Scaling Laws for Reward…](#/papers/gao2022overoptimization "Scaling Laws for Reward Model Overoptimization (2023)")) as proxies missing implicit constraints.
@@ -79,4 +76,4 @@ When an LLM acts in the world (posting tweets, calling APIs), what it did earlie
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

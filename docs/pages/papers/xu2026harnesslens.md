@@ -19,7 +19,7 @@ An agent harness is the software around a language model that makes it an agent:
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk) · [text-to-SQL](#/glossary/text-to-sql) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [LLM-as-a-judge](#/glossary/llm-as-a-judge).
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk) · [text-to-SQL](#/glossary/text-to-sql) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [rollout](#/glossary/rollout) (one run of the agent on one task, giving a trajectory and a reward, §3.2, §4) · [coreset](#/glossary/coreset) (a task subset picked once, before evolution, §1, §2).
 
 **The paper's own terms**
 - **harness framework, user-configurable components, harness**: the framework (e.g. OpenCode) is fixed and exposes components a user may configure (instructions, skills, prompt templates, tools, agent roles, runtime extensions); a harness is the framework plus a setting for each component (Def. 1, §3.1).
@@ -32,10 +32,6 @@ An agent harness is the software around a language model that makes it an agent:
 - **comparison labels**: per task, current against candidate harness: recovered (the current harness never succeeds, the candidate at least once), stable success, regressed, still failing, mixed (Tab. 6, App. A.4.2).
 - **attributable-evidence gate**: a verification stage advances only with "attributable positive evidence and no attributable regression": a recovered task, or a stable success with a higher pass count, that the LLM diagnosis ties to the edited component; "preservation alone is insufficient" (App. A.4.2).
 - **TRAIN, TEST, pass@1**: TRAIN is the 30 tasks per benchmark used during evolution; TEST is held out. pass@1 here is one fresh trial per TEST task under the final harness; the TRAIN pass rate averages two trials per task (App. B.3).
-
-**Missing glossary terms**
-- **rollout**: one run of the agent on one task, giving a trajectory and a reward (§3.2, §4).
-- **coreset**: a small task subset picked once, before evolution, to stand in for the whole set (§1, §2).
 
 **Builds on**
 - Propose-and-verify prompt and program optimizers: OPRO ([OPRO](#/papers/yang2023opro "Large Language Models as Optimizers (2024)")), MIPRO ([MIPRO (shipped in DSPy as MIPROv2)](#/papers/opsahlong2024mipro "Optimizing Instructions and Demonstrations for Multi-Stage Language Model Programs (2024)")), TextGrad ([TextGrad](#/papers/yuksekgonul2024textgrad "TextGrad: Automatic 'Differentiation' via Text (2024)")) (§1).
@@ -91,4 +87,4 @@ The baselines' configured maxima are 4,800, 660 and 300 TRAIN rollouts, against 
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

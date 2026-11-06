@@ -32,7 +32,7 @@ Reinforcement learning trains an LLM by rewarding its sampled outputs; in RL wit
 **Builds on:**
 - The pass@k metric, cited to Brown et al. (§1; [Large Language Monkeys](#/papers/brown2024monkeys "Large Language Monkeys: Scaling Inference Compute with Repeated Sampling (2024)")), whose manual check of chains of thought §3.1 follows, and to Chen et al. 2021, from code generation (§2.2, App. A.2; not listed here).
 - Earlier reports of similar trends: DeepSeekMath, whose study "was limited to a single instruction-tuned model and two math benchmarks" (§6; [DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), and Dang et al., "seen only in a limited experimental setup with Qwen-2.5-0.5B on GSM8K" (App. B; not listed here).
-- DeepSeek-R1's zero-RL setting (§2.1; [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")).
+- DeepSeek-R1's zero-RL setting (§2.1; [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")).
 
 ## Problem and setting
 
@@ -83,4 +83,4 @@ Reinforcement learning trains an LLM by rewarding its sampled outputs; in RL wit
 ## On this site
 
 - **Discussed in:** [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

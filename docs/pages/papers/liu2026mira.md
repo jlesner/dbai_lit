@@ -65,5 +65,5 @@ Against MAGIC, TK-Boost (iterative feedback on each [common table expression (CT
 
 ## On this site
 
-- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-misc">nl2sql-misc</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>
+- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

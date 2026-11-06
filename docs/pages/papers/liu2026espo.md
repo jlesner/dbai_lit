@@ -85,4 +85,4 @@ Reflective prompt optimizers such as GEPA have a strong LLM read a prompt's mist
 ## On this site
 
 - **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

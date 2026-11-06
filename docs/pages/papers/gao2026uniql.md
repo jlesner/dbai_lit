@@ -19,7 +19,7 @@ Text-to-SQL benchmarks such as BIRD mostly run their queries on SQLite, a small 
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [SQL dialect](#/glossary/sql-dialect) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [bag semantics](#/glossary/bag-semantics) · [list semantics](#/glossary/list-semantics) · [query equivalence](#/glossary/query-equivalence)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [SQL dialect](#/glossary/sql-dialect) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [bag semantics](#/glossary/bag-semantics) · [list semantics](#/glossary/list-semantics) · [query equivalence](#/glossary/query-equivalence) · [database migration](#/glossary/database-migration) (here with "type mapping, identifier normalization, namespace adaptation, and necessary formatting changes", §3.1)
 
 **The paper's own terms:**
 - **Source and target dialects**: SQLite, BIRD's original engine, is the source; the dialects of 15 other database engines (ClickHouse, Doris, Drill, Druid, DuckDB, Hive, MySQL, Oracle, PostgreSQL, Presto, Spark, StarRocks, Teradata, Trino, T-SQL) are the targets built by the pipeline (§3, §4).
@@ -29,9 +29,6 @@ Text-to-SQL benchmarks such as BIRD mostly run their queries on SQLite, a small 
 - **Cross-dialect consistency**: "for the same intent, how many dialect realizations can a model answer correctly?" (§6.4). Tab. 3 reports its Mean, All-16 (share of questions right in all 16 dialects) and SQLite→15, "the percentage of SQLite-correct questions that remain correct across other 15 dialects" (§6.4).
 - **BIRD difficulty**: the simple, moderate and challenging labels BIRD gives its questions (§6.3).
 - **Evidence**: hint text that comes with each BIRD question and is put into the prompt (App. B, App. F).
-
-**Missing glossary terms:**
-- **Database migration**: moving a database's schema and data to another engine, here with "type mapping, identifier normalization, namespace adaptation, and necessary formatting changes" (§3.1).
 
 **Builds on:**
 - BIRD ([BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)")), a text-to-SQL benchmark the paper calls "primarily SQLite-based" (§2): UniQL is "Built upon the BIRD development set" (§1), its 1,534 questions (§4), with BIRD's SQLite queries as the source of every translation (§3.2).
@@ -84,4 +81,4 @@ Text-to-SQL benchmarks such as BIRD mostly run their queries on SQLite, a small 
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [SQL dialect translation](#/challenges/dialect_translation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/dialect-pairs">dialect-pairs</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/pairs">pairs</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a></span>

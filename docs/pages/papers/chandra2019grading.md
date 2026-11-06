@@ -85,4 +85,4 @@ Grading SQL homework means deciding whether a student's query is right and, if n
 ## On this site
 
 - **Discussed in:** [Canonical forms for queries](#/challenges/query_canonical_forms) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-misc">cex-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

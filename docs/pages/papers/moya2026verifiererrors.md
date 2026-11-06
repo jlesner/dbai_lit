@@ -19,7 +19,7 @@ In reinforcement learning from an automatic checker's rewards, the checker may a
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) (here with a checker that can accept wrong responses) · [reward hacking](#/glossary/reward-hacking) · [GRPO](#/glossary/grpo) · [KL penalty](#/glossary/kl-penalty)
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) (here with a checker that can accept wrong responses) · [reward hacking](#/glossary/reward-hacking) · [GRPO](#/glossary/grpo) · [KL penalty](#/glossary/kl-penalty) · [contextual bandit](#/glossary/contextual-bandit) (here a toy stand-in for a language model: fixed prompts, each with fixed candidate responses given as feature vectors, picked by a softmax; "log linear" policies use fixed features, neural ones learn them; §6.1; App. D.1–D.2)
 
 **The paper's own terms:**
 - **Hack / accepted error**: a response the verifier accepts (reward 1, else 0) that a separate fixed correctness indicator marks incorrect (§2.1–2.2). The verifier is assumed to have "no false negatives": it accepts every correct response (§2.2).
@@ -31,9 +31,6 @@ In reinforcement learning from an automatic checker's rewards, the checker may a
 - **Selective control**: hack probability falls while the probability of correct responses does not (§4.4).
 - **Audit**: reveals the true label of an accepted response (§5.1).
 - **Projected audit correction (PAC)**: adds a push against the gradient of the audited hacks' probability, with its component along the reward gradient removed so acceptance keeps its instantaneous growth rate (§5.1). **Raw audit correction** omits the projection (App. D.1.3).
-
-**Missing glossary terms:**
-- **Contextual bandit** (as used here): a toy stand-in for a language model: fixed prompts, each with fixed candidate responses given as feature vectors, picked by a softmax; "log linear" policies use fixed features, neural ones learn them (§6.1; App. D.1–D.2).
 - **Input-to-state stability (ISS)-type bound**: a bound over time made of a part decaying from the starting value plus a residual set by a persistent push (§5.2).
 
 **Builds on:**
@@ -80,4 +77,4 @@ All are the authors' reports.
 ## On this site
 
 - **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/theory">theory</a></span>

@@ -18,7 +18,7 @@ The authors want to test how well LLMs reason and use long inputs. They say such
 
 ## Background and terms
 
-**Terms to know:** [exact match](#/glossary/exact-match) · [data contamination](#/glossary/data-contamination) (the paper says "data leakage") · [pass@k](#/glossary/passk) (HumanEval is scored by pass@1, §3.3) · [Pearson r](#/glossary/pearson-correlation) · [lost in the middle](#/glossary/lost-in-the-middle). · [context-free grammar](#/glossary/context-free-grammar) (the rules S3Eval uses to generate syntactically valid queries, §2.1) · [needle in a haystack (NIAH)](#/glossary/needle-in-a-haystack-niah) (§1, Fig. 1)
+**Terms to know:** [exact match](#/glossary/exact-match) · [data contamination](#/glossary/data-contamination) (the paper says "data leakage") · [pass@k](#/glossary/passk) (HumanEval is scored by pass@1, §3.3) · [Pearson r](#/glossary/pearson-correlation) · [lost in the middle](#/glossary/lost-in-the-middle). · [context-free grammar](#/glossary/context-free-grammar) (the rules S3Eval uses to generate syntactically valid queries, §2.1) · [needle in a haystack (NIAH)](#/glossary/needle-in-a-haystack-niah) (§1, Fig. 1) · [Kendall τ](#/glossary/kendalls-tau) (here it measures "whether the relative ranking of models is consistent across the benchmarks", §3.3; the paper prints it and Pearson r as percentages, e.g. 99.1)
 
 **The paper's own terms:**
 - **SQL execution task**: given a table and an SQL query, the model must output the query's execution result; scored by exact match of the answer (§2.1).
@@ -30,9 +30,6 @@ The authors want to test how well LLMs reason and use long inputs. They say such
 - **Dense** and **Sparse**: the four answer cells are in adjacent rows, or spread apart (§5.2, Fig. 9).
 - **Reasoning types**: six template families taken from TaPEx: Filter, Aggregate, Arithmetic, Superlative, Comparative and Group (§5.3; templates in App. C.2).
 - **Markdown** and **flatten** table formats: a grid, or one line per row of "Column is value" pairs (App. B.3; example in App. C.3).
-
-**Missing glossary terms:**
-- **Kendall τ**: a rank correlation; it measures "whether the relative ranking of models is consistent across the benchmarks" (§3.3). The paper prints it and Pearson r as percentages (e.g. 99.1).
 
 **Builds on:**
 - TaPEx ([TAPEX](#/papers/liu2021tapex "TAPEX: Table Pre-training via Learning a Neural SQL Executor (2022)")), which pretrains a model as a SQL executor: the task and the six reasoning types follow it (§1, §2.1, §5.3).
@@ -89,4 +86,4 @@ The authors want to test how well LLMs reason and use long inputs. They say such
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/workload">workload</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/workload">workload</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

@@ -11,7 +11,7 @@ Code: [Noisy-RL](https://github.com/cognichip/Noisy-RL)
 
 - Models GRPO under a verifier with false positives and false negatives as a multi-armed bandit over recurring "reasoning modes", which gives a replicator-style flow on the probability simplex (abstract; §2.1; §4; §5).
 - The flow splits into competition among correct modes and a one-dimensional equation for the mass on incorrect modes, whose drift the authors derive to depend only on Youden's index J = TPR − FPR, with a phase transition at J = 0 that KL regularization turns into an interior equilibrium (abstract; §3; §6; §6.1). Tested with GRPO on Qwen2.5-3B, Python problems from OpenR1 and unit-test rewards flipped at set rates (§7.2).
-- A threshold for how weak a checker may be before RLVR learns the wrong thing, beside the measurements of [An Imperfect Verifier is Good Enough](#/papers/plesner2026imperfect "An Imperfect Verifier is Good Enough: Learning with Noisy Rewards (2026)") and [When the Reward Suite Is Leaky](#/papers/zhang2026leaky "When the Reward Suite Is Leaky: A Preregistered Causal Contrast of Natural Verifier False Positives in RLVR (2026)"): the authors report that for J > 0 noise mainly rescales convergence time ("rate, not fate") and that their runs reproduce the predicted J = 0 boundary (abstract; §7.3, Tab. 1), on one model over two epochs (§7.3; §7.4). [Finding Blind Spots in…](#/papers/abrich2026blindspots "Finding Blind Spots in AppWorld and WorkArena Task Verifiers (2026)") cites it for checker errors entering training (§2; §6).
+- A threshold for how weak a checker may be before RLVR learns the wrong thing, beside the measurements of [An Imperfect Verifier is Good Enough](#/papers/plesner2026imperfect "An Imperfect Verifier is Good Enough: Learning with Noisy Rewards (2026)") and [When the Reward Suite Is Leaky](#/papers/zhang2026leaky "When the Reward Suite Is Leaky: A Preregistered Causal Contrast of Natural Verifier False Positives in RLVR (2026)"): the authors report that for J > 0 noise mainly rescales convergence time ("rate, not fate") and that their runs reproduce the predicted J = 0 boundary (abstract; §7.3, Tab. 1), on one model over two epochs (§7.3; §7.4). [Finding Side-Effect Loopholes in…](#/papers/abrich2026blindspots "Finding Side-Effect Loopholes in Verifiable Rewards (2026)") cites it for checker errors entering training (§6).
 
 ## In plain words
 
@@ -19,20 +19,14 @@ When LLMs are trained by reinforcement learning against an automatic checker, "t
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [policy gradient](#/glossary/policy-gradient) · [multi-armed bandit](#/glossary/multi-armed-bandit-ucb) · [importance ratio and clipping](#/glossary/importance-ratio-and-clipping) · [KL penalty](#/glossary/kl-penalty) · [pass@k](#/glossary/passk)
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [policy gradient](#/glossary/policy-gradient) · [multi-armed bandit](#/glossary/multi-armed-bandit-ucb) · [importance ratio and clipping](#/glossary/importance-ratio-and-clipping) · [KL penalty](#/glossary/kl-penalty) · [pass@k](#/glossary/passk) · [Youden's index](#/glossary/youdens-index) (J; below 0 "anti-informative"; Eq. 2, §1) · [replicator dynamics](#/glossary/replicator-dynamics) (§2.1, citing Cressman (2003)) · [mean-field ODE](#/glossary/mean-field-approximation-mean-field-ode) (§6; App. C.3) · [phase transition](#/glossary/phase-transition) (§1)
 
 **The paper's own terms:**
 - **verifier, checker, oracle, grader**: interchangeable names for the source of a completion's 0/1 reward: a program, a "learned reward model" or an LLM judge (abstract; §2).
 - **false-negative and false-positive rates (FNR, FPR)**: the chance a correct completion gets reward 0, and the chance an incorrect one gets reward 1 (Eq. 1, §1); TPR (true-positive rate) is one minus the FNR (§1, footnote 1).
 - **reasoning mode (arm)**: a cluster of completions to one prompt, such as "canonical solution paths, recurring chains of thought, or standard solver templates"; K modes are correct, M incorrect (§4). (In the glossary's terms, no UCB-style exploration.)
 - **bad mass**: the total probability on incorrect modes for a prompt; accuracy is one minus it (§4).
-- **learning, neutral, anti-learning**: the regimes where J (below) is positive, zero or negative (§3); Fig. 1's caption says "unlearning" for the third.
-
-**Missing glossary terms:**
-- **Youden's index (J)**: TPR minus FPR, from −1 to 1; 1 is a perfect checker, 0 chance-level, below 0 "anti-informative" (Eq. 2, §1, citing Youden (1950)).
-- **replicator dynamics**: from evolutionary game theory: a type's share grows or shrinks as its fitness is above or below the population average (§2.1, citing Cressman (2003)).
-- **mean-field ODE**: a deterministic differential equation for the expected change of the probabilities in the small-step limit (§6; App. C.3).
-- **phase transition**: a sudden qualitative change as one parameter crosses a critical value (§1).
+- **learning, neutral, anti-learning**: the regimes where J (above) is positive, zero or negative (§3); Fig. 1's caption says "unlearning" for the third.
 
 **Builds on:**
 - GRPO, from Shao et al. (2024) ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), which the authors say makes the sequence-level bandit view of Kreutzer et al. (2017) and others explicit (§4).
@@ -81,4 +75,4 @@ When LLMs are trained by reinforcement learning against an automatic checker, "t
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a><a class="tag" href="#/tags/theory">theory</a></span>

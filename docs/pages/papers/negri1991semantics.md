@@ -77,4 +77,4 @@ No experiments; derivations only (§4, PDF pp. 15–20).
 ## On this site
 
 - **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-null">theory-null</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-null">theory-null</a></span>

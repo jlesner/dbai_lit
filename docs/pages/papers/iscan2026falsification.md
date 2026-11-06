@@ -18,7 +18,7 @@ Small code models, run locally and never fine-tuned, often write programs that l
 
 ## Background and terms
 
-**Terms to know:** [pass@k](#/glossary/passk) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [compute-matched comparison](#/glossary/compute-matched-comparison) · [metamorphic testing](#/glossary/metamorphic-testing) · [statistical power](#/glossary/statistical-power) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting)
+**Terms to know:** [pass@k](#/glossary/passk) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [compute-matched comparison](#/glossary/compute-matched-comparison) · [metamorphic testing](#/glossary/metamorphic-testing) · [statistical power](#/glossary/statistical-power) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [Learn-then-Test](#/glossary/learn-then-test-ltt) (here its Hoeffding–Bentkus bound, Angelopoulos et al., 2021; a certificate issues when the p-value is at most a level δ, §2.1, Eq. 1; α = 0.05, δ = 0.10, Tab. 1) · [severe test](#/glossary/severe-test) (Popperian falsification; in its most principled form an operator attacks each candidate with one and keeps what survives, abstract)
 
 **The paper's own terms:**
 - **Frozen small code model**: "at most about 1.5 billion parameters and run locally without fine-tuning" (abstract).
@@ -31,10 +31,6 @@ Small code models, run locally and never fine-tuned, often write programs that l
 - **Consensus trap**: a task whose public-passing majority is hidden-wrong while some pool candidate is hidden-correct (Def. 2).
 - **Execution fingerprint**: a candidate's outputs, or markers such as an error or timeout, on at most 24 probe inputs built from public-test arguments and type-aware mutations (§2.1).
 - **Cell**: a model under test ("model cells", §3 setup), or a model–benchmark pair ("all six cells", §3, before Tab. 6).
-
-**Missing glossary terms:**
-- **Learn-then-Test (Hoeffding–Bentkus bound)**: a distribution-free method (Angelopoulos et al., 2021) that turns an observed harm rate on n examples into a p-value against the claim that the true rate exceeds a target α; a certificate issues when it is at most a level δ (§2.1, Eq. 1; α = 0.05, δ = 0.10, Tab. 1).
-- **Severe test (Popperian falsification)**: a test a claim "would probably have failed were it false" (§1); in its most principled form an operator attacks each candidate with one and keeps what survives (abstract).
 
 **Builds on:**
 - İşcan (2026), the author's companion study, where naming severe tests in a coding agent's prompt did not help beyond a labels-only control; this paper is "that successor" (§1).
@@ -87,5 +83,5 @@ Small code models, run locally and never fine-tuned, often write programs that l
 
 ## On this site
 
-- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

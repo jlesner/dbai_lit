@@ -20,7 +20,7 @@ On a data-analysis benchmark over a hidden database whose schema changes midway,
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [dense retrieval](#/glossary/dense-retrieval).
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [dense retrieval](#/glossary/dense-retrieval). · [MCP (Model Context Protocol)](#/glossary/model-context-protocol-mcp) (MCP servers "expose callable tools and file-like resources such as API responses and document contents", App. A.2) · [Student's t-test and t-interval](#/glossary/students-t-test-and-t-interval) (Student-t confidence intervals for means over few runs, §4) · [CRUD](#/glossary/crud) (here the memory tools, §3.2) · [soft delete](#/glossary/soft-delete) (§4)
 
 **The paper's own terms:**
 - **task agent**: a fresh LLM session per task that solves it with the environment's tools and can only read memory (§3.1).
@@ -31,12 +31,6 @@ On a data-analysis benchmark over a hidden database whose schema changes midway,
 - **drift** (migration): an unannounced schema change partway through the task stream: renamed tables, split columns, soft deletes (§4, App. B.1).
 - **pass-discounted reward** (Eq. 3, §4): 0 for a failed task, otherwise 1 minus the share of a tool-call budget used (15 SQL queries on CLBench, 100 tool calls on APEX); a task with several grading criteria passes only if all pass. "Total reward" sums it over tasks, "mean reward" averages it (App. B.3). Memory calls don't count.
 - **The four systems** (§4): GHCP (No Memory), stateless; GHCP + Full ICL, which puts prior trajectories into the prompt; GHCP + Mem, trajectory-only memory; GHCP + Mem (w/ Env Probing). GHCP is GitHub Copilot, run through its SDK.
-
-**Missing glossary terms:**
-- **MCP (Model Context Protocol)**: a standard way for a server to offer tools to an agent; the paper says MCP servers "expose callable tools and file-like resources such as API responses and document contents" (App. A.2).
-- **CRUD**: create, read, update, delete; here the memory tools (§3.2).
-- **soft delete**: marking a row deleted (for example by a flag) instead of removing it, so queries must filter it out (§4).
-- **Student-t confidence interval**: an interval for a mean estimated from few runs, using the t distribution (§4).
 
 **Builds on:**
 - **CLBench** (Asawa et al. 2026, not listed here), a continual-learning benchmark: the authors cite its finding that memory "can encode spurious generalizations and stale beliefs under environment drift" (§1), and use its database-exploration streams (§4).
@@ -87,4 +81,4 @@ On a data-analysis benchmark over a hidden database whose schema changes midway,
 ## On this site
 
 - **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

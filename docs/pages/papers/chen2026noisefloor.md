@@ -18,7 +18,7 @@ Function-calling benchmarks score whether a model answers a request with the rig
 
 ## Background and terms
 
-**Terms to know:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials)
+**Terms to know:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [pass^k (reliability over k trials)](#/glossary/passk-reliability-over-k-trials) · [tool calling (function calling)](#/glossary/tool-calling-function-calling) (the paper's "native function calling": "an endpoint emits a structured call, the harness parses provider-specific tool payloads, a grader maps that call to a task outcome", §1; §3 "Interface and scoring")
 
 **The paper's own terms:**
 - **endpoint**: a hosted model behind a provider's API; its identifiers are "time-bound API products rather than immutable model artifacts" (§6 "Scope limits").
@@ -30,9 +30,6 @@ Function-calling benchmarks score whether a model answers a request with the rig
 - **semantics-preserving prompt perturbation**: one of four surface changes to the user message only, with tool schema, target functions and reference call held fixed: collapsing whitespace, prefixing an instruction to use the tools, wrapping the request in neutral labels, and appending an instruction to answer through the function-calling interface (§3; Tab. 1).
 - **system fingerprint**: a provider-reported identifier (Groq's `system_fingerprint`), recorded as a covariate and used as a proxy for backend routing (§3 "Endpoints"; §4 "Endpoint fingerprint variance").
 - **failure taxonomy**: `wrong_function` (the called function names, counted with repeats, differ from the expected ones), `wrong_arguments` (names right, required arguments missing, mistyped or outside the accepted values), `malformed_output` (output or tool-call payload "structurally unparseable, missing, truncated, or degenerate before ordinary argument grading"), and `other`, "chiefly wrong call counts" (§4 "Failure character shifts across endpoints").
-
-**Missing glossary terms:**
-- **native function calling (tool calling)**: an API mode in which the model returns a structured call to one of the functions declared in a supplied schema instead of free text; "an endpoint emits a structured call, the harness parses provider-specific tool payloads, a grader maps that call to a task outcome" (§1; §3 "Interface and scoring").
 
 **Builds on:**
 - Miller (2024) on error bars for language-model evaluations, "including paired comparisons and evaluation planning"; the audit "adds a narrower empirical target" (§2 "Evaluation variance and error bars"). Not on this site.
@@ -86,4 +83,4 @@ On the frozen BFCL subset and these three endpoints; the reported arms "primaril
 ## On this site
 
 - **Discussed in:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

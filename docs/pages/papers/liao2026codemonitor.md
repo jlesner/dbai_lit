@@ -18,7 +18,7 @@ LLM-written code is often accepted once it passes the tests the developer can se
 
 ## Background and terms
 
-**Terms to know:** [test oracle](#/glossary/test-oracle) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [Cohen's kappa](#/glossary/cohens-kappa) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [AUROC](#/glossary/auroc) (it "measures ranking quality across thresholds", §2.5) · [monitor red teaming](#/glossary/monitor-ai-control)
+**Terms to know:** [test oracle](#/glossary/test-oracle) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [Cohen's kappa](#/glossary/cohens-kappa) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [AUROC](#/glossary/auroc) (it "measures ranking quality across thresholds", §2.5) · [monitor red teaming](#/glossary/monitor-ai-control) · [TPR and FNR at 5% FPR](#/glossary/true-and-false-positive-rates) (threshold set so that at most 5% of correct candidates are flagged; FNR, the miss rate, is 1 − TPR; App. C.3, Eq. 2) · [AUPRC](#/glossary/auprc) ("useful but prevalence-sensitive": it moves with how common bugs are, §2.5)
 
 **The paper's own terms:**
 - **public-pass candidate**: generated code that passes the visible (public) tests; only these reach the verifier, and held-out hidden tests then label them (§2.1–2.2).
@@ -29,10 +29,6 @@ LLM-written code is often accepted once it passes the tests the developer can se
 - **Direct / Hybrid review**: two verifier prompts over M1; Hybrid "first decomposes requirements and likely edge cases, then performs counterexample-oriented review" (§2.4, Tab. 16).
 - **weak / strong verifiers**: "open weak" Qwen-7B, Llama-8B, Mistral-7B; "closed weak" GPT-5.4-mini; "closed strong" GLM-5.1, all with the same M1 view; GLM-5.1 serves "as a named capability reference", "not as an oracle" (§3.2, Tab. 4–5).
 - **spec-grounded; constructive / posthoc M1**: in the audit, a failure is spec-grounded if it traces to a stated or strongly implied requirement; constructive and posthoc M1 are "pre- and post-reveal inference from the public view": the auditor infers the bug from M1 before seeing the hidden failure, or once shown it; the two overlap (§4.1, Tab. 6).
-
-**Missing glossary terms:**
-- **TPR and FNR at 5% FPR**: with the score threshold set so that at most 5% of correct candidates are flagged (false-positive rate, FPR), TPR is the share of buggy ones flagged and FNR (the miss rate) is 1 − TPR (App. C.3, Eq. 2).
-- **AUPRC**: area under the precision–recall curve, "useful but prevalence-sensitive": it moves with how common bugs are (§2.5).
 
 **Builds on:**
 - AI control (trusted monitors and audits that try to catch unsafe behavior from stronger or possibly subverted systems, App. A.3) and monitor red teaming (Greenblatt et al., Griffin et al., Kale et al., the agent-monitor benchmark MonitoringBench): "Our setup adapts" them to code (§1).
@@ -88,4 +84,4 @@ All from § "Limitations" unless located otherwise.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a></span>

@@ -21,7 +21,7 @@ On BIRD (SQL questions over real databases), with a 4B model answering and each 
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [PPO](#/glossary/ppo) · [GRPO](#/glossary/grpo) · [KL penalty](#/glossary/kl-penalty) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [policy gradient](#/glossary/policy-gradient) · [UCB (upper confidence bound)](#/glossary/multi-armed-bandit-ucb)
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [PPO](#/glossary/ppo) · [GRPO](#/glossary/grpo) · [KL penalty](#/glossary/kl-penalty) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [policy gradient](#/glossary/policy-gradient) · [UCB (upper confidence bound)](#/glossary/multi-armed-bandit-ucb) · [baseline, advantage, control variate](#/glossary/control-variate) (the advantage is reward minus baseline; the paper calls its baseline "a control variate that cancels prompt-specific offsets", §3.3) · [contextual bandit](#/glossary/contextual-bandit) (§3.3)
 
 **The paper's own terms:**
 - **Test-time, inter-episode, prompt-based self-evolution**: after deployment, the model updates between problems and applies the update to new ones (inter-episode), not refining one problem's answer (intra-episode) (§1); only its context (prompt text) changes, weights stay frozen (§3.1).
@@ -32,10 +32,6 @@ On BIRD (SQL questions over real databases), with a 4B model answering and each 
 - **"Task domain", two senses**: one BIRD database or one subject (§4.1), or a task family, text-to-SQL or QA (§4, App. A, §5).
 - **Evolution tree**: all contexts so far; each node stores context, summary, holdout reward and visit count (§3.2).
 - **r_LSE / A_LSE**: the reward and advantage of one edit, holdout reward after it minus before it (§3.3, Eq. 7, 9).
-
-**Missing glossary terms:**
-- **Baseline, advantage, control variate**: the baseline estimates the reward expected before acting; the advantage is reward minus baseline. A baseline that doesn't depend on the action leaves the expected gradient unchanged; the paper calls such a term "a control variate that cancels prompt-specific offsets" (§3.3).
-- **Contextual bandit**: an RL problem with one action per episode, rewarded at once, so no credit to assign over later steps (§3.3).
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), "a reflective prompt optimizer that merges textual reflection with multi-objective evolutionary search", and TextGrad ([TextGrad](#/papers/yuksekgonul2024textgrad "TextGrad: Automatic 'Differentiation' via Text (2024)")), which critiques an instruction and then rewrites it: the prompt-optimization baselines (§4.1).
@@ -87,4 +83,4 @@ Qwen3-4B-Instruct answers except in the transfer test; each score is a method's 
 ## On this site
 
 - **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

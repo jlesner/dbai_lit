@@ -19,7 +19,7 @@ An LLM agent that works through tools keeps adding what the tools return to its 
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [ReAct](#/glossary/react) · [tool calling (function calling)](#/glossary/tool-calling-function-calling) · [context compaction](#/glossary/context-compaction) · [context rot](#/glossary/context-rot) (§1)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [ReAct](#/glossary/react) · [tool calling (function calling)](#/glossary/tool-calling-function-calling) · [context compaction](#/glossary/context-compaction) · [context rot](#/glossary/context-rot) (§1) · [MCP server](#/glossary/model-context-protocol-mcp) (agentic tasks "require online services from MCP servers", §2.2)
 
 **The paper's own terms:**
 - **scaffold**: the agent framework a model runs in, with its context strategies; agents are evaluated "as a combination of models and scaffolds" (abstract). In the glossary's terms, an agent harness (our bridge).
@@ -37,9 +37,6 @@ An LLM agent that works through tools keeps adding what the tools return to its 
   - **memory tools** let it create, read, update and delete memory files;
   - **programmatic tool calling** lets it submit code that calls the tools, so that "code can consume intermediate tool outputs and return only the final processed result to the model" (§4.1).
 - **trajectory length**: the tokens a run takes; for strategies that edit the context, the removed text is added back (§4.2).
-
-**Missing glossary terms:**
-- **MCP server**: a server that exposes tools to an LLM agent through the Model Context Protocol, a standard interface for tool calls (general definition); the paper says agentic tasks "require online services from MCP servers" (§2.2) without defining the term.
 
 **Builds on:**
 - Toolathlon (Li et al., 2025), an agent benchmark with diverse environments and tools whose tasks are all verifiable: the 15 seed tasks are "sourced and adapted" from it (§2.3).
@@ -89,4 +86,4 @@ For §4 they implement the six context strategies inside their own scaffold, "Si
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/gym">gym</a><a class="tag" href="#/tags/offload">offload</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/gym">gym</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/offload">offload</a></span>

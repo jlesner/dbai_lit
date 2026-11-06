@@ -18,7 +18,7 @@ A database can run two queries with the same answer at very different speeds, so
 
 ## Background and terms
 
-**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules), [query equivalence](#/glossary/query-equivalence), [logical plan](#/glossary/logical-plan) (its entry also explains physical plans), [correlated subquery](#/glossary/correlated-subquery), [reinforcement learning](#/glossary/reinforcement-learning), [GRPO](#/glossary/grpo), [reward shaping](#/glossary/reward-shaping), [reward hacking](#/glossary/reward-hacking), [curriculum](#/glossary/curriculum-learning) (here by which gates are open, per query, §3.5), [LoRA](#/glossary/lora-low-rank-adaptation) (§4.1.1).
+**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules), [query equivalence](#/glossary/query-equivalence), [logical plan](#/glossary/logical-plan) (its entry also explains physical plans), [correlated subquery](#/glossary/correlated-subquery), [reinforcement learning](#/glossary/reinforcement-learning), [GRPO](#/glossary/grpo), [reward shaping](#/glossary/reward-shaping), [reward hacking](#/glossary/reward-hacking), [curriculum](#/glossary/curriculum-learning) (here by which gates are open, per query, §3.5), [LoRA](#/glossary/lora-low-rank-adaptation) (§4.1.1), [Levenshtein distance](#/glossary/levenshtein-distance) (SPA divides it by the longer query's length, §3.4).
 
 **The paper's own terms:**
 - **semantic equivalence**: as checked here, the rewrite's result set is identical to the original's on the benchmark database (§3.3, §3.4).
@@ -32,9 +32,6 @@ A database can run two queries with the same answer at very different speeds, so
 - **IID / OOD**: the IID ("In-Distribution") workloads, TPC-H and TPC-DS, also supply training queries, from different generator streams; the OOD ("Out-of-Distribution") ones, DSB and StackOverflow, are used only for zero-shot testing (§4.1.3).
 - **Succ., Equiv.**: the share of rewrites that pass the syntax check, and the share of those that are equivalent; failed or inequivalent rewrites count with the original's runtime (Tab. 3 caption).
 - **P50 to P95**: runtime percentiles over a workload's queries (Tab. 3).
-
-**Missing glossary terms:**
-- **Levenshtein distance**: the number of single-character insertions, deletions or substitutions that turn one string into another; SPA divides it by the longer query's length (§3.4).
 
 **Builds on:**
 - GRPO, from DeepSeekMath ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), which SPA "extends" with database-aware rewards (§1).
@@ -92,4 +89,4 @@ Three stages (§3.3, Tab. 2, Fig. 3 for the two RL stages): supervised fine-tuni
 ## On this site
 
 - **Discussed in:** [Verified query speedups](#/challenges/verified_query_speedup) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rewrite">rewrite</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

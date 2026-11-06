@@ -18,7 +18,7 @@ Prompt optimizers such as GEPA try many prompt variants and score each by runnin
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Wilson score interval](#/glossary/wilson-score-interval) · [evolutionary search](#/glossary/evolutionary-search)
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Wilson score interval](#/glossary/wilson-score-interval) · [evolutionary search](#/glossary/evolutionary-search) · [multi-fidelity optimization](#/glossary/multi-fidelity-optimization) (here the model tier is the fidelity; §1, §7)
 
 **The paper's own terms:**
 - **tier**: a model's price rank in its family, not its measured capability (§4, Tab. 3).
@@ -31,9 +31,6 @@ Prompt optimizers such as GEPA try many prompt variants and score each by runnin
 - **families** (§4): *Mixed Claude* (answerer gpt-4.1-nano, deploy tiers Claude Haiku 4.5 and Sonnet-5, reflector Sonnet-5), *GPT* (gpt-4.1-nano → gpt-4.1-mini → gpt-5.6-luna, reflector gpt-5.5), *Gemini* (2.5-flash-lite → 3.5-flash → 2.5-pro, reflector 3.1-pro), *Mixed Qwen* (self-hosted Qwen3-8B answerer, Sonnet-5 or gpt-5.5 reflector, deployed on mini, Haiku, luna). "Mixed" means more than one vendor.
 - **λ\***: the cheap answerer's price, as a fraction of the deployment tier's, at which the cheap search stops being cheaper (Eq. 5, App. A). **N\***: the deployed-query count at which a longer cheap prompt's per-query cost uses up the search saving (Eq. 6, App. D).
 - **structural explicitness**: the hypothesis that a cheap answerer pushes the reflector toward spelled-out prompts a stronger model exploits (§6).
-
-**Missing glossary terms:**
-- **multi-fidelity optimization**: approximating an expensive objective with a cheaper one during search; here the model tier is the fidelity (§1, §7).
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")): its objective is Eq. 1, the method runs on it, and the tasks port its setups (§2–4).
@@ -90,4 +87,4 @@ Prompt optimizers such as GEPA try many prompt variants and score each by runnin
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

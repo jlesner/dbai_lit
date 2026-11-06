@@ -19,7 +19,7 @@ Math is "one of the most widely used testbeds" for new reasoning-model methods (
 
 ## Background and terms
 
-**Terms to know:** [pass@k](#/glossary/passk) · [reinforcement learning](#/glossary/reinforcement-learning) · [zero-RL training](#/glossary/zero-rl-training) · [Distillation into compact models](#/glossary/distillation) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [top-k and nucleus (top-p) sampling](#/glossary/top-k-and-nucleus-top-p-sampling) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [out-of-distribution generalization](#/glossary/out-of-distribution-generalization)
+**Terms to know:** [pass@k](#/glossary/passk) · [reinforcement learning](#/glossary/reinforcement-learning) · [zero-RL training](#/glossary/zero-rl-training) · [Distillation into compact models](#/glossary/distillation) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [top-k and nucleus (top-p) sampling](#/glossary/top-k-and-nucleus-top-p-sampling) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [out-of-distribution generalization](#/glossary/out-of-distribution-generalization) · [paired t-test (one-sided)](#/glossary/students-t-test-and-t-interval) (here on each problem's seed-averaged accuracy under the trained model minus under its starting model; §4.2 uses it undefined)
 
 **The paper's own terms:**
 - **Pass@1**: the main metric, the accuracy of one sampled answer per problem, reported as mean ± standard deviation over random seeds (§3.1; Tab. 3 caption).
@@ -29,12 +29,9 @@ Math is "one of the most widely used testbeds" for new reasoning-model methods (
 - **Diversity collapse**: the effect reported by Dang et al. (2025) and Yue et al. (2025a) that "improvements in Pass@1 achieved through supervised fine-tuning or RL can reduce Pass@k performance due to diminished output diversity" (§5.2).
 - **The \lipsum prompt**: Lorem-ipsum filler text placed before the question, from Shao et al. (2025) (§5.3; App. B, Tab. 7).
 
-**Missing glossary terms:**
-- **Paired t-test (one-sided)**: tests whether the mean of paired differences (here, each problem's seed-averaged accuracy under the trained model minus under its starting model) is above zero, assuming roughly normal differences; one-sided means only an improvement counts (§4.2 uses it undefined; general definition).
-
 **Builds on:**
 - Calls for statistical rigor, e.g. error bars and multiple runs: Bowyer et al. (2025) ([Position](#/papers/bowyer2025clt "Position: Don't Use the CLT in LLM Evals With Fewer Than a Few Hundred Datapoints (2025)")), Biderman et al. (2024), Madaan et al. (2024) (§3.2).
-- The published models it re-evaluates and their reported settings (Tab. 1), among them DeepSeek-R1-Distill (DeepSeek-AI, 2025; [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)"), cited as its arXiv version), OpenRS (Dang & Ngo, 2025) and s1.1 (Muennighoff et al., 2025; [s1](#/papers/muennighoff2025simple "s1: Simple test-time scaling (2025)")) (§3.1, §4.3).
+- The published models it re-evaluates and their reported settings (Tab. 1), among them DeepSeek-R1-Distill (DeepSeek-AI, 2025; [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)"), cited as its arXiv version), OpenRS (Dang & Ngo, 2025) and s1.1 (Muennighoff et al., 2025; [s1](#/papers/muennighoff2025simple "s1: Simple test-time scaling (2025)")) (§3.1, §4.3).
 - Earlier studies where simple well-tuned baselines outperform reported progress, in continual learning, active learning and test-time adaptation (§2 "Sobering Studies on ML Progress").
 - The effects it re-tests: Wang et al. (2025) on long incorrect answers, Dang et al. (2025) and Yue et al. (2025a) ([Does Reinforcement Learning Really…](#/papers/yue2025rlreasoning "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model? (2025)")) on diversity collapse, Shao et al. (2025) ([Spurious Rewards](#/papers/shao2025spurious "Spurious Rewards: Rethinking Training Signals in RLVR (2025)")) on spurious prompts (§5).
 
@@ -95,4 +92,5 @@ All are the authors' claims.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

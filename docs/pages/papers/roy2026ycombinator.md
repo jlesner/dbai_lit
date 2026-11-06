@@ -93,4 +93,4 @@ Accuracy is macro-averaged over length buckets (Tab. 4). They report:
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/offload">offload</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/offload">offload</a></span>

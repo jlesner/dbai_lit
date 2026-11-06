@@ -18,7 +18,7 @@ Text-to-SQL benchmarks score a model's query by running it and the reference que
 
 ## Background and terms
 
-**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [counterexample database](#/glossary/counterexample-database) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [symbolic execution](#/glossary/symbolic-execution) · [path and branch coverage](#/glossary/branch-and-path-coverage) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [integrity constraint](#/glossary/integrity-constraint) · [bag semantics](#/glossary/bag-semantics) · [logical plan](#/glossary/logical-plan) (ParSEval gets it from Apache Calcite, a query-processing framework, [Apache Calcite](#/papers/begoli2018calcite "Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)"); §3.1, PDF p. 5)
+**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [counterexample database](#/glossary/counterexample-database) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [symbolic execution](#/glossary/symbolic-execution) · [path and branch coverage](#/glossary/branch-and-path-coverage) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [integrity constraint](#/glossary/integrity-constraint) · [bag semantics](#/glossary/bag-semantics) · [logical plan](#/glossary/logical-plan) (ParSEval gets it from Apache Calcite, a query-processing framework, [Apache Calcite](#/papers/begoli2018calcite "Apache Calcite: A Foundational Framework for Optimized Query Processing Over Heterogeneous Data Sources (2018)"); §3.1, PDF p. 5) · [U-semiring](#/glossary/u-semiring) (§2.3, PDF p. 4)
 
 **The paper's own terms:**
 - **ground truth query**: the reference query, a [gold query](#/glossary/gold-query) (§1, PDF p. 1).
@@ -31,9 +31,6 @@ Text-to-SQL benchmarks score a model's query by running it and the reference que
 - **symbolic instance** (§4.1, Fig. 5, PDF p. 6): a small database whose cells are unknowns, constants or NULL, each row with a formula for its count, plus key and foreign-key conditions.
 - **unsupported** (§5.2.1, PDF p. 10): the method can't handle the pair or gives no verdict before the timeout; for test generators, also both results empty on every database. Support ratio: the share not unsupported.
 - **ParSEval-Sym, ParSEval-Hybrid** (§4.2–4.3, PDF pp. 7–9): see Approach; the experiments' "ParSEval" is Hybrid (§5.1, PDF p. 9).
-
-**Missing glossary terms:**
-- **U-semiring** (§2.3, PDF p. 4): an algebra in which a relation maps each possible row to its count, with duplicate removal, negation and a sum over all possible rows; provers use it to model SQL under bag semantics.
 
 **Builds on:**
 - Ding et al.'s extension of U-semirings, behind the prover SQLSolver (§2.3, PDF p. 4; [SQLSolver](#/papers/ding2023sqlsolver "Proving Query Equivalence Using Linear Integer Arithmetic (2023)")).
@@ -82,4 +79,4 @@ Text-to-SQL benchmarks score a model's query by running it and the reference que
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-smt">cex-smt</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

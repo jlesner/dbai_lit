@@ -18,7 +18,7 @@ Automatic prompt engineering (APE) lets an LLM rewrite a prompt so that a fixed 
 
 ## Background and terms
 
-**Terms to know:** [Cohen's kappa](#/glossary/cohens-kappa) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [agent harness](#/glossary/agent-harness) · [macro-F1](#/glossary/f1-score)
+**Terms to know:** [Cohen's kappa](#/glossary/cohens-kappa) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [agent harness](#/glossary/agent-harness) · [macro-F1](#/glossary/f1-score) · [automatic prompt engineering (APE)](#/glossary/automatic-prompt-engineering-ape) (§1) · [code-as-action](#/glossary/code-as-action) (CodeAct's agent design, abstract, §1) · [confusion matrix](#/glossary/confusion-matrix) (§1, App. F)
 
 **The paper's own terms:**
 - **evaluation DataFrame**: the pandas table `evaluate` returns, one row per example with expected label, parsed prediction and correctness (§3.1, App. M).
@@ -31,11 +31,6 @@ Automatic prompt engineering (APE) lets an LLM rewrite a prompt so that a fixed 
 - **seed**: either the seed prompt a run starts from (§1), or one independent run, as in "single-seed" (§4.4).
 - **dev/test re-split**: the 130-row valid batch split 65/65 into dev, standing in for the valid split, and held-out test (App. H).
 - **retention**: a prompt's score on a new task model divided by its score on the model it was optimized for (App. J).
-
-**Missing glossary terms:**
-- **automatic prompt engineering (APE)**: rewriting a seed prompt "to maximise a metric on a labeled dataset" (§1).
-- **code-as-action**: CodeAct's agent design, in which the agent acts by writing code that is executed (abstract, §1).
-- **confusion matrix**: counts, for each true class, how often each class was predicted (§1, App. F).
 
 **Builds on:**
 - CodeAct (not listed here), whose code-as-action paradigm SPEAR ports to APE (abstract, §2).
@@ -92,4 +87,4 @@ As the authors report them.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

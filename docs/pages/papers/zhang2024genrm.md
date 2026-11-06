@@ -18,7 +18,7 @@ When an LLM samples several solutions to a reasoning problem, a trained verifier
 
 ## Background and terms
 
-**Terms to know:** [best-of-N sampling](#/glossary/best-of-n-sampling) · [reward model](#/glossary/reward-model) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [self-consistency](#/glossary/self-consistency-majority-voting) · [direct preference optimization (DPO)](#/glossary/direct-preference-optimization-dpo) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [pass@k](#/glossary/passk)
+**Terms to know:** [best-of-N sampling](#/glossary/best-of-n-sampling) · [reward model](#/glossary/reward-model) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [self-consistency](#/glossary/self-consistency-majority-voting) · [direct preference optimization (DPO)](#/glossary/direct-preference-optimization-dpo) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [pass@k](#/glossary/passk) · [weighted self-consistency](#/glossary/self-consistency-majority-voting) (§4.1; the paper sums only each answer's 6 (GSM8K) or 4 (MATH) highest scores, App. C)
 
 **The paper's own terms:**
 - **Discriminative RM** (RM: reward model; also **ORM**, outcome reward model): an LLM fine-tuned as a classifier with binary cross-entropy on correct and incorrect solutions; its score is the sigmoid of a special token's logit (§2, Eq. 3). It "serves as our main baseline" (§4 "Baselines").
@@ -31,9 +31,6 @@ When an LLM samples several solutions to a reasoning problem, a trained verifier
 - **RM accuracy**: whether the verifier classifies each solution correctly as right or wrong; Best-of-N instead tests its ranking (§4 "Evaluation protocol").
 - **oracle verifier**: a verifier that is always right; Best-of-N with it is written Pass@N (§4.2).
 - **easy-to-hard** and **length generalization**: testing on harder problems (MATH, MMLU) than the GSM8K training set, and on longer word lists than in training (§4 "Tasks").
-
-**Missing glossary terms:**
-- **weighted self-consistency**: group sampled solutions by final answer, weight each by its verifier score, and return the answer with the largest weight (§4.1); the paper sums only each answer's 6 (GSM8K) or 4 (MATH) highest scores (App. C).
 
 **Builds on:**
 - Cobbe et al. ([GSM8K and trained verifiers](#/papers/cobbe2021verifiers "Training Verifiers to Solve Math Word Problems (2021)")): the GSM8K dataset and the discriminative RM that is the main baseline (§4 "Tasks", "Baselines").
@@ -89,4 +86,4 @@ When an LLM samples several solutions to a reasoning problem, a trained verifier
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a></span>

@@ -18,7 +18,7 @@ Small open-weight language models are "assumed to fail at agentic database work 
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [self-correction](#/glossary/self-correction) · [Wilson score interval](#/glossary/wilson-score-interval) · [sign test](#/glossary/sign-test) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [text-to-SQL](#/glossary/text-to-sql)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [self-correction](#/glossary/self-correction) · [Wilson score interval](#/glossary/wilson-score-interval) · [sign test](#/glossary/sign-test) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [text-to-SQL](#/glossary/text-to-sql) · [regression to the mean](#/glossary/regression-to-the-mean) (used in §8.6)
 
 **The paper's own terms:**
 - **surface**: one of six kinds of task, each with its own objective, tools and verifier; five run in agent mode, and planning gets no tools (§3).
@@ -28,9 +28,6 @@ Small open-weight language models are "assumed to fail at agentic database work 
 - **loss classes**, applied in this order (§4.4): **clock** (timeout, turn limit or deadline), **capability** (no tool invoked), **verification** (a report listed and rejected), **transport** (tools used, time left, no deliverable through). Runs that both timed out and invoked no tool fit two classes; clock-first is the adopted ordering, capability-first the alternative.
 - **model-attributed**: runs whose ledger records the model (Tab. 2).
 - **pooled, session, row**: scorer modes that find five consecutive passes anywhere in a cell's history, within one sitting per cell, or for all six cells within one sitting (§5.4).
-
-**Missing glossary terms:**
-- **regression to the mean**: items chosen because they scored low tend to score higher when measured again, by chance alone (general definition; used in §8.6).
 
 **Bridges to the glossary:** resampling models rather than runs (§8.6) is, in the glossary's terms, a bootstrap with the model as unit.
 
@@ -88,5 +85,5 @@ Small open-weight language models are "assumed to fail at agentic database work 
 
 ## On this site
 
-- **Discussed in:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

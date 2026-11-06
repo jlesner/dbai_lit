@@ -19,7 +19,7 @@ Competitive programming problems describe a task in long prose and need a comple
 
 ## Background and terms
 
-**Terms to know:** [program synthesis](#/glossary/program-synthesis) · [pass@k](#/glossary/passk) · [masked language model](#/glossary/masked-language-model) · [online and offline RL](#/glossary/online-and-offline-rl) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [top-k and nucleus (top-p) sampling](#/glossary/top-k-and-nucleus-top-p-sampling) · [data contamination](#/glossary/data-contamination) (the paper's "data leakage", App. B.3)
+**Terms to know:** [program synthesis](#/glossary/program-synthesis) · [pass@k](#/glossary/passk) · [masked language model](#/glossary/masked-language-model) · [online and offline RL](#/glossary/online-and-offline-rl) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [top-k and nucleus (top-p) sampling](#/glossary/top-k-and-nucleus-top-p-sampling) · [data contamination](#/glossary/data-contamination) (the paper's "data leakage", App. B.3) · [multi-query attention](#/glossary/multi-query-attention) (§4.1)
 
 **The paper's own terms:**
 - **Example, hidden, generated tests:** printed in the statement; unseen, used by the judge; added to CodeContests (§2.1; §3.2).
@@ -29,9 +29,6 @@ Competitive programming problems describe a task in long prose and need a comple
 - **Value conditioning and prediction:** labelling each training submission correct or incorrect in the prompt and always asking for a correct one when sampling, plus a training-only correctness classifier (§4.3).
 - **GOLD:** what the paper calls "an offline RL algorithm" (§4.3), applied to the fixed fine-tuning data: it weights each token's log-likelihood gradient by the model's own probability of that token, so the model can "learn from tokens it already assigns high likelihood to, and to ignore tokens that are not in its distribution" (§4.3; App. C.3).
 - **Metadata conditioning:** tags (algorithm types such as "greedy" or "dp"), difficulty rating and language in the prompt, randomized when sampling, since contests hide them (§4.4; App. C.2).
-
-**Missing glossary terms:**
-- **Multi-query attention:** a full set of query heads but shared key and value heads per attention block, cutting the memory and cache-update costs that are "the main bottleneck during sampling" (§4.1).
 
 **Builds on:**
 - Codex (Chen et al., 2021), a GPT model trained on GitHub code, the "most relevant work to ours" (§7.2).
@@ -90,4 +87,4 @@ On Codeforces the system pooled 41B and 9B model samples, with clustering (§5.1
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

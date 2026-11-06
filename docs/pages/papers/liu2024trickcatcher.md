@@ -15,11 +15,11 @@ Code: [TrickCatcher](https://github.com/RinCloud/TrickCatcher)
 
 ## In plain words
 
-A program can pass every test in its test suite and still be wrong. The authors call such programs plausible, and their hidden bugs tricky bugs (§1). They say a recent study found such bugs common in programs that online-judge sites had accepted, and that testing methods aimed at them have been "largely overlooked" (§1). They built TrickCatcher: an LLM checks the program for bugs and writes repaired versions, kept only if they still pass the existing tests, and writes a Python script meant to generate valid inputs; each input runs on the program and its versions, and the most common output that differs from the program's becomes the expected answer of a new test (§1; §4). With gpt-3.5-turbo, on 366 human-written and 151 LLM-written plausible programs, they report up to 1.80×, 2.65× and 1.66× the recall, precision and F1 score of the best baseline, an adapted LLM test generator (§6.1), and up to 16× fewer false alarms than the other test generators on correct programs of the EvalPlus code benchmark (§6.2). They present it as filling that gap (§1).
+A program can pass every test in its test suite and still be wrong. The authors call such programs plausible, and their hidden bugs tricky bugs (§1). They say a recent study found such bugs common in programs that online-judge sites had accepted, and that testing methods aimed at them have been "largely overlooked" (§1). They built TrickCatcher: an LLM checks the program for bugs and writes repaired versions, kept only if they still pass the existing tests, and writes a Python script meant to generate valid inputs; each input runs on the program and its versions, and the most common output that differs from the program's becomes the expected answer of a new test (§1; §4). With gpt-3.5-turbo, on 366 human-written and 151 LLM-written plausible programs, they report up to 1.80×, 2.65× and 1.66× the recall, precision and F1 score of the best baseline, an adapted LLM test generator (§6.1). They also report up to 16× fewer false alarms than the other test generators on correct programs of the EvalPlus code benchmark (§6.2). They present it as filling that gap (§1).
 
 ## Background and terms
 
-**Terms to know:** [differential testing](#/glossary/differential-testing) · [test oracle](#/glossary/test-oracle) · [automated program repair](#/glossary/automated-program-repair) · [F1 score](#/glossary/f1-score)
+**Terms to know:** [differential testing](#/glossary/differential-testing) · [test oracle](#/glossary/test-oracle) · [automated program repair](#/glossary/automated-program-repair) · [F1 score](#/glossary/f1-score) · [plausible program](#/glossary/plausible-patch) (plausible relative to a given test suite; a **buggy plausible program** still contains a bug, §3)
 
 **The paper's own terms:**
 - **PUT (program under test)**: the program being tested (§1).
@@ -32,9 +32,6 @@ A program can pass every test in its test suite and still be wrong. The authors 
 - **majority voting**: taking the most frequent output as correct (§1).
 - **k**: the number of program variants used, 2 to 10 in the experiments (Tab. 1).
 - **useful variant**: one that produced the correct oracle for some TP test case; a variant is **buggy** if it ever gave an output different from the canonical solution (§7.1).
-
-**Missing glossary terms:**
-- **plausible program**: a program that passes all test cases in a given test suite (plausible relative to that suite); a **buggy plausible program** still contains a bug (§3).
 
 **Builds on:**
 - Differential Prompting (Li et al., 2023), which the authors call the state of the art in LLM-based test generation for bug detection; it also generates program variants, but uses majority voting. They adapt it as their baseline DPP (§2; §5.4). Not on this site.
@@ -90,4 +87,4 @@ Baselines (§5.4): DirectChat (CHAT, the LLM writes bug-revealing test cases dir
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

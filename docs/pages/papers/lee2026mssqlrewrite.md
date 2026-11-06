@@ -18,14 +18,11 @@ Rewriting slow SQL queries into faster ones with the same answers is one way to 
 
 ## Background and terms
 
-**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [query equivalence](#/glossary/query-equivalence) · [query optimizer](#/glossary/query-optimizer) · [memo](#/glossary/memo) · [transformation and implementation rules](#/glossary/transformation-and-implementation-rules) · [query plan and EXPLAIN](#/glossary/query-plan-and-explain) · [query hint](#/glossary/query-hint) · [common table expression (CTE)](#/glossary/common-table-expression-cte)
+**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [query equivalence](#/glossary/query-equivalence) · [query optimizer](#/glossary/query-optimizer) · [memo](#/glossary/memo) · [transformation and implementation rules](#/glossary/transformation-and-implementation-rules) · [query plan and EXPLAIN](#/glossary/query-plan-and-explain) · [query hint](#/glossary/query-hint) · [common table expression (CTE)](#/glossary/common-table-expression-cte) · [anytime algorithm](#/glossary/anytime-algorithm) (§3.1, PDF p. 3)
 
 **The paper's own terms:**
 - **QO-Verify**: the check of [15]; it answers Yes if it can prove two queries equivalent, Unknown otherwise (§3.1, PDF p. 3).
 - **SSMS**: SQL Server Management Studio, "a popular GUI tool used extensively by DBAs and database developers" (§1, PDF p. 1); the tool extends it. DBA: database administrator.
-
-**Missing glossary terms:**
-- **anytime algorithm**: one that "can be stopped at any moment and still return the best solution it has found so far, with solution quality monotonically improving the longer it runs" (§3.1, PDF p. 3).
 
 **Builds on:**
 - QO-Verify [15] ([QO-Verify](#/papers/narasayya2026qoverify "Leveraging Query Optimizers to Verify the Soundness of LLM-based Query Rewrites for Real-World Workloads, and More! (2026)")), built into the tool as a library (§3.1–3.2, PDF p. 3).
@@ -68,4 +65,4 @@ One example and design claims.
 ## On this site
 
 - **Discussed in:** [Verified query speedups](#/challenges/verified_query_speedup) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/pairgen-check">pairgen-check</a><a class="tag sub" href="#/tags/prove-memo">prove-memo</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rewrite">rewrite</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/pairgen-check">pairgen-check</a><a class="tag sub" href="#/tags/prove-memo">prove-memo</a></span>

@@ -21,25 +21,13 @@ In this position paper they simulate evals with known true accuracy and measure 
 
 ## Background and terms
 
-**Terms to know:** [Wilson score interval](#/glossary/wilson-score-interval) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [F1 score](#/glossary/f1-score) · [pass@k](#/glossary/passk)
+**Terms to know:** [Wilson score interval](#/glossary/wilson-score-interval) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [F1 score](#/glossary/f1-score) · [pass@k](#/glossary/passk) · [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt) (§2) · [confidence interval](#/glossary/confidence-interval-and-coverage) (frequentist, treating the true value as a fixed unknown, Remark 1; §3 "Evaluation metrics") · [Bayesian credible interval](#/glossary/bayesian-credible-interval) and [prior and posterior](#/glossary/bayes-rule-prior-and-posterior) (§3) · [Beta distribution](#/glossary/beta-distribution) (the Beta–Bernoulli model: a Beta prior on accuracy, which includes the uniform, App. C; the posterior is again Beta, in closed form, §3.1) · [Clopper-Pearson interval](#/glossary/clopper-pearson-interval) (App. A.3) · [odds ratio](#/glossary/odds-ratio) (§3.3) · [Fisher's exact test](#/glossary/fishers-exact-test) (inverted, keeping the values it does not reject, into odds-ratio intervals, §3.3) · [delta method](#/glossary/delta-method) (under standard regularity conditions, e.g. a differentiable function; applied to F1, §3.5; App. A.4) · [importance sampling](#/glossary/importance-sampling-and-importance-weighting) (here, draw many guesses from the prior, weight each by how well it explains the data, resample by weight, §3.2; App. E) · [hypothesis test](#/glossary/hypothesis-test) (§2.2)
 
 **The paper's own terms:**
 - **N**: the number of questions in an eval (§2).
 - **Coverage**: the share of intervals containing the true value; **nominal coverage** is the level an interval claims, such as 95% (§1; §3 "Evaluation metrics").
 - **IID, clustered and paired questions**: IID, independent draws from one distribution; clustered, groups of questions sharing difficulty, such as several about one passage (§3.2); paired, two models answering the same questions (§3.4).
 - **QBI and HDI**: Bayesian intervals between two posterior quantiles (2.5% cut from each end for 95%) or around the most probable values (highest posterior density) (§3 "Interval methods").
-
-**Missing glossary terms:**
-- **Central limit theorem (CLT)**: for IID draws with finite variance, the average of many draws is close to normally distributed, with spread shrinking as N grows (§2).
-- **Confidence interval**: a frequentist interval (treating the true value as a fixed unknown, Remark 1) such that, under repeated sampling, 95% of 95% intervals contain the true value (§3 "Evaluation metrics").
-- **Bayesian credible interval, prior, posterior**: the prior is a belief about the true accuracy before the data, the posterior after it; a 95% credible interval has 95% posterior probability of holding the value (§3).
-- **Beta–Bernoulli model**: right/wrong outcomes with a Beta prior on accuracy (a distribution over 0–1 that includes the uniform, App. C); the posterior is again Beta, in closed form (§3.1).
-- **Hypothesis test**: asks whether data rule out a value; a two-sided test at 5% rejects exactly those outside the 95% confidence interval (§2.2).
-- **Clopper–Pearson interval**: an exact interval holding every accuracy that a binomial test (one on the count of right answers) does not reject, with coverage guaranteed at least nominal (App. A.3).
-- **Odds ratio**: the ratio of the two models' odds, each its success rate over its failure rate (§3.3).
-- **Fisher's exact test**: an exact test for two proportions, inverted (keeping the values it does not reject) into odds-ratio intervals (§3.3).
-- **Delta method**: under standard regularity conditions (e.g. a differentiable function), extends the CLT to smooth non-linear functions of averages, such as F1, by a first-order Taylor expansion (§3.5; App. A.4).
-- **Importance sampling**: here, draw many guesses from the prior, weight each by how well it explains the data, resample by weight (§3.2; App. E).
 
 **Builds on:**
 - Works using or recommending CLT intervals for LLM evals, such as Madaan et al. (2024), Miller (2024) and Dubey et al. (2024, the Llama 3 report) (§2.2); the paper tests Miller's suggested clustered standard errors, a CLT fix for within-group correlation (§3.2).
@@ -92,4 +80,5 @@ Coverage comes from simulated data (§3).
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a><a class="tag" href="#/tags/survey">survey</a></span>

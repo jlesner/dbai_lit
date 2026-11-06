@@ -30,7 +30,7 @@ Reasoning models learn long thinking through reinforcement learning on tasks a p
 - **GRPO, as App. F states it:** each sample's advantage is its reward minus the mean reward of its group of samples for the same prompt; the glossary entry also divides by the group's standard deviation.
 
 **Builds on:**
-- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")): long-CoT RL from a warm-started model and from a base model, "akin to R1-zero and R1" (§1; §2.3), with GRPO from Shao et al. (2024) ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")).
+- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")): long-CoT RL from a warm-started model and from a base model, "akin to R1-zero and R1" (§1; §2.3), with GRPO from Shao et al. (2024) ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")).
 - RLHF, Ziegler et al. (2020) and Ouyang et al. (2022) (§1, §2.1), not listed here.
 - RLVR, cited to Lambert et al. (2025) ([Tülu 3](#/papers/lambert2024tulu "Tulu 3: Pushing Frontiers in Open Language Model Post-Training (2024)"), Tülu 3), whose SFT mixture also supplies the RL prompts (§2.1–2.2).
 - Preference optimization combined with chain of thought, Pang et al. (2025) and Wu et al. (2025a) (TPO), which the authors call "closely related" but say elicit long CoT by prompting instruct models and "typically rely on offline algorithms" (§5); TPO is compared in App. D.5.
@@ -87,4 +87,4 @@ The question is "whether and how long CoT benefits open-ended reasoning" (§1), 
 ## On this site
 
 - **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a></span>

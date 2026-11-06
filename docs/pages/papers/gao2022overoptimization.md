@@ -18,7 +18,7 @@ When a language model is tuned or filtered to please a learned scorer of human p
 
 ## Background and terms
 
-**Terms to know:** [RLHF](#/glossary/reinforcement-learning-from-human-feedback-rlhf) · [reward model](#/glossary/reward-model) · [reinforcement learning](#/glossary/reinforcement-learning) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [PPO](#/glossary/ppo) · [KL divergence](#/glossary/kl-divergence) · [KL penalty](#/glossary/kl-penalty) · [scaling law](#/glossary/scaling-law)
+**Terms to know:** [RLHF](#/glossary/reinforcement-learning-from-human-feedback-rlhf) · [reward model](#/glossary/reward-model) · [reinforcement learning](#/glossary/reinforcement-learning) · [best-of-N sampling](#/glossary/best-of-n-sampling) · [PPO](#/glossary/ppo) · [KL divergence](#/glossary/kl-divergence) · [KL penalty](#/glossary/kl-penalty) · [scaling law](#/glossary/scaling-law) · [Goodhart's law](#/glossary/goodharts-law) (§1)
 
 **The paper's own terms:**
 - **overoptimization**: "Optimizing too much against such a model eventually hinders the true objective" (§1).
@@ -27,9 +27,6 @@ When a language model is tuned or filtered to please a learned scorer of human p
 - **proxy–gold gap**: proxy minus gold score, read as "indicative of the extent to which the proxy RM is exploited" (§3.4).
 - **Goodhart categories** (§4.2, the taxonomy of Manheim and Garrabrant 2018): *regressional*, the proxy depends on noisy features (§4.2.1); *extremal*, optimization moves outputs out of the proxy's training distribution, where proxy and gold relate less (§4.2.2); *causal*, selecting on a feature correlated with the gold score doesn't raise it (§4.2.3); *adversarial*, "the policy actively manipulates the proxy" (§4.2.4).
 - **scaling laws**, in this paper: its fitted formulas for gold score against d (§1).
-
-**Missing glossary terms:**
-- **Goodhart's law**: "When a measure becomes a target, it ceases to be a good measure" (§1).
 
 In the glossary's terms, this is [reward hacking](#/glossary/reward-hacking): the paper says RM overoptimization "can be viewed as a special case of specification gaming (also known as reward hacking)" (§5).
 
@@ -90,4 +87,5 @@ Gold RM as ground truth throughout.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

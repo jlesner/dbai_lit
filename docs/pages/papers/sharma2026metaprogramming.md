@@ -93,4 +93,4 @@ The question: which agents can learn an unfamiliar language well enough within a
 ## On this site
 
 - **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/rarelang">rarelang</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rarelang">rarelang</a><a class="tag" href="#/tags/study">study</a></span>

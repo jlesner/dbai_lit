@@ -30,8 +30,6 @@ LLM agents in structured software, such as health records, fail in repeatable pr
 - **comparative proposal generation**: several candidates per batch (4 by default) for the gate to choose among; with one, the gate only accepts or rejects (App. E.2).
 - **OOD**: accuracy on task types held out from training (Tab. 1 caption; App. D), a narrower sense than the glossary's.
 - **matched compute**: ablations that score every candidate on the full probe but pick the edit without the scores, by the writer's preference or at random (§3.5).
-
-**Missing glossary terms:**
 - **FHIR**: not spelled out in the paper; Fast Healthcare Interoperability Resources, a standard for exchanging health-record data as typed resources over a web API (general definition).
 
 **Builds on:**
@@ -85,4 +83,4 @@ All are the authors' reports.
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

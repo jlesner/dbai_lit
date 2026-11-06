@@ -18,16 +18,13 @@ Coding agents can read a SKILL, a Markdown file in the repository describing the
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [sign test](#/glossary/sign-test) (between the two rollouts of a task, §4.2)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [sign test](#/glossary/sign-test) (between the two rollouts of a task, §4.2) · [FAIL_TO_PASS set](#/glossary/fail_to_pass-and-pass_to_pass-tests) (here the tests that pass at the unmodified base and fail once the change is reverted; the agent must make them pass, §3.1 "Validation and grading")
 
 **The paper's own terms:**
 - **Seed**: the starting SKILL; in the reported runs an empty document, in fact a file with only a header (§3.2, §4.1 footnote).
 - **Reverse-PR mining**: reverting a merged pull request's implementation at a single **frozen base** commit shared by all tasks, so the tests that start failing specify the task (§1, §3.1). The **forward direction**, the setup of the SWE-bench benchmark (tasks from GitHub issues), places each task at its own parent commit (§3.1).
 - **Paired score**: a candidate's rollout (one full agent run) is compared with the seed's stored rollout on the same task; the seed against itself scores exactly 0.5 (§3.2). The "pp" gains are this score's mean rise above 0.5 (abstract, §1).
 - **Proposer, verifier, reflector**: the proposer (GEPA or SkillOpt) edits the SKILL, the verifier scores it on mined tasks (§1), the reflector is the model that reads rollouts and proposes edits (§1, §2).
-
-**Missing glossary terms:**
-- **FAIL_TO_PASS set**: the tests that pass at the unmodified base and fail once the change is reverted; the agent must make them pass (§3.1 "Validation and grading").
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), a prompt optimizer that picks a candidate from a Pareto frontier, runs it on a minibatch, and has a reflection model rewrite it (§2).
@@ -81,4 +78,4 @@ Coding agents can read a SKILL, a Markdown file in the repository describing the
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

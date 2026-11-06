@@ -19,7 +19,7 @@ Benchmarks usually ask a model to write a correct program; this paper asks the r
 
 ## Background and terms
 
-**Terms to know:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) (§2, §6) · [Elo rating](#/glossary/elo-rating) (here a rating gap becomes a chance of solving by the Codeforces formula, averaged over problems, §5.1). The other field terms are defined under Missing glossary terms, below.
+**Terms to know:** [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) (§2, §6) · [Elo rating](#/glossary/elo-rating) (here a rating gap becomes a chance of solving by the Codeforces formula, averaged over problems, §5.1) · [ReAct](#/glossary/react) (here the actions run code, §5.1) · [brute-force solution](#/glossary/brute-force-solution) (App. A.1)
 
 **The paper's own terms:**
 - **claim** and **counterexample**: a claim is a set of conditions on an input plus a proposition, true if every input meeting the conditions makes the proposition true; a counterexample meets the conditions but makes the proposition false (§3.1). For algorithms, the conditions are the problem's input format and constraints, and the proposition is that the given code solves the problem (§3.2).
@@ -29,12 +29,8 @@ Benchmarks usually ask a model to write a correct program; this paper asks the r
 - **w/ Correct**: zero-shot prompting that also shows the correct solution, which the paper calls the oracle (§5.1).
 - **validation failure**: the printed input breaks the problem's format or constraints (§5.1).
 - **bait submission**: code with an inserted branch that gives a wrong output only when a specific unlikely constant appears in the input (§4.1).
-
-**Missing glossary terms:**
 - **Codeforces**: a programming-contest website; submissions are judged on test cases designed by the problem authors, and problems and contestants carry ratings (§4.1, §4.2).
 - **hack**: a counterexample a person found for a submission after it had passed all of the problem authors' tests; hackers earn extra score (§4.1).
-- **ReAct agent**: a loop in which the model interleaves reasoning with actions (here, running code) and reads their results ([ReAct](#/papers/yao2022react "ReAct: Synergizing Reasoning and Acting in Language Models (2023)") abstract; §5.1 here).
-- **brute-force solution**: a slow program that tries all possibilities; correct on small inputs, too slow on large ones (App. A.1).
 
 **Builds on:**
 - LiveCodeBench (Jain et al., 2024; not listed here), a code-generation benchmark: its leaderboard picks the models (§5.1, Fig. 5), and REFUTE's updating follows its example (§4.2).
@@ -88,4 +84,4 @@ Benchmarks usually ask a model to write a correct program; this paper asks the r
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/pairs-code">pairs-code</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/pairs-prog">pairs-prog</a></span>

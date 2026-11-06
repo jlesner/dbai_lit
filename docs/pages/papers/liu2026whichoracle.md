@@ -19,7 +19,7 @@ A text-to-SQL system can decline uncertain questions, and a statistical method, 
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [test-suite accuracy](#/glossary/test-suite-accuracy) · [test oracle](#/glossary/test-oracle) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [AUROC](#/glossary/auroc) · [Cohen's kappa](#/glossary/cohens-kappa)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [test-suite accuracy](#/glossary/test-suite-accuracy) · [test oracle](#/glossary/test-oracle) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [AUROC](#/glossary/auroc) · [Cohen's kappa](#/glossary/cohens-kappa) · [conformal risk control](#/glossary/conformal-prediction-and-conformal-risk-control) (here the loss is 1 for a wrong answer and 0 otherwise, §1) · [preregistration](#/glossary/pre-registration) (freezing data, models, endpoint and decision rule before the data is generated, §3.5; Tab. A1)
 
 **The paper's own terms:**
 - **oracle**: "the databases a query is executed on" (Fig. 2 caption), which labels answers and builds the classes. The **weak oracle** is the one database the benchmark ships per schema; the **suite oracle** is the distilled test suite of Zhong et al. [55] (§3.2). "Reference query" means the gold query.
@@ -29,10 +29,6 @@ A text-to-SQL system can decline uncertain questions, and a statistical method, 
 - **cells A–D**: the class partition and the calibration labels each come from the weak or the suite oracle; cell A (weak for both) "is current practice", cell D is fully multi-instance. **GAP** is cell A's suite-oracle risk minus the risk its own labels report; **D minus A** is cell D's suite-oracle risk minus cell A's (§3.3).
 - **question / database splits**: calibrating on half the questions, where the guarantee applies, or on 9 of 19 schemas, a stress test (§3.1).
 - **disagreement census / full census**: AI labels for every cell-A answer the shipped database accepts and the suite rejects, and for every cell-A or cell-D answer the suite rejects (§5.1). Labels: semantic error, underspecified question, suspected reference-query defect, synthetic-instance defect (the queries differ only on values a real database would not contain), comparator artefact ("same information, judged unequal") (§3.6).
-
-**Missing glossary terms:**
-- **conformal risk control**: picks a threshold on a calibration set "so that the expected value of a bounded, monotone loss is at most a nominal level α on exchangeable test data" (§1); here the loss is 1 for a wrong answer and 0 otherwise, and exchangeable means drawn like the calibration data.
-- **preregistration**: freezing data, models, endpoint and decision rule before the data is generated (§3.5; Tab. A1).
 
 **Builds on:**
 - Zhong et al. [55] ([Semantic Evaluation for Text-to-SQL…](#/papers/zhong2020testsuite "Semantic Evaluation for Text-to-SQL with Distilled Test Suites (2020)")): the suite oracle (§3.2) and the official comparator (§3.1).
@@ -84,4 +80,5 @@ A text-to-SQL system can decline uncertain questions, and a statistical method, 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>
+- **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a><a class="tag sub" href="#/tags/nl2dsl-select">nl2dsl-select</a></span>

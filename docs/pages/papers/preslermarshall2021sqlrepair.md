@@ -19,7 +19,7 @@ Knowing beginners' mistakes helps teachers plan lessons, and the authors say mis
 
 ## Background and terms
 
-**Terms to know:** [automated program repair](#/glossary/automated-program-repair) · [program synthesis](#/glossary/program-synthesis) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [Mann-Whitney U test](#/glossary/mann-whitney-u-test)
+**Terms to know:** [automated program repair](#/glossary/automated-program-repair) · [program synthesis](#/glossary/program-synthesis) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [Mann-Whitney U test](#/glossary/mann-whitney-u-test) · [test of two proportions](#/glossary/test-of-two-proportions) (used to compare the courses, §IV-A)
 
 **The paper's own terms:**
 - **mistake and error**: "students make a mistake while solving a problem, introducing one or more errors into the query" (§I, footnote 1).
@@ -34,7 +34,6 @@ Knowing beginners' mistakes helps teachers plan lessons, and the authors say mis
 
 **Missing glossary terms:**
 - **correct-by-construction repair**: SQLRepair "follows the correct-by-construction approach to automated program repair" (§III),, citing a survey. In general use: building a patch by solving constraints so it passes the tests by construction, rather than proposing patches and then testing them.
-- **test of two proportions**: a significance test of whether two groups' success rates differ; used to compare the courses (§IV-A).
 
 **Builds on:**
 - Z3, an SMT solver by De Moura and Bjørner, which fills the holes (§I; §III-B).
@@ -92,4 +91,4 @@ SQLRepair runs two steps, shown on a running example (Fig. 3; §III).
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/smt-misc">smt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/smt">smt</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

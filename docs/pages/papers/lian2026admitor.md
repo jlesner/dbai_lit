@@ -19,7 +19,7 @@ Some LLM agents improve at optimization modeling (turning a word problem into a 
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [multiple testing](#/glossary/multiple-testing)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [multiple testing](#/glossary/multiple-testing) · [LP and MILP](#/glossary/linear-programming-lp-and-milp) (App. A.1, (A2)) · [false-discovery rate (FDR)](#/glossary/false-discovery-rate-fdr) ("the expectation of the false-discovery proportion", §3, Prop. 2)
 
 **The paper's own terms:**
 - **host**: OptSkills (Yang et al., 2026), the skill learner hosting the gate, which distills solved trajectories (recorded attempts) into skill files (§4; App. B).
@@ -29,10 +29,6 @@ Some LLM agents improve at optimization modeling (turning a word problem into a 
 - **judge swap**: candidates and solver logs are collected once; four judges (sealed ground truth, the host's majority vote, execution success, AdmitOR) replay them, each building its library (§1; §4.2).
 - **admission precision, poisoned admission**: the share of admitted candidates matching the withheld answer (the **sealed vault**), and an admitted one that doesn't (Tab. 3).
 - **numeric-coverage check**: checks that the extracted numbers are printed in the text, before any model is generated (§4.3; App. B.1).
-
-**Missing glossary terms:**
-- **LP and MILP**: a linear objective optimized under linear inequalities; mixed-integer programs force some variables to be integers (App. A.1, (A2)).
-- **false-discovery rate (FDR)**: "the expectation of the false-discovery proportion", the share of wrong items among those accepted (§3, Prop. 2).
 
 **Builds on:**
 - Experience learners admitting by known optima, labels or experts (Kong et al., 2025; Yang et al., 2026; Liang et al., 2026; §2).
@@ -93,4 +89,4 @@ The judge swap used the Step 3 rule; the threshold was fitted later and replayed
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

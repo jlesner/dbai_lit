@@ -18,7 +18,7 @@ Programs processing XML pick out parts of documents with XPath, a language of pa
 
 ## Background and terms
 
-**Terms to know:** [query containment](#/glossary/query-containment) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [soundness and completeness](#/glossary/soundness-and-completeness). The glossary defines containment and equivalence over databases; here they range over XML trees (below).
+**Terms to know:** [query containment](#/glossary/query-containment) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [soundness and completeness](#/glossary/soundness-and-completeness) · [modal μ-calculus](#/glossary/modal-μ-calculus) (§4, PDF pp. 2–3; §9, PDF p. 9) · [regular tree language](#/glossary/regular-tree-language-and-tree-automaton) (§5.2, PDF p. 5; the authors say the class gathers XML type formalisms such as DTD, XML Schema and Relax NG) · [binary decision diagram (BDD)](#/glossary/binary-decision-diagram-bdd) (§7, PDF p. 8; here holding sets of bit vectors). The glossary defines containment and equivalence over databases; here they range over XML trees (below).
 
 **The paper's own terms:**
 - **XPath decision problems** (§1, PDF p. 1): emptiness (does an expression ever select nodes), containment (are one expression's results always included in another's), overlap (do two expressions select common nodes) and coverage (are one expression's nodes always in the union of several others' results), over all finite trees, with or without type constraints. Equivalence is two containment tests (§8, PDF p. 9).
@@ -28,11 +28,6 @@ Programs processing XML pick out parts of documents with XPath, a language of pa
 - **Cycle-free formula** (§4, PDF p. 2): one with a bound, however often its fixpoints (recursive definitions) are unrolled, on its **modality cycles**: a move whose subformula, under only conjunctions and disjunctions, steps along the converse move (e.g. down, then straight back up).
 - **Lean** (§6.1, PDF p. 6): the basic tests of a formula ψ, written Lean(ψ): whether each move exists, the labels ψ uses plus one name for all others, the start mark, and each move-then-subformula in ψ's closure (subformulas, with each fixpoint unrolled once). Every subformula and negation is a boolean combination of them.
 - **ψ-type** (§6.1, PDF p. 6): a subset of the Lean describing one node, called a "Hintikka set in the temporal logic literature"; among its conditions, exactly one label and not both backward moves.
-
-**Missing glossary terms:**
-- **Modal μ-calculus** (§4, PDF pp. 2–3; §9, PDF p. 9): a logic of formulas that hold at nodes; ⟨a⟩φ says a move along a reaches a node where φ holds, and a **least** or **greatest fixpoint** (μ, ν) defines a property recursively, as the smallest or largest solution. **Alternation-free** means no least and greatest fixpoints depend on each other; **converse** adds backward moves (general definition, in the paper's terms).
-- **Regular tree language** (§5.2, PDF p. 5): a set of trees defined by a tree grammar (general definition); the authors say the class gathers XML type formalisms such as DTD, XML Schema and Relax NG.
-- **Binary decision diagram (BDD)** (§7, PDF p. 8): a compact graph form of a boolean function, here holding sets of bit vectors.
 
 **Builds on:**
 - Vardi's μ-calculus with converse [31], and Tanabe et al.'s procedure for its alternation-free fragment [29], whose models are infinite graphs; its finite-tree variant needs "expensive cycle-detection", and "The present work shows how this can be avoided for finite trees" (§9, PDF p. 9).
@@ -81,4 +76,4 @@ The question: decide these problems, with or without type constraints, to type-c
 ## On this site
 
 - **Discussed in:** [Repairing and rewriting DSL programs with a certified result](#/challenges/certified_dsl_repair) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/prove-general">prove-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag sub" href="#/tags/dsl-path">dsl-path</a></span>

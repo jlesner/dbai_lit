@@ -17,7 +17,7 @@ A student's query is often graded by running it and a correct query on a test da
 
 ## Background and terms
 
-**Terms to know:** [counterexample database](#/glossary/counterexample-database) · [query equivalence](#/glossary/query-equivalence) · [relational algebra](#/glossary/relational-algebra) · [data provenance](#/glossary/data-provenance) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [integrity constraint](#/glossary/integrity-constraint) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [set semantics](#/glossary/set-semantics) · [data, query and combined complexity](#/glossary/data-query-and-combined-complexity) · [witness](#/glossary/witness-provenance) · [optimizing SMT solver](#/glossary/optimizing-smt-solver)
+**Terms to know:** [counterexample database](#/glossary/counterexample-database) · [query equivalence](#/glossary/query-equivalence) · [relational algebra](#/glossary/relational-algebra) · [data provenance](#/glossary/data-provenance) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [integrity constraint](#/glossary/integrity-constraint) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [set semantics](#/glossary/set-semantics) · [data, query and combined complexity](#/glossary/data-query-and-combined-complexity) · [witness](#/glossary/witness-provenance) · [optimizing SMT solver](#/glossary/optimizing-smt-solver) · [min-ones satisfiability](#/glossary/min-ones-satisfiability) (§4)
 
 **The paper's own terms:**
 - **SPJUD and its subclasses**: queries built from Select, Project, Join, Union and Difference; a subset of letters names a subclass, e.g. PJ = projection and join only (§2).
@@ -26,9 +26,6 @@ A student's query is often graded by running it and a correct query on a test da
 - **Smallest witness problem (SWP)**: fix one output row that is in one query's result but not the other's, and find the fewest input rows on which that row is still in the difference of the two queries (§2.2, Def. 2). SCP's answer is the smallest SWP answer over all such rows (§2.2).
 - **Boolean how-provenance**: a true/false formula over one variable per input row, true exactly when the output row is produced; joins combine with AND, projections and unions with OR, and the paper's rule for difference is AND NOT (§2.3).
 - **JU\* and SPJUD\***: JU queries with every union after every join; and differences of SPJU queries (Table 1, App. A.5).
-
-**Missing glossary terms:**
-- **Min-ones satisfiability**: satisfy a true/false formula with as few variables true as possible (§4).
 
 **Builds on:**
 - Buneman et al.'s witnesses and why-provenance (§2.2).
@@ -89,4 +86,4 @@ A student's query is often graded by running it and a correct query on a test da
 ## On this site
 
 - **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/cex-smt">cex-smt</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/reduce">reduce</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

@@ -19,7 +19,7 @@ Model-written SQL can run yet return believable wrong data: "failures are decept
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [selective prediction](#/glossary/selective-prediction)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [selective prediction](#/glossary/selective-prediction) · [Likert scale](#/glossary/likert-scale) (1 (no alignment) to 5 (perfect equivalence), §3, PDF p. 3)
 
 **The paper's own terms:**
 - **verifier** `V(q, s, d) ↦ v` (maps its inputs to a verdict `v`): judges, at answer time and without gold SQL, whether candidate SQL `s` matches question `q` for schema `d`. *Binary* verifiers accept or reject; *scoring* verifiers give 1–5 and accept at or above a threshold τ (§3, PDF pp. 2–3).
@@ -28,9 +28,6 @@ Model-written SQL can run yet return believable wrong data: "failures are decept
 - **Scenario 1 / 2**: gold SQLs that the Synthetic Execution Consistency verifier (SE) rejects while accepting, or also rejecting, the generated SQL for the same question (§6.2, PDF p. 8).
 - **issue types**: *data/instance incorrectness* (gold SQL wrong on its database), *semantic incorrectness* (right there by chance), *ambiguity* (several valid readings) (§6.1, PDF p. 8).
 - **selective** vs. **total** generator: one that may abstain vs. one that always answers. **Coverage** φ: share of questions answered; **selective accuracy** A_sel: share of answers that are correct; **Utility@X** = (correct − X · incorrect) / all questions, abstentions scoring 0, from TrustSQL [16] (see Builds on) (§7, §7.2–7.3, PDF pp. 10–11).
-
-**Missing glossary terms:**
-- **Likert scale**: a rating on a few ordered levels, here 1 (no alignment) to 5 (perfect equivalence) (§3, PDF p. 3).
 
 **Builds on:**
 - Round-trip correctness for code [1] ([Round-Trip Correctness (RTC)](#/papers/allamanis2024roundtrip "Unsupervised Evaluation of Code LLMs with Round-Trip Correctness (2024)")), adapted by Round-Trip Critique (RT) (§1, PDF p. 1).
@@ -85,4 +82,4 @@ Model-written SQL can run yet return believable wrong data: "failures are decept
 ## On this site
 
 - **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/nl2sql-select">nl2sql-select</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a><a class="tag sub" href="#/tags/nl2dsl-select">nl2dsl-select</a></span>

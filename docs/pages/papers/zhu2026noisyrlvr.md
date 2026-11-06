@@ -14,11 +14,11 @@ Read: [PDF](https://arxiv.org/pdf/2603.16140) · [arXiv](https://arxiv.org/abs/2
 
 ## In plain words
 
-Reinforcement learning with verifiable rewards trains an LLM by rewarding answers that a program checks against a reference answer, so a wrong reference rewards wrong output. Recent studies suggest that improved algorithms let models learn about as well from wrong references as from right ones. The authors argue these findings are invalid because "the claimed 100% noisy training data is 'contaminated' with clean data" (abstract; §1). They re-check that math set with GPT-5 Pro, a symbolic checker, an LLM judge and manual review, dropping answers that are in fact correct. They report that a 7B math model trained on truly wrong answers scores 8–10% lower than one trained on correct answers across math benchmarks, and that five improved algorithms, trained on half-wrong data, do about as well as the basic algorithm (abstract; §4.2; §5.3). On BIRD, a text-to-SQL benchmark, five open models trained with the basic algorithm on 600 training items as shipped score 5.7–12.1% lower than on the authors' corrected copy (§6.2, Fig. 9). They present the work as an empirical study refuting prior findings (abstract).
+Reinforcement learning with verifiable rewards trains an LLM by rewarding answers that a program checks against a reference answer, so a wrong reference rewards wrong output. Recent studies suggest that improved algorithms let models learn about as well from wrong references as from right ones. The authors argue these findings are invalid because "the claimed 100% noisy training data is 'contaminated' with clean data" (abstract; §1). They re-check that math set with GPT-5 Pro, a symbolic checker, an LLM judge and manual review, dropping answers that are in fact correct. They report that a 7B math model trained on truly wrong answers scores 8–10% lower than one trained on correct answers across math benchmarks. They also report that five improved algorithms, trained on half-wrong data, do about as well as the basic algorithm (abstract; §4.2; §5.3). On BIRD, a text-to-SQL benchmark, five open models trained with the basic algorithm on 600 training items as shipped score 5.7–12.1% lower than on the authors' corrected copy (§6.2, Fig. 9). They present the work as an empirical study refuting prior findings (abstract).
 
 ## Background and terms
 
-**Terms to know:** [RLVR](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [pass@k](#/glossary/passk) · [reasoning boundary](#/glossary/reasoning-boundary) · [policy entropy](#/glossary/policy-entropy) · [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [LLM-as-a-judge](#/glossary/llm-as-a-judge)
+**Terms to know:** [RLVR](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [pass@k](#/glossary/passk) · [reasoning boundary](#/glossary/reasoning-boundary) · [policy entropy](#/glossary/policy-entropy) · [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [label noise](#/glossary/label-noise) (annotation noise; here, reference answers in RLVR training data that don't answer the question, §1, §3.2) · [dynamic sampling](#/glossary/dapo) (§5.1)
 
 **The paper's own terms:**
 - **annotation**: the reference a training item carries that the reward checks against, e.g. gold answers or unit tests (§2). Noise in the reward comes from annotation errors or from verifier errors (a flawed checking function) (§3.2).
@@ -28,10 +28,6 @@ Reinforcement learning with verifiable rewards trains an LLM by rewarding answer
 - **X% noise**: the share of training items with incorrect annotations (§4.2, Fig. 5); §5 trains at 50%.
 - **BIRD-600-Original / BIRD-600-Corrected**: 600 random BIRD training items as shipped, and the authors' corrected version (§3.3); Fig. 9 prints them as BIRD-Original-600 and BIRD-Corrected-600.
 - **confirmation bias loop**: the authors' explanation for the damage: the model is easily rewarded for reasoning paths it already favours, so it loses the incentive to explore alternatives (§4.2; App. A.1).
-
-**Missing glossary terms:**
-- **label noise (annotation noise)**: training labels that are wrong; here, reference answers in RLVR training data that don't answer the question (§1, §3.2).
-- **dynamic sampling**: dropping rollout groups in which every sample got the same reward (all right or all wrong), since GRPO gets no gradient from them (§5.1).
 
 **Builds on:**
 - Shao et al., Spurious Rewards ([Spurious Rewards](#/papers/shao2025spurious "Spurious Rewards: Rethinking Training Signals in RLVR (2025)")): the noisy math dataset (wrong answers of Qwen2.5-Math-7B on the DeepScaleR training set) and the training configuration reused here, and the claim re-examined; the authors characterize it as reporting MATH-500 accuracy close to clean-data training with 100% incorrect annotations (§1; §3.3; §4.1).
@@ -73,4 +69,5 @@ The question: "To what extent can RLVR, with algorithmic improvements, tolerate 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a></span>

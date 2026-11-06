@@ -19,7 +19,7 @@ When a language model trains on its own checked outputs, does it acquire capabil
 
 ## Background and terms
 
-**Terms to know:** [pass@k](#/glossary/passk), [rejection sampling](#/glossary/rejection-sampling), [expert iteration](#/glossary/expert-iteration), [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr), [Distillation into compact models](#/glossary/distillation), [LoRA adapter](#/glossary/lora-low-rank-adaptation), [programming by example](#/glossary/program-synthesis).
+**Terms to know:** [pass@k](#/glossary/passk), [rejection sampling](#/glossary/rejection-sampling), [expert iteration](#/glossary/expert-iteration), [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr), [Distillation into compact models](#/glossary/distillation), [LoRA adapter](#/glossary/lora-low-rank-adaptation), [programming by example](#/glossary/program-synthesis), [elicitation vs. acquisition](#/glossary/elicitation-vs-acquisition) (§2).
 
 **The paper's own terms:**
 - **amplification**: per-round gain that is monotone but not accelerating, with a ceiling at the operating budget under the base model's large-K pass@K curve (§1).
@@ -37,9 +37,6 @@ When a language model trains on its own checked outputs, does it acquire capabil
 - **visible and held-out examples, split seed**: each task's 12 examples are split at random at evaluation time, the seed fixing the split; the generator sees only the visible ones, and the held-out ones decide whether a pick generalizes (§4.2, §5).
 - **K, two senses**: samples in pass@K (§1), and independent training runs, K = 4, in the replication called Tier 3; t0 is the original run (abstract, §6.4).
 - **CI**: confidence interval (§6.2).
-
-**Missing glossary terms:**
-- **elicitation vs. acquisition**: whether training on verified outputs draws out capability the base had or adds new capability, "the central open question of the current RLVR literature" (§2).
 
 **Builds on:**
 - Yue et al. [Does Reinforcement Learning Really…](#/papers/yue2025rlreasoning "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model? (2025)"): the instrument, pass@k at large k; in the paper's account RL-trained models beat their base at low k and are overtaken at large k (§2 "Elicitation vs. acquisition").
@@ -98,4 +95,4 @@ When a language model trains on its own checked outputs, does it acquire capabil
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

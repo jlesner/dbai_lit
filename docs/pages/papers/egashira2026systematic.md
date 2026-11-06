@@ -19,7 +19,7 @@ When a language model is trained by reinforcement learning on answers a checker 
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [reward hacking](#/glossary/reward-hacking) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk)
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [reward hacking](#/glossary/reward-hacking) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk) · [DAPO](#/glossary/dapo) (used because it "provides a slight improvement over GRPO and is the default option in TRL", §4.1; **Dr. GRPO** and **SAPO** are further variants named as related to GRPO, §2, run in App. B.5)
 
 **The paper's own terms:**
 - **verifier**: any function mapping a query and a model output to a reward of 0 or 1 (§3); static analyzers and LLM judges count (§1).
@@ -30,9 +30,6 @@ When a language model is trained by reinforcement learning on answers a checker 
 - **systematic errors**: errors that are "a function of both the query and model output" (e.g. accepting an answer close to the true one, or one containing a keyword); their rates can change because "the model may learn to trigger or avoid" them (§3). The output property that sets one off is its **trigger** (§1).
 - **the four training dynamics** (§3, Fig. 1): **ideal** (FPR and FNR stay at or near 0); **delayed** (oracle reward below clean training but "eventually reaches a similar final value"); **plateau** (oracle reward rises but converges below clean training); **collapse** (oracle reward "eventually decreases"; **complete collapse** when final performance is close to random guessing).
 - **conditional advantage**: for a trigger, the average ground-truth advantage (as in GRPO, §3) of the outputs containing it; highest when all outputs with the trigger are correct and all without it incorrect (§4.3).
-
-**Missing glossary terms:**
-- **DAPO**: a GRPO variant (Yu et al., 2025), used because it "provides a slight improvement over GRPO and is the default option in TRL" (§4.1). **Dr. GRPO** and **SAPO** are further variants named as related to GRPO (§2), run in App. B.5.
 
 **Builds on:**
 - Random-noise studies: Rad et al. (2026) ([RLVεR ("Rate or Fate?")](#/papers/rad2026rlver "Rate or Fate? RLV$^\varepsilon$R: Reinforcement Learning with Verifiable Noisy Rewards (2026)")), Cai et al. (2025) and Lv et al. (2025), whose findings "suggest that such errors merely delay training progress without changing the final outcome" but "largely rely on the assumption that verifier errors are random" (§1). Rad et al. predict collapse when Youden's J (true positive rate minus false positive rate) is below zero (§2).
@@ -88,4 +85,4 @@ Main runs: Fig. 2 (curves, no value labels).
 ## On this site
 
 - **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a></span>

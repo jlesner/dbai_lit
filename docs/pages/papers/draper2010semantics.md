@@ -17,7 +17,7 @@ XPath and XQuery are languages for querying XML documents, set by W3C (the World
 
 ## Background and terms
 
-**Terms to know:** [formal semantics](#/glossary/formal-semantics) (here: what each XQuery or XPath expression yields, and its type) · [BNF](#/glossary/bnf-backus-naur-form) (App. A's grammars use the XML specification's EBNF, an extended form) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [finite-state machine](#/glossary/finite-state-machine) (finite automata, suggested for computing subtyping, §8.3.2).
+**Terms to know:** [formal semantics](#/glossary/formal-semantics) (here: what each XQuery or XPath expression yields, and its type) · [BNF](#/glossary/bnf-backus-naur-form) (App. A's grammars use the XML specification's EBNF, an extended form) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [finite-state machine](#/glossary/finite-state-machine) (finite automata, suggested for computing subtyping, §8.3.2) · [static type checking (static typing)](#/glossary/static-type-checking-static-typing) (§1) · [type soundness](#/glossary/type-safety-and-type-soundness) (used, §5.15; §8.4, but not defined; §3.2.1 comes closest).
 
 **The document's own terms:**
 - **XPath / XQuery** (written "[XPath/XQuery]" where a rule serves both): XPath 2.0 locates nodes in a tree by path expressions (§4.2); XQuery 1.0 adds e.g. FLWOR expressions (for, let, where, order by, return), constructors (expressions that build new XML nodes) and a prolog (the declarations that open a query) (§4.7–4.8; §5). Both are "functional" and "typed" (§1).
@@ -30,10 +30,6 @@ XPath and XQuery are languages for querying XML documents, set by W3C (the World
 - **types**: item types combined by sequence, choice (|), interleaving (&: two sequences merged, each keeping its own order), the occurrence marks ?, + and *, `empty` (matches the empty sequence) and `none` (matches no values) (§2.4.3).
 - **subtyping**: one type is a subtype of another when every value that matches the first also matches the second (§8.3.2).
 - **host language**: a specification that includes this one normatively, such as XQuery 1.0 or XSLT 2.0 (W3C's XML transformation language) (§ "Status of this Document"; §6).
-
-**Missing glossary terms:**
-- **static type checking (static typing)**: in the document's words, "Static type analysis infers the output type of an expression based on the type of its input expressions", which allows "early detection of type errors" (§1).
-- **type soundness**: used (§5.15; §8.4) but not defined; §3.2.1 comes closest: "If static typing of an expression does not raise a type error, then dynamic evaluation of the same expression will not raise a type error".
 
 **Builds on:**
 - The companion W3C specifications: XQuery 1.0, XPath 2.0, Functions and Operators, the Data Model and Serialization (§1); none is on this site.
@@ -85,4 +81,4 @@ No experiments (the document is a specification, § "Status of this Document"), 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-path">dsl-path</a><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a></span>

@@ -19,7 +19,7 @@ Fixed reasoning benchmarks wear out: the authors name "repeated exposure to fixe
 
 ## Background and terms
 
-**Terms to know:** [data contamination](#/glossary/data-contamination) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [program-of-thought and tool-integrated reasoning](#/glossary/program-of-thought-and-tool-integrated-reasoning)
+**Terms to know:** [data contamination](#/glossary/data-contamination) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [program-of-thought and tool-integrated reasoning](#/glossary/program-of-thought-and-tool-integrated-reasoning) · [multi-agent debate](#/glossary/multi-agent-debate) (in this paper's version, five agents share one model with different verification roles, run up to five rounds, and accept an answer when at least three explicitly support it, App. L.2)
 
 **The paper's own terms:**
 - **seed**: an original benchmark question with its known answer; **teacher**: the LLM that writes specifications, by default GPT-5 with high reasoning effort; **student**: a model being evaluated (§2.1, §4).
@@ -32,9 +32,6 @@ Fixed reasoning benchmarks wear out: the authors name "repeated exposure to fixe
 - **Verified and Verified Full**: Verified is the human-audited set of accepted H and H Pro items used for the main results; Verified Full fills rejected positions with accepted replacements, as a separate evaluation set (§4).
 - **perturbation score**: a variant's distance in values and wording from its seed (App. C).
 - **fallback**: an item restating the seed when synthesis yields no accepted variant (App. I.2).
-
-**Missing glossary terms:**
-- **multi-agent debate**: several LLM agents check an answer and exchange assessments over rounds before a decision; in this paper's version, five agents share one model with different verification roles, run up to five rounds, and accept an answer when at least three explicitly support it (App. L.2).
 
 **Builds on:**
 - Benchmarks that vary statements or numbers (GSM-Plus, GSM-Symbolic, GSM-Ranges, VAR-MATH) or use functional evaluation (Putnam-AXIOM, RV-Bench); VeRA "compiles reusable families and adds computation modification plus candidate selection to renew headroom" (§7).
@@ -92,4 +89,4 @@ No limitations section; these caveats are scattered.
 ## On this site
 
 - **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a></span>

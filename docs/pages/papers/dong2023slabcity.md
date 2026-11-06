@@ -80,4 +80,4 @@ Poorly written queries, from software or less experienced users, limit what a da
 ## On this site
 
 - **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [Verified query speedups](#/challenges/verified_query_speedup)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-smt">cex-smt</a><a class="tag sub" href="#/tags/hacking-sql">hacking-sql</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rewrite-eval">rewrite-eval</a><a class="tag sub" href="#/tags/rewrite-smt">rewrite-smt</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rewrite-eval">rewrite-eval</a></span>

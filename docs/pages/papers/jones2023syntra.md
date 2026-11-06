@@ -95,4 +95,4 @@ LLMs often make things up (hallucinate) when answering from or summarizing a giv
 ## On this site
 
 - **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/promptopt-misc">promptopt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/promptopt">promptopt</a></span>

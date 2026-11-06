@@ -9,8 +9,8 @@ Read: [PDF](https://arxiv.org/pdf/2606.08106) · [arXiv](https://arxiv.org/abs/2
 ## In brief
 
 - Treats the keep-it-if-the-dev-score-went-up step of self-evolving agents as uncontrolled adaptive multiple testing on a reused dev set, and replaces it with a commit gate: candidate and incumbent are scored on the same items, and a testing-by-betting e-process on the discordant pairs commits once its wealth reaches 1/α (abstract; §3; §4).
-- The bound on false commits holds per candidate under optional stopping, not over a run (§4, "Guarantee"); Qwen2.5 agents (0.5B–3B) evolve their system prompt on GSM8K, SVAMP and ARC-Challenge, in a controlled regime with one planted real gain and a stochastic one with none, every commit audited on a fresh 120-item pool the gate never sees (§5).
-- Selection on a small reused dev set, measured on checked answers: it reports greedy acceptance committing 30–42% false edits when one real gain hides among noisy proposals (abstract; §5.1, Tab. 1). [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") runs PACE as published and reports that the degradation PACE finds with no real gain available did not replicate in its pre-registered runs (its §2).
+- The bound on false commits holds per candidate under optional stopping, not over a run (§4, "Guarantee"); Qwen2.5 agents (0.5B–3B) evolve their system prompt on GSM8K, SVAMP and ARC-Challenge, in a controlled regime with one planted real gain (on GSM8K and SVAMP only; Tab. 1, 5) and a stochastic one with none, every commit audited on a fresh 120-item pool the gate never sees (§5).
+- Selection on a small reused dev set, measured on checked answers: it reports greedy acceptance committing 30–42% false edits on GSM8K when one real gain hides among noisy proposals (§5.1, Tab. 1). [The Winner's Curse in…](#/papers/hu2026winnerscurse "The Winner's Curse in LLM Self-Improvement Loops: Selection Noise, Lock-in, and Acceptance Rules (2026)") runs PACE as published and reports that the degradation PACE finds with no real gain available did not replicate in its pre-registered runs (its §2).
 
 ## In plain words
 
@@ -20,7 +20,7 @@ On open Qwen2.5 models (1.5 and 3 billion parameters) doing grade-school math, w
 
 ## Background and terms
 
-**Terms to know:** [McNemar's exact test](#/glossary/mcnemars-exact-test) · [sign test](#/glossary/sign-test) · [multiple testing](#/glossary/multiple-testing) · [statistical power](#/glossary/statistical-power) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [exact match](#/glossary/exact-match)
+**Terms to know:** [McNemar's exact test](#/glossary/mcnemars-exact-test) · [sign test](#/glossary/sign-test) · [multiple testing](#/glossary/multiple-testing) · [statistical power](#/glossary/statistical-power) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [exact match](#/glossary/exact-match) · [e-process (testing by betting)](#/glossary/e-process-testing-by-betting) (§4 "Testing by betting") · [anytime-valid test, optional stopping](#/glossary/confidence-sequence-anytime-valid-inference) (§2; §4 "Guarantee") · [supermartingale, Ville's inequality](#/glossary/e-process-testing-by-betting) (§4 "Guarantee") · [adaptive data analysis](#/glossary/adaptive-data-analysis) ("reusing one validation set to steer a long, data-dependent sequence of choices", §3) · [online FDR](#/glossary/false-discovery-rate-fdr) (procedures that "bound error over streams of tests", §2) · [familywise bound](#/glossary/familywise-error-rate-fwer) (a bound on any false commit in a whole run, not per candidate; §4 "Guarantee")
 
 In the glossary's terms (our reading): PACE keeps McNemar's discordant pairs and the sign test's null hypothesis, but tests them with a bet that may stop at any point. Its "greedy" acceptance is not greedy decoding.
 
@@ -33,14 +33,6 @@ In the glossary's terms (our reading): PACE keeps McNemar's discordant pairs and
 - **wealth, bet fraction λ, level α**: wealth starts at 1 and, after each discordant pair, is multiplied by 1 + λ if the candidate was the one right and by 1 − λ otherwise (Eq. 2); commit once wealth reaches 1/α. Defaults: α = 0.05, λ = 0.5, "and a fixed batch size unless noted" (§4 "Testing by betting").
 - **Δ**: the accuracy change on the audit pool, end to end (§5 "Metrics"), on a 0–1 scale.
 - **controlled and stochastic regimes** (§5 "Two regimes"): the agent starts with "one deliberately harmful instruction" whose removal is a large known gain; or it is sampled at temperature 0.7 with no large gain available, audited at temperature 0.
-
-**Missing glossary terms:**
-- **e-process (testing by betting)**: a wealth starting at 1 is multiplied by bets that are fair if the null hypothesis holds, so it stays near 1 on average under the null and grows when the null is false (§4 "Testing by betting").
-- **anytime-valid test, optional stopping**: a test whose error bound holds wherever the tester stops, even when stopping depends on the data (§2; §4 "Guarantee").
-- **supermartingale, Ville's inequality**: a running value whose expected next value, given the past, is at most its current one (general definition); a nonnegative one starting at 1 ever reaches 1/α with probability at most α (§4 "Guarantee").
-- **adaptive data analysis**: "reusing one validation set to steer a long, data-dependent sequence of choices" (§3).
-- **familywise bound**: a bound on any false commit in a whole run, not per candidate (§4 "Guarantee"; general definition).
-- **online FDR**: procedures that "bound error over streams of tests" (§2); FDR is the expected share of false discoveries among discoveries (general definition).
 
 **Builds on:**
 - Anytime-valid inference: Wald (1947), Shafer (2021), Ramdas et al. (2023) (§1; §2); not listed here.
@@ -97,4 +89,4 @@ False and harmful rates are "audit-labelled", not ground truth (§5 "Metrics").
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/promptopt-misc">promptopt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/promptopt">promptopt</a><a class="tag" href="#/tags/stats">stats</a></span>

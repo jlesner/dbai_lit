@@ -59,4 +59,4 @@ The authors show:
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>

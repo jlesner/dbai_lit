@@ -8,9 +8,9 @@ Read: [PDF](https://arxiv.org/pdf/2310.01798) · [arXiv](https://arxiv.org/abs/2
 
 ## In brief
 
-- Tests intrinsic self-correction, where a model reviews its own answer and answers again with no external feedback, on GSM8K, CommonSenseQA and HotpotQA with GPT-3.5, GPT-4, GPT-4-Turbo and Llama-2 (§2; §3.1).
+- Tests intrinsic self-correction, where a model reviews its own answer and answers again with no external feedback, on GSM8K and CommonSenseQA with GPT-3.5, GPT-4, GPT-4-Turbo and Llama-2, and on HotpotQA with GPT-3.5 and GPT-4 (§2; §3.1, Tabs. 3–4).
 - Reruns earlier self-correction setups and names three evaluation flaws (Tab. 1): gains that come from oracle labels deciding when to stop (RCI, Reflexion; §3.2), multi-agent debate compared with self-consistency on fewer responses (§4, Tab. 7), and initial prompts that withhold what the feedback prompt adds (Self-Refine; §5, Tab. 8).
-- Self-review without a check: the authors report that without oracle labels accuracy drops after self-correction for every model on every benchmark (§3.2, Tabs. 3–4), as models "cannot properly judge the correctness of their reasoning" (§3.3), and recommend external feedback such as code execution with unit tests (§6). The self-critique side of the contrast [On the Self-Verification Limitations…](#/papers/stechly2024selfverification "On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks (2024)") tests against a sound verifier; [Correction and Corruption](#/papers/reitich2026correction "Correction and Corruption: A Two-Rate View of Error Flow in LLM Protocols (2026)") re-reads its GSM8K totals (§2.3).
+- Self-review without a check: the authors report that without oracle labels accuracy drops after self-correction for every model on every benchmark (§3.2, Tabs. 3–4; GPT-4 on HotpotQA only after the second round), as models "cannot properly judge the correctness of their reasoning" (§3.3), and recommend external feedback such as code execution with unit tests (§6). The self-critique side of the contrast [On the Self-Verification Limitations…](#/papers/stechly2024selfverification "On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks (2024)") tests against a sound verifier; [Correction and Corruption](#/papers/reitich2026correction "Correction and Corruption: A Two-Rate View of Error Flow in LLM Protocols (2026)") re-reads its GSM8K totals (§2.3).
 
 ## In plain words
 
@@ -18,7 +18,7 @@ Self-correction asks an LLM to review its own answer and then answer again. The 
 
 ## Background and terms
 
-**Terms to know:** [self-correction](#/glossary/self-correction) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [compute-matched comparison](#/glossary/compute-matched-comparison) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [multi-hop question answering](#/glossary/multi-hop-question-answering) · [exact match](#/glossary/exact-match)
+**Terms to know:** [self-correction](#/glossary/self-correction) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [compute-matched comparison](#/glossary/compute-matched-comparison) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [multi-hop question answering](#/glossary/multi-hop-question-answering) · [exact match](#/glossary/exact-match) · [closed-book question answering](#/glossary/closed-book-question-answering) (the paper tests HotpotQA "in a closed-book setting" without defining it, §3.1)
 
 **The paper's own terms:**
 - **self-correction**: the authors say its definition "varies across the literature", and split feedback into internal (from the model's own knowledge) and external (humans, other models, tools or knowledge sources), following Pan et al. (2023) (§2). In the rest of the paper the word means intrinsic self-correction "unless explicitly stated otherwise" (§2).
@@ -29,9 +29,6 @@ Self-correction asks an LLM to review its own answer and then answer again. The 
 - **feedback prompt**: the instruction that asks the model to review its previous answer; Tabs. 5–6 vary it.
 - **multi-agent debate**: "multiple LLM instances (can be multiple copies of the same LLM) critique each other's responses" (§1).
 - **Constrained Generation (CommonGen-Hard)**: the task of Self-Refine (Madaan et al., 2023; iterative refinement with the model's own feedback) where the model must "generate coherent sentences using all 20-30 input concepts", scored by concept coverage, the metric of Madaan et al. (2023), which this paper does not define further (§5, Tab. 8).
-
-**Missing glossary terms:**
-- **closed-book question answering**: answering from the model's own knowledge, with no documents retrieved or supplied; the paper tests HotpotQA "in a closed-book setting" without defining it (§3.1).
 
 **Builds on:**
 - The methods it re-examines (Tab. 1): RCI (Kim et al., 2023), a prompting method in which the model critiques and improves its own output, and Reflexion (Shinn et al., 2023; [Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)")), an agent that writes a reflection after a failed attempt and retries, whose oracle-label setups and prompts §3 follows; multi-agent debate (Du et al., 2023, cited with Liang et al., 2023), replicated in §4; and Self-Refine (Madaan et al., 2023), whose Constrained Generation task §5 reruns.
@@ -82,4 +79,4 @@ An evaluation study, with no new method.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

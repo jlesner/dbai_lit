@@ -21,7 +21,7 @@ The best tested model, OpenAI's o3-mini, used directly without an agent loop, fi
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [SQL dialect](#/glossary/sql-dialect) · [data contamination](#/glossary/data-contamination) · [Distillation into compact models](#/glossary/distillation) · [rejection sampling](#/glossary/rejection-sampling) · [LoRA (low-rank adaptation)](#/glossary/lora-low-rank-adaptation) · [DML, DDL and DCL](#/glossary/sql-statement-categories-ddl-dml-dql-dcl-tcl) (with the examples UPDATE, INSERT, DELETE; CREATE, ALTER; GRANT, REVOKE; App. C)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [SQL dialect](#/glossary/sql-dialect) · [data contamination](#/glossary/data-contamination) · [Distillation into compact models](#/glossary/distillation) · [rejection sampling](#/glossary/rejection-sampling) · [LoRA (low-rank adaptation)](#/glossary/lora-low-rank-adaptation) · [DML, DDL and DCL](#/glossary/sql-statement-categories-ddl-dml-dql-dcl-tcl) (with the examples UPDATE, INSERT, DELETE; CREATE, ALTER; GRANT, REVOKE; App. C) · [ReAct](#/glossary/react) (thought, action, observation; §5.1; App. G.3)
 
 **The paper's own terms:**
 - **issue SQL, user issue query, solution SQL**: the faulty query, the natural-language description of problem and intent, and the corrected reference query (§2, §3).
@@ -33,9 +33,6 @@ The best tested model, OpenAI's o3-mini, used directly without an agent loop, fi
 - **f-plan (functional plan)**: a step-by-step plan, written as pseudo-functional code, of the debugging operations that turn the issue SQL into the solution (§1, §5.2).
 - **Bird-Fixer**: a small open model fine-tuned on f-plan trajectories, run with SQL-Act and GTM (§5).
 - **GTM (Generative Thought Mode)**: at each step the fine-tuned model writes the thought, and the original base model writes the SQL action from it (§5.2 "Generative Thought Mode (GTM)").
-
-**Missing glossary terms:**
-- **ReAct**: an agent loop that interleaves a reasoning step (thought), an action on the environment, and the environment's response (observation) (§5.1; App. G.3).
 
 **Builds on:**
 - SWE-Gym, a training environment for software-engineering agents: Six-Gym is "inspired by" it, and it is cited for the "common practice" of fine-tuning small models on a teacher's trajectories (§1).
@@ -82,4 +79,4 @@ The best tested model, OpenAI's o3-mini, used directly without an agent loop, fi
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

@@ -18,7 +18,7 @@ Many database questions ask for values for which other values exist making a lis
 
 ## Background and terms
 
-**Terms to know:** [conjunctive query](#/glossary/conjunctive-query) · [set semantics](#/glossary/set-semantics) · [query equivalence](#/glossary/query-equivalence) · [homomorphism](#/glossary/homomorphism-containment-mapping) · [relational algebra](#/glossary/relational-algebra) · [first-order logic](#/glossary/first-order-logic) · [NP-complete](#/glossary/np-complete-and-the-polynomial-hierarchy) · [union of conjunctive queries](#/glossary/union-of-conjunctive-queries) · [PSPACE-complete](#/glossary/pspace) · [graph isomorphism](#/glossary/graph-isomorphism)
+**Terms to know:** [conjunctive query](#/glossary/conjunctive-query) · [set semantics](#/glossary/set-semantics) · [query equivalence](#/glossary/query-equivalence) · [homomorphism](#/glossary/homomorphism-containment-mapping) · [relational algebra](#/glossary/relational-algebra) · [first-order logic](#/glossary/first-order-logic) · [NP-complete](#/glossary/np-complete-and-the-polynomial-hierarchy) · [union of conjunctive queries](#/glossary/union-of-conjunctive-queries) · [PSPACE-complete](#/glossary/pspace) · [graph isomorphism](#/glossary/graph-isomorphism) · [boolean matrix multiplication](#/glossary/boolean-matrix-multiplication) (M(a,b,c) is the time to multiply an a×b by a b×c boolean matrix, §3, PDF p. 4)
 
 **The paper's own terms:**
 - **data base**: a nonempty finite domain D plus finitely many relations on it; a relation's or query's **rank** is its number of columns (§2, PDF p. 1). n = |D| measures running times (§6.1, PDF p. 8).
@@ -32,9 +32,6 @@ Many database questions ask for values for which other values exist making a lis
 - **folding**: a query whose natural model is the image of M_Q under a homomorphism from M_Q to itself that fixes a set V, containing the output variables and constants, and maps everything into V; the authors describe minimization as "combining variables" (§5, PDF p. 5).
 - **isomorphic**: equal up to renaming variables and reordering atoms and quantified variables (§5, PDF p. 6).
 - **Church–Rosser**: up to isomorphism, the order of foldings does not matter (Thm. 9, PDF p. 6; §7, PDF p. 10).
-
-**Missing glossary terms:**
-- **boolean matrix multiplication**: matrix product with "and" for times and "or" for plus; M(a,b,c) is the time to multiply an a×b by a b×c boolean matrix (§3, PDF p. 4).
 
 **Builds on:**
 - Codd's relational model [C70] and his result [C71b] that first-order queries and relational expressions are "essentially the same" (§2–3, PDF pp. 1–3).
@@ -84,4 +81,4 @@ Many database questions ask for values for which other values exist making a lis
 ## On this site
 
 - **Discussed in:** [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Verified query speedups](#/challenges/verified_query_speedup)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-set">theory-set</a></span>

@@ -19,7 +19,7 @@ Self-improving models are increasingly judged by which problems they gain and lo
 
 ## Background and terms
 
-**Terms to know:** [pass@k](#/glossary/passk) · [LoRA](#/glossary/lora-low-rank-adaptation) · [self-consistency](#/glossary/self-consistency-majority-voting) · [Distillation into compact models](#/glossary/distillation) · [greedy decoding](#/glossary/greedy-decoding-and-temperature-sampling) · [policy gradient](#/glossary/policy-gradient) · [multiple testing](#/glossary/multiple-testing) · [statistical power](#/glossary/statistical-power)
+**Terms to know:** [pass@k](#/glossary/passk) · [LoRA](#/glossary/lora-low-rank-adaptation) · [self-consistency](#/glossary/self-consistency-majority-voting) · [Distillation into compact models](#/glossary/distillation) · [greedy decoding](#/glossary/greedy-decoding-and-temperature-sampling) · [policy gradient](#/glossary/policy-gradient) · [multiple testing](#/glossary/multiple-testing) · [statistical power](#/glossary/statistical-power) · [false-discovery-rate (FDR) control](#/glossary/false-discovery-rate-fdr) (§4.2; App. D.1) · [Fisher exact test](#/glossary/fishers-exact-test) (§4.1, §4.2; not defined in the paper)
 
 **The paper's own terms:**
 - **transition ledger**: puts each problem in one of seven categories across checkpoints; **learned** means unsolved at the base checkpoint and solved at the last, **corrupted** the reverse (§3 "The ledger", Eq. 1).
@@ -31,10 +31,6 @@ Self-improving models are increasingly judged by which problems they gain and lo
 - **pooled baseline**: every arm's checkpoint 0 is another evaluation of the untrained model; AIME has eleven, 1,408 samples per problem (§4.2).
 - **low-base problems**: the 22 AIME problems the pooled baseline reaches at most five times; 10 never (§3 "Benchmarks").
 - **matched ladder**: AIME arms on one shared stream at matched volume, varying only the correctness filter (§5; Tab. 2).
-
-**Missing glossary terms:**
-- **false-discovery-rate (FDR) control**: a multiple-testing rule bounding the expected share of false detections among all detections (§4.2; App. D.1).
-- **Fisher exact test**: an exact test of whether two success rates differ, from the success and failure counts of two groups (§4.1, §4.2; not defined in the paper; general definition).
 
 **Builds on:**
 - Mayilvahanan et al. (2026), MATH-Beyond, a benchmark for whether RL expands beyond the base model, which "supplies the expansion statistic we audit" (§2).
@@ -91,4 +87,4 @@ Authors' claims; brackets are 95% intervals.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

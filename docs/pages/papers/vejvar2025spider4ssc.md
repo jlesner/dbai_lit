@@ -86,4 +86,4 @@ Knowledge graphs are often stored as RDF, where every fact is a (subject, predic
 ## On this site
 
 - **Discussed in:** [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dsl">dsl</a><a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/dialect-pairs">dialect-pairs</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag" href="#/tags/pairs">pairs</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-graph">dsl-graph</a><a class="tag sub" href="#/tags/dsl-sparql">dsl-sparql</a></span>

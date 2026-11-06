@@ -96,4 +96,4 @@ No experiments (§1: a survey). The authors' observations, and numbers they rest
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/promptopt-misc">promptopt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/promptopt">promptopt</a><a class="tag" href="#/tags/survey">survey</a></span>

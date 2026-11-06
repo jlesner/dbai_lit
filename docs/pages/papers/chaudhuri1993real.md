@@ -87,4 +87,4 @@ The results are stated through containment mappings, strengthening the set-seman
 ## On this site
 
 - **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [Verified query speedups](#/challenges/verified_query_speedup)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>

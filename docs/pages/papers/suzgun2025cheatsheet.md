@@ -19,7 +19,7 @@ Language models usually answer each question on its own and keep nothing from ea
 
 ## Background and terms
 
-**Terms to know:** [test-time training](#/glossary/test-time-training) (weight-updating methods the paper contrasts itself with, App. A.1) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [curriculum learning](#/glossary/curriculum-learning) (proposed for the order of test questions, §4.6).
+**Terms to know:** [test-time training](#/glossary/test-time-training) (weight-updating methods the paper contrasts itself with, App. A.1) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [curriculum learning](#/glossary/curriculum-learning) (proposed for the order of test questions, §4.6) · [online learning](#/glossary/online-learning) (the paper calls its setting "a typical setting in online learning", §2.1.1, and test-time learning "also referred to as online or incremental learning", App. A.1).
 
 **The paper's own terms:**
 - **Dynamic Cheatsheet (DC)**: an external, "non-parametric" memory (text outside the model's weights) that "evolves in tandem with the LLM's inference process" (§2). The authors used "cheatsheet" and "memory" interchangeably "during the initial phases of our experiments" and write the memory at step i as M_i (Fig. 13 caption).
@@ -29,9 +29,6 @@ Language models usually answer each question on its own and keep nothing from ea
 - **DC-RS (Retrieval & Synthesis)**: retrieve the most similar earlier questions with the model's own earlier answers, let the curator update the memory with them, then answer (Eqs. 3–5, §2.2).
 - **Baselines** (§2.3): **BL**, a plain prompt "with minimal instructions"; **DC-∅**, the DC answer prompt with an empty memory, called "a strong baseline"; **FH** (full history), all earlier questions and answers appended without curation; **DR** (dynamic retrieval), the most similar earlier pairs pasted in verbatim, without curation.
 - **Soft Match (SM)** and **Functionally Correct (FC)**: SM accepts a match to the reference up to punctuation or whitespace (multiple-choice sets); FC checks whether the output satisfies the task's constraints (Game of 24, Math Equation Balancer, AIME) (§3.3.1).
-
-**Missing glossary terms:**
-- **Online learning**: learning from inputs that arrive one at a time, updating after each. The paper calls its setting "a typical setting in online learning" (§2.1.1) and test-time learning "also referred to as online or incremental learning" (App. A.1).
 
 **Builds on:**
 - Feedback loops that correct a solution: Reflexion ([Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)")), Self-Refine, Meta-Prompting, TextGrad ([TextGrad](#/papers/yuksekgonul2024textgrad "TextGrad: Automatic 'Differentiation' via Text (2024)")). DC "differs by focusing explicitly on storing generalizable heuristics" reused across tasks (App. A.1).
@@ -96,4 +93,4 @@ The authors report accuracy in %:
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

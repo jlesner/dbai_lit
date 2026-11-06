@@ -11,7 +11,7 @@ Code: [hallucination-snowball](https://github.com/prabhjotschugh/hallucination-s
 
 - Injects wrong numbers into the first agent's output of a four-agent LangGraph pipeline (Researcher → Analyst → Writer → Reviewer) on FinanceBench questions and tracks at each stage whether a gpt-4o judge without ground truth and a numeric matcher against reference values still detect them (§3.1–3.2); a second experiment compares five LLMs as skeptics at the first stage (§3.3).
 - Then compares no check, one deterministic numeric gate at the end, and the same gate at every handoff, with refuted values annotated for the next agent (§3.4), and fits a four-state Markov model of escape probabilities to the per-gate detection rates (§4).
-- A check's position in a multi-agent pipeline, not only its strength: the authors' claim is that "When you verify matters more than whether you verify" (abstract), since checkable numbers turn into derived figures and prose that a later check can no longer match (§4).
+- A check's position in a multi-agent pipeline, not only its strength: the authors' claim is that "When you verify matters more than whether you verify" (abstract), since checkable numbers turn into derived figures and prose that a later check can no longer match (§1; §4; their own detection data say a final check still catches most surviving errors).
 
 ## In plain words
 
@@ -19,7 +19,7 @@ In a chain of LLM agents, each gets only the previous agent's text, with "no pro
 
 ## Background and terms
 
-**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reference-free evaluation](#/glossary/reference-free-evaluation) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [McNemar's exact test](#/glossary/mcnemars-exact-test)
+**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reference-free evaluation](#/glossary/reference-free-evaluation) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [first-order Markov process](#/glossary/markov-chain) (used undefined, §4) · [Cohen's h](#/glossary/cohens-h) (used undefined, App. A.3)
 
 **The paper's own terms:**
 - **Raw Fact, Derived, Narrative, Invisible** (S1 to S4): the four states, the form a hallucination takes at the Researcher, Analyst, Writer and Reviewer stages (abstract, Fig. 1).
@@ -29,10 +29,6 @@ In a chain of LLM agents, each gets only the previous agent's text, with "no pro
 - **Survival**, in three senses: undetected by both instruments in the final output (Experiment 1, §3.2); 100% minus a model's Stage 1 detection (Tab. 2); injected value still present in the final report (Experiment 3, Tab. 3, Fig. 3).
 - **Suppression-without-restoration**: the gate removes the wrong value but the next agent does not carry the annotated correction forward (§3.4).
 - **McNemar tests**: the paper prints their chi-squared statistics (App. A.2–A.3). **pp**: percentage points.
-
-**Missing glossary terms:**
-- **First-order Markov process**: a model of a sequence of states in which the next step depends only on the current state (general definition; used undefined, §4).
-- **Cohen's h**: an effect size for the difference between two proportions (general definition; used undefined, App. A.3).
 
 **Builds on** (none on this site):
 - Single-output hallucination detectors FActScore (Min et al., 2023), CoVe (Dhuliawala et al., 2024), VeriScore (Song et al., 2024) and SAFE (Wei et al., 2024), which check claims against a knowledge source, by self-verification or by search; the authors call the "finding a better detector" framing "fundamentally incomplete for sequential multi-agent systems" (§1, §2.1).
@@ -83,4 +79,5 @@ In a chain of LLM agents, each gets only the previous agent's text, with "no pro
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

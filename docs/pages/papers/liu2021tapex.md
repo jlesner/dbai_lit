@@ -21,7 +21,7 @@ The authors report new best results on all four table benchmarks they use (abstr
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [semantic parsing](#/glossary/semantic-parsing) · [masked language modeling (MLM)](#/glossary/masked-language-model) (the authors say earlier table pre-training often used variants of it, §1).
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [semantic parsing](#/glossary/semantic-parsing) · [masked language modeling (MLM)](#/glossary/masked-language-model) (the authors say earlier table pre-training often used variants of it, §1) · [denotation accuracy](#/glossary/denotation-accuracy) (it compares answers, not queries, §4 "Dataset and Evaluation").
 
 **The paper's own terms:**
 - **table pre-training**: further pre-training a language model so that it understands tables before it is fine-tuned on table tasks (§1).
@@ -35,9 +35,6 @@ The authors report new best results on all four table benchmarks they use (abstr
 - **vanilla and multi-task fine-tuning**: fine-tuning on the target task alone, or first on a related task and then on the target (§2.2).
 - **SQL template**: a query with placeholders for column names and values, e.g. `SELECT num1 WHERE text1 = val1` with a numeric column, a text column and one of its cell values (§3.2).
 - **SQL difficulty levels**: Easy, Medium, Hard and Extra Hard by the number of SQL elements (keywords, headers, cell values) in a query, cut at 6, 14 and 20 elements (App. C.1).
-
-**Missing glossary terms:**
-- **denotation accuracy**: the share of questions whose predicted answer(s) equal the gold answer(s); it compares answers, not queries (§4 "Dataset and Evaluation").
 
 **Builds on:**
 - BART, a pre-trained encoder-decoder language model, as backbone (Large configuration) (§1, §2.2).
@@ -94,4 +91,4 @@ All results are the authors', on the 5-million-pair setting unless they say othe
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a></span>

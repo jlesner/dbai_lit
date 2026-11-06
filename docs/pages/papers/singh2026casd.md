@@ -18,16 +18,13 @@ Search-based prompt optimizers for LLM agents edit the prompt, rerun the agent a
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [Distillation into compact models](#/glossary/distillation) (here: runs turned into a prompt) · [pass@k](#/glossary/passk)
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Pareto front](#/glossary/pareto-front) · [Distillation into compact models](#/glossary/distillation) (here: runs turned into a prompt) · [pass@k](#/glossary/passk) · [coding agent](#/glossary/coding-agent) (§2)
 
 **The paper's own terms:**
 - **rollout corpus**: logged runs (trajectories) of the initial prompt on a training set (§3.1).
 - **skill file**: the coding agent's markdown file of behavioral rules, used as the system prompt (§3.2).
 - **reflection scope**: whether the optimizer reasons over a small batch of trajectories or the whole corpus (abstract).
 - **limited-data regime**: all optimizers see only the same pool, GEPA's Pareto set "equal to train" (§5). **Head-to-head regime**: GEPA and SkillOpt also get "a separate held-out validation set" (§5).
-
-**Missing glossary terms:**
-- **coding agent**: an LLM tool loop that interleaves "code execution, file inspection, and editing" (§2).
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), "the strongest reflective variant": it evolves prompts, selecting on a Pareto front over a validation set (§2).
@@ -72,4 +69,4 @@ Search-based prompt optimizers for LLM agents edit the prompt, rerun the agent a
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

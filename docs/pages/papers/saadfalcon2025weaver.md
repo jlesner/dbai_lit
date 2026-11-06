@@ -18,7 +18,7 @@ When a language model answers a question many times, one answer is often right, 
 
 ## Background and terms
 
-**Terms to know:** [best-of-N sampling](#/glossary/best-of-n-sampling) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [pass@k](#/glossary/passk) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [Distillation into compact models](#/glossary/distillation) · [weak supervision](#/glossary/weak-supervision) (it fits a model in which the true label is hidden and the sources' votes are observed, §4.2.1) · [reward model](#/glossary/reward-model) ("a trained language model that assigns a scalar score to candidate responses based on how well they align with human preferences"; process reward models score the steps; App. C.1)
+**Terms to know:** [best-of-N sampling](#/glossary/best-of-n-sampling) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [pass@k](#/glossary/passk) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [Distillation into compact models](#/glossary/distillation) · [weak supervision](#/glossary/weak-supervision) (it fits a model in which the true label is hidden and the sources' votes are observed, §4.2.1) · [reward model](#/glossary/reward-model) ("a trained language model that assigns a scalar score to candidate responses based on how well they align with human preferences"; process reward models score the steps; App. C.1) · [conditional independence](#/glossary/conditional-independence) (two verifiers' votes are independent once the response's true correctness is known, §4.2.1) · [cross-encoder](#/glossary/cross-encoder) (§6)
 
 **The paper's own terms:**
 - **verifier**: scores a query–response pair; here a reward model (a score in [0, 1]) or an LM judge (a 0/1 verdict) (§3).
@@ -28,10 +28,6 @@ When a language model answers a question many times, one answer is often right, 
 - **naive ensemble**: picks the response with the highest average verifier score; a **weighted ensemble** gives verifiers their own weights, e.g. logistic regression fit on labels; versions fit on all test labels are "oracle" methods (§4.1).
 - **dev set**: a labeled subset of the test set, "comprising 1% of the test set (e.g. 5 to 10 query-answer pairs)" (§3).
 - **accuracy parameters**: a verifier's true positive and true negative rates (App. B.1).
-
-**Missing glossary terms:**
-- **conditional independence**: two verifiers' votes are independent once the response's true correctness is known (§4.2.1).
-- **cross-encoder**: reads query and response concatenated and outputs one score (§6).
 
 **Builds on:**
 - Weak supervision (Ratner et al.; Snorkel), whose parameter estimation the authors say was "first introduced in" Snorkel (§2, §4.2.1); not listed here.
@@ -87,4 +83,4 @@ When a language model answers a question many times, one answer is often right, 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a></span>

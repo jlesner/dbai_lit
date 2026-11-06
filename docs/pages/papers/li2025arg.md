@@ -77,4 +77,4 @@ Implementation: 8.4k lines of Java and about 1k of C++ (§IV, PDF p. 6).
 ## On this site
 
 - **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/rewrite-eval">rewrite-eval</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/rewrite-eval">rewrite-eval</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>

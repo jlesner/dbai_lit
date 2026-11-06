@@ -10,7 +10,7 @@ Code: [langProBe](https://github.com/Shangyint/langProBe)
 ## In brief
 
 - A benchmark of language programs: DSPy programs from a single call and chain of thought to RAG, multi-hop retrieval, ReAct agents and generator–critic–ranker or –fuser pipelines (§3.2), crossed with four prompt optimizers (BootstrapFewShot, BootstrapFewShotRandomSearch, MIPROv2, and the authors' RuleInfer, §3.3) and six OpenAI and Llama models (§4), on 16 tasks in six categories, among them AppWorld, HumanEval, MATH, GSM8K, classification and question answering (§3.1; Tab. 1).
-- Scores each combination with its task's metric, mostly answer matching, unit tests or a final-state check (App. A), and plots quality against inference cost as Pareto curves (§5); ranks optimizers by how often they come within 3% of a program's best score, and gives their relative gains over the unoptimized program for the Llama runs (§7; Figs. 5–6).
+- Scores each combination with its task's metric, mostly answer matching, unit tests or a final-state check (App. A), and plots quality against inference cost as Pareto curves (§5); for the Llama runs only, ranks optimizers by how often they come within 3% of a program's best score and gives their relative gains over the unoptimized program (§7; Figs. 5–6).
 - A released grid of prompt-optimizer gains on mostly checked metrics, as an audit target: the authors report results for "over 2000 combinations" (abstract; §4), gains that vary by model, task and program, with optimizers sometimes lowering the score, which they attribute to overfitting the validation set (§7.2), and gpt-4o-mini with programs and optimizers beating gpt-4o's raw calls at lower cost on aggregate (<a class="tag" href="#/tags/compact">compact</a>; §5, Fig. 2).
 
 ## In plain words
@@ -85,4 +85,4 @@ All are the authors' claims.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/promptopt-misc">promptopt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/promptopt">promptopt</a></span>

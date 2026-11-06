@@ -80,4 +80,4 @@ Baselines (§6.1 "Baseline Methods", PDF p. 10): TopdownPostgre and TopdownCalci
 ## On this site
 
 - **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Verified query speedups](#/challenges/verified_query_speedup)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/pairgen-apply">pairgen-apply</a><a class="tag sub" href="#/tags/qo-learned">qo-learned</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/pairgen-apply">pairgen-apply</a><a class="tag sub" href="#/tags/qo-learned">qo-learned</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a></span>

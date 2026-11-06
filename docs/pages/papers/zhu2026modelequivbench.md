@@ -18,12 +18,7 @@ LLMs increasingly turn word problems into optimization models: variables, constr
 
 ## Background and terms
 
-**Terms to know:** [certificate](#/glossary/certificate) · [soundness and completeness](#/glossary/soundness-and-completeness) · [bijection](#/glossary/bijection) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [multiple testing](#/glossary/multiple-testing).
-
-**Missing glossary terms:**
-- **Optimization model (LP, MILP)**: continuous, integer or binary variables, linear constraints and a linear objective to minimize or maximize; a linear program (LP) when all variables are continuous, a mixed-integer one (MILP) otherwise (general definition; the paper's form: App. A.1, Def. A.1). Its **feasible set** is the points satisfying every constraint and domain; its **optimizer set** the feasible points reaching the best objective value, the **optimal value** (Def. A.1).
-- **Farkas multipliers**: nonnegative weights on one system's inequalities (any weights on its equalities) whose weighted sum is exactly a target constraint's left side, with a combined bound no larger than the target's; then every point of the system satisfies the target (App. C.1, Prop. C.1). One set per constraint of the other model proves containment (Cor. C.2).
-- **Weak duality**: for a continuous rational LP, a feasible point and a feasible point of its dual (a second LP whose values bound the first one's optimum; general definition) with equal objective values prove the exact optimum (App. E.2, Prop. E.4).
+**Terms to know:** [certificate](#/glossary/certificate) · [soundness and completeness](#/glossary/soundness-and-completeness) · [bijection](#/glossary/bijection) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [multiple testing](#/glossary/multiple-testing) · [linear programming (LP and MILP)](#/glossary/linear-programming-lp-and-milp) (the paper's optimization models with continuous, integer or binary variables; their form, feasible set, optimizer set and optimal value: App. A.1, Def. A.1) · [weak duality](#/glossary/linear-programming-lp-and-milp) (for a continuous rational LP, equal primal and dual objective values prove the exact optimum: App. E.2, Prop. E.4) · [Farkas multipliers](#/glossary/farkas-lemma) (App. C.1, Prop. C.1; one set per constraint of the other model proves containment, Cor. C.2).
 
 **The paper's own terms:**
 - **Semantic profile E0–E6** (§1; Tab. 1), for a candidate (LLM-generated) and a reference (ground-truth) model: E0, the code runs and exports an LP or MPS file (standard text formats for optimization models) that reads into a valid exact model; E1, an admissible map from candidate to reference variables is found and checked; E2, the feasible-set relation under that map in the same space (equal, strict relaxation, strict restriction, incomparable, unknown); E3, the same question through a projection when the candidate has extra auxiliary variables; E4, both objectives rank feasible points alike; E5, equal optimal values; E6, the map pairs the optimizer sets one-to-one. They "form a profile, not a ladder" (§1).
@@ -83,4 +78,5 @@ Authors' claims, for GPT-5.4, Claude Sonnet 4.6 and Qwen3.5-397B-A17B in that or
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/prove-general">prove-general</a></span>
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a></span>

@@ -19,7 +19,7 @@ Software-engineering researchers wrap LLMs in elaborate tools (agents, retrieval
 
 ## Background and terms
 
-**Terms to know:** [meta-prompt](#/glossary/meta-prompt) · [pass@k](#/glossary/passk) · [fuzzing](#/glossary/fuzzing) · [SQL dialect](#/glossary/sql-dialect) · [benchmark leakage](#/glossary/data-contamination) (its effect here is unknown, §V-D)
+**Terms to know:** [meta-prompt](#/glossary/meta-prompt) · [pass@k](#/glossary/passk) · [fuzzing](#/glossary/fuzzing) · [SQL dialect](#/glossary/sql-dialect) · [benchmark leakage](#/glossary/data-contamination) (its effect here is unknown, §V-D) · [threats to validity](#/glossary/threats-to-validity) (§V-D)
 
 **The paper's own terms:**
 - **single-prompt (the baseline)**: one automatically generated, few-shot prompt sent in a single call to a newer model; it "involves no iterative refinement, requires no execution loops, and lacks access to external tools or infrastructure" (§I).
@@ -28,9 +28,6 @@ Software-engineering researchers wrap LLMs in elaborate tools (agents, retrieval
 - **outcome labels**: + when the better of the two prompts "fully outperformed" the paper's technique; ± (mixed) when it won only on some datasets or metrics; − when it "consistently underperformed" (§V-A, Tab. II).
 - **task and strategy categories**: each paper gets one or more task labels (code generation, bug finding, repair, impact analysis, requirement formalization, log analysis, test generation, verification) and strategy labels, coded by the authors (§IV-E). The strategies: Knowledge Grounding (injecting project context, API relations, dependency or static-analysis facts), Feedback and Validation (using execution results, tests or compiler messages as feedback), Structured Reasoning (explicit stages, agents or subtasks), Search and Selection (generating candidates and ranking or filtering them), Input/Output Control (constraining or decoding the model's input or output), Domain-Specific Processing (specialised rules, parsers or procedures for one domain), Model Adaptation (training or tuning a model) (§IV-E).
 - **half-life**: the authors' word for how long a technique stays useful before newer models make it obsolete (§I, §II).
-
-**Missing glossary terms:**
-- **threats to validity**: the software-engineering convention of listing, by type, reasons a study's findings might not hold (§V-D).
 
 **Builds on:**
 - Sutton's essay *The Bitter Lesson*, which the authors read as a warning that hand-built workarounds risk being overtaken by scaling (§I).
@@ -81,4 +78,4 @@ Software-engineering researchers wrap LLMs in elaborate tools (agents, retrieval
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [SQL dialect translation](#/challenges/dialect_translation) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/study">study</a></span>

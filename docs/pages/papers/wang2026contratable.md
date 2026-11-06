@@ -19,17 +19,12 @@ When an LLM answers questions over tables of familiar real-world facts, it is un
 
 ## Background and terms
 
-**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [relational algebra](#/glossary/relational-algebra) · [text-to-SQL](#/glossary/text-to-sql)
+**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [relational algebra](#/glossary/relational-algebra) · [text-to-SQL](#/glossary/text-to-sql) · [tabular question answering (TQA)](#/glossary/tabular-question-answering-tqa) (table-QA; prior work evaluates capabilities such as cell lookup, fact verification and numerical operations, §2) · [knowledge conflict](#/glossary/knowledge-conflict) (models "may prefer memorized answers" then, §2) · [knowledge editing](#/glossary/knowledge-editing) (tested with counterfactual facts, §1, §2)
 
 **The paper's own terms:**
 - **original / counterfactual database**: two aligned versions with the same schemas, identifiers and relationships; the counterfactual one replaces selected facts with "valid conflicting values" (§3.2).
 - **counterfactual gap**: the accuracy drop from the original to the counterfactual database (§4.3).
 - **Level 1 / 2 / 3**: single-table lookup (one row, like a selection then projection); multi-table lookup (joins to a directly named entity, no aggregation); multi-table temporal reasoning (joins plus filtering, ordering, aggregation, comparison or date-interval reasoning) (§3.1, Tab. 1).
-
-**Missing glossary terms:**
-- **table question answering (table-QA)**: answering natural-language questions from given tables; prior work evaluates capabilities such as cell lookup, fact verification and numerical operations (§2).
-- **knowledge conflict**: input evidence contradicts what a model stores in its parameters; models "may prefer memorized answers" then (§2).
-- **knowledge editing**: research that changes facts stored in a model, tested with counterfactual facts (§1, §2).
 
 **Builds on** (none on this site):
 - Knowledge-editing benchmarks, "the closest methodological precedent": ROME's CounterFact, CounterFact+, MQuAKE, RippleEdits (§2); the idea moves "from isolated facts to relational databases" (§1).
@@ -55,9 +50,9 @@ When an LLM answers questions over tables of familiar real-world facts, it is un
 ## Results
 
 GPT-4o-judged accuracy (Tab. 2):
-- **Gap grows with level:** Level 1 "usually has the smallest counterfactual gap"; GPT-5.4-Mini's gap is 0, 10.13 and 18.92 points at Levels 1–3; Qwen3.5-9B and Gemma-4-E2B-it have Level 2 gaps of 20.25 and 31.65 points (§4.3).
+- **Gap grows with level****:** Level 1 "usually has the smallest counterfactual gap"; GPT-5.4-Mini's gap is 0, 10.13 and 18.92 points at Levels 1–3; Qwen3.5-9B and Gemma-4-E2B-it have Level 2 gaps of 20.25 and 31.65 points (§4.3).
 - **Explanations:** in changed predictions, "in many cases" the model justifies its answer with real-world knowledge rather than the table, "especially clear in Level 3" (manual inspection, §4.3).
-- **Stronger models help, gap remains:** best on Level 3 is Gemini-3.1-Flash-Lite, 94.59% original against 89.19% counterfactual; within the Qwen and Gemma families the larger model is better on both Level 3 versions (§4.3).
+- **Stronger models help, gap remains****:** best on Level 3 is Gemini-3.1-Flash-Lite, 94.59% original against 89.19% counterfactual; within the Qwen and Gemma families the larger model is better on both Level 3 versions (§4.3).
 - **Instruction tuning:** Llama-3.1-8B-Instruct reaches 68.22% overall original accuracy against 5.14% for the base model, but counterfactual accuracy is "still much lower" (43.46%) (§4.3, Tab. 2).
 
 ## Limits the authors state
@@ -76,4 +71,4 @@ GPT-4o-judged accuracy (Tab. 2):
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a></span>

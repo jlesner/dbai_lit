@@ -19,7 +19,7 @@ LLMs help with parts of research, but "getting LLM pipelines all the way to maki
 
 ## Background and terms
 
-**Terms to know:** [Distillation into compact models](#/glossary/distillation) · [reinforcement learning](#/glossary/reinforcement-learning) · [evolutionary search](#/glossary/evolutionary-search)
+**Terms to know:** [Distillation into compact models](#/glossary/distillation) · [reinforcement learning](#/glossary/reinforcement-learning) · [evolutionary search](#/glossary/evolutionary-search) · [rank of a matrix-multiplication tensor](#/glossary/tensor-rank-matrix-multiplication) (such algorithms can be applied recursively to larger matrices; §3.1 and its footnote) · [code superoptimization](#/glossary/superoptimization) (here iteratively improving a program "using execution feedback", §5 "Superoptimization and algorithm discovery")
 
 **The paper's own terms:**
 - **`evaluate` (the function `h`)**: user code mapping a candidate solution to scalar scores, which are maximized (§2.1).
@@ -27,10 +27,6 @@ LLMs help with parts of research, but "getting LLM pipelines all the way to maki
 - **program database**: the store of evaluated programs and scores from which prompts are built, designed to balance improving the best programs against keeping diversity (§2.5).
 - **meta prompt evolution**: "instructions and context suggested by the LLM itself in an additional prompt-generation step, co-evolved in a separate database analogous to the solution programs" (§2.2).
 - **evaluation cascade**: test stages of increasing difficulty; a program goes on only if it did well enough in all earlier ones (§2.4).
-
-**Missing glossary terms:**
-- **rank of a matrix-multiplication tensor**: the number of simple ("rank-one") terms in a decomposition that encodes a multiplication algorithm; it equals the number of scalar multiplications needed, and such algorithms can be applied recursively to larger matrices (§3.1 and its footnote).
-- **code superoptimization**: iteratively improving a program "using execution feedback" (§5 "Superoptimization and algorithm discovery").
 
 **Builds on:**
 - FunSearch (Romera-Paredes et al., 2023; not listed here), the authors' earlier LLM-guided evolution system, which they say AlphaEvolve extends: whole files instead of one function, any language instead of Python, several scores instead of one, frontier LLMs with rich context instead of relatively small code-only models; Tab. 1 lists these as "typical behaviours" (§1, Tab. 1, §5).
@@ -86,4 +82,4 @@ As the authors report:
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a></span>

@@ -2,7 +2,7 @@
 
 > Given two programs in a DSL, find an input (a document, a fact set, a graph, a string) on which their results differ, small enough for a person or an LLM to read, across the family and not only in SQL.
 
-<p class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/general">general</a></p>
+<p class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/dsl">dsl</a></p>
 
 The SQL instance: [Minimal counterexamples](#/challenges/minimal_counterexamples).
 
@@ -13,13 +13,14 @@ The challenge: a search for distinguishing inputs that works across DSLs, with L
 
 ## What's known
 How such inputs are found differs by DSL:
-- **XPath:** on a navigational fragment a solver decides equivalence and can "generate an example (or counter-example) XML tree" ([XML Static Analyzer User Manual](#/papers/geneves2008analyzer "XML Static Analyzer User Manual (2008)") §4); outside it a document must be searched for.
+- **[XPath](#/glossary/xpath):** on a navigational fragment a solver decides equivalence and can "generate an example (or counter-example) [XML](#/glossary/xml) tree" ([XML Static Analyzer User Manual](#/papers/geneves2008analyzer "XML Static Analyzer User Manual (2008)") §4); outside it a document must be searched for.
 - **[Datalog](#/glossary/datalog):** DatalogBench grades programs on held-out variants of the facts and validates that oracle by mutation ([DatalogBench](#/papers/li2026datalogbench "DatalogBench: Evaluating Large Language Models on Text-to-Datalog Synthesis (2026)") §4.3), which measures how often the variants separate a wrong program from the right one.
 - **Regular expressions:** an automaton gives strings on which a guess and the target differ; fed to an LLM learner as character-class paths, they helped more than single strings ([Counterexample Guided Learning in…](#/papers/liu2026cegl "Counterexample Guided Learning in the Large using Reasoning Agents (2026)") §4, §5.5).
 - **Cypher:** Graphiti translates Cypher into SQL, and a bounded SQL checker returns a counterexample holding the same data as a relational database and as a graph ([Graphiti](#/papers/he2025graphiti "Graphiti: Bridging Graph and Relational Database Queries (2025)") §6.1, App. D); in its time limit it missed some wrong GPT translations (§6.1).
 - **SQL:** the most developed case ([Minimal counterexamples](#/challenges/minimal_counterexamples), [Query equivalence: prove or refute](#/challenges/query_equivalence)).
+- **Beyond DSLs, an LLM proposer:** ExPairT asks an LLM for an input on which two candidate programs differ and keeps it only if running both confirms it ([ExPairT-LLM](#/papers/yuviler2025expairt "ExPairT-LLM: Exact Learning for LLM Code Selection by Pairwise Queries (2026)") § "Exact Learning by Pairwise Queries to LLMs", "Pseudocode"); its authors measure how often the LLM returns one for a correct and an incorrect program (§ "Guarantees"), with no comparison to random or grammar-based generators (our reading).
 
-Still open (ours): one search, guided by an LLM and judged by each DSL's engine, that works across the family and keeps its inputs small; each method above rests on one DSL's solver, checker or benchmark.
+Still open (ours): one search, guided by an LLM and judged by each DSL's engine, that works across the family and keeps its inputs small; each DSL method above rests on one DSL's solver, checker or benchmark.
 
 ## Why it matters
 - **Every evidence-only check gets stronger** with inputs that separate more wrong programs ([Weak checkers get exploited](#/challenges/weak_checker_exploitation)).

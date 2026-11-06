@@ -19,7 +19,7 @@ Database engines such as MySQL, PostgreSQL and ClickHouse each accept their own 
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) (the paper defines its own two metrics, below) · [query equivalence](#/glossary/query-equivalence) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) (the paper defines its own two metrics, below) · [query equivalence](#/glossary/query-equivalence) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [code coverage](#/glossary/code-coverage) (PARROT keeps a query only if it raises the code coverage of a SQL parser, §3.2 Step 2)
 
 **The paper's own terms:**
 - **Cross-system SQL translation (SQL-to-SQL)**: converting a query written for a source database system into one that follows the target system's syntax and keeps the original meaning, so that it runs with equivalent functionality on the target (§2). The paper also calls it dialect translation.
@@ -30,9 +30,6 @@ Database engines such as MySQL, PostgreSQL and ClickHouse each accept their own 
 - **PARROT, PARROT-Diverse, PARROT-Simple**: the main set (598 pairs, 8 dialects); a 28,003-pair set across 22 dialects "for extensive syntax testing"; and 5,306 pairs built from the test cases of rule-based translation tools, which are "typically SQL snippets dedicated to a single translation type" (abstract, §4, Tab. 1). §1 instead describes 28,003 statements as an "augmented training pool" and 5,306 as a "specialized challenge set", and names Diverse and Simple separately as "two lighter benchmark variants" (§1).
 - **Translation types**: seven kinds of dialect difference (App. A, Tab. 5): syntax rules, keywords, data types, operators and built-in functions, stored procedures (programs stored in the database), UDFs (user-defined functions), and other.
 - **Jim Gray's benchmark design principles**: relevance, scalability, simplicity and portability, the headings under which §4 describes PARROT.
-
-**Missing glossary terms:**
-- **Code coverage**: the share of a program's code that a set of inputs exercises. PARROT keeps a query only if it raises the code coverage of a SQL parser (§3.2 Step 2).
 
 **Builds on:**
 - The text-to-SQL benchmarks Spider ([Spider](#/papers/yu2018spider "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task (2018)")), BIRD ([BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)")) and WikiSQL, which the authors say target one dialect, mostly SQLite, and lack dialect annotations (§6); they are also query sources (§3.1, App. A Tab. 6).
@@ -88,4 +85,4 @@ Evaluation runs translations on the target engines and reports Acc_EX and Acc_RE
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/dialect-pairs">dialect-pairs</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dialect">dialect</a><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/pairs">pairs</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

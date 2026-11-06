@@ -85,4 +85,4 @@ Database systems rewrite SQL queries into faster forms with the same answer, usi
 ## On this site
 
 - **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Discovering new rewrite rules](#/challenges/rewrite_rule_discovery) · [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Verified query speedups](#/challenges/verified_query_speedup) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rewrite">rewrite</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

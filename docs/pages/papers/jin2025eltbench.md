@@ -21,7 +21,7 @@ They build ELT-Bench: 100 pipelines, each in a prepared sandbox with real tools,
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [pass@k](#/glossary/passk) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [agent harness](#/glossary/agent-harness) (the paper says "code agent framework")
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [pass@k](#/glossary/passk) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [agent harness](#/glossary/agent-harness) (the paper says "code agent framework") · [ELT pipeline](#/glossary/elt-pipeline) (§1) · [data warehouse](#/glossary/data-warehouse) (the paper uses the cloud warehouse Snowflake, §2.3)
 
 **The paper's own terms:**
 - **Data extraction & loading stage (Stage 1)**: copying every source table into the warehouse with the data-integration tool Airbyte, configured by writing Terraform code (a configuration-as-code language) and started through Airbyte's API (§2.5).
@@ -31,10 +31,6 @@ They build ELT-Bench: 100 pipelines, each in a prepared sandbox with real tools,
 - **Derived, aggregated, categorical and ranked columns**: the four kinds of data-model columns, by transformation: copies or simple operations; SUM, AVG and similar over a fact table (a table of recorded events, such as orders); 0/1 or category flags from thresholds or conditions; and a value picked by a ranking function such as `RANK` (§2.4 "Step 4").
 - **SRDEL** (Success Rate for Data Extraction & Loading): the share of pipelines whose every source table arrives in the warehouse; checked by comparing each table's row count with the original data's (§3.1).
 - **SRDT** (Success Rate for Data Transformation): the share of all data models, across pipelines, that are built correctly (§3.1).
-
-**Missing glossary terms:**
-- **ELT pipeline**: Extract-Load-Transform: data is first loaded raw into a data warehouse and transformed there with SQL; in the older ETL order it is transformed before loading (§1).
-- **Data warehouse**: a central database for analytics that collects data from many sources; the paper uses the cloud warehouse Snowflake (§2.3).
 
 **Builds on:**
 - Spider 2.0 ([Spider 2.0](#/papers/lei2024spider2 "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows (2025)")), an enterprise text-to-SQL agent benchmark, and Spider2-V, a benchmark of agents using data tools: the two benchmarks Tab. 1 compares against; ELT-Bench follows Spider 2.0 in counting SQL tokens by whitespace and in allowing extra columns (§2.2, §3.1).
@@ -94,4 +90,4 @@ None stated.
 ## On this site
 
 - **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/harness">harness</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

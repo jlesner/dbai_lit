@@ -19,7 +19,7 @@ Proving software correct in a proof assistant, a tool that machine-checks every 
 
 ## Background and terms
 
-**Terms to know:** [proof assistant](#/glossary/proof-assistant) (the paper also says "interactive theorem prover (ITP)", §I) · [tactic](#/glossary/tactic).
+**Terms to know:** [proof assistant](#/glossary/proof-assistant) (the paper also says "interactive theorem prover (ITP)", §I) · [tactic](#/glossary/tactic) · [separation logic](#/glossary/separation-logic) (§II; Iris is a Coq framework built on it for concurrent programs with higher-order state, §I, §II) · [ghost resources](#/glossary/ghost-resources) (§I).
 
 **The paper's own terms:**
 - **Code agent**: "an off-the-shelf coding tool built for everyday software engineering" (§I), here Claude Code, run unattended via `claude -p`.
@@ -31,10 +31,6 @@ Proving software correct in a proof assistant, a tool that machine-checks every 
 - **`Qed` / `Admitted`**: Coq's endings for a finished proof and for a skipped, assumed one (§III-C, §VI-A).
 - **Divergent tactic**: a proof step that neither succeeds nor fails but runs forever (§V-A, "Divergent-tactic check").
 - **Retry, first-attempt success, model time**: a retry is one repair after a rejection; first-attempt success is zero retries; model time is "the wall-clock time the LLM spends reasoning and generating the proof" (§VI-A).
-
-**Missing glossary terms:**
-- **Separation logic**: a logic for program proofs whose central idea is "reasoning about disjoint regions of memory independently", which makes pointer-heavy code tractable (§II). Iris is a Coq framework built on it for concurrent programs with higher-order state (§I, §II).
-- **Ghost resources**: "auxiliary, proof-only bookkeeping, invisible to the running program, that tracks how shared state is allowed to evolve" (§I).
 
 **Builds on:**
 - Rango ([Rango](#/papers/thompson2024rango "Rango: Adaptive Retrieval-Augmented Proving for Automated Software Verification (2025)")), "retrieval-augmented step prediction" in Coq (§I), whose CoqStoq benchmark supplies reglang (§VI-D).
@@ -90,4 +86,4 @@ Proving software correct in a proof assistant, a tool that machine-checks every 
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/prove-general">prove-general</a><a class="tag sub" href="#/tags/prove-itp">prove-itp</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a></span>

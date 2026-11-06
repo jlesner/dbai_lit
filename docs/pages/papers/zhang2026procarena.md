@@ -19,7 +19,7 @@ Databases can store PL/SQL programs (procedural extensions of SQL) that wrap SQL
 
 ## Background and terms
 
-**Terms to know:** [stored procedure and trigger](#/glossary/stored-procedure-and-trigger) · [SQL dialect](#/glossary/sql-dialect) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) (this paper's version below)
+**Terms to know:** [stored procedure and trigger](#/glossary/stored-procedure-and-trigger) · [SQL dialect](#/glossary/sql-dialect) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) (this paper's version below) · [cyclomatic complexity](#/glossary/cyclomatic-complexity) (Tab. 3)
 
 **The paper's own terms:**
 - **PL/SQL**: "procedural extensions of SQL, including Oracle PL/SQL [1], PostgreSQL PL/pgSQL [2], and related dialects" (§1, footnote 1). ProcArena focuses on stored procedures (SPs) (§6).
@@ -32,9 +32,6 @@ Databases can store PL/SQL programs (procedural extensions of SQL) that wrap SQL
 - **Knowledge Injection** (called Knowledge Integration in the abstract, §1's contributions, Fig. 2 and §7): rewrites that need domain, logical or commonsense knowledge to read. **Requirement Perturbation**: Information Omission (drop a necessary but recoverable detail) and Contradiction Injection (a conflict inside the requirement, or with the database) (§3.3.1).
 - **Retention**: Interactive EX divided by Direct EX (§5.4).
 - **Acceleration and work** (B2): gold-over-candidate ratios of median wall-clock time and of "a deterministic work counter" (database operations, §5.3); 1.0 matches the gold procedure, larger is better, after a semantic-equivalence gate (§5.1).
-
-**Missing glossary terms:**
-- **Cyclomatic complexity**: a count of the independent paths through a program's control flow, growing with each branch and loop (Tab. 3).
 
 **Builds on:**
 - PLForge (ref. [50], not listed here), to the authors' knowledge "the first study specifically targeting NL-to-PL/SQL" (§6): its Hard and WeBridge datasets, on databases derived from Spider ([Spider](#/papers/yu2018spider "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task (2018)"), a cross-domain text-to-SQL benchmark), are a seed source (§3.1), and EX adapts "PLForge's execution-match principle" (§5.1).
@@ -83,4 +80,4 @@ Databases can store PL/SQL programs (procedural extensions of SQL) that wrap SQL
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-misc">nl2sql-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

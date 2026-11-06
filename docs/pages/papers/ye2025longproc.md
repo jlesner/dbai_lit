@@ -37,7 +37,7 @@ They report that GPT-4o's average score falls from 94.8 on the shortest outputs 
 **Builds on:**
 - Its tasks adapt earlier datasets: web pages from Arborist (Li et al., 2024c; web pages paired with program-synthesis tasks, App. B.1), SPoC (Kulal et al., 2019; pseudocode with C++ unit tests), Countdown problems (reach a target number by arithmetic) from Gandhi et al. (2024), and travel planning from Natural Plan (Zheng et al., 2024, a planning benchmark) (§3.1).
 - The long-context benchmarks it compares itself with (Tab. 1, §2): NIAH (Kamradt, 2023), RULER (Hsieh et al., 2024; a recall benchmark of the NIAH kind), HELMET (Yen et al., 2025), and long-output benchmarks such as LongGenBench and LongWriter.
-- The R1-distilled models of DeepSeek-R1 (Guo et al., 2025; [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")) (§4).
+- The R1-distilled models of DeepSeek-R1 (Guo et al., 2025; [DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")) (§4).
 
 ## Problem and setting
 
@@ -92,4 +92,4 @@ They report that GPT-4o's average score falls from 94.8 on the shortest outputs 
 ## On this site
 
 - **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/longctx">longctx</a><a class="tag" href="#/tags/nl">nl</a></span>

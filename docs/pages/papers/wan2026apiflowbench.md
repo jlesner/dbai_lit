@@ -11,7 +11,7 @@ Code: [APIFlow-Bench](https://github.com/postmanlabs/APIFlow-Bench)
 
 - A benchmark of long, dependent REST-API workflows in procedurally generated mock worlds, graded deterministically on both the backend state (a mock-minted canary traced through the call path) and a typed answer card (abstract; §3; §5).
 - Validates its generated graders with a self-test triad that uses no LLM, an oracle solvability gate and golden replay; an adversarial audit then found grader exploits that this automated validation had missed (§1; §4; §5, App. G). A panel of frontier and open-weight models runs under Inspect AI's stock `react` loop (§6).
-- Tests the pⁿ arithmetic of long jobs directly: it reports pass rates on 20-subtask chains 33 percentage points above the product of the subtask rates (abstract; §8.5). The authors attribute the gap partly to chain grading, which checks the final subtask plus dependency-critical earlier checks, and partly to correlated competence (§8.5). Most failures on the clean slice reached the correct state and failed only at final delivery (§8.3).
+- Compares its 20-subtask chains with the pⁿ arithmetic of long jobs: pooled over the nine full-length worlds outside the two screened families, it reports chain pass rates 33 percentage points above the product of the subtask rates (abstract; §8.5). The authors attribute the gap partly to chain grading, which checks the final subtask plus dependency-critical earlier checks, and partly to correlated competence (§8.5; §9). Most failures on the clean slice passed every state check and failed only the answer card (§8.3).
 
 ## In plain words
 
@@ -78,4 +78,5 @@ How do agents fail on long, dependent REST-API workflows, and can a generated be
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a></span>

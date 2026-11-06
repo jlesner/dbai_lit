@@ -21,7 +21,7 @@ Against GEPA, a prompt optimizer that only edits instruction text here, across s
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) (what GEPA does) · [BM25](#/glossary/bm25) (the HotpotQA chain has two BM25 retrieval nodes, §4.1) · [exact match](#/glossary/exact-match) (EM; HotpotQA's optimization metric and CTIBench-RCM's score, §4.1); for the rest, none in the glossary yet.
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) (what GEPA does) · [BM25](#/glossary/bm25) (the HotpotQA chain has two BM25 retrieval nodes, §4.1) · [exact match](#/glossary/exact-match) (EM; HotpotQA's optimization metric and CTIBench-RCM's score, §4.1) · [CVE and CWE](#/glossary/vulnerability-records-cve-nvd-cwe-cvss-epss) (CTIBench-RCM asks for the CWE ID behind a CVE description, §4.1); for the rest, none in the glossary yet.
 
 **The paper's own terms:**
 - **pipeline / chain**: a multi-step LLM workflow, written as a LangGraph graph (LangGraph: a library that runs a pipeline as a graph of steps sharing a state) whose nodes are LLM calls or code steps (§1, App. A.2).
@@ -32,9 +32,6 @@ Against GEPA, a prompt optimizer that only edits instruction text here, across s
 - **step attribution**: classifying each failure by pipeline step and as "prompt-addressable or structural" (§3.1), first with deterministic heuristics, then with LLM analysis (App. A.3).
 - **escalation**: moving from prompt edits to chain parameters or structure (§3.2).
 - **Best-of-*N*** (in the paper's jailbreaking sense): an attack succeeds if any one of *N* candidate prompts succeeds (§1, §5). The glossary's best-of-N sampling (pick the top-scored of N answers) is a different use.
-
-**Missing glossary terms:**
-- **CVE / CWE**: a CVE is a published description of one software vulnerability; a CWE is a category of weakness (e.g. a buffer overflow type). CTIBench-RCM asks for the CWE ID behind a CVE description (§4.1).
 
 **Builds on:**
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")): "FAPO builds on GEPA's evaluation setup but changes the optimizer" (§5); both start from GEPA's pipelines, prompts and splits (§4.2).
@@ -89,4 +86,4 @@ Against GEPA, a prompt optimizer that only edits instruction text here, across s
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

@@ -19,10 +19,7 @@ Pulling one kind of fact out of thousands of pages of one website is the job of 
 
 ## Background and terms
 
-**Terms to know:** [F1 score](#/glossary/f1-score) (the paper's precision, recall and macro-F1, the mean over cases, §5.1) · [self-correction](#/glossary/self-correction) (the retries after a failed XPath) · [agent harness](#/glossary/agent-harness) · [DOM tree](#/glossary/dom-tree) · [wrapper](#/glossary/wrapper-web-data-extraction) (the paper's gloss for learned wrappers: "a DOM-specific parser that can extract content", §2). In the glossary's terms, AutoScraper's generation loop is a small agent harness around a fixed LLM (our reading).
-
-**Missing glossary terms:**
-- **XPath**: a query language for picking nodes (elements, attributes, text) out of an HTML or XML document by their path in its tree (general definition; the paper only links Wikipedia, §4.1).
+**Terms to know:** [F1 score](#/glossary/f1-score) (the paper's precision, recall and macro-F1, the mean over cases, §5.1) · [self-correction](#/glossary/self-correction) (the retries after a failed XPath) · [agent harness](#/glossary/agent-harness) · [DOM tree](#/glossary/dom-tree) · [wrapper](#/glossary/wrapper-web-data-extraction) (the paper's gloss for learned wrappers: "a DOM-specific parser that can extract content", §2) · [XPath](#/glossary/xpath) (the paper only links Wikipedia, §4.1). In the glossary's terms, AutoScraper's generation loop is a small agent harness around a fixed LLM (our reading).
 
 **The paper's own terms:**
 - **Scraper generation task**: given pages from one website, each describing a subject entity, and a target attribute, produce an executable "rule/action sequence" that extracts the attribute from all of them (§3.1).
@@ -85,4 +82,4 @@ The question: can an LLM write, from a few pages, a scraper that extracts one at
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/dsl-path">dsl-path</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a><a class="tag sub" href="#/tags/nl2dsl-select">nl2dsl-select</a></span>

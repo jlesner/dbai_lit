@@ -19,7 +19,7 @@ Benchmarks for LLM theorem provers in Lean, a proof assistant, are often trusted
 
 ## Background and terms
 
-**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [autoformalization](#/glossary/autoformalization) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [reward hacking](#/glossary/reward-hacking) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [F1 score](#/glossary/f1-score)
+**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [autoformalization](#/glossary/autoformalization) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [reward hacking](#/glossary/reward-hacking) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [F1 score](#/glossary/f1-score) · [trusted computing base](#/glossary/trusted-computing-base) (here the kernel, widened by `native_decide` to the compiler; §3.2)
 
 **Lean terms** (as the paper uses them):
 - **Kernel, trust boundary**: the Lean kernel "provides mathematical certainty that the proof artifact establishes the formal statement"; everything before and after it "must be validated by other means" (§2; Fig. 1).
@@ -35,9 +35,6 @@ Benchmarks for LLM theorem provers in Lean, a proof assistant, are often trusted
 - **Vacuous theorem**: its hypotheses are unsatisfiable, so it is "trivially true" (Tab. 3).
 - **Proven finding**: a checker finding with "a machine-checkable certificate of unprovability or vacuity" (Tab. 4 caption).
 - **Semantic guard proving**: the checker states a guard such as `b ≠ 0` as a goal and tries to prove it with the tactics `omega`, `assumption` and `simp`, instead of looking for it written out (App. F).
-
-**Missing glossary terms:**
-- **Trusted computing base**: the code that must be correct for a check's verdict to be trusted; here the kernel, widened by `native_decide` to the compiler (§3.2).
 
 **Builds on** (only ProverBench's paper, [DeepSeek-Prover-V2](#/papers/ren2025deepseekproverv2 "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition (2025)"), is on this site):
 - The five audited benchmarks (Tab. 1; App. A.1): miniF2F (Zheng et al., 2022; Olympiad-level), ProofNet (Azerbayev et al., 2023; undergraduate textbooks), FormalMath (Yu et al., 2025; Olympiad to undergraduate), CombiBench (Liu et al., 2025a; combinatorics) and ProverBench (Ren et al., 2025; AIME, a US high-school competition, plus textbook and tutorial problems).
@@ -91,4 +88,5 @@ Benchmarks for LLM theorem provers in Lean, a proof assistant, are often trusted
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a></span>

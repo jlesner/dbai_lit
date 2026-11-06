@@ -19,16 +19,7 @@ LLM agents that improve chip designs call design tools: synthesis (compiling a d
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [dense retrieval](#/glossary/dense-retrieval) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [mutation testing](#/glossary/mutation-testing) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Wilson score interval](#/glossary/wilson-score-interval)
-
-**Missing glossary terms** (general definitions; the paper doesn't define them):
-- **RTL (register-transfer level)**: a hardware design in a description language such as Verilog, as registers and the logic between them (abstract).
-- **EDA (Electronic Design Automation) tools**: software that compiles, simulates and checks chip designs (abstract).
-- **Synthesis and technology mapping**: compiling RTL into gates, then into a cell library's cells, after which area, power and timing can be measured; on two benchmarks the paper uses Yosys (an open-source synthesis tool) and ABC (a logic-synthesis tool) (§4 "PPA metric scope").
-- **Functional equivalence check**: a proof that a rewritten design has the original's input-output behaviour (§3).
-- **PPA**: power, performance (timing) and area (§1, §4).
-- **Testbench**: code that drives a design in simulation (stimulus) and checks its outputs (checker) (§4 "Tasks").
-- **Beta distribution**: a distribution over an unknown success rate; Beta(1,1) is uniform, and counted successes and failures update it (§3).
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [dense retrieval](#/glossary/dense-retrieval) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [mutation testing](#/glossary/mutation-testing) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Wilson score interval](#/glossary/wilson-score-interval) · [RTL and the chip design flow](#/glossary/rtl-and-the-chip-design-flow) (the paper doesn't define these terms: RTL and EDA tools, abstract; functional equivalence check, §3; PPA, §1, §4; testbench, §4 "Tasks"; synthesis and technology mapping, for which on two benchmarks the paper uses Yosys (an open-source synthesis tool) and ABC (a logic-synthesis tool), §4 "PPA metric scope") · [Beta distribution](#/glossary/beta-distribution) (§3)
 
 **The paper's own terms:**
 - **Domain evaluation harness**: the grader, "a deterministic domain evaluation harness, not an LLM judge" (§3 "Agent adapter and verification"). In the glossary's terms (ours), ChipMEM itself changes part of an [agent harness](#/glossary/agent-harness): the agent's context.
@@ -87,4 +78,4 @@ Memory on against off, same agent and model.
 ## On this site
 
 - **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

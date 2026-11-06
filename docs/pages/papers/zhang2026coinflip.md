@@ -18,12 +18,7 @@ Some tools tune an LLM pipeline's prompts jointly. The authors test two assumpti
 
 ## Background and terms
 
-**Terms to know:** none in the glossary yet.
-
-**Missing glossary terms:**
-- **compound AI system**: "pipelines of multiple LLM calls where each agent handles a specialized subtask" (§1).
-- **two-way ANOVA (analysis of variance) with question blocking**: splits score variance into question difficulty (removed first), each agent's prompt (the **main effects**), their **interaction** (a prompt pair's effect beyond the two main effects) and noise (§3.1, App. A).
-- **F-test, p-value**: F compares a factor's variance with the noise's, so below 1 means smaller than noise; the p-value is the chance of a result this extreme if the factor had no effect (§3.2, App. A).
+**Terms to know:** [p-value](#/glossary/p-value) (of each factor's F-test, §3.2, App. A) · [compound AI system](#/glossary/compound-ai-system-lm-program) ("pipelines of multiple LLM calls where each agent handles a specialized subtask", §1) · [two-way ANOVA (analysis of variance) with question blocking](#/glossary/analysis-of-variance-anova-and-the-f-test) (the **main effects** are each agent's prompt, the **interaction** a prompt pair's effect beyond the two main effects; §3.1, App. A) · [F-test](#/glossary/analysis-of-variance-anova-and-the-f-test) (§3.2, App. A)
 
 **The paper's own terms:**
 - **"can but doesn't" pattern** (exploitable output structure): a format the model can produce when prompted but doesn't by default (§4.3).
@@ -68,4 +63,4 @@ Some tools tune an LLM pipeline's prompts jointly. The authors test two assumpti
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

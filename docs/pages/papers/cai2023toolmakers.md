@@ -10,7 +10,6 @@ Code: [LLM-ToolMaker](https://github.com/ctlllll/LLM-ToolMaker)
 ## In brief
 
 - A strong model writes a reusable Python function (a tool) for a class of tasks; a lighter model solves each instance by calling it (abstract).
-- The tool maker proposes the tool from a few demonstrations, retrying when it fails to run, then checks it with unit tests on validation samples (a failed test fixes the test's calls, not the tool) and wraps it with call demonstrations for the user (§3.1).
 - Frontier writes, compact uses, with a programmatic check: the authors report GPT-3.5 Turbo with GPT-4's tools performing on par with GPT-4 in both roles (abstract; §5.3, Tab. 2). The artifact is code, not a prompt.
 
 ## In plain words
@@ -79,4 +78,4 @@ LLMs can solve more with external tools, but the authors argue that tool use is 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

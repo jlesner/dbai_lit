@@ -17,7 +17,7 @@ Testing whether two regular expressions describe the same strings "has several e
 
 ## Background and terms
 
-**Terms to know:** [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [PSPACE](#/glossary/pspace) · [3-SAT](#/glossary/3-sat) · [first-order logic](#/glossary/first-order-logic) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [regular expression and regular language](#/glossary/regular-expression-and-regular-language) (Kleene's: only ∪, ·, *)
+**Terms to know:** [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [PSPACE](#/glossary/pspace) · [3-SAT](#/glossary/3-sat) · [first-order logic](#/glossary/first-order-logic) · [satisfiable and valid](#/glossary/satisfiable-and-valid) · [regular expression and regular language](#/glossary/regular-expression-and-regular-language) (Kleene's: only ∪, ·, *) · [nondeterministic Turing machine](#/glossary/nondeterministic-turing-machine) (§2, PDF p. 2)
 
 **The paper's own terms:**
 - **regular-like expression**: built from letters and the empty string with concatenation (·), union (∪), star (*), complement (¬) and squaring (², E·E) (§2, PDF p. 1).
@@ -25,9 +25,6 @@ Testing whether two regular expressions describe the same strings "has several e
 - **B_k, B_ω, 1EQ**: Boolean formulas true under k alternating blocks of quantifiers (existential first, then universal); B_ω, their union; 1EQ, the valid sentences of the first-order theory of equality (logic whose only relation is equality) (§2, PDF p. 2). Σ_k^p: level k of the hierarchy, Σ_1^p = NP (§4, PDF p. 5).
 - **log-space and log-linear reducibility**: A reduces to B when a log-space function (one using work memory logarithmic in input length) maps members of A exactly to members of B; log-linear also keeps output length within a constant times input length (§2, PDF p. 2).
 - **complete in a family**: every member reduces to C, and C is a member (§2, PDF p. 3).
-
-**Missing glossary terms:**
-- **nondeterministic Turing machine** (a model computer that may choose its next step): it accepts if some choices do (§2, PDF p. 2); a class like nondeterministic linear space is what it accepts within that bound (general definition).
 
 **Builds on:**
 - Meyer and Stockmeyer [1] (1972): equivalence with squaring needs exponential space (§1, PDF p. 1); its two results with star are proved there (§3, PDF p. 4).
@@ -67,4 +64,4 @@ Reductions are log-space unless marked log-linear.
 ## On this site
 
 - **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/theory-misc">theory-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/theory">theory</a><a class="tag sub" href="#/tags/dsl-regex">dsl-regex</a></span>

@@ -18,7 +18,7 @@ When an LLM samples many candidate solutions, the hard part is picking the right
 
 ## Background and terms
 
-**Terms to know:** [self-consistency](#/glossary/self-consistency-majority-voting) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [AUROC](#/glossary/auroc) (not defined in the paper, §5.3)
+**Terms to know:** [self-consistency](#/glossary/self-consistency-majority-voting) · [outcome and process rewards](#/glossary/outcome-and-process-rewards) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [AUROC](#/glossary/auroc) (not defined in the paper, §5.3) · [Beta distribution](#/glossary/beta-distribution) (set here by a mean and a concentration, §3.2)
 
 **The paper's own terms:**
 - **LLM-jury, cross-model consensus**: M independently trained models each answer once; equivalent answers form classes, the largest class is the consensus, and its share of the panel (the agreement) is a confidence signal (§3.1, Fig. 1). As a selector it scores each pool candidate by how many panel answers match it, breaking ties by the answer's frequency in the pool (App. A).
@@ -31,9 +31,6 @@ When an LLM samples many candidate solutions, the hard part is picking the right
 - **calibration** (this paper's sense): how well the agreement level predicts whether the selected answer is correct (§3.2).
 - **self-check gate**: a trained verifier is used only where its scores separate correct from wrong candidates at AUROC 0.6 or more, else self-consistency is (§5.3).
 - **RFT** (rejection-sampling fine-tuning): fine-tune on sampled solutions whose answer matches a target (App. F).
-
-**Missing glossary terms:**
-- **Beta distribution**: a distribution over numbers between 0 and 1, set here by a mean and a concentration (§3.2).
 
 **Builds on:**
 - Self-consistency (Wang et al., 2023; [Self-Consistency](#/papers/wang2022selfconsistency "Self-Consistency Improves Chain of Thought Reasoning in Language Models (2023)")): the baseline whose within-model agreement the jury replaces (§1, §2).
@@ -88,4 +85,4 @@ When an LLM samples many candidate solutions, the hard part is picking the right
 ## On this site
 
 - **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a></span>

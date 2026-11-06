@@ -88,4 +88,4 @@ They define a query algebra over databases seen as labelled graphs, where a quer
 ## On this site
 
 - **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a><a class="tag sub" href="#/tags/qo-rules">qo-rules</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-lib">rules-lib</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/qo">qo</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-lib">rules-lib</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>

@@ -19,7 +19,7 @@ Earlier LLM provers write each formal proof as one block and attack each problem
 
 ## Background and terms
 
-**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [autoformalization](#/glossary/autoformalization) · [tactic](#/glossary/tactic) · [hammer](#/glossary/hammer-automated-theorem-proving) · [dense retrieval](#/glossary/dense-retrieval) · [retrieval-augmented generation](#/glossary/retrieval-augmented-generation-rag) · [expert iteration](#/glossary/expert-iteration)
+**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [autoformalization](#/glossary/autoformalization) · [tactic](#/glossary/tactic) · [hammer](#/glossary/hammer-automated-theorem-proving) · [dense retrieval](#/glossary/dense-retrieval) · [retrieval-augmented generation](#/glossary/retrieval-augmented-generation-rag) · [expert iteration](#/glossary/expert-iteration) · [vector store](#/glossary/vector-store) (here ChromaDB with an OpenAI embedding model and k-nearest-neighbour (k-NN) lookup, §3.1, footnote 2)
 
 **The paper's own terms:**
 - **skill**: a lemma that Isabelle has verified, stored with its statement and its proof; the paper uses "skill" and "lemma" interchangeably (§3.1). In the glossary's terms this is not an [agent skill](#/glossary/agent-skill) (a text file of instructions) but a checked piece of proof code (our bridge).
@@ -32,9 +32,6 @@ Earlier LLM provers write each formal proof as one block and attack each problem
 - **LEGO-Prover\***: the "cumulative pass rate" over the runs with model-generated and with human-written informal proofs (Tab. 1 caption).
 - **skill-evolving tree**: a lemma from the prover or the request solver as root, with the directional transformer's generalizations as children; the grown library is "a massive forest" of such trees (§4.3.1, Fig. 3(c)).
 - **direct use / propose lemma by imitation**: the two ways a retrieved skill helps: copied into the proof as is, or used as a model for writing a new lemma (§4.3.2, Fig. 4).
-
-**Missing glossary terms:**
-- **vector store**: a store of documents with their embedding vectors that, given a query, embeds it and returns the nearest stored documents; here ChromaDB with an OpenAI embedding model and k-nearest-neighbour (k-NN) lookup (§3.1, footnote 2).
 
 **Bridges to the glossary:** each problem gets 100 attempts and counts as a success when a proof is found; this is close to [pass@k](#/glossary/passk) at k = 100, except that the attempts are not independent, since the library grows between them (our reading of §4.1).
 
@@ -84,5 +81,5 @@ Earlier LLM provers write each formal proof as one block and attack each problem
 
 ## On this site
 
-- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Discussed in:** [Discovering new rewrite rules](#/challenges/rewrite_rule_discovery) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

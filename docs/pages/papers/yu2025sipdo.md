@@ -18,7 +18,7 @@ Most prompt optimizers tune a prompt on one fixed set of examples, so the prompt
 
 ## Background and terms
 
-**Terms to know:** [curriculum learning](#/glossary/curriculum-learning) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [first-order logic](#/glossary/first-order-logic).
+**Terms to know:** [curriculum learning](#/glossary/curriculum-learning) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [first-order logic](#/glossary/first-order-logic) · [surrogate loss and 0–1 loss](#/glossary/surrogate-loss-and-01-loss) (the paper's surrogate is bounded between 0 and 1, §3, A5) · [uniform convergence](#/glossary/uniform-convergence) (A3 words it per prompt, §3.3).
 
 **The paper's own terms:**
 - **Data Generator**: writes synthetic input–label pairs at a set difficulty (§3.1); in §4.2's Causal Judgment template, an LLM prompted with the task, two real examples and past generated samples.
@@ -27,10 +27,6 @@ Most prompt optimizers tune a prompt on one fixed set of examples, so the prompt
 - **label prior**: an estimate of how often each label occurs in the true data distribution (§3).
 - **KL penalty `R(ψ)`**: here the KL divergence (how different two probability distributions are) between the generator's label distribution and the label prior, penalizing drift from realistic label frequencies (§3.1); not the RL sense of the glossary entry. `ψ` is the generator's parameters, `λ` a weight.
 - **three-voter check**: "three expert agents independently verify each generated item for label–input consistency and basic factual correctness" (§3.3, A1).
-
-**Missing glossary terms:**
-- **surrogate loss and 0–1 loss**: the 0–1 loss is 1 for a wrong answer, 0 for a right one; a surrogate loss is a smoother training loss, here bounded between 0 and 1 (§3, A5).
-- **uniform convergence**: with high probability, the loss measured on a sample is close to the true expected loss for every prompt at once; A3 words it per prompt (§3.3).
 
 **Builds on:**
 - LLM rewriting from natural-language feedback ([ProTeGi](#/papers/pryzant2023protegi "Automatic Prompt Optimization with 'Gradient Descent' and Beam Search (2023)")), self-reflection ([Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)")) and planning (PromptAgent), which their "hybrid framework" integrates (§2.1).
@@ -83,4 +79,4 @@ Most prompt optimizers tune a prompt on one fixed set of examples, so the prompt
 ## On this site
 
 - **Discussed in:** [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

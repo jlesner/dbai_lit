@@ -91,4 +91,4 @@ None is on this site.
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [Repairing and rewriting DSL programs with a certified result](#/challenges/certified_dsl_repair) · [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dsl">dsl</a><a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/dialect">dialect</a><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-regex">dsl-regex</a></span>

@@ -53,4 +53,4 @@ The author's claims; no experiments. Thm. 3.3 (PDF p. 5) and Example 2.6 (PDF p.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/bounded-theory">bounded-theory</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>

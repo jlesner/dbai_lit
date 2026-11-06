@@ -18,7 +18,7 @@ Some LLM agents improve themselves by editing a skill document; a gate decides w
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [sign test](#/glossary/sign-test) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [sign test](#/glossary/sign-test) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [Optimizer's Curse](#/glossary/winners-curse-optimizers-curse) (§1, citing Smith and Winkler, 2006; the paper applies it to keeping edits that "were lucky rather than better", §1) · [binomial test](#/glossary/binomial-test) (one-sided exact, §3.3, Eq. 10)
 
 **The paper's own terms:**
 - **skill document** (or skill): a persistent text that "encodes their workflow, tool-use rules, and decision logic" (abstract); only this text is edited, the model stays frozen (§3.1).
@@ -30,10 +30,6 @@ Some LLM agents improve themselves by editing a skill document; a gate decides w
 - **regression rate** (the experiments' metric): "the fraction of the items the current skill already solves that an accepted edit breaks" (§4.2).
 - **C1**: the "paired-comparison variant", which "uses the per-item paired criterion without the statistical test" (§4.3).
 - **equal-budget protocol**: "an equal number of proposed edits and equal token cost" (§4.1).
-
-**Missing glossary terms:**
-- **Optimizer's Curse**: when one picks the option with the highest observed score among noisy estimates, that best score is biased upward (§1, citing Smith and Winkler, 2006). The paper applies it to keeping edits that "were lucky rather than better" (§1).
-- **one-sided exact binomial test**: asks whether m trials gave more successes than a fixed success probability explains, computing that chance exactly; only an excess counts as evidence (§3.3, Eq. 10).
 
 **Builds on:**
 - **SkillOpt** (Yang et al., 2026; [SkillOpt](#/papers/yang2026skillopt "SkillOpt: Executive Strategy for Self-Evolving Agent Skills (2026)")), which treats the skill as the trainable state of a frozen agent with bounded edits (§2); the paper calls it "The current state-of-the-art (SOTA)" (§1) and keeps its optimizer and setting, changing only the gate (§3.1, §4.1).
@@ -80,4 +76,4 @@ SAGE has two components that share one per-question record (§3.1, Fig. 2).
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

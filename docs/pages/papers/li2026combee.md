@@ -18,7 +18,7 @@ Methods such as ACE and GEPA improve an LLM agent without retraining: an LLM ref
 
 ## Background and terms
 
-**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [self-consistency](#/glossary/self-consistency-majority-voting)
+**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [self-consistency](#/glossary/self-consistency-majority-voting) · [parallel scan (prefix sum)](#/glossary/parallel-scan-prefix-sum) (§3.1) · [critical batch size](#/glossary/critical-batch-size) (the authors liken to it how per-epoch delay falls as batch size grows, "but with diminishing returns", §3.3)
 
 **The paper's own terms:**
 - **prompt learning**: an "inference-time learning paradigm" in which an agent turns trajectories, tool traces or documents into reusable artifacts such as playbooks, memories or skill libraries, "without any weight updates" (§2.1).
@@ -28,10 +28,6 @@ Methods such as ACE and GEPA improve an LLM agent without retraining: an LLM ref
 - **aggregator** or **curator**: the LLM call that turns reflections into one context update (§1, App. I).
 - **batch size**: "the number of parallel agent trajectories or reflections aggregated before producing one context update in an iteration" (§2.2). Batch 1 is sequential learning; a larger fixed batch without Combee is naive or "Normal parallel" scaling (Tab. 8).
 - **context overload**: as batch size grows, the aggregator must distill more reflections into one update, "producing far fewer and lower-quality entries" (§2.2).
-
-**Missing glossary terms:**
-- **parallel scan (prefix sum)**: in the authors' words, "the classical technique for combining a sequence under an associative operator with logarithmic rather than linear dependency depth" (§3.1).
-- **critical batch size**: a distributed-training notion of where larger batches stop paying off; the authors liken to it how per-epoch delay falls as batch size grows, "but with diminishing returns" (§3.3).
 
 **Builds on:**
 - ACE ([ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)")) and GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), the methods Combee runs on and is compared against (§1, §4.1).
@@ -85,4 +81,4 @@ Methods such as ACE and GEPA improve an LLM agent without retraining: an LLM ref
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

@@ -19,7 +19,7 @@ Data teams build pipelines that copy data from many sources into a cloud warehou
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [agent harness](#/glossary/agent-harness) · [Fleiss' kappa](#/glossary/fleiss-kappa) (three annotators, §3.1.3)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [agent harness](#/glossary/agent-harness) · [Fleiss' kappa](#/glossary/fleiss-kappa) (three annotators, §3.1.3) · [McNemar's test](#/glossary/mcnemars-exact-test) (here its chi-square version with Yates' continuity correction, each script against human consensus, §3.2.2)
 
 **The paper's own terms:**
 - **ELT pipeline** (Extract-Load-Transform): data is extracted from sources with connectors such as Airbyte, loaded raw into a cloud warehouse such as Snowflake, then transformed there by SQL models, typically in dbt, a SQL transformation framework (Fig. 2). In ELT-Bench the agent also writes Terraform configuration to set up the connections (Fig. 3).
@@ -29,9 +29,6 @@ Data teams build pipelines that copy data from many sources into a cloud warehou
 - **Evaluation False Positive**: a correct agent output that the evaluation script marks wrong (§4.1.2), the reverse of the usual sense of "false positive". Sub-kinds include format mismatch (0.15 vs. 15%), NULL representation and row ordering.
 - **Ground Truth Calculation Error**: expected values that "cannot be derived from any reasonable query over the available schema" (§4.1.2).
 - **Strata A/B/C**: columns both scripts accept (A), only the patched script accepts (B), both reject (C) (§3.2.2).
-
-**Missing glossary terms:**
-- **McNemar's test with Yates' continuity correction**: a chi-square test on paired labels asking whether the cases where the two sides disagree lean one way; here, each script against human consensus (§3.2.2).
 
 **Builds on:**
 - ELT-Bench ([ELT-Bench](#/papers/jin2025eltbench "ELT-Bench: An End-to-End Benchmark for Evaluating AI Agents on ELT Pipelines (2025)")): the benchmark audited, rerun with its own protocol and metrics (§2.1, §6).
@@ -83,4 +80,4 @@ Data teams build pipelines that copy data from many sources into a cloud warehou
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

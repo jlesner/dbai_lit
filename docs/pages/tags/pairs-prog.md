@@ -1,0 +1,17 @@
+# Tag <span class="tag sub big">pairs-prog</span>
+
+A subtag of <a class="tag" href="#/tags/pairs">pairs</a>
+
+Equivalence pairs of **programs in general-purpose languages**, not DSL queries.
+
+<!-- filter -->
+
+## Papers
+
+- **[REFUTE ("Can Language Models Falsify?")](https://arxiv.org/pdf/2502.19414 "Can Language Models Falsify? Evaluating Algorithmic Reasoning with Counterexample Creation (2025)")**: Can Language Models Falsify? Evaluating Algorithmic Reasoning with Counterexample Creation (preprint 2025). A benchmark of LLMs creating counterexamples for subtly incorrect algorithmic solutions, checked by running code (abstract). <span class="links">[🔎](#/papers/sinha2025refute "Summary") · [PDF](https://arxiv.org/pdf/2502.19414) · [arXiv](https://arxiv.org/abs/2502.19414) · [Code](https://github.com/falsifiers/REFUTE)</span> <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/pairs-prog">pairs-prog</a></span>
+- **[EquiBench](https://arxiv.org/pdf/2502.12466 "EquiBench: Benchmarking Large Language Models' Reasoning about Program Semantics via Equivalence Checking (2025)")**: Benchmarking Large Language Models' Reasoning about Program Semantics via Equivalence Checking (EMNLP 2025). Program-pair benchmark across 4 languages testing LLM reasoning about equivalence. <span class="links">[🔎](#/papers/wei2025equibench "Summary") · [PDF](https://arxiv.org/pdf/2502.12466) · [arXiv](https://arxiv.org/abs/2502.12466) · [Code](https://github.com/Anjiang-Wei/EquiBench)</span> <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag sub" href="#/tags/pairs-prog">pairs-prog</a></span>
+
+## Projects
+
+- **[EquiBench](https://github.com/Anjiang-Wei/EquiBench)**: implements [EquiBench](#/papers/wei2025equibench "EquiBench: Benchmarking Large Language Models' Reasoning about Program Semantics via Equivalence Checking (2025)")
+- **[REFUTE](https://github.com/falsifiers/REFUTE)**: implements [REFUTE ("Can Language Models Falsify?")](#/papers/sinha2025refute "Can Language Models Falsify? Evaluating Algorithmic Reasoning with Counterexample Creation (2025)")

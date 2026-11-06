@@ -20,7 +20,7 @@ On analytical queries translated from PostgreSQL to MySQL and stored procedures 
 
 ## Background and terms
 
-**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) (§3) · [stored procedure](#/glossary/stored-procedure-and-trigger) (§2.1.1) · [program reduction](#/glossary/delta-debugging); the other field terms are not in the glossary yet (below).
+**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) (§3) · [stored procedure](#/glossary/stored-procedure-and-trigger) (§2.1.1) · [program reduction](#/glossary/delta-debugging).
 
 **The paper's own terms:**
 - **SQL dialect**, two senses: a vendor's variant of SQL (§1); and one vendor-specific construct in a query, as in Fig. 1's query with "two PostgreSQL-specific dialects" (§1). RISE translates one construct at a time.
@@ -31,8 +31,6 @@ On analytical queries translated from PostgreSQL to MySQL and stored procedures 
 - **Translation rule**: a source and a target tree pattern; a part of a query's syntax tree that matches the source pattern is replaced by the target pattern (§3.3.2).
 - **Placeholders**: `$N` for a name or constant present in both patterns, `ANYVALUE` for a new name (filled with a fresh one), `TREE_N` for any subtree whose root has a given type (§3.3.2).
 - **Notation:** source query Q_c, simplified query Q_s, its translation Q_s′, rule r_d (abstract). **NVR**: number of valid rules (§4.3).
-
-**Missing glossary terms:**
 - **Parser grammar**: ANTLR is a parser generator that builds a parser from a grammar file (`.g4`) of syntax rules (§3.2.1).
 
 **Builds on:**
@@ -88,4 +86,4 @@ Five steps, repeated up to three times (§3, Fig. 2; §4.1.3):
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation) · [Discovering new rewrite rules](#/challenges/rewrite_rule_discovery)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/scaling-sql">scaling-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/reduce">reduce</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a></span>

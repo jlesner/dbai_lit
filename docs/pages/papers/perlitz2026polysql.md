@@ -19,7 +19,7 @@ Text-to-SQL systems turn a question into a database query, but each engine speak
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [SQL dialect](#/glossary/sql-dialect) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [Cohen's kappa](#/glossary/cohens-kappa) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [McNemar's test](#/glossary/mcnemars-exact-test) (the paper doesn't say "exact") · [bag semantics](#/glossary/bag-semantics) · [Spearman's ρ](#/glossary/spearmans-rank-correlation) · [Pearson's r](#/glossary/pearson-correlation)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [SQL dialect](#/glossary/sql-dialect) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [Cohen's kappa](#/glossary/cohens-kappa) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [McNemar's test](#/glossary/mcnemars-exact-test) (the paper doesn't say "exact") · [bag semantics](#/glossary/bag-semantics) · [Spearman's ρ](#/glossary/spearmans-rank-correlation) · [Pearson's r](#/glossary/pearson-correlation) · [transpiler](#/glossary/transpiler) (query transpilation, by rules or by an LLM, §1, §2.1)
 
 **The paper's own terms:**
 - **Source and target dialect**: the source is the engine the benchmark was written for (SQLite in all experiments); the targets are the "five enterprise dialects" PostgreSQL, MySQL, Snowflake, BigQuery and ClickHouse (§1, §3), i.e. two open-source database servers, two cloud data warehouses and a column-oriented analytics database.
@@ -31,9 +31,6 @@ Text-to-SQL systems turn a question into a database query, but each engine speak
 - **Gap Errors**: queries a model gets right on SQLite but wrong on the target dialect (§5.3).
 - **Logic Degradation**: Tab. 4's Filtering/Logic category, described in §5.3 as "syntactically valid queries with incorrect semantic reasoning".
 - **Dialect Robustness Score**: one minus the relative drop from a model's SQLite accuracy to its mean accuracy over the five targets, i.e. the fraction of SQLite performance retained (App. C, Eq. 1).
-
-**Missing glossary terms:**
-- **Query transpilation**: rewriting a query from one SQL dialect into another, by rules or by an LLM (§1, §2.1).
 
 **Builds on:**
 - BIRD ([BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)"), "DB efficiency and complexity"): one of the three benchmarks, and its "manually-transpiled queries" are the reference for validating PolySQL (§1, §4, §6.1).
@@ -87,4 +84,4 @@ Text-to-SQL systems turn a question into a database query, but each engine speak
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

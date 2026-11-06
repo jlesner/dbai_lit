@@ -19,7 +19,7 @@ An LLM agent that works through many tasks usually starts each one fresh: unless
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [dense retrieval](#/glossary/dense-retrieval) · [exact match](#/glossary/exact-match) · [multi-hop question answering](#/glossary/multi-hop-question-answering) · [imitation learning](#/glossary/imitation-learning) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [retrieval-augmented generation (RAG)](#/glossary/retrieval-augmented-generation-rag) · [dense retrieval](#/glossary/dense-retrieval) · [exact match](#/glossary/exact-match) · [multi-hop question answering](#/glossary/multi-hop-question-answering) · [imitation learning](#/glossary/imitation-learning) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [off-policy learning](#/glossary/off-policy-learning) (the authors liken insight extraction to it, §4; App. A.4) · [experience replay](#/glossary/experience-replay) (the authors liken their retrieval step to it, App. A.4)
 
 In the glossary's terms (our wording), ExpeL changes only the prompts of an agent harness, and its recall of past successes is dense retrieval.
 
@@ -31,10 +31,6 @@ In the glossary's terms (our wording), ExpeL changes only the prompts of an agen
 - **experience recall**: retrieving the successful training trajectories whose tasks are most similar to the new one, as few-shot examples (§4.2 "Similar Experiences as Demonstrations").
 - **R1–R3**: the first to third Reflexion retry; R0 is the first attempt (Fig. 5 legend, Tab. 2).
 - **"finetune"** (in the paper's quotation marks): rewriting source-task insights with an LLM so they fit a target task, not a weight update (§4.4).
-
-**Missing glossary terms:**
-- **off-policy learning**: in [reinforcement learning](#/glossary/reinforcement-learning), learning from experience produced by another policy (a "behavior policy"); the authors liken insight extraction to it (§4; App. A.4).
-- **experience replay**: storing past interactions and reusing them later; the authors liken their retrieval step to it (App. A.4).
 
 **Builds on:**
 - ReAct (Yao et al. 2023b; [ReAct](#/papers/yao2022react "ReAct: Synergizing Reasoning and Acting in Language Models (2023)")): the base planning algorithm, main baseline, and source of the prompts and few-shot examples (§3 "ReAct and Reflexion", §4.1, §5.1, App. D.2).
@@ -95,4 +91,4 @@ In the glossary's terms (our wording), ExpeL changes only the prompts of an agen
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

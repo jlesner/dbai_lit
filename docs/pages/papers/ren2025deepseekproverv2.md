@@ -32,7 +32,7 @@ Proof assistants such as Lean machine-check every step of a mathematical proof. 
 **Builds on:**
 - Draft, Sketch, and Prove (DSP), where an LLM's natural-language proof sketch is translated into formal steps, and later subgoal-decomposition provers (§1; §2.1).
 - DeepSeek-Prover-V1 and V1.5: training "largely aligned" with theirs; their testing environment and 7B base model are reused (§2.3; §3).
-- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")), cited for the binary correct-or-incorrect reward as "the standard training objective for reasoning models" (§2.2), and GRPO from DeepSeekMath ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")) (§2.3 "Reinforcement Learning").
+- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")), cited for the binary correct-or-incorrect reward as "the standard training objective for reasoning models" (§2.2), and GRPO from DeepSeekMath ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")) (§2.3 "Reinforcement Learning").
 - STP ([STP](#/papers/dong2025stp "STP: Self-play LLM Theorem Provers with Iterative Conjecturing and Proving (2025)")), which generates related conjectures for denser training signal, and AlphaProof's test-time RL (DeepMind, cited for IMO-level problems), training on generated variants of a target problem, a form of [test-time training](#/glossary/test-time-training): the subgoal curriculum's principle (§2.1).
 
 ## Problem and setting
@@ -85,4 +85,4 @@ The authors' reports, for the 671B model in CoT mode unless stated.
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a></span>

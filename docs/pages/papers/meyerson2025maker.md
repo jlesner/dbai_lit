@@ -19,7 +19,7 @@ LLMs err occasionally at every step, so a long chain of dependent steps almost s
 
 ## Background and terms
 
-**Terms to know:** [test-time scaling](#/glossary/test-time-scaling) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling). Our bridge: MAKER applies self-consistency per step, and red-flagging resembles [rejection sampling](#/glossary/rejection-sampling).
+**Terms to know:** [test-time scaling](#/glossary/test-time-scaling) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [sequential probability ratio test (SPRT)](#/glossary/sequential-probability-ratio-test-sprt) (cited as the motivation for first-to-ahead-by-k voting, §3.2) · [gambler's ruin](#/glossary/gamblers-ruin) (used for the vote race, §3.2). Our bridge: MAKER applies self-consistency per step, and red-flagging resembles [rejection sampling](#/glossary/rejection-sampling).
 
 **The paper's own terms:**
 - **Towers of Hanoi**: move a stack of disks from the first of three pegs to the third, one disk at a time, never a larger disk on a smaller one; D disks take 2^D − 1 moves at best (§2.3).
@@ -31,10 +31,6 @@ LLMs err occasionally at every step, so a long chain of dependent steps almost s
 - **Correlated errors**: steps with unusually high error rates; a **collision** is a step whose first two votes are both wrong (§4.5).
 - **Multi-agent advantage**: "a solution to a problem that is not solvable by a monolithic single-agent system" (§1).
 - **Scaling laws**: here, formulas from a probability model of voting (Eqs. 13–19), not fitted curves.
-
-**Missing glossary terms:**
-- **Sequential probability ratio test (SPRT)**: a test that takes observations one at a time and stops once the evidence for one hypothesis over another passes a threshold (general definition); cited as the motivation for first-to-ahead-by-k voting (§3.2).
-- **Gambler's ruin**: a random walk that moves up or down one unit per round until it hits one of two bounds; its formulas give the chance of hitting each bound and the expected rounds (general definition); used for the vote race (§3.2).
 
 **Builds on:**
 - Shojaee et al. (2025), "The illusion of thinking": proposed Towers of Hanoi as an LLM reasoning benchmark; MAKER's prompts derive from its single-agent prompts (§2.3, §4.1, App. C). Not on this site.
@@ -86,4 +82,5 @@ LLMs err occasionally at every step, so a long chain of dependent steps almost s
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a></span>

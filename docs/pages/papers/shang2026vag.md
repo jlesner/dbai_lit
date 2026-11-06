@@ -18,16 +18,13 @@ Self-evolving LLM agents write natural-language skills from their own runs into 
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk) · [Wilson score interval](#/glossary/wilson-score-interval) · [statistical power](#/glossary/statistical-power)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [pass@k](#/glossary/passk) · [Wilson score interval](#/glossary/wilson-score-interval) · [statistical power](#/glossary/statistical-power) · [submodular function](#/glossary/submodular-function) (the paper's utility is "neither known to be submodular nor monotone", § "Methodology", Gate 2)
 
 **The paper's own terms:**
 - **skill**: "a structured experience unit written in natural language" (§ "Methodology", "Problem Formalization…"). Distilled: an LLM writes them from trajectories, with the current pool in context.
 - **individual, combinatorial, systemic contamination**: one skill lowers success alone; skills each harmless can lower it together (Eq. 3); together they make success rise, then fall as the pool grows, peaking at the **tipping point** (Eq. 4).
 - **descendants, lineage**: skills distilled later with a given skill in their context (§ "Methodology", "Irreversibility…").
 - **Cold, Warm, Hot**: tiers; new skills start Cold (invisible), Gate 1 promotes to Warm, Gate 2 to Hot; only Hot skills enter the prompt (Fig. 2).
-
-**Missing glossary terms:**
-- **submodular function**: diminishing returns: an item adds no more to a larger set than to a smaller one. The paper's utility is "neither known to be submodular nor monotone" (§ "Methodology", Gate 2).
 
 **Builds on** (all § "Related Work"):
 - Voyager (Wang et al. 2023), which checks only that a skill completes its own task.
@@ -70,5 +67,5 @@ Does admitting every skill make performance peak then fall, and can gating preve
 
 ## On this site
 
-- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

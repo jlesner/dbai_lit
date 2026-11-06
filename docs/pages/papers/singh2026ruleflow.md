@@ -10,8 +10,8 @@ Code: [RuleFlow](https://github.com/ADAPT-uiuc/RuleFlow)
 ## In brief
 
 - Optimizes pandas notebooks (not SQL) by turning LLM-found rewrites of single code cells into general rewrite rules with runtime preconditions, which a deterministic compiler then applies to unseen notebooks with no LLM calls (abstract; §3).
-- Discovery: an LLM proposes faster variants of each cell, kept if they match the original on random dataframes and pass a speed threshold, and an adversarial LLM looks for counterexamples whose findings go back to the generator (§3.1). Four LLM agents then abstract variables, constants and AST types and write preconditions in a rule DSL taken from Dias (§3.2). GPT-4.1, learning on Kaggle notebooks, evaluated on PandasBench against Dias, Modin, Dask and Koalas (§4).
-- The nearest analogue to rewrite rules learned from checked LLM rewrites, and its gap: the test checks concrete pairs before they are generalized, and no rule is tested after (§3.1–3.2). The authors excluded 32 of the 120 generated rules after a manual "qualitative analysis" found correctness issues (§4.2), from errors such as wrong generalization and unhandled NaNs (App. D); the exclusions are not counted by type, and some rules with a known corner-case error stayed in the evaluation (App. D).
+- Discovery: an LLM proposes faster variants of each cell, kept if they match the original on random dataframes and pass a speed threshold, and an adversarial LLM looks for counterexamples whose findings go back to the generator (§3.1). Four LLM agents then abstract variables, constants and AST types and write preconditions in a subset of Dias's rule DSL (§3.2; the DSL: §2.3). GPT-4.1, learning on Kaggle notebooks, evaluated on PandasBench against Dias, Modin, Dask and Koalas (§4).
+- The nearest analogue to rewrite rules learned from checked LLM rewrites, and its gap: only the concrete pairs are run (§3.1); a generalized rule gets compiler and LLM checks and a manual review but is not run before the evaluation (§3.2, §4.2; App. A.2). §3.2 says preconditions are inferred over "synthetically perturbed program instances"; the released code has no such step, and its LLM checks never reject a rule. The authors excluded 32 of the 120 generated rules after a manual "qualitative analysis" found correctness issues (§4.2), from errors such as wrong generalization and unhandled NaNs (App. D); the exclusions are not counted by type, and some rules with a known corner-case error stayed in the evaluation (App. D).
 
 ## In plain words
 
@@ -19,7 +19,7 @@ pandas is a Python library for in-memory tables, used in data-science notebooks.
 
 ## Background and terms
 
-**Terms to know:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [differential testing](#/glossary/differential-testing) · [formal semantics](#/glossary/formal-semantics)
+**Terms to know:** [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [differential testing](#/glossary/differential-testing) · [formal semantics](#/glossary/formal-semantics) · [dataframe](#/glossary/dataframe) (the test inputs are random dataframes, §3.1; the paper doesn't define it)
 
 In the glossary's terms (ours): a RuleFlow rule is a rewrite rule over Python code, not SQL; EquivCheck is differential testing of a cell against its rewrite.
 
@@ -35,7 +35,6 @@ In the glossary's terms (ours): a RuleFlow rule is a rewrite rule over Python co
 - **speedup** in Tab. 1 is RuleFlow's relative to each baseline (Tab. 1 caption); in Fig. 5 it is relative to plain pandas (§4.1).
 
 **Missing glossary terms:**
-- **dataframe**: pandas's in-memory table with named, typed columns; the test inputs are random dataframes (§3.1). The paper doesn't define it.
 - **exploratory data analysis (EDA)**: interactive, step-by-step analysis of a dataset, a workload pandas is widely used for (§1); not the glossary's evolutionary-algorithm EDA.
 
 **Builds on:**
@@ -86,4 +85,5 @@ In the glossary's terms (ours): a RuleFlow rule is a rewrite rule over Python co
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a></span>
+- **Discussed in:** [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Discovering new rewrite rules](#/challenges/rewrite_rule_discovery)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a></span>

@@ -18,7 +18,7 @@ Databases speed up badly written SQL by rewriting it with rules: a pattern of op
 
 ## Background and terms
 
-**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [logical plan](#/glossary/logical-plan) · [query optimizer](#/glossary/query-optimizer) · [query equivalence](#/glossary/query-equivalence) · [integrity constraint](#/glossary/integrity-constraint) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [first-order logic](#/glossary/first-order-logic)
+**Terms to know:** [query rewriting and rewrite rules](#/glossary/query-rewriting-and-rewrite-rules) · [logical plan](#/glossary/logical-plan) · [query optimizer](#/glossary/query-optimizer) · [query equivalence](#/glossary/query-equivalence) · [integrity constraint](#/glossary/integrity-constraint) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [first-order logic](#/glossary/first-order-logic) · [learning to rank, LambdaMART](#/glossary/learning-to-rank) (§III-C, §V-A2–V-A3) · [NDCG@n (normalized discounted cumulative gain)](#/glossary/normalized-discounted-cumulative-gain-ndcg) (§V-A3) · [gradient-boosted decision trees (GBDT)](#/glossary/gradient-boosted-decision-trees-gbdt) (the paper uses the LightGBM library, §V-A2)
 
 **The paper's own terms:**
 - **node**: one operator in a plan tree; sizes are counted in nodes (abstract).
@@ -29,11 +29,6 @@ Databases speed up badly written SQL by rewriting it with rules: a pattern of op
 - **small-to-large hypothesis** (Def. 2, §III-B): the idea that rules shrinking a large plan can be composed from rules over intermediate sizes, so large rules need not be enumerated directly.
 - **RTP (Reduce by Template Pair)**: deduplication during enumeration, per pair of templates (Alg. 2, §IV-B).
 - **effective rule**: a rule labelled 1 because rewriting with it reduced execution time in SQL Server, otherwise 0 (§V-A3, §V-B, §VI-A).
-
-**Missing glossary terms:**
-- **learning to rank, LambdaMART**: training a model to put the most relevant items of a list first, rather than to score each item in isolation; LambdaMART does it with boosted decision trees, weighting each wrongly ordered pair by how much swapping the two would change NDCG (§III-C, §V-A2–V-A3).
-- **NDCG@n (normalized discounted cumulative gain)**: a ranking score that sums the gains of relevant items in the top n, each discounted by the logarithm of its position, divided by the score of the best possible order (§V-A3).
-- **gradient-boosted decision trees (GBDT)**: an ensemble of decision trees in which each new tree is fitted to the prediction errors of the trees before it; the paper uses the LightGBM library (§V-A2).
 
 **Builds on:**
 - WeTune ([WeTune](#/papers/wang2022wetune "WeTune: Automatic Discovery and Verification of Query Rewrite Rules (2022)")), "the state-of-the-art (SOTA) rule enumeration engine" (§I): SLER takes its operator set "In line with WeTune" (§III-A), follows its workload method and uses it as the main baseline (§VI-A).
@@ -85,4 +80,4 @@ The authors report:
 ## On this site
 
 - **Discussed in:** [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Discovering new rewrite rules](#/challenges/rewrite_rule_discovery)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/pairgen-apply">pairgen-apply</a><a class="tag sub" href="#/tags/prove-smt">prove-smt</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rewrite-smt">rewrite-smt</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/pairgen-apply">pairgen-apply</a><a class="tag sub" href="#/tags/rewrite-classic">rewrite-classic</a><a class="tag sub" href="#/tags/rules-discover">rules-discover</a><a class="tag sub" href="#/tags/rules-verify">rules-verify</a></span>

@@ -19,7 +19,7 @@ LLM agents that use many tools usually call each tool directly, so every raw too
 
 ## Background and terms
 
-**Terms to know:** [tool calling](#/glossary/tool-calling-function-calling) · [agent harness](#/glossary/agent-harness) · [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [cold start](#/glossary/cold-start) · [pass@k](#/glossary/passk) · [POMDP](#/glossary/pomdp-partially-observable-markov-decision-process) · [GRPO](#/glossary/grpo) · [context rot](#/glossary/context-rot) (cited without a definition, §1) · [GSPO](#/glossary/gspo) (cited without a description, §3.3)
+**Terms to know:** [tool calling](#/glossary/tool-calling-function-calling) · [agent harness](#/glossary/agent-harness) · [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [cold start](#/glossary/cold-start) · [pass@k](#/glossary/passk) · [POMDP](#/glossary/pomdp-partially-observable-markov-decision-process) · [GRPO](#/glossary/grpo) · [context rot](#/glossary/context-rot) (cited without a definition, §1) · [GSPO](#/glossary/gspo) (cited without a description, §3.3) · [MCP (Model Context Protocol)](#/glossary/model-context-protocol-mcp) (the runtime is exposed "as an MCP server", §3.2, and the benchmarks run on MCP servers, App. C.4)
 
 **The paper's own terms:**
 - **Direct tool calling (DTC)**: one tool call per turn; the call and its full result are appended to the context (§2.2, Fig. 2).
@@ -29,9 +29,6 @@ LLM agents that use many tools usually call each tool directly, so every raw too
 - **Environment state, scales v0–v3**: a task's database and workspace files. Instruction, task logic, tool schemas and verifier stay fixed while database rows grow 1×, 2×, 4× and 8× and scalable workspace files 1×–4× (App. B.2).
 - **Verifier, oracle solution**: per task, a Python script that returns 1 "if and only if all criteria are satisfied", and a solution using only the task's tools that must pass it (§3.1.1).
 - **DTC-like calls**: PTC calls with one tool call and no control flow, error handling or selective printing (Tab. 8 caption).
-
-**Missing glossary terms:**
-- **MCP (Model Context Protocol)** (general definition): an open protocol through which an agent's harness connects to tool servers. The runtime is exposed "as an MCP server" (§3.2), and the benchmarks run on MCP servers (App. C.4).
 
 **Builds on:**
 - Anthropic's programmatic tool calling (Anthropic, 2025b), used at inference "to reduce token use and latency" (App. A); cited as a website.
@@ -77,4 +74,4 @@ LLM agents that use many tools usually call each tool directly, so every raw too
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/gym">gym</a><a class="tag" href="#/tags/offload">offload</a><a class="tag" href="#/tags/transfer">transfer</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/gym">gym</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/offload">offload</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/transfer">transfer</a></span>

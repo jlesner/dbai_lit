@@ -29,8 +29,6 @@ LLM agents score well on benchmarks yet stay unreliable on long production workf
 - **format and tool-call drift**: "a turn whose output cannot be parsed as a valid action" (§4.6, PDF p. 8).
 - **absorbing states**: errors the agent never recovers from (§4.6, PDF p. 8); from Markov chains, where an absorbing state is never left once entered.
 - **hazard**: the chance that a given step fails; a "pure geometric decay law assumes a constant per-step hazard rate" (§4.4, PDF p. 7).
-
-**Missing glossary terms:**
 - **logit slope per horizon doubling**: the change in the log-odds of success, log(p / (1 − p)), each time the horizon doubles; more negative means faster decay (§4.5, PDF p. 8).
 
 **Builds on:**
@@ -85,4 +83,4 @@ Each is the author's claim.
 ## On this site
 
 - **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

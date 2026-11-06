@@ -18,7 +18,7 @@ Reasoning models are often trained by reinforcement learning on questions with k
 
 ## Background and terms
 
-**Terms to know:** [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [reinforcement learning](#/glossary/reinforcement-learning) · [self-play](#/glossary/self-play) · [cold start](#/glossary/cold-start) · [GRPO](#/glossary/grpo) · [PPO](#/glossary/ppo) · [pass@k](#/glossary/passk) · [program synthesis](#/glossary/program-synthesis) · [zero setting](#/glossary/zero-rl-training) · [baseline (policy gradient)](#/glossary/policy-gradient)
+**Terms to know:** [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [reinforcement learning](#/glossary/reinforcement-learning) · [self-play](#/glossary/self-play) · [cold start](#/glossary/cold-start) · [GRPO](#/glossary/grpo) · [PPO](#/glossary/ppo) · [pass@k](#/glossary/passk) · [program synthesis](#/glossary/program-synthesis) · [zero setting](#/glossary/zero-rl-training) · [baseline (policy gradient)](#/glossary/policy-gradient) · [REINFORCE++](#/glossary/reinforce) (as used here: batch-wide reward normalization, one global baseline, with PPO's clipped objective; §3.3.5; App. A)
 
 **The paper's own terms:**
 - **Absolute Zero (AZ)**: the setting in which one model proposes tasks, solves them and learns from both, with an environment giving verifiable feedback and no external data (§2.2, Eq. 3).
@@ -31,11 +31,8 @@ Reasoning models are often trained by reinforcement learning on questions with k
 - **CAvg, MAvg, AVG**: the code average, the math average, and their mean (Tab. 1 caption).
 - **"uh-oh moment"**: the authors' name for concerning chains of thought from the Llama-based model (§4.2 RQ5, Fig. 34).
 
-**Missing glossary terms:**
-- **REINFORCE++**: a policy-gradient algorithm (one that raises the probability of high-reward outputs) that, as used here, normalizes rewards by the batch-wide mean and standard deviation (one global baseline), with PPO's clipped objective (§3.3.5; App. A).
-
 **Builds on:**
-- The zero setting introduced with DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")): "We extend the zero setting to a new absolute zero setting" (§5 "Reasoning with RL"); RLVR is cited to Tülu 3 ([Tülu 3](#/papers/lambert2024tulu "Tulu 3: Pushing Frontiers in Open Language Model Post-Training (2024)"), §1).
+- The zero setting introduced with DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")): "We extend the zero setting to a new absolute zero setting" (§5 "Reasoning with RL"); RLVR is cited to Tülu 3 ([Tülu 3](#/papers/lambert2024tulu "Tulu 3: Pushing Frontiers in Open Language Model Post-Training (2024)"), §1).
 - Self-play: Schmidhuber's setup in which a proposal agent invents questions for a prediction agent, and AlphaGo/AlphaZero (§5 "Self-play"); learnability from autotelic agents and unsupervised environment design, RL work in which agents invent their own goals or environments (§3.1).
 - REINFORCE++ and GRPO ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")): TRR++ (Task-Relative REINFORCE++, the authors' update rule) "can be viewed as an interpolation between" GRPO's per-question baselines and REINFORCE++'s global baseline (§3.3.5).
 - The baselines (§4.1 "Baselines", Tab. 4): zero-style models trained on curated data from Qwen2.5-7B variants. Math: SimpleRL-Zoo and Oat-Zero (8.5k math pairs each), Open-Reasoner-Zero (ORZ; 57k samples), PRIME-Zero (math plus code). Code: four AceCoder variants (22k code data) and two CodeR1 models (2k or 12k pairs).
@@ -92,4 +89,4 @@ Reasoning models are often trained by reinforcement learning on questions with k
 ## On this site
 
 - **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a></span>

@@ -21,7 +21,7 @@ The authors report gains over the same agent without memory of up to 15.9 points
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [BM25](#/glossary/bm25) · [dense retrieval](#/glossary/dense-retrieval) · [bootstrap resampling](#/glossary/bootstrap-resampling)
+**Terms to know:** [agent harness](#/glossary/agent-harness) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass^k](#/glossary/passk-reliability-over-k-trials) · [BM25](#/glossary/bm25) · [dense retrieval](#/glossary/dense-retrieval) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [procedural memory](#/glossary/procedural-memory) (§1) · [Kendall's tau](#/glossary/kendalls-tau) (used in §5.3)
 
 **The paper's own terms:**
 - **heuristic**: a short piece of textual advice, written by an LLM after a failed attempt (§3; example in Tab. 15). The merged heuristics form the **bank**.
@@ -30,10 +30,6 @@ The authors report gains over the same agent without memory of up to 15.9 points
 - **oracle verifier**: a verifier that scores each attempt (§1), such as the benchmarks' official verifiers (§5.1).
 - **MSR**: mean success rate over five inference runs (§4.1). **κ**: a chance-corrected agreement score (§5.1, Tab. 4).
 - **DAEDALUS-curated**: the same Solver loop run on the benchmark's training tasks, with the benchmark verifier in place of the Judge (§4.1; Alg. 4).
-
-**Missing glossary terms:**
-- **procedural memory**: knowledge of how to act, kept across tasks; in the methods the paper discusses, "lessons drawn from its successes and failures are stored and injected in context at test time" (§1).
-- **Kendall's τ**: a rank correlation based on how many pairs of items two rankings order the same way versus oppositely; 1 means the same order (used in §5.3).
 
 **Builds on:**
 - Memory methods that learn from attempts on training tasks, also its baselines: ExpeL (Zhao et al., 2024), AutoGuide (Fu et al., 2024), ERL (Allard et al., 2026), ReasoningBank (Ouyang et al., 2026) and ACE (Zhang et al., 2026; [ACE](#/papers/zhang2025ace "Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models (2026)")), an evolving playbook (§2, §4.1).
@@ -88,4 +84,5 @@ The question: can an agent's memory be built for a new environment with no train
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

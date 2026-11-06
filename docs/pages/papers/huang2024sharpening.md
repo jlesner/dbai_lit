@@ -18,7 +18,7 @@ The authors note that a model improving itself without outside feedback cannot c
 
 ## Background and terms
 
-**Terms to know:** [best-of-N sampling](#/glossary/best-of-n-sampling) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [reinforcement learning from human feedback (RLHF)](#/glossary/reinforcement-learning-from-human-feedback-rlhf) · [direct preference optimization (DPO)](#/glossary/direct-preference-optimization-dpo) · [KL penalty](#/glossary/kl-penalty) · [exploration and exploitation](#/glossary/exploration-and-exploitation) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [pass@k](#/glossary/passk)
+**Terms to know:** [best-of-N sampling](#/glossary/best-of-n-sampling) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [reinforcement learning from human feedback (RLHF)](#/glossary/reinforcement-learning-from-human-feedback-rlhf) · [direct preference optimization (DPO)](#/glossary/direct-preference-optimization-dpo) · [KL penalty](#/glossary/kl-penalty) · [exploration and exploitation](#/glossary/exploration-and-exploitation) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [pass@k](#/glossary/passk) · [minimax optimal](#/glossary/minimax-optimality) (used undefined in §1.2, §4.1)
 
 **The paper's own terms:**
 - **base model** (πbase): the trained model to improve, mapping a prompt to a distribution over responses (§1.1).
@@ -30,9 +30,6 @@ The authors note that a model improving itself without outside feedback cannot c
 - **coverage**, two senses: (1) the **coverage coefficient**, the average over prompts of one over the probability the base model gives its most likely response (§3.3, Eq. 6); (2) the **coverage criterion** of Brown et al. (2024), whether any of N samples is correct, a "skyline" that uses the true answer (§5.3; Fig. 3c, "Pass@50"), i.e. pass@k.
 - **realizability**: the model class can represent the training target (Assumptions 4.1, 4.3).
 - **margin condition**: the most likely response is at least (1 + margin) times as likely as any response outside the most likely set, on every prompt that can occur (Assumption 4.2).
-
-**Missing glossary terms:**
-- **minimax optimal**: worst-case cost matching, up to stated factors, a lower bound no algorithm can beat (general definition; used undefined in §1.2, §4.1).
 
 **Builds on:**
 - The self-improvement work it seeks to explain: Huang et al. (2022) and four others (§1, §1.3), none on this site.
@@ -86,4 +83,4 @@ The authors note that a model improving itself without outside feedback cannot c
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/theory">theory</a></span>

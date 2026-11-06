@@ -18,7 +18,7 @@ A developer may privately score several model variants and submit only the best 
 
 ## Background and terms
 
-**Terms to know:** [multiple testing](#/glossary/multiple-testing) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [LoRA](#/glossary/lora-low-rank-adaptation) · [direct preference optimization (DPO)](#/glossary/direct-preference-optimization-dpo) · [data contamination](#/glossary/data-contamination)
+**Terms to know:** [multiple testing](#/glossary/multiple-testing) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [LoRA](#/glossary/lora-low-rank-adaptation) · [direct preference optimization (DPO)](#/glossary/direct-preference-optimization-dpo) · [data contamination](#/glossary/data-contamination) · [Slepian's inequality](#/glossary/slepians-inequality) (App. B.2)
 
 **The paper's own terms:**
 - **siblings, k, comparator q, z**: a provider privately scores k variants ("siblings") and submits the best; the claim is against a fixed public comparator q; z is the score margin over its standard error (§2; §3).
@@ -30,9 +30,6 @@ A developer may privately score several model variants and submit only the best 
 - **pooled-item vs score-matched correlation**: of per-item correctness over all items, versus of the ranked score under the stated sampling model (§4).
 - **verdicts** (§2): *provider-certified*; *not margin-certified* (which does not show that no variant beats the comparator); *model-insufficient* (M-I: the floor is outside the model's domain, only Bonferroni applies); *metadata-insufficient* (no fixed candidate family established).
 - **plug-in, selected-β, joint**: successive treatments of the estimated inputs ("nuisances": comparator correlation, standard error), which selection can also affect: plug-in fixes them; selected-β (Berger–Boos, Eq. 5) uses an upper confidence bound on the winner's comparator correlation, adding the bound's failure chance to the p-value; joint also bounds the standard error from the raw margin (§3; App. B.5).
-
-**Missing glossary terms:**
-- **Slepian's inequality**: for Gaussian vectors with equal means and variances, raising the correlations can only raise the chance that the maximum stays below a threshold (App. B.2).
 
 **Builds on:**
 - Singh et al. (2025), "The Leaderboard Illusion": Meta tested 27 Llama-4 variants on a battle-style platform and released the best; the paper adopts 27 "as a stated reference multiplicity" (§1).
@@ -83,4 +80,4 @@ A developer may privately score several model variants and submit only the best 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

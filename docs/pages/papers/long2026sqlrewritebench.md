@@ -34,8 +34,6 @@ Across seven method families in eight configurations (§7, §9), every method's 
 - **Full-denominator rates** (Tab. 5): Source Acceptance, Generation, No-Rewrite Decision, Execution Coverage, Result Consistency and UnsafeRewrite Rate, each divided by all 180 cases.
 - **SCS (Static SQL Complexity Score)**: a 0–100 index of a statement's syntax-tree structure over six feature groups (Tab. 6) (§5.2).
 - **CGOQ (Correctness-Gated Optimization Quality)**: a per-case score, positive for gains and negative for slowdowns, defined only for outputs that pass the gate (§5.3). **CGOQ@N** divides its sum by all 180 cases, so every other outcome counts as zero (Eq. 10); **CGOQ@Accept** divides by the cases a method accepted (Tab. 15).
-
-**Missing glossary terms:**
 - **Materialization barrier**: a CTE the engine is made to compute and store separately (in PostgreSQL, `WITH … AS MATERIALIZED`), so the optimizer cannot merge it into the rest of the query; named, not defined, in §4.1.
 
 **Builds on:**
@@ -90,4 +88,4 @@ Across seven method families in eight configurations (§7, §9), every method's 
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Verified query speedups](#/challenges/verified_query_speedup) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/pairs-rewrite">pairs-rewrite</a><a class="tag sub" href="#/tags/rewrite-eval">rewrite-eval</a><a class="tag sub" href="#/tags/rewrite-llm">rewrite-llm</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/pairs">pairs</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/rewrite-eval">rewrite-eval</a></span>

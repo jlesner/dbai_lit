@@ -49,4 +49,4 @@ All are the authors' claims.
 ## On this site
 
 - **Discussed in:** [Query equivalence: prove or refute](#/challenges/query_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>

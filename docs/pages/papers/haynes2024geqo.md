@@ -89,4 +89,4 @@ Analytics clusters run millions of jobs that often repeat computations; finding 
 ## On this site
 
 - **Discussed in:** [Canonical forms for queries](#/challenges/query_canonical_forms) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-sql">judge-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

@@ -87,4 +87,4 @@ On the Join Order Benchmark (hard queries over a movie database), they report th
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/qo-learned">qo-learned</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/qo-learned">qo-learned</a></span>

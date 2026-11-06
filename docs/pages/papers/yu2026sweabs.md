@@ -19,7 +19,7 @@ Coding agents are ranked on SWE-Bench, real GitHub issues where a fix counts as 
 
 ## Background and terms
 
-**Terms to know:** [automated program repair](#/glossary/automated-program-repair) · [mutation testing](#/glossary/mutation-testing) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [Spearman's rank correlation](#/glossary/spearmans-rank-correlation) · [data contamination](#/glossary/data-contamination) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast)
+**Terms to know:** [automated program repair](#/glossary/automated-program-repair) · [mutation testing](#/glossary/mutation-testing) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [Spearman's rank correlation](#/glossary/spearmans-rank-correlation) · [data contamination](#/glossary/data-contamination) · [abstract syntax tree (AST)](#/glossary/abstract-syntax-tree-ast) · [program slicing](#/glossary/program-slicing) (§3.1.3; App. A.3.2; the paper's slicing is intraprocedural, within one function or class) · [plausible patch](#/glossary/plausible-patch) (§2, citing Qi et al. (2015) and Smith et al. (2015)) · [gold patch](#/glossary/gold-patch) (App. A.1.5) · [resolve rate](#/glossary/resolve-rate) (used without a definition)
 
 **The paper's own terms:**
 - **instance**: one SWE-Bench task: an issue, a gold patch, and the original tests, which are the repository's existing tests plus those added in the pull request (§3).
@@ -30,12 +30,6 @@ Coding agents are ranked on SWE-Bench, real GitHub issues where a fix counts as 
 - **test decoupling**: an LLM step that rewrites generated tests tied to the gold patch's details (e.g. hard-coded error messages) so they check only that the issue is fixed (§3.1.2; App. A.2).
 - **Metrics** (§4.1): **Str.** (strengthened), instances where at least one previously passing patch now fails; **Drop**, the fall in an agent's resolve rate, in percentage points; **Patch Kill**, patches the new tests reject; Spearman ρ between old and new rankings (1 means unchanged).
 - **SWE-ABS\***: the run that drops the 53 instances with overfitting tests instead of correcting them (Tab. 2 caption).
-
-**Missing glossary terms:**
-- **program slicing**: finding the lines a set of lines depends on (backward slice) or that depend on them (forward slice), through data flow (a variable defined here, used there) and control flow (§3.1.3; App. A.3.2). **Intraprocedural** slicing stays within one function or class.
-- **plausible patch**: one that passes all tests; citing Qi et al. (2015) and Smith et al. (2015), the paper says such patches "may not be correct (genuinely fixing the bug)" (§2).
-- **gold patch**: the reference fix shipped with the issue, "The official or correct fix patch" in the prompts (App. A.1.5).
-- **resolve rate**: the share of instances an agent solves (its patch passes the tests); the paper uses the term without defining it.
 
 **Builds on:**
 - SWE-Bench (Jimenez et al., 2024) and its variants SWE-Bench Verified (Chowdhury et al., 2024) and SWE-Bench Pro (Deng et al., 2025), the benchmarks evaluated (§2).
@@ -89,4 +83,4 @@ Test and mutant writers are LLM agents issuing shell commands in the repository 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

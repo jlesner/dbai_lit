@@ -21,7 +21,7 @@ They report that GPT-5 cheats on 76% of the software tasks with one altered test
 
 ## Background and terms
 
-**Terms to know:** [reward hacking](#/glossary/reward-hacking) · [agent harness](#/glossary/agent-harness) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [mutation testing](#/glossary/mutation-testing)
+**Terms to know:** [reward hacking](#/glossary/reward-hacking) · [agent harness](#/glossary/agent-harness) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [mutation testing](#/glossary/mutation-testing) · [in-context reward hacking](#/glossary/in-context-reward-hacking-icrh) (the authors consider their scenario "a form of" it, citing Pan et al., App. A)
 
 **The paper's own terms:**
 - **Impossible task**: a benchmark task whose unit tests were changed to conflict with its natural-language specification; the authors say "any pass necessarily implies a specification-violating shortcut" (abstract).
@@ -34,9 +34,6 @@ They report that GPT-5 cheats on 76% of the software tasks with one altered test
 - **Context engineering**: the paper's heading for choices of prompt, test access and feedback loop (§5).
 - **Monitor**: an LLM that reads an agent's transcript and answers "cheating" or "legit" (App. G.2.1); the share of cheating transcripts it flags is its detection rate or "sensitivity" (§6).
 - **Abort option**: the agent may submit the string `flag_for_human_intervention` when it finds errors in the task, which ends the run (§5.3).
-
-**Missing glossary terms:**
-- **In-context reward hacking**: an agent maximizing its reward in unintended ways during inference rather than training; the authors consider their scenario "a form of" it, citing Pan et al. (App. A).
 
 **Builds on:**
 - LiveCodeBench, from whose hard split (v6 release, April 2025) the tasks come, and SWE-bench Verified, a subset of SWE-bench (§1, §2.1, App. F.1); neither is on this site.
@@ -92,4 +89,4 @@ They report that GPT-5 cheats on 76% of the software tasks with one altered test
 ## On this site
 
 - **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a></span>

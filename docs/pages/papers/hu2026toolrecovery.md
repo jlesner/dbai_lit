@@ -18,7 +18,7 @@ Compressing an LLM agent cuts its memory and compute, but does it change how wel
 
 ## Background and terms
 
-**Terms to know:** [post-training quantization](#/glossary/post-training-quantization) · [agent harness](#/glossary/agent-harness) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [sign test](#/glossary/sign-test) · [Wilson score interval](#/glossary/wilson-score-interval) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [statistical power](#/glossary/statistical-power)
+**Terms to know:** [post-training quantization](#/glossary/post-training-quantization) · [agent harness](#/glossary/agent-harness) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [sign test](#/glossary/sign-test) · [Wilson score interval](#/glossary/wilson-score-interval) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [statistical power](#/glossary/statistical-power) · [fault injection](#/glossary/fault-injection) (here of tool calls; the paper's "fault-injection evaluations that only perturb tasks a system already solves", §3)
 
 **The paper's own terms:**
 - **8-bit, 4-bit, 3-bit**: shorthand for the GGUF presets `Q8_0`, `Q4_K_M` and `Q3_K_M`, which "differ in quantizer construction as well as nominal bit budget" (§7).
@@ -30,10 +30,7 @@ Compressing an LLM agent cuts its memory and compute, but does it change how wel
 - **Tolerant and strict scoring** (§4 "Output parsing and scoring"): the tolerant executor extracts the first JSON object from a non-JSON turn and evaluates an arithmetic expression submitted where a literal amount was asked for; strict scoring requires strict JSON and a literal amount, and also changes which tasks pass the clean screen.
 - **Prompts P0–P4** (§4 "Prompts"): P0 is the original, with a worked example and an instruction that tools may fail and may be retried; P1–P4 are rewrites that keep the tool interface and output format (prose, numbered rules, terse imperatives). Only P0 explicitly requires repeated attempts before declaring a tool permanently unavailable.
 - **Task bootstrap**: a bootstrap over tasks, two-sample when the compared task sets differ and paired when they match (§4 "Uncertainty").
-
-**Missing glossary terms:**
 - **GGUF**: the model-file format of llama.cpp, an open-source LLM inference engine, with named quantization presets (general definition; undefined in the paper, §7).
-- **Fault injection**: making a component, here a tool call, fail on purpose during a test; the paper's "fault-injection evaluations that only perturb tasks a system already solves" (§3).
 
 **Builds on:**
 - ToolMaze (Zhu et al., 2026), a benchmark of agents under tool failures, which "provides the fault taxonomy and recovery framing used here, but evaluates full-precision agents under fixed prompts" (§2).
@@ -82,4 +79,4 @@ A measurement study. Each run is scored under the three evaluation targets (§3,
 ## On this site
 
 - **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

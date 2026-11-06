@@ -20,7 +20,7 @@ They report that larger models keep the total right for many more turns even whe
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning); the other field terms are not in the glossary yet and are defined below.
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [long-context degradation](#/glossary/context-rot) (the paper's name for worse performance as the input grows longer, whatever it contains; §3.2)
 
 **The paper's own terms:**
 - **Planning, execution, knowledge**: deciding which steps to take and in what order; carrying out those steps; information about the kinds of steps and how to combine them (§2, "Key Terms").
@@ -31,9 +31,6 @@ They report that larger models keep the total right for many more turns even whe
 - **Self-conditioning**: the model "conditions on its own past mistakes" and becomes more likely to err after seeing its own earlier errors (§3.2).
 - **Induced error rate / healed history**: the fraction of earlier answers the authors replace with wrong ones; a healed history has none (§3.2, Fig. 5).
 - **Thinking models vs chain-of-thought (CoT) prompting**: thinking models are trained with reinforcement learning to reason before answering, and here their reasoning is removed from the history; CoT prompting asks a standard model to reason step by step, and its reasoning stays in the history (§3.2, App. G.3).
-
-**Missing glossary terms:**
-- **Long-context degradation**: worse performance as the input grows longer, whatever it contains (§3.2).
 
 **Builds on:**
 - Shojaee et al. (2025), which claims thinking models give only an "illusion of thinking" as they fail when tasks get longer; this paper argues those failures are in execution, since the models there know the plan (§1).
@@ -99,4 +96,4 @@ How many steps can an LLM reliably execute when planning and knowledge are given
 ## On this site
 
 - **Discussed in:** [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

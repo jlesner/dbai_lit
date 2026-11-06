@@ -15,11 +15,11 @@ Code: [TrickyBugs](https://zenodo.org/records/7977256)
 
 ## In plain words
 
-Online judges grade a submitted program by running it on hidden tests; a program that passes them all is accepted as correct. The authors say these platforms are a "critical gatekeeper" that partly decides who becomes a software engineer, and that their problems and solutions are training data for code-writing LLMs, so accepted wrong solutions matter (§1, PDF pp. 1–2). They study 939 problems from the AtCoder platform with 541,552 accepted Python, Java and C++ solutions (§1, PDF p. 2; §3.2, PDF p. 3). They measure how much of each solution the hidden tests run and how many small planted bugs they catch, and they hunt for accepted solutions that are wrong: 100 random extra inputs per problem, flagging any solution whose output differs from the majority's (§3.5, PDF p. 4). They report 3,440 such solutions, in 43.4% of the problems (Tab. 5, PDF p. 8). Yet the tests ran every line of 88.7% of those wrong solutions (§1, PDF p. 2). They present it as an empirical study that "took the first step" (§7, PDF p. 11).
+Online judges grade a submitted program by running it on hidden tests; a program that passes them all is accepted as correct. The authors say these platforms are a "critical gatekeeper" that partly decides who becomes a software engineer, and that their problems and solutions are training data for code-writing LLMs, so accepted wrong solutions matter (§1, PDF pp. 1–2). They study 939 problems from the AtCoder platform with 541,552 accepted Python, Java and C++ solutions (§1, PDF p. 2; §3.2, PDF p. 3). They measure how much of each solution the hidden tests run and how many small planted bugs they catch, and they hunt for accepted solutions that are wrong: 100 random extra inputs per problem, flagging any solution whose output differs from the majority's (§3.5, PDF p. 4). They report 3,440 such solutions (Tab. 5, PDF p. 8). They are in 43.4% of the problems. Yet the tests ran every line of 88.7% of those wrong solutions (§1, PDF p. 2). They present it as an empirical study that "took the first step" (§7, PDF p. 11).
 
 ## Background and terms
 
-**Terms to know:** [test oracle](#/glossary/test-oracle) · [differential testing](#/glossary/differential-testing) · [mutation testing](#/glossary/mutation-testing) · [branch and path coverage](#/glossary/branch-and-path-coverage) · [Spearman's rank correlation](#/glossary/spearmans-rank-correlation)
+**Terms to know:** [test oracle](#/glossary/test-oracle) · [differential testing](#/glossary/differential-testing) · [mutation testing](#/glossary/mutation-testing) · [branch and path coverage](#/glossary/branch-and-path-coverage) · [Spearman's rank correlation](#/glossary/spearmans-rank-correlation) · [online judge (OJ)](#/glossary/online-judge) (§2.1, PDF p. 2) · [line coverage](#/glossary/line-and-statement-coverage) (§2.2, PDF p. 3)
 
 **The paper's own terms:**
 - **OJ problem**: a problem statement (task, input and output formats, input constraints, often examples) plus a predefined test suite users can't see; a solution is accepted only if it is correct on all the tests (§2.1, PDF pp. 2–3).
@@ -28,10 +28,6 @@ Online judges grade a submitted program by running it on hidden tests; a program
 - **Constraint-equivalent mutant**: one that differs from the original only on inputs that break the problem's input constraints; "universally-equivalent" ones never differ (§4.1.2, PDF p. 7).
 - **Majority output ratio**: the share of a problem's solutions giving the most common output on one input; per problem, the smallest over the inputs on which outputs differ (§4.2, PDF p. 9).
 - **Template Code, Debugging Code, Missing Branch** (§4.1.1, PDF p. 5): unused pre-written code some users paste into all their solutions, leftover debugging code, and an untested branch that affects behaviour.
-
-**Missing glossary terms:**
-- **Online judge (OJ)**: a platform that provides coding problems and automatically judges submitted solutions with a predefined test suite (§2.1, PDF p. 2).
-- **Line coverage**: "the percentage of executed lines of the source code against the total lines of code when running the test suite" (§2.2, PDF p. 3).
 
 **Builds on:**
 - Forišek et al. [20], who noted that "software testing might prove to be unreliable for code contests" such as the ICPC and IOI programming competitions (§1, PDF p. 2).
@@ -81,4 +77,4 @@ Online judges grade a submitted program by running it on hidden tests; a program
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-search">cex-search</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/cex-search">cex-search</a></span>

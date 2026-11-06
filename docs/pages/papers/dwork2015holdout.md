@@ -18,7 +18,7 @@ Models are scored on a held-out test set, but "in practice the holdout dataset i
 
 ## Background and terms
 
-**Terms to know:** [multiple testing](#/glossary/multiple-testing).
+**Terms to know:** [multiple testing](#/glossary/multiple-testing) · [differential privacy](#/glossary/differential-privacy) (§2.1, Def. 2; it survives adaptive composition, the parameters adding up (Thm. 3), and post-processing, further computation on its output (Lemma 5)) · [Laplace noise](#/glossary/differential-privacy) (described there with the Laplace mechanism; §4.1) · [sparse vector algorithm](#/glossary/sparse-vector-algorithm) (with a parameter c set to the budget B here, §4.1, proof of Lemma 23).
 
 **The paper's own terms:**
 - **adaptive data analysis**: analyses run in sequence on one fixed dataset, each step free to depend on earlier outputs; this dependence "invalidates the generalization guarantees of individual procedures" (§1.2).
@@ -26,11 +26,6 @@ Models are scored on a held-out test set, but "in practice the holdout dataset i
 - **overfitting a query**: in Thm. 25, its training-set mean differs from its true expectation by more than τ/2 (§4.1).
 - **description length**: the bits needed to write down the outputs of earlier steps (§1.2; §2.3); **randomized description length** asks this for every fixing of the algorithm's random bits (App. A, Def. 28).
 - **max-information**: the logarithm of the largest factor by which seeing an algorithm's output raises the probability of any one dataset; the **β-approximate** version lets this fail on events of total probability β, and an algorithm has it when it holds for every distribution over datasets (§1.2; §3, Def. 10–11).
-
-**Missing glossary terms:**
-- **differential privacy**: an algorithm is ε-differentially private when changing one record of its input changes the probability of any set of outputs by at most a factor e^ε; the (ε, δ) version adds a slack δ, and δ = 0 is "pure" (§2.1, Def. 2). It survives adaptive composition, the parameters adding up (Thm. 3), and post-processing, further computation on its output (Lemma 5).
-- **Laplace noise**: added random noise; "The Laplace distribution is a symmetric exponential distribution" (§4.1).
-- **sparse vector algorithm**: a differential-privacy tool that reports, for each query in a sequence, whether its value on the private data is above or below a threshold, with a parameter c set to the budget B here (§4.1, proof of Lemma 23).
 
 **Builds on:**
 - The authors' earlier [DFH+14], which answered adaptively chosen statistical queries with differentially private algorithms; Thresholdout follows its approach (abstract; §1.3; §4.1).
@@ -79,4 +74,5 @@ Models are scored on a held-out test set, but "in practice the holdout dataset i
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/stats">stats</a></span>

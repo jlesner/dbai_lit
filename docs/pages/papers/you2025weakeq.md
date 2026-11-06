@@ -80,4 +80,4 @@ In data warehouses, non-equivalent queries that differ only in their filters oft
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/smt-misc">smt-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

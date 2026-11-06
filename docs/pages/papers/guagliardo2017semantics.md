@@ -82,4 +82,4 @@ SQL's official Standard is written in natural language, which is ambiguous, and 
 ## On this site
 
 - **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [SQL dialect translation](#/challenges/dialect_translation) · [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-null">theory-null</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-null">theory-null</a></span>

@@ -83,4 +83,4 @@ Regular expressions (regexes) validate and parse input in much software. Some ca
 ## On this site
 
 - **Discussed in:** [Repairing and rewriting DSL programs with a certified result](#/challenges/certified_dsl_repair)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/dsl">dsl</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rewrite">rewrite</a><a class="tag sub" href="#/tags/dsl-regex">dsl-regex</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

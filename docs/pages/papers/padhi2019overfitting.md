@@ -85,4 +85,4 @@ Syntax-guided synthesis (SyGuS) tools search a grammar of allowed programs for o
 ## On this site
 
 - **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a></span>

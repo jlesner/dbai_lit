@@ -19,7 +19,7 @@ A [text-to-SQL](#/glossary/text-to-sql) model is graded against a human-written 
 
 ## Background and terms
 
-**Terms to know:** [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [fuzzing](#/glossary/fuzzing) · [counterexample database](#/glossary/counterexample-database) · [branch and path coverage](#/glossary/branch-and-path-coverage) · [integrity constraint](#/glossary/integrity-constraint)
+**Terms to know:** [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [query equivalence](#/glossary/query-equivalence) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [fuzzing](#/glossary/fuzzing) · [counterexample database](#/glossary/counterexample-database) · [branch and path coverage](#/glossary/branch-and-path-coverage) · [integrity constraint](#/glossary/integrity-constraint) · [Kendall's tau](#/glossary/kendalls-tau) (between rankings of the 21 submissions, §6.3)
 
 **The paper's own terms:**
 - **denotation**: a query's result on a database, computed with SQLite as in Spider; a query that doesn't finish (in practice, a timeout) gets a special value (§2, footnote).
@@ -33,9 +33,6 @@ A [text-to-SQL](#/glossary/text-to-sql) model is graded against a human-written 
 - **distilled test suite**: the few databases kept from a large random sample because they distinguish neighbors (§1, §4.2); "distill" means keeping a subset, not training a model.
 - **adapted metrics**: ESM and test suite accuracy as changed for a fair comparison (§5.3); the rest of the paper means these.
 - **difficulty splits**: Spider's easy, medium, hard and extra hard classes, set by gold query complexity (§5.1).
-
-**Missing glossary terms:**
-- **Kendall τ (tau) correlation**: a rank correlation; it is high when two scores put most pairs of items in the same order. Here the items are the 21 submissions (§6.3).
 
 **Builds on:**
 - Spider's evaluation ([Spider](#/papers/yu2018spider "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task (2018)")): ESM and single denotation accuracy, the metrics measured against (§2, §5.3); the paper cites ESM to Zhong et al. 2017 (WikiSQL, not listed here) and Spider (§5.3).
@@ -92,4 +89,4 @@ A [text-to-SQL](#/glossary/text-to-sql) model is graded against a human-written 
 ## On this site
 
 - **Discussed in:** [Canonical forms for queries](#/challenges/query_canonical_forms) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/cex-search">cex-search</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

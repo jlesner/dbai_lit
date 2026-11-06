@@ -32,8 +32,6 @@ A language model trained by reward against automatic tests can learn to game the
 - **toxic ratio; explicit and implicit hacking**: the share of hacking demonstrations in the fine-tuning data. Explicit ones have reasoning that openly describes the exploit; implicit ones present it as legitimate engineering work (§3.3).
 - **sustained onset**: "proxy reward continues to rise while true reward declines" (§4.1).
 - **ΔRecall**: the monitor's recall (share of gold-labelled hacks it flags) with a part of the output (reasoning, or code comments) minus its recall without it (§4.3; App. E.3, Eq. 8).
-
-**Missing glossary terms:**
 - **χ² penalty**: a regularizer (Laidlaw et al.) that pulls the trained model toward a fixed reference model by penalizing the χ² divergence, a measure of how different two distributions are, between how often each visits each situation (state) and choice (action), its "occupancy measure" (§2.3, §4.2.1).
 - **Gradient Regularization (GR)**: a method (Ackermann et al.) that biases training "toward flatter regions" of the loss, "associated with more accurate rewards" (§2.3, §4.2.1).
 
@@ -87,4 +85,4 @@ A language model trained by reward against automatic tests can learn to game the
 ## On this site
 
 - **Discussed in:** [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

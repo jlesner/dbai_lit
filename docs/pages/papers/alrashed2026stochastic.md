@@ -19,7 +19,7 @@ Some databases let SQL ask a language model about each row (is this review posit
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [counterexample database](#/glossary/counterexample-database) · [query equivalence](#/glossary/query-equivalence)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [gold query](#/glossary/gold-query) · [execution accuracy](#/glossary/execution-accuracy) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [counterexample database](#/glossary/counterexample-database) · [query equivalence](#/glossary/query-equivalence) · [AI operator](#/glossary/ai-operator) (e.g. BigQuery's `AI.IF` or ThalamusDB's `NLfilter`, §1, §2)
 
 **The paper's own terms:**
 - **relaxed semantic correctness**: a query "should be accepted as correct" if it "accurately targets the semantic goal", even if "the data varies slightly due to LLM sampling" (§3).
@@ -27,9 +27,6 @@ Some databases let SQL ask a language model about each row (is this review posit
 - **SQL Splitter**: cuts a query into a structural part (in §4's example, the AI call becomes `TRUE`) and an AI part (the AI call over its input column) (§4 "SQL Splitter").
 - **TPR / TNR** (true positive / true negative rate): the share of valid queries a method accepts / of flawed queries it rejects (Tab. 1 caption); **accuracy**: the share of all queries judged correctly.
 - **Miniature & Mull, Explain & Compare**: the two prompts of LLM-SQL-Solver, a method that prompts an LLM to decide whether two SQL queries are equivalent. The first (semantic equivalence) has the LLM imagine a small database and mentally run both queries to find a counterexample; the second (relaxed equivalence) explains each query, then compares their "pragmatic intention" (what each is meant to do) (§5.1).
-
-**Missing glossary terms:**
-- **AI operator**: a SQL function that sends a prompt and a value (text, image, audio) to an LLM inside the query, e.g. BigQuery's `AI.IF` or ThalamusDB's `NLfilter` (§1, §2).
 
 **Builds on:**
 - LLM-SQL-Solver ([LLM-SQL-Solver](#/papers/zhao2023llmsqlsolver "LLM-SQL-Solver: Can LLMs Determine SQL Equivalence? (2025)")): source of "relaxed semantic correctness" (§3) and a baseline, "a state-of-the-art LLM metric" (§5.1).
@@ -76,4 +73,4 @@ The authors say the split prevents false rejections "due to language variations,
 ## On this site
 
 - **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-sql">judge-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a><a class="tag sub" href="#/tags/nondet-eval">nondet-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a><a class="tag sub" href="#/tags/nondet-eval">nondet-eval</a></span>

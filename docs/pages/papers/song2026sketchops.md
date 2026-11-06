@@ -28,8 +28,6 @@ Long-context language models "tend to become increasingly unreliable" at set-bas
 - **fixed budget**: one state per stream or active group, not growing with stream length or distinct identities (§3); 2 KiB in the main runs (§4.2; App. E.3).
 - **aggregate-then-reason task**: an aggregate plus a decision condition mapping it to one of two answers, e.g. by whether more than 100 users report an error (§5.1). A **source window** is one benchmark record sequence; its tasks are resampled together (§5.1).
 - **arms** (App. E.1): *exact* (true aggregate and condition), *budgeted* (the sketch readout instead), *aggregate-only* and *policy-only* (condition or aggregate withheld), *counterfactual* (an altered aggregate that changes the right answer, §5.2).
-
-**Missing glossary terms:**
 - **joint maximum-likelihood estimation (JMLE)**: Ertl's estimator that reads two HLL sketches together to estimate how many identities are only in A, only in B, and in both (§4.2; App. C.4).
 
 **Builds on:**
@@ -88,4 +86,4 @@ Long-context language models "tend to become increasingly unreliable" at set-bas
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/offload">offload</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/offload">offload</a></span>

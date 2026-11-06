@@ -19,7 +19,7 @@ An LLM agent writing its own library of reusable instructions (skills) must also
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reference-free evaluation](#/glossary/reference-free-evaluation) · [pass@k](#/glossary/passk) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reference-free evaluation](#/glossary/reference-free-evaluation) · [pass@k](#/glossary/passk) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [concentration inequality](#/glossary/concentration-inequality) (Hoeffding's; it gives the error radius ε from N_min and a per-skill failure probability δ, App. F) · [union bound](#/glossary/union-bound) (it gives the C·δ term, App. F)
 
 **The paper's own terms:**
 - **skill, shelf**: a written pattern whose body is prepended to the task (§3; App. G); the shelf is the set of active skills (§2).
@@ -30,10 +30,6 @@ An LLM agent writing its own library of reusable instructions (skills) must also
 - **π_τ = (1−τ)/2**: the false-pass rate at or above which nothing can be retired (§4.1).
 - **governable region, starvation edge**: the rectangle of rate pairs with false-pass below π_τ and pass-to-fail below 1 − π_τ; the starvation edge is the second bound (§4.1, Fig. 1b; §6.1).
 - **rolling gain**: mean held-out pass@1 of the last ten rounds minus the first ten, within a run (§5 "Protocol").
-
-**Missing glossary terms:**
-- **concentration inequality (Hoeffding's)**: bounds how far an average of independent bounded trials strays from its mean; here it gives the error radius ε from N_min and a per-skill failure probability δ (App. F).
-- **union bound**: the chance of any of several events is at most the sum of theirs; it gives the C·δ term (App. F).
 
 **Builds on:**
 - Skill libraries that, the authors say, never retire an entry on its measured outcome: Voyager (Wang et al., 2023), ExpeL, Agent Workflow Memory, AutoManual (§2).
@@ -88,4 +84,4 @@ An LLM agent writing its own library of reusable instructions (skills) must also
 ## On this site
 
 - **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

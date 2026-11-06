@@ -18,7 +18,7 @@ A retrained, fine-tuned or quantized model may be worse than the one it replaces
 
 ## Background and terms
 
-**Terms to know:** [McNemar's exact test](#/glossary/mcnemars-exact-test) · [active learning](#/glossary/active-learning) · [statistical power](#/glossary/statistical-power) · [LoRA (low-rank adaptation)](#/glossary/lora-low-rank-adaptation)
+**Terms to know:** [McNemar's exact test](#/glossary/mcnemars-exact-test) · [active learning](#/glossary/active-learning) · [statistical power](#/glossary/statistical-power) · [LoRA (low-rank adaptation)](#/glossary/lora-low-rank-adaptation) · [confidence sequence (CS), anytime-valid](#/glossary/confidence-sequence-anytime-valid-inference) (§1, §3, §4) · [Horvitz–Thompson estimator](#/glossary/importance-sampling-and-importance-weighting) (unbiased here because the labelling choice ignores the label; §4.2, Eq. 4; Lemma 3) · [prediction-powered inference (PPI)](#/glossary/prediction-powered-inference-ppi) and [active testing](#/glossary/active-testing) (model outputs standing in for labels are the surrogate; §2 "Label-efficient evaluation"; PPI++ adds a power-tuning weight, App. E)
 
 **The paper's own terms:**
 - **paired risk difference (Δ)**: the candidate (new) model's expected loss minus the incumbent (deployed) one's; positive means a regression (§3).
@@ -29,11 +29,6 @@ A retrained, fine-tuned or quantized model may be worse than the one it replaces
 - **routing rule, judge**: the probability, above a minimum, of labelling a disagreement, set from past data and the current input (including scores from "a learned judge model"), never its label; "The judge is used for efficiency, the guarantee never depends on its quality" (§4.2).
 - **pairing-blind**: an auditor that never runs the model pair on unlabelled points (no **shadow-scoring**) and decides from its own past labels alone (Thm. 9; §4.2).
 - **miscoverage, power**: the fraction of streams on which the 95% confidence sequence ever excluded the true difference; the fraction of injected regressions with a difference of at least 0.02 alarmed within 5,000 points (Tab. 2 caption).
-
-**Missing glossary terms:**
-- **confidence sequence (CS), anytime-valid**: intervals that contain the target at all times at once with probability at least 1 − δ, so the operator may watch continuously and stop at any time (§1, §3, §4).
-- **Horvitz–Thompson estimator**: each labelled value is divided by the probability it was chosen with, keeping the estimate unbiased when that choice ignores the label (§4.2, Eq. 4; Lemma 3).
-- **prediction-powered inference (PPI), active testing**: methods that use model outputs as a stand-in for labels (a **surrogate**), or adaptively chosen labels, to estimate one model's metric with fewer labels (§2 "Label-efficient evaluation"); **PPI++** adds a power-tuning weight (App. E).
 
 **Builds on:**
 - McNemar (1947) on discordant pairs; disagreement-based active learning (§2 "Paired comparison…", "Disagreement-based…").
@@ -85,4 +80,4 @@ A retrained, fine-tuned or quantized model may be worse than the one it replaces
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/stats">stats</a></span>

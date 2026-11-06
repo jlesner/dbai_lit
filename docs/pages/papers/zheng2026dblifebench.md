@@ -20,7 +20,7 @@ Across 11 models, GPT-4o and GPT-4o-mini generally lead in almost all phases, wh
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [gold query](#/glossary/gold-query) · [integrity constraint](#/glossary/integrity-constraint) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [normalization](#/glossary/normalized-schema) · [Jaccard similarity](#/glossary/jaccard-similarity) (§2.2.2)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [gold query](#/glossary/gold-query) · [integrity constraint](#/glossary/integrity-constraint) · [catastrophic forgetting](#/glossary/catastrophic-forgetting) · [normalization](#/glossary/normalized-schema) · [Jaccard similarity](#/glossary/jaccard-similarity) (§2.2.2) · [coefficient of variation](#/glossary/coefficient-of-variation) (§5.1, Tab. 3)
 
 **The paper's own terms:**
 - **Database lifecycle phases P1–P5**: Design (from requirements to a schema of entities, data types and foreign-key dependencies), Implementation (from that schema to Data Definition Language, the `CREATE TABLE` statements, valid in an engine such as SQLite), Operation (Data Manipulation Language: queries and updates, as Text2SQL and Progressive-Text2SQL), Debugging (a flawed SQL statement plus its error message, to be corrected), Maintenance (a site-reliability-engineer or database-administrator role) (§2.1).
@@ -32,9 +32,6 @@ Across 11 models, GPT-4o and GPT-4o-mini generally lead in almost all phases, wh
 - **Single-round and multi-round debugging**: the two Debugging columns of Tab. 2; the authors read gains in the multi-round setting as models being "better at recognizing and correcting their previous mistakes" (§4.3).
 - **Level-k perturbation**: applying "one or more disruptive operations" to selected graph nodes, including broken SQL syntax, misalignment with the schema, contradictory logic, or removal (§5.4).
 - **Curse of specialization**: models "fine-tuned specifically for SQL generation exhibit significant performance degradation in broader database management tasks" (§1); the abstract calls it "catastrophic forgetting".
-
-**Missing glossary terms:**
-- **Coefficient of variation**: the standard deviation divided by the mean (§5.1, Tab. 3).
 
 **Builds on:**
 - Text-to-SQL benchmarks it sets itself against: Spider ([Spider](#/papers/yu2018spider "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task (2018)")), Spider 2.0 ([Spider 2.0](#/papers/lei2024spider2 "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows (2025)")), BIRD ([BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)")) and SQLStorm (§1, §6). BIRD is also its source for standard Text2SQL items (§2.2.1).
@@ -85,4 +82,4 @@ Progressive-Text2SQL is the authors' answer to what they call a "cognitive gap":
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2sql-misc">nl2sql-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

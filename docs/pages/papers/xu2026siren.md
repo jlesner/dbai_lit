@@ -19,7 +19,7 @@ When an optimizer tries many prompts or LLM programs on benchmark questions and 
 
 ## Background and terms
 
-**Terms to know:** [bootstrap resampling](#/glossary/bootstrap-resampling); the others are below.
+**Terms to know:** [bootstrap resampling](#/glossary/bootstrap-resampling) · [winner's curse](#/glossary/winners-curse-optimizers-curse) (App. A: "the empirically best option is likely to have benefited from positive noise, so conventional estimates and confidence intervals for selected winners can be optimistic") · [coverage](#/glossary/confidence-interval-and-coverage) (the share of trials in which a nominal 95% interval contains its target, App. C.1.1) · [central limit theorem (CLT)](#/glossary/central-limit-theorem-clt) (Thm. 1, §3.3) · [Wald interval](#/glossary/wald-interval) (used for M2, §4) · [item response theory (IRT), Rasch model](#/glossary/item-response-theory-irt) (PromptEval fits a "Rasch IRT model" (§4.3); the simulations draw scores from such a model (App. C.1; the Rasch reading is ours))
 
 **The paper's own terms:**
 - **artifact**: a deployable configuration, such as an instruction, demonstrations, decoding choices or an LM program (§2).
@@ -33,13 +33,6 @@ When an optimizer tries many prompts or LLM programs on benchmark questions and 
 - **Gaussian multiplier bootstrap**: multiply each item's estimated contribution by an independent standard normal draw, one per item, shared across systems and budgets (§3.2).
 - **M1–M4**: M1 reports the best candidate's full-pool score; M2 adds a Wald interval on the same items; M3 picks on one fold and scores on another; M4 averages M3 over R splits with a Student-t interval (a standard small-sample interval) from the spread across splits (§4).
 - **bias, dir**: estimate minus the reference θ* (defined below), in percentage points; dir counts cells whose tuned-versus-default direction agrees with the references' (§4.1).
-
-**Missing glossary terms:**
-- **winner's curse**: "the empirically best option is likely to have benefited from positive noise, so conventional estimates and confidence intervals for selected winners can be optimistic" (App. A).
-- **coverage**: the share of trials in which a nominal 95% interval contains its target (App. C.1.1).
-- **central limit theorem (CLT)**: an average of many independent bounded contributions is approximately normal (general definition; Thm. 1, §3.3).
-- **Wald interval**: estimate ± about two standard errors (general definition; used for M2, §4).
-- **item response theory (IRT), Rasch model**: the chance of a correct answer depends on item difficulty and a candidate's latent quality. PromptEval fits a "Rasch IRT model" (§4.3); the simulations draw scores from such a model (App. C.1; the Rasch reading is ours).
 
 **Builds on:**
 - PromptEval [24] (Polo et al.), which models scores over a prespecified prompt pool with IRT under limited budgets: "the closest external baseline" (§4.3; App. A).
@@ -85,4 +78,4 @@ When an optimizer tries many prompts or LLM programs on benchmark questions and 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/stats">stats</a></span>

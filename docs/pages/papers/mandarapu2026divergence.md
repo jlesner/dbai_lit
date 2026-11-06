@@ -88,4 +88,4 @@ Graph databases answer queries for paths through networks of nodes and edges. Tw
 ## On this site
 
 - **Discussed in:** [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dialect-difftest">dialect-difftest</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/nondet-eval">nondet-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dialect">dialect</a><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-graph">dsl-graph</a><a class="tag sub" href="#/tags/nondet-eval">nondet-eval</a></span>

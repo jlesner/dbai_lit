@@ -40,7 +40,7 @@ Without chain of thought, the trained evaluator of gpt-4o-mini rose from 1.65% t
 ## Problem and setting
 
 - **Question:** can such a game produce training data that improves LLMs' code reasoning, transferring to other code tasks (§1, §3.3)?
-- **Programs:** Python 3.10 (App. K). Against data contamination, seeds are the `code` field of the training split of MBPP, a dataset of short, self-contained exercises (§2.1), "never its problem statements or unit tests", with the test split held out for evaluation (§3.1).
+- **Programs:** Python 3.10 (App. K). Against data contamination, seeds are the <a class="tag" href="#/tags/code">code</a> field of the training split of MBPP, a dataset of short, self-contained exercises (§2.1), "never its problem statements or unit tests", with the test split held out for evaluation (§3.1).
 - **What counts as correct:** a diverging input is checked by running both programs in a sandbox; non-termination is approximated by a randomized time limit, which "prevents Alice from exploiting a fixed limit" (§2.1), sampled in [2.5, 5.5] s (App. H).
 - **Models:** `gpt-4o-mini-2024-07-18` (main runs) and `gpt-4.1-nano-2025-04-14`, fine-tuned on the OpenAI platform with default hyperparameters; N = 10 samples per query (§3.1).
 - **Theory (App. I "Definitions"):** programs map natural numbers to natural numbers, with non-termination counted as an output value.
@@ -83,4 +83,4 @@ Without chain of thought, the trained evaluator of gpt-4o-mini rose from 1.65% t
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

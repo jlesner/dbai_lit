@@ -19,7 +19,7 @@ Text-to-SQL turns an English question into a database query. The authors argue t
 
 ## Background and terms
 
-**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) (this paper uses its own variant, below) · [gold query](#/glossary/gold-query) · [schema linking](#/glossary/schema-linking) · [SQL dialect](#/glossary/sql-dialect) · [common table expression (CTE)](#/glossary/common-table-expression-cte) · [data contamination](#/glossary/data-contamination)
+**Terms to know:** [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) (this paper uses its own variant, below) · [gold query](#/glossary/gold-query) · [schema linking](#/glossary/schema-linking) · [SQL dialect](#/glossary/sql-dialect) · [common table expression (CTE)](#/glossary/common-table-expression-cte) · [data contamination](#/glossary/data-contamination) · [cloud data warehouse](#/glossary/data-warehouse) (the paper groups BigQuery and Snowflake as cloud data warehouses, against local databases such as SQLite and DuckDB, §1, §2.3)
 
 **The paper's own terms:**
 - **Spider 2.0 (the code agent task)**: given a question, a database interface and a codebase, the agent repeatedly edits and runs code (SQL or Python); its last observation is its answer: text, a table or a changed database (§2.1).
@@ -29,9 +29,6 @@ Text-to-SQL turns an English question into a database query. The authors argue t
 - **Surface and semantic rewrites**: rewrites against leakage; surface rewrites "adjust the parameters and the answer format", semantic ones "expand the question's meaning" (Tab. 1).
 - **DBT project**: a project for dbt, "a widely used tool for managing data transformations and analytics engineering" (§2.3); YML files "generally define the data models" (the tables a transformation produces), Markdown files describe them, and SQL files compute them; a data flow is a chain of models from raw tables to final ones (App. B.2, Fig. 9).
 - **Nested columns**: arrays or dictionary-like records stored inside one column (§4.1, App. B.3).
-
-**Missing glossary terms:**
-- **Cloud data warehouse**: a database service run by a cloud provider for large-scale analytics; the paper groups BigQuery and Snowflake as cloud data warehouses, against local databases such as SQLite and DuckDB (§1, §2.3).
 
 **Builds on:**
 - The text-to-SQL benchmarks it compares against first: Spider 1.0 ([Spider](#/papers/yu2018spider "Spider: A Large-Scale Human-Labeled Dataset for Complex and Cross-Domain Semantic Parsing and Text-to-SQL Task (2018)")) and BIRD ([BIRD](#/papers/li2023bird "Can LLM Already Serve as A Database Interface? A BIg Bench for Large-Scale Database Grounded Text-to-SQLs (2023)")), plus WikiSQL, KaggleDBQA and SEDE (§1, Tab. 2).
@@ -88,4 +85,4 @@ Text-to-SQL turns an English question into a database query. The authors argue t
 ## On this site
 
 - **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag sub" href="#/tags/harness-sql">harness-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-eval">nl2sql-eval</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/harness">harness</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

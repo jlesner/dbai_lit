@@ -18,7 +18,7 @@ Optimizers rewrite queries into faster ones that must return the same rows, dupl
 
 ## Background and terms
 
-**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [bag semantics](#/glossary/bag-semantics) · [first-order logic](#/glossary/first-order-logic) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [uninterpreted function](#/glossary/uninterpreted-function) · [soundness and completeness](#/glossary/soundness-and-completeness) · [integrity constraint](#/glossary/integrity-constraint) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [semiring semantics](#/glossary/k-relation-and-semiring-semantics)
+**Terms to know:** [query equivalence](#/glossary/query-equivalence) · [bag semantics](#/glossary/bag-semantics) · [first-order logic](#/glossary/first-order-logic) · [SAT and SMT solvers](#/glossary/sat-and-smt-solvers) · [uninterpreted function](#/glossary/uninterpreted-function) · [soundness and completeness](#/glossary/soundness-and-completeness) · [integrity constraint](#/glossary/integrity-constraint) · [NULL and three-valued logic](#/glossary/null-and-three-valued-logic) · [semiring semantics](#/glossary/k-relation-and-semiring-semantics) · [U-expression](#/glossary/u-expression) (UDP's, §1, PDF p. 1; QED's domain is "a model of U-semiring", §3.2, PDF p. 4, the algebra Cosette uses to axiomatize queries, §1, PDF p. 1)
 
 **The paper's own terms:**
 - **Q-expression**: an expression whose value is a multiplicity (a natural number or infinity); a query means the function from each possible row to its multiplicity in the result (§3.2, PDF p. 4).
@@ -27,9 +27,6 @@ Optimizers rewrite queries into faster ones that must return the same rows, dupl
 - **Complete fragment** (Def. 1, PDF p. 5): queries built from tables, literal rows, filters, projections, joins and unions, with values, projections and filter conditions definable in T; primary keys allowed.
 - **SNF, LNF, SPNF**: SNF (scoped normal form) is a sum of terms, each nested sums over table-drawn variables around a table-free condition; LNF (linearized normal form) also makes each table's variables distinct and ordered (Defs. 2–3, PDF pp. 5–6). SPNF (sum–product normal form), for the general algorithm, allows tables anywhere in a term (Def. 4, PDF p. 8).
 - **Stabilization** (§5.2, PDF p. 9): dropping a summation variable that the term's condition makes equal to an expression in the other variables.
-
-**Missing glossary terms:**
-- **U-expression**: UDP's formal expression of a result's multiplicities (§1, PDF p. 1); QED's domain is "a model of U-semiring" (§3.2, PDF p. 4), the algebra Cosette uses to axiomatize queries (§1, PDF p. 1).
 
 **Builds on:**
 - UDP [7] ([UDP](#/papers/chu2018udp "Axiomatic foundations and algorithms for deciding semantic equivalences of SQL queries (2018)")), the U-expression decision procedure of the Cosette prover [6, 8]; the authors say it relies too much on syntactic equality in many places and models neither NULLs nor outer joins (§1, PDF p. 1).
@@ -84,4 +81,4 @@ Optimizers rewrite queries into faster ones that must return the same rows, dupl
 ## On this site
 
 - **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Canonical forms for queries](#/challenges/query_canonical_forms) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/prove-smt">prove-smt</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/prove">prove</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a></span>

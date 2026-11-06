@@ -32,7 +32,7 @@ DeepSeek-R1 introduced reinforcement learning with rewards from simple rules tha
 - **Language mixing** (§4 "RQ 2", §8): Chinese or other non-English tokens inside English reasoning.
 
 **Builds on:**
-- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")): its rule-based RL and reward designs, which Logic-RL adopts (§1).
+- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")): its rule-based RL and reward designs, which Logic-RL adopts (§1).
 - REINFORCE++ (a policy-gradient RL algorithm) as the base algorithm (Hu, 2025; not listed here), changed as DeepSeekMath ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), which introduced GRPO, recommends (§1, §2.3).
 - Xie et al. (2024), "On memorization of large language models in logical reasoning" (not listed here): the puzzles and the memorization test (§1, §2.1, §4 "RQ 5").
 - Chu et al. (2025) and Liu et al. (2025), neither on this site, whose findings on SFT against RL and on the aha moment the authors say theirs agree with (§4 "RQ 5", "RQ 3").
@@ -86,4 +86,4 @@ DeepSeek-R1 introduced reinforcement learning with rewards from simple rules tha
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

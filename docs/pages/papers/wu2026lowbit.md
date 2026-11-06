@@ -18,7 +18,7 @@ Fewer-bit weights save memory but "can also change model decisions, such as whet
 
 ## Background and terms
 
-**Terms to know:** [post-training quantization](#/glossary/post-training-quantization) · [perplexity](#/glossary/perplexity) · [greedy decoding](#/glossary/greedy-decoding-and-temperature-sampling) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [multiple testing](#/glossary/multiple-testing)
+**Terms to know:** [post-training quantization](#/glossary/post-training-quantization) · [perplexity](#/glossary/perplexity) · [greedy decoding](#/glossary/greedy-decoding-and-temperature-sampling) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [multiple testing](#/glossary/multiple-testing) · [Bayesian information criterion (BIC)](#/glossary/bayesian-information-criterion-bic) (§3) · [KV cache](#/glossary/kv-cache) (App. A.14)
 
 **The paper's own terms:**
 - **margin**: the gap between the model's scores (logits) for two candidate first tokens on one prompt (an **item**); for whether-to-call (call or reply in text) and refusals (decline or comply), the correct option is the item's **side** (§2.1).
@@ -26,10 +26,6 @@ Fewer-bit weights save memory but "can also change model decisions, such as whet
 - **the law**: Eq. 2, quantized margin = c × original + b + Gaussian noise of spread σ, fitted per condition (§3). **Surviving fraction** c is 1 "when nothing is lost" and 0 when the new margin no longer depends on the old; **offset** b moves every margin the same way (§3).
 - **condition**: "one model configuration, bit-width and kind of decision in one run" (§2.2); **damaged** when fitted c is below 0.70 (§3); **estimable** when the slope's estimated uncertainty (standard error) is at most 0.10 (App. A.6); differences in c below 0.04 "are not interpretable" (App. A.4).
 - **the rotation**: a fixed orthogonal mixing (block-diagonal Hadamard) applied before rounding, which spreads the few very large activation values (outliers) that make activations hard to quantize (§4.2).
-
-**Missing glossary terms:**
-- **BIC (Bayesian information criterion)**: a model-choice score that "rewards a better fit and charges for every extra parameter" (§3); a sibling of the [Akaike information criterion (AIC)](#/glossary/akaike-information-criterion-aic).
-- **KV cache**: "the attention keys and values stored and reused during generation" (App. A.14).
 
 **Builds on:**
 - Quantizers built around layer-output error (Nagel et al., 2020; Li et al., 2021) or salient weight channels (Lin et al., 2024) (§1).
@@ -84,4 +80,4 @@ Fewer-bit weights save memory but "can also change model decisions, such as whet
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/llm-misc">llm-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

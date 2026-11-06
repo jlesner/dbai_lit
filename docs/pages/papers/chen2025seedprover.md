@@ -19,7 +19,7 @@ LLMs still struggle to prove theorems when they work only in natural language, b
 
 ## Background and terms
 
-**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [Pass@k](#/glossary/passk) · [beam search](#/glossary/beam-search) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [data contamination](#/glossary/data-contamination) · [forward chaining](#/glossary/forward-chaining)
+**Terms to know:** [proof assistant](#/glossary/proof-assistant) · [tactic](#/glossary/tactic) · [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [Pass@k](#/glossary/passk) · [beam search](#/glossary/beam-search) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [data contamination](#/glossary/data-contamination) · [forward chaining](#/glossary/forward-chaining) · [step-level vs whole-proof provers](#/glossary/step-level-and-whole-proof-provers) (§1)
 
 **The paper's own terms:**
 - **Lean 4, Mathlib**: the proof assistant used, and its mathematics library (§1, §3.2).
@@ -31,9 +31,6 @@ LLMs still struggle to prove theorems when they work only in natural language, b
 - **Proof rate**: how often attempts prove a statement (§2.2.3, §2.2.4).
 - **MOHS**: the Math Olympiad Hardness Scale, a human difficulty rating (§2.2.4, footnote 1).
 - **Auxiliary construction**: an extra point, line or circle added to a geometry diagram so that a proof goes through; Seed-Geometry's model proposes these (§1, §2.1).
-
-**Missing glossary terms:**
-- **Step-level vs whole-proof provers**: a step-level prover generates a Lean proof "line-by-line" in close interaction with Lean; a whole-proof prover generates "an entire Lean proof at once" (§1).
 
 **Builds on:**
 - Whole-proof provers with long chain of thought: Kimina-Prover, DeepSeek-Prover-V2 ([DeepSeek-Prover-V2](#/papers/ren2025deepseekproverv2 "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition (2025)")) and Goedel-Prover, which the authors say generate proofs starting with `theorem` (§1, §2.2.1).
@@ -96,4 +93,4 @@ Tab. 3 compares Seed-Prover with the best earlier result per benchmark:
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/itp-general">itp-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/itp">itp</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a></span>

@@ -18,7 +18,7 @@ A coding agent working through a long task stream could keep improving without r
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [automated program repair](#/glossary/automated-program-repair) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [dense retrieval](#/glossary/dense-retrieval)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [automated program repair](#/glossary/automated-program-repair) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [dense retrieval](#/glossary/dense-retrieval) · [concentration inequality](#/glossary/concentration-inequality) (here Bennett's inequality, which uses the samples' variance and largest deviation, App. A.2)
 
 **The paper's own terms:**
 - **in-context self-evolution**: improving during deployment "while its model weights remain frozen", with the harness fixed, through a persistent text memory (§1, §3.1).
@@ -31,9 +31,6 @@ A coding agent working through a long task stream could keep improving without r
 - **certified**: holding with probability at least 1 − δ (δ: the allowed failure probability) under Assumption 1 and stated variance bounds (§1, §3.2); not the glossary's certificate (evidence a program checks).
 - **Bennett radius**: how far an average of N i.i.d. samples, with variance at most s² and rising at most M above their mean, can exceed the true mean, except with probability at most e^(−L), L setting the confidence (§3.1; Lemma 1, App. A.2).
 - **Assumption 1**: per repository, panel, evaluation set and task stream are disjoint i.i.d. (independent, identically distributed) samples from the repository's task distribution; proposals may depend on earlier verdicts and the panel may be reused (§3.1).
-
-**Missing glossary terms:**
-- **concentration inequality**: a bound on the chance that an average of independent samples lies far from its expectation; Bennett's inequality uses their variance and largest deviation (App. A.2).
 
 **Builds on:**
 - SkillOpt (Yang et al., 2026; [SkillOpt](#/papers/yang2026skillopt "SkillOpt: Executive Strategy for Self-Evolving Agent Skills (2026)")), which "accepts edits using held-out performance", and SkillOpt-Lite (Shen et al., 2026; not listed here), which "introduces an independent validation gate for skill updates": "Most closely related" (§2), motivating the study (§1).
@@ -84,4 +81,4 @@ A coding agent working through a long task stream could keep improving without r
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

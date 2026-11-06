@@ -18,7 +18,7 @@ Query containment asks whether, on every database, one query's answers are among
 
 ## Background and terms
 
-**Terms to know:** [conjunctive query](#/glossary/conjunctive-query) · [query containment](#/glossary/query-containment) · [bag semantics](#/glossary/bag-semantics) · [bag-set semantics](#/glossary/bag-set-semantics) · [homomorphism](#/glossary/homomorphism-containment-mapping) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [union of conjunctive queries](#/glossary/union-of-conjunctive-queries)
+**Terms to know:** [conjunctive query](#/glossary/conjunctive-query) · [query containment](#/glossary/query-containment) · [bag semantics](#/glossary/bag-semantics) · [bag-set semantics](#/glossary/bag-set-semantics) · [homomorphism](#/glossary/homomorphism-containment-mapping) · [decidable and undecidable](#/glossary/decidable-and-undecidable) · [NP-complete and the polynomial hierarchy](#/glossary/np-complete-and-the-polynomial-hierarchy) · [union of conjunctive queries](#/glossary/union-of-conjunctive-queries) · [Diophantine inequality](#/glossary/diophantine-inequality) (§5 intro) · [coNEXPTIME / 2coNEXPTIME](#/glossary/nexptime-and-conexptime) (§6)
 
 **The paper's own terms:**
 - **containee / containing query**: the first query, which should be contained, and the second (§1).
@@ -33,10 +33,6 @@ Query containment asks whether, on every database, one query's answers are among
 - **n-MPI**: an inequality in n unknowns whose left side is a single monomial with coefficient 1 and whose right side is a polynomial (§5).
 - **natural / Diophantine natural**: an assignment whose recovered copy counts are natural numbers, and which is itself in natural numbers (§1; Def. 5.2).
 - **strong non-negativeness**: on Diophantine natural assignments the polynomial is non-negative and at least each of its positive-coefficient monomials taken with coefficient 1 (§1; Def. 5.3).
-
-**Missing glossary terms:**
-- **Diophantine inequality**: an inequality between polynomials whose unknowns must take whole-number values; deciding whether one has a solution is undecidable in general, through Hilbert's tenth problem (§5 intro).
-- **coNEXPTIME / 2coNEXPTIME**: problems whose no-answers have a certificate checkable in exponential, resp. doubly exponential, time (§6).
 
 **Builds on:**
 - The authors' [KM19] (projection-free containees) and [KM25] (join-on-free containees), on which "This work is based" (title footnote; §1); not listed here.
@@ -89,4 +85,4 @@ The authors prove:
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>

@@ -19,7 +19,7 @@ Diversity among LLMs in training data, architecture and provider is assumed to m
 
 ## Background and terms
 
-**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge), in this paper's narrower sense below; other field terms under Missing glossary terms.
+**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge), in this paper's narrower sense below · [algorithmic monoculture](#/glossary/algorithmic-monoculture) (§2) · [systemic exclusion](#/glossary/algorithmic-monoculture) (§2; its rate here is the fraction of applicants that no firm interviews, when each firm interviews only the top of its ranking, the top quarter in the experiments, §5.1, Eq. 1); other field terms under Missing glossary terms.
 
 **The paper's own terms:**
 - **agreement rate when both models are wrong**: for a pair of models, over the questions both get wrong, the fraction on which they pick the same wrong option (§3.1 "Measuring correlated error"). It aims to discount agreement that comes only from both models being accurate (§3.1). Overall agreement and agreement when either is wrong are alternates (App. B–C).
@@ -31,8 +31,6 @@ Diversity among LLMs in training data, architecture and provider is assumed to m
 - **relative match probability**: the match probability of applicants applying to a given number of firms, divided by that of applicants applying to one (§5.2, Eq. 4).
 
 **Missing glossary terms:**
-- **algorithmic monoculture**: the situation "when many decision-makers use the same model" (§2).
-- **systemic exclusion**: one applicant rejected from all jobs "because they all use the same algorithm" (§2). Its rate here is the fraction of applicants that no firm interviews, when each firm interviews only the top of its ranking, the top quarter in the experiments (§5.1, Eq. 1).
 - **stable matching**: used but not defined in the paper (§5.2). In general, a pairing of applicants and firms in which no applicant and firm would both rather be paired with each other than keep their current assignment.
 
 **Builds on** (none on this site):
@@ -88,4 +86,4 @@ The authors report:
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

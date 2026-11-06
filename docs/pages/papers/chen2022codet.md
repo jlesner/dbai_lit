@@ -29,8 +29,6 @@ A code model can sample many programs for a problem, and often one is right, but
 - **pass@k, as used here**: of n sampled solutions, k are selected; a problem is solved if any of the k passes all ground-truth tests (§3 "Metrics and Baseline"). The Baseline picks at random (the unbiased estimator of Chen et al., 2021), but uses greedy decoding for pass@1 (App. A); CodeT picks from its k best consensus sets (§2.2). So, unlike the glossary's sense, CodeT's pass@k scores its own picks.
 - **test case accuracy / toxic test case**: a test is correct "if the canonical solution can pass it" (the benchmark's reference solution); it is "toxic" if "any generated code solution can pass it while the canonical solution cannot" (§4.3).
 - **AlphaCode-C**: the authors' replication of AlphaCode's clustering: groups solutions by their outputs on the inputs of CodeT's tests, ranked by size (§3; App. I).
-
-**Missing glossary terms:**
 - **RANSAC** (random sample consensus, Fischler & Bolles, 1981): "a robust method for finding consensus among noisy data" (§2.2); it repeatedly fits a random sample, collects the data that agree (the consensus set), and keeps the best-supported fit (general definition).
 
 In the glossary's terms (our wording), CodeT is a kind of best-of-N sampling whose scorer is agreement with model-written tests and with other samples; App. I relates its solutions-only variant to the idea of self-consistency.
@@ -88,4 +86,4 @@ Numbers are pass@k (%), as reported.
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

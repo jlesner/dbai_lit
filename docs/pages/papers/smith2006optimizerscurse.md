@@ -18,7 +18,7 @@ When you pick the best of several options by error-prone estimates, the winner's
 
 ## Background and terms
 
-**Terms to know:** none in the glossary yet.
+**Terms to know:** [Bayes' rule, prior and posterior](#/glossary/bayes-rule-prior-and-posterior) (§3, PDF pp. 5–6) · [shrinkage](#/glossary/shrinkage) (§3.2, PDF p. 7; §4, PDF pp. 10–11) · [hierarchical model](#/glossary/hierarchical-model) (§3.4, PDF p. 8) · [winner's curse](#/glossary/winners-curse-optimizers-curse) (the auction version, §4, PDF p. 10) · [regression to the mean](#/glossary/regression-to-the-mean) (§4, PDF p. 10)
 
 **The paper's own terms:**
 - **decision analysis**: typically, identify alternatives, compute each one's expected value or certainty equivalent (a sure amount judged equally good), recommend the highest (§1, PDF p. 1).
@@ -27,13 +27,6 @@ When you pick the best of several options by error-prone estimates, the winner's
 - **postdecision surprise**: realized value minus the chosen alternative's estimate; negative is disappointment (Harrison and March's term; §2, PDF p. 2). **Expected disappointment** is the chosen estimate minus its true value, on average (§2.1, PDF p. 2).
 - **value added**: typically, the best alternative's estimated value minus a default plan's; Clemen and Kwit (2001) use the average of all alternatives instead (§2.2, PDF p. 4).
 - **variance ratio**: the variance of an estimate's error over the prior variance of the true value; it sets the estimate's weight (§3.2, PDF p. 7).
-
-**Missing glossary terms:**
-- **prior, posterior, Bayes' rule**: the prior is a probability distribution over the true values before the analysis; Bayes' rule combines it with a model of the estimates' accuracy to give the posterior, the distribution after seeing the estimates; the posterior mean is its average (§3, PDF pp. 5–6).
-- **shrinkage**: moving an estimate part way toward a prior mean or the average of all estimates (§3.2, PDF p. 7; §4, PDF pp. 10–11).
-- **hierarchical model**: true values drawn from a distribution whose mean is itself uncertain and learned from the estimates (§3.4, PDF p. 8).
-- **winner's curse**: "the tendency for the highest bidder in an auction with common or interdependent values to have overestimated the value of the item being sold" (§4, PDF p. 10).
-- **regression to the mean**: the effect that, e.g., high scorers on one test are likely to do less well on later tests (§4, PDF p. 10).
 
 **Builds on** (none is on this site):
 - Harrison and March (1984), who named postdecision surprise, and Brown (1974) in finance; the authors say neither gave "a general result like our Proposition 1" or advice on a fix (§4, PDF p. 10).
@@ -82,4 +75,4 @@ When you pick the best of several options by error-prone estimates, the winner's
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/general-misc">general-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/theory">theory</a></span>

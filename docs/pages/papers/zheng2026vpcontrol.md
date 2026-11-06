@@ -19,7 +19,7 @@ The authors ask which checks a gate before an AI agent's state-changing actions 
 
 ## Background and terms
 
-**Terms to know:** [multiple testing](#/glossary/multiple-testing) · [Wilson score interval](#/glossary/wilson-score-interval) · [post-training quantization](#/glossary/post-training-quantization)
+**Terms to know:** [multiple testing](#/glossary/multiple-testing) · [Wilson score interval](#/glossary/wilson-score-interval) · [post-training quantization](#/glossary/post-training-quantization) · [transaction (atomicity)](#/glossary/transaction-atomicity) (atomic transactions, §V-D) · [idempotent operation](#/glossary/idempotent-operation) (idempotent requests, §V-D)
 
 **The paper's own terms:**
 - **unsafe commit**: executing when the precondition is false in the true state just before execution, or the effect already holds for an operation that must not repeat (§III-A); rates are per task, "not per executed action" (§V-B).
@@ -27,10 +27,6 @@ The authors ask which checks a gate before an AI agent's state-changing actions 
 - **views A, A′, B**: the actor's read; a second interface on the same upstream; an independent replica (§III-A).
 - **common-mode data failure**: views sharing an upstream lineage (e.g. a replica or cache) go stale together, making different verifier models "agree on the same wrong state" (§I).
 - **exact guard**: checks the part of the precondition the target system can express at commit time (§III-A); **partial** or **full** (the whole predicate); a **preflight** guard runs before, not inside, the write (§V-D).
-
-**Missing glossary terms:**
-- **atomic transaction**: reads and writes run as one indivisible step (general definition; §V-D).
-- **idempotent request**: repeating it does not repeat its effect (§V-D).
 
 **Builds on:**
 - Learn-Then-Test, Angelopoulos et al. [12]: risk calibration whose fixed-sequence organization the selector follows (§II, §III-C).
@@ -70,4 +66,4 @@ The authors ask which checks a gate before an AI agent's state-changing actions 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a></span>

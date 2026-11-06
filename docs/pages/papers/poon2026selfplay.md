@@ -19,7 +19,7 @@ Deciding whether two programs always agree is hard in general: the authors note 
 
 ## Background and terms
 
-**Terms to know:** [self-play](#/glossary/self-play) · [rejection sampling](#/glossary/rejection-sampling) · [LoRA](#/glossary/lora-low-rank-adaptation) · [SMT solvers](#/glossary/sat-and-smt-solvers) · [Rice's theorem](#/glossary/halting-problem-and-rices-theorem) · [curriculum learning](#/glossary/curriculum-learning) · [pass@k](#/glossary/passk) · [F1 score](#/glossary/f1-score)
+**Terms to know:** [self-play](#/glossary/self-play) · [rejection sampling](#/glossary/rejection-sampling) · [LoRA](#/glossary/lora-low-rank-adaptation) · [SMT solvers](#/glossary/sat-and-smt-solvers) · [Rice's theorem](#/glossary/halting-problem-and-rices-theorem) · [curriculum learning](#/glossary/curriculum-learning) · [pass@k](#/glossary/passk) · [F1 score](#/glossary/f1-score) · [refinement type](#/glossary/refinement-type) (Liquid Haskell adds such types to Haskell and checks them with SMT solvers, §2; the paper does not define it)
 
 **The paper's own terms:**
 - **Alice and Bob**: the generator, which writes a variant Q of a reference program P, and the evaluator, which decides whether P and Q are equivalent (§3.1).
@@ -27,9 +27,6 @@ Deciding whether two programs always agree is hard in general: the authors note 
 - **Difficulty score**: Bob judges each pair N times, typically 10; the score is 10 × (1 − his share of correct verdicts), so 10 is hardest (§3.4.1, Eq. 1). Pairs above a threshold τ are "hard"; §3.4.1 gives τ = 5 as an example, and the runs use τ = 3 (App. E.2).
 - **OpInstruct-HSx**: the authors' dataset of Haskell functions used as reference programs (§3.2).
 - **Regimes E0–E3**: the main run and three ablations (§4, Tab. 1).
-
-**Missing glossary terms:**
-- **Refinement type**: a type with a logical condition its values must meet (for example, integers greater than zero). Liquid Haskell adds such types to Haskell and checks them with SMT solvers (§2). (General definition; the paper does not define it.)
 - **Reflection and Proof by Logical Evaluation (PLE)**: the Liquid Haskell features used to build "machine-checkable lemmas" that two functions are equal pointwise (§2). Reflection makes a function's definition usable inside the logic; PLE unfolds such definitions automatically (general description; the paper does not define them).
 
 **Builds on:**
@@ -79,4 +76,5 @@ Deciding whether two programs always agree is hard in general: the authors note 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Discussed in:** [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

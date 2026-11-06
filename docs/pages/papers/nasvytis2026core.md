@@ -21,7 +21,7 @@ On each of four reasoning tasks, with the open model gpt-oss-120b and 10 trainin
 
 ## Background and terms
 
-**Terms to know:** [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [reinforcement learning](#/glossary/reinforcement-learning) (its entry defines a rollout) · [GRPO](#/glossary/grpo) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Distillation into compact models](#/glossary/distillation) · [LoRA](#/glossary/lora-low-rank-adaptation) (the GRPO baseline uses it, §4.1)
+**Terms to know:** [RL with verifiable rewards (RLVR)](#/glossary/rl-with-verifiable-rewards-rlvr) · [reinforcement learning](#/glossary/reinforcement-learning) (its entry defines a rollout) · [GRPO](#/glossary/grpo) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Distillation into compact models](#/glossary/distillation) · [LoRA](#/glossary/lora-low-rank-adaptation) (the GRPO baseline uses it, §4.1) · [parametric vs non-parametric learning](#/glossary/parametric-and-non-parametric-learning) (§2 "Learning from Verifiable Rewards")
 
 **The paper's own terms:**
 - **insight**: a short natural-language description of a general reasoning strategy or constraint; the authors view insights not as summaries of past attempts but as "credit-assignment hypotheses about what distinguishes successful rollouts from unsuccessful ones" (§3).
@@ -32,11 +32,8 @@ On each of four reasoning tasks, with the open model gpt-oss-120b and 10 trainin
 - **admission test**: each new candidate insight, alone in the prompt, is tried on the problem it came from; in the experiments it is kept only if the model then solves that problem in one try (§3).
 - **sample efficiency / rollout efficiency / context efficiency**: the number of distinct training problems needed, the number of attempts needed (§2 "Learning Efficiency"), and the number of tokens a method adds to the prompt at evaluation (§4.4).
 
-**Missing glossary terms:**
-- **parametric vs non-parametric learning**: parametric methods update model weights; non-parametric methods keep the model frozen and improve its context, e.g. its prompt or retrieved memories (§2 "Learning from Verifiable Rewards").
-
 **Builds on:**
-- GRPO and the DeepSeek-R1 line of RLVR ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)"), [DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), the parametric baseline and the authors' example of needing many rollouts (§1, §2, §4.1).
+- GRPO and the DeepSeek-R1 line of RLVR ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)"), [DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")), the parametric baseline and the authors' example of needing many rollouts (§1, §2, §4.1).
 - GEPA ([GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), the prompt optimizer the authors call "state-of-the-art" and compare against (§1, §4.1).
 - MemRL, an episodic memory that summarizes past attempts and learns a value score for each to guide retrieval (not listed here), the memory baseline that also scores memories by utility (§2, §4.1).
 - Verbal-reflection and memory work such as Reflexion ([Reflexion](#/papers/shinn2023reflexion "Reflexion: Language Agents with Verbal Reinforcement Learning (2023)")), ReasoningBank and Metacognitive Reuse (not listed here), plus cognitive-psychology work on contrasting successes and failures (§1, §2).
@@ -94,4 +91,4 @@ CORE trains by repeating one step (§3, Fig. 1, App. A Alg. 1):
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

@@ -11,7 +11,7 @@ Code: [UOJ-Bench](https://github.com/hehezhou/UOJ-Bench)
 
 - A benchmark of three competitive-programming tasks built from real submissions to the Universal Online Judge (UOJ): code generation, code hacking (write an input that breaks a buggy solution) and code repair, all graded by UOJ's own judge through its API (abstract; §1; §3).
 - "Easy" bugs are ones the standard tests catch, "Hard" ones only community hacks found; each hack is checked by the problem's input validator and reference solution (§1; §3.1–3.2). Pass@k and a ReAct agent with judge feedback study test-time scaling (§4.3), and a Zero-Day set of full-score submissions asks for bugs nobody has found (§5).
-- Refutation scored by an independent judge, the task [REFUTE ("Can Language Models Falsify?")](#/papers/sinha2025refute "Can Language Models Falsify? Evaluating Algorithmic Reasoning with Counterexample Creation (2025)") also poses, with the reference solution as the oracle: the authors report that one-shot, even the strongest models fail to find errors in more than 50% of submissions UOJ users had shown incorrect (abstract); with test-time scaling, models find bugs in submissions that pass all existing tests (§5).
+- Refutation scored by an independent judge, the task [REFUTE ("Can Language Models Falsify?")](#/papers/sinha2025refute "Can Language Models Falsify? Evaluating Algorithmic Reasoning with Counterexample Creation (2025)") also poses, with the reference solution as the oracle: the authors report that one-shot, even the strongest models fail to find errors in more than 50% of submissions UOJ users had shown incorrect (abstract; true of Tab. 3's models, not of GPT-5.2-high, printed only in their appendix tables); with test-time scaling, models find bugs in submissions that pass all existing tests (§5).
 
 ## In plain words
 
@@ -19,7 +19,7 @@ Competitive programmers submit solutions to an online judge, which runs them on 
 
 ## Background and terms
 
-**Terms to know:** [pass@k](#/glossary/passk) · [test-time scaling](#/glossary/test-time-scaling) · [automated program repair](#/glossary/automated-program-repair) · [data contamination](#/glossary/data-contamination) · [test oracle](#/glossary/test-oracle)
+**Terms to know:** [pass@k](#/glossary/passk) · [test-time scaling](#/glossary/test-time-scaling) · [automated program repair](#/glossary/automated-program-repair) · [data contamination](#/glossary/data-contamination) · [test oracle](#/glossary/test-oracle) · [ReAct](#/glossary/react) (the paper uses "a ReAct framework" without a citation, §4.3) · [Levenshtein edit distance](#/glossary/levenshtein-distance) (undefined in the paper, §3.2)
 
 **The paper's own terms:**
 - **Online judge (OJ)**: runs submitted code on fixed tests and returns a score (§1); verdicts include Wrong Answer (WA), Time Limit Exceeded (TLE), Runtime Error (RE) and Memory Limit Exceeded (MLE) (Fig. 1).
@@ -29,10 +29,6 @@ Competitive programmers submit solutions to an online judge, which runs them on 
 - **Easy and Hard, two senses**: (1) the levels of the hacking and repair tasks, Easy for overt errors, Hard for covert errors found by community hacks (§1; §3.2); (2) problem difficulty, one of Easy, Medium, Hard and Ultrahard (§3.4; App. B.4).
 - **Non-trivial grading**: support for custom checkers, programs that accept any valid output when a problem has several (§3.1).
 - **Zero-Day Hacking**: hacking full-score submissions with no known failing test, by analogy with "zero-day" security vulnerabilities; its set, Zero-Day-Hacking-5K, holds 5,060 submissions (§1; §5).
-
-**Missing glossary terms:**
-- **ReAct**: an agent pattern in which an LLM alternates reasoning with actions and reads each result before its next step ([ReAct](#/papers/yao2022react "ReAct: Synergizing Reasoning and Acting in Language Models (2023)")); the paper uses "a ReAct framework" without a citation (§4.3).
-- **Levenshtein edit distance**: the least number of single-character insertions, deletions and substitutions that turn one text into another (general definition; undefined in the paper, §3.2).
 
 **Builds on:**
 - **REFUTE** (Sinha et al., 2025; [REFUTE ("Can Language Models Falsify?")](#/papers/sinha2025refute "Can Language Models Falsify? Evaluating Algorithmic Reasoning with Counterexample Creation (2025)")), a benchmark of LLMs writing counterexamples to wrong competitive-programming solutions; the authors say it "focuses primarily on overt errors" (§2; Tab. 1).
@@ -87,4 +83,5 @@ Competitive programmers submit solutions to an online judge, which runs them on 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/labels">labels</a><a class="tag sub" href="#/tags/cex-general">cex-general</a><a class="tag sub" href="#/tags/cex-llm">cex-llm</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/scaling-general">scaling-general</a></span>
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

@@ -30,8 +30,6 @@ LLMs are trained heavily on code and graphs, but user tasks are often stated in 
 - **analogical strength**: a similarity score between two problems' DAGs, weighting how alike their edge structures are above how alike their durations are (§5.1, Eq. 1).
 - **frequency- vs analogy-based hypothesis**: success comes from many moderately similar training items, or a few highly similar ones (§5.1).
 - **`NL-AAVE`**: the `NL` test set rewritten in African American Vernacular English, an English dialect, with the same task structure (§4.3, App. A.1).
-
-**Missing glossary terms:**
 - **STaR (Self-Taught Reasoner)**: the model samples reasoning, keeps the samples whose final answers match the ground truth, is fine-tuned on them, and repeats; for prompts it can't solve, the right answer is given as a hint ("rationalization") (§3.1). In the glossary's terms, a form of expert iteration (ours).
 
 **Builds on:**
@@ -89,4 +87,4 @@ LLMs are trained heavily on code and graphs, but user tasks are often stated in 
 ## On this site
 
 - **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/transfer">transfer</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a><a class="tag" href="#/tags/transfer">transfer</a></span>

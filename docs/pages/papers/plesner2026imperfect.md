@@ -18,7 +18,7 @@ Reinforcement learning with verifiable rewards trains a language model by reward
 
 ## Background and terms
 
-**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [PPO](#/glossary/ppo) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk) · [multiple testing](#/glossary/multiple-testing) · [equivalence test](#/glossary/equivalence-test-tost)
+**Terms to know:** [reinforcement learning](#/glossary/reinforcement-learning) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [GRPO](#/glossary/grpo) · [PPO](#/glossary/ppo) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [pass@k](#/glossary/passk) · [multiple testing](#/glossary/multiple-testing) · [equivalence test](#/glossary/equivalence-test-tost) · [reward overoptimization](#/glossary/reward-model-overoptimization) (the 4B-judge run is "consistent with reward overoptimization (Gao et al., 2023)", §6.3)
 
 **The paper's own terms:**
 - **RLVR**: the paper also counts rubric and LLM-judge rewards in "semi-verifiable domains" as RLVR (§1), unlike the glossary entry.
@@ -31,11 +31,8 @@ Reinforcement learning with verifiable rewards trains a language model by reward
 - **clipping**: GRPO's objective clips each token's new-to-old probability ratio to an interval (App. E, Eq. 2).
 - **late-training metric**: a run's validation reward averaged over steps 239 and 259, then over seeds, "without selecting a checkpoint by validation performance" (App. A; Tab. 8). **Peak** scores take each run's best evaluation (§5.1).
 
-**Missing glossary terms:**
-- **reward overoptimization**: the scorer's reward rises while true quality, measured separately, falls; the 4B-judge run is "consistent with reward overoptimization (Gao et al., 2023)" (§6.3).
-
 **Builds on:**
-- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")): RLVR is taken "as a given" (§2); training uses GRPO from DeepSeekMath ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)"); §4).
+- DeepSeek-R1 ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")): RLVR is taken "as a given" (§2); training uses GRPO from DeepSeekMath ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)"); §4).
 - Rad et al. (2026, not listed here), reward noise in GRPO on code; this study "adds comparisons across noise structures and model families at finite training budgets" (§2).
 - Other noisy-reward RLVR work: Cai et al. (2025; App. M), Spurious Rewards ([Spurious Rewards](#/papers/shao2025spurious "Spurious Rewards: Rethinking Training Signals in RLVR (2025)")), Zhu & Kang (2026), Mansouri et al. (§2).
 - Rubric-based post-training with judge rewards (Gunjal et al., 2025; He et al., 2025), which the judge setup "resembles" (§3.2).
@@ -90,4 +87,4 @@ Reinforcement learning with verifiable rewards trains a language model by reward
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a></span>

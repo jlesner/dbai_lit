@@ -19,7 +19,7 @@ Agent skills are short instruction files given to an LLM agent: a short descript
 
 ## Background and terms
 
-**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [progressive disclosure](#/glossary/progressive-disclosure) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [multiple testing](#/glossary/multiple-testing) · [lost in the middle](#/glossary/lost-in-the-middle)
+**Terms to know:** [agent skill](#/glossary/agent-skill) · [agent harness](#/glossary/agent-harness) · [progressive disclosure](#/glossary/progressive-disclosure) · [McNemar's exact test](#/glossary/mcnemars-exact-test) · [multiple testing](#/glossary/multiple-testing) · [lost in the middle](#/glossary/lost-in-the-middle) · [Newcombe confidence interval](#/glossary/newcombe-confidence-interval) (on each paired pass-rate difference, Tab. 2 caption)
 
 Our bridge: the description–body split is the glossary's progressive disclosure, a term the paper does not use.
 
@@ -35,9 +35,6 @@ Our bridge: the description–body split is the glossary's progressive disclosur
 - **grounding / verification displacement**: a skill is invoked or read, and the error is at the input stage on a task the baseline read correctly / at the output stage, where the procedure "replaced or suppressed a check the baseline would have run on its own answer" (§5).
 - **grader artifact**: SpreadsheetBench's grader cannot recompute structured or table references or "several modern functions", so such a correct formula counts as a failure (§3.1); a regression caused this way is a **validation regression** (App. B.3).
 - **transitions**: gains and regressions are counted per library condition, not per unique task (§4.1).
-
-**Missing glossary terms:**
-- **Newcombe confidence interval**: the interval on each paired pass-rate difference (Tab. 2 caption); a method for a confidence interval on the difference between two success rates measured on the same items (general definition).
 
 **Builds on:**
 - Skill generators from agent traces: Trace2Skill, EvoSkill, SkillOpt ([SkillOpt](#/papers/yang2026skillopt "SkillOpt: Executive Strategy for Self-Evolving Agent Skills (2026)")), SkillOS, and Anthropic's and OpenAI's skill-creator tools, which the authors say "evaluate them by average gains" (§1, §2).
@@ -92,4 +89,4 @@ Which tasks does a skill library fix, which solved tasks does it break, and why 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

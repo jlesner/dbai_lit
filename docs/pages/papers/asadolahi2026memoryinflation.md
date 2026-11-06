@@ -18,7 +18,7 @@ Some LLM agents improve without retraining by keeping a memory: each finished ta
 
 ## Background and terms
 
-**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reward hacking](#/glossary/reward-hacking) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [Pearson correlation](#/glossary/pearson-correlation) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [dense retrieval](#/glossary/dense-retrieval)
+**Terms to know:** [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reward hacking](#/glossary/reward-hacking) · [text-to-SQL](#/glossary/text-to-sql) · [execution accuracy](#/glossary/execution-accuracy) · [Pearson correlation](#/glossary/pearson-correlation) · [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting) · [dense retrieval](#/glossary/dense-retrieval) · [fixed point and stability](#/glossary/fixed-point) (§5.2)
 
 **The paper's own terms:**
 - **Memory signals**: each stored episode (task, answer, score) has an LLM grade written when stored, usually the agent's **self-grade**; a **verifier score** from another channel; and the **ground-truth utility**, used only to measure afterwards. **Bias** and **verifier error** are each score minus truth (§3.1).
@@ -27,9 +27,6 @@ Some LLM agents improve without retraining by keeping a memory: each finished ta
 - **EIA (Error-Independence Assumption)**: on a labelled validation bank, a verifier's error is nearly uncorrelated with the self-grade bias and its score correlates with truth, each against a cutoff (§3.3); the authors treat it "as directional rather than tied to a particular cutoff" (§3.3).
 - **De-inflation**: lowering the stored score of memories that look overrated; in deployment, flagged memories are demoted from 1 to 0, not rewritten (§3.3; App. B.1). An **answer-free** signal reads neither the truth nor the reference answer (App. A). **Detector precision**: the share of flagged memories truly wrong (§3.3).
 - **Memory-to-behavior coupling (κ)**: how much the agent's error rate rises with the share of wrong trusted memories; **corrupted attractor**: the share of wrong trusted memories at which the write-back loop settles (§5.2).
-
-**Missing glossary terms:**
-- **Fixed point and stability**: a state a repeated update maps to itself; stable when small nudges die out (general definition; §5.2).
 - **Softmax retrieval with temperature T**: picking memories with probability proportional to e^(score/T); top-k is the limit as T goes to 0 (Thm. 1).
 
 **Builds on:**
@@ -82,5 +79,5 @@ Some LLM agents improve without retraining by keeping a memory: each finished ta
 
 ## On this site
 
-- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/judge-general">judge-general</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-misc">nl2sql-misc</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Discussed in:** [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

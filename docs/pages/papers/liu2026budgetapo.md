@@ -18,7 +18,7 @@ In automatic prompt optimization, one LLM (the optimizer) rewrites the prompt of
 
 ## Background and terms
 
-**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [multiple testing](#/glossary/multiple-testing) · [best arm identification](#/glossary/best-arm-identification) · [multi-hop question answering](#/glossary/multi-hop-question-answering) · [F1 score](#/glossary/f1-score) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling)
+**Terms to know:** [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Wilcoxon signed-rank test](#/glossary/wilcoxon-signed-rank-test) · [multiple testing](#/glossary/multiple-testing) · [best arm identification](#/glossary/best-arm-identification) · [multi-hop question answering](#/glossary/multi-hop-question-answering) · [F1 score](#/glossary/f1-score) · [greedy decoding and temperature sampling](#/glossary/greedy-decoding-and-temperature-sampling) · [standard error](#/glossary/standard-error) (over s rows, the score's standard deviation divided by √s; §3.1, Eq. 2) · [concentration inequality](#/glossary/concentration-inequality) (its Bernstein bound, App. A.2)
 
 **The paper's own terms:**
 - **APO**: automatic prompt optimization (§1).
@@ -27,10 +27,6 @@ In automatic prompt optimization, one LLM (the optimizer) rewrites the prompt of
 - **Probe** and **slice**: the 16 validation rows the seed is scored on first, and the fixed rows every candidate is scored on (§3.1). **Single-stage**: "one slice supplies both refinement feedback and selection, with no separate screening and reranking stage" (§3).
 - **Primary subject**: Gemma-4-31B, on which the ablations, sweeps and optimizer swap run (§4.1).
 - **StackEval**: the tables' label for "a generated instruction-stacking task" (§4.1).
-
-**Missing glossary terms:**
-- **Standard error**: the typical error of an average taken over a sample; over s rows whose scores have standard deviation σ, it is σ divided by the square root of s (§3.1, Eq. 2).
-- **Bernstein bound**: an upper bound on the chance that an average of bounded independent variables strays far from its mean, tighter when their variance is small (general definition; used in App. A.2).
 
 **Builds on:**
 - GEPA (Agrawal et al., 2026; [GEPA](#/papers/agrawal2025gepa "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning (2026)")), which "screens a broad candidate pool on small batches and reranks survivors on larger ones" (§2): the main rival (§1).
@@ -60,11 +56,11 @@ In automatic prompt optimization, one LLM (the optimizer) rewrites the prompt of
 250-call cap unless stated.
 
 - **Main comparison (Tab. 1a; §4.2).** BudgetAPO is first on all five subject models' seven-benchmark means; on the five-subject mean it scores 63.52% against 61.54% for the best baseline, OPRO. Over the 35 cells it ranks first in 14, "including two shared first places", and in the top two in 23, against 12 for the next best method. It clears the Holm-corrected threshold against each baseline (§4.2; Tab. 7).
-- **Seed return (§4.3; Tab. 9).** Over 105 runs per method, GEPA returns the seed in 86%, BudgetAPO in 13%; MIPROv2 and aPSF always rewrite. On the primary subject, GEPA's rate drops at 1,000 calls, "once its initial validation pass fits" (§4.3).
-- **Budget curve (§4.3; Fig. 1a; Tab. 8).** On GPT-OSS-20B, BudgetAPO is first at every sampled budget from 150 to 400, and GEPA needs 450 calls, 4.5 times as many, to match its 100-call score. On the primary subject GEPA matches BudgetAPO's 250-call score only at 1,000 calls (§4.3).
+- **Seed return (§4.3; Tab. 9).** Over 105 runs per method, GEPA returns the seed in 86%, BudgetAPO in 13%; MIPROv2 and aPSF always rewrite. On the primary subject, GEPA's rate drops at 1,000 calls, "reflecting its sensitivity to available budget" (§4.3).
+- **Budget curve (§4.3; Fig. 1a; Tab. 8).** On GPT-OSS-20B, BudgetAPO is first at every sampled budget from 150 to 400, and GEPA needs 500 calls, 5 times as many, to match its 100-call score. On the primary subject GEPA matches BudgetAPO's 250-call score only at 1,000 calls (§4.3).
 - **Ablations (Tab. 2; §4.4), primary subject.** Removing adaptive sizing costs 1.8 points, the reflective operator 1.6 and the fixed slice 1.4, from a 71.6% mean; removing only the failing rows costs 0.9.
-- **Hyper-parameters (Fig. 6; App. L–M).** Test score peaks at the default target. No probe size (4–48 rows) or lower clamp (5–20) scores below the default in its batch, "so neither needs per-task tuning" (§4.4).
-- **Optimizer swap (Tab. 3; §4.5), seed 0.** BudgetAPO stays first under both optimizers; when the subject optimizes its own prompt, OPRO leads.
+- **Hyper-parameters (Fig. 6; App. L–M).** Test score peaks at the default target. The authors also vary the probe size (4–48 rows) and the lower clamp (5–20), and all main-table runs use the same defaults "without per-task tuning" (§4.4).
+- **Optimizer swap (Tab. 3; §4.5), seed 0.** BudgetAPO stays first on the mean under both optimizers.
 - **Held-out checks.** The prompt picked on the slice beats its candidate pool's mean on held-out rows in most cells (App. P; Fig. 8). For the primary subject (Gemma-4-31B) only, on four test sets enlarged to 731–1,000 rows, BudgetAPO keeps its position on all four (App. Q; Tab. 14).
 - **Prompts (§4.2).** Its prompts draw the shortest replies of any method; "on average, the gain stays with the task a prompt was written for" (Fig. 5).
 
@@ -86,4 +82,4 @@ In automatic prompt optimization, one LLM (the optimizer) rewrites the prompt of
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/stats">stats</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

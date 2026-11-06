@@ -17,7 +17,7 @@ Two finite automata (machines that read strings through finitely many states, ac
 
 ## Background and terms
 
-**Terms to know:** [finite-state machine](#/glossary/finite-state-machine) (its paragraph on finite automata); the rest are not in the glossary yet.
+**Terms to know:** [finite-state machine](#/glossary/finite-state-machine) (its paragraph on finite automata) · [union–find (disjoint-set) structure](#/glossary/union-find-disjoint-set-structure) (the paper's MERGE and FIND are these; ours); the rest are not in the glossary yet.
 
 **The paper's own terms:**
 - **finite automaton**: states, input symbols, a transition function giving one next state per state and symbol, a start state and final states; the function extends to strings (§II, PDF p. 4). In later terms, deterministic (ours).
@@ -26,9 +26,6 @@ Two finite automata (machines that read strings through finitely many states, ac
 - **linear list merging algorithm, MERGE, FIND**: a set structure from Hopcroft and Ullman's report [3]. From n one-element sets, MERGE(i, j, k) combines the sets named i and j into one named k; FIND(i) names the set holding i. Any sequence of these "whose length does not exceed a constant times n" takes time "bounded by a constant times n" (§I, PDF pp. 3–4).
 - **pushdown store**: a stack of state pairs still to process (§III, PDF p. 5).
 - **random access computer**: the machine model of the time bound (§IV, PDF p. 6); any memory cell is reached in one step (general definition).
-
-**Missing glossary terms:**
-- **union–find (disjoint-set) structure** (general definition): keeps disjoint sets under two operations, union of two sets and finding the set holding an element. The paper's MERGE and FIND are these (ours).
 
 **Builds on:**
 - Hopcroft's state-minimization algorithm [2], which "can be used to test the equivalence" of two automata (§I, PDF p. 3).
@@ -71,4 +68,4 @@ None stated as limits. The authors offer the method for when "the finite automat
 ## On this site
 
 - **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/theory-misc">theory-misc</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/theory">theory</a></span>

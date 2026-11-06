@@ -89,4 +89,4 @@ No experiments (the document is a specification; § "Status of This Document"). 
 
 ## On this site
 
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/general-misc">general-misc</a><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a><a class="tag sub" href="#/tags/theory-bag">theory-bag</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sparql">dsl-sparql</a><a class="tag sub" href="#/tags/nondet-semantics">nondet-semantics</a></span>

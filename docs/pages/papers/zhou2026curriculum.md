@@ -18,7 +18,7 @@ One way to improve a code-writing model is to have it generate outputs, keep tho
 
 ## Background and terms
 
-**Terms to know:** [rejection sampling](#/glossary/rejection-sampling) · [expert iteration](#/glossary/expert-iteration) (the paper's iterated "self-distillation", §5) · [pass@k](#/glossary/passk) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reward hacking](#/glossary/reward-hacking) · [GRPO](#/glossary/grpo) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [bootstrap resampling](#/glossary/bootstrap-resampling)
+**Terms to know:** [rejection sampling](#/glossary/rejection-sampling) · [expert iteration](#/glossary/expert-iteration) (the paper's iterated "self-distillation", §5) · [pass@k](#/glossary/passk) · [LLM-as-a-judge](#/glossary/llm-as-a-judge) · [reward hacking](#/glossary/reward-hacking) · [GRPO](#/glossary/grpo) · [RL with verifiable rewards](#/glossary/rl-with-verifiable-rewards-rlvr) · [bootstrap resampling](#/glossary/bootstrap-resampling) · [Youden's index](#/glossary/youdens-index) (of a verifier, §1, §8)
 
 **The paper's own terms:**
 - **curriculum**: the training data the acceptance filter lets through; "what it certifies is what the model learns" (§1).
@@ -31,9 +31,6 @@ One way to improve a code-writing model is to have it generate outputs, keep tho
 - **harvest budget**: candidates sampled per brief or problem (§5).
 - **execution grounding**: a readout, never a training signal, that steps the running game and scores observable state change (§6, App. B).
 - **cluster-permutation test**: shuffles arm labels within each task, so the 25 held-out tasks are the unit of evidence (§5, App. C).
-
-**Missing glossary terms:**
-- **Youden index**: a verifier's true-positive rate minus its false-positive rate (§1, §8).
 
 **Builds on:**
 - STaR, ReST and rejection-sampling fine-tuning for math (Yuan et al., 2023): the method is that procedure "with one deliberate choice", the STRICT-LAUNCH gate (§5, §2).
@@ -89,4 +86,4 @@ One way to improve a code-writing model is to have it generate outputs, keep tho
 ## On this site
 
 - **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/hacking-general">hacking-general</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/rlvr-general">rlvr-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a></span>

@@ -35,7 +35,7 @@ Language models write prose well, but the authors say they "often falter on stru
 
 **Builds on:**
 - Stoisser et al. [30], Sparks of Tabular Reasoning ([Sparks of Tabular Reasoning](#/papers/stoisser2025sparks "Sparks of Tabular Reasoning via Text2SQL Reinforcement Learning (2025)")), by three of the authors, on SQL only: the continuous rewards are designed "similarly to [30]" and the clause reward is "as used in" [30] and [20] (§3.3.2); the prompts are "closely aligned with" it (App. D).
-- GRPO, "originally introduced in" Shao et al. [27] ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")) (§3.3.1), and the reasoning system prompt of Guo et al. [5] ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)")) (App. D.4).
+- GRPO, "originally introduced in" Shao et al. [27] ([DeepSeekMath](#/papers/shao2024deepseekmath "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)")) (§3.3.1), and the reasoning system prompt of Guo et al. [5] ([DeepSeek-R1](#/papers/deepseek2025reasoning "DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning (2025)")) (App. D.4).
 - Ozsoy et al. [23]'s Neo4j Text-to-Cypher dataset, "over 44k examples" (§2).
 
 ## Problem and setting
@@ -89,4 +89,4 @@ Language models write prose well, but the authors say they "often falter on stru
 ## On this site
 
 - **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
-- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/dsl">dsl</a><a class="tag" href="#/tags/transfer">transfer</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/nl2sql-data">nl2sql-data</a><a class="tag sub" href="#/tags/rlvr-sql">rlvr-sql</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/dbtask">dbtask</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/transfer">transfer</a><a class="tag sub" href="#/tags/dsl-graph">dsl-graph</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a></span>

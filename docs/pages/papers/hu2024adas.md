@@ -21,7 +21,7 @@ With agents run on GPT-3.5 and designed by GPT-4, the best discovered agent beat
 
 ## Background and terms
 
-**Terms to know:** [agent harness](#/glossary/agent-harness) (the paper says "agentic system"), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [bootstrap resampling](#/glossary/bootstrap-resampling), [F1 score](#/glossary/f1-score) (the reading-comprehension metric, 0–100, Tab. 1; not defined in the paper), [Turing-complete](#/glossary/turing-complete) (the claim that code can express any agent rests on it, §1).
+**Terms to know:** [agent harness](#/glossary/agent-harness) (the paper says "agentic system"), [self-consistency (majority voting)](#/glossary/self-consistency-majority-voting), [bootstrap resampling](#/glossary/bootstrap-resampling), [F1 score](#/glossary/f1-score) (the reading-comprehension metric, 0–100, Tab. 1; not defined in the paper), [Turing-complete](#/glossary/turing-complete) (the claim that code can express any agent rests on it, §1), [open-endedness](#/glossary/open-endedness) (the paper's "open-endedness algorithms": searches that keep an archive of diverse, interesting discoveries as stepping stones, not only chasing one score, §3, §4.1), [AutoML and neural architecture search (NAS)](#/glossary/automl-and-neural-architecture-search-nas) (§1, §5).
 
 **The paper's own terms:**
 - **Foundation Model (FM)**: a large pretrained model, e.g. GPT (§1).
@@ -31,10 +31,6 @@ With agents run on GPT-3.5 and designed by GPT-4, the best discovered agent beat
 - **Archive**: the agents found so far, with their evaluation metrics; optionally seeded with hand-designed agents (§3).
 - **Framework, forward function**: a library of under 100 lines given to the meta agent, for querying FMs and formatting prompts. A new agent is one `forward` function from task to answer (§3, App. C).
 - **Stepping stones**: earlier designs that later ones build on, even if not high-scoring at first (§4.1).
-
-**Missing glossary terms:**
-- **AutoML, Neural Architecture Search (NAS)**: learning usually hand-designed parts of machine-learning systems; NAS searches for neural-network architectures (§1, §5).
-- **Open-endedness algorithms**: searches that keep an archive of diverse, interesting discoveries as stepping stones, not only chasing one score (§3, §4.1).
 
 **Builds on:**
 - Prompt-optimization methods, OPRO ([OPRO](#/papers/yang2023opro "Large Language Models as Optimizers (2024)")) and Promptbreeder ([Promptbreeder](#/papers/fernando2023promptbreeder "Promptbreeder: Self-Referential Self-Improvement Via Prompt Evolution (2023)")), which the authors say "focus only on designing prompts" (§1). OPRO is their prompt-optimization baseline (§4.2).
@@ -95,4 +91,4 @@ With agents run on GPT-3.5 and designed by GPT-4, the best discovered agent beat
 ## On this site
 
 - **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

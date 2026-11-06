@@ -19,7 +19,7 @@ When LLMs play long two-player text games, results swing from run to run: an ear
 
 ## Background and terms
 
-**Terms to know:** [self-play](#/glossary/self-play) · [reinforcement learning](#/glossary/reinforcement-learning) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Markov decision process](#/glossary/markov-decision-process).
+**Terms to know:** [self-play](#/glossary/self-play) · [reinforcement learning](#/glossary/reinforcement-learning) · [reflective prompt optimization](#/glossary/reflective-prompt-optimization) · [Markov decision process](#/glossary/markov-decision-process) · [partially observable Markov game](#/glossary/partially-observable-markov-game) (here two-player, players alternate moves, the game ends with win, draw or loss, and it is zero-sum, §2) · [perfect- and imperfect-information games](#/glossary/perfect--and-imperfect-information-games) (§4.1).
 
 **The paper's own terms:**
 - **context**: everything that conditions the model before and during play: the instruction prompt fixed at game start plus a memory of insights injected at inference time (§2).
@@ -30,10 +30,6 @@ When LLMs play long two-player text games, results swing from run to run: an ear
 - **Add / Remove / Edit**: how a new insight is merged into the bank: added if unlike any stored one, both removed if they contradict, merged if similar; the paper calls these "database-style" or CRUD-style operations (§3.2, §1).
 - **random proposals and memory-augmented updates**: the two ways new candidate contexts are made: small length-bounded edits that give the base prompt a playstyle drawn from a fixed list (aggressive, deceptive, …), or edits that build in insights from the bank (§3.1, App. D.1).
 - **RSE (relative standard error)**: the spread of the average win rate across independent runs of the whole optimization pipeline, as a percentage of the mean, divided by the square root of the number of runs; lower means more repeatable (§2).
-
-**Missing glossary terms:**
-- **partially observable Markov game**: the two-player version of a Markov decision process, in which players alternate moves, each sees only part of the state, and the game ends with win, draw or loss; zero-sum means one player's win is the other's loss (§2).
-- **perfect- and imperfect-information games**: whether players see the whole state (a board) or not (hidden cards) (§4.1).
 - **TrueSkill**: a Bayesian rating system that keeps, for each player, an estimated skill and how unsure that estimate is, updated from game results. MEMO scores contexts by estimate minus one unit of uncertainty (Eq. 1, §4.3), which "penalizes contexts with high uncertainty, favoring those that win reliably"; a context that wins 3 of 3 games "may simply be lucky" (§3.1).
 - **prioritized replay**: storing past experience and revisiting some of it more often than the rest. MEMO stores game prefixes (the moves so far plus the random seed) and starts some new games from them, favouring rarely seen prefixes (§3.3).
 
@@ -87,4 +83,4 @@ When LLMs play long two-player text games, results swing from run to run: an ear
 ## On this site
 
 - **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
-- **Tags:** <span class="tags"><a class="tag sub" href="#/tags/harness-general">harness-general</a><a class="tag sub" href="#/tags/harness-promptopt">harness-promptopt</a><a class="tag sub" href="#/tags/llm-method">llm-method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a><a class="tag sub" href="#/tags/promptopt-general">promptopt-general</a></span>
+- **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>
