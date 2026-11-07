@@ -86,5 +86,5 @@ LLMs are trained heavily on code and graphs, but user tasks are often stated in 
 
 ## On this site
 
-- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
+- **Discussed in:** [Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/study">study</a><a class="tag" href="#/tags/transfer">transfer</a></span>

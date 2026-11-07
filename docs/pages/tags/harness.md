@@ -7,8 +7,8 @@
 ## Challenges
 
 - **[Self-improvement that compounds](#/challenges/compounding_self_improvement)**: Self-improving LLM loops often gain in the first round, then stall or regress. Make the gains compound: each round adds certified information, and each change is kept only if a certified, statistically controlled check shows it doesn't regress.
-- **[Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)**: Do gains a model makes against a program checker, in its weights or with its weights fixed (prompts, skills, memory), carry over to tasks the checker can't check: near, the same DSL on a task only examples check, such as writing a program from English; far, open-ended work in other domains?
-- **[Checking a memory across problems before it is reused](#/challenges/verified_memory)**: Check each lesson, skill or harness edit carried from one problem to the next with a sound check before it is reused, and name what an edit breaks before it is kept.
+- **[Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)**: Do gains made against a program checker, in the weights or with them fixed (prompts, skills, memory), carry over to tasks it can't check: near, the same DSL on a task only examples check, such as writing a program from English; far, open-ended work in other domains?
+- **[Checking a memory across problems before it is reused](#/challenges/verified_memory)**: Check each lesson, skill or harness edit carried from one problem to the next with a sound check before it is reused.
 - **[Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)**: Per-step errors compound over long jobs, so a model that is good at each step can still fail most long jobs. Which checks restore whole-job success, and can a small local model, checked at every step, finish long jobs as reliably as a frontier model?
 
 ## Papers

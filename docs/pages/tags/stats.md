@@ -4,6 +4,10 @@
 
 <!-- filter -->
 
+## Challenges
+
+- **[Comparing LLM methods under noise](#/challenges/method_comparison_under_noise)**: Reported gains among prompts, optimizers, verifiers and training recipes often sit inside run-to-run and small-sample noise, or are scored on the set that picked the winner. Certified, renewable test items, SQL pairs or the DSL gym's code-made tasks, make the comparison cheap to redo.
+
 ## Papers
 
 - **[Deep Reinforcement Learning at the Edge of the Statistical Precipice](https://arxiv.org/pdf/2108.13264 "Deep Reinforcement Learning at the Edge of the Statistical Precipice (2021)")** ((rliable), NeurIPS 2021). Argues that comparisons of deep RL methods from a handful of runs per task must report uncertainty: stratified bootstrap confidence intervals, performance profiles, and the interquartile mean (IQM) as aggregate (Tab. 1; §4). <span class="links">[🔎](#/papers/agarwal2021rliable "Summary") · [PDF](https://arxiv.org/pdf/2108.13264) · [arXiv](https://arxiv.org/abs/2108.13264) · [Code](https://github.com/google-research/rliable)</span> <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

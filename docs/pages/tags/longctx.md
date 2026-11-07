@@ -4,6 +4,10 @@
 
 <!-- filter -->
 
+## Challenges
+
+- **[Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)**: When a compact model writes a DSL program and an engine runs it, does its success rate hold as tasks grow, in data and in composition, and does the model know when the engine is the right tool?
+
 ## Papers
 
 - **[Probing for Long-Horizon Deductive Reasoning Capabilities in Language Models with Prolog](https://arxiv.org/pdf/2610.11592 "Probing for Long-Horizon Deductive Reasoning Capabilities in Language Models with Prolog (2026)")** (Findings of EMNLP 2026). A synthetic benchmark of Prolog query answering, "can the query be proven given the program, or not?" (§1), whose reasoning depth runs from 0 to 22 while the context grows with it, since every rule and fact is needed in the proof (abstract; §2; §3.3); 8 reasoning models across 5 families, with output budgets of 64k tokens (82k for the Qwen models) (abstract; §4.1). <span class="links">[🔎](#/papers/alnegheimish2026prolong "Summary") · [PDF](https://arxiv.org/pdf/2610.11592) · [arXiv](https://arxiv.org/abs/2610.11592) · [Code](https://github.com/halnegheimish/ProloNg)</span> <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/gym">gym</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/longctx">longctx</a><a class="tag" href="#/tags/nl">nl</a></span>

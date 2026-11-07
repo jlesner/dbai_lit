@@ -78,5 +78,5 @@ Two authors hand-checked all 106 question-query pairs of one domain (banking) an
 
 ## On this site
 
-- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a></span>

@@ -88,5 +88,5 @@ Knowledge-graph question answering (KGQA) benchmarks pair a question with the an
 
 ## On this site
 
-- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification)
+- **Discussed in:** [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/dsl-sparql">dsl-sparql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

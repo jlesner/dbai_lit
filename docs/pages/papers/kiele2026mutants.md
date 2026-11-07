@@ -82,4 +82,5 @@ Mutation testing judges a test suite by planting small bugs (mutants) in a progr
 
 ## On this site
 
+- **Discussed in:** [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

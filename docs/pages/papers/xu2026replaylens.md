@@ -80,5 +80,5 @@ An agent that reuses a log of past actions and their scores may base a later cho
 
 ## On this site
 
-- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
+- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/placebo">placebo</a></span>

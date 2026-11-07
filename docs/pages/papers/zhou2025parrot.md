@@ -84,5 +84,5 @@ Evaluation runs translations on the target engines and reports Acc_EX and Acc_RE
 
 ## On this site
 
-- **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing)
+- **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/dialect">dialect</a><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/pairs">pairs</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

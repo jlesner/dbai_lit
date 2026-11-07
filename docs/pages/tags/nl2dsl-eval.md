@@ -8,6 +8,7 @@ Judging a predicted query against the gold one: metrics, verifiers, test suites.
 
 ## Challenges
 
+- **[Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification)**: A program an LLM writes from an English request can be checked against a reference program, but rarely against the request itself; find checks of intent that work across the DSL family, and measure the errors they miss.
 - **[Checking text-to-SQL against intent](#/challenges/text_to_sql_verification)**: Check a generated SQL query against the intent of its English question. English is ambiguous and gold queries are often wrong, so only the comparison with another query can be certified, and text-to-SQL is used here as a *source of pairs*, not as a goal.
 
 ## Papers

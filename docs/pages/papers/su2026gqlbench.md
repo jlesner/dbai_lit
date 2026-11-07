@@ -78,5 +78,5 @@ Writing a graph-database query (in a language such as Cypher) from an English qu
 
 ## On this site
 
-- **Discussed in:** [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting) · [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
+- **Discussed in:** [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting) · [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/rarelang">rarelang</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-graph">dsl-graph</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a></span>

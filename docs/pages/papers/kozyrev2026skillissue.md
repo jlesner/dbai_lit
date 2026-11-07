@@ -77,5 +77,5 @@ Coding agents can read a SKILL, a Markdown file in the repository describing the
 
 ## On this site
 
-- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

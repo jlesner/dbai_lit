@@ -90,5 +90,5 @@ The authors present the interface as a new concept and SWE-agent as, "to the bes
 
 ## On this site
 
-- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a></span>

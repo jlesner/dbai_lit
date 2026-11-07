@@ -79,5 +79,5 @@ Some LLM systems improve themselves in a loop, each round keeping whichever prop
 
 ## On this site
 
-- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/promptopt">promptopt</a></span>

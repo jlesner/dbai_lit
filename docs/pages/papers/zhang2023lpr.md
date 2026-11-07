@@ -80,4 +80,5 @@ When a compiler crashes or miscompiles a program, developers want the smallest p
 
 ## On this site
 
+- **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

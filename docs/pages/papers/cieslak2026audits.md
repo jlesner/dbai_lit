@@ -82,4 +82,5 @@ Training and test-time search increasingly use verifiers built from parts, one p
 
 ## On this site
 
+- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/stats">stats</a><a class="tag" href="#/tags/study">study</a></span>

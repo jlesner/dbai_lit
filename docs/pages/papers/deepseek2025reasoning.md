@@ -95,5 +95,5 @@ Language models solve hard problems better when they write out intermediate reas
 
 ## On this site
 
-- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a></span>

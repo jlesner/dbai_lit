@@ -82,5 +82,5 @@ Counts from filtering and hand-checking Spider's test split, not system scores.
 
 ## On this site
 
-- **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop) · [Checking text-to-SQL against intent](#/challenges/text_to_sql_verification) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/study">study</a><a class="tag" href="#/tags/survey">survey</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a><a class="tag sub" href="#/tags/nl2dsl-data">nl2dsl-data</a><a class="tag sub" href="#/tags/nl2dsl-eval">nl2dsl-eval</a></span>

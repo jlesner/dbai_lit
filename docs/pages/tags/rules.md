@@ -9,7 +9,7 @@
 ## Challenges
 
 - **[Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules)**: Rewriters have edge-case bugs that change query results ([ARG](#/papers/li2025arg "ARG: Testing Query Rewriters via Abstract Rule Guided Fuzzing (2025)") Tab. II), and so do published rules (§ What's known). Find them with counterexamples.
-- **[Canonical forms for queries](#/challenges/query_canonical_forms)**: Normal forms for useful SQL fragments, so that comparing two queries' forms decides (or nearly decides) equivalence. Sound when the forms match; silent when they don't.
+- **[Canonical forms for queries](#/challenges/query_canonical_forms)**: Normal forms for useful SQL fragments, so that comparing two queries' forms decides (or nearly decides) equivalence. Sound when the forms match; outside fragments where a form is complete, silent when they don't.
 - **[Discovering new rewrite rules](#/challenges/rewrite_rule_discovery)**: Where do new optimizer rules come from? Have an LLM propose them and a prover verify them.
 
 ## Papers

@@ -80,5 +80,5 @@ An LLM fixing a buggy program is usually shown the test input on which the progr
 
 ## On this site
 
-- **Discussed in:** [Minimal counterexamples](#/challenges/minimal_counterexamples)
+- **Discussed in:** [Distinguishing documents for two programs in any DSL](#/challenges/dsl_counterexamples) · [Minimal counterexamples](#/challenges/minimal_counterexamples)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/longctx">longctx</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/offload">offload</a><a class="tag" href="#/tags/reduce">reduce</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

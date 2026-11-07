@@ -9,6 +9,7 @@ A subtag of <a class="tag" href="#/tags/dialect">dialect</a>
 ## Challenges
 
 - **[SQL dialect translation](#/challenges/dialect_translation)**: Translate queries between engines (PostgreSQL, MySQL, SQLite, DuckDB, SQL Server, …) without changing their meaning.
+- **[Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)**: Port a program to another dialect or DSL (Cypher to SQL/PGQ, Soufflé to clingo, PCRE to ECMAScript) and show that its meaning didn't change, when engines themselves disagree silently on what the source means.
 
 ## Papers
 

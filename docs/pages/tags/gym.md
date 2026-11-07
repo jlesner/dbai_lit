@@ -4,6 +4,10 @@
 
 <!-- filter -->
 
+## Challenges
+
+- **[A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)**: Task families in several DSLs (predict a program's output, write a program from examples or from English, decide whether two programs agree and show where they don't) whose answer keys come from the engine, with a size setting on two axes, and checks whose false accepts are measured.
+
 ## Papers
 
 - **[Probing for Long-Horizon Deductive Reasoning Capabilities in Language Models with Prolog](https://arxiv.org/pdf/2610.11592 "Probing for Long-Horizon Deductive Reasoning Capabilities in Language Models with Prolog (2026)")** (Findings of EMNLP 2026). A synthetic benchmark of Prolog query answering, "can the query be proven given the program, or not?" (§1), whose reasoning depth runs from 0 to 22 while the context grows with it, since every rule and fact is needed in the proof (abstract; §2; §3.3); 8 reasoning models across 5 families, with output budgets of 64k tokens (82k for the Qwen models) (abstract; §4.1). <span class="links">[🔎](#/papers/alnegheimish2026prolong "Summary") · [PDF](https://arxiv.org/pdf/2610.11592) · [arXiv](https://arxiv.org/abs/2610.11592) · [Code](https://github.com/halnegheimish/ProloNg)</span> <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/gym">gym</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/longctx">longctx</a><a class="tag" href="#/tags/nl">nl</a></span>

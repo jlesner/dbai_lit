@@ -6,6 +6,12 @@ Optimizes **context beyond the instructions**: evolving playbooks, memory across
 
 <!-- filter -->
 
+## Challenges
+
+- **[Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play)**: Can a proposer–solver loop with no labels, judged only by a DSL's engine, teach a compact model through what it writes into prompts (a skill document and a library of verified examples), and does it matter whether the compact model or a frontier model writes them?
+- **[Which entries of a learned skill help](#/challenges/skill_entry_attribution)**: The engine judges whole answers, but a skill holds many entries; measure each entry's effect on the engine's verdicts, per task family and size.
+- **[Checking a memory across problems before it is reused](#/challenges/verified_memory)**: Check each lesson, skill or harness edit carried from one problem to the next with a sound check before it is reused.
+
 ## Papers
 
 - **[Instruction Retrieval at Inference Time for Small Language Models](https://arxiv.org/pdf/2510.13935 "Instruction Retrieval at Inference Time for Small Language Models (2025)")** (preprint 2025 (v3, 2026)). A teacher (GPT-5) writes one instruction per cluster of a domain's training questions, with background knowledge, a procedure and the common mistakes; a frozen small model retrieves the five instructions nearest its question and follows them, with no fine-tuning and no teacher call at inference (abstract; §3). <span class="links">[🔎](#/papers/alkiek2025instructionretrieval "Summary") · [PDF](https://arxiv.org/pdf/2510.13935) · [arXiv](https://arxiv.org/abs/2510.13935)</span> <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

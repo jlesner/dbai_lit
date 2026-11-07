@@ -77,5 +77,5 @@ In the glossary's terms, the setting is weak-to-strong supervision turned to eva
 
 ## On this site
 
-- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a></span>

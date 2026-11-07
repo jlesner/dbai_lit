@@ -91,5 +91,5 @@ The authors report that LLMs go from the tools' "mere 30% supported query pairs 
 
 ## On this site
 
-- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/pairs-check">pairs-check</a></span>

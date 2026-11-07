@@ -6,6 +6,7 @@
 
 ## Challenges
 
+- **[Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth)**: Equivalence benchmarks whose labels can't be checked cap progress. A refutation benchmark's ground truth grows as models improve.
 - **[A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)**: Task families in several DSLs (predict a program's output, write a program from examples or from English, decide whether two programs agree and show where they don't) whose answer keys come from the engine, with a size setting on two axes, and checks whose false accepts are measured.
 
 ## Papers

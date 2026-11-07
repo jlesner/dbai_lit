@@ -11,7 +11,7 @@ Code: [SISelection](https://github.com/staskikotx/SISelection)
 
 - Picks among text-to-SQL candidates using small separating database instances.
 - Extracts the instances from an existing database by provenance; the LLM runs the NL question on them.
-- Separating instances used to choose among candidates without a gold query; its tournament reports also flag wrong BIRD gold answers (§4).
+- Separating instances used to choose among candidates without a gold query; its tournament reports also flag wrong BIRD gold answers (§IV).
 
 ## In plain words
 

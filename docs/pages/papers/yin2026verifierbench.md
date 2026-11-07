@@ -78,5 +78,5 @@ When agents build their own training data, programs called verifiers decide whic
 
 ## On this site
 
-- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/scaling">scaling</a></span>

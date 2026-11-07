@@ -85,5 +85,5 @@ Users often give an LLM many items at once, such as movie reviews, and ask for o
 
 ## On this site
 
-- **Discussed in:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
+- **Discussed in:** [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size) · [Whole-job reliability of multi-step LLM work](#/challenges/whole_job_reliability)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/longctx">longctx</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/study">study</a></span>

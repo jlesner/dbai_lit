@@ -81,5 +81,4 @@ From Tab. 2 (averages over five runs, test columns cited here; bold marks a best
 
 ## On this site
 
-- **Discussed in:** [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/promptopt">promptopt</a></span>

@@ -4,6 +4,10 @@
 
 <!-- filter -->
 
+## Challenges
+
+- **[Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)**: Can a compact model learn a DSL that is rare in its training data, K through the open-source ngn/k engine, from the language's documentation and its engine alone, with what it learns kept in prompts?
+
 ## Papers
 
 - **[Technical Report: Full-Stack Fine-Tuning for the Q Programming Language](https://arxiv.org/pdf/2508.06813 "Technical Report: Full-Stack Fine-Tuning for the Q Programming Language (2025)")** (preprint 2025 (Morgan Stanley and Prime Intellect)). A LeetCode-style benchmark for Q, the language of the kdb+ time-series database, which the authors call "much less present on the Internet" than mainstream languages (abstract; §2); frontier and base Qwen-2.5 models benchmarked on it (§4); Qwen-2.5 models from 1.5B to 32B adapted to Q by pretraining, supervised fine-tuning and RL (§5–7); models, code and data released (§1, §11). <span class="links">[🔎](#/papers/hogan2025qlang "Summary") · [PDF](https://arxiv.org/pdf/2508.06813) · [arXiv](https://arxiv.org/abs/2508.06813) · [Code](https://github.com/morganstanley/MSML)</span> <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/rarelang">rarelang</a><a class="tag" href="#/tags/rlvr">rlvr</a></span>

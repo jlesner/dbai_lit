@@ -84,5 +84,5 @@ The authors' claims, on held-out test splits:
 
 ## On this site
 
-- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
+- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy) · [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-evolve">promptopt-evolve</a></span>

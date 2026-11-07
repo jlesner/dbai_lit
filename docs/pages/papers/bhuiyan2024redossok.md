@@ -79,5 +79,5 @@ Many programming languages match regular expressions (regexes) with an engine th
 
 ## On this site
 
-- **Discussed in:** [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)
+- **Discussed in:** [Repairing and rewriting DSL programs with a certified result](#/challenges/certified_dsl_repair) · [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/study">study</a><a class="tag" href="#/tags/survey">survey</a><a class="tag sub" href="#/tags/dsl-regex">dsl-regex</a></span>

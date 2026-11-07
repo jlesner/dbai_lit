@@ -11,7 +11,7 @@ Code: [DPC](https://github.com/HKUSTDial/DPC)
 
 - Picks among text-to-SQL candidates without a gold query: LLM agents build a "Minimal Distinguishing Database" on which the two leading candidates return different results (abstract, §3.3).
 - A Slicer agent cuts the schema (dry-run checked), a Tester agent regenerates data until the two outputs differ or a retry limit T_max is reached, and a Solver agent's Python/Pandas solution on that database is the reference the SQL outputs are compared with (§3.3–3.5).
-- LLM-built distinguishing databases, but the referee is another LLM output, not a gold query, and the release's own reliability run doesn't show it right more often than the candidates it judges; cited by SISelection ([data-aware NL2SQL candidate selection](#/papers/kikot2026separating "Data-aware candidate selection in NL2SQL translation via small separating instances (2026)") §1).
+- LLM-built distinguishing databases, but the referee is another LLM output, not a gold query, and the release's own reliability run doesn't show it right more often than the candidates it judges; cited by SISelection ([data-aware NL2SQL candidate selection](#/papers/kikot2026separating "Data-aware candidate selection in NL2SQL translation via small separating instances (2026)") §I).
 
 ## In plain words
 

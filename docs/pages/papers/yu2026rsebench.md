@@ -83,5 +83,5 @@ LLM agents increasingly improve without retraining by writing what they learn fr
 
 ## On this site
 
-- **Discussed in:** [Which entries of a learned skill help](#/challenges/skill_entry_attribution)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [Which entries of a learned skill help](#/challenges/skill_entry_attribution) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/placebo">placebo</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>

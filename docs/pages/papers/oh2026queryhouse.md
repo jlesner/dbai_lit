@@ -84,5 +84,5 @@ Four modules form a continuous loop (§3.1, Fig. 2, PDF pp. 4–5):
 
 ## On this site
 
-- **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [SQL dialect translation](#/challenges/dialect_translation)
+- **Discussed in:** [Telling bad translations from legitimate engine differences](#/challenges/bad_translation_detection) · [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [SQL dialect translation](#/challenges/dialect_translation)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/difftest">difftest</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/workload">workload</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

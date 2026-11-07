@@ -10,7 +10,7 @@ Code: [VeriEQL](https://github.com/VeriEQL/VeriEQL) · [VeriEQL-artifact-evaluat
 ## In brief
 
 - Bounded equivalence verification of complex SQL with integrity constraints.
-- Symbolic tuples in SMT: UNSAT means equivalent on all databases with at most N tuples per relation (§1); SAT gives a counterexample database. The code checks only relations of exactly the bound size.
+- Symbolic tuples in SMT: UNSAT means equivalent on all databases with at most N tuples per relation (§1); SAT gives a counterexample database.
 - [ParSEval](#/papers/chen2025parseval "ParSEval: Plan-aware Test Database Generation for SQL Equivalence Evaluation (2025)")).
 
 ## In plain words
@@ -83,5 +83,5 @@ Two SQL queries are equivalent if they return the same result on every database.
 
 ## On this site
 
-- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Minimal counterexamples](#/challenges/minimal_counterexamples) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
+- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness) · [Refuting faulty rewrite rules](#/challenges/faulty_rewrite_rules) · [Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence) · [Query equivalence: prove or refute](#/challenges/query_equivalence) · [Sourcing realistic, hard query pairs](#/challenges/query_pair_sourcing) · [Equivalence under schema constraints](#/challenges/schema_constrained_equivalence) · [SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/bounded">bounded</a><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/smt">smt</a><a class="tag sub" href="#/tags/dsl-sql">dsl-sql</a><a class="tag sub" href="#/tags/pairs-check">pairs-check</a></span>

@@ -79,5 +79,5 @@ How well do LLMs write jq expressions from English and/or examples, and how do f
 
 ## On this site
 
-- **Discussed in:** [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
+- **Discussed in:** [Porting programs between DSLs and dialects without changing their meaning](#/challenges/dsl_porting) · [Learning a rarely seen DSL in prompts](#/challenges/unseen_dsl_in_prompts)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/benchmark">benchmark</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/nl2dsl">nl2dsl</a><a class="tag" href="#/tags/rarelang">rarelang</a><a class="tag sub" href="#/tags/dialect-translate">dialect-translate</a><a class="tag sub" href="#/tags/dsl-path">dsl-path</a><a class="tag sub" href="#/tags/llm-gen">llm-gen</a></span>

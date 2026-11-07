@@ -94,5 +94,5 @@ When a language model trains on its own checked outputs, does it acquire capabil
 
 ## On this site
 
-- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement) · [The self-improving SQL ↔ text ↔ verify loop](#/challenges/sql_text_round_trip_loop)
+- **Discussed in:** [Self-improvement that compounds](#/challenges/compounding_self_improvement)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/judge">judge</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/rlvr">rlvr</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a></span>

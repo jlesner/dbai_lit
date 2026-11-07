@@ -4116,7 +4116,7 @@ A model built from several sub-networks ("experts") and a gating network that, f
 
 A logic of formulas that hold at nodes of a graph or tree: ⟨a⟩φ says that one move along a reaches a node where φ holds, and fixpoint operators define properties recursively, μ taking the least solution and ν the greatest. "Alternation-free" means no least and greatest fixpoints depend on each other, and "with converse" adds backward moves, such as to the parent (general definition).
 
-Example: [Efficient Static Analysis of…](#/papers/geneves2007efficient "Efficient Static Analysis of XML Paths and Types (2007)") decides XPath containment and related problems by translating XPath expressions and XML types into "a sub-logic of the alternation free modal µ-calculus with converse" whose models are finite trees (§4, PDF p. 2), where least and greatest fixpoints coincide for its cycle-free formulas (abstract; Lemma 4.2). It recalls that the propositional modal µ-calculus "has been shown to be as expressive as nondeterministic tree automata" (§9, PDF p. 9).
+It recalls that the propositional modal µ-calculus "has been shown to be as expressive as nondeterministic tree automata" (§9, PDF p. 9).
 
 **Learn more:** [Efficient Static Analysis of…](#/papers/geneves2007efficient "Efficient Static Analysis of XML Paths and Types (2007)") §4 (PDF pp. 2–3), Figs. 1–2, the syntax and meaning of its formulas, and §9 (PDF p. 9); [XML Static Analyzer User Manual](#/papers/geneves2008analyzer "XML Static Analyzer User Manual (2008)") §4. Kozen's original paper (1983) is not listed here.
 

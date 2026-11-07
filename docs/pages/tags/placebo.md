@@ -4,6 +4,10 @@
 
 <!-- filter -->
 
+## Challenges
+
+- **[Gains made against a checker, carried beyond it](#/challenges/transfer_beyond_the_checker)**: Do gains made against a program checker, in the weights or with them fixed (prompts, skills, memory), carry over to tasks it can't check: near, the same DSL on a task only examples check, such as writing a program from English; far, open-ended work in other domains?
+
 ## Papers
 
 - **[Auditing and Decomposing Feedback-Driven Evolution in LLM Test Generation under the Oracle Problem](https://arxiv.org/pdf/2608.19626 "Auditing and Decomposing Feedback-Driven Evolution in LLM Test Generation under the Oracle Problem (2026)")** (preprint 2026 (the source's comment calls it an FSE submission)). Audits LLM generation of input–output tests from a problem statement when one accepted program supplies the expected outputs, and asks whether the gains of mutation-based test evolution and of a three-round execution-feedback loop survive an audit by the task's other accepted programs (abstract; §1). <span class="links">[🔎](#/papers/liang2026testgen "Summary") · [PDF](https://arxiv.org/pdf/2608.19626) · [arXiv](https://arxiv.org/abs/2608.19626)</span> <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/placebo">placebo</a><a class="tag" href="#/tags/scaling">scaling</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

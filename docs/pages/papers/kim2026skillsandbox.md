@@ -77,5 +77,5 @@ No limitations section; scattered caveats:
 
 ## On this site
 
-- **Discussed in:** [Checking a memory across problems before it is reused](#/challenges/verified_memory)
+- **Discussed in:** [Comparing LLM methods under noise](#/challenges/method_comparison_under_noise) · [Prompt-space self-play judged by an engine](#/challenges/prompt_space_self_play) · [Which entries of a learned skill help](#/challenges/skill_entry_attribution) · [Checking a memory across problems before it is reused](#/challenges/verified_memory)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/method">method</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a></span>

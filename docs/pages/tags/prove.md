@@ -9,7 +9,7 @@
 ## Challenges
 
 - **[Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness)**: Provers, bounded checkers and the harnesses around them certify wrong *equivalent* verdicts, and the benchmarks they are tested on can't show it.
-- **[Canonical forms for queries](#/challenges/query_canonical_forms)**: Normal forms for useful SQL fragments, so that comparing two queries' forms decides (or nearly decides) equivalence. Sound when the forms match; silent when they don't.
+- **[Canonical forms for queries](#/challenges/query_canonical_forms)**: Normal forms for useful SQL fragments, so that comparing two queries' forms decides (or nearly decides) equivalence. Sound when the forms match; outside fragments where a form is complete, silent when they don't.
 - **[Query equivalence: prove or refute](#/challenges/query_equivalence)**: Decide whether two SQL queries return the same result on every database, and back the answer with a certificate.
 - **[Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)**: Queries that look different can be equivalent because of keys, foreign keys, NOT NULL or CHECK constraints, and a checker has to know about them.
 - **[SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)**: Formal checkers support only a fragment of SQL. The pairs that matter most often fall outside it.

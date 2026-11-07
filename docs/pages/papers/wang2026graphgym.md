@@ -89,5 +89,5 @@ Graph problems (shortest paths, connectivity) are, the authors say, a promising 
 
 ## On this site
 
-- **Discussed in:** [Benchmarks with checkable ground truth](#/challenges/checkable_benchmark_ground_truth) · [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
+- **Discussed in:** [A gym of DSL tasks with answer keys made by code](#/challenges/dsl_gym) · [Reliability that holds with size, by handing the procedure to an engine](#/challenges/engine_offloading_with_size)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/compact">compact</a><a class="tag" href="#/tags/gym">gym</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag" href="#/tags/offload">offload</a><a class="tag" href="#/tags/study">study</a><a class="tag sub" href="#/tags/llm-assist">llm-assist</a></span>

@@ -9,7 +9,6 @@ Read: [PDF](https://arxiv.org/pdf/0812.3550) · [arXiv](https://arxiv.org/abs/08
 ## In brief
 
 - User manual of a satisfiability solver for a logic of finite trees that decides XPath emptiness, containment and equivalence, optionally under a DTD, XML Schema or Relax NG type, and outputs a satisfying or counterexample XML tree (§2, Examples 1–3; §3.2 "Supported XML Types"; §4).
-- XPath expressions from a navigational fragment (Fig. 7, in which "data values are ignored", §3.1) and tree types are compiled into an alternation-free μ-calculus with converse for finite trees, decided by a BDD-based inverse tableau method the authors say runs in time exponential in the formula size (§4).
 
 ## In plain words
 

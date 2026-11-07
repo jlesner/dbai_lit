@@ -6,9 +6,11 @@ Bounded or small-model equivalence checking of queries (SQL or another DSL), plu
 
 ## Challenges
 
+- **[Can SQL equivalence checkers be trusted?](#/challenges/checker_soundness)**: Provers, bounded checkers and the harnesses around them certify wrong *equivalent* verdicts, and the benchmarks they are tested on can't show it.
 - **[Minimal counterexamples](#/challenges/minimal_counterexamples)**: Find the smallest database on which two queries differ, so that a person or an LLM can read why they differ.
 - **[Equivalence of nondeterministic queries](#/challenges/nondeterministic_equivalence)**: What does "equivalent" mean when a query can legitimately return different results on the same database, run to run, and how do we check it without false counterexamples or false agreement?
 - **[Query equivalence: prove or refute](#/challenges/query_equivalence)**: Decide whether two SQL queries return the same result on every database, and back the answer with a certificate.
+- **[Equivalence under schema constraints](#/challenges/schema_constrained_equivalence)**: Queries that look different can be equivalent because of keys, foreign keys, NOT NULL or CHECK constraints, and a checker has to know about them.
 - **[SQL features that verifiers don't cover](#/challenges/verifier_coverage_gaps)**: Formal checkers support only a fragment of SQL. The pairs that matter most often fall outside it.
 
 ## Papers

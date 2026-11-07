@@ -81,5 +81,5 @@ Programmable logic controllers (PLCs) are factory computers that repeat one cycl
 
 ## On this site
 
-- **Discussed in:** [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
+- **Discussed in:** [Checking a program written from English, in any DSL](#/challenges/dsl_intent_verification) · [Weak checkers get exploited](#/challenges/weak_checker_exploitation)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/cex">cex</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/hacking">hacking</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/labels">labels</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/scaling">scaling</a></span>

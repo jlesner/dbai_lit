@@ -78,4 +78,5 @@ LLM agents can be improved without retraining by giving them skills: short writt
 
 ## On this site
 
+- **Discussed in:** [Bringing compact models to frontier accuracy](#/challenges/compact_model_accuracy)
 - **Tags:** <span class="tags"><a class="tag" href="#/tags/agent">agent</a><a class="tag" href="#/tags/code">code</a><a class="tag" href="#/tags/harness">harness</a><a class="tag" href="#/tags/llm">llm</a><a class="tag" href="#/tags/math">math</a><a class="tag" href="#/tags/method">method</a><a class="tag" href="#/tags/nl">nl</a><a class="tag sub" href="#/tags/promptopt-context">promptopt-context</a><a class="tag sub" href="#/tags/promptopt-feedback">promptopt-feedback</a></span>
